@@ -1,0 +1,6 @@
+# Security: Prevent API leaks
+config.js
+.env
+*.log
+node_modules/
+.DS_Store

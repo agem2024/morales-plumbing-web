@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEO — Alex Espinosa Morales | Morales Plumbing</title>
+    <meta name="description" content="Perfil Ejecutivo del Ing. Alex Espinosa Morales, Director Ejecutivo de Morales Plumbing y Espinosa Environmental Solutions.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../universe.css">
+    <style>
+        :root {
+            --cyan: #00f5ff;
+            --orange: #ff8c00;
+            --dark: #030712;
+            --card: rgba(8, 14, 32, 0.72);
+            --border: rgba(255,255,255,0.08);
+            --text: #d9e8f0;
+            --dim: rgba(217,232,240,0.6);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--dark); color: var(--text); font-family: 'Inter', sans-serif; min-height: 100vh; padding-bottom: 5rem; }
+
+        /* ── NAV ── */
+        .top-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: .8rem 2rem;
+            background: rgba(3,7,18,.9); backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+        .top-nav a { color: var(--orange); text-decoration: none; font-family: 'Orbitron', monospace; font-size: .8rem; letter-spacing: .1em; transition: .2s; }
+        .top-nav a:hover { color: var(--cyan); }
+        .nav-right { display: flex; align-items: center; gap: .5rem; }
+        .lang-btn {
+            background: none; border: 1px solid rgba(255,255,255,.15);
+            border-radius: 50px; padding: .3rem .55rem; font-size: 1.1rem;
+            cursor: pointer; transition: .2s; line-height: 1;
+        }
+        .lang-btn:hover { border-color: var(--cyan); transform: scale(1.1); }
+        .lang-btn.active { border-color: var(--cyan); background: rgba(0,245,255,.12); }
+        .print-btn {
+            background: linear-gradient(135deg, var(--cyan), #007aad); color: #000;
+            border: none; padding: .45rem 1rem; border-radius: 50px;
+            font-family: 'Orbitron', monospace; font-size: .72rem; font-weight: 700;
+            cursor: pointer; letter-spacing: .08em; transition: .2s; margin-left: .4rem;
+        }
+        .print-btn:hover { opacity: .85; }
+
+        /* ── MAIN WRAP ── */
+        .ceo-wrap { max-width: 1050px; margin: 6.5rem auto 0; padding: 0 1.5rem; }
+
+        /* ── PROFILE HERO GRID ── */
+        .ceo-hero-grid {
+            display: grid; grid-template-columns: 420px 1fr; gap: 3rem;
+            align-items: start; margin-bottom: 3rem;
+        }
+
+        /* CEO Portrait Column */
+        .ceo-portrait-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 24px; padding: 1.5rem;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 0 50px rgba(0,245,255,.15), 0 20px 60px rgba(0,0,0,.6);
+            position: relative; overflow: hidden;
+            border-top: 3px solid var(--cyan);
+        }
+        .ceo-portrait-card::before {
+            content: ''; position: absolute; top: -50px; right: -50px;
+            width: 150px; height: 150px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,245,255,.12), transparent 70%);
+        }
+        .ceo-portrait {
+            width: 100%; border-radius: 16px; object-fit: cover;
+            border: 1px solid rgba(255,255,255,.08);
+            box-shadow: 0 8px 30px rgba(0,0,0,.4);
+            margin-bottom: 1.5rem;
+        }
+        .ceo-meta-item {
+            display: flex; align-items: center; gap: .75rem;
+            margin-bottom: .8rem; font-size: .86rem; color: var(--dim);
+        }
+        .ceo-meta-item strong { color: #fff; font-weight: 500; }
+        .ceo-meta-icon {
+            width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; filter: drop-shadow(0 0 4px var(--cyan));
+        }
+
+        /* CEO Info Column */
+        .ceo-main-info {
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .ceo-badge {
+            font-family: 'Orbitron', monospace; font-size: .72rem; font-weight: 700;
+            color: var(--orange); letter-spacing: .25em; text-transform: uppercase;
+            margin-bottom: .6rem;
+        }
+        .ceo-name {
+            font-family: 'Orbitron', monospace; font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 900; letter-spacing: .06em;
+            background: linear-gradient(135deg, #fff 30%, var(--cyan) 90%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; line-height: 1.1; margin-bottom: .4rem;
+        }
+        .ceo-sub {
+            font-family: 'Orbitron', monospace; font-size: .95rem; font-weight: 600;
+            color: var(--text); letter-spacing: .08em; margin-bottom: 1.8rem;
+            opacity: .85;
+        }
+        .ceo-bio-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 18px; padding: 2rem; backdrop-filter: blur(14px);
+            font-size: .98rem; line-height: 1.95; color: var(--text);
+            margin-bottom: 2rem; position: relative;
+        }
+        .ceo-bio-card::before {
+            content: '“'; position: absolute; top: -15px; left: 15px;
+            font-size: 5rem; font-family: 'Orbitron', sans-serif;
+            color: rgba(0,245,255,.1); font-weight: 900;
+        }
+
+        /* ── STATS ROW ── */
+        .ceo-stats-row {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
+            margin-bottom: 3rem;
+        }
+        .stat-box {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 1.5rem; text-align: center;
+            backdrop-filter: blur(12px); border-bottom: 2px solid var(--orange);
+            transition: transform .3s ease;
+        }
+        .stat-box:hover { transform: translateY(-4px); }
+        .stat-num {
+            font-family: 'Orbitron', monospace; font-size: 2rem; font-weight: 900;
+            color: var(--cyan); text-shadow: 0 0 15px rgba(0,245,255,.3);
+        }
+        .stat-label { font-size: .78rem; color: var(--dim); margin-top: .4rem; letter-spacing: .08em; text-transform: uppercase; }
+
+        /* ── DETAIL SECTIONS ── */
+        .ceo-section {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 20px; padding: 2.2rem; backdrop-filter: blur(14px);
+            margin-bottom: 2rem; position: relative; overflow: hidden;
+        }
+        .ceo-section::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+            background: linear-gradient(180deg, var(--cyan), transparent);
+        }
+        .sec-title {
+            font-family: 'Orbitron', monospace; font-size: .8rem; font-weight: 700;
+            letter-spacing: .25em; text-transform: uppercase; color: var(--cyan);
+            margin-bottom: 1.5rem; display: flex; align-items: center; gap: .8rem;
+        }
+        .sec-title::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.08); }
+
+        /* LIST & BLOCKS */
+        .ceo-list { list-style: none; }
+        .ceo-list li {
+            font-size: .95rem; line-height: 1.85; color: var(--text);
+            padding-left: 1.5rem; position: relative; margin-bottom: .8rem;
+        }
+        .ceo-list li::before {
+            content: '◆'; position: absolute; left: 0; color: var(--orange); font-size: .75em; top: .1em;
+            text-shadow: 0 0 6px var(--orange);
+        }
+        .ceo-list li strong { color: #fff; font-weight: 600; }
+
+        /* GRID FOR CARDS */
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .sub-card {
+            background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.05);
+            border-radius: 14px; padding: 1.5rem;
+        }
+        .sub-card h4 {
+            font-family: 'Orbitron', monospace; font-size: .82rem; font-weight: 700;
+            color: var(--orange); letter-spacing: .12em; text-transform: uppercase;
+            margin-bottom: .8rem;
+        }
+
+        /* ── FOOTER CTA ── */
+        .ceo-cta {
+            background: linear-gradient(135deg, rgba(8,14,32,0.9), rgba(3,7,18,0.95));
+            border: 1px solid rgba(0,245,255,.15); border-radius: 20px;
+            padding: 2.5rem; text-align: center; backdrop-filter: blur(15px);
+            margin-top: 3.5rem; position: relative; overflow: hidden;
+        }
+        .ceo-cta::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255,140,0,.04), transparent 60%);
+        }
+        .ceo-cta h3 {
+            font-family: 'Orbitron', monospace; font-size: 1.3rem; font-weight: 900;
+            letter-spacing: .1em; color: #fff; margin-bottom: .6rem;
+        }
+        .ceo-cta p { color: var(--dim); font-size: .92rem; margin-bottom: 1.5rem; }
+        .ceo-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-call {
+            background: linear-gradient(135deg, var(--cyan), #006aad); color: #000;
+            text-decoration: none; padding: .75rem 1.8rem; border-radius: 50px;
+            font-family: 'Orbitron', monospace; font-size: .8rem; font-weight: 900;
+            letter-spacing: .08em; transition: .2s;
+        }
+        .btn-call:hover { opacity: .9; transform: scale(1.02); }
+        .btn-cv-link {
+            border: 1px solid var(--orange); color: var(--orange);
+            text-decoration: none; padding: .75rem 1.8rem; border-radius: 50px;
+            font-family: 'Orbitron', monospace; font-size: .8rem; font-weight: 700;
+            letter-spacing: .08em; transition: .2s;
+        }
+        .btn-cv-link:hover { background: rgba(255,140,0,.15); }
+
+        @media (max-width: 900px) {
+            .ceo-hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .ceo-portrait-card { max-width: 450px; margin: 0 auto; }
+            .sub-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 580px) {
+            .ceo-stats-row { grid-template-columns: 1fr; }
+            .ceo-wrap { margin-top: 5rem; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="universe-canvas" data-universe-mode="nebula"></canvas>
+    <div class="universe-overlay u-variant-service"></div>
+    <script src="../universe.js"></script>
+
+    <!-- NAV -->
+    <nav class="top-nav">
+        <a href="../index.html">← HOME</a>
+        <div class="nav-right">
+            <button class="lang-btn" data-lang="en" onclick="setCEOLang('en')" title="English">🇺🇸</button>
+            <button class="lang-btn" data-lang="es" onclick="setCEOLang('es')" title="Español">🇲🇽</button>
+            <button class="lang-btn" data-lang="zh" onclick="setCEOLang('zh')" title="中文">🇨🇳</button>
+            <button class="lang-btn" data-lang="tl" onclick="setCEOLang('tl')" title="Tagalog">🇵🇭</button>
+            <button class="lang-btn" data-lang="vi" onclick="setCEOLang('vi')" title="Tiếng Việt">🇻🇳</button>
+            <button class="print-btn" onclick="window.print()">🖨 PDF</button>
+        </div>
+    </nav>
+
+    <div class="ceo-wrap">
+
+        <!-- HERO GRID -->
+        <div class="ceo-hero-grid">
+            
+            <!-- PORTRAIT CARD -->
+            <div class="ceo-portrait-card">
+                <img src="../assets/ceo_official.png" alt="Alex Espinosa Morales" class="ceo-portrait">
+                <div class="ceo-meta-item">
+                    <span class="ceo-meta-icon">📍</span>
+                    <span id="meta-loc"><strong>Ubicación:</strong> San Jose, California</span>
+                </div>
+                <div class="ceo-meta-item">
+                    <span class="ceo-meta-icon">🏢</span>
+                    <span id="meta-lic"><strong>Licencia CSLB:</strong> C-36 #1109100</span>
+                </div>
+                <div class="ceo-meta-item">
+                    <span class="ceo-meta-icon">🎓</span>
+                    <span id="meta-edu"><strong>Ingeniería:</strong> Universidad Libre, 2004</span>
+                </div>
+                <div class="ceo-meta-item">
+                    <span class="ceo-meta-icon">📞</span>
+                    <span id="meta-tel"><strong>Teléfono:</strong> (669) 234-2444</span>
+                </div>
+                <div class="ceo-meta-item">
+                    <span class="ceo-meta-icon">✉️</span>
+                    <span id="meta-email"><strong>Email:</strong> moralesplumbing026@gmail.com</span>
+                </div>
+            </div>
+
+            <!-- MAIN TEXT -->
+            <div class="ceo-main-info">
+                <div class="ceo-badge" id="ceo-badge">EXECUTIVE PROFILE</div>
+                <h1 class="ceo-name">ALEX ESPINOSA MORALES</h1>
+                <div class="ceo-sub" id="ceo-sub">Director Ejecutivo &amp; AI Systems Architect</div>
+                
+                <div class="ceo-bio-card" id="ceo-bio">
+                    "Liderar la industria integrando más de 21 años de experiencia en ingeniería ambiental e infraestructura física con inteligencia artificial de vanguardia, ofreciendo soluciones de alta precisión bajo los estándares regulatorios de la CSLB y el Código Uniforme de Plomería (UPC)".
+                </div>
+
+                <!-- QUICK STATS -->
+                <div class="ceo-stats-row">
+                    <div class="stat-box">
+                        <div class="stat-num">21+</div>
+                        <div class="stat-label" id="stat1">Años de Exp.</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num">100%</div>
+                        <div class="stat-label" id="stat2">Código UPC</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num">ORION</div>
+                        <div class="stat-label" id="stat3">Ecosistema AI</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- VISION & STRATEGY -->
+        <div class="ceo-section">
+            <div class="sec-title" id="t-vision">◆ Visión y Trayectoria Profesional</div>
+            <ul class="ceo-list" id="list-vision">
+                <li><strong>Ingeniero Ambiental Licenciado:</strong> Egresado en 2004 de la Universidad Libre Seccional Pereira (Colombia). Cuenta con certificaciones avanzadas en calidad de aire, auditoría de sistemas de gestión ambiental integral (ISO 14001) y Smart Cities por el Banco Interamericano de Desarrollo (BID).</li>
+                <li><strong>Consultor y Diseñador Hidráulico:</strong> Vasta trayectoria diseñando plantas de tratamiento de aguas residuales, acueductos, alcantarillados residenciales y municipales, y estructurando planes de gestión integral de residuos sólidos (PGIRS).</li>
+                <li><strong>Líder de Construcción en California:</strong> Especializado en plomería técnica avanzada y repiping de alta complejidad en el Área de la Bahía de California, colaborando con grandes firmas (Villara, Tao Ltd, Mike Counsil) y ejecutando obras de gran envergadura (como el repiping de drenajes ABS en 255 S. Rengstorff Ave.).</li>
+            </ul>
+        </div>
+
+        <!-- TECH & LEADERSHIP -->
+        <div class="ceo-section">
+            <div class="sec-title" id="t-innovation">◆ Innovación Tecnológica (Ecosistema ORION)</div>
+            <div class="sub-grid">
+                <div class="sub-card">
+                    <h4 id="sub1-title">Sistemas Multi-Agente</h4>
+                    <p id="sub1-desc" style="font-size:.9rem; line-height:1.75; color:var(--dim)">
+                        Desarrollo y orquestación de sistemas cognitivos autónomos ("Orion", "Jarvis") aplicados a la ingeniería de campo. Automatización de intake de clientes, flujos de trabajo financieros y generación digital de presupuestos integrados directamente en WhatsApp.
+                    </p>
+                </div>
+                <div class="sub-card">
+                    <h4 id="sub2-title">Visión Computacional</h4>
+                    <p id="sub2-desc" style="font-size:.9rem; line-height:1.75; color:var(--dim)">
+                        Implementación de "Plumbing Estimator Pro", una solución con IA que analiza planos y fotografías de obras físicas para calcular automáticamente la cuantificación de materiales (tubos ABS, conexiones PEX, ProPress de cobre) y generar cotizaciones precisas al instante.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRINCIPLES -->
+        <div class="ceo-section">
+            <div class="sec-title" id="t-principles">◆ Principios Directivos y Sostenibilidad</div>
+            <ul class="ceo-list" id="list-principles">
+                <li><strong>Garantía de Cumplimiento:</strong> Rigor absoluto bajo las normativas de la CSLB y el Código Uniforme de Plomería (UPC), coordinando directamente con inspectores de la ciudad para garantizar aprobaciones en la primera inspección.</li>
+                <li><strong>Ingeniería Sostenible:</strong> Reducción de la huella ecológica mediante el diseño de sistemas eficientes de agua, optimización hidráulica y reutilización de recursos hídricos en el sector residencial y comercial.</li>
+                <li><strong>Integridad y Transparencia:</strong> Despliegue del modelo de cotización "Bueno, Mejor, Excelente" (GBB) en el ORION Price Book v6.0 PRO, permitiendo que el cliente conozca exactamente el costo unitario y las especificaciones técnicas de cada material sin sorpresas.</li>
+            </ul>
+        </div>
+
+        <!-- FOOTER CTA -->
+        <div class="ceo-cta">
+            <h3 id="cta-title">¿Desea programar una consulta técnica directa?</h3>
+            <p id="cta-desc">Hable directamente con el Ing. Alex Espinosa Morales para proyectos de consultoría ambiental, diseño hidráulico o repiping residencial en el Área de la Bahía.</p>
+            <div class="ceo-cta-btns">
+                <a href="tel:+16692342444" class="btn-call" id="btn-call">📞 Llamar (669) 234-2444</a>
+                <a href="cv.html" class="btn-cv-link" id="btn-cv">📄 Ver Currículum Completo</a>
+                <a href="pricebook.html" class="btn-cv-link" id="btn-pb">📐 Abrir Price Book</a>
+            </div>
+        </div>
+
+    </div>
+
+<script>
+// ── CEO TRANSLATION DICTIONARY (5 LANGUAGES) ───────────────
+const CEO_T = {
+  en: {
+    badge: 'EXECUTIVE PROFILE',
+    sub: 'Chief Executive Officer & AI Systems Architect',
+    bio: '"Leading the industry by integrating over 21 years of experience in environmental engineering and physical infrastructure with cutting-edge artificial intelligence, delivering high-precision solutions under CSLB regulatory standards and the Uniform Plumbing Code (UPC)."',
+    stat1: 'Years of Exp.',
+    stat2: 'UPC Code',
+    stat3: 'AI Ecosystem',
+    t_vision: '◆ Vision and Professional Milestones',
+    list_vision: `
+        <li><strong>Licensed Environmental Engineer:</strong> Graduated in 2004 from the Universidad Libre Seccional Pereira (Colombia). Holds advanced certifications in air quality, auditing of integrated environmental management systems (ISO 14001), and Smart Cities by the Inter-American Development Bank (IDB).</li>
+        <li><strong>Hydraulic Designer & Consultant:</strong> Extensive background designing wastewater treatment plants, aqueducts, residential and municipal sewers, and structuring Integrated Solid Waste Management Plans (PGIRS).</li>
+        <li><strong>California Construction Leader:</strong> Specialized in advanced technical plumbing and high-complexity repiping in the California Bay Area, collaborating with major contracting firms (Villara, Tao Ltd, Mike Counsil) and executing large-scale works (such as the full ABS drain replacement at 255 S. Rengstorff Ave.).</li>
+    `,
+    t_innovation: '◆ Technological Innovation (ORION Ecosystem)',
+    sub1_title: 'Multi-Agent Systems',
+    sub1_desc: 'Development and orchestration of autonomous cognitive systems ("Orion", "Jarvis") applied to field engineering. Automation of customer intake, financial workflows, and digital generation of quotes integrated directly into WhatsApp.',
+    sub2_title: 'Computer Vision',
+    sub2_desc: 'Deployment of "Plumbing Estimator Pro," an AI-driven solution that analyzes drawings and physical site photographs to automatically calculate material quantification (ABS pipe, PEX fittings, copper ProPress) and generate instant, precise estimates.',
+    t_principles: '◆ Core Directives and Sustainability',
+    list_principles: `
+        <li><strong>Compliance Guarantee:</strong> Absolute rigor under CSLB and Uniform Plumbing Code (UPC) regulations, coordinating directly with city inspectors to ensure approvals on the very first inspection.</li>
+        <li><strong>Sustainable Engineering:</strong> Minimizing ecological footprint through the design of high-efficiency water systems, hydraulic optimization, and strategic water reuse in residential and commercial sectors.</li>
+        <li><strong>Integrity & Transparency:</strong> Deployment of the "Good, Better, Best" (GBB) bidding model in the ORION Price Book v6.0 PRO, giving clients total clarity on unit costs and technical specifications of all materials.</li>
+    `,
+    cta_title: 'Would you like to schedule a direct technical consultation?',
+    cta_desc: 'Speak directly with Eng. Alex Espinosa Morales for environmental consulting, hydraulic design, or residential repiping projects in the Bay Area.',
+    btn_call: '📞 Call (669) 234-2444',
+    btn_cv: '📄 View Full Resume',
+    btn_pb: '📐 Open Price Book',
+    meta_loc: '<strong>Location:</strong> San Jose, California',
+    meta_lic: '<strong>CSLB License:</strong> C-36 #1109100',
+    meta_edu: '<strong>Engineering:</strong> Universidad Libre, 2004',
+    meta_tel: '<strong>Phone:</strong> (669) 234-2444',
+    meta_email: '<strong>Email:</strong> moralesplumbing026@gmail.com'
+  },
+  es: {
+    badge: 'PERFIL EJECUTIVO',
+    sub: 'Director Ejecutivo & AI Systems Architect',
+    bio: '"Liderar la industria integrando más de 21 años de experiencia en ingeniería ambiental e infraestructura física con inteligencia artificial de vanguardia, ofreciendo soluciones de alta precisión bajo los estándares regulatorios de la CSLB y el Código Uniforme de Plomería (UPC)".',
+    stat1: 'Años de Exp.',
+    stat2: 'Código UPC',
+    stat3: 'Ecosistema AI',
+    t_vision: '◆ Visión y Trayectoria Profesional',
+    list_vision: `
+        <li><strong>Ingeniero Ambiental Licenciado:</strong> Egresado en 2004 de la Universidad Libre Seccional Pereira (Colombia). Cuenta con certificaciones avanzadas en calidad de aire, auditoría de sistemas de gestión ambiental integral (ISO 14001) y Smart Cities por el Banco Interamericano de Desarrollo (BID).</li>
+        <li><strong>Consultor y Diseñador Hidráulico:</strong> Vasta trayectoria diseñando plantas de tratamiento de aguas residuales, acueductos, alcantarillados residenciales y municipales, y estructurando planes de gestión integral de residuos sólidos (PGIRS).</li>
+        <li><strong>Líder de Construcción en California:</strong> Especializado en plomería técnica avanzada y repiping de alta complejidad en el Área de la Bahía de California, colaborando con grandes firmas (Villara, Tao Ltd, Mike Counsil) y ejecutando obras de gran envergadura (como el repiping de drenajes ABS en 255 S. Rengstorff Ave.).</li>
+    `,
+    t_innovation: '◆ Innovación Tecnológica (Ecosistema ORION)',
+    sub1_title: 'Sistemas Multi-Agente',
+    sub1_desc: 'Desarrollo y orquestación de sistemas cognitivos autónomos ("Orion", "Jarvis") aplicados a la ingeniería de campo. Automatización de intake de clientes, flujos de trabajo financieros y generación digital de presupuestos integrados directamente en WhatsApp.',
+    sub2_title: 'Visión Computacional',
+    sub2_desc: 'Implementación de "Plumbing Estimator Pro", una solución con IA que analiza planos y fotografías de obras físicas para calcular automáticamente la cuantificación de materiales (tubos ABS, conexiones PEX, ProPress de cobre) y generar cotizaciones precisas al instante.',
+    t_principles: '◆ Principios Directivos y Sostenibilidad',
+    list_principles: `
+        <li><strong>Garantía de Cumplimiento:</strong> Rigor absoluto bajo las normativas de la CSLB y el Código Uniforme de Plomería (UPC), coordinando directamente con inspectores de la ciudad para garantizar aprobaciones en la primera inspección.</li>
+        <li><strong>Ingeniería Sostenible:</strong> Reducción de la huella ecológica mediante el diseño de sistemas eficientes de agua, optimización hidráulica y reutilización de recursos hídricos en el sector residencial y comercial.</li>
+        <li><strong>Integridad y Transparencia:</strong> Despliegue del modelo de cotización "Bueno, Mejor, Excelente" (GBB) en el ORION Price Book v6.0 PRO, permitiendo que el cliente conozca exactamente el costo unitario y las especificaciones técnicas de cada material sin sorpresas.</li>
+    `,
+    cta_title: '¿Desea programar una consulta técnica directa?',
+    cta_desc: 'Hable directamente con el Ing. Alex Espinosa Morales para proyectos de consultoría ambiental, diseño hidráulico o repiping residencial en el Área de la Bahía.',
+    btn_call: '📞 Llamar (669) 234-2444',
+    btn_cv: '📄 Ver Currículum Completo',
+    btn_pb: '📐 Abrir Price Book',
+    meta_loc: '<strong>Ubicación:</strong> San Jose, California',
+    meta_lic: '<strong>Licencia CSLB:</strong> C-36 #1109100',
+    meta_edu: '<strong>Ingeniería:</strong> Universidad Libre, 2004',
+    meta_tel: '<strong>Teléfono:</strong> (669) 234-2444',
+    meta_email: '<strong>Email:</strong> moralesplumbing026@gmail.com'
+  },
+  zh: {
+    badge: '执行个人资料',
+    sub: '首席执行官兼 AI 系统架构师',
+    bio: '“通过将 21 年以上环境工程和物理基础设施方面的经验与尖端人工智能相结合，在 CSLB 监管标准和统一管道规范 (UPC) 下提供高精度解决方案，从而引领行业。”',
+    stat1: '从业年限',
+    stat2: 'UPC 规范',
+    stat3: 'AI 生态系统',
+    t_vision: '◆ 愿景与职业里程碑',
+    list_vision: `
+        <li><strong>执照环境工程师：</strong> 2004 年毕业于佩雷拉自由大学（哥伦比亚）。持有空气质量、环境管理体系体系审核 (ISO 14001) 以及美洲开发银行 (IDB) 智慧城市的高级认证。</li>
+        <li><strong>水力设计与顾问：</strong> 在设计废水处理厂、水利工程、住宅和市政下水道以及构建固体废物综合管理计划 (PGIRS) 方面拥有广泛的背景。</li>
+        <li><strong>加州建设领袖：</strong> 专注于加州湾区的高级技术管道和高复杂度重铺管道，与各大承包商公司（Villara、Tao Ltd、Mike Counsil）合作，并执行大型工程（如 255 S. Rengstorff Ave. 的全 ABS 排水系统更换）。</li>
+    `,
+    t_innovation: '◆ 技术创新 (ORION 生态系统)',
+    sub1_title: '多智能体系统',
+    sub1_desc: '应用于现场工程的自主认知系统（Orion、Jarvis）的开发和编排。将客户录入、财务工作流和数字化报价生成直接集成到 WhatsApp 中。',
+    sub2_title: '计算机视觉',
+    sub2_desc: '部署 "Plumbing Estimator Pro"，这是一种由 AI 驱动的解决方案，可分析图纸和现场照片，自动计算材料数量（ABS 管、PEX 接头、铜 ProPress）并生成即时、精确的估算。',
+    t_principles: '◆ 核心准则与可持续性',
+    list_principles: `
+        <li><strong>合规保证：</strong> 在 CSLB 和统一管道规范 (UPC) 下绝对严格，直接与城市督察协调，确保在第一次督察时获得批准。</li>
+        <li><strong>可持续工程：</strong> 通过高效率水系统设计、水力优化和住宅/商业领域的战略水资源再利用，最大限度地减少生态足迹。</li>
+        <li><strong>诚信与透明度：</strong> 在 ORION Price Book v6.0 PRO 中部署“好、更好、最好”(GBB) 竞标模型，让客户对所有材料的单价和技术规范有完全清晰的了解。</li>
+    `,
+    cta_title: '您想安排直接的技术咨询吗？',
+    cta_desc: '与 Alex Espinosa Morales 工程师直接对话，了解湾区的环境咨询、水力设计或住宅管道重铺项目。',
+    btn_call: '📞 拨打电话 (669) 234-2444',
+    btn_cv: '📄 查看完整简历',
+    btn_pb: '📐 打开价格表',
+    meta_loc: '<strong>位置:</strong> 加利福尼亚州圣何塞',
+    meta_lic: '<strong>CSLB 执照:</strong> C-36 #1109100',
+    meta_edu: '<strong>工程学:</strong> 佩雷拉自由大学, 2004',
+    meta_tel: '<strong>电话:</strong> (669) 234-2444',
+    meta_email: '<strong>电子邮件:</strong> moralesplumbing026@gmail.com'
+  },
+  tl: {
+    badge: 'EKSKUSIBONG PROFILE',
+    sub: 'Chief Executive Officer & AI Systems Architect',
+    bio: '“Pangasiwaan ang industriya sa pamamagitan ng pagsasama ng higit sa 21 taon ng karanasan sa environmental engineering at pisikal na imprastraktura sa makabagong artificial intelligence, na naghahatid ng mga solusyong may mataas na katumpakan sa ilalim ng mga pamantayan ng regulasyon ng CSLB at Uniform Plumbing Code (UPC).”',
+    stat1: 'Taon ng Kar.',
+    stat2: 'UPC Code',
+    stat3: 'AI Ecosystem',
+    t_vision: '◆ Pananaw at mga Milestones sa Karera',
+    list_vision: `
+        <li><strong>Lisensyadong Environmental Engineer:</strong> Nagtapos noong 2004 mula sa Universidad Libre Seccional Pereira (Colombia). May mga advanced na sertipikasyon sa kalidad ng hangin, pag-audit ng pinagsamang mga sistema ng pamamahala sa kapaligiran (ISO 14001), at Smart Cities ng Inter-American Development Bank (IDB).</li>
+        <li><strong>Hydraulic Designer at Konsultant:</strong> Malawak na background sa pagdidisenyo ng mga planta ng paggamot sa wastewater, aqueducts, residential at municipal sewers, at pagbuo ng PGIRS.</li>
+        <li><strong>Pinuno ng Konstruksyon sa California:</strong> Dalubhasa sa advanced technical plumbing at kumplikadong repiping sa California Bay Area, nakikipagtulungan sa mga pangunahing kumpanya (Villara, Tao Ltd, Mike Counsil) at nagsasagawa ng malalaking proyekto tulad ng repiping ng ABS drain sa 255 S. Rengstorff Ave.</li>
+    `,
+    t_innovation: '◆ Makabagong Teknolohiya (ORION Ecosystem)',
+    sub1_title: 'Mga Multi-Agent System',
+    sub1_desc: 'Pag-develop at pag-orkestra ng mga autonomous cognitive system ("Orion", "Jarvis") na inilalapat sa field engineering. Awtomatikong pag-intake ng kliyente, daloy ng trabaho sa pananalapi, at digital na paggawa ng mga quote na direktang isinama sa WhatsApp.',
+    sub2_title: 'Computer Vision',
+    sub2_desc: 'Pag-deploy ng "Plumbing Estimator Pro", isang solusyon na pinapagana ng AI na nagsusuri ng mga larawan sa site upang awtomatikong kalkulahin ang dami ng materyal (ABS, PEX, Copper ProPress) at lumikha ng mabilis at tumpak na pagtatantya.',
+    t_principles: '◆ Mga Pangunahing Alituntunin at Sustainability',
+    list_principles: `
+        <li><strong>Garantiya sa Pagsunod:</strong> Ganap na kahigpitan sa ilalim ng mga regulasyon ng CSLB at Uniform Plumbing Code (UPC), direktang nakikipag-ugnayan sa mga inspektor ng lungsod upang matiyak ang mga pag-apruba sa pinakaunang inspeksyon.</li>
+        <li><strong>Sustainable Engineering:</strong> Pagpapababa ng ecological footprint sa pamamagitan ng disenyo ng mga sistema ng tubig na may mataas na kahusayan, hydraulic optimization, at muling paggamit ng tubig.</li>
+        <li><strong>Integridad at Transparente:</strong> Pagpapatupad ng "Good, Better, Best" (GBB) na modelo ng pag-bid sa ORION Price Book v6.0 PRO, na nagbibigay sa mga kliyente ng kumpletong kalinawan.</li>
+    `,
+    cta_title: 'Nais mo bang mag-iskedyul ng direktang teknikal na konsultasyon?',
+    cta_desc: 'Makipag-usap nang direkta kay Engr. Alex Espinosa Morales para sa kapaligiran na konsultasyon, disenyo ng hydraulic, o mga proyekto ng repiping sa Bay Area.',
+    btn_call: '📞 Tumawag (669) 234-2444',
+    btn_cv: '📄 Tingnan ang Buong Resume',
+    btn_pb: '📐 Buksan ang Price Book',
+    meta_loc: '<strong>Lokasyon:</strong> San Jose, California',
+    meta_lic: '<strong>Lisensya sa CSLB:</strong> C-36 #1109100',
+    meta_edu: '<strong>Engineering:</strong> Universidad Libre, 2004',
+    meta_tel: '<strong>Telepono:</strong> (669) 234-2444',
+    meta_email: '<strong>Email:</strong> moralesplumbing026@gmail.com'
+  },
+  vi: {
+    badge: 'HỒ SƠ ĐIỀU HÀNH',
+    sub: 'Giám đốc Điều hành & Kiến trúc sư Hệ thống AI',
+    bio: '“Dẫn đầu ngành công nghiệp bằng cách tích hợp hơn 21 năm kinh nghiệm trong kỹ thuật môi trường và cơ sở hạ tầng vật lý với trí tuệ nhân tạo tiên tiến, cung cấp các giải pháp có độ chính xác cao theo các tiêu chuẩn quy định của CSLB và Bộ luật Đường ống Thống nhất (UPC).”',
+    stat1: 'Số Năm Kinh Nghiệm',
+    stat2: 'Mã Số UPC',
+    stat3: 'Hệ Sinh Thái AI',
+    t_vision: '◆ Tầm Nhìn và Các Cột Mốc Sự Nghiệp',
+    list_vision: `
+        <li><strong>Kỹ sư Môi trường được cấp phép:</strong> Tốt nghiệp năm 2004 từ Universidad Libre Seccional Pereira (Colombia). Sở hữu các chứng chỉ nâng cao về chất lượng không khí, kiểm toán hệ thống quản lý môi trường tích hợp (ISO 14001), và Đô thị thông minh của Ngân hàng Phát triển Liên Mỹ (IDB).</li>
+        <li><strong>Nhà thiết kế & Tư vấn Thủy lực:</strong> Kinh nghiệm sâu rộng thiết kế nhà máy xử lý nước thải, cầu cống, cống rãnh khu dân cư và đô thị, và xây dựng Kế hoạch Quản lý Chất thải Rắn Tích hợp (PGIRS).</li>
+        <li><strong>Nhà lãnh đạo xây dựng California:</strong> Chuyên về hệ thống đường ống kỹ thuật tiên tiến và thay thế đường ống phức tạp tại Vùng Vịnh California, hợp tác với các nhà thầu lớn (Villara, Tao Ltd, Mike Counsil) và thực hiện các dự án quy mô lớn (như thay thế cống ABS tại 255 S. Rengstorff Ave.).</li>
+    `,
+    t_innovation: '◆ Đổi mới Công nghệ (Hệ sinh thái ORION)',
+    sub1_title: 'Hệ thống đa tác tử',
+    sub1_desc: 'Phát triển và điều phối các hệ thống nhận thức tự trị ("Orion", "Jarvis") áp dụng vào kỹ thuật hiện trường. Tự động hóa việc tiếp nhận khách hàng, quy trình tài chính và tạo báo giá kỹ thuật số tích hợp trực tiếp vào WhatsApp.',
+    sub2_title: 'Thị giác Máy tính',
+    sub2_desc: 'Triển khai "Plumbing Estimator Pro", giải pháp hướng AI phân tích bản vẽ và ảnh chụp hiện trường để tự động tính toán khối lượng vật liệu (ống ABS, phụ kiện PEX, ProPress đồng) và lập ước tính tức thời.',
+    t_principles: '◆ Nguyên tắc cốt lõi và Tính bền vững',
+    list_principles: `
+        <li><strong>Đảm bảo Tuân thủ:</strong> Nghiêm ngặt tuyệt đối theo các quy định của CSLB và Bộ luật Đường ống Thống nhất (UPC), phối hợp trực tiếp với các thanh tra thành phố để đảm bảo thông qua ngay lần đầu.</li>
+        <li><strong>Kỹ thuật bền vững:</strong> Giảm thiểu dấu chân sinh thái thông qua thiết kế hệ thống nước hiệu quả, tối ưu hóa thủy lực và tái sử dụng nước.</li>
+        <li><strong>Chính trực & Minh bạch:</strong> Triển khai mô hình định giá "Tốt, Tốt hơn, Tốt nhất" (GBB) trong ORION Price Book v6.0 PRO, mang lại sự rõ ràng tuyệt đối về đơn giá.</li>
+    `,
+    cta_title: 'Bạn có muốn lên lịch tư vấn kỹ thuật trực tiếp không?',
+    cta_desc: 'Trao đổi trực tiếp với Kỹ sư Alex Espinosa Morales cho các dự án tư vấn môi trường, thiết kế thủy lực hoặc thay thế đường ống tại Vùng Vịnh.',
+    btn_call: '📞 Gọi (669) 234-2444',
+    btn_cv: '📄 Xem Sơ yếu Lý lịch Đầy đủ',
+    btn_pb: '📐 Mở Bảng Giá',
+    meta_loc: '<strong>Vị trí:</strong> San Jose, California',
+    meta_lic: '<strong>Giấy phép CSLB:</strong> C-36 #1109100',
+    meta_edu: '<strong>Kỹ thuật:</strong> Đại học Tự do, 2004',
+    meta_tel: '<strong>Điện thoại:</strong> (669) 234-2444',
+    meta_email: '<strong>Email:</strong> moralesplumbing026@gmail.com'
+  }
+};
+
+function setCEOLang(lang) {
+  const t = CEO_T[lang] || CEO_T.es;
+  const s = (id) => document.getElementById(id);
+  const h = (id, val) => { const el = s(id); if(el) el.innerHTML = val; };
+  
+  h('ceo-badge', t.badge);
+  h('ceo-sub', t.sub);
+  h('ceo-bio', t.bio);
+  h('stat1', t.stat1);
+  h('stat2', t.stat2);
+  h('stat3', t.stat3);
+  h('t-vision', t.t_vision);
+  h('list-vision', t.list_vision);
+  h('t-innovation', t.t_innovation);
+  h('sub1-title', t.sub1_title);
+  h('sub1-desc', t.sub1_desc);
+  h('sub2-title', t.sub2_title);
+  h('sub2-desc', t.sub2_desc);
+  h('t-principles', t.t_principles);
+  h('list-principles', t.list_principles);
+  h('cta-title', t.cta_title);
+  h('cta-desc', t.cta_desc);
+  h('btn-call', t.btn_call);
+  h('btn-cv', t.btn_cv);
+  h('btn-pb', t.btn_pb);
+  
+  h('meta-loc', t.meta_loc);
+  h('meta-lic', t.meta_lic);
+  h('meta-edu', t.meta_edu);
+  h('meta-tel', t.meta_tel);
+  h('meta-email', t.meta_email);
+
+  // Toggle button active state
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  localStorage.setItem('ceo_lang', lang);
+}
+
+// Initialize based on local storage
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('morales_lang') || localStorage.getItem('ceo_lang') || 'es';
+  setCEOLang(saved);
+});
+</script>
+</body>
+</html>

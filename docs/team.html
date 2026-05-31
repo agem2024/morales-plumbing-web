@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liderazgo & Equipo — Morales Plumbing | ORION</title>
+    <meta name="description" content="Conoce al equipo ejecutivo y administrativo de Morales Plumbing: 21 años liderando la ingeniería de plomería en el Área de la Bahía de California.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../universe.css">
+    <style>
+        :root {
+            --cyan: #00f5ff;
+            --orange: #ff8c00;
+            --dark: #030712;
+            --card: rgba(8, 14, 32, 0.72);
+            --border: rgba(255,255,255,0.1);
+            --text: #d9e8f0;
+            --dim: rgba(217,232,240,0.6);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--dark); color: var(--text); font-family: 'Inter', sans-serif; min-height: 100vh; padding-bottom: 5rem; }
+
+        /* ── NAV ── */
+        .top-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: .75rem 2rem;
+            background: rgba(3,7,18,.88); backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+        .top-nav a { color: var(--orange); text-decoration: none; font-family: 'Orbitron', monospace; font-size: .8rem; letter-spacing: .1em; transition: .2s; }
+        .top-nav a:hover { color: var(--cyan); }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { color: var(--dim); font-size: .78rem; }
+        .nav-links a:hover { color: var(--cyan); }
+
+        /* ── HERO BANNER ── */
+        .hero-banner {
+            margin-top: 56px;
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+            display: flex; align-items: flex-end;
+        }
+        .hero-banner img.hero-bg {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center 20%;
+            filter: brightness(.45) saturate(.8);
+        }
+        .hero-banner::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 40%, var(--dark) 100%),
+                        linear-gradient(90deg, rgba(0,245,255,.08) 0%, transparent 60%);
+        }
+        .hero-text {
+            position: relative; z-index: 2;
+            padding: 2.5rem 3rem;
+            width: 100%;
+        }
+        .hero-label {
+            font-family: 'Orbitron', monospace;
+            font-size: .72rem; font-weight: 700;
+            letter-spacing: .3em; color: var(--cyan);
+            text-transform: uppercase; margin-bottom: .6rem;
+        }
+        .hero-title {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 900; letter-spacing: .08em;
+            background: linear-gradient(135deg, #fff 0%, var(--cyan) 60%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 20px rgba(0,245,255,.4));
+            margin-bottom: .5rem;
+        }
+        .hero-sub {
+            font-size: 1rem; color: var(--dim); max-width: 560px; line-height: 1.7;
+        }
+
+        /* ── MAIN WRAP ── */
+        .page-wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+        /* ── SECTION TITLE ── */
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 900; letter-spacing: .18em; text-transform: uppercase;
+            color: #fff; margin-bottom: .5rem;
+        }
+        .section-header p { color: var(--dim); font-size: .95rem; line-height: 1.7; }
+        .divider {
+            width: 200px; height: 2px; margin: .8rem auto 0;
+            background: linear-gradient(90deg, transparent, var(--cyan), var(--orange), transparent);
+            border-radius: 2px;
+        }
+
+        /* ── CEO CARD (HERO) ── */
+        .ceo-section {
+            display: grid; grid-template-columns: 400px 1fr; gap: 3rem;
+            align-items: start; margin-bottom: 4rem;
+        }
+        .ceo-photo-wrap { position: relative; }
+        .ceo-photo-wrap img {
+            width: 100%; border-radius: 20px;
+            box-shadow: 0 0 60px rgba(0,245,255,.2), 0 20px 60px rgba(0,0,0,.5);
+            border: 1px solid rgba(0,245,255,.2);
+        }
+        .ceo-badge {
+            position: absolute; bottom: -16px; left: 50%; transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--cyan), #006aad);
+            color: #000; font-family: 'Orbitron', monospace;
+            font-size: .7rem; font-weight: 900; letter-spacing: .2em;
+            padding: .45rem 1.5rem; border-radius: 50px;
+            white-space: nowrap; text-transform: uppercase;
+            box-shadow: 0 4px 20px rgba(0,245,255,.4);
+        }
+
+        .ceo-info { padding-top: .5rem; }
+        .ceo-name {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 900; letter-spacing: .08em;
+            background: linear-gradient(135deg, #fff, var(--cyan));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: .25rem;
+        }
+        .ceo-title {
+            font-family: 'Orbitron', monospace; font-size: .82rem;
+            color: var(--orange); letter-spacing: .18em; text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .ceo-bio {
+            font-size: 1rem; line-height: 1.9; color: var(--text);
+            margin-bottom: 1.8rem; border-left: 3px solid var(--cyan);
+            padding-left: 1.2rem;
+        }
+        .ceo-stats {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+            margin-bottom: 1.8rem;
+        }
+        .stat-box {
+            background: rgba(0,245,255,.06); border: 1px solid rgba(0,245,255,.18);
+            border-radius: 12px; padding: 1rem; text-align: center;
+        }
+        .stat-num {
+            font-family: 'Orbitron', monospace; font-size: 1.6rem; font-weight: 900;
+            color: var(--cyan); line-height: 1;
+        }
+        .stat-label { font-size: .76rem; color: var(--dim); margin-top: .3rem; letter-spacing: .05em; }
+        .ceo-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+        .ctag {
+            font-size: .78rem; padding: .28rem .8rem; border-radius: 50px;
+            background: rgba(255,140,0,.08); border: 1px solid rgba(255,140,0,.25);
+            color: var(--text);
+        }
+
+        /* ── ORG CHART ── */
+        .org-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+        .org-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; overflow: hidden;
+            backdrop-filter: blur(12px);
+            transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+            position: relative;
+        }
+        .org-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+        }
+        .org-card.cyan::before { background: linear-gradient(90deg, var(--cyan), transparent); }
+        .org-card.orange::before { background: linear-gradient(90deg, var(--orange), transparent); }
+        .org-card.mixed::before { background: linear-gradient(90deg, var(--cyan), var(--orange)); }
+        .org-card:hover { transform: translateY(-6px); border-color: rgba(0,245,255,.25); box-shadow: 0 16px 50px rgba(0,0,0,.4); }
+
+        .org-card-img {
+            width: 100%; height: 180px; object-fit: cover;
+            filter: brightness(.65) saturate(.7);
+        }
+        .org-card-img-placeholder {
+            width: 100%; height: 180px;
+            background: linear-gradient(135deg, rgba(0,245,255,.1), rgba(255,140,0,.1));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3rem;
+        }
+        .org-card-body { padding: 1.4rem; }
+        .org-role {
+            font-family: 'Orbitron', monospace; font-size: .68rem;
+            font-weight: 700; letter-spacing: .25em; color: var(--cyan);
+            text-transform: uppercase; margin-bottom: .35rem;
+        }
+        .org-role.org { color: var(--orange); }
+        .org-name { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: .5rem; }
+        .org-dept { font-size: .82rem; color: var(--dim); margin-bottom: .8rem; }
+        .org-desc { font-size: .88rem; line-height: 1.75; color: var(--text); }
+
+        /* ── VALUES ── */
+        .values-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem;
+            margin-bottom: 4rem;
+        }
+        .value-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 1.5rem 1.2rem; text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform .3s ease;
+        }
+        .value-card:hover { transform: translateY(-4px); }
+        .value-icon { font-size: 2.2rem; margin-bottom: .8rem; display: block; }
+        .value-title {
+            font-family: 'Orbitron', monospace; font-size: .75rem;
+            font-weight: 700; letter-spacing: .2em; color: var(--cyan);
+            text-transform: uppercase; margin-bottom: .5rem;
+        }
+        .value-desc { font-size: .85rem; line-height: 1.7; color: var(--dim); }
+
+        /* ── CONTACT CTA ── */
+        .cta-strip {
+            background: var(--card); border: 1px solid rgba(0,245,255,.18);
+            border-radius: 18px; padding: 2.5rem 3rem;
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 2rem; backdrop-filter: blur(12px);
+            position: relative; overflow: hidden;
+        }
+        .cta-strip::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 10% 50%, rgba(0,245,255,.06), transparent 60%);
+            pointer-events: none;
+        }
+        .cta-text h3 {
+            font-family: 'Orbitron', monospace; font-size: 1.1rem;
+            color: #fff; letter-spacing: .1em; margin-bottom: .4rem;
+        }
+        .cta-text p { color: var(--dim); font-size: .9rem; }
+        .cta-btns { display: flex; gap: .8rem; flex-shrink: 0; flex-wrap: wrap; }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--cyan), #006aad); color: #000;
+            text-decoration: none; padding: .7rem 1.6rem; border-radius: 50px;
+            font-family: 'Orbitron', monospace; font-size: .78rem; font-weight: 900;
+            letter-spacing: .08em; transition: .2s; white-space: nowrap;
+        }
+        .btn-primary:hover { opacity: .85; transform: scale(1.03); }
+        .btn-outline {
+            border: 1px solid var(--orange); color: var(--orange);
+            text-decoration: none; padding: .7rem 1.6rem; border-radius: 50px;
+            font-family: 'Orbitron', monospace; font-size: .78rem; font-weight: 700;
+            letter-spacing: .08em; transition: .2s; white-space: nowrap;
+        }
+        .btn-outline:hover { background: rgba(255,140,0,.1); }
+
+        @media (max-width: 900px) {
+            .ceo-section { grid-template-columns: 1fr; }
+            .ceo-photo-wrap { max-width: 360px; margin: 0 auto 2rem; }
+            .org-grid { grid-template-columns: 1fr 1fr; }
+            .values-grid { grid-template-columns: 1fr 1fr; }
+            .cta-strip { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 580px) {
+            .org-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr 1fr; }
+            .hero-text { padding: 2rem 1.5rem; }
+            .ceo-stats { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="universe-canvas" data-universe-mode="galaxy-spin"></canvas>
+    <div class="universe-overlay u-variant-service"></div>
+    <script src="../universe.js"></script>
+
+    <!-- NAV -->
+    <nav class="top-nav">
+        <a href="../index.html">← MORALES PLUMBING</a>
+        <div class="nav-links">
+            <a href="cv.html">CV</a>
+            <a href="pricebook.html">Price Book</a>
+            <a href="service.html">Servicios</a>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <div class="hero-banner">
+        <img class="hero-bg" src="../assets/ceo_photo.png" alt="Alex Espinosa Morales CEO">
+        <div class="hero-text">
+            <div class="hero-label">◆ Morales Plumbing · ORION Division</div>
+            <h1 class="hero-title">LIDERAZGO &amp; EQUIPO</h1>
+            <p class="hero-sub">21 años de ingeniería, innovación e integridad construyendo el estándar de plomería técnica en el Área de la Bahía de California.</p>
+        </div>
+    </div>
+
+    <div class="page-wrap">
+
+        <!-- CEO SECTION -->
+        <div class="section-header" style="margin-top:1rem">
+            <h2>DIRECTOR EJECUTIVO</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="ceo-section">
+            <div class="ceo-photo-wrap">
+                <img src="../assets/ceo_photo.png" alt="Alex G. Espinosa Morales — CEO Morales Plumbing">
+                <div class="ceo-badge">CEO &amp; Chief Engineer</div>
+            </div>
+
+            <div class="ceo-info">
+                <div class="ceo-name">ALEX G. ESPINOSA MORALES</div>
+                <div class="ceo-title">Fundador · Chief Engineer · AI Solutions Architect</div>
+
+                <p class="ceo-bio">
+                    Alex G. Espinosa Morales es Ingeniero Ambiental egresado de la Universidad Libre Seccional Pereira (Colombia, 2004) y fundador de Morales Plumbing, con sede en San Jose, California. Con más de <strong>21 años de experiencia multidisciplinaria</strong>, ha liderado proyectos de infraestructura hidráulica en Colombia y California — desde el diseño de plantas de tratamiento de aguas residuales hasta el repiping completo de edificios multifamiliares bajo los estándares CSLB C-36 y el Código Uniforme de Plomería (UPC).<br><br>
+                    Pionero en la integración de inteligencia artificial en la industria de la plomería técnica, desarrolló el sistema ORION: una plataforma multi-agente que automatiza cotizaciones, gestión de proyectos e inspecciones usando IA, visión computacional y modelos de lenguaje avanzados. Su visión es posicionar a Morales Plumbing como el estándar global de ingeniería sostenible e innovación técnica.
+                </p>
+
+                <div class="ceo-stats">
+                    <div class="stat-box">
+                        <div class="stat-num">21+</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num">500+</div>
+                        <div class="stat-label">Proyectos Ejecutados</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num">100%</div>
+                        <div class="stat-label">Cumplimiento de Código</div>
+                    </div>
+                </div>
+
+                <div class="ceo-tags">
+                    <span class="ctag">CSLB C-36 #1109100</span>
+                    <span class="ctag">ISO 14001 Auditor</span>
+                    <span class="ctag">AI Solutions Architect</span>
+                    <span class="ctag">UPC Compliance</span>
+                    <span class="ctag">PEX · ABS · ProPress</span>
+                    <span class="ctag">Bilingüe EN / ES</span>
+                    <span class="ctag">AutoCAD · ArcGIS</span>
+                    <span class="ctag">San Jose, CA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ORG / ADMIN STRUCTURE -->
+        <div class="section-header">
+            <h2>ESTRUCTURA ADMINISTRATIVA</h2>
+            <p>Equipo de operaciones, tecnología y gestión de proyectos de Morales Plumbing</p>
+            <div class="divider"></div>
+        </div>
+
+        <div class="org-grid">
+
+            <div class="org-card mixed">
+                <img src="../assets/ceo_tech.png" alt="Director de Tecnología" class="org-card-img">
+                <div class="org-card-body">
+                    <div class="org-role">◆ Dirección General</div>
+                    <div class="org-name">Alex G. Espinosa M.</div>
+                    <div class="org-dept">CEO · Chief Engineer · AI Architect</div>
+                    <div class="org-desc">Supervisión integral de operaciones, ingeniería y estrategia digital. Responsable de la visión técnica y comercial de la empresa bajo licencia CSLB C-36 #1109100.</div>
+                </div>
+            </div>
+
+            <div class="org-card cyan">
+                <div class="org-card-img-placeholder">🤖</div>
+                <div class="org-card-body">
+                    <div class="org-role">◆ División IA · ORION</div>
+                    <div class="org-name">Sistema ORION</div>
+                    <div class="org-dept">Plataforma de Automatización con IA</div>
+                    <div class="org-desc">Motor de cotización GBB, asistente Joe AI, gestión de inventario y estimación computacional. Integrado en WhatsApp y plataforma web multilingüe EN/ES/ZH/TL/VI.</div>
+                </div>
+            </div>
+
+            <div class="org-card orange">
+                <img src="../assets/admin_ops.png" alt="Operaciones" class="org-card-img">
+                <div class="org-card-body">
+                    <div class="org-role org">◆ Operaciones de Campo</div>
+                    <div class="org-name">Equipo Técnico</div>
+                    <div class="org-dept">Plomeros Certificados · Bay Area, CA</div>
+                    <div class="org-desc">Técnicos especializados en repiping, instalación de calentadores, sistemas ABS/PEX/Cobre y detección de fugas. Certificados y coordinados bajo protocolos UPC.</div>
+                </div>
+            </div>
+
+            <div class="org-card cyan">
+                <div class="org-card-img-placeholder">📊</div>
+                <div class="org-card-body">
+                    <div class="org-role">◆ Gestión de Proyectos</div>
+                    <div class="org-name">Project Management</div>
+                    <div class="org-dept">Coordinación y Supervisión de Obra</div>
+                    <div class="org-desc">Planificación, cotización con sistema GBB (Bueno / Mejor / Excelente), seguimiento de inspecciones municipales y entrega de documentación AS-BUILT.</div>
+                </div>
+            </div>
+
+            <div class="org-card orange">
+                <div class="org-card-img-placeholder">⚖️</div>
+                <div class="org-card-body">
+                    <div class="org-role org">◆ Cumplimiento Regulatorio</div>
+                    <div class="org-name">Compliance &amp; Legal</div>
+                    <div class="org-dept">CSLB · UPC · OSHA · Cal/OSHA</div>
+                    <div class="org-desc">Auditoría de cumplimiento, manejo de permisos de construcción, coordinación con inspectores municipales y seguimiento de regulaciones CSLB y estatales.</div>
+                </div>
+            </div>
+
+            <div class="org-card mixed">
+                <div class="org-card-img-placeholder">🌱</div>
+                <div class="org-card-body">
+                    <div class="org-role">◆ Ingeniería Ambiental</div>
+                    <div class="org-name">División Sostenible</div>
+                    <div class="org-dept">ISO 14001 · Tecnologías Verdes</div>
+                    <div class="org-desc">Diseño de sistemas de agua eficientes, recolección de agua de lluvia, calentadores híbridos de bomba de calor y soluciones de bajo impacto ambiental certificadas ISO 14001.</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- VALORES CORPORATIVOS -->
+        <div class="section-header">
+            <h2>VALORES CORPORATIVOS</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <span class="value-icon">🎯</span>
+                <div class="value-title">Precisión</div>
+                <div class="value-desc">Cada proyecto se ejecuta bajo estándares CSLB y UPC con tolerancia cero a errores de código.</div>
+            </div>
+            <div class="value-card">
+                <span class="value-icon">🤝</span>
+                <div class="value-title">Integridad</div>
+                <div class="value-desc">Transparencia total en cotizaciones, materiales y procesos. Precio justo garantizado bajo sistema GBB.</div>
+            </div>
+            <div class="value-card">
+                <span class="value-icon">🚀</span>
+                <div class="value-title">Innovación</div>
+                <div class="value-desc">Primeros en el sector en integrar IA para estimación, diagnóstico y gestión de proyectos de plomería.</div>
+            </div>
+            <div class="value-card">
+                <span class="value-icon">🌿</span>
+                <div class="value-title">Sostenibilidad</div>
+                <div class="value-desc">Soluciones de ingeniería ambiental que reducen el consumo de agua y optimizan el ciclo de vida de los sistemas.</div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-strip">
+            <div class="cta-text">
+                <h3>¿LISTO PARA TRABAJAR CON NOSOTROS?</h3>
+                <p>Cotizaciones sin costo · Respuesta en menos de 2 horas · San Jose, CA y Bay Area</p>
+            </div>
+            <div class="cta-btns">
+                <a href="tel:+16692342444" class="btn-primary">📞 (669) 234-2444</a>
+                <a href="pricebook.html" class="btn-outline">Ver Price Book</a>
+                <a href="cv.html" class="btn-outline">Ver CV</a>
+            </div>
+        </div>
+
+    </div><!-- /page-wrap -->
+
+</body>
+</html>

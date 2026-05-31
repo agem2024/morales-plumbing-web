@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A Technical Hub | Morales Plumbing</title>
+    <meta name="description" content="Technical Answer Hub and Ecological Consulting by Morales Plumbing. CSLB C-36 and UPC Uniform Plumbing Code compliance.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../universe.css">
+    <style>
+        :root {
+            --cyan: #00f5ff;
+            --orange: #ff8c00;
+            --dark: #030712;
+            --card: rgba(8, 14, 36, 0.45);
+            --border: #000000;
+            --text: #d9e8f0;
+            --dim: rgba(217,232,240,0.6);
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('../assets/Q&A%20%20Technical%20Hub.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ── NAV BAR ── */
+        .faq-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: .8rem 2rem;
+            background: rgba(3, 7, 18, 0.9);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 3px solid #000000; /* Cartoon border */
+            box-shadow: 0 4px 0px rgba(0, 0, 0, 0.15);
+        }
+        .faq-nav a {
+            color: var(--orange);
+            text-decoration: none;
+            font-family: 'Orbitron', monospace;
+            font-size: .85rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            transition: all .2s ease;
+        }
+        .faq-nav a:hover {
+            color: var(--cyan);
+            text-shadow: 0 0 8px var(--cyan);
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        .lang-btn {
+            background: none;
+            border: 2px solid #000000; /* Thick outline */
+            border-radius: 50px;
+            padding: .3rem .55rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all .2s ease;
+            line-height: 1;
+            box-shadow: 2px 2px 0px #000000; /* Cartoon shadow */
+        }
+        .lang-btn:hover {
+            border-color: var(--cyan);
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 3px 3px 0px #000000;
+        }
+        .lang-btn.active {
+            border-color: var(--cyan);
+            background: rgba(0, 245, 255, 0.15);
+        }
+
+        /* ── HERO SECTION ── */
+        .faq-hero {
+            padding: 150px 20px 50px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0, 245, 255, 0.08) 0%, transparent 70%);
+        }
+
+        .faq-hero .graffiti-3d-metallic {
+            font-family: 'Black Ops One', cursive !important;
+            text-transform: uppercase;
+            font-weight: 900;
+            display: inline-block;
+            position: relative;
+            background: linear-gradient(to bottom, 
+                #ffffff 0%, 
+                #00f5ff 55%, 
+                #ff8c00 100%
+            ) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            letter-spacing: 1px !important;
+            filter: 
+                drop-shadow(1.5px 1.5px 0px #000000) 
+                drop-shadow(3px 3px 0px rgba(0, 245, 255, 0.35)) 
+                drop-shadow(0 0 15px rgba(0, 245, 255, 0.45)) !important;
+            transform: skew(-10deg, -2deg);
+            line-height: 1.1;
+        }
+
+        .faq-subtitle {
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 600px;
+            margin: 1.2rem auto 0;
+            font-size: 1.15rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.1);
+        }
+
+        /* ── GRID SYSTEM ── */
+        .faq-grid {
+            max-width: 1000px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+            display: grid;
+            gap: 50px;
+        }
+
+        .faq-category {
+            margin-top: 20px;
+        }
+
+        .faq-category h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ffffff;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            border: 3px solid #000000; /* Cartoon border */
+            background: rgba(255, 140, 0, 0.12);
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 12px;
+            box-shadow: 5px 5px 0px #000000; /* Comic shadow */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transform: rotate(-1deg); /* Slight cartoon tilt */
+        }
+
+        /* ── CARTOON / COMIC STYLED BOXES ── */
+        .faq-item {
+            background: var(--card);
+            border: 3.5px solid #000000; /* Thick solid comic outline */
+            border-radius: 18px;
+            padding: 35px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy cartoon physics */
+            box-shadow: 
+                6px 6px 0px #000000, /* Primary solid black shadow */
+                10px 10px 0px rgba(0, 245, 255, 0.3); /* Offset cian shadow */
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .faq-item:hover {
+            background: rgba(12, 22, 50, 0.58);
+            border-color: var(--cyan); /* Turns electric cian on hover */
+            transform: translate(-6px, -6px); /* Moves diagonally up-left */
+            box-shadow: 
+                12px 12px 0px #000000, 
+                18px 18px 0px var(--orange); /* Dynamic offset orange shadow */
+        }
+
+        .faq-item h3 {
+            color: #ffffff;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .faq-item h3::before {
+            content: '?';
+            background: var(--orange);
+            color: #000000;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 0.95rem;
+            font-weight: 900;
+            border: 2.5px solid #000000; /* Comic outline */
+            box-shadow: 2px 2px 0px #000000; /* Comic shadow */
+            flex-shrink: 0;
+        }
+
+        .faq-item p {
+            color: #e2eff5;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+
+        .copyright-tag {
+            text-align: center;
+            padding: 50px 20px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 2px;
+            border-top: 3px solid #000000;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media(max-width: 640px) {
+            .faq-nav {
+                padding: .8rem 1rem;
+            }
+            .faq-hero {
+                padding: 130px 15px 45px;
+            }
+            .faq-grid {
+                gap: 30px;
+            }
+            .faq-category h2 {
+                font-size: 1.15rem;
+                padding: 8px 16px;
+            }
+            .faq-item {
+                padding: 25px 20px;
+                border-width: 3px;
+                box-shadow: 4px 4px 0px #000000, 7px 7px 0px rgba(0, 245, 255, 0.3);
+            }
+            .faq-item:hover {
+                transform: translate(-4px, -4px);
+                box-shadow: 8px 8px 0px #000000, 12px 12px 0px var(--orange);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- UNIVERSE BACKGROUND -->
+    <canvas id="universe-canvas" data-universe-mode="matrix-stars"></canvas>
+    <div class="universe-overlay u-variant-info"></div>
+    <script src="../universe.js"></script>
+
+    <!-- NAV BAR -->
+    <nav class="faq-nav">
+        <a href="../index.html">← HOME</a>
+        <div class="nav-right">
+            <button class="lang-btn" data-lang="en" onclick="setLanguage('en')" title="English">🇺🇸</button>
+            <button class="lang-btn" data-lang="es" onclick="setLanguage('es')" title="Español">🇲🇽</button>
+            <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')" title="中文">🇨🇳</button>
+            <button class="lang-btn" data-lang="tl" onclick="setLanguage('tl')" title="Tagalog">🇵🇭</button>
+            <button class="lang-btn" data-lang="vi" onclick="setLanguage('vi')" title="Tiếng Việt">🇻🇳</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="faq-hero">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+            <img src="../assets/comic_catalog.png" alt="FAQ Icon" style="width: 100px; height: 100px; filter: drop-shadow(0 0 15px var(--cyan));">
+            <h1 data-i18n="faq_title" class="graffiti-3d-metallic" style="font-size: 4.5rem; margin-bottom: 0;">Q&A | Technical Hub</h1>
+        </div>
+        <p class="faq-subtitle" data-i18n="pb_hero_subtitle">Professional Plumbing Services | Bay Area, CA</p>
+    </section>
+
+    <!-- GRID -->
+    <div class="faq-grid">
+        <!-- PLUMBING CATEGORY -->
+        <div class="faq-category">
+            <h2 data-i18n="faq_cat_plumbing">Plumbing Systems &amp; Engineering</h2>
+            
+            <div class="faq-item">
+                <h3 data-i18n="faq_q1">Why use copper instead of PEX for new construction?</h3>
+                <p data-i18n="faq_a1">Copper provides superior durability, fire resistance, and prevents bacterial growth. Under California UPC, it remains the gold standard for high-end value.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 data-i18n="faq_q6">How does Morales Plumbing ensure UPC (Uniform Plumbing Code) compliance?</h3>
+                <p data-i18n="faq_a6">Our engineers are CSLB C-36 certified and utilize AI-assisted code-check protocols to ensure every joint and slope exceeds California's rigorous safety standards.</p>
+            </div>
+        </div>
+
+        <!-- ECO-PLUMBING MIX -->
+        <div class="faq-category">
+            <h2 data-i18n="faq_cat_eco">Eco-Plumbing Mix &amp; Lean Process</h2>
+            
+            <div class="faq-item">
+                <h3 data-i18n="faq_q3">How does Lean Process reduce plumbing costs?</h3>
+                <p data-i18n="faq_a3">By eliminating waste in material transport and inventory, we reduce project timelines by 25%, passing the savings to the client without compromising quality.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 data-i18n="faq_q7">What specific 'Lean' metrics do you track?</h3>
+                <p data-i18n="faq_a7">We track Takt Time (production rate), Lead Time (order to completion), and First-Pass Yield (quality rate). This ensures a predictable, zero-waste workflow for large-scale projects.</p>
+            </div>
+        </div>
+
+        <!-- ENVIRONMENTAL / REGULATORY -->
+        <div class="faq-category">
+            <h2 data-i18n="faq_cat_env">Environmental Regulations &amp; 2026 Standards</h2>
+            
+            <div class="faq-item">
+                <h3 data-i18n="faq_q2">What are California's septic regulations for 2026?</h3>
+                <p data-i18n="faq_a2">Regulations focus on nitrogen reduction and groundwater protection. Morales Plumbing engineering ensures 100% compliance with local Water Board mandates.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 data-i18n="faq_q8">How can I future-proof my home infrastructure for upcoming environmental laws?</h3>
+                <p data-i18n="faq_a8">By integrating water harvesting and greywater reuse systems today, you avoid future retrofitting mandates and increase your property value by up to 15% through sustainable certification.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="copyright-tag">
+        © 2026 MORALES PLUMBING • ALL RIGHTS RESERVED • CSLB C-36 • ENVIRONMENTAL ENGINEERING
+    </div>
+
+    <script src="../app.js"></script>
+    <script>
+        // Sync language from localStorage on load
+        window.addEventListener('load', () => {
+            const savedLang = localStorage.getItem('morales_lang') || 'es';
+            if (typeof setLanguage === 'function') {
+                setLanguage(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>

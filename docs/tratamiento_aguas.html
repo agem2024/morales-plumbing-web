@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Treatment Systems | ORION Ecosystem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body { background-color: var(--dark-bg); color: #fff; overflow-x: hidden; }
+        .page-content { padding: 4rem 10%; max-width: 1200px; margin: 0 auto; }
+        .hero-title { font-family: 'Orbitron', sans-serif; font-size: 3rem; color: var(--neon-cyan); margin-bottom: 2rem; }
+        .sub-header { color: var(--neon-orange); font-family: 'Orbitron', sans-serif; letter-spacing: 2px; margin-bottom: 3rem; }
+        .info-section { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 24px; margin-bottom: 2rem; }
+        .back-nav { padding: 1rem 5%; background: rgba(0,0,0,0.5); border-bottom: 1px solid var(--glass-border); display: flex; justify-content: space-between; }
+        .btn-back { color: var(--neon-cyan); text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; }
+    </style>
+    <link rel="stylesheet" href="../universe.css">
+</head>
+<body>
+    <!-- UNIVERSE BACKGROUND -->
+    <canvas id="universe-canvas" data-universe-mode="nebula"></canvas>
+    <div class="universe-overlay u-variant-service"></div>
+    <script src="../universe.js"></script>
+
+    <div class="back-nav">
+        <a href="../index.html" class="btn-back" data-i18n="back_home">< BACK TO HOME</a>
+        <div class="language-switcher">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+            <button class="lang-btn" data-lang="zh">ZH</button>
+            <button class="lang-btn" data-lang="tl">TL</button>
+            <button class="lang-btn" data-lang="vi">VI</button>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <h1 class="hero-title" data-i18n="app_tratamiento_title">Sistemas de Tratamiento de Aguas</h1>
+        <p class="sub-header">ORION AQUA GUARD v1.0</p>
+        
+        <div class="info-section">
+            <p data-i18n="app_tratamiento_detail">La aplicación de Tratamiento de Aguas gestiona ciclos avanzados de filtración y purificación. Proporciona datos en tiempo real sobre la dureza del agua, los niveles de pH y la eficiencia de eliminación de contaminantes, permitiendo el mantenimiento predictivo de sistemas de ósmosis inversa industriales.</p>
+        </div>
+    </div>
+
+    <script src="../config.js"></script>
+    <script src="../app.js"></script>
+</body>
+</html>

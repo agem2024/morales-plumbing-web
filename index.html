@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morales Plumbing | Elite Intelligent Infrastructure</title>
+    <meta name="description" content="Innovación tecnológica en plomería liderada por Alex Espinosa. Soluciones inteligentes, IA integrada — San Jose, CA.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rajdhani:wght@700&family=Space+Grotesk:wght@300;400;700&family=Inter:wght@300;400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Immersive 3D Space Background -->
+    <div id="space-background">
+        <div class="layer layer-1"></div>
+        <div class="layer layer-2"></div>
+        <div class="layer layer-3"></div>
+    </div>
+
+    <!-- Warp Speed Canvas — full screen, z-index 3 -->
+    <canvas id="warp-canvas"></canvas>
+
+    <!-- Background layers (Space/Water ripple) handled above -->
+
+
+    <header>
+        <nav>
+            <div class="logo-container" onclick="navigate('home')">
+                <video autoplay muted loop class="nav-logo" playsinline>
+                    <source src="assets/morales_logo_video.mp4" type="video/mp4">
+                </video>
+                <div class="brand-info">
+                    <span class="brand-name">MORALES PLUMBING</span>
+                    <span class="brand-tag">AI-INTEGRATED SERVICES</span>
+                </div>
+            </div>
+
+            <!-- Eye video — between brand and nav links -->
+            <video autoplay muted loop class="nav-eye-video" id="eye-trigger" playsinline onclick="toggleCompanyCard()">
+                <source src="assets/bg_eye.mp4" type="video/mp4">
+            </video>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="active" data-i18n="nav_nexus" onclick="navigate('home'); return false;">Nexus</a></li>
+                <li><a href="#ecosystem" data-i18n="nav_orion" onclick="navigate('ecosystem'); return false;">Ecosistema</a></li>
+                <li><a href="#services" data-i18n="nav_services" onclick="navigate('services'); return false;">Servicios</a></li>
+                <li><a href="docs/faq.html" data-i18n="faq_title">FAQ</a></li>
+                <li><a href="#multimedia" data-i18n="nav_multimedia" onclick="navigate('multimedia'); return false;">Multimedia</a></li>
+                <li><a href="#about" data-i18n="nav_about" onclick="navigate('about'); return false;">Misión</a></li>
+                <li><a href="#contact" data-i18n="nav_terminal" onclick="navigate('contact'); return false;">Contacto</a></li>
+            </ul>
+
+            <div class="lang-selector">
+                <button class="lang-btn active" onclick="setLanguage('en')" data-lang="en">EN</button>
+                <button class="lang-btn" onclick="setLanguage('es')" data-lang="es">ES</button>
+                <button class="lang-btn" onclick="setLanguage('zh')" data-lang="zh">ZH</button>
+                <button class="lang-btn" onclick="setLanguage('tl')" data-lang="tl">TL</button>
+                <button class="lang-btn" onclick="setLanguage('vi')" data-lang="vi">VI</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME / NEXUS -->
+        <section id="home" class="page-section active">
+            <div class="hero-layout">
+                <!-- Left spacer (eye video occupies this area visually) -->
+                <div class="hero-left"></div>
+
+                <!-- CENTER: main hero content -->
+                <div class="hero-container">
+                    <div class="hero-badge" data-i18n="hero_badge">INFRAESTRUCTURA DE SIGUIENTE NIVEL</div>
+                    <!-- El título fue removido para usar la imagen de fondo -->
+                    <p class="hero-desc" data-i18n="hero_desc">Transformando la plomería tradicional en un ecosistema inteligente y sostenible mediante IA y diseño futurista.</p>
+                    <div class="hero-stats">
+                        <div class="stat"><span class="glow">2026</span><span data-i18n="stat_ready">Listo</span></div>
+                        <div class="stat"><span class="glow">100%</span><span data-i18n="stat_eco">Eco-Enfoque</span></div>
+                        <div class="stat"><span class="glow">IA</span><span data-i18n="stat_ai">Integrado</span></div>
+                    </div>
+                    <div class="hero-actions">
+                        <button onclick="navigate('ecosystem')" class="btn-primary-glow" data-i18n="hero_explore">Explorar Ecosistema</button>
+                        <button onclick="navigate('services')" class="btn-outline" data-i18n="nav_services">Servicios Pro</button>
+                    </div>
+                </div>
+
+                <!-- Right spacer (logo video occupies this visually) -->
+                <div class="hero-right"></div>
+            </div>
+        </section>
+        
+        <!-- ORION ECOSYSTEM -->
+        <section id="ecosystem" class="page-section">
+            <div class="section-title">
+                <h2 data-i18n="eco_title" class="graffiti-3d-metallic" style="font-size: 4rem;">Ecosistema ORION</h2>
+                <p data-i18n="eco_desc">Una suite unificada de aplicaciones de plomería inteligente diseñadas para la eficiencia profesional y la ingeniería de precisión.</p>
+            </div>
+            <div class="eco-grid">
+                <!-- Featured: Price Book -->
+                <div class="eco-card glass" data-app="pricebook">
+                    <div class="eco-card-img">
+                        <video autoplay muted loop playsinline>
+                            <source src="assets/pricebook_demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="pricebook_title" class="graffiti-3d-metallic">ORION Price Book v6.0 PRO</h3>
+                        <p data-i18n="pricebook_desc">Manual industrial con +100 servicios, niveles de precios y sistema de ventas integrado.</p>
+                        <div class="eco-actions">
+                            <a href="docs/pricebook.html" class="btn-eco-link" data-i18n="btn_open_app">Open App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 1: MP Plumbing Portal -->
+                <div class="eco-card glass" data-app="mp">
+                    <div class="eco-card-img">
+                        <img src="assets/app_mp.png" alt="MP Portal">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="app_mp_title">Portal MP Plumbing</h3>
+                        <p data-i18n="app_mp_desc">Puerta de enlace principal para solicitudes de servicio, seguimiento de proyectos y soporte inteligente.</p>
+                        <div class="eco-actions">
+                            <a href="https://ai.studio/apps/drive/1bMGhzGDqLL_aDfnSC78Ie_HnsF7b691I" target="_blank" class="btn-eco-link" data-i18n="btn_open_app">Open App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 2: EP Plumbing -->
+                <div class="eco-card glass" data-app="ep">
+                    <div class="eco-card-img">
+                        <img src="assets/app_ep_mockup.png" alt="EP Plumbing Mockup" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="app_ep_title">EP Plumbing (Estimator Pro)</h3>
+                        <p data-i18n="app_ep_desc">Sistema de estimación automatizado de alta precisión con costeo de materiales y optimización de márgenes.</p>
+                        <div class="eco-actions">
+                            <a href="https://ai.studio/apps/1a58c64e-2463-40ad-b1a5-9b7291ed3995" target="_blank" class="btn-eco-link" data-i18n="btn_open_app">Open App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 3: Podcast Library -->
+                <div class="eco-card glass" data-app="podcasts" style="border: 2px solid var(--primary-glow);">
+                    <div class="eco-card-img">
+                        <img src="assets/comic_ai.png" alt="ORION Podcasts">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="eco_podcasts_card_title" class="graffiti-3d-metallic">Biblioteca de Podcasts ORION</h3>
+                        <p data-i18n="eco_podcasts_card_desc">Audios interactivos de alta fidelidad y análisis críticos sobre la revolución de la IA en la infraestructura hídrica y los marcos de cumplimiento de California.</p>
+                        <div class="eco-actions">
+                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_open_podcasts">Escuchar Podcasts</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 4: Diseño de Redes -->
+                <div class="eco-card glass" data-app="redes">
+                    <div class="eco-card-img">
+                        <img src="assets/app_redes.png" alt="Hydraulic Design">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="app_redes_title">Diseño de Redes Hidráulicas</h3>
+                        <p data-i18n="app_redes_desc">Solución avanzada integrada en CAD para la planificación y simulación de infraestructuras hidráulicas.</p>
+                        <div class="eco-actions">
+                            <a href="docs/diseno_redes.html" class="btn-eco-link" data-i18n="btn_open_service">Ver Servicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 4: Tratamiento de Aguas -->
+                <div class="eco-card glass" data-app="tratamiento">
+                    <div class="eco-card-img">
+                        <img src="assets/app_tratamiento.png" alt="Water Treatment">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="app_tratamiento_title">Sistemas de Tratamiento de Aguas</h3>
+                        <p data-i18n="app_tratamiento_desc">Monitoreo y gestión inteligente de ciclos de filtración, purificación y entrega de agua blanda.</p>
+                        <div class="eco-actions">
+                            <a href="docs/tratamiento_aguas.html" class="btn-eco-link" data-i18n="btn_open_service">Ver Servicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 5: Water Heaters -->
+                <div class="eco-card glass" data-app="heaters">
+                    <div class="eco-card-img">
+                        <img src="assets/service_tankless.png" alt="Water Heaters">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="app_heaters_title">Calentadores de Agua Tankless</h3>
+                        <p data-i18n="app_heaters_desc">App de optimización y diagnóstico para instalaciones de calentadores de agua sin tanque.</p>
+                        <div class="eco-actions">
+                            <a href="docs/water_heaters.html" class="btn-eco-link" data-i18n="btn_open_service">Ver Servicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW ECOSYSTEM MODULES (High-Fidelity) -->
+                <!-- COPPER -->
+                <div class="eco-card glass" data-app="copper">
+                    <div class="eco-card-img">
+                        <img src="assets/service_copper_plumbing_1778369068107.png" alt="Copper Services">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="service_copper_title">Renovaciones en Cobre</h3>
+                        <p data-i18n="service_copper_desc">Instalaciones de cobre de alta precisión.</p>
+                        <div class="eco-actions">
+                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEPTIC -->
+                <div class="eco-card glass" data-app="septic">
+                    <div class="eco-card-img">
+                        <img src="assets/service_septic_system_1778369053481.png" alt="Septic Engineering">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="service_septic_title">Ingeniería Séptica</h3>
+                        <p data-i18n="service_septic_desc">Sistemas avanzados de tratamiento in-situ.</p>
+                        <div class="eco-actions">
+                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WATER REUSE -->
+                <div class="eco-card glass" data-app="water">
+                    <div class="eco-card-img">
+                        <img src="assets/service_water_reuse_1778369083950.png" alt="Water Harvesting">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="service_water_title">Recolección de Aguas</h3>
+                        <p data-i18n="service_water_desc">Captura y reutilización hídrica estratégica.</p>
+                        <div class="eco-actions">
+                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EXPANSION -->
+                <div class="eco-card glass" data-app="expansion">
+                    <div class="eco-card-img">
+                        <img src="assets/service_expansion_hydraulic_1778369313970.png" alt="System Expansions">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="service_expansion_title">Ampliaciones</h3>
+                        <p data-i18n="service_expansion_desc">Expansión estratégica de redes hidráulicas.</p>
+                        <div class="eco-actions">
+                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW CONSTRUCTION -->
+                <div class="eco-card glass" data-app="construction">
+                    <div class="eco-card-img">
+                        <img src="assets/service_new_construction_1778369331147.png" alt="New Construction">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="service_construction_title">Obra Nueva</h3>
+                        <p data-i18n="service_construction_desc">Ingeniería integral para nuevos edificios.</p>
+                        <div class="eco-actions">
+                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SMART REPAIR -->
+                <div class="eco-card glass" data-app="repair">
+                    <div class="eco-card-img">
+                        <img src="assets/service_smart_repair_1778369346415.png" alt="Smart Repair">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="service_repair_title">Reparación Smart</h3>
+                        <p data-i18n="service_repair_desc">Diagnóstico avanzado y reparación técnica.</p>
+                        <div class="eco-actions">
+                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ / Technical Hub Card -->
+                <div class="eco-card glass highlight-card" data-app="faq" style="border: 2px solid var(--primary);">
+                    <div class="eco-card-img">
+                        <img src="assets/service_faq_hub_1778369361208.png" alt="FAQ Hub">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="faq_title">Q&A | Technical Hub</h3>
+                        <p data-i18n="faq_cat_env">Regulaciones de California, Estándares de Plomería y Proceso Lean.</p>
+                        <div class="eco-actions">
+                            <a href="docs/faq.html" class="btn-eco-link" data-i18n="btn_catalog">Ver Centro FAQ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MULTIMEDIA: PODCASTS -->
+        <section id="multimedia" class="page-section">
+            <div class="section-title">
+                <h2 data-i18n="multimedia_title" class="graffiti-3d-metallic" style="font-size: 4rem;">Audio Overviews | Multimedia</h2>
+                <p data-i18n="multimedia_subtitle">Insights into AI Infrastructure & Engineering</p>
+            </div>
+            
+            <div class="podcast-grid">
+                <!-- Morales Plumbing (MP) Series -->
+                <div class="podcast-group glass">
+                    <div class="group-header">
+                        <img src="assets/app_mp.png" alt="MP" class="group-logo">
+                        <h3 data-i18n="mp_podcasts_title">MP Ecosystem Series</h3>
+                    </div>
+                    <div class="podcast-list">
+                        <div class="pod-item" id="item-mp_pod_1">
+                            <div class="pod-info">
+                                <span class="pod-badge deep-dive" data-i18n="pod_type_deep_dive">Deep Dive</span>
+                                <span class="pod-lang">EN</span>
+                                <h4 data-i18n="mp_pod_1_title">Silicon Valley AI transforms modern plumbing</h4>
+                            </div>
+                            <button class="pod-link pod-play-btn" data-audio="assets/podcasts/mp_pod_1.m4a" data-id="mp_pod_1" data-title-key="mp_pod_1_title" data-badge-key="pod_type_deep_dive" data-lang="EN" data-series="MP" onclick="playPodcast(this)">
+                                <span class="play-icon">▶</span> <span data-i18n="btn_listen">Listen Now</span>
+                            </button>
+                        </div>
+                        <div class="pod-item" id="item-mp_pod_2">
+                            <div class="pod-info">
+                                <span class="pod-badge brief" data-i18n="pod_type_brief">Brief</span>
+                                <span class="pod-lang">ES</span>
+                                <h4 data-i18n="mp_pod_2_title">AI for water leak prediction</h4>
+                            </div>
+                            <button class="pod-link pod-play-btn" data-audio="assets/podcasts/mp_pod_2.m4a" data-id="mp_pod_2" data-title-key="mp_pod_2_title" data-badge-key="pod_type_brief" data-lang="ES" data-series="MP" onclick="playPodcast(this)">
+                                <span class="play-icon">▶</span> <span data-i18n="btn_listen">Listen Now</span>
+                            </button>
+                        </div>
+                        <div class="pod-item" id="item-mp_pod_3">
+                            <div class="pod-info">
+                                <span class="pod-badge critique" data-i18n="pod_type_critique">Critique</span>
+                                <span class="pod-lang">EN</span>
+                                <h4 data-i18n="mp_pod_3_title">AI Diagnostics & Legal Liability</h4>
+                            </div>
+                            <button class="pod-link pod-play-btn" data-audio="assets/podcasts/mp_pod_3.m4a" data-id="mp_pod_3" data-title-key="mp_pod_3_title" data-badge-key="pod_type_critique" data-lang="EN" data-series="MP" onclick="playPodcast(this)">
+                                <span class="play-icon">▶</span> <span data-i18n="btn_listen">Listen Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Estimator Pro (EP) Series -->
+                <div class="podcast-group glass">
+                    <div class="group-header">
+                        <img src="assets/app_ep_mockup.png" alt="EP" class="group-logo">
+                        <h3 data-i18n="ep_podcasts_title">EP Estimator Pro Series</h3>
+                    </div>
+                    <div class="podcast-list">
+                        <div class="pod-item" id="item-ep_pod_1">
+                            <div class="pod-info">
+                                <span class="pod-badge deep-dive" data-i18n="pod_type_deep_dive">Deep Dive</span>
+                                <span class="pod-lang">ES</span>
+                                <h4 data-i18n="ep_pod_1_title">EP PLUMBING: Análisis Crítico</h4>
+                            </div>
+                            <button class="pod-link pod-play-btn" data-audio="assets/podcasts/ep_pod_1.m4a" data-id="ep_pod_1" data-title-key="ep_pod_1_title" data-badge-key="pod_type_deep_dive" data-lang="ES" data-series="EP" onclick="playPodcast(this)">
+                                <span class="play-icon">▶</span> <span data-i18n="btn_listen">Listen Now</span>
+                            </button>
+                        </div>
+                        <div class="pod-item" id="item-ep_pod_2">
+                            <div class="pod-info">
+                                <span class="pod-badge brief" data-i18n="pod_type_brief">Brief</span>
+                                <span class="pod-lang">EN</span>
+                                <h4 data-i18n="ep_pod_2_title">The AI plumber in your pocket</h4>
+                            </div>
+                            <button class="pod-link pod-play-btn" data-audio="assets/podcasts/ep_pod_2.m4a" data-id="ep_pod_2" data-title-key="ep_pod_2_title" data-badge-key="pod_type_brief" data-lang="EN" data-series="EP" onclick="playPodcast(this)">
+                                <span class="play-icon">▶</span> <span data-i18n="btn_listen">Listen Now</span>
+                            </button>
+                        </div>
+                        <div class="pod-item" id="item-ep_pod_3">
+                            <div class="pod-info">
+                                <span class="pod-badge debate" data-i18n="pod_type_debate">Debate</span>
+                                <span class="pod-lang">EN</span>
+                                <h4 data-i18n="ep_pod_3_title">Diagnostics & Legal Framework</h4>
+                            </div>
+                            <button class="pod-link pod-play-btn" data-audio="assets/podcasts/ep_pod_3.m4a" data-id="ep_pod_3" data-title-key="ep_pod_3_title" data-badge-key="pod_type_debate" data-lang="EN" data-series="EP" onclick="playPodcast(this)">
+                                <span class="play-icon">▶</span> <span data-i18n="btn_listen">Listen Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="page-section">
+            <div class="section-title">
+                <h2 data-i18n="services_title" class="graffiti-3d-metallic" style="font-size: 4rem;">Servicios de Ingeniería</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glass">
+                    <div class="icon">
+                        <img src="assets/comic_shield.png" alt="Thermal Diagnostic" style="width: 80px; height: 80px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
+                    </div>
+                    <h4 data-i18n="service_1">Diagnóstico por Termografía</h4>
+                    <p data-i18n="service_1_desc">Detección de fugas no invasiva mediante imágenes térmicas de alta resolución y sensores acústicos.</p>
+                    <a href="docs/eng_termografia.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
+                </div>
+                <div class="service-card glass">
+                    <div class="icon">
+                        <img src="assets/comic_eco.png" alt="Eco Retrofit" style="width: 80px; height: 80px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
+                    </div>
+                    <h4 data-i18n="service_2">Eco-Retrofitting</h4>
+                    <p data-i18n="service_2_desc">Modernización de sistemas con materiales eco-amigables y ahorro hídrico de alta eficiencia (ISO 14001).</p>
+                    <a href="docs/eng_eco.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
+                </div>
+                <div class="service-card glass">
+                    <div class="icon">
+                        <img src="assets/comic_ai.png" alt="Hydraulic Design" style="width: 80px; height: 80px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
+                    </div>
+                    <h4 data-i18n="service_3">Diseño de Infraestructura Hidráulica</h4>
+                    <p data-i18n="service_3_desc">Planificación experta de redes hidráulicas de alta precisión para infraestructura residencial y comercial.</p>
+                    <a href="docs/eng_diseno.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
+                </div>
+                <div class="service-card glass">
+                    <div class="icon">
+                        <img src="assets/service_copper_plumbing_1778369068107.png" alt="Elite Copper" style="width: 80px; height: 80px; border-radius: 50%; filter: drop-shadow(0 0 10px var(--neon-orange)); object-fit: cover;">
+                    </div>
+                    <h4 data-i18n="service_copper_title">Renovaciones en Cobre</h4>
+                    <p data-i18n="service_copper_desc">Instalaciones de cobre de alta precisión.</p>
+                    <a href="docs/eng_cobre.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
+                </div>
+                <div class="service-card glass">
+                    <div class="icon">
+                        <img src="assets/service_septic_system_1778369053481.png" alt="Septic Engineering" style="width: 80px; height: 80px; border-radius: 50%; filter: drop-shadow(0 0 10px var(--neon-lime)); object-fit: cover;">
+                    </div>
+                    <h4 data-i18n="service_septic_title">Ingeniería Séptica</h4>
+                    <p data-i18n="service_septic_desc">Sistemas avanzados de tratamiento in-situ.</p>
+                    <a href="docs/eng_septico.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="page-section">
+            <div class="manifesto-container glass">
+                <div class="manifesto-header">
+                    <h3 data-i18n="manifesto_title">Manifiesto Morales Plumbing</h3>
+                </div>
+                <div class="manifesto-content">
+                    <div class="m-block">
+                        <span class="m-title" data-i18n="mission_title">MISIÓN</span>
+                        <p data-i18n="mission_desc">Liderar la industria mediante la integración de inteligencia artificial y tecnologías sostenibles, ofreciendo soluciones de alta precisión que protegen el medio ambiente.</p>
+                    </div>
+                    <div class="m-block">
+                        <span class="m-title" data-i18n="vision_title">VISIÓN</span>
+                        <p data-i18n="vision_desc">Convertirnos en el estándar global de plomería técnica y futurista, donde la innovación constante defina cada proyecto de infraestructura inteligente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT / TERMINAL -->
+        <section id="contact" class="page-section">
+            <div class="terminal-container glass">
+                <div class="terminal-header">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    <span class="title" data-i18n="terminal_title">MORALES_CONTACT_V1.0</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="contact-profile">
+                        <img src="assets/contact_card.png" alt="Alex Espinosa" class="profile-pic">
+                <div class="profile-details">
+                    <div class="name neon-name">ALEX G. ESPINOSA</div>
+                    <div class="role" data-i18n="profile_role">Chief Engineer & Founder</div>
+                    <p class="location">San Jose, CA · Morales Plumbing</p>
+                </div>
+                    </div>
+                    <div class="terminal-links">
+                        <a href="docs/cv.html" target="_blank" class="t-link" data-i18n="cv_link">&gt; VER HOJA DE VIDA (PROFESIONAL)</a>
+                        <a href="docs/ceo.html" target="_blank" class="t-link" data-i18n="ceo_link">&gt; PERFIL EJECUTIVO DEL CEO</a>
+                        <a href="mailto:moralesplumbing026@gmail.com" class="t-link">&gt; EMAIL: moralesplumbing026@gmail.com</a>
+                        <a href="tel:+1-669-234-2444" class="t-link">&gt; TEL: (669) 234-2444</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JOE AI ASSISTANT -->
+    <div id="joe-container" class="assistant-hidden">
+        <div class="joe-window glass">
+            <div class="joe-header">
+                <div class="joe-identity">
+                    <img src="assets/joe_avatar.png" alt="Joe" class="joe-avatar-small">
+                    <div class="joe-status">
+                        <span class="pulse"></span>
+                        <span data-i18n="joe_status">JOE · EXPERTO IA EN PLOMERÍA</span>
+                    </div>
+                </div>
+                <button onclick="toggleJoe()" class="close-btn">&times;</button>
+            </div>
+            <div id="joe-messages" class="joe-messages">
+                <div class="msg bot" data-i18n="joe_intro">¡Qué tal! Soy Joe, el asistente IA de Morales Plumbing. ¿En qué te puedo ayudar hoy? 🔧</div>
+            </div>
+            <div class="joe-input">
+                <input type="text" id="joe-query" data-i18n="joe_placeholder" placeholder="Pregunta sobre plomería, servicios o proyectos...">
+                <button onclick="sendToJoe()" id="joe-send-btn" data-i18n="joe_send">➤</button>
+            </div>
+        </div>
+        <!-- Joe floating trigger — avatar icon -->
+        <div class="joe-trigger" onclick="toggleJoe()" data-i18n-title="joe_trigger_title" title="Habla con Joe · AI Assistant">
+            <img src="assets/joe_avatar.png" alt="Joe AI">
+        </div>
+    </div>
+
+    <!-- ── COPYRIGHT BADGE — visible on screen & in ads ── -->
+    <div id="copyright-badge" aria-label="Copyright notice">
+        <span>&#9400; 2026</span>
+        <strong>MORALES PLUMBING</strong>
+        <span>· <span class="neon-name">Alex G. Espinosa</span> · Todos los derechos reservados · Marca Registrada</span>
+    </div>
+
+    <!-- ── SCREEN WATERMARK — subtle diagonal overlay ── -->
+    <div class="watermark-notice" aria-hidden="true">
+        MORALES PLUMBING © 2026 · PROPIEDAD INTELECTUAL PROTEGIDA
+    </div>
+
+    <!-- ── PRINT ONLY: copyright footer block ── -->
+    <div class="print-copyright-block" aria-hidden="true">
+        &#9400; Copyright 2026 Morales Plumbing™ · Todos los derechos reservados · Propiedad intelectual de Alex Espinosa ·
+        Marca registrada. Prohibida la reproducción total o parcial sin autorización escrita del titular.
+        San Jose, CA · moralesplumbing.com
+    </div>
+
+    <!-- ── PRINT ONLY: diagonal watermark ── -->
+    <div class="print-watermark" aria-hidden="true">© MORALES PLUMBING 2026</div>
+
+    <!-- ── COMPANY CARD MODAL ── -->
+    <div id="company-card-modal" class="company-card-modal">
+        <div class="company-card">
+            <button class="close-modal" onclick="toggleCompanyCard()">&times;</button>
+            <div class="card-header-img">
+                <img src="assets/logo_portada.png" class="card-logo" alt="Morales Logo">
+                <div class="card-info-main">
+                    <h3 class="contact-name" style="color: var(--neon-orange); font-family: 'Orbitron', sans-serif; font-size: 2.2rem; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 140, 0, 0.6);">Morales Plumbing</h3>
+                    <p class="contact-tagline" style="color: var(--neon-lime); font-family: 'Orbitron', sans-serif; font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 1.5rem; text-shadow: 0 0 10px rgba(57, 255, 20, 0.4); display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <span data-i18n="slogan_text">Defining the Future of Flow. Innovation for Life. —</span>
+                        <span class="graffiti-text">EcoAIBiz</span>
+                    </p>
+                </div>
+            </div>
+            <div class="card-content">
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem;">
+                    <img src="assets/comic_eco.png" style="width: 60px; filter: drop-shadow(0 0 5px var(--neon-lime));" alt="Eco">
+                    <img src="assets/comic_ai.png" style="width: 60px; filter: drop-shadow(0 0 5px var(--neon-cyan));" alt="AI">
+                    <img src="assets/comic_terms.png" style="width: 60px; filter: drop-shadow(0 0 5px var(--neon-orange));" alt="Biz">
+                </div>
+                    <div class="contact-item" style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 1.2rem;">
+                        <span class="contact-label" data-i18n="contact_loc" style="color: var(--neon-lime); text-transform: uppercase; font-size: 0.98rem; letter-spacing: 1px; text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);">Location</span>
+                        <span class="contact-value" style="color: var(--neon-orange); font-weight: 600; font-size: 1.4rem; text-shadow: 0 0 15px rgba(255, 140, 0, 0.6); margin-left: 2.5rem; margin-top: 0.3rem;">San Jose, California</span>
+                    </div>
+                    <div class="contact-item" style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 1.2rem;">
+                        <span class="contact-label" data-i18n="contact_email" style="color: var(--neon-lime); text-transform: uppercase; font-size: 0.98rem; letter-spacing: 1px; text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);">Email</span>
+                        <span class="contact-value" style="color: var(--neon-orange); font-weight: 600; font-size: 1.4rem; text-shadow: 0 0 15px rgba(255, 140, 0, 0.6); margin-left: 2.5rem; margin-top: 0.3rem;">moralesplumbing026@gmail.com</span>
+                    </div>
+                    <div class="contact-item" style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 1.2rem;">
+                        <span class="contact-label" data-i18n="contact_phone" style="color: var(--neon-lime); text-transform: uppercase; font-size: 0.98rem; letter-spacing: 1px; text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);">Phone</span>
+                        <span class="contact-value" style="color: var(--neon-orange); font-weight: 600; font-size: 1.4rem; text-shadow: 0 0 15px rgba(255, 140, 0, 0.6); margin-left: 2.5rem; margin-top: 0.3rem;">(669) 234-2444</span>
+                    </div>
+                    <div class="contact-item" style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 1.2rem;">
+                        <span class="contact-label" data-i18n="contact_lic" style="color: var(--neon-lime); text-transform: uppercase; font-size: 0.98rem; letter-spacing: 1px; text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);">License</span>
+                        <span class="contact-value" style="color: var(--neon-orange); font-weight: 600; font-size: 1.4rem; text-shadow: 0 0 15px rgba(255, 140, 0, 0.6); margin-left: 2.5rem; margin-top: 0.3rem;">CSLB #1069344 (Class B &amp; C-36)</span>
+                    </div>
+                
+                <div class="social-links" style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 1.5rem;">
+                    <a href="#" class="social-btn" aria-label="Facebook" style="color: var(--neon-orange); transition: 0.3s;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="Instagram" style="color: var(--neon-lime); transition: 0.3s;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="LinkedIn" style="color: var(--neon-orange); transition: 0.3s;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="YouTube" style="color: var(--neon-lime); transition: 0.3s;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- GLOBAL SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-security">
+            <span><span class="security-dot">●</span> <span data-i18n="footer_e2ee">Secure &amp; Privacy-First</span></span>
+            <span><span class="security-dot">●</span> <span data-i18n="footer_cyber">AI-Powered Platform</span></span>
+        </div>
+
+        <div class="footer-branding-block">
+            <div class="footer-slogan">
+                <span data-i18n="slogan_text">Defining the Future of Flow. Innovation for Life. —</span>
+                <span class="graffiti-text" style="font-size: 1.8rem;">EcoAIBiz</span>
+            </div>
+        </div>
+
+        <div class="footer-contact-grid">
+            <div class="footer-contact-item">
+                <span class="contact-label-footer" data-i18n="contact_loc">Location</span>
+                <span class="contact-value-footer">San Jose, California</span>
+            </div>
+            <div class="footer-contact-item">
+                <span class="contact-label-footer" data-i18n="contact_email">Email</span>
+                <span class="contact-value-footer">moralesplumbing026@gmail.com</span>
+            </div>
+            <div class="footer-contact-item">
+                <span class="contact-label-footer" data-i18n="contact_phone">Phone</span>
+                <span class="contact-value-footer">(669) 234-2444</span>
+            </div>
+            <div class="footer-contact-item">
+                <span class="contact-label-footer" data-i18n="contact_lic">License</span>
+                <span class="contact-value-footer">CSLB #1069344 (Class B &amp; C-36)</span>
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+            <a href="#about" data-i18n="nav_about">MISIÓN</a>
+            <a href="docs/pricebook.html" data-i18n="nav_pricebook">PRICE BOOK</a>
+            <a href="docs/legal.html" data-i18n="nav_legal">LEGAL</a>
+        </nav>
+
+        <div class="footer-copyright-main" data-i18n="footer_rights_long">
+            © 2026 Morales Plumbing. Todos los derechos reservados. El contenido, videos, imágenes generadas y la tecnología ORION / Joe AI son propiedad intelectual exclusiva de Morales Plumbing y NeKon AI aGent Consulting.
+        </div>
+
+        <div class="footer-copyright-branded">
+            <span class="year">Ⓒ 2026</span> <span data-i18n="footer_rights_branded">MORALES PLUMBING · Alex G. Espinosa · Todos los derechos reservados · Marca Registrada</span>
+        </div>
+    </footer>
+
+    <!-- PERSISTENT AUDIO PLAYER BAR -->
+    <div id="persistent-player" class="persistent-audio-player player-hidden glass">
+        <div class="player-container">
+            <div class="player-left">
+                <span class="player-badge deep-dive" id="player-badge" data-i18n="pod_type_deep_dive">Deep Dive</span>
+                <span class="player-lang" id="player-lang">EN</span>
+                <div class="player-title-info">
+                    <h5 id="player-title" data-i18n="mp_pod_1_title">Silicon Valley AI transforms modern plumbing</h5>
+                    <span id="player-series" class="player-series-lbl">MP Series</span>
+                </div>
+            </div>
+            <div class="player-center">
+                <div class="player-controls">
+                    <button class="player-ctrl-btn" id="player-btn-prev" onclick="prevPodcast()">
+                        <span class="ctrl-icon">⏮</span>
+                    </button>
+                    <button class="player-ctrl-btn play-pause-main" id="player-btn-play-pause" onclick="togglePlayPause()">
+                        <span class="ctrl-icon play-symbol">▶</span>
+                    </button>
+                    <button class="player-ctrl-btn" id="player-btn-next" onclick="nextPodcast()">
+                        <span class="ctrl-icon">⏭</span>
+                    </button>
+                </div>
+                <div class="player-timeline">
+                    <span class="time-lbl" id="player-time-current">0:00</span>
+                    <input type="range" class="player-slider" id="player-slider" min="0" max="100" value="0" oninput="seekAudio()">
+                    <span class="time-lbl" id="player-time-duration">0:00</span>
+                </div>
+            </div>
+            <div class="player-right">
+                <div class="player-volume">
+                    <span class="vol-icon">🔊</span>
+                    <input type="range" class="vol-slider" id="player-vol-slider" min="0" max="100" value="80" oninput="setVolume()">
+                </div>
+                <button class="player-close-btn" onclick="closePlayer()">
+                    <span class="close-icon">✕</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Config (API keys — local only) -->
+    <script src="config.js?v=6.0.1"></script>
+    <script src="app.js?v=6.0.1"></script>
+</body>
+</html>

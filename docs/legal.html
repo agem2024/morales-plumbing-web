@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Legal | Morales Plumbing</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Global Style -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            background-color: var(--dark-bg);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        .legal-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
+        }
+
+        h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.4rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--neon-purple);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        p, li {
+            color: #e2e8f0;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        strong {
+            color: #fff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .subpage-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(3, 7, 18, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-group {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .back-link, .nav-link {
+            font-family: 'Orbitron', monospace;
+            color: var(--neon-orange);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            text-shadow: 0 0 5px rgba(255, 140, 0, 0.3);
+        }
+
+        .back-link:hover, .nav-link:hover {
+            color: var(--neon-lime);
+            text-shadow: 0 0 10px var(--neon-lime);
+            transform: translateY(-2px);
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .lang-btn.active {
+            background: var(--neon-cyan);
+            color: #000;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+    </style>
+    <link rel="stylesheet" href="../universe.css">
+</head>
+<body>
+    <!-- UNIVERSE BACKGROUND -->
+    <canvas id="universe-canvas" data-universe-mode="matrix-stars"></canvas>
+    <div class="universe-overlay u-variant-info"></div>
+    <script src="../universe.js"></script>
+
+
+    <nav class="subpage-nav">
+        <div class="nav-group">
+            <a href="../index.html" class="back-link">
+                <span>&#8592;</span> <span data-i18n="back_home">VOLVER AL INICIO</span>
+            </a>
+            <a href="propuesta_estrategica.html" class="nav-link" data-i18n="nav_framework">ESTRATEGIA</a>
+            <a href="pricebook.html" class="nav-link" data-i18n="nav_pricebook">PRICE BOOK</a>
+        </div>
+        <div class="language-switcher">
+            <button class="lang-btn" data-lang="en">🇺🇸</button>
+            <button class="lang-btn" data-lang="es">🇲🇽</button>
+            <button class="lang-btn" data-lang="zh">🇨🇳</button>
+            <button class="lang-btn" data-lang="tl">🇵🇭</button>
+            <button class="lang-btn" data-lang="vi">🇻🇳</button>
+        </div>
+    </nav>
+
+    <div class="legal-container">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+            <img src="../assets/comic_shield.png" alt="Security Shield" style="width: 100px; height: 100px; filter: drop-shadow(0 0 15px var(--neon-purple));">
+            <h1 data-i18n="legal_title" class="graffiti-3d-metallic" style="font-size: 3.5rem; margin-bottom: 0;">Marco Legal y Ciberseguridad</h1>
+        </div>
+
+        <h2 data-i18n="sec1_title">Environmental Engineering & Sustainability</h2>
+        <p data-i18n="sec1_legal_p1">Todo el contenido presente en esta plataforma, incluyendo pero no limitándose a videos corporativos, imágenes 3D generadas, código fuente, y la estructuración base de datos del ORION Price Book v6.0 PRO, está estrictamente protegido por las leyes de propiedad intelectual y derechos de autor vigentes en los Estados Unidos y el Estado de California.</p>
+        <ul>
+            <li data-i18n="sec1_legal_li1">Morales Plumbing retiene los derechos exclusivos sobre su marca registrada, metodologías de ingeniería, cartera de clientes y portafolio de servicios técnicos.</li>
+            <li data-i18n="sec1_legal_li2">NeKon AI aGent Consulting retiene la co-autoría y derechos sobre la infraestructura de Inteligencia Artificial ('Joe AI'), los modelos de red neuronal para el sitio web, los sistemas de diagnóstico por visión computacional, y la tecnología subyacente de automatización del sistema ORION.</li>
+        </ul>
+        <p data-i18n="sec1_legal_p2">Queda estrictamente prohibida la reproducción, copia, 'scraping', distribución o uso comercial no autorizado de cualquier material multimedia alojado en este ecosistema digital.</p>
+
+        <h2 data-i18n="sec2_legal_title">2. Ciberseguridad y Privacidad de Datos</h2>
+        <p data-i18n="sec2_legal_p1">Garantizar la seguridad de nuestros clientes comerciales (B2B) y residenciales (B2C) es una prioridad absoluta. Todos nuestros sistemas operan bajo estrictos protocolos de seguridad de grado industrial:</p>
+        <ul>
+            <li data-i18n="sec2_legal_li1">Detección Térmica e Infrarroja: La recolección de datos estructurales mediante cámaras térmicas de alta resolución y sensores de precisión se realiza exclusivamente con fines de diagnóstico físico no invasivo.</li>
+            <li data-i18n="sec2_legal_li2">Contratos Inteligentes y Pagos: Toda la facturación y contratos generados están protegidos con encriptación de extremo a extremo (E2EE).</li>
+            <li data-i18n="sec2_legal_li3">Interacciones con Joe AI: Las consultas a Joe son analizadas anónimamente para mejorar el motor predictivo, respetando la privacidad del usuario.</li>
+        </ul>
+
+        <h2 data-i18n="sec3_legal_title">3. Términos de Referencia (SLA)</h2>
+        <p data-i18n="sec3_legal_p1">La prestación de servicios físicos y ejecución de ingeniería están regidas por el Marco Estratégico ORION y el Libro de Precios. Al interactuar con la plataforma:</p>
+        <ul>
+            <li data-i18n="sec3_legal_li1">Los clientes aceptan los niveles de servicio Good/Better/Best y los términos alinhados con los estándares de la Ciudad de San José.</li>
+            <li data-i18n="sec3_legal_li2">Las garantías de mano de obra y piezas se adhieren rigurosamente a la Licencia CSLB Clase C-36 y los códigos UPC/CPC.</li>
+            <li data-i18n="sec3_legal_li3">Condición de Diagnóstico Digital: Los informes generados por IA son preliminares. Se requiere validación en sitio por un técnico calificado para la autorización final.</li>
+        </ul>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="footer-security">
+            <span><span class="security-dot">●</span> <span data-i18n="footer_e2ee">Secure &amp; Privacy-First</span></span>
+            <span><span class="security-dot">●</span> <span data-i18n="footer_cyber">AI-Powered Platform</span></span>
+        </div>
+
+        <div class="footer-contact-grid">
+            <div class="footer-contact-item">
+                <span class="contact-label-footer" data-i18n="contact_loc">Location</span>
+                <span class="contact-value-footer">San Jose, California</span>
+            </div>
+            <div class="footer-contact-item">
+                <span class="contact-label-footer" data-i18n="contact_email">Email</span>
+                <span class="contact-value-footer">moralesplumbing026@gmail.com</span>
+            </div>
+            <div class="footer-contact-item">
+                <span class="contact-label-footer" data-i18n="contact_phone">Phone</span>
+                <span class="contact-value-footer">(669) 234-2444</span>
+            </div>
+            <div class="footer-contact-item">
+                <span class="contact-label-footer" data-i18n="contact_lic">License</span>
+                <span class="contact-value-footer">CSLB #1069344 (Class B &amp; C-36)</span>
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+            <a href="../index.html" data-i18n="back_home">VOLVER AL INICIO</a>
+            <a href="propuesta_estrategica.html" data-i18n="nav_framework">ESTRATEGIA</a>
+            <a href="pricebook.html" data-i18n="nav_pricebook">PRICE BOOK</a>
+        </nav>
+
+        <div class="footer-copyright-branded">
+            <span class="year">Ⓒ 2026</span> <span data-i18n="footer_rights_branded">MORALES PLUMBING · Alex G. Espinosa · All Rights Reserved</span>
+        </div>
+    </footer>
+
+    <script src="../app.js"></script>
+</body>
+</html>
