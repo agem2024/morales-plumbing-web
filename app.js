@@ -1,6 +1,91 @@
 // Translation Dictionary (5 Bay Area Languages)
 const translations = {
     "en": {
+        "membership_section_title": "Ecosystem Affiliation Plan",
+        "membership_section_desc": "Choose a level within the Orion Ecosystem to access exclusive pricing discounts and advanced privileges.",
+        "pricing_preview_title": "ESTIMATED BASE PRICE",
+        "pricing_preview_plan": "MEMBERSHIP PLAN",
+        "pricing_preview_total": "TOTAL ESTIMATED COST",
+        "lbl_list_price": "List Price",
+        "lbl_discounted_price": "Tiered Discounted Price",
+        "lbl_free_trial": "Free Trial",
+        "pricing_note_free_trial": "Free Trial Call ({count} of 5 used)",
+        "pricing_note_free_limit": "Full Price (Free trial limit reached)",
+        "pricing_note_standard": "Standard Tier: 10% discount applied",
+        "pricing_note_premium": "Premium Tier: 20% discount applied",
+        "pricing_note_select_service": "Please select a service and tier to preview pricing.",
+        "lbl_membership_badge_free": "FREE",
+        "lbl_membership_badge_standard": "STANDARD",
+        "lbl_membership_badge_premium": "PREMIUM",
+        "btn_upgrade": "Upgrade",
+        "btn_active_plan": "Active Plan",
+        "usage_tracker_text": "Free calls used: {used} / 5",
+        "msg_membership_updated": "Membership updated to {tier}",
+        "portal_title": "MP CLIENT PORTAL",
+        "portal_subtitle": "Smart Management of Appointments, PQR and Service Memory",
+        "tab_dashboard": "📊 My Dashboard",
+        "tab_schedule": "📅 Book Appointment",
+        "tab_pqr": "📝 File PQR",
+        "tab_profile": "👤 My Profile / Memory",
+        "tab_policies": "🛡️ Policies & Privacy",
+        "dash_welcome": "Welcome to Your Ecosystem",
+        "dash_intro": "Here you can see the status of your active appointments, reports and requests.",
+        "dash_active_appointments": "📅 Scheduled Appointments",
+        "dash_active_pqrs": "📝 PQR Requests",
+        "dash_feedback_title": "⭐ Service Rating & Feedback",
+        "dash_feedback_desc": "Your opinion helps us feed back the Joe AI and improve our engineering.",
+        "feedback_rating": "Rating:",
+        "btn_submit_feedback": "Submit Rating",
+        "schedule_title": "Schedule New Technical Appointment",
+        "schedule_desc": "Select one of our 15 services from the Price Book v6.0 PRO to schedule a visit.",
+        "lbl_select_service": "REQUIRED SERVICE",
+        "lbl_select_tier": "SERVICE LEVEL (PRICE BOOK)",
+        "lbl_tier_good": "GOOD (Standard)",
+        "lbl_tier_better": "BETTER (Premium)",
+        "lbl_tier_best": "BEST (Ultra-Premium)",
+        "lbl_select_date": "DATE",
+        "lbl_select_time": "TIME",
+        "btn_confirm_appointment": "Confirm Engineering Appointment",
+        "pqr_title": "PQRS Center (Requests, Complaints, Claims and Suggestions)",
+        "pqr_desc": "Register your complaints, suggestions or requests directly.",
+        "lbl_pqr_type": "REQUEST TYPE",
+        "pqr_opt_request": "Request (Special Request)",
+        "pqr_opt_complaint": "Complaint (Service Dissatisfaction)",
+        "pqr_opt_claim": "Claim (Installation/Warranty Failure)",
+        "pqr_opt_suggestion": "Suggestion (Improvement)",
+        "lbl_pqr_desc": "DETAILED DESCRIPTION",
+        "btn_submit_pqr": "Submit Request",
+        "profile_title": "Customer Identity Memory",
+        "profile_desc": "Save your personal data to enable Joe AI's long-term memory. All information is securely stored in your browser.",
+        "lbl_profile_name": "FULL NAME",
+        "lbl_profile_phone": "PHONE NUMBER",
+        "lbl_profile_email": "EMAIL",
+        "btn_save_profile": "Save Profile",
+        "btn_clear_data": "Clear Memory",
+        "policies_title": "Privacy, Security & Intellectual Property Policies",
+        "tab_policies": "🛡️ Policies",
+        "pol_quality_title": "🛡️ QUALITY ASSURANCE & PREVENTATIVE MAINTENANCE",
+        "pol_quality_text": "We guarantee the highest installation and service quality using a strict double-inspection protocol. To ensure long-term system durability, Morales Plumbing offers its Standard affiliates 1 free annual preventative inspection (leak scanning or water heater flush) and its Premium affiliates 2 free annual preventative inspections (SeeSnake sewer camera diagnostics, water chemistry panel, PRV calibration, or thermal leak scan). All work complies with the Uniform Plumbing Code (UPC).",
+        "pol_sec_title": "🔒 WATER SECURITY & CSLB COMPLIANCE",
+        "pol_sec_text": "All operations of Morales Plumbing are governed by the California State License Board (CSLB #1069344 Class B & C-36). We implement strict double inspection protocols and compliance with the Uniform Plumbing Code (UPC).",
+        "pol_priv_title": "🛡️ E2EE CONFIDENTIALITY & ZERO EXPOSURE",
+        "pol_priv_text": "Your privacy is absolute. This system uses local data encryption (Web LocalStorage). Your contact details, address, and appointment details are never transmitted to third-party servers nor exposed.",
+        "pol_copy_title": "©️ COPYRIGHT & INTELLECTUAL PROPERTY",
+        "pol_copy_text": "The technical content of the 'ORION Price Book v6.0 PRO', 'Estimator Pro' manuals, CAD-generated hydraulic schematics, and ORION Podcasts are the exclusive trademark and intellectual property of Morales Plumbing.",
+        "membership_section_title": "Affiliation Plans (Orion Ecosystem)",
+        "tier_free_title": "Free <span class=\"membership-status-badge badge-free\">FREE</span>",
+        "tier_free_desc": "Ideal for new customers. Includes up to 5 scheduled service calls with $0 dispatch/initial fee.",
+        "tier_standard_title": "Standard <span class=\"membership-status-badge badge-standard\">STANDARD</span>",
+        "tier_standard_desc": "For regular care. Unlimited scheduling, 10% direct discount on all services, and 1 Free Annual Preventative Inspection (leak scan or water heater flush).",
+        "tier_premium_title": "Premium <span class=\"membership-status-badge badge-premium\">PREMIUM</span>",
+        "tier_premium_desc": "Comprehensive coverage. Unlimited priority scheduling, 20% direct discount, preferred support, and 2 Free Annual Preventative Inspections (SeeSnake diagnostics, water chemistry test, or PRV calibration).",
+        "btn_activate": "Activate",
+        "maint_title": "🛡️ Preventative Maintenance System",
+        "maint_free": "No preventative maintenance inspections are included in the Free tier. Upgrade to Standard or Premium to protect your home's infrastructure.",
+        "maint_standard": "✅ Standard Affiliate Benefit: 1 Free Annual Preventative Inspection (Leak detection scan or water heater flush). Schedule via PQR or speak with Joe AI to book.",
+        "maint_premium": "🚀 Premium Affiliate Benefit: 2 Free Annual Preventative Inspections (SeeSnake drain camera diagnostic, full water chemistry panel, PRV calibration, or thermal leak scan). Schedule via PQR or speak with Joe AI to book.",
+        "clear_local_label": "Do you want to reset all local settings?",
+
         "eng_btn_details": "View Details →",
         "eng_back": "← Back to Central Services",
         "eng_termo_title": "Thermography Diagnostics",
@@ -592,6 +677,91 @@ const translations = {
     
     },
     "es": {
+        "membership_section_title": "Plan de Afiliación del Ecosistema",
+        "membership_section_desc": "Selecciona un nivel dentro del Ecosistema Orion para acceder a descuentos exclusivos y privilegios avanzados.",
+        "pricing_preview_title": "PRECIO BASE ESTIMADO",
+        "pricing_preview_plan": "PLAN DE MEMBRESÍA",
+        "pricing_preview_total": "COSTO ESTIMADO TOTAL",
+        "lbl_list_price": "Precio de Lista",
+        "lbl_discounted_price": "Precio con Descuento",
+        "lbl_free_trial": "Prueba Gratis",
+        "pricing_note_free_trial": "Llamada de Prueba Gratis ({count} de 5 usadas)",
+        "pricing_note_free_limit": "Precio Completo (Límite de prueba gratuita alcanzado)",
+        "pricing_note_standard": "Nivel Standard: 10% de descuento aplicado",
+        "pricing_note_premium": "Nivel Premium: 20% de descuento aplicado",
+        "pricing_note_select_service": "Selecciona un servicio y nivel para ver la cotización.",
+        "lbl_membership_badge_free": "GRATIS",
+        "lbl_membership_badge_standard": "STANDARD",
+        "lbl_membership_badge_premium": "PREMIUM",
+        "btn_upgrade": "Mejorar Plan",
+        "btn_active_plan": "Plan Activo",
+        "usage_tracker_text": "Llamadas gratuitas usadas: {used} / 5",
+        "msg_membership_updated": "Membresía actualizada a {tier}",
+        "portal_title": "PORTAL DE CLIENTES MP",
+        "portal_subtitle": "Gestión Inteligente de Citas, PQR y Memoria de Servicio",
+        "tab_dashboard": "📊 Mi Dashboard",
+        "tab_schedule": "📅 Agendar Cita",
+        "tab_pqr": "📝 Registrar PQR",
+        "tab_profile": "👤 Mi Perfil / Memoria",
+        "tab_policies": "🛡️ Políticas y Privacidad",
+        "dash_welcome": "Bienvenido a tu Ecosistema",
+        "dash_intro": "Aquí puedes ver el estado de tus citas, reportes y requerimientos activos.",
+        "dash_active_appointments": "📅 Citas Programadas",
+        "dash_active_pqrs": "📝 Requerimientos PQR",
+        "dash_feedback_title": "⭐ Valoración y Retroalimentación de Servicio",
+        "dash_feedback_desc": "Tu opinión nos ayuda a retroalimentar la IA Joe y mejorar nuestra ingeniería.",
+        "feedback_rating": "Calificación:",
+        "btn_submit_feedback": "Enviar Valoración",
+        "schedule_title": "Agendar Nueva Cita Técnica",
+        "schedule_desc": "Selecciona uno de nuestros 15 servicios del Price Book v6.0 PRO para programar una visita.",
+        "lbl_select_service": "SERVICIO REQUERIDO",
+        "lbl_select_tier": "NIVEL DE SERVICIO (PRICE BOOK)",
+        "lbl_tier_good": "GOOD (Estándar)",
+        "lbl_tier_better": "BETTER (Premium)",
+        "lbl_tier_best": "BEST (Ultra-Premium)",
+        "lbl_select_date": "FECHA",
+        "lbl_select_time": "HORA",
+        "btn_confirm_appointment": "Confirmar Cita de Ingeniería",
+        "pqr_title": "Centro de PQRS (Peticiones, Quejas, Reclamos y Sugerencias)",
+        "pqr_desc": "Registra tus quejas, sugerencias o solicitudes de forma directa. Cada caso es procesado bajo estrictos protocolos.",
+        "lbl_pqr_type": "TIPO DE SOLICITUD",
+        "pqr_opt_request": "Petición (Solicitud Especial)",
+        "pqr_opt_complaint": "Queja (Inconformidad con el Servicio)",
+        "pqr_opt_claim": "Reclamo (Falla en Instalación/Garantía)",
+        "pqr_opt_suggestion": "Sugerencia (Mejora)",
+        "lbl_pqr_desc": "DESCRIPCIÓN DETALLADA",
+        "btn_submit_pqr": "Enviar Requerimiento",
+        "profile_title": "Memoria de Identidad del Cliente",
+        "profile_desc": "Guarda tus datos personales para habilitar la memoria a largo plazo de Joe AI. Toda tu información se almacena localmente de forma segura en tu navegador.",
+        "lbl_profile_name": "NOMBRE COMPLETO",
+        "lbl_profile_phone": "TELÉFONO",
+        "lbl_profile_email": "EMAIL",
+        "btn_save_profile": "Guardar Perfil",
+        "btn_clear_data": "Borrar Memoria",
+        "policies_title": "Políticas de Privacidad, Seguridad y Propiedad Intelectual",
+        "tab_policies": "🛡️ Políticas",
+        "pol_quality_title": "🛡️ SEGURIDAD DE CALIDAD Y MANTENIMIENTO PREVENTIVO",
+        "pol_quality_text": "Garantizamos la máxima calidad de instalación y servicio a través de un estricto protocolo de doble inspección. Para asegurar la durabilidad del sistema a largo plazo, Morales Plumbing ofrece a sus afiliados Estándar 1 inspección preventiva anual gratuita (detección de fugas o lavado de calentador de agua) y a sus afiliados Premium 2 inspecciones preventivas anuales gratuitas (cámara SeeSnake en drenajes, análisis químico de agua, calibración de PRV o termografía). Todo el trabajo cumple con el Código Uniforme de Plomería (UPC).",
+        "pol_sec_title": "🔒 SEGURIDAD HÍDRICA Y CUMPLIMIENTO CSLB",
+        "pol_sec_text": "Todas las operaciones de Morales Plumbing están regidas por la Junta de Licencias del Estado de Contratistas de California (CSLB #1069344 Class B & C-36). Implementamos protocolos estrictos de doble inspección y cumplimiento con el Código Uniforme de Plomería (UPC).",
+        "pol_priv_title": "🛡️ CONFIDENCIALIDAD E2EE Y CERO EXPOSICIÓN",
+        "pol_priv_text": "Tu privacidad es absoluta. Este sistema web utiliza encriptación de datos local (Web LocalStorage). Tus datos de contacto, dirección y detalles de citas nunca son transmitidos a servidores de terceros ni expuestos.",
+        "pol_copy_title": "©️ DERECHOS DE AUTOR Y PROPIEDAD INTELECTUAL",
+        "pol_copy_text": "El contenido técnico del 'ORION Price Book v6.0 PRO', los manuales de estimación 'Estimator Pro', los esquemas hidráulicos generados por CAD, y las producciones multimedia (Podcasts ORION) son propiedad intelectual exclusiva de Morales Plumbing.",
+        "membership_section_title": "Planes de Afiliación (Ecosistema Orion)",
+        "tier_free_title": "Gratis <span class=\"membership-status-badge badge-free\">FREE</span>",
+        "tier_free_desc": "Ideal para nuevos clientes. Incluye hasta 5 agendamientos de servicio con $0 de cargo por llamada inicial.",
+        "tier_standard_title": "Estándar <span class=\"membership-status-badge badge-standard\">STANDARD</span>",
+        "tier_standard_desc": "Para mantenimiento regular. Citas ilimitadas, 10% de descuento directo y 1 Mantenimiento Preventivo Anual (inspección de fugas o lavado de calentador de agua).",
+        "tier_premium_title": "Premium <span class=\"membership-status-badge badge-premium\">PREMIUM</span>",
+        "tier_premium_desc": "Cobertura integral. Citas prioritarias ilimitadas, 20% de descuento directo, soporte preferencial y 2 Mantenimientos Preventivos Anuales (inspección SeeSnake, análisis químico del agua o calibración de PRV).",
+        "btn_activate": "Activar",
+        "maint_title": "🛡️ Sistema de Mantenimiento Preventivo",
+        "maint_free": "No se incluyen inspecciones de mantenimiento preventivo en el nivel Gratuito. Actualice a Estándar o Premium para proteger la infraestructura de su hogar.",
+        "maint_standard": "✅ Beneficio Estándar: 1 Inspección Preventiva Anual Gratuita (detección de fugas o lavado de calentador). Agende a través de PQR o hable con Joe AI para programar.",
+        "maint_premium": "🚀 Beneficio Premium: 2 Inspecciones Preventivas Anuales Gratuitas (diagnóstico SeeSnake, análisis químico del agua, calibración de PRV o termografía). Agende a través de PQR o hable con Joe AI para programar.",
+        "clear_local_label": "¿Deseas restablecer toda la configuración local?",
+
         "eng_btn_details": "Ver Detalles →",
         "eng_back": "← Volver a Servicios Centrales",
         "eng_termo_title": "Diagnóstico por Termografía",
@@ -1197,6 +1367,91 @@ const translations = {
     
     },
     "zh": {
+        "membership_section_title": "生态系统会员计划",
+        "membership_section_desc": "在 Orion 生态系统中选择一个级别以获取独家价格折扣和高级特权。",
+        "pricing_preview_title": "预估基础价格",
+        "pricing_preview_plan": "会员计划",
+        "pricing_preview_total": "预估总费用",
+        "lbl_list_price": "列表价格",
+        "lbl_discounted_price": "分级折扣价",
+        "lbl_free_trial": "免费试用",
+        "pricing_note_free_trial": "免费试用呼叫（已使用 5 次中的 {count} 次）",
+        "pricing_note_free_limit": "全额价格（已达到免费试用上限）",
+        "pricing_note_standard": "标准级别：已应用 10% 折扣",
+        "pricing_note_premium": "高级级别：已应用 20% 折扣",
+        "pricing_note_select_service": "请选择服务和级别以预览价格。",
+        "lbl_membership_badge_free": "免费",
+        "lbl_membership_badge_standard": "标准",
+        "lbl_membership_badge_premium": "高级",
+        "btn_upgrade": "升级计划",
+        "btn_active_plan": "当前计划",
+        "usage_tracker_text": "已使用免费额度：{used} / 5",
+        "msg_membership_updated": "会员计划已更新为 {tier}",
+        "portal_title": "MP 客户门户",
+        "portal_subtitle": "智能约见、PQR管理与服务记忆",
+        "tab_dashboard": "📊 我的控制台",
+        "tab_schedule": "📅 预约服务",
+        "tab_pqr": "📝 提交 PQR",
+        "tab_profile": "👤 我的个人资料 / 记忆",
+        "tab_policies": "🛡️ 政策与隐私",
+        "dash_welcome": "欢迎来到您的生态系统",
+        "dash_intro": "您可以在此处查看您的预约、报告和活动请求的状态。",
+        "dash_active_appointments": "📅 已预约的服务",
+        "dash_active_pqrs": "📝 PQR 请求列表",
+        "dash_feedback_title": "⭐ 服务评分与反馈",
+        "dash_feedback_desc": "您的意见将帮助我们改进 Joe AI 并提升工程质量。",
+        "feedback_rating": "评分:",
+        "btn_submit_feedback": "提交评分",
+        "schedule_title": "预约新工程服务",
+        "schedule_desc": "从 Price Book v6.0 PRO 的 15 项服务中选择一项以安排预约。",
+        "lbl_select_service": "所需服务",
+        "lbl_select_tier": "服务等级 (PRICE BOOK)",
+        "lbl_tier_good": "GOOD (标准)",
+        "lbl_tier_better": "BETTER (高级)",
+        "lbl_tier_best": "BEST (特级)",
+        "lbl_select_date": "日期",
+        "lbl_select_time": "时间",
+        "btn_confirm_appointment": "确认预约工程",
+        "pqr_title": "PQR 中心 (请求、投诉、索赔和建议)",
+        "pqr_desc": "直接提交您的投诉、建议或请求。每个案例均按照严格的流程处理。",
+        "lbl_pqr_type": "请求类型",
+        "pqr_opt_request": "请求 (特别请求)",
+        "pqr_opt_complaint": "投诉 (服务不满意)",
+        "pqr_opt_claim": "索赔 (安装/保修问题)",
+        "pqr_opt_suggestion": "建议 (改进意见)",
+        "lbl_pqr_desc": "详细描述",
+        "btn_submit_pqr": "提交请求",
+        "profile_title": "客户身份记忆",
+        "profile_desc": "保存您的个人数据以启用 Joe AI 的长期记忆。所有信息均在本地安全存储。",
+        "lbl_profile_name": "姓名",
+        "lbl_profile_phone": "电话",
+        "lbl_profile_email": "电子邮件",
+        "btn_save_profile": "保存个人资料",
+        "btn_clear_data": "清除记忆",
+        "policies_title": "隐私、安全和知识产权政策",
+        "tab_policies": "🛡️ 政策",
+        "pol_quality_title": "🛡️ 质量保证与预防性维护",
+        "pol_quality_text": "我们执行严格的双重检查协议，保证最高的安装和服务质量。为确保系统的长期耐用性，Morales Plumbing 为其标准会员提供每年 1 次免费预防性维护检查（漏水检测扫描或热水器冲洗），并为其高级会员提供每年 2 次免费预防性维护检查（SeeSnake 排水管摄像诊断、完整水化学分析、PRV 阀门校准或热成像漏水扫描）。所有工作均符合统一管道规范 (UPC)。",
+        "pol_sec_title": "🔒 水安全与 CSLB 合规性",
+        "pol_sec_text": "Morales Plumbing 的所有运营均受加利福尼亚州承包商执照委员会 (CSLB #1069344 Class B & C-36) 监管。我们执行严格的双重检查协议，并符合统一管道规范 (UPC)。",
+        "pol_priv_title": "🛡️ 端到端机密性与零暴露",
+        "pol_priv_text": "您的隐私是绝对的。本系统使用本地存储 (LocalStorage)。您的联系方式、地址和预约详情绝不会传输给第三方服务器，也不会在源代码中公开。",
+        "pol_copy_title": "©️ 版权与知识产权",
+        "pol_copy_text": "“ORION Price Book v6.0 PRO”、评估手册“Estimator Pro”、CAD 生成的液压原理图以及多媒体制作 (ORION Podcasts) 的技术内容均是 Morales Plumbing 的专属商标和知识产权。",
+        "membership_section_title": "会员计划（Orion 生态系统）",
+        "tier_free_title": "免费 <span class=\"membership-status-badge badge-free\">FREE</span>",
+        "tier_free_desc": "适合新客户。包含最多5次服务呼叫预约，免收初次上门费。",
+        "tier_standard_title": "标准 <span class=\"membership-status-badge badge-standard\">STANDARD</span>",
+        "tier_standard_desc": "定期维护。无限次预约，所有服务享10%直减折扣，及每年1次免费预防性检查（漏水扫描或热水器冲洗）。",
+        "tier_premium_title": "高级 <span class=\"membership-status-badge badge-premium\">PREMIUM</span>",
+        "tier_premium_desc": "全面保障。享有优先无限次预约、20%直减折扣、首选支持及每年2次免费预防性维护检查（SeeSnake摄像、水质检测或PRV校准）。",
+        "btn_activate": "激活",
+        "maint_title": "🛡️ 预防性维护系统",
+        "maint_free": "免费会员不包含预防性维护检查。升级到标准或高级计划以保护您的房屋基础设施。",
+        "maint_standard": "✅ 标准会员福利：每年1次免费预防性维护检查（漏水检测扫描或热水器冲洗）。可通过 PQR 或与 Joe AI 对话以预约。",
+        "maint_premium": "🚀 高级会员福利：每年2次免费预防性维护检查（SeeSnake排水摄像诊断、完整水化学分析、PRV减压阀校准或热成像漏水扫描）。可通过 PQR 或与 Joe AI 对话以预约。",
+        "clear_local_label": "您想重置所有本地设置吗？",
+
         "eng_btn_details": "查看详情 →",
         "eng_back": "← 返回中央服务",
         "eng_termo_title": "热成像诊断",
@@ -1694,6 +1949,91 @@ const translations = {
     
     },
     "tl": {
+        "membership_section_title": "Plano ng Pagsasapi sa Ecosystem",
+        "membership_section_desc": "Pumili ng antas sa Orion Ecosystem upang ma-access ang mga eksklusibong diskwento sa pagpepresyo at mga advanced na pribilehiyo.",
+        "pricing_preview_title": "TINATAYANG BASEHANG PRESYO",
+        "pricing_preview_plan": "PLANO NG PAGSASAPI",
+        "pricing_preview_total": "TINATAYANG KABUUANG HALAGA",
+        "lbl_list_price": "Presyo ng Listahan",
+        "lbl_discounted_price": "May Diskwentong Presyo",
+        "lbl_free_trial": "Libreng Pagsubok",
+        "pricing_note_free_trial": "Libreng Tawag sa Pagsubok ({count} ng 5 ang nagamit)",
+        "pricing_note_free_limit": "Buong Presyo (Naabot na ang limitasyon ng libreng pagsubok)",
+        "pricing_note_standard": "Antas Standard: Inilapat ang 10% na diskwento",
+        "pricing_note_premium": "Antas Premium: Inilapat ang 20% na diskwento",
+        "pricing_note_select_service": "Mangyaring pumili ng serbisyo at antas upang i-preview ang presyo.",
+        "lbl_membership_badge_free": "LIBRE",
+        "lbl_membership_badge_standard": "STANDARD",
+        "lbl_membership_badge_premium": "PREMIUM",
+        "btn_upgrade": "I-upgrade",
+        "btn_active_plan": "Aktibong Plano",
+        "usage_tracker_text": "Libreng tawag na nagamit: {used} / 5",
+        "msg_membership_updated": "Nai-update ang pagsasapi sa {tier}",
+        "portal_title": "MP CLIENT PORTAL",
+        "portal_subtitle": "Matalinong Pamamahala ng Appointments, PQR at Service Memory",
+        "tab_dashboard": "📊 Aking Dashboard",
+        "tab_schedule": "📅 Mag-book ng Appointment",
+        "tab_pqr": "📝 Maghain ng PQR",
+        "tab_profile": "👤 Aking Profile / Memorya",
+        "tab_policies": "🛡️ Mga Patakaran at Pribasya",
+        "dash_welcome": "Maligayang Pagdating sa Iyong Ecosystem",
+        "dash_intro": "Dito mo makikita ang katayuan ng iyong mga aktibong appointment, ulat, at mga kahilingan.",
+        "dash_active_appointments": "📅 Nakaiskedyul na mga Appointment",
+        "dash_active_pqrs": "📝 Mga Kahilingan sa PQR",
+        "dash_feedback_title": "⭐ Rating ng Serbisyo at Feedback",
+        "dash_feedback_desc": "Ang iyong opinyon ay tumutulong sa amin na mapabuti ang Joe AI at ang aming engineering.",
+        "feedback_rating": "Rating:",
+        "btn_submit_feedback": "Isumite ang Rating",
+        "schedule_title": "Mag-iskedyul ng Bagong Teknikal na Appointment",
+        "schedule_desc": "Pumili mula sa aming 15 na serbisyo mula sa Price Book v6.0 PRO para mag-iskedyul ng bisita.",
+        "lbl_select_service": "KAILANGANG SERBISYO",
+        "lbl_select_tier": "ANTAS NG SERBISYO (PRICE BOOK)",
+        "lbl_tier_good": "GOOD (Karaniwan)",
+        "lbl_tier_better": "BETTER (Premium)",
+        "lbl_tier_best": "BEST (Ultra-Premium)",
+        "lbl_select_date": "PETSA",
+        "lbl_select_time": "ORAS",
+        "btn_confirm_appointment": "Kumpirmahin ang Appointment",
+        "pqr_title": "PQRS Center (Mga Kahilingan, Reklamo, Claims, at Mungkahi)",
+        "pqr_desc": "Direktang irehistro ang iyong mga reklamo, mungkahi, o kahilingan. Bawat kaso ay pinapamahalaan sa ilalim ng mahigpit na proseso.",
+        "lbl_pqr_type": "URI NG KAHILINGAN",
+        "pqr_opt_request": "Kahilingan (Espesyal)",
+        "pqr_opt_complaint": "Reklamo (Hindi Kasiyahan sa Serbisyo)",
+        "pqr_opt_claim": "Sumbong (Sira sa Pagkakabit/Warranty)",
+        "pqr_opt_suggestion": "Mungkahi (Pagpapabuti)",
+        "lbl_pqr_desc": "DETALYADONG PAGLALARAWAN",
+        "btn_submit_pqr": "Isumite ang Kahilingan",
+        "profile_title": "Memorya ng Identidad ng Customer",
+        "profile_desc": "I-save ang iyong personal na data upang paganahin ang long-term memory ni Joe AI. Lahat ng iyong impormasyon ay ligtas na naka-imbak sa iyong browser.",
+        "lbl_profile_name": "BUONG PANGALAN",
+        "lbl_profile_phone": "NUMERO NG TELEPONO",
+        "lbl_profile_email": "EMAIL",
+        "btn_save_profile": "I-save ang Profile",
+        "btn_clear_data": "I-clear ang Memorya",
+        "policies_title": "Mga Patakaran sa Pribasya, Seguridad at Intellectual Property",
+        "tab_policies": "🛡️ Mga Patakaran",
+        "pol_quality_title": "🛡️ PAGtitiyak NG KALIDAD AT PREVENTIVE MAINTENANCE",
+        "pol_quality_text": "Ginagarantiya namin ang pinakamataas na kalidad ng pag-install at serbisyo gamit ang isang mahigpit na double-inspection protocol. Upang matiyak ang pangmatagalang tibay ng system, nag-aalok ang Morales Plumbing sa mga Standard affiliate nito ng 1 libreng taunang preventive inspection (leak scan o pag-flush ng water heater) at sa mga Premium affiliate nito ng 2 libreng taunang preventive inspection (SeeSnake sewer camera diagnostics, water chemistry panel, PRV calibration, o thermal leak scan). Ang lahat ng gawa ay sumusunod sa Uniform Plumbing Code (UPC).",
+        "pol_sec_title": "🔒 SEGURIDAD SA TUBIG AT PAGTUGON SA CSLB",
+        "pol_sec_text": "Ang lahat ng operasyon ng Morales Plumbing ay pinamamahalaan ng California Contractors State License Board (CSLB #1069344 Class B & C-36). Nagpapatupad kami ng mahigpit ng double inspection protocol at UPC compliance.",
+        "pol_priv_title": "🛡️ E2EE CONFIDENTIALITY AT ZERONG EXPOSURE",
+        "pol_priv_text": "Ang iyong pribasya ay absolute. Ang sistemang ito ay gumagamit ng lokal na storage (LocalStorage). Ang iyong mga detalye sa pakikipag-ugnay, address, at mga appointment ay hinding-hindi ipapadala sa mga third-party server.",
+        "pol_copy_title": "©️ COPYRIGHT AT INTELLECTUAL PROPERTY",
+        "pol_copy_text": "Ang teknikal na nilalaman ng 'ORION Price Book v6.0 PRO', 'Estimator Pro' manuals, CAD hydraulic schematics, at ORION Podcasts ay eksklusibong pagmamay-ari ng Morales Plumbing.",
+        "membership_section_title": "Mga Plano ng Pag-anib (Orion Ecosystem)",
+        "tier_free_title": "Libre <span class=\"membership-status-badge badge-free\">FREE</span>",
+        "tier_free_desc": "Mainam para sa mga bagong customer. May kasamang hanggang 5 naka-schedule na tawag ng serbisyo na may $0 na paunang bayad.",
+        "tier_standard_title": "Standard <span class=\"membership-status-badge badge-standard\">STANDARD</span>",
+        "tier_standard_desc": "Para sa regular na pag-aalaga. Walang limitasyong pag-schedule, 10% direktang diskwento, at 1 Libreng Taunang Preventive Inspection (leak scan o pag-flush ng water heater).",
+        "tier_premium_title": "Premium <span class=\"membership-status-badge badge-premium\">PREMIUM</span>",
+        "tier_premium_desc": "Komprehensibong saklaw. Naka-prioritize na walang limitasyong pag-schedule, 20% direktang diskwento, at 2 Libreng Taunang Preventive Inspections (SeeSnake diagnostic, pagsusuri ng chemistry ng tubig, o PRV calibration).",
+        "btn_activate": "I-activate",
+        "maint_title": "🛡️ Sistema ng Mantenimiento Preventivo",
+        "maint_free": "Walang kasamang mga inspeksyon sa preventive maintenance sa Libreng tier. Mag-upgrade sa Standard o Premium upang protektahan ang imprastraktura ng iyong tahanan.",
+        "maint_standard": "✅ Standard Benefit: 1 Libreng Taunang Inspeksyon (leak detection scan o pag-flush ng water heater). Mag-schedule sa pamamagitan ng PQR o makipag-usap kay Joe AI upang mag-book.",
+        "maint_premium": "🚀 Premium Benefit: 2 Libreng Taunang Inspeksyon (SeeSnake drain camera diagnostic, buong water chemistry panel, PRV calibration, o thermal leak scan). Mag-schedule sa pamamagitan ng PQR o makipag-usap kay Joe AI upang mag-book.",
+        "clear_local_label": "Nais mo bang i-reset ang lahat ng lokal na setting?",
+
         "eng_btn_details": "Tingnan ang Detalye →",
         "eng_back": "← Bumalik sa Central Services",
         "eng_termo_title": "Thermography Diagnostics",
@@ -2207,6 +2547,91 @@ const translations = {
     
     },
     "vi": {
+        "membership_section_title": "Kế hoạch Thành viên Hệ sinh thái",
+        "membership_section_desc": "Chọn một cấp độ trong Hệ sinh thái Orion để tiếp cận các khoản chiết khấu giá độc quyền và đặc quyền nâng cao.",
+        "pricing_preview_title": "GIÁ CƠ BẢN ƯỚC TÍNH",
+        "pricing_preview_plan": "KẾ HOẠCH THÀNH VIÊN",
+        "pricing_preview_total": "TỔNG CHI PHÍ ƯỚC TÍNH",
+        "lbl_list_price": "Giá niêm yết",
+        "lbl_discounted_price": "Giá chiết khấu theo cấp",
+        "lbl_free_trial": "Dùng thử miễn phí",
+        "pricing_note_free_trial": "Cuộc gọi Dùng thử Miễn phí (đã dùng {count} / 5)",
+        "pricing_note_free_limit": "Giá gốc (Đã đạt giới hạn dùng thử miễn phí)",
+        "pricing_note_standard": "Cấp Standard: Đã áp dụng giảm giá 10%",
+        "pricing_note_premium": "Cấp Premium: Đã áp dụng giảm giá 20%",
+        "pricing_note_select_service": "Vui lòng chọn dịch vụ và cấp độ để xem trước giá.",
+        "lbl_membership_badge_free": "MIỄN PHÍ",
+        "lbl_membership_badge_standard": "STANDARD",
+        "lbl_membership_badge_premium": "PREMIUM",
+        "btn_upgrade": "Nâng cấp",
+        "btn_active_plan": "Kế hoạch Hiện tại",
+        "usage_tracker_text": "Số cuộc gọi miễn phí đã dùng: {used} / 5",
+        "msg_membership_updated": "Thành viên đã cập nhật thành {tier}",
+        "portal_title": "CỔNG THÔNG TIN KHÁCH HÀNG MP",
+        "portal_subtitle": "Quản lý thông minh Lịch hẹn, PQR và Bộ nhớ dịch vụ",
+        "tab_dashboard": "📊 Bảng điều khiển",
+        "tab_schedule": "📅 Đặt lịch hẹn",
+        "tab_pqr": "📝 Gửi PQR",
+        "tab_profile": "👤 Hồ sơ / Bộ nhớ của tôi",
+        "tab_policies": "🛡️ Chính sách & Bảo mật",
+        "dash_welcome": "Chào mừng đến với Hệ sinh thái của bạn",
+        "dash_intro": "Tại đây bạn có thể xem trạng thái lịch hẹn, báo cáo và yêu cầu đang hoạt động.",
+        "dash_active_appointments": "📅 Lịch hẹn đã đặt",
+        "dash_active_pqrs": "📝 Yêu cầu PQR",
+        "dash_feedback_title": "⭐ Đánh giá & Phản hồi Dịch vụ",
+        "dash_feedback_desc": "Ý kiến của bạn sẽ giúp chúng tôi hoàn thiện Joe AI và nâng cao chất lượng kỹ thuật.",
+        "feedback_rating": "Đánh giá:",
+        "btn_submit_feedback": "Gửi Đánh giá",
+        "schedule_title": "Đặt lịch hẹn kỹ thuật mới",
+        "schedule_desc": "Chọn một trong 15 dịch vụ từ Price Book v6.0 PRO để đặt lịch hẹn.",
+        "lbl_select_service": "DỊCH VỤ YÊU CẦU",
+        "lbl_select_tier": "CẤP ĐỘ DỊCH VỤ (PRICE BOOK)",
+        "lbl_tier_good": "GOOD (Tiêu chuẩn)",
+        "lbl_tier_better": "BETTER (Cao cấp)",
+        "lbl_tier_best": "BEST (Siêu cấp)",
+        "lbl_select_date": "NGÀY",
+        "lbl_select_time": "GIỜ",
+        "btn_confirm_appointment": "Xác nhận lịch hẹn kỹ thuật",
+        "pqr_title": "Trung tâm PQRS (Yêu cầu, Khiếu nại, Thắc mắc & Góp ý)",
+        "pqr_desc": "Đăng ký khiếu nại, góp ý hoặc yêu cầu trực tiếp. Mỗi trường hợp được xử lý theo quy trình nghiêm ngặt.",
+        "lbl_pqr_type": "LOẠI YÊU CẦU",
+        "pqr_opt_request": "Yêu cầu (Yêu cầu đặc biệt)",
+        "pqr_opt_complaint": "Khiếu nại (Không hài lòng dịch vụ)",
+        "pqr_opt_claim": "Thắc mắc (Lỗi lắp đặt/Bảo hành)",
+        "pqr_opt_suggestion": "Góp ý (Cải tiến)",
+        "lbl_pqr_desc": "MÔ TẢ CHI TIẾT",
+        "btn_submit_pqr": "Gửi yêu cầu",
+        "profile_title": "Bộ nhớ danh tính khách hàng",
+        "profile_desc": "Lưu thông tin cá nhân để kích hoạt bộ nhớ dài hạn của Joe AI. Toàn bộ thông tin được lưu trữ cục bộ an toàn.",
+        "lbl_profile_name": "HỌ VÀ TÊN",
+        "lbl_profile_phone": "SỐ ĐIỆN THOẠI",
+        "lbl_profile_email": "EMAIL",
+        "btn_save_profile": "Lưu hồ sơ",
+        "btn_clear_data": "Xóa bộ nhớ",
+        "policies_title": "Chính sách Bảo mật, An ninh & Sở hữu Trí tuệ",
+        "tab_policies": "🛡️ Chính sách",
+        "pol_quality_title": "🛡️ ĐẢM BẢO CHẤT LƯỢNG & BẢO TRÌ DỰ PHÒNG",
+        "pol_quality_text": "Chúng tôi đảm bảo chất lượng lắp đặt và dịch vụ cao nhất bằng quy trình kiểm tra kép nghiêm ngặt. Để bảo đảm độ bền lâu dài của hệ thống, Morales Plumbing cung cấp cho hội viên Tiêu chuẩn 1 lần kiểm tra bảo trì dự phòng miễn phí hàng năm (dò rò rỉ hoặc sục rửa bình nóng lạnh) và hội viên Cao cấp nhận được 2 lần kiểm tra bảo trì dự phòng miễn phí hàng năm (nội soi SeeSnake, kiểm tra hóa học nước, hiệu chuẩn van PRV hoặc dò nhiệt rò rỉ). Tất cả công việc đều tuân thủ Bộ luật Plumbing Thống nhất (UPC).",
+        "pol_sec_title": "🔒 AN NINH NƯỚC & TUÂN THỦ CSLB",
+        "pol_sec_text": "Mọi hoạt động của Morales Plumbing được quản lý bởi California Contractors State License Board (CSLB #1069344 Class B & C-36). Chúng tôi thực hiện quy trình kiểm tra kép nghiêm ngặt và tuân thủ UPC.",
+        "pol_priv_title": "🛡️ BẢO MẬT E2EE & KHÔNG TIẾT LỘ",
+        "pol_priv_text": "Quyền riêng tư của bạn là tuyệt đối. Hệ thống sử dụng lưu trữ cục bộ (LocalStorage). Thông tin liên hệ, địa chỉ và lịch hẹn của bạn không bao giờ được gửi đến bên thứ ba.",
+        "pol_copy_title": "©️ BẢN QUYỀN & SỞ HỮU TRÍ TUỆ",
+        "pol_copy_text": "Nội dung kỹ thuật của 'ORION Price Book v6.0 PRO', tài liệu 'Estimator Pro', sơ đồ thủy lực CAD và ORION Podcasts là tài sản trí tuệ độc quyền của Morales Plumbing.",
+        "membership_section_title": "Gói hội viên (Hệ sinh thái Orion)",
+        "tier_free_title": "Miễn phí <span class=\"membership-status-badge badge-free\">FREE</span>",
+        "tier_free_desc": "Lý tưởng cho khách hàng mới. Bao gồm tối đa 5 lịch hẹn dịch vụ với $0 phí gọi ban đầu.",
+        "tier_standard_title": "Tiêu chuẩn <span class=\"membership-status-badge badge-standard\">STANDARD</span>",
+        "tier_standard_desc": "Dành cho bảo dưỡng định kỳ. Đặt lịch không giới hạn, giảm giá trực tiếp 10%, và 1 lần Kiểm tra Dự phòng Hàng năm Miễn phí (dò rò rỉ hoặc sục rửa bình nóng lạnh).",
+        "tier_premium_title": "Premium <span class=\"membership-status-badge badge-premium\">PREMIUM</span>",
+        "tier_premium_desc": "Bảo hiểm toàn diện. Ưu tiên đặt lịch không giới hạn, giảm trực tiếp 20%, hỗ trợ ưu tiên, và 2 lần Kiểm tra Dự phòng Hàng năm Miễn phí (nội soi SeeSnake, kiểm tra hóa học nước, hoặc hiệu chuẩn van PRV).",
+        "btn_activate": "Kích hoạt",
+        "maint_title": "🛡️ Hệ thống bảo trì dự phòng",
+        "maint_free": "Không bao gồm kiểm tra bảo trì dự phòng trong gói Miễn phí. Hãy nâng cấp lên gói Tiêu chuẩn hoặc Premium để bảo vệ cơ sở hạ tầng ngôi nhà của bạn.",
+        "maint_standard": "✅ Lợi ích Tiêu chuẩn: 1 lần Kiểm tra Dự phòng Hàng năm Miễn phí (dò rò rỉ hoặc sục rửa bình nóng lạnh). Đăng ký qua PQR hoặc nói chuyện với Joe AI để đặt lịch.",
+        "maint_premium": "🚀 Lợi ích Cao cấp: 2 lần Kiểm tra Dự phòng Hàng năm Miễn phí (nội soi SeeSnake, kiểm tra hóa học nước, hoặc hiệu chuẩn van PRV). Đăng ký qua PQR hoặc nói chuyện với Joe AI để đặt lịch.",
+        "clear_local_label": "Bạn có muốn thiết lập lại tất cả cài đặt cục bộ không?",
+
         "eng_btn_details": "Xem chi tiết →",
         "eng_back": "← Quay lại Dịch vụ Trung tâm",
         "eng_termo_title": "Chẩn đoán Thermography",
@@ -2272,6 +2697,201 @@ const translations = {
         "faq_q4": "Tôi có thể tích hợp hệ thống thu gom nước vào hệ thống hiện tại không?",
         "faq_a4": "Có, chúng tôi chuyên cải tạo tích hợp hệ thống thu nước mưa và nước xám vào mạng lưới hiện tại, giảm đáng kể sự phụ thuộc vào nguồn nước đô thị và chi phí vận hành.",
         "faq_q5": "Lợi thế của khung giải pháp Morales Plumbing PLUS là gì?",
+        "faq_a5": "Kết hợp chuyên môn CSLB C-36 với Kỹ thuật Môi trường, chẩn đoán bằng AI và Quy trình Lean, mang lại mức độ chính xác và bền vững vô song trong khu vực.",
+        "faq_q6": "Morales Plumbing đảm bảo tuân thủ tiêu chuẩn UPC như thế nào?",
+        "faq_a6": "Các kỹ sư của chúng tôi được chứng nhận CSLB C-36 và sử dụng các giao thức kiểm tra mã hỗ trợ bởi AI để đảm bảo mọi mối nối vượt quá tiêu chuẩn của California. Ngoài ra, chúng tôi cung cấp dịch vụ kiểm tra vật lý truyền thống với hai thanh tra và danh sách kiểm tra thủ công cho những khách hàng thích giám sát cơ học cổ điển. <span class=\"comic-choice\">Quyết định là của bạn</span>: chọn xác thực kỹ thuật số hỗ trợ AI độ chính xác cao hoặc kiểm tra thủ công truyền thống.",
+        "faq_q7": "Những chỉ số 'Lean' cụ thể nào được theo dõi?",
+        "faq_a7": "Chúng tôi theo dõi Takt Time, Lead Time và First-Pass Yield để đảm bảo quy trình làm việc có thể dự đoán được, không lãng phí cho các dự án quy mô lớn. Đồng thời, chúng tôi hỗ trợ theo dõi các mốc dự án cổ điển và kiểm toán giờ làm việc truyền thống để giám sát đơn giản hơn. <span class=\"comic-choice\">Quyết định là của bạn</span>: tối ưu hóa dự án bằng bảng dữ liệu Lean thời gian thực, hoặc quản lý thông qua các mốc dự án truyền thống đơn giản.",
+        "faq_q8": "Làm thế nào tôi có thể chuẩn bị cơ sở hạ tầng sẵn sàng cho tương lai?",
+        "faq_a8": "Bằng cách tích hợp các hệ thống thu gom nước và tái sử dụng nước xám ngay hôm nay, bạn sẽ tránh được các nghĩa vụ cải tạo trong tương lai và tăng giá trị tài sản lên tới 15%. Hoặc bạn có thể chọn bố cục thụ động cực kỳ tin cậy tập trung vào thay ống dẫn cổ điển độ bền cao và cấu hình ống chia đơn giản giúp giảm thiểu bộ phận cơ học. <span class=\"comic-choice\">Quyết định là của bạn</span>: đầu tư vào công nghệ nước bền vững chủ động, hoặc chọn hệ thống vòng lặp thụ động ít bảo trì.",
+        "svc_1_title": "Precision Leak Detection",
+        "svc_1_p1": "At Morales Plumbing, precision is our standard. We identify hidden faults without destructive demolition.",
+        "svc_1_p2": "Using FLIR thermal cameras and acoustic sensors we trace leaks behind walls or slabs. Massive savings vs. reconstruction.",
+        "svc_1_good": "<strong>GOOD (Standard) \u2014 $450</strong><br>Visual/acoustic diagnostic. Standard patches for accessible leaks.",
+        "svc_1_better": "<strong>BETTER (Premium) \u2014 $585</strong><br>FLIR thermal + pressure drop test. Epoxy coating repair.",
+        "svc_1_best": "<strong>BEST (Ultra-Premium) \u2014 $720</strong><br>Full structural mapping and sector isolation. ProPress copper segment.",
+        "svc_2_title": "Full House Repipe",
+        "svc_2_p1": "A full repipe is a heart transplant for your home. Old galvanized pipes cause floods and water quality degradation.",
+        "svc_2_p2": "We replace all water infrastructure with commercial-grade Copper and PEX. Eradicates cloudy water and chronic leaks.",
+        "svc_2_good": "<strong>\u2705 GOOD (Standard) \u2014 $3,800</strong><br>PEX-B piping with brass Crimp fittings. Includes 100 PSI hydrostatic pressure test. UPC-certified reliable solution.",
+        "svc_2_better": "<strong>\u2b50 BETTER (Premium) \u2014 $4,940</strong><br>PEX-A Uponor Expansion system. Superior flow rate, freeze-resistant, fewer mechanical fittings for lower long-term risk.",
+        "svc_2_best": "<strong>\ud83c\udfc6 BEST (Ultra-Premium) \u2014 $6,080</strong><br>Type L Copper with ProPress technology (no solder, no flame). Maximum flow, natural antimicrobial properties and absolute commercial-grade durability for 50+ years.",
+        "svc_3_title": "Water Filtration & Softening",
+        "svc_3_p1": "Hard water destroys appliances and stains fixtures. We transform water quality from the entry point.",
+        "svc_3_p2": "We install systems eliminating chlorine, heavy metals and calcium. Crystal-clear water and 30% longer appliance life.",
+        "svc_3_good": "<strong>GOOD \u2014 $1,500</strong><br>Standard 32,000-grain salt-based softener.",
+        "svc_3_better": "<strong>BETTER \u2014 $1,950</strong><br>Fleck 5600SXT Metered. Digital on-demand valve.",
+        "svc_3_best": "<strong>BEST \u2014 $2,400</strong><br>Halo 5 Whole House. Salt-free, UV sterilization.",
+        "svc_4_title": "Smart Valve Installation",
+        "svc_4_p1": "If a pipe bursts on vacation, IoT Smart Valves auto-shutoff and alert your phone in seconds.",
+        "svc_4_p2": "These systems monitor water flow 24/7 using AI to detect micro-leaks or catastrophic ruptures.",
+        "svc_4_good": "<strong>GOOD \u2014 $350</strong><br>Commercial-grade 1/4-turn brass ball valve.",
+        "svc_4_better": "<strong>BETTER \u2014 $455</strong><br>Moen Flo Smart Valve. Daily monitoring and smartphone shutoff.",
+        "svc_4_best": "<strong>BEST \u2014 $560</strong><br>Phyn Plus. Ultrasonic monitoring, no moving parts, smart home integration.",
+        "svc_5_title": "SeeSnake Camera Inspection",
+        "svc_5_p1": "Blind diagnostics destroy properties. Our SeeSnake cameras trace problems without excavation.",
+        "svc_5_p2": "We deploy military-grade self-leveling HD cameras underground for surgical repairs instead of destroying your yard.",
+        "svc_5_good": "<strong>GOOD \u2014 $250</strong><br>Basic camera inspection up to 50ft. USB video delivery.",
+        "svc_5_better": "<strong>BETTER \u2014 $325</strong><br>Deep SeeSnake with sonar tracking. Exact surface location.",
+        "svc_5_best": "<strong>BEST \u2014 $400</strong><br>HD inspection and digital modeling. Full system mapping and CIPP report.",
+        "svc_6_title": "Main Sewer Replacement",
+        "svc_6_p1": "A collapsed main sewer is one of the most disruptive failures. We offer guaranteed replacements for decades.",
+        "svc_6_p2": "Whether through traditional excavation or trenchless methods, we eliminate roots and fractured pipes.",
+        "svc_6_good": "<strong>GOOD \u2014 $5,500</strong><br>Traditional excavation, SDR-35 PVC. Proven gravity flow solution.",
+        "svc_6_better": "<strong>BETTER \u2014 $7,150</strong><br>ABS Schedule 40. Superior solid core, gravel bed, two-way cleanouts.",
+        "svc_6_best": "<strong>BEST \u2014 $8,800</strong><br>Trenchless HDPE fused joints. Seamless, root-proof. Lifetime guarantee.",
+        "svc_7_title": "Hybrid Heat Pump Water Heater",
+        "svc_7_p1": "Still spending hundreds on inefficient water heating? Hybrid Heat Pump reaches up to 400% efficiency.",
+        "svc_7_p2": "Besides qualifying for rebates, this system drastically cuts electric bills. Pays for itself in under 3 years.",
+        "svc_7_good": "<strong>GOOD \u2014 $2,200</strong><br>Standard 50-gallon atmospheric heater. Direct replacement.",
+        "svc_7_better": "<strong>BETTER \u2014 $2,860</strong><br>Rheem ProTerra Hybrid. Digital panel, rebate-eligible efficiency.",
+        "svc_7_best": "<strong>BEST \u2014 $3,520</strong><br>Bradford White AeroTherm with Wi-Fi. Smart scheduling, quiet pump, leak sensors.",
+        "svc_8_title": "Pressure Reducing Valve (PRV)",
+        "svc_8_p1": "Operating above 80 PSI destroys hoses, bursts valves, and voids warranties. A PRV protects silently.",
+        "svc_8_p2": "A PRV regulates flow to a safe 55-60 PSI, acting as a mechanical shield at your home entry point.",
+        "svc_8_good": "<strong>GOOD \u2014 $480</strong><br>Standard residential-grade brass PRV.",
+        "svc_8_better": "<strong>BETTER \u2014 $624</strong><br>Wilkins 600XL with integrated pressure gauge.",
+        "svc_8_best": "<strong>BEST \u2014 $768</strong><br>Watts LFN45B with inline strainer and thermal expansion tank.",
+        "svc_9_title": "Emergency Triage",
+        "svc_9_p1": "When a pipe bursts at 3AM, every second counts. We arrive fast, stabilize the leak, mitigate damage.",
+        "svc_9_p2": "Our rapid response squad stops catastrophic flow and restores vital service to functional areas.",
+        "svc_9_good": "<strong>GOOD \u2014 $380</strong><br>Main shutoff and SharkBite temporary caps.",
+        "svc_9_better": "<strong>BETTER \u2014 $494</strong><br>Sector isolation with permanent ProPress valves.",
+        "svc_9_best": "<strong>BEST \u2014 $608</strong><br>Full isolation manifold. Permanent one-visit solution.",
+        "svc_10_title": "CAD & Digital Tracing",
+        "svc_10_p1": "Modern development requires documented precision. We trace underground lines and deliver as-built plans.",
+        "svc_10_p2": "We use electromagnetic tracing and digital modeling to map your invisible network and prevent accidents.",
+        "svc_10_good": "<strong>GOOD \u2014 $600</strong><br>Main line tracing with surface paint and professional schematic.",
+        "svc_10_better": "<strong>BETTER \u2014 $780</strong><br>2D AutoCAD overlay integrated with property architectural plans.",
+        "svc_10_best": "<strong>BEST \u2014 $960</strong><br>3D BIM/Revit modeling. Every node, pipe and valve geolocated.",
+        "svc_11_title": "Tankless Water Heater",
+        "svc_11_p1": "Imagine endless hot water on demand. Tankless systems only fire when you open the tap.",
+        "svc_11_p2": "Save space, reduce carbon footprint, and ensure constant purified hot water without tank explosion risks.",
+        "svc_11_good": "<strong>GOOD \u2014 $3,200</strong><br>Navien NPE-A2 non-condensing. Great for quick replacements.",
+        "svc_11_better": "<strong>BETTER \u2014 $4,160</strong><br>Rinnai RU Sensei Condensing. 0.95 UEF, smart modulating burners.",
+        "svc_11_best": "<strong>BEST \u2014 $5,120</strong><br>Navien NPE-240A2 with ComfortFlow recirculation. Instant hot water, zero wait.",
+        "svc_12_title": "Backflow Preventer Assembly",
+        "svc_12_p1": "If you manage a business or irrigation, a Backflow preventer is federally mandated. Avoid crippling fines.",
+        "svc_12_p2": "We are certified to install, calibrate and register these assemblies that protect drinking water.",
+        "svc_12_good": "<strong>GOOD \u2014 $850</strong><br>Standard Wilkins 375 RPZ. Immediate city compliance.",
+        "svc_12_better": "<strong>BETTER \u2014 $1,105</strong><br>High-flow Watts Series 009. Lead-free bronze for severe commercial use.",
+        "svc_12_best": "<strong>BEST \u2014 $1,360</strong><br>Febco 860 RPZ with IoT sensor. Real-time differential monitoring.",
+        "svc_13_title": "Luxury Fixture Swap",
+        "svc_13_p1": "A luxury bathroom requires matching hardware with precise calibration, not just aesthetics.",
+        "svc_13_p2": "We perform perfectly leveled, hermetically sealed installations tested at maximum pressure.",
+        "svc_13_good": "<strong>GOOD \u2014 $250</strong><br>Standard Delta/Moen installation with stainless braided supply lines.",
+        "svc_13_better": "<strong>BETTER \u2014 $325</strong><br>Moen Align/Grohe spot-resist. Commercial anti-mold silicone sealing.",
+        "svc_13_best": "<strong>BEST \u2014 $400</strong><br>Kohler Artifacts Smart Touch integration. Temperature calibration and sensor wiring.",
+        "svc_14_title": "Water Chemistry Panel",
+        "svc_14_p1": "Your tap water may look clear but contain heavy metals or chloramine. Test before investing in filters.",
+        "svc_14_p2": "We provide precise scientific analysis on-site and via certified labs for a custom water treatment plan.",
+        "svc_14_good": "<strong>GOOD \u2014 $150</strong><br>Rapid on-site TDS, hardness and free chlorine test.",
+        "svc_14_better": "<strong>BETTER \u2014 $195</strong><br>16-point certified lab panel (heavy metals, lead, nitrates). Report in 5 days.",
+        "svc_14_best": "<strong>BEST \u2014 $240</strong><br>On-site test plus permanent inline digital TDS meter for real-time monitoring.",
+        "svc_15_title": "Commercial Hydro-Jetting",
+        "svc_15_p1": "When scale or thick roots calcify sewer pipes, electric snakes fail. Time for industrial force.",
+        "svc_15_p2": "Our Hydro-Jetting blasts at 4000+ PSI with rotating laser nozzles restoring the original pipe diameter.",
+        "svc_15_good": "<strong>GOOD \u2014 $750</strong><br>Heavy augering with 7/8 sectional electric cable.",
+        "svc_15_better": "<strong>BETTER \u2014 $975</strong><br>4000 PSI Hydro-Jetting. Eliminates scale and emulsified grease.",
+        "svc_15_best": "<strong>BEST \u2014 $1,200</strong><br>Heavy jetting + HD camera inspection + 12-month RootX inhibitor application.",
+
+
+        "btn_view_detail": "View Technical & Commercial Details",
+        "lbl_tech_specs": "Technical Specifications",
+        "nav_back": "← Back to Catalog",
+        "nav_nexus": "Trang chủ Nexus",
+        "nav_orion": "Hệ sinh thái Orion",
+        "nav_services": "Kỹ thuật Chuyên nghiệp",
+        "nav_multimedia": "Podcasts",
+        "nav_about": "Sứ mệnh",
+        "nav_terminal": "Thiết bị đầu cuối",
+        "hero_badge": "Kỹ thuật Chuyên nghiệp & Chứng nhận CSLB C-36",
+        "hero_title": "MORALES PLUMBING",
+        "hero_desc": "Kết hợp hơn 21 năm chuyên môn kỹ thuật với ước tính AI và thiết kế nước bền vững.",
+        "stat_ready": "Đã được cấp phép",
+        "stat_eco": "ISO 14001",
+        "stat_ai": "AI đang hoạt động",
+        "hero_explore": "Xem các giải pháp",
+        "hero_joe": "Trợ lý Joe",
+        "projects_title": "Kỹ thuật xuất sắc",
+        "projects_desc": "Các ứng dụng công nghệ và hệ thống quản lý dự án trong thế giới thực của chúng tôi.",
+        "card_ep_title": "ORION ESTIMATOR PRO",
+        "card_ep_desc": "Ước tính tự động dựa trên thị giác máy tính, sở hữu +8000 danh mục dự án. Tối ưu hóa lợi nhuận >70%.",
+        "card_orion_title": "Hệ thống Chiến lược ORION",
+        "card_orion_desc": "Giải pháp quy trình làm việc kỹ thuật số cho các dự án khối lượng lớn. Hợp đồng thông minh và theo dõi thời gian thực.",
+        "btn_pricing": "Xem Bảng giá chính thức",
+        "btn_buy": "Mua giấy phép",
+        "btn_proposal": "Khung chiến lược",
+        "btn_academy": "Học viện Orion",
+        "services_title": "Dịch vụ kỹ thuật cốt lõi",
+        "service_1": "Chẩn đoán hình ảnh nhiệt",
+        "service_1_desc": "Phát hiện rò rỉ không xâm lấn bằng hình ảnh nhiệt độ phân giải cao và cảm biến âm thanh.",
+        "service_2": "Cải tạo sinh thái",
+        "service_2_desc": "Hiện đại hóa hệ thống bằng vật liệu thân thiện với môi trường và công nghệ tiết kiệm nước hiệu quả (ISO 14001).",
+        "service_3": "Thiết kế cơ sở hạ tầng thủy lực",
+        "service_3_desc": "Quy hoạch chuyên gia về mạng lưới thủy lực độ chính xác cao cho cơ sở hạ tầng dân cư và thương mại.",
+        "manifesto_title": "Tuyên ngôn Morales Plumbing",
+        "mission_title": "Sứ mệnh",
+        "mission_desc": "Dẫn đầu ngành bằng cách cung cấp các giải pháp độ chính xác cao theo tiêu chuẩn CSLB, kết hợp hơn 21 năm kinh nghiệm kỹ thuật với AI.",
+        "vision_title": "Tầm nhìn",
+        "vision_desc": "Trở thành tiêu chuẩn toàn cầu về kỹ thuật ống nước công nghệ và kỹ thuật bền vững, được định nghĩa bởi sự đổi mới và chính trực.",
+        "terminal_title": "MORALES_EXECUTIVE_V1.0",
+        "profile_role": "Kỹ sư trưởng & Nhà sáng lập",
+        "cv_link": "> Truy cập sơ yếu lý lịch chuyên nghiệp",
+        "ceo_link": "> HỒ SƠ ĐIỀU HÀNH CEO",
+        "network_link": "> Mạng lưới: ORION TECH",
+        "joe_status": "JOE: Trợ lý kỹ thuật AI",
+        "joe_welcome": "Chào mừng. Tôi là Joe. Hôm nay tôi có thể giúp gì cho bạn về chẩn đoán dự án hoặc dịch vụ kỹ thuật?",
+        "joe_intro": "Xin chào! Tôi là Joe, trợ lý AI của Morales Plumbing. Hôm nay tôi có thể giúp gì cho bạn? 🛠️",
+        "joe_placeholder": "Hỏi về đường ống, dịch vụ hoặc dự án...",
+        "joe_send": "Gửi",
+        "joe_trigger_title": "Trò chuyện với Joe · Trợ lý AI",
+        "nav_pricebook": "Bảng giá",
+        "nav_legal": "Pháp lý",
+        "back_home": "Trở về trang chủ",
+        "btn_read": "Đọc thêm",
+        "pricebook_tag": "Ứng dụng web · Đang hoạt động",
+        "pricebook_title": "ORION PRICE BOOK v6.0 PRO",
+        "nav_catalog": "Danh mục",
+        "nav_methodology": "Phương pháp luận",
+        "nav_tiers": "Cấp độ",
+        "nav_upsells": "Bán thêm",
+        "nav_promotions": "Khuyến mãi",
+        "nav_terms": "Điều khoản",
+        "nav_warranties": "Bảo hành",
+        "pb_hero_badge": "Phiên bản tiêu chuẩn ngành",
+        "pb_hero_subtitle": "Dịch vụ ống nước chuyên nghiệp | Vùng Vịnh California",
+        "pb_hero_location": "Vùng Vịnh California",
+        "pb_hero_updated": "Cập nhật: Tháng 12 năm 2024",
+        "pb_hero_details": "15 dịch vụ chuyên nghiệp chi tiết",
+        "pb_hero_rates": "Phụ trách: $185/giờ | Trợ lý: $95/giờ | Phụ phí: 30%",
+        "pb_hero_compliance": "Tiêu chuẩn Kỹ thuật: ORION Tech | Chất lượng Đảm bảo",
+        "pb_hero_powered": "Phát triển bởi NeKon AI aGent Consulting | Hệ thống ORION",
+        "pb_method_title": "Phương pháp tính toán",
+        "pb_tiers_title": "Hệ thống Tốt / Tốt hơn / Tốt nhất",
+        "pb_upsells_title": "Hệ thống bán thêm",
+        "pb_promotions_title": "Khuyến mãi đang hoạt động",
+        "pb_terms_title": "Điều khoản và Điều kiện",
+        "pb_warranties_title": "Bảo hành và Hỗ trợ",
+        "pb_catalog_title": "Danh mục dịch vụ",
+        "pricebook_desc": "Phiên bản tiêu chuẩn ngành với +100 dịch vụ chuyên nghiệp chi tiết, 3 cấp giá và hệ thống bán thêm tích hợp.",
+        "pricebook_feat1": "+100 dịch vụ",
+        "pricebook_feat2": "Cấp độ Tốt/Tốt hơn/Tốt nhất",
+        "pricebook_feat3": "Bán thêm và Khuyến mãi",
+        "card_orion_feat1": "Tích hợp Gogo Rooter",
+        "card_orion_feat2": "Đồng bộ hóa đám mây",
+        "card_orion_feat3": "Tối ưu hóa ROI",
+        "btn_catalog": "Xem danh mục",
+        "btn_demo": "Xem demo",
+        "system_core_tag": "Cốt lõi hệ thống · Đang phát triển",
+        "coming_soon": "Sắp ra mắt",
+        "coming_soon_badge": "Sắp ra mắt",
+        "footer_e2ee": "Bảo mật & Ưu tiên Quyền riêng tư",
+        "footer_cyber": "Nền tảng được tăng cường bởi AI",
+        "footer_rights_long": "© 2026 Morales Plumbing. Bảo lưu mọi quyền. Nội dung, video, hình ảnh được tạo và công nghệ ORION / Joe AI là tài sản trí tuệ độc quyền của Morales Plumbing và NeKon AI aGent Consulting.",
+        "footer_rights_branded": "MORALES PLUMBING · Alex G. Espinosa · Bảo lưu mọi quyền · Thương hiệu đã đăng ký",
+        "nav_framework": "Khung chiến lược",
+"faq_q5": "Lợi thế của khung giải pháp Morales Plumbing PLUS là gì?",
         "faq_a5": "Kết hợp chuyên môn CSLB C-36 với Kỹ thuật Môi trường, chẩn đoán bằng AI và Quy trình Lean, mang lại mức độ chính xác và bền vững vô song trong khu vực.",
         "faq_q6": "Morales Plumbing đảm bảo tuân thủ tiêu chuẩn UPC như thế nào?",
         "faq_a6": "Các kỹ sư của chúng tôi được chứng nhận CSLB C-36 và sử dụng các giao thức kiểm tra mã hỗ trợ bởi AI để đảm bảo mọi mối nối vượt quá tiêu chuẩn của California. Ngoài ra, chúng tôi cung cấp dịch vụ kiểm tra vật lý truyền thống với hai thanh tra và danh sách kiểm tra thủ công cho những khách hàng thích giám sát cơ học cổ điển. <span class=\"comic-choice\">Quyết định là của bạn</span>: chọn xác thực kỹ thuật số hỗ trợ AI độ chính xác cao hoặc kiểm tra thủ công truyền thống.",
@@ -2642,6 +3262,9 @@ function setLanguage(lang) {
             joeMsg.innerText = translations[lang]['joe_welcome'];
         }
     }
+    if (typeof updateMembershipCardsUI === 'function') {
+        updateMembershipCardsUI();
+    }
 }
 /**
  * NAVIGATION SYSTEM
@@ -2695,6 +3318,15 @@ window.addEventListener('hashchange', () => {
 
 // Conversation history for multi-turn chat
 const joeHistory = [];
+try {
+    const savedHistory = localStorage.getItem('morales_joe_history');
+    if (savedHistory) {
+        const parsed = JSON.parse(savedHistory);
+        parsed.forEach(m => joeHistory.push(m));
+    }
+} catch (e) {
+    console.error("Failed to load Joe history from localStorage", e);
+}
 
 // Key rotation state
 let geminiKeyIndex = 0;
@@ -2762,11 +3394,17 @@ async function sendToJoe() {
     removeTypingIndicator(typingId);
     addMessage(reply, 'bot');
     joeHistory.push({ role: 'assistant', content: reply });
+    
+    // Process any JSON action tags embedded in Joe's response
+    if (typeof processJoeActions === 'function') {
+        processJoeActions(reply);
+    }
 }
 
 async function callGemini(apiKey) {
     const model   = (typeof GEMINI_MODEL !== 'undefined') ? GEMINI_MODEL : 'gemini-1.5-flash';
-    const sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en plomería.';
+    let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en plomería.';
+    sysPrompt += getJoeDynamicContext();
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
     // Build Gemini contents array (system + history)
@@ -2799,7 +3437,8 @@ async function callGemini(apiKey) {
 
 async function callOpenAI(apiKey) {
     const model = (typeof OPENAI_MODEL !== 'undefined') ? OPENAI_MODEL : 'gpt-4o-mini';
-    const sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en plomería.';
+    let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en plomería.';
+    sysPrompt += getJoeDynamicContext();
 
     const messages = [
         { role: 'system', content: sysPrompt },
@@ -2986,6 +3625,37 @@ function initWarpCanvas() {
 
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {
+    // Render persisted chat history if any
+    try {
+        const container = document.getElementById('joe-messages');
+        if (container && joeHistory.length > 0) {
+            container.innerHTML = ''; // clear default greeting
+            joeHistory.forEach(m => {
+                addMessage(m.content, m.role === 'user' ? 'user' : 'bot');
+            });
+        }
+    } catch(e) {
+        console.error(e);
+    }
+    
+    // Initialize Portal UI
+    try {
+        populateServiceDropdown();
+        // Load profile inputs
+        const profile = loadClientProfile();
+        const nameInput = document.getElementById('profile-name-input');
+        const phoneInput = document.getElementById('profile-phone-input');
+        const emailInput = document.getElementById('profile-email-input');
+        if (nameInput) nameInput.value = profile.name || "";
+        if (phoneInput) phoneInput.value = profile.phone || "";
+        if (emailInput) emailInput.value = profile.email || "";
+        
+        updateMembershipCardsUI();
+        updatePortalUI();
+    } catch(e) {
+        console.error("Portal initialization failed:", e);
+    }
+
     // Warp speed canvas
     initWarpCanvas();
 
@@ -3288,3 +3958,756 @@ function formatTime(secs) {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
+
+// ============================================================
+//  MP CLIENT PORTAL - LONG-TERM CLIENT MEMORY & PERSISTENCE
+// ============================================================
+
+const PB_SERVICES = [
+    { id: "svc_1", name: "Precision Leak Detection" },
+    { id: "svc_2", name: "Full House Repipe" },
+    { id: "svc_3", name: "Water Filtration & Softening" },
+    { id: "svc_4", name: "Smart Valve Installation" },
+    { id: "svc_5", name: "SeeSnake Camera Inspection" },
+    { id: "svc_6", name: "Main Sewer Replacement" },
+    { id: "svc_7", name: "Hybrid Heat Pump Water Heater" },
+    { id: "svc_8", name: "Pressure Reducing Valve (PRV)" },
+    { id: "svc_9", name: "Emergency Triage" },
+    { id: "svc_10", name: "CAD & Digital Tracing" },
+    { id: "svc_11", name: "Tankless Water Heater" },
+    { id: "svc_12", name: "Backflow Preventer Assembly" },
+    { id: "svc_13", name: "Luxury Fixture Swap" },
+    { id: "svc_14", name: "Water Chemistry Panel" },
+    { id: "svc_15", name: "Commercial Hydro-Jetting" }
+];
+
+const PB_SERVICE_PRICES = {
+    "svc_1": { "good": 450, "better": 585, "best": 720 },
+    "svc_2": { "good": 3800, "better": 4940, "best": 6080 },
+    "svc_3": { "good": 2200, "better": 2860, "best": 3520 },
+    "svc_4": { "good": 350, "better": 455, "best": 560 },
+    "svc_5": { "good": 280, "better": 364, "best": 448 },
+    "svc_6": { "good": 6500, "better": 8450, "best": 10400 },
+    "svc_7": { "good": 1500, "better": 1950, "best": 2400 },
+    "svc_8": { "good": 650, "better": 845, "best": 1040 },
+    "svc_9": { "good": 150, "better": 195, "best": 240 },
+    "svc_10": { "good": 850, "better": 1105, "best": 1360 },
+    "svc_11": { "good": 2400, "better": 3120, "best": 3840 },
+    "svc_12": { "good": 950, "better": 1235, "best": 1520 },
+    "svc_13": { "good": 750, "better": 975, "best": 1200 },
+    "svc_14": { "good": 580, "better": 754, "best": 928 },
+    "svc_15": { "good": 1850, "better": 2405, "best": 2960 }
+};
+
+function openClientPortal() {
+    const modal = document.getElementById('mp-portal-modal');
+    if (modal) {
+        modal.classList.add('active');
+        
+        const profile = loadClientProfile();
+        const nameInput = document.getElementById('profile-name-input');
+        const phoneInput = document.getElementById('profile-phone-input');
+        const emailInput = document.getElementById('profile-email-input');
+        if (nameInput) nameInput.value = profile.name || "";
+        if (phoneInput) phoneInput.value = profile.phone || "";
+        if (emailInput) emailInput.value = profile.email || "";
+
+        populateServiceDropdown();
+        updatePortalUI();
+        
+        if (typeof updateMembershipCardsUI === 'function') {
+            updateMembershipCardsUI();
+        }
+        if (typeof updatePricePreview === 'function') {
+            updatePricePreview();
+        }
+    }
+}
+
+function closeClientPortal() {
+    const modal = document.getElementById('mp-portal-modal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
+}
+
+function switchPortalTab(tabId) {
+    document.querySelectorAll('.portal-tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.portal-tab-btn').forEach(b => b.classList.remove('active'));
+    
+    const targetTab = document.getElementById('portal-tab-' + tabId);
+    const targetBtn = document.getElementById('tab-' + tabId + '-btn');
+    
+    if (targetTab) targetTab.classList.add('active');
+    if (targetBtn) targetBtn.classList.add('active');
+}
+
+function loadClientProfile() {
+    try {
+        const profile = localStorage.getItem('morales_client_profile');
+        return profile ? JSON.parse(profile) : { name: "", phone: "", email: "", membership: "free" };
+    } catch(e) {
+        return { name: "", phone: "", email: "", membership: "free" };
+    }
+}
+
+function updateClientProfileLocal(name, phone, email) {
+    const profile = loadClientProfile();
+    profile.name = name;
+    profile.phone = phone;
+    profile.email = email;
+    localStorage.setItem('morales_client_profile', JSON.stringify(profile));
+    
+    // Update inputs if visible
+    const nameInput = document.getElementById('profile-name-input');
+    const phoneInput = document.getElementById('profile-phone-input');
+    const emailInput = document.getElementById('profile-email-input');
+    if (nameInput) nameInput.value = name;
+    if (phoneInput) phoneInput.value = phone;
+    if (emailInput) emailInput.value = email;
+    
+    updatePortalUI();
+}
+
+function saveProfileFromUI() {
+    const name = document.getElementById('profile-name-input').value.trim();
+    const phone = document.getElementById('profile-phone-input').value.trim();
+    const email = document.getElementById('profile-email-input').value.trim();
+    
+    if (!name) {
+        alert("Por favor ingresa al menos tu nombre completo.");
+        return;
+    }
+    updateClientProfileLocal(name, phone, email);
+    showPortalNotification("¡Perfil guardado con éxito!");
+}
+
+function clearProfileLocal() {
+    if (confirm("¿Estás seguro de borrar toda la memoria del portal (Perfil, citas e historial de chat)?")) {
+        localStorage.removeItem('morales_client_profile');
+        localStorage.removeItem('morales_appointments');
+        localStorage.removeItem('morales_pqrs');
+        localStorage.removeItem('morales_joe_history');
+        
+        // Reset fields
+        document.getElementById('profile-name-input').value = "";
+        document.getElementById('profile-phone-input').value = "";
+        document.getElementById('profile-email-input').value = "";
+        
+        joeHistory.length = 0;
+        const container = document.getElementById('joe-messages');
+        if (container) {
+            container.innerHTML = '<div class="msg bot">¡Hola! He borrado mi memoria de sesión. ¿En qué te puedo colaborar hoy? 🔧</div>';
+        }
+        
+        updatePortalUI();
+        if (typeof updateMembershipCardsUI === 'function') {
+            updateMembershipCardsUI();
+        }
+        if (typeof updatePricePreview === 'function') {
+            updatePricePreview();
+        }
+        showPortalNotification("Memoria limpiada.");
+    }
+}
+
+function loadAppointments() {
+    try {
+        const appts = localStorage.getItem('morales_appointments');
+        return appts ? JSON.parse(appts) : [];
+    } catch(e) {
+        return [];
+    }
+}
+
+function saveAppointments(appts) {
+    localStorage.setItem('morales_appointments', JSON.stringify(appts));
+}
+
+function getServiceTitleById(id) {
+    const svc = PB_SERVICES.find(s => s.id === id || s.id === "svc_" + id);
+    return svc ? svc.name : id;
+}
+
+function addAppointmentToLocal(serviceId, date, time, tier = "good") {
+    const appts = loadAppointments();
+    const serviceName = getServiceTitleById(serviceId);
+    
+    const activeTier = typeof getMembershipTier === 'function' ? getMembershipTier() : "free";
+    const basePrice = PB_SERVICE_PRICES[serviceId]?.[tier] || 0;
+    let finalPrice = basePrice;
+    
+    if (activeTier === "free") {
+        if (appts.length < 5) {
+            finalPrice = 0;
+        }
+    } else if (activeTier === "standard") {
+        finalPrice = basePrice * 0.90;
+    } else if (activeTier === "premium") {
+        finalPrice = basePrice * 0.80;
+    }
+
+    const newAppt = {
+        id: "APT-" + Math.floor(Math.random() * 9000 + 1000),
+        serviceId: serviceId,
+        serviceName: serviceName,
+        date: date,
+        time: time,
+        tier: tier,
+        price: finalPrice,
+        status: "Scheduled",
+        createdAt: new Date().toISOString()
+    };
+    appts.push(newAppt);
+    saveAppointments(appts);
+    updatePortalUI();
+    if (typeof updatePricePreview === 'function') {
+        updatePricePreview();
+    }
+    showPortalNotification("Cita programada con éxito / Appointment booked!");
+    return newAppt;
+}
+
+function bookAppointmentFromUI() {
+    const serviceId = document.getElementById('schedule-service-select').value;
+    const tier = document.getElementById('schedule-tier-select').value;
+    const date = document.getElementById('schedule-date-input').value;
+    const time = document.getElementById('schedule-time-input').value;
+    
+    if (!date || !time) {
+        alert("Por favor selecciona una fecha y hora válidas.");
+        return;
+    }
+    
+    if (typeof checkMembershipEligibility === 'function') {
+        const eligibility = checkMembershipEligibility();
+        if (!eligibility.eligible) {
+            alert("Límite alcanzado: Has reservado 5 citas de prueba con tu plan FREE. Por favor, actualiza tu plan en la sección de Membresías en tu perfil para agendar más citas.");
+            switchPortalTab('profile');
+            return;
+        }
+    }
+    
+    addAppointmentToLocal(serviceId, date, time, tier);
+    switchPortalTab('dashboard');
+}
+
+function getMembershipTier() {
+    const profile = loadClientProfile();
+    return profile.membership || "free";
+}
+
+function checkMembershipEligibility() {
+    const tier = getMembershipTier();
+    const appts = loadAppointments();
+    if (tier === "free" && appts.length >= 5) {
+        return { eligible: false, count: appts.length };
+    }
+    return { eligible: true, count: appts.length };
+}
+
+function updateMembershipTier(tier) {
+    const profile = loadClientProfile();
+    profile.membership = tier;
+    localStorage.setItem('morales_client_profile', JSON.stringify(profile));
+    
+    updateMembershipCardsUI();
+    updatePortalUI();
+    updatePricePreview();
+    
+    const curLang = localStorage.getItem('morales_lang') || 'es';
+    let tierText = tier.toUpperCase();
+    if (translations[curLang] && translations[curLang][`lbl_membership_badge_${tier}`]) {
+        tierText = translations[curLang][`lbl_membership_badge_${tier}`];
+    }
+    
+    let msg = translations[curLang]?.msg_membership_updated || "Membership updated to {tier}";
+    msg = msg.replace("{tier}", tierText);
+    showPortalNotification(msg);
+}
+
+function updateMembershipCardsUI() {
+    const activeTier = getMembershipTier();
+    const curLang = localStorage.getItem('morales_lang') || 'es';
+    
+    const cards = {
+        free: document.getElementById('membership-card-free'),
+        standard: document.getElementById('membership-card-standard'),
+        premium: document.getElementById('membership-card-premium')
+    };
+    
+    const btns = {
+        free: document.getElementById('upgrade-btn-free'),
+        standard: document.getElementById('upgrade-btn-standard'),
+        premium: document.getElementById('upgrade-btn-premium')
+    };
+    
+    Object.keys(cards).forEach(tier => {
+        if (cards[tier]) {
+            if (tier === activeTier) {
+                cards[tier].classList.add('active-tier');
+            } else {
+                cards[tier].classList.remove('active-tier');
+            }
+        }
+        
+        if (btns[tier]) {
+            if (tier === activeTier) {
+                btns[tier].textContent = translations[curLang]?.btn_active_plan || "Active Plan";
+                btns[tier].disabled = true;
+                btns[tier].className = "portal-btn portal-btn-primary";
+            } else {
+                btns[tier].textContent = translations[curLang]?.btn_upgrade || "Upgrade";
+                btns[tier].disabled = false;
+                btns[tier].className = "portal-btn portal-btn-secondary";
+            }
+        }
+    });
+
+    const maintContentEl = document.getElementById('maintenance-benefits-content');
+    if (maintContentEl) {
+        const key = "maint_" + activeTier;
+        maintContentEl.innerHTML = translations[curLang]?.[key] || "";
+    }
+}
+
+function updatePricePreview() {
+    const serviceSelect = document.getElementById('schedule-service-select');
+    const tierSelect = document.getElementById('schedule-tier-select');
+    if (!serviceSelect || !tierSelect) return;
+    
+    const serviceId = serviceSelect.value;
+    const tier = tierSelect.value;
+    
+    const listPriceEl = document.getElementById('preview-list-price');
+    const tierEl = document.getElementById('preview-membership-tier');
+    const discountEl = document.getElementById('preview-discount-val');
+    const finalPriceEl = document.getElementById('preview-final-price');
+    
+    if (!serviceId || !tier) return;
+    
+    const basePrice = PB_SERVICE_PRICES[serviceId]?.[tier] || 0;
+    const activeTier = getMembershipTier();
+    const appts = loadAppointments();
+    
+    let discountRate = 0;
+    let finalPrice = basePrice;
+    let noteText = "";
+    
+    const curLang = localStorage.getItem('morales_lang') || 'es';
+    
+    if (activeTier === "free") {
+        if (appts.length < 5) {
+            discountRate = 1.0;
+            finalPrice = 0;
+            const t = translations[curLang]?.pricing_note_free_trial || "Free Trial Call ({count} of 5 used)";
+            noteText = t.replace("{count}", appts.length);
+        } else {
+            discountRate = 0.0;
+            finalPrice = basePrice;
+            noteText = translations[curLang]?.pricing_note_free_limit || "Full Price (Free trial limit reached)";
+        }
+    } else if (activeTier === "standard") {
+        discountRate = 0.10;
+        finalPrice = basePrice * 0.90;
+        noteText = translations[curLang]?.pricing_note_standard || "Standard Tier: 10% discount applied";
+    } else if (activeTier === "premium") {
+        discountRate = 0.20;
+        finalPrice = basePrice * 0.80;
+        noteText = translations[curLang]?.pricing_note_premium || "Premium Tier: 20% discount applied";
+    }
+    
+    const discountValue = basePrice * discountRate;
+    
+    if (listPriceEl) listPriceEl.textContent = "$" + basePrice.toFixed(2);
+    if (tierEl) {
+        let badgeText = activeTier.toUpperCase();
+        if (translations[curLang] && translations[curLang][`lbl_membership_badge_${activeTier}`]) {
+            badgeText = translations[curLang][`lbl_membership_badge_${activeTier}`];
+        }
+        tierEl.textContent = badgeText;
+    }
+    if (discountEl) {
+        discountEl.textContent = "-$" + discountValue.toFixed(2);
+        const existingNote = document.getElementById('preview-discount-note');
+        if (existingNote) {
+            existingNote.textContent = noteText;
+        } else {
+            const noteDiv = document.createElement('div');
+            noteDiv.id = 'preview-discount-note';
+            noteDiv.style.fontSize = '0.75rem';
+            noteDiv.style.color = 'var(--text-muted)';
+            noteDiv.style.marginTop = '2px';
+            noteDiv.style.textAlign = 'right';
+            noteDiv.textContent = noteText;
+            discountEl.parentNode.appendChild(noteDiv);
+        }
+    }
+    if (finalPriceEl) finalPriceEl.textContent = "$" + finalPrice.toFixed(2);
+    
+    const warningContainer = document.getElementById('portal-limit-warning-container');
+    const submitBtn = document.getElementById('portal-schedule-submit-btn');
+    
+    if (activeTier === "free" && appts.length >= 5) {
+        if (warningContainer) {
+            const warnMsg = curLang === 'es' ? 
+                `⚠️ Has alcanzado el límite de 5 citas de prueba gratuitas. Mejora a un plan Standard o Premium para seguir programando citas e integrando con el Ecosistema Orion.` :
+                `⚠️ You have reached the limit of 5 free trial appointments. Upgrade to Standard or Premium to continue scheduling and integrating with the Orion Ecosystem.`;
+            const btnMsg = curLang === 'es' ? 'Mejorar Membresía / Upgrade Now' : 'Upgrade Membership Now';
+            
+            warningContainer.innerHTML = `
+                <div class="membership-limit-warning">
+                    ${warnMsg}
+                    <br><br>
+                    <button class="portal-btn portal-btn-primary" onclick="switchPortalTab('profile')" style="font-size:0.8rem; padding:6px 12px; margin-top:5px;">${btnMsg}</button>
+                </div>
+            `;
+        }
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = curLang === 'es' ? 'Mejorar Plan para Agendar (Límite Alcanzado)' : 'Upgrade Plan to Book (Limit Reached)';
+            submitBtn.style.opacity = '0.5';
+        }
+    } else {
+        if (warningContainer) warningContainer.innerHTML = '';
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = curLang === 'es' ? 'Confirmar Cita / Book Appointment' : 'Confirm Appointment';
+            submitBtn.style.opacity = '1.0';
+        }
+    }
+}
+
+function cancelAppointment(id) {
+    if (confirm("¿Seguro que deseas cancelar esta cita?")) {
+        let appts = loadAppointments();
+        appts = appts.filter(a => a.id !== id);
+        saveAppointments(appts);
+        updatePortalUI();
+        updatePricePreview();
+        showPortalNotification("Cita cancelada.");
+    }
+}
+
+function loadPQRs() {
+    try {
+        const pqrs = localStorage.getItem('morales_pqrs');
+        return pqrs ? JSON.parse(pqrs) : [];
+    } catch(e) {
+        return [];
+    }
+}
+
+function savePQRs(pqrs) {
+    localStorage.setItem('morales_pqrs', JSON.stringify(pqrs));
+}
+
+function addPQRToLocal(type, description) {
+    const pqrs = loadPQRs();
+    const newPqr = {
+        id: "PQR-" + Math.floor(Math.random() * 9000 + 1000),
+        type: type, // peticion, queja, reclamo, sugerencia
+        description: description,
+        status: "Received",
+        date: new Date().toLocaleDateString(),
+        createdAt: new Date().toISOString()
+    };
+    pqrs.push(newPqr);
+    savePQRs(pqrs);
+    updatePortalUI();
+    showPortalNotification("PQR registrado / PQR filed successfully!");
+    return newPqr;
+}
+
+function submitPQRFromUI() {
+    const type = document.getElementById('pqr-type-select').value;
+    const desc = document.getElementById('pqr-desc-input').value.trim();
+    
+    if (!desc) {
+        alert("Por favor escribe la descripción de tu requerimiento.");
+        return;
+    }
+    
+    addPQRToLocal(type, desc);
+    document.getElementById('pqr-desc-input').value = "";
+    switchPortalTab('dashboard');
+}
+
+function submitClientFeedback() {
+    const rating = document.getElementById('feedback-rating-select').value;
+    const text = document.getElementById('feedback-text-input').value.trim();
+    
+    try {
+        const profile = loadClientProfile();
+        if (!profile.feedback) profile.feedback = [];
+        profile.feedback.push({
+            rating: parseInt(rating),
+            comment: text,
+            date: new Date().toLocaleDateString()
+        });
+        localStorage.setItem('morales_client_profile', JSON.stringify(profile));
+        
+        document.getElementById('portal-feedback-form').style.display = 'none';
+        document.getElementById('portal-feedback-thanks').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('portal-feedback-form').style.display = 'flex';
+            document.getElementById('portal-feedback-thanks').style.display = 'none';
+            document.getElementById('feedback-text-input').value = "";
+        }, 5000);
+        showPortalNotification("¡Gracias por tu retroalimentación!");
+    } catch(e) {
+        console.error(e);
+    }
+}
+
+function populateServiceDropdown() {
+    const select = document.getElementById('schedule-service-select');
+    if (!select) return;
+    select.innerHTML = '';
+    const curLang = localStorage.getItem('morales_lang') || 'es';
+    PB_SERVICES.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s.id;
+        const titleKey = s.id + "_title";
+        opt.innerText = (translations[curLang] && translations[curLang][titleKey]) ? translations[curLang][titleKey] : s.name;
+        select.appendChild(opt);
+    });
+}
+
+function updatePortalUI() {
+    const apptsList = document.getElementById('portal-appointments-list');
+    const pqrsList = document.getElementById('portal-pqrs-list');
+    
+    const appts = loadAppointments();
+    const pqrs = loadPQRs();
+    
+    if (apptsList) {
+        if (appts.length === 0) {
+            apptsList.innerHTML = '<p style="color:var(--text-muted); font-style:italic;">No hay citas agendadas.</p>';
+        } else {
+            let html = '<div style="display:flex; flex-direction:column; gap:10px;">';
+            const curLang = localStorage.getItem('morales_lang') || 'es';
+            const labelListPrice = translations[curLang]?.lbl_list_price || "List Price";
+            const labelDiscounted = translations[curLang]?.lbl_discounted_price || "Tiered Discounted Price";
+            const labelFreeTrial = translations[curLang]?.lbl_free_trial || "Free Trial";
+            const labelCost = curLang === 'es' ? 'Costo' : (curLang === 'zh' ? '费用' : (curLang === 'tl' ? 'Halaga' : (curLang === 'vi' ? 'Chi phí' : 'Cost')));
+            const labelFree = curLang === 'es' ? 'GRATIS' : (curLang === 'zh' ? '免费' : (curLang === 'tl' ? 'LIBRE' : (curLang === 'vi' ? 'MIỄN PHÍ' : 'FREE')));
+            const labelPending = curLang === 'es' ? 'Pendiente' : (curLang === 'zh' ? '待定' : (curLang === 'tl' ? 'Nakabinbin' : (curLang === 'vi' ? 'Đang chờ xử lý' : 'Pending')));
+
+            appts.forEach(a => {
+                const listPrice = PB_SERVICE_PRICES[a.serviceId]?.[a.tier] || 0;
+                let costText = "";
+                if (a.price === undefined) {
+                    costText = `<span style="color:var(--neon-orange);">${labelPending}</span>`;
+                } else if (a.price === 0) {
+                    costText = `<span style="text-decoration:line-through; color:var(--text-muted); margin-right:5px;">$${listPrice.toFixed(2)}</span> <span style="color:var(--neon-lime); font-weight:bold;">${labelFreeTrial} (${labelFree})</span>`;
+                } else if (a.price < listPrice) {
+                    costText = `<span style="text-decoration:line-through; color:var(--text-muted); margin-right:5px;">$${listPrice.toFixed(2)}</span> <span style="color:var(--neon-cyan); font-weight:bold;">$${a.price.toFixed(2)}</span>`;
+                } else {
+                    costText = `<span style="color:#fff;">$${a.price.toFixed(2)}</span>`;
+                }
+
+                html += `
+                <div class="glass" style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.05); display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        <strong style="color:var(--neon-cyan);">${a.serviceName}</strong><br>
+                        <span style="font-size:0.75rem; color:var(--text-muted);">${a.date} @ ${a.time} (${a.tier.toUpperCase()}) · ${labelCost}: ${costText}</span>
+                    </div>
+                    <button onclick="cancelAppointment('${a.id}')" style="background:none; border:none; color:#ff4444; font-size:1.1rem; cursor:pointer;" title="Cancelar Cita">&times;</button>
+                </div>`;
+            });
+            html += '</div>';
+            apptsList.innerHTML = html;
+        }
+    }
+    
+    if (pqrsList) {
+        if (pqrs.length === 0) {
+            pqrsList.innerHTML = '<p style="color:var(--text-muted); font-style:italic;">No hay reclamos o sugerencias.</p>';
+        } else {
+            let html = '<div style="display:flex; flex-direction:column; gap:10px;">';
+            pqrs.forEach(p => {
+                let statusColor = "var(--neon-orange)";
+                if (p.status === "Received") statusColor = "var(--neon-cyan)";
+                html += `
+                <div class="glass" style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+                    <div style="display:flex; justify-content:space-between;">
+                        <strong style="color:var(--neon-orange); text-transform:uppercase; font-size:0.75rem;">${p.type}</strong>
+                        <span style="font-size:0.7rem; color:${statusColor}; font-family:'Orbitron',monospace;">${p.status}</span>
+                    </div>
+                    <p style="margin:5px 0 0 0; font-size:0.8rem; color:#fff;">${p.description}</p>
+                    <span style="font-size:0.7rem; color:var(--text-muted);">ID: ${p.id} · Fecha: ${p.date}</span>
+                </div>`;
+            });
+            html += '</div>';
+            pqrsList.innerHTML = html;
+        }
+    }
+}
+
+function showPortalNotification(message) {
+    const notification = document.createElement('div');
+    notification.innerText = message;
+    notification.style.position = 'fixed';
+    notification.style.bottom = '20px';
+    notification.style.right = '20px';
+    notification.style.background = 'var(--dark-bg)';
+    notification.style.border = '1px solid var(--accent)';
+    notification.style.color = '#fff';
+    notification.style.padding = '12px 24px';
+    notification.style.borderRadius = '8px';
+    notification.style.boxShadow = '0 0 15px rgba(0, 243, 255, 0.4)';
+    notification.style.zIndex = '99999';
+    notification.style.fontFamily = "'Orbitron', monospace";
+    notification.style.fontSize = '0.8rem';
+    notification.style.animation = 'fadeIn 0.3s ease';
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'fadeOut 0.5s ease';
+        setTimeout(() => notification.remove(), 500);
+    }, 3000);
+}
+
+function clearJoeHistory() {
+    if (confirm("¿Deseas vaciar el historial del chat con Joe?")) {
+        localStorage.removeItem('morales_joe_history');
+        joeHistory.length = 0;
+        const container = document.getElementById('joe-messages');
+        if (container) {
+            container.innerHTML = '<div class="msg bot">Entendido. Conversación reiniciada. ¿En qué te puedo asistir hoy? 🔧</div>';
+        }
+        showPortalNotification("Historial de chat borrado.");
+    }
+}
+
+function getJoeDynamicContext() {
+    const profile = loadClientProfile();
+    const appts = loadAppointments();
+    const pqrs = loadPQRs();
+    
+    let contextText = "\n\n[MEMORIA LOCAL DEL CLIENTE / CONTEXTO DEL PORTAL]\n";
+    const tier = profile.membership || "free";
+    contextText += `- Nivel de Membresía: ${tier.toUpperCase()}\n`;
+    if (tier === "free") {
+        contextText += `  * Citas de Prueba Usadas: ${appts.length} de 5 máximas gratuitas.\n`;
+        if (appts.length >= 5) {
+            contextText += `  * CRÍTICO: Límite de citas gratuitas alcanzado. Debe mejorar su plan para poder agendar más citas.\n`;
+        }
+    } else if (tier === "standard") {
+        contextText += `  * Beneficio: 10% de descuento en todos los servicios de plomería.\n`;
+    } else if (tier === "premium") {
+        contextText += `  * Beneficio: 20% de descuento en todos los servicios de plomería y soporte de emergencia prioritario.\n`;
+    }
+
+    if (profile && profile.name) {
+        contextText += `- Nombre del Cliente: ${profile.name}\n`;
+        contextText += `- Teléfono: ${profile.phone || 'No registrado'}\n`;
+        contextText += `- Email: ${profile.email || 'No registrado'}\n`;
+    } else {
+        contextText += `- Cliente: Anónimo / No ha guardado perfil en el portal.\n`;
+    }
+    
+    if (appts.length > 0) {
+        contextText += `- Citas de plomería agendadas:\n`;
+        appts.forEach(a => {
+            contextText += `  * ${a.id}: ${a.serviceName} (${a.tier.toUpperCase()}) - Fecha: ${a.date}, Hora: ${a.time} - Estado: ${a.status}\n`;
+        });
+    } else {
+        contextText += `- Citas: No hay citas agendadas actualmente.\n`;
+    }
+    
+    if (pqrs.length > 0) {
+        contextText += `- Requerimientos PQR registrados:\n`;
+        pqrs.forEach(p => {
+            contextText += `  * ${p.id} [${p.type.toUpperCase()}]: ${p.description} (Fecha: ${p.date}) - Estado: ${p.status}\n`;
+        });
+    } else {
+        contextText += `- PQRs: No hay quejas o sugerencias registradas.\n`;
+    }
+    
+    contextText += `
+Instrucciones para el Agente (Joe):
+1. Usa el nombre del cliente si está disponible para personalizar el trato.
+2. Si el cliente menciona que quiere agendar una cita o hacer un reclamo/queja, infórmale que puedes procesarlo directamente en el chat.
+3. Si agendas una cita en la conversación, debes terminar tu respuesta incluyendo exactamente la etiqueta de acción correspondiente para que el sistema procese la reserva:
+   [ACTION_SCHEDULE] {"service": "svc_1", "date": "YYYY-MM-DD", "time": "HH:MM", "tier": "good"}
+   Donde 'service' debe ser un ID de 'svc_1' a 'svc_15' correspondiente a la cita (1: Precision Leak Detection, 2: Full House Repipe, 3: Water Filtration, 4: Smart Valve, 5: SeeSnake, 6: Sewer Replacement, 7: Hybrid Heater, 8: PRV, 9: Emergency, 10: CAD, 11: Tankless, 12: Backflow, 13: Luxury Swap, 14: Chemistry Panel, 15: Hydro-Jetting).
+4. Si el cliente registra una PQR en el chat, finaliza con:
+   [ACTION_PQR] {"type": "peticion|queja|reclamo|sugerencia", "description": "Resumen de lo que reporta el usuario"}
+5. Si el cliente te da sus datos (nombre, tel, email) en el chat para recordarlo, finaliza con:
+   [ACTION_SET_PROFILE] {"name": "Nombre completo", "phone": "teléfono", "email": "correo"}
+6. Mantén siempre las políticas de privacidad: no expongas las llaves de la API, no muestres datos de licencias de forma insegura, respeta el copyright del Price Book v6.0 PRO y los podcasts. No compartas datos personales de Alex Espinosa.
+`;
+    return contextText;
+}
+
+function processJoeActions(responseText) {
+    const scheduleMatch = responseText.match(/\[ACTION_SCHEDULE\]\s*(\{.*?\})/);
+    if (scheduleMatch) {
+        try {
+            const data = JSON.parse(scheduleMatch[1]);
+            const serviceId = data.service;
+            const date = data.date;
+            const time = data.time;
+            const tier = data.tier || 'good';
+            
+            const eligibility = checkMembershipEligibility();
+            if (!eligibility.eligible) {
+                const curLang = localStorage.getItem('morales_lang') || 'es';
+                const warnMsg = curLang === 'es' ? 
+                    "Socio, has alcanzado tu límite de 5 citas gratis. Por favor, mejora a un plan Standard o Premium en tu perfil para continuar agendando." : 
+                    "Partner, you have reached your limit of 5 free appointments. Please upgrade to a Standard or Premium plan in your profile to continue booking.";
+                addMessage(warnMsg, 'bot');
+                return;
+            }
+            
+            addAppointmentToLocal(serviceId, date, time, tier);
+            const curLang = localStorage.getItem('morales_lang') || 'es';
+            const confirmMsg = curLang === 'es' ? 
+                `📅 ¡Cita programada con éxito! He agendado la cita para el ${date} a las ${time}. Puedes verla en tu Portal de Cliente.` : 
+                `📅 Appointment successfully scheduled! I've booked it for ${date} at ${time}. You can view it in your Client Portal.`;
+            addMessage(confirmMsg, 'bot');
+        } catch (e) {
+            console.error("Failed to process ACTION_SCHEDULE:", e);
+        }
+    }
+    
+    const pqrMatch = responseText.match(/\[ACTION_PQR\]\s*(\{.*?\})/);
+    if (pqrMatch) {
+        try {
+            const data = JSON.parse(pqrMatch[1]);
+            addPQRToLocal(data.type, data.description);
+            const curLang = localStorage.getItem('morales_lang') || 'es';
+            const pqrMsg = curLang === 'es' ? 
+                `✅ He registrado tu requerimiento PQR (${data.type.toUpperCase()}) en el sistema. Le daremos seguimiento inmediato.` : 
+                `✅ I've filed your PQR request (${data.type.toUpperCase()}) in the system. We will follow up immediately.`;
+            addMessage(pqrMsg, 'bot');
+        } catch (e) {
+            console.error("Failed to process ACTION_PQR:", e);
+        }
+    }
+    
+    const profileMatch = responseText.match(/\[ACTION_SET_PROFILE\]\s*(\{.*?\})/);
+    if (profileMatch) {
+        try {
+            const data = JSON.parse(profileMatch[1]);
+            const profile = loadClientProfile();
+            profile.name = data.name || profile.name;
+            profile.phone = data.phone || profile.phone;
+            profile.email = data.email || profile.email;
+            localStorage.setItem('morales_client_profile', JSON.stringify(profile));
+            updatePortalUI();
+            updatePricePreview();
+            
+            const curLang = localStorage.getItem('morales_lang') || 'es';
+            const profileMsg = curLang === 'es' ? 
+                `👤 ¡Listo! He actualizado los datos de tu perfil: ${profile.name}.` : 
+                `👤 All set! I've updated your profile details: ${profile.name}.`;
+            addMessage(profileMsg, 'bot');
+        } catch (e) {
+            console.error("Failed to process ACTION_SET_PROFILE:", e);
+        }
+    }
+}
