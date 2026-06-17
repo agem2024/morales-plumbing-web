@@ -30,7 +30,23 @@
     <script src="../universe.js"></script>
 
     <header>
-        <div class="logo">ORION <span style="font-weight: 300;">TECH</span></div>
+        <nav class="nav-container">
+            <div class="logo-container" onclick="window.location.href='../index.html';">
+                <img src="../assets/morales_logo.png" alt="Morales Plumbing Logo" class="nav-logo">
+                <div class="brand-info">
+                    <span class="brand-name">MORALES PLUMBING</span>
+                    <span class="brand-tag">ORION Portal</span>
+                </div>
+            </div>
+            
+            <div class="lang-selector">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="zh">ZH</button>
+                <button class="lang-btn" data-lang="tl">TL</button>
+                <button class="lang-btn" data-lang="vi">VI</button>
+            </div>
+        </nav>
     </header>
 
     <div class="service-detail-container animate-in">
@@ -48,7 +64,7 @@
                 <p data-i18n="eng_septico_p1">Nuestra división de <strong>Ingeniería Séptica Avanzada</strong> diseña, despliega y mantiene sistemas de manejo de efluentes fuera de la red (off-grid), utilizando biotecnología moderna y campos de lixiviación diseñados mediante análisis de permeabilidad de suelos. Este servicio es vital para fincas, viñedos y propiedades remotas.</p>
                 <p data-i18n="eng_septico_p2">En lugar de instalar fosas sépticas convencionales que fallan catastróficamente por saturación, implementamos Sistemas de Tratamiento Aeróbico (ATU) que procesan el agua a un nivel de pureza casi apto para riego superficial, protegiendo los mantos acuíferos subterráneos (EPA / CSLB compliant).</p>
                 
-                <h2 class="tech-spec-header">Detalles Técnicos</h2>
+                <h2 class="tech-spec-header" data-i18n="eng_tech_details">Detalles Técnicos</h2>
                 <ul class="tier-list">
                     <li>
                         <strong data-i18n="eng_septico_tech1_title">Estudios de Percolación y Diseño Topográfico</strong>

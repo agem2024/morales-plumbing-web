@@ -30,7 +30,23 @@
     <script src="../universe.js"></script>
 
     <header>
-        <div class="logo">ORION <span style="font-weight: 300;">TECH</span></div>
+        <nav class="nav-container">
+            <div class="logo-container" onclick="window.location.href='../index.html';">
+                <img src="../assets/morales_logo.png" alt="Morales Plumbing Logo" class="nav-logo">
+                <div class="brand-info">
+                    <span class="brand-name">MORALES PLUMBING</span>
+                    <span class="brand-tag">ORION Portal</span>
+                </div>
+            </div>
+            
+            <div class="lang-selector">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="zh">ZH</button>
+                <button class="lang-btn" data-lang="tl">TL</button>
+                <button class="lang-btn" data-lang="vi">VI</button>
+            </div>
+        </nav>
     </header>
 
     <div class="service-detail-container animate-in">
@@ -48,7 +64,7 @@
                 <p data-i18n="eng_diseno_p1">El <strong>Diseño de Infraestructura Hidráulica</strong> de Morales Plumbing es un servicio avanzado de ingeniería que garantiza la viabilidad, eficiencia y escalabilidad de las redes de fluidos para proyectos comerciales y residenciales de gran escala.</p>
                 <p data-i18n="eng_diseno_p2">Nuestros ingenieros utilizan software de modelado 3D y simuladores de dinámica de fluidos para calcular gradientes de presión, expansión térmica y velocidad de flujo. Este enfoque científico elimina las caídas de presión en pisos altos y prevé colapsos antes de que se instale el primer tramo de tubería.</p>
                 
-                <h2 class="tech-spec-header">Detalles Técnicos</h2>
+                <h2 class="tech-spec-header" data-i18n="eng_tech_details">Detalles Técnicos</h2>
                 <ul class="tier-list">
                     <li>
                         <strong data-i18n="eng_diseno_tech1_title">Modelado BIM Integrado</strong>

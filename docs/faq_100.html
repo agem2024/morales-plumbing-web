@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Q&A Technical Hub | Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../universe.css">
+    <style>
+        :root { --cyan: #00f5ff; --orange: #ff8c00; --dark: #030712; --card: rgba(8, 14, 36, 0.45); --border: #000000; --text: #d9e8f0; }
+        body { background-color: var(--dark); color: var(--text); font-family: 'Inter', sans-serif; min-height: 100vh; }
+        .faq-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: rgba(3, 7, 18, 0.9); backdrop-filter: blur(14px); border-bottom: 3px solid #000; }
+        .faq-nav a { color: var(--orange); text-decoration: none; font-family: 'Orbitron'; font-weight: 700; }
+        .faq-hero { padding: 120px 20px 40px; text-align: center; }
+        .graffiti-title { font-family: 'Black Ops One', cursive; font-size: 3.5rem; text-transform: uppercase; background: linear-gradient(to bottom, #ffffff, #00f5ff, #ff8c00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(2px 2px 0px #000); margin: 0; }
+        .search-container { max-width: 600px; margin: 30px auto; position: relative; }
+        .faq-search { width: 100%; padding: 15px 25px; border-radius: 30px; border: 3px solid #000; background: rgba(0, 245, 255, 0.1); color: #fff; font-size: 1.1rem; outline: none; transition: 0.3s; box-shadow: 4px 4px 0px #000; }
+        .faq-search:focus { border-color: var(--cyan); box-shadow: 6px 6px 0px var(--cyan); background: rgba(0,0,0,0.8); }
+        .faq-container { max-width: 1000px; margin: 0 auto 100px; padding: 0 20px; }
+        .accordion-item { margin-bottom: 15px; border: 3px solid #000; border-radius: 12px; background: var(--card); box-shadow: 4px 4px 0px #000; overflow: hidden; transition: 0.2s; }
+        .accordion-item:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--orange); }
+        .accordion-header { width: 100%; padding: 20px; display: flex; justify-content: space-between; align-items: center; background: transparent; border: none; color: #fff; font-size: 1.1rem; font-weight: 700; cursor: pointer; text-align: left; font-family: 'Inter'; }
+        .accordion-header.active { color: var(--cyan); }
+        .accordion-icon { font-size: 1.5rem; color: var(--orange); transition: transform 0.3s; font-weight: 900; }
+        .accordion-header.active .accordion-icon { transform: rotate(45deg); color: var(--cyan); }
+        .accordion-content { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(0,0,0,0.4); }
+        .accordion-content p { padding: 20px 0; color: #e2eff5; line-height: 1.6; margin: 0; border-top: 1px dashed rgba(255,255,255,0.1); }
+        .no-results { display: none; text-align: center; padding: 40px; color: var(--orange); font-family: 'Orbitron'; font-size: 1.5rem; }
+        .nav-right { display: flex; gap: 10px; }
+        .lang-btn { background: transparent; border: 2px solid var(--orange); color: var(--orange); padding: 5px 10px; cursor: pointer; border-radius: 8px; font-weight: bold; }
+        .lang-btn:hover { background: var(--orange); color: #000; }
+    </style>
+</head>
+<body>
+    <nav class="faq-nav">
+        <a href="../index.html" data-i18n="nav_back">← BACK</a>
+        <div class="nav-right">
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+            <button class="lang-btn" onclick="setLanguage('zh')">ZH</button>
+            <button class="lang-btn" onclick="setLanguage('tl')">TL</button>
+            <button class="lang-btn" onclick="setLanguage('vi')">VI</button>
+        </div>
+    </nav>
+
+    <section class="faq-hero">
+        <h1 class="graffiti-title">FAQ <span style="color: var(--cyan);">100</span></h1>
+        <p style="color: #aaa; margin-top: 10px; font-family: 'Orbitron'; letter-spacing: 1px;" data-i18n="faq_cat_env">California Plumbing Guidelines</p>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="faq-search" placeholder="Search FAQs..." onkeyup="filterFaqs()">
+        </div>
+    </section>
+
+    <div class="faq-container" id="faqContainer">
+        <div class="no-results" id="noResults" data-i18n="pqr_form_status">No results found</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#1</span> <span data-i18n="faq100_q_1"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_1"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#2</span> <span data-i18n="faq100_q_2"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_2"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#3</span> <span data-i18n="faq100_q_3"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_3"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#4</span> <span data-i18n="faq100_q_4"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_4"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#5</span> <span data-i18n="faq100_q_5"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_5"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#6</span> <span data-i18n="faq100_q_6"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_6"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#7</span> <span data-i18n="faq100_q_7"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_7"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#8</span> <span data-i18n="faq100_q_8"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_8"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#9</span> <span data-i18n="faq100_q_9"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_9"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#10</span> <span data-i18n="faq100_q_10"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_10"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#11</span> <span data-i18n="faq100_q_11"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_11"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#12</span> <span data-i18n="faq100_q_12"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_12"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#13</span> <span data-i18n="faq100_q_13"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_13"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#14</span> <span data-i18n="faq100_q_14"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_14"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#15</span> <span data-i18n="faq100_q_15"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_15"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#16</span> <span data-i18n="faq100_q_16"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_16"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#17</span> <span data-i18n="faq100_q_17"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_17"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#18</span> <span data-i18n="faq100_q_18"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_18"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#19</span> <span data-i18n="faq100_q_19"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_19"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#20</span> <span data-i18n="faq100_q_20"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_20"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#21</span> <span data-i18n="faq100_q_21"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_21"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#22</span> <span data-i18n="faq100_q_22"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_22"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#23</span> <span data-i18n="faq100_q_23"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_23"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#24</span> <span data-i18n="faq100_q_24"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_24"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#25</span> <span data-i18n="faq100_q_25"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_25"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#26</span> <span data-i18n="faq100_q_26"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_26"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#27</span> <span data-i18n="faq100_q_27"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_27"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#28</span> <span data-i18n="faq100_q_28"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_28"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#29</span> <span data-i18n="faq100_q_29"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_29"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#30</span> <span data-i18n="faq100_q_30"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_30"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#31</span> <span data-i18n="faq100_q_31"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_31"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#32</span> <span data-i18n="faq100_q_32"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_32"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#33</span> <span data-i18n="faq100_q_33"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_33"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#34</span> <span data-i18n="faq100_q_34"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_34"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#35</span> <span data-i18n="faq100_q_35"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_35"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#36</span> <span data-i18n="faq100_q_36"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_36"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#37</span> <span data-i18n="faq100_q_37"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_37"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#38</span> <span data-i18n="faq100_q_38"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_38"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#39</span> <span data-i18n="faq100_q_39"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_39"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#40</span> <span data-i18n="faq100_q_40"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_40"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#41</span> <span data-i18n="faq100_q_41"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_41"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#42</span> <span data-i18n="faq100_q_42"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_42"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#43</span> <span data-i18n="faq100_q_43"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_43"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#44</span> <span data-i18n="faq100_q_44"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_44"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#45</span> <span data-i18n="faq100_q_45"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_45"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#46</span> <span data-i18n="faq100_q_46"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_46"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#47</span> <span data-i18n="faq100_q_47"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_47"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#48</span> <span data-i18n="faq100_q_48"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_48"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#49</span> <span data-i18n="faq100_q_49"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_49"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#50</span> <span data-i18n="faq100_q_50"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_50"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#51</span> <span data-i18n="faq100_q_51"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_51"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#52</span> <span data-i18n="faq100_q_52"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_52"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#53</span> <span data-i18n="faq100_q_53"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_53"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#54</span> <span data-i18n="faq100_q_54"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_54"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#55</span> <span data-i18n="faq100_q_55"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_55"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#56</span> <span data-i18n="faq100_q_56"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_56"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#57</span> <span data-i18n="faq100_q_57"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_57"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#58</span> <span data-i18n="faq100_q_58"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_58"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#59</span> <span data-i18n="faq100_q_59"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_59"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#60</span> <span data-i18n="faq100_q_60"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_60"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#61</span> <span data-i18n="faq100_q_61"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_61"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#62</span> <span data-i18n="faq100_q_62"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_62"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#63</span> <span data-i18n="faq100_q_63"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_63"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#64</span> <span data-i18n="faq100_q_64"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_64"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#65</span> <span data-i18n="faq100_q_65"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_65"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#66</span> <span data-i18n="faq100_q_66"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_66"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#67</span> <span data-i18n="faq100_q_67"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_67"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#68</span> <span data-i18n="faq100_q_68"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_68"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#69</span> <span data-i18n="faq100_q_69"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_69"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#70</span> <span data-i18n="faq100_q_70"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_70"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#71</span> <span data-i18n="faq100_q_71"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_71"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#72</span> <span data-i18n="faq100_q_72"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_72"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#73</span> <span data-i18n="faq100_q_73"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_73"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#74</span> <span data-i18n="faq100_q_74"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_74"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#75</span> <span data-i18n="faq100_q_75"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_75"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#76</span> <span data-i18n="faq100_q_76"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_76"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#77</span> <span data-i18n="faq100_q_77"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_77"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#78</span> <span data-i18n="faq100_q_78"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_78"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#79</span> <span data-i18n="faq100_q_79"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_79"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#80</span> <span data-i18n="faq100_q_80"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_80"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#81</span> <span data-i18n="faq100_q_81"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_81"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#82</span> <span data-i18n="faq100_q_82"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_82"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#83</span> <span data-i18n="faq100_q_83"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_83"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#84</span> <span data-i18n="faq100_q_84"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_84"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#85</span> <span data-i18n="faq100_q_85"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_85"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#86</span> <span data-i18n="faq100_q_86"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_86"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#87</span> <span data-i18n="faq100_q_87"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_87"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#88</span> <span data-i18n="faq100_q_88"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_88"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#89</span> <span data-i18n="faq100_q_89"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_89"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#90</span> <span data-i18n="faq100_q_90"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_90"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#91</span> <span data-i18n="faq100_q_91"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_91"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#92</span> <span data-i18n="faq100_q_92"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_92"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#93</span> <span data-i18n="faq100_q_93"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_93"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#94</span> <span data-i18n="faq100_q_94"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_94"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#95</span> <span data-i18n="faq100_q_95"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_95"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#96</span> <span data-i18n="faq100_q_96"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_96"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#97</span> <span data-i18n="faq100_q_97"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_97"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#98</span> <span data-i18n="faq100_q_98"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_98"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#99</span> <span data-i18n="faq100_q_99"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_99"></p>
+    </div>
+</div>
+<div class="accordion-item search-item">
+    <button class="accordion-header">
+        <span><span style="color:var(--orange);">#100</span> <span data-i18n="faq100_q_100"></span></span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p data-i18n="faq100_a_100"></p>
+    </div>
+</div>
+
+    </div>
+    <script src="../app.js"></script>
+    <script>
+        const accordions = document.querySelectorAll('.accordion-header');
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+                accordions.forEach(otherAcc => {
+                    otherAcc.classList.remove('active');
+                    otherAcc.nextElementSibling.style.maxHeight = null;
+                });
+                if (!isActive) {
+                    this.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+
+        function filterFaqs() {
+            const term = document.getElementById('searchInput').value.toLowerCase().trim();
+            const items = document.querySelectorAll('.search-item');
+            let visibleCount = 0;
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(term)) {
+                    item.style.display = "block";
+                    visibleCount++;
+                } else {
+                    item.style.display = "none";
+                    item.querySelector('.accordion-header').classList.remove('active');
+                    item.querySelector('.accordion-content').style.maxHeight = null;
+                }
+            });
+            document.getElementById('noResults').style.display = visibleCount === 0 ? "block" : "none";
+        }
+
+        window.addEventListener('load', () => {
+            if (typeof setLanguage === 'function') {
+                setLanguage(localStorage.getItem('morales_lang') || 'es');
+            }
+        });
+    </script>
+</body>
+</html>

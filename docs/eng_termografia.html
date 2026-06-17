@@ -30,7 +30,23 @@
     <script src="../universe.js"></script>
 
     <header>
-        <div class="logo">ORION <span style="font-weight: 300;">TECH</span></div>
+        <nav class="nav-container">
+            <div class="logo-container" onclick="window.location.href='../index.html';">
+                <img src="../assets/morales_logo.png" alt="Morales Plumbing Logo" class="nav-logo">
+                <div class="brand-info">
+                    <span class="brand-name">MORALES PLUMBING</span>
+                    <span class="brand-tag">ORION Portal</span>
+                </div>
+            </div>
+            
+            <div class="lang-selector">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="zh">ZH</button>
+                <button class="lang-btn" data-lang="tl">TL</button>
+                <button class="lang-btn" data-lang="vi">VI</button>
+            </div>
+        </nav>
     </header>
 
     <div class="service-detail-container animate-in">
@@ -48,7 +64,7 @@
                 <p data-i18n="eng_termo_p1">El <strong>Diagnóstico por Termografía</strong> es un pilar fundamental de nuestros Servicios de Ingeniería Central. Consiste en la detección de fugas de forma totalmente no invasiva utilizando imágenes térmicas de alta resolución y sensores acústicos.</p>
                 <p data-i18n="eng_termo_p2">En lugar de realizar costosas y destructivas demoliciones exploratorias para encontrar el origen de una fuga, utilizamos tecnología infrarroja FLIR para visualizar los gradientes térmicos dentro de las paredes y bajo las losas. Esto nos permite localizar con precisión milimétrica la anomalía en la red hidráulica.</p>
                 
-                <h2 class="tech-spec-header">Detalles Técnicos</h2>
+                <h2 class="tech-spec-header" data-i18n="eng_tech_details">Detalles Técnicos</h2>
                 <ul class="tier-list">
                     <li>
                         <strong data-i18n="eng_termo_tech1_title">Imágenes Infrarrojas de Alta Precisión</strong>

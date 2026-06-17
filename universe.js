@@ -262,10 +262,15 @@
                 if (o.y < 0) o.y = H;
                 if (o.y > H) o.y = 0;
                 const pulse = 0.5 + 0.5 * Math.sin(t * 2 + o.phase);
-                const grad = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, o.r * 4);
-                grad.addColorStop(0, `hsla(${o.hue}, 100%, 80%, ${o.alpha * pulse})`);
-                grad.addColorStop(1, 'transparent');
-                ctx.fillStyle = grad;
+                
+                // Draw inner core
+                ctx.fillStyle = `hsla(${o.hue}, 100%, 85%, ${o.alpha * pulse})`;
+                ctx.beginPath();
+                ctx.arc(o.x, o.y, o.r * 1.2, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Draw outer glow (no radial gradient creation)
+                ctx.fillStyle = `hsla(${o.hue}, 100%, 80%, ${o.alpha * pulse * 0.18})`;
                 ctx.beginPath();
                 ctx.arc(o.x, o.y, o.r * 4, 0, Math.PI * 2);
                 ctx.fill();
@@ -325,12 +330,17 @@
                 s.drift && (s.alpha = Math.max(0.1, Math.min(1, s.alpha + s.drift)));
                 const rx = s.ox * cos - s.oy * sin;
                 const ry = s.ox * sin + s.oy * cos;
-                const glow = ctx.createRadialGradient(cx + rx, cy + ry, 0, cx + rx, cy + ry, s.size * 5);
-                glow.addColorStop(0, `hsla(${s.hue}, 100%, 90%, ${s.alpha})`);
-                glow.addColorStop(1, 'transparent');
-                ctx.fillStyle = glow;
+                
+                // Draw inner core
+                ctx.fillStyle = `hsla(${s.hue}, 100%, 95%, ${s.alpha})`;
                 ctx.beginPath();
-                ctx.arc(cx + rx, cy + ry, s.size * 5, 0, Math.PI * 2);
+                ctx.arc(cx + rx, cy + ry, s.size * 0.8, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Draw outer glow (no radial gradient creation)
+                ctx.fillStyle = `hsla(${s.hue}, 100%, 75%, ${s.alpha * 0.15})`;
+                ctx.beginPath();
+                ctx.arc(cx + rx, cy + ry, s.size * 3, 0, Math.PI * 2);
                 ctx.fill();
             }
             raf = requestAnimationFrame(draw);

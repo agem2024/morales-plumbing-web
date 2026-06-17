@@ -304,6 +304,24 @@ nav {
     text-shadow: 0 0 10px var(--primary);
 }
 
+.nav-links a.nav-portal-btn {
+    color: var(--neon-cyan);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(0, 245, 255, 0.05);
+    box-shadow: 0 0 8px rgba(0, 245, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.nav-links a.nav-portal-btn:hover {
+    color: #000;
+    background: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.6);
+    text-shadow: none;
+}
+
 .lang-selector {
     display: flex;
     gap: 6px;
