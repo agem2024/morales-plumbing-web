@@ -218,22 +218,31 @@
     <script src="../app.js"></script>
     <script>
         const services = [
-            { id: 1, code: "OR-DIAG-001", nameKey: "pb_svc_1_name", userDescKey: "pb_svc_1_user", techDescKey: "pb_svc_1_tech", category: "Diagnostic", price_good: "$450", price_better: "$585", price_best: "$720", image: "../assets/icon_plumber_ai.png" },
-            { id: 2, code: "OR-ENG-002", nameKey: "pb_svc_2_name", userDescKey: "pb_svc_2_user", techDescKey: "pb_svc_2_tech", category: "Engineering", price_good: "$3,800", price_better: "$4,940", price_best: "$6,080", image: "../assets/comic_copper.png" },
-            { id: 3, code: "OR-ECO-003", nameKey: "pb_svc_3_name", userDescKey: "pb_svc_3_user", techDescKey: "pb_svc_3_tech", category: "Eco", price_good: "$2,200", price_better: "$2,860", price_best: "$3,520", image: "../assets/comic_treatment.png" },
-            { id: 4, code: "OR-SAFE-004", nameKey: "pb_svc_4_name", userDescKey: "pb_svc_4_user", techDescKey: "pb_svc_4_tech", category: "Safety", price_good: "$350", price_better: "$455", price_best: "$560", image: "../assets/icon_plumber_sat.png" },
-            { id: 5, code: "OR-DIAG-005", nameKey: "pb_svc_5_name", userDescKey: "pb_svc_5_user", techDescKey: "pb_svc_5_tech", category: "Diagnostic", price_good: "$280", price_better: "$364", price_best: "$448", image: "../assets/comic_septic.png" },
-            { id: 6, code: "OR-ENG-006", nameKey: "pb_svc_6_name", userDescKey: "pb_svc_6_user", techDescKey: "pb_svc_6_tech", category: "Engineering", price_good: "$6,500", price_better: "$8,450", price_best: "$10,400", image: "../assets/comic_construction.png" },
-            { id: 7, code: "OR-ECO-007", nameKey: "pb_svc_7_name", userDescKey: "pb_svc_7_user", techDescKey: "pb_svc_7_tech", category: "Eco", price_good: "$1,500", price_better: "$1,950", price_best: "$2,400", image: "../assets/comic_heaters.png" },
-            { id: 8, code: "OR-SAFE-008", nameKey: "pb_svc_8_name", userDescKey: "pb_svc_8_user", techDescKey: "pb_svc_8_tech", category: "Safety", price_good: "$650", price_better: "$845", price_best: "$1,040", image: "../assets/comic_expansion.png" },
-            { id: 9, code: "OR-DIAG-009", nameKey: "pb_svc_9_name", userDescKey: "pb_svc_9_user", techDescKey: "pb_svc_9_tech", category: "Diagnostic", price_good: "$150", price_better: "$195", price_best: "$240", image: "../assets/icon_plumber_biz.png" },
-            { id: 10, code: "OR-ENG-010", nameKey: "pb_svc_10_name", userDescKey: "pb_svc_10_user", techDescKey: "pb_svc_10_tech", category: "Engineering", price_good: "$850", price_better: "$1,105", price_best: "$1,360", image: "../assets/icon_plumber_eco.png" },
-            { id: 11, code: "OR-ECO-011", nameKey: "pb_svc_11_name", userDescKey: "pb_svc_11_user", techDescKey: "pb_svc_11_tech", category: "Eco", price_good: "$2,400", price_better: "$3,120", price_best: "$3,840", image: "../assets/service_tankless.png" },
-            { id: 12, code: "OR-SAFE-012", nameKey: "pb_svc_12_name", userDescKey: "pb_svc_12_user", techDescKey: "pb_svc_12_tech", category: "Safety", price_good: "$950", price_better: "$1,235", price_best: "$1,520", image: "../assets/comic_shield.png" },
-            { id: 13, code: "OR-ENG-013", nameKey: "pb_svc_13_name", userDescKey: "pb_svc_13_user", techDescKey: "pb_svc_13_tech", category: "Engineering", price_good: "$750", price_better: "$975", price_best: "$1,200", image: "../assets/comic_tiers.png" },
-            { id: 14, code: "OR-ECO-014", nameKey: "pb_svc_14_name", userDescKey: "pb_svc_14_user", techDescKey: "pb_svc_14_tech", category: "Eco", price_good: "$580", price_better: "$754", price_best: "$928", image: "../assets/comic_harvest.png" },
-            { id: 15, code: "OR-SAFE-015", nameKey: "pb_svc_15_name", userDescKey: "pb_svc_15_user", techDescKey: "pb_svc_15_tech", category: "Safety", price_good: "$1,850", price_better: "$2,405", price_best: "$2,960", image: "../assets/comic_terms.png" }
-        ];
+    { id: 1, code: "OR-DIAG-001", nameKey: "pb_svc_1_name", userDescKey: "pb_svc_1_user", techDescKey: "pb_svc_1_tech", category: "Diagnostic", image: "../assets/icon_plumber_ai.png" },
+    { id: 2, code: "OR-ENG-002", nameKey: "pb_svc_2_name", userDescKey: "pb_svc_2_user", techDescKey: "pb_svc_2_tech", category: "Engineering", image: "../assets/comic_copper.png" },
+    { id: 3, code: "OR-ECO-003", nameKey: "pb_svc_3_name", userDescKey: "pb_svc_3_user", techDescKey: "pb_svc_3_tech", category: "Eco", image: "../assets/comic_treatment.png" },
+    { id: 4, code: "OR-SAFE-004", nameKey: "pb_svc_4_name", userDescKey: "pb_svc_4_user", techDescKey: "pb_svc_4_tech", category: "Safety", image: "../assets/icon_plumber_sat.png" },
+    { id: 5, code: "OR-DIAG-005", nameKey: "pb_svc_5_name", userDescKey: "pb_svc_5_user", techDescKey: "pb_svc_5_tech", category: "Diagnostic", image: "../assets/comic_septic.png" },
+    { id: 6, code: "OR-ENG-006", nameKey: "pb_svc_6_name", userDescKey: "pb_svc_6_user", techDescKey: "pb_svc_6_tech", category: "Engineering", image: "../assets/comic_construction.png" },
+    { id: 7, code: "OR-ECO-007", nameKey: "pb_svc_7_name", userDescKey: "pb_svc_7_user", techDescKey: "pb_svc_7_tech", category: "Eco", image: "../assets/comic_heaters.png" },
+    { id: 8, code: "OR-SAFE-008", nameKey: "pb_svc_8_name", userDescKey: "pb_svc_8_user", techDescKey: "pb_svc_8_tech", category: "Safety", image: "../assets/comic_expansion.png" },
+    { id: 9, code: "OR-DIAG-009", nameKey: "pb_svc_9_name", userDescKey: "pb_svc_9_user", techDescKey: "pb_svc_9_tech", category: "Diagnostic", image: "../assets/icon_plumber_biz.png" },
+    { id: 10, code: "OR-ENG-010", nameKey: "pb_svc_10_name", userDescKey: "pb_svc_10_user", techDescKey: "pb_svc_10_tech", category: "Engineering", image: "../assets/icon_plumber_eco.png" },
+    { id: 11, code: "OR-ECO-011", nameKey: "pb_svc_11_name", userDescKey: "pb_svc_11_user", techDescKey: "pb_svc_11_tech", category: "Eco", image: "../assets/service_tankless.png" },
+    { id: 12, code: "OR-SAFE-012", nameKey: "pb_svc_12_name", userDescKey: "pb_svc_12_user", techDescKey: "pb_svc_12_tech", category: "Safety", image: "../assets/comic_shield.png" },
+    { id: 13, code: "OR-ENG-013", nameKey: "pb_svc_13_name", userDescKey: "pb_svc_13_user", techDescKey: "pb_svc_13_tech", category: "Engineering", image: "../assets/comic_tiers.png" },
+    { id: 14, code: "OR-ECO-014", nameKey: "pb_svc_14_name", userDescKey: "pb_svc_14_user", techDescKey: "pb_svc_14_tech", category: "Eco", image: "../assets/comic_harvest.png" },
+    { id: 15, code: "OR-SAFE-015", nameKey: "pb_svc_15_name", userDescKey: "pb_svc_15_user", techDescKey: "pb_svc_15_tech", category: "Safety", image: "../assets/comic_terms.png" }
+].map(s => {
+    if (typeof PB_SERVICE_PRICES !== 'undefined' && PB_SERVICE_PRICES['svc_' + s.id]) {
+        s.price_good = "$" + PB_SERVICE_PRICES['svc_' + s.id].good.toLocaleString();
+        s.price_better = "$" + PB_SERVICE_PRICES['svc_' + s.id].better.toLocaleString();
+        s.price_best = "$" + PB_SERVICE_PRICES['svc_' + s.id].best.toLocaleString();
+    } else {
+        s.price_good = "$0"; s.price_better = "$0"; s.price_best = "$0";
+    }
+    return s;
+});
 
         let activeCategory = 'all';
 
@@ -298,10 +307,8 @@
                                 </div>
                             </details>
 
-                            <a href="service.html?id=${s.id}" data-i18n="btn_view_detail" style="display: inline-block; width: 100%; text-align: center; margin-top: 1.5rem; padding: 12px; background: rgba(0, 245, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='0 0 15px rgba(0,245,255,0.3)';" onmouseout="this.style.background='rgba(0, 245, 255, 0.1)'; this.style.boxShadow='none';">
-                                Ver Detalle Técnico y Comercial
-                            </a>
-                        </div>
+                            <a href="service.html?id=${s.id}" data-i18n="pb_btn_details" style="display: inline-block; width: 100%; text-align: center; margin-top: 1.5rem; padding: 12px; background: rgba(0, 245, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='0 0 15px rgba(0,245,255,0.3)';" onmouseout="this.style.background='rgba(0, 245, 255, 0.1)'; this.style.boxShadow='none';">Ver Detalle Técnico y Comercial</a>
+                            <a href="proceso_svc_${s.id}_cliente.html" data-i18n="pb_btn_comic_repipe" style="display: inline-block; width: 100%; text-align: center; margin-top: 0.5rem; padding: 12px; background: rgba(255, 140, 0, 0.1); border: 1px solid var(--neon-orange); color: var(--neon-orange); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(255, 140, 0, 0.2)'; this.style.boxShadow='0 0 15px rgba(255,140,0,0.3)';" onmouseout="this.style.background='rgba(255, 140, 0, 0.1)'; this.style.boxShadow='none';">Ver Guía Ilustrada Paso a Paso</a></div>
                     </div>
                 </div>
             `).join('');

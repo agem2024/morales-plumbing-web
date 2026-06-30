@@ -33,9 +33,10 @@
         .top-nav a:hover { color: var(--cyan); }
         .nav-right { display: flex; align-items: center; gap: .5rem; }
         .lang-btn {
-            background: none; border: 1px solid rgba(255,255,255,.15);
+            background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.15);
             border-radius: 50px; padding: .3rem .55rem; font-size: 1.1rem;
             cursor: pointer; transition: .2s; line-height: 1;
+            color: #fff;
         }
         .lang-btn:hover { border-color: var(--cyan); transform: scale(1.1); }
         .lang-btn.active { border-color: var(--cyan); background: rgba(0,245,255,.12); }
@@ -253,7 +254,7 @@
                 </div>
                 <div class="ceo-meta-item">
                     <span class="ceo-meta-icon">🏢</span>
-                    <span id="meta-lic"><strong>Licencia CSLB:</strong> C-36 #1109100</span>
+                    <span id="meta-lic"><strong>Licencia CSLB:</strong> C-36 #1156542</span>
                 </div>
                 <div class="ceo-meta-item">
                     <span class="ceo-meta-icon">🎓</span>
@@ -342,9 +343,9 @@
             <h3 id="cta-title">¿Desea programar una consulta técnica directa?</h3>
             <p id="cta-desc">Hable directamente con el Ing. Alex Espinosa Morales para proyectos de consultoría ambiental, diseño hidráulico o repiping residencial en el Área de la Bahía.</p>
             <div class="ceo-cta-btns">
-                <a href="tel:+16692342444" class="btn-call" id="btn-call">📞 Llamar (669) 234-2444</a>
-                <a href="cv.html" class="btn-cv-link" id="btn-cv">📄 Ver Currículum Completo</a>
-                <a href="pricebook.html" class="btn-cv-link" id="btn-pb">📐 Abrir Price Book</a>
+                <a href="tel:+16692342444" class="btn-call" id="btn-call"><img src="../assets/icon_phone.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Llamar (669) 234-2444</a>
+                <a href="cv.html" class="btn-cv-link" id="btn-cv"><img src="../assets/comic_terms.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Ver Currículum Completo</a>
+                <a href="pricebook.html" class="btn-cv-link" id="btn-pb"><img src="../assets/comic_catalog.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Abrir Price Book</a>
             </div>
         </div>
 
@@ -379,11 +380,11 @@ const CEO_T = {
     `,
     cta_title: 'Would you like to schedule a direct technical consultation?',
     cta_desc: 'Speak directly with Eng. Alex Espinosa Morales for environmental consulting, hydraulic design, or residential repiping projects in the Bay Area.',
-    btn_call: '📞 Call (669) 234-2444',
-    btn_cv: '📄 View Full Resume',
-    btn_pb: '📐 Open Price Book',
+    btn_call: '<img src="../assets/icon_phone.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Call (669) 234-2444',
+    btn_cv: '<img src="../assets/comic_terms.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> View Full Resume',
+    btn_pb: '<img src="../assets/comic_catalog.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Open Price Book',
     meta_loc: '<strong>Location:</strong> San Jose, California',
-    meta_lic: '<strong>CSLB License:</strong> C-36 #1109100',
+    meta_lic: '<strong>CSLB License:</strong> C-36 #1156542',
     meta_edu: '<strong>Engineering:</strong> Universidad Libre, 2004',
     meta_tel: '<strong>Phone:</strong> (669) 234-2444',
     meta_email: '<strong>Email:</strong> moralesplumbing026@gmail.com'
@@ -414,11 +415,11 @@ const CEO_T = {
     `,
     cta_title: '¿Desea programar una consulta técnica directa?',
     cta_desc: 'Hable directamente con el Ing. Alex Espinosa Morales para proyectos de consultoría ambiental, diseño hidráulico o repiping residencial en el Área de la Bahía.',
-    btn_call: '📞 Llamar (669) 234-2444',
-    btn_cv: '📄 Ver Currículum Completo',
-    btn_pb: '📐 Abrir Price Book',
+    btn_call: '<img src="../assets/icon_phone.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Llamar (669) 234-2444',
+    btn_cv: '<img src="../assets/comic_terms.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Ver Currículum Completo',
+    btn_pb: '<img src="../assets/comic_catalog.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Abrir Price Book',
     meta_loc: '<strong>Ubicación:</strong> San Jose, California',
-    meta_lic: '<strong>Licencia CSLB:</strong> C-36 #1109100',
+    meta_lic: '<strong>Licencia CSLB:</strong> C-36 #1156542',
     meta_edu: '<strong>Ingeniería:</strong> Universidad Libre, 2004',
     meta_tel: '<strong>Teléfono:</strong> (669) 234-2444',
     meta_email: '<strong>Email:</strong> moralesplumbing026@gmail.com'
@@ -449,11 +450,11 @@ const CEO_T = {
     `,
     cta_title: '您想安排直接的技术咨询吗？',
     cta_desc: '与 Alex Espinosa Morales 工程师直接对话，了解湾区的环境咨询、水力设计或住宅管道重铺项目。',
-    btn_call: '📞 拨打电话 (669) 234-2444',
-    btn_cv: '📄 查看完整简历',
-    btn_pb: '📐 打开价格表',
+    btn_call: '<img src="../assets/icon_phone.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> 拨打电话 (669) 234-2444',
+    btn_cv: '<img src="../assets/comic_terms.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> 查看完整简历',
+    btn_pb: '<img src="../assets/comic_catalog.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> 打开价格表',
     meta_loc: '<strong>位置:</strong> 加利福尼亚州圣何塞',
-    meta_lic: '<strong>CSLB 执照:</strong> C-36 #1109100',
+    meta_lic: '<strong>CSLB 执照:</strong> C-36 #1156542',
     meta_edu: '<strong>工程学:</strong> 佩雷拉自由大学, 2004',
     meta_tel: '<strong>电话:</strong> (669) 234-2444',
     meta_email: '<strong>电子邮件:</strong> moralesplumbing026@gmail.com'
@@ -484,11 +485,11 @@ const CEO_T = {
     `,
     cta_title: 'Nais mo bang mag-iskedyul ng direktang teknikal na konsultasyon?',
     cta_desc: 'Makipag-usap nang direkta kay Engr. Alex Espinosa Morales para sa kapaligiran na konsultasyon, disenyo ng hydraulic, o mga proyekto ng repiping sa Bay Area.',
-    btn_call: '📞 Tumawag (669) 234-2444',
-    btn_cv: '📄 Tingnan ang Buong Resume',
-    btn_pb: '📐 Buksan ang Price Book',
+    btn_call: '<img src="../assets/icon_phone.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Tumawag (669) 234-2444',
+    btn_cv: '<img src="../assets/comic_terms.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Tingnan ang Buong Resume',
+    btn_pb: '<img src="../assets/comic_catalog.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Buksan ang Price Book',
     meta_loc: '<strong>Lokasyon:</strong> San Jose, California',
-    meta_lic: '<strong>Lisensya sa CSLB:</strong> C-36 #1109100',
+    meta_lic: '<strong>Lisensya sa CSLB:</strong> C-36 #1156542',
     meta_edu: '<strong>Engineering:</strong> Universidad Libre, 2004',
     meta_tel: '<strong>Telepono:</strong> (669) 234-2444',
     meta_email: '<strong>Email:</strong> moralesplumbing026@gmail.com'
@@ -519,11 +520,11 @@ const CEO_T = {
     `,
     cta_title: 'Bạn có muốn lên lịch tư vấn kỹ thuật trực tiếp không?',
     cta_desc: 'Trao đổi trực tiếp với Kỹ sư Alex Espinosa Morales cho các dự án tư vấn môi trường, thiết kế thủy lực hoặc thay thế đường ống tại Vùng Vịnh.',
-    btn_call: '📞 Gọi (669) 234-2444',
-    btn_cv: '📄 Xem Sơ yếu Lý lịch Đầy đủ',
-    btn_pb: '📐 Mở Bảng Giá',
+    btn_call: '<img src="../assets/icon_phone.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Gọi (669) 234-2444',
+    btn_cv: '<img src="../assets/comic_terms.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Xem Sơ yếu Lý lịch Đầy đủ',
+    btn_pb: '<img src="../assets/comic_catalog.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px; pointer-events: none;"> Mở Bảng Giá',
     meta_loc: '<strong>Vị trí:</strong> San Jose, California',
-    meta_lic: '<strong>Giấy phép CSLB:</strong> C-36 #1109100',
+    meta_lic: '<strong>Giấy phép CSLB:</strong> C-36 #1156542',
     meta_edu: '<strong>Kỹ thuật:</strong> Đại học Tự do, 2004',
     meta_tel: '<strong>Điện thoại:</strong> (669) 234-2444',
     meta_email: '<strong>Email:</strong> moralesplumbing026@gmail.com'

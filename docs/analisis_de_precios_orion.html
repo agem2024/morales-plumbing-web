@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Ingeniería y Análisis de Precios - Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #002b5e;
+            --secondary: #00f5ff;
+            --text-dark: #1a1a1a;
+            --text-light: #555555;
+            --border-color: #cccccc;
+        }
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #f4f6f8;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.4;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .header-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+        .header-logo span {
+            color: #0073e6;
+        }
+        .header-info {
+            text-align: right;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .report-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: #000;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-left: 5px solid var(--primary);
+        }
+        .activity-block {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        .activity-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .tier-box {
+            border: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .tier-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .tier-price {
+            color: var(--secondary);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+        }
+        .tier-body {
+            padding: 15px;
+            background-color: #fff;
+        }
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .data-section {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 3px solid #0073e6;
+            font-size: 14px;
+        }
+        .data-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+        .cost-breakdown {
+            background-color: #eef2f5;
+            padding: 10px 15px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .cost-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cost-label {
+            font-size: 11px;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+        .cost-value {
+            color: #000;
+        }
+        .profit-value {
+            color: #008000;
+        }
+        
+        @media print {
+            body { background: none; margin: 0; padding: 0; }
+            .page { width: 100%; margin: 0; box-shadow: none; padding: 15mm; border-radius: 0; }
+            .tier-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; background-color: var(--primary) !important; color: white !important; }
+            .report-title, .data-section, .cost-breakdown { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            @page { margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="header">
+            <div class="header-logo">MORALES <span>PLUMBING</span></div>
+            <div class="header-info">
+                <strong>Análisis Técnico de Costos</strong><br>
+                CSLB License: #1156542<br>
+                San Jose, CA - Bay Area<br>
+                Fecha: 2026
+            </div>
+        </div>
+
+        <div class="report-title">
+            REPORTE ESTRUCTURAL DE ALCANCES DE OBRA Y PRECIOS UNITARIOS
+        </div>
+
+        <div id="content"></div>
+    </div>
+
+    <script>
+        const data = {
+          1: { title: "Detección Acústica y Térmica de Fugas", tiers: [
+            { level: "GOOD (Standard)", price: "$350", desc: "Detección estándar para 1 ubicación (menos de 2,000 sq ft). Incluye escaneo acústico básico e inspección visual. Excluye penetraciones de losa.", mat: "Tinte trazador no tóxico, tiza de mapeo, parches temporales.", tools: "Discos acústicos estándar, medidores de humedad, manómetros.", time: "2-3 hrs", labor: "$150", overhead: "$100", matCost: "$20", profit: "$80" },
+            { level: "BETTER (Premium)", price: "$450", desc: "Detección premium para caídas de presión multi-zona. Aislamiento de colectores, inyección de gas trazador y localización precisa bajo concreto.", mat: "Mezcla de gas trazador (95% Nitrógeno / 5% Hidrógeno), tapones de prueba de alta presión.", tools: "Detector de gas electrónico (Sensit), micrófono acústico de suelo de alta ganancia.", time: "3-5 hrs", labor: "$220", overhead: "$100", matCost: "$40", profit: "$90" },
+            { level: "BEST (Ultra-Premium)", price: "$550", desc: "Mapeo estructural ultra-premium. Incluye termografía 3D de todo el sistema, rastreo electrónico subterráneo y aislamiento de sectores sin destrucción.", mat: "Banderas de marcado, válvulas de aislamiento temporales, materiales de reparación epóxica (si aplica).", tools: "Cámara térmica FLIR E-Series, localizador digital (NaviTrack), correlador acústico.", time: "4-6 hrs", labor: "$280", overhead: "$100", matCost: "$60", profit: "$110" }
+          ]},
+          2: { title: "Reemplazo Total de Tuberías (Full House Repipe)", tiers: [
+            { level: "GOOD (Standard)", price: "$18,500", desc: "Repipe Basico (Horizontal y Vertical): Hasta 2 banos, 1 cocina, lavanderia. Reemplazo completo de lineas de distribucion (atico/crawlspace) y los montantes verticales (risers) en las paredes hasta las valvulas angulares. Cortes minimos en yeso. Incluye trámites y permisos. <strong>EXCLUSIONES:</strong> No incluye texturizado, pintura final, reparación de baldosas (tiles), ni mitigación de asbesto.", mat: "Hasta 250 pies de tubería PEX-B (3/4\" principal, 1/2\" ramales), conexiones de anillo de compresión de latón, stub-outs de cobre.", tools: "Crimpeadora PEX, taladros de ángulo recto, sierras recíprocas.", time: "10-14 Días", labor: "$6,500", overhead: "$2,000", matCost: "$2,500", profit: "$1,500" },
+            { level: "BETTER (Premium)", price: "$18,500", desc: "Repipe Premium (Horizontal y Vertical): Hasta 3 banos, 1 cocina, lavanderia. Cobertura 100% de la casa (desde las lineas horizontales principales hasta las caidas verticales en cada pared). Sistema PEX-A. Incluye masilla cortafuego (firestop) y parcheo de yeso. <strong>EXCLUSIONES:</strong> No incluye pintura de color final ni modificación de gabinetes. <strong>EXCLUSIONES:</strong> No incluye pintura de color final ni modificación de gabinetes. <strong>EXCLUSIONES:</strong> No incluye pintura de color final ni modificación de gabinetes. <strong>EXCLUSIONES:</strong> No incluye pintura de color final ni modificación de gabinetes.", mat: "Hasta 350 pies PEX-A (Uponor), anillos de expansión ProPEX, stub-outs de cobre Tipo L de 1/2\", codos oreja de caída (drop-ear elbows), válvulas angulares premium.", tools: "Expansora Milwaukee ProPEX M12/M18, brocas autoalimentadas, aspiradoras HEPA, lonas de protección gruesas.", time: "7-10 Días", labor: "$8,500", overhead: "$3,000", matCost: "$4,500", profit: "$2,500" },
+            { level: "BEST (Ultra-Premium)", price: "$28,000", desc: "Grado Comercial Ultra-Premium (Horizontal y Vertical): Hasta 4 banos. Reemplazo del 100% de la infraestructura de la propiedad desde el medidor hasta cada fixture de la casa, utilizando Cobre Tipo L sin soldadura (ProPress). Incluye gestion rapida de permisos y parcheo total. <strong>EXCLUSIONES:</strong> Incluye textura base, pero excluye pintura decorativa final de igualación exacta. <strong>EXCLUSIONES:</strong> Incluye textura base, pero excluye pintura decorativa final de igualación exacta. <strong>EXCLUSIONES:</strong> Incluye textura base, pero excluye pintura decorativa final de igualación exacta. <strong>EXCLUSIONES:</strong> Incluye textura base, pero excluye pintura decorativa final de igualación exacta."). Instalación completa en Cobre Tipo L rígido utilizando tecnología ProPress sin soldadura (cero riesgo de incendio). Incluye gestión rápida de permisos y parcheo.", mat: "Hasta 400 pies de tubo rígido de Cobre Tipo L (1\", 3/4\", 1/2\"), conexiones Viega ProPress sin plomo, abrazaderas acústicas, soportes unistrut para servicio pesado.", tools: "Herramienta Ridgid RP 350 ProPress, cortadores de cobre industriales, herramientas de escariado y biselado, nivel láser.", time: "10-14 Días", labor: "$12,500", overhead: "$4,500", matCost: "$7,000", profit: "$4,000" }
+          ]},
+          3: { title: "Filtración y Ablandamiento de Agua de Toda la Casa", tiers: [
+            { level: "GOOD (Standard)", price: "$2,200", desc: "Ablandamiento estándar para casas de hasta 3 habitaciones (capacidad de 32,000 granos). Instalación conectada a lazo de agua suave existente en el garaje. Excluye crear un nuevo lazo (loop) si no existe.", mat: "Válvula digital medida Fleck 5600SXT, 1.0 pies cúbicos de resina de alta capacidad, tanque de salmuera estándar, 2 bolsas de sal solar, conectores flexibles corrugados de acero inoxidable.", tools: "Roscadoras de tubos, cinta de teflón para gas/agua, multímetro básico, llaves ajustables.", time: "3-5 hrs", labor: "$600", overhead: "$400", matCost: "$800", profit: "$400" },
+            { level: "BETTER (Premium)", price: "$2,860", desc: "Filtración premium de doble etapa (Carbón + Ablandador). Remueve cloro, COV, cloraminas y minerales duros (calcio/magnesio). Incluye ensamble de válvula de derivación (bypass) de cobre hecha a la medida.", mat: "Sistema de doble tanque (Carbón catalítico de flujo ascendente + resina de enlace cruzado al 10% de 48,000 granos), tanque de salmuera premium, múltiple bypass de cobre ProPress.", tools: "Herramienta ProPress, kit de prueba de dureza del agua, manómetro, kit de soldadura (si es requerido para uniones antiguas).", time: "5-7 hrs", labor: "$800", overhead: "$500", matCost: "$1,100", profit: "$460" },
+            { level: "BEST (Ultra-Premium)", price: "$3,520", desc: "Sistema Ultra-Premium Sin Mantenimiento (Halo 5 o similar). Filtración de 5 etapas, sin desperdicio de agua (zero wastewater), sin sal, con esterilizador UV en línea. Certificado para 1,000,000 de galones.", mat: "Unidad multietapa Halo 5, esterilizador de luz UV comercial, tubería rígida de Cobre Tipo L de 1\", válvulas de bola de aislamiento completas, soportes de montaje pesado.", tools: "Probadores eléctricos avanzados (para integración UV), niveles láser, cortadores de tubos industriales, Ridgid ProPress.", time: "1-1.5 Días", labor: "$1,000", overhead: "$600", matCost: "$1,400", profit: "$520" }
+          ]},
+          4: { title: "Válvula Inteligente y de Cierre (Smart Shutoff)", tiers: [
+            { level: "GOOD (Standard)", price: "$850", desc: "Instalación de Válvula Inteligente Estándar en la línea principal de agua de 3/4\" o 1\". Se conecta al WiFi existente de la casa. Excluye la instalación de una nueva toma eléctrica exterior.", mat: "Unidad inteligente Phyn Plus o Moen Flo, conexiones de unión de latón, niples dieléctricos, sellador de silicona para exteriores.", tools: "Cortatubos, smartphone (para configuración de IoT), calibradores digitales, llaves estándar.", time: "2-3 hrs", labor: "$250", overhead: "$200", matCost: "$250", profit: "$150" },
+            { level: "BETTER (Premium)", price: "$1,150", desc: "Válvula Inteligente Premium con múltiple de derivación (bypass manifold) a medida. Permite el control manual de agua durante cortes prolongados de energía. Incluye caja resistente a la intemperie (NEMA) si se instala en exteriores.", mat: "Unidad inteligente Moen Flo, 3 válvulas de bola de puerto completo de latón (para bypass), conexiones de Cobre Tipo L, caja NEMA resistente a rayos UV.", tools: "Herramienta ProPress, taladro de mampostería (para montaje en estuco), pelacables, multímetro.", time: "3-5 hrs", labor: "$350", overhead: "$200", matCost: "$400", profit: "$200" },
+            { level: "BEST (Ultra-Premium)", price: "$1,400", desc: "Integración de Sistema Ultra-Premium: Red de sensores múltiples (hasta 5 discos remotos de humedad) sincronizados de forma inalámbrica con la válvula principal. Incluye la integración de un circuito dedicado GFCI.", mat: "Válvula principal inteligente, 5 discos inalámbricos de detección de humedad, conducto eléctrico (conduit), receptáculo GFCI, uniones dieléctricas de grado comercial.", tools: "Dobladores de conducto eléctrico, probadores de voltaje, herramientas avanzadas de configuración de red.", time: "5-7 hrs", labor: "$450", overhead: "$200", matCost: "$500", profit: "$250" }
+          ]},
+          5: { title: "Inspección de Drenaje por Cámara y Mapeo", tiers: [
+            { level: "GOOD (Standard)", price: "$280", desc: "Inspección estándar de línea principal de hasta 100 pies insertada desde un registro (cleanout) accesible en el piso o pared. Identifica bloqueos básicos, acumulación de grasa e intrusión de raíces. Incluye resumen verbal al cliente.", mat: "Memoria USB (si se solicita copia física del video), toallitas desinfectantes industriales.", tools: "Cámara de empuje estándar de 100 pies (ej. Ridgid microDrain), equipo básico de protección personal (PPE).", time: "1-2 hrs", labor: "$120", overhead: "$100", matCost: "$10", profit: "$50" },
+            { level: "BETTER (Premium)", price: "$364", desc: "Inspección Premium con Rastreo por Sonar Activo. Permite mapear con precisión quirúrgica la profundidad y la ubicación exacta en la superficie de la sección dañada del tubo. Incluye marcas físicas en el piso y enlace de video subido a la nube.", mat: "Pintura de marcado para topógrafos (colores APWA), banderas de marcado, enlace seguro de almacenamiento en la nube.", tools: "Cámara estándar Ridgid SeeSnake, localizador NaviTrack Scout (receptor de sonda de 512 Hz).", time: "2-3 hrs", labor: "$150", overhead: "$120", matCost: "$14", profit: "$80" },
+            { level: "BEST (Ultra-Premium)", price: "$448", desc: "Inspección HD Ultra-Premium + Diagnóstico Estructural Completo. Incluye informe de inclinación digital a lo largo de la línea, evaluación de ramales laterales (branching) y un reporte de condición totalmente transcrito y certificado tipo PACP ideal para bienes raíces o reclamos de seguros.", mat: "Licencia de software para reporte PACP, tarjetas SD de alta capacidad, servidor dedicado para el alojamiento del reporte.", tools: "Ridgid SeeSnake CSx TruSense con resolución HD, sensores de inclinación internos, localizador digital avanzado.", time: "3-5 hrs", labor: "$200", overhead: "$120", matCost: "$28", profit: "$100" }
+          ]},
+          6: { title: "Reemplazo de Alcantarillado Sin Zanja (Trenchless)", tiers: [
+            { level: "GOOD (Standard)", price: "$4,500", desc: "Revestimiento Epóxico (CIPP) sin zanja para hasta 20 pies de tubería de drenaje de 4\". Repara intrusiones de raíces severas y fisuras sin necesidad de excavar el jardín o el camino de entrada. Incluye hidrolavado (hydro-jetting) preparatorio.", mat: "Tubo curado en sitio (CIPP - fieltro reforzado), resina epóxica estructural de 2 componentes, tubo de calibración, cinta de curado para alta temperatura.", tools: "Tambor de inversión neumático, compresor de aire de 100 CFM, caldera de vapor o agua caliente para curado rápido, unidad de hydro-jetter.", time: "1 Día", labor: "$1,500", overhead: "$800", matCost: "$1,200", profit: "$1,000" },
+            { level: "BETTER (Premium)", price: "$6,200", desc: "Reemplazo por Rotura de Tubería (Pipe Bursting) para hasta 50 pies de línea de alcantarillado de 4\". Instalación de tubería HDPE sin costuras. Requiere dos pequeños pozos de excavación (inserción y recepción). Incluye relleno básico de tierra (sin parche de asfalto).", mat: "50 pies de tubería de Polietileno de Alta Densidad (HDPE) SDR-17 sin costuras, cabezal de rotura de acero, varillas de soldadura por fusión.", tools: "Tractor extractor hidráulico Tric Tools, máquina soldadora de fusión a tope, mini-excavadora para los pozos de acceso.", time: "2 Días", labor: "$2,200", overhead: "$1,000", matCost: "$1,500", profit: "$1,500" },
+            { level: "BEST (Ultra-Premium)", price: "$18,500", desc: "Sistema Completo Sin Zanja Ultra-Premium (hasta 100 pies). Incluye la instalación de ensamblajes de registros bidireccionales en el límite de la propiedad (property-line cleanouts), perforación y parcheo de concreto, compactación total del suelo (Class II) y gestión de todos los permisos de obra pública de la ciudad.", mat: "100 pies de HDPE SDR-17, 2 conjuntos de registros bidireccionales de ABS de 4\", tapas de registro de hierro fundido, roca base Clase II, cable trazador subterráneo.", tools: "Tractor hidráulico de alto tonelaje, camión de vacío por hidroexcavación (para cruzar utilidades de forma segura), compactadora de placa vibratoria, cortadora de concreto con disco de diamante.", time: "3-4 Días", labor: "$3,500", overhead: "$1,500", matCost: "$1,800", profit: "$1,700" }
+          ]},
+          7: { title: "Instalación de Calentador de Agua Sin Tanque (Tankless)", tiers: [
+            { level: "GOOD (Standard)", price: "$3,200", desc: "Reemplazo de calentador estándar a uno Sin Tanque No-Condensante (Instalación Exterior). Reemplaza el tanque existente por una unidad moderna de 199,000 BTU. Se conecta a la línea de gas de 3/4\" existente. No incluye modificaciones eléctricas (asume tomacorriente disponible).", mat: "Unidad no condensante Takagi o Rinnai, kit dedicado de válvulas de aislamiento para mantenimiento, campana de ventilación Categoría III de acero inoxidable.", tools: "Detector de gas combustible (sniffer), taladro percutor, roscadora de tubos, sierra perforadora.", time: "4-6 hrs", labor: "$800", overhead: "$500", matCost: "$1,200", profit: "$700" },
+            { level: "BETTER (Premium)", price: "$4,500", desc: "Instalación Premium de Condensación de Alta Eficiencia (Interior/Exterior). Reemplaza tanque estándar por tecnología de condensación. Incluye retrofit de ventilación con tubo de PVC Cédula 40 (hasta el techo/pared), kit neutralizador de condensado ácido, y actualización de la tubería de gas de 1/2\" a 3/4\" (hasta 10 pies).", mat: "Unidad Navien NPE-A2 Condensing, Tubería de PVC de núcleo sólido Cédula 40 (2\" o 3\"), cartucho neutralizador de condensado, válvulas de aislamiento de latón Webstone.", tools: "Analizador de combustión Testo, herramienta ProPress, cortadores precisos de PVC, manómetro digital para comprobar presión estática/dinámica de gas.", time: "6-8 hrs", labor: "$1,200", overhead: "$600", matCost: "$1,700", profit: "$1,000" },
+            { level: "BEST (Ultra-Premium)", price: "$6,800", desc: "Sistema Dual Ultra-Premium en Cascada (Cascaded System) con bomba de recirculación inteligente integrada. Provee agua caliente inagotable para casas de lujo (4+ baños). Incluye la fabricación de un rack de montaje con canales Unistrut y configuración del módulo de telemetría WiFi.", mat: "2 unidades Navien NPE-240A2, kit múltiple de cables en cascada Ready-Link, controlador inteligente Navilink, Unistrut de calibre grueso galvanizado, aisladores de vibración de caucho/acero.", tools: "Manómetros avanzados de diagnóstico, cámara de imágenes térmicas (para afinar los bucles de recirculación), herramientas de anclaje de carga pesada.", time: "2 Días", labor: "$1,800", overhead: "$800", matCost: "$2,800", profit: "$1,400" }
+          ]},
+          8: { title: "Instalación y Extensión de Línea de Gas", tiers: [
+            { level: "GOOD (Standard)", price: "$950", desc: "Extensión Estándar de Línea de Gas (hasta 20 pies) para un electrodoméstico nuevo (por ejemplo, cocina nueva o secadora). Consiste en un recorrido interior expuesto (sótano o garaje). Incluye prueba de presión de gas según normativas (15 PSI).", mat: "Hasta 20 pies de Tubería de Hierro Negro de 1/2\" o 3/4\", conexiones de hierro maleable (codos, tes), cinta de teflón clasificada para gas, compuesto sellador de juntas.", tools: "Roscadora de tubos eléctrica Ridgid (Modelo 300 Compact), llaves para tubos grandes (18\" - 24\"), manómetro de prueba de presión de diafragma.", time: "3-5 hrs", labor: "$400", overhead: "$200", matCost: "$150", profit: "$200" },
+            { level: "BETTER (Premium)", price: "$1,450", desc: "Instalación Premium usando CSST (Tubería de Acero Inoxidable Corrugado) para enrutamientos complejos a través de áticos o espacios de rastreo (hasta 50 pies). Incluye la conexión eléctrica obligatoria a tierra (bonding) al panel eléctrico principal según exige el código.", mat: "50 pies de tubería CSST (Gastite/TracPipe), conectores especiales AutoFlare, placas de protección contra clavos (striker plates), cable de conexión a tierra de cobre trenzado #6 AWG, abrazaderas de conexión a tierra (bonding clamps).", tools: "Cortadores de tubo específicos para CSST, pelacables industriales, multímetro (para verificar la continuidad eléctrica de la conexión a tierra).", time: "4-6 hrs", labor: "$450", overhead: "$250", matCost: "$450", profit: "$300" },
+            { level: "BEST (Ultra-Premium)", price: "$2,200", desc: "Línea Subterránea de Polietileno (PE) de Alta Capacidad (hasta 100 pies). Diseñada específicamente para alimentar calentadores de piscina, generadores o Unidades de Vivienda Accesoria (ADUs). Incluye zanjeo profundo (24\" mínimo de cobertura), elevadores sin ánodo, cable de rastreo subterráneo y relleno posterior.", mat: "100 pies de Tubería de Gas Amarilla de Polietileno (PE) de Alta Densidad, elevadores (risers) sin ánodo con válvulas de medidor, cable de rastreo (tracer wire), cinta plástica subterránea de advertencia (color amarillo).", tools: "Máquina de soldadura térmica a tope McElroy (Butt Fusion), equipo motorizado de zanjeo (Ditch Witch), compactadora de placa vibratoria de gasolina.", time: "2 Días", labor: "$800", overhead: "$400", matCost: "$500", profit: "$500" }
+          ]},
+          9: { title: "Lavado a Alta Presión (Hydro-Jetting)", tiers: [
+            { level: "GOOD (Standard)", price: "$450", desc: "Hydro-Jetting Residencial Estándar diseñado para líneas secundarias (fregadero de cocina o desagües de lavandería). Corta a través de la acumulación de grasa y lodo (hasta 50 pies). Utiliza presiones de hasta 2,000 PSI.", mat: "Tratamiento enzimático líquido Bio-enzimático (aplicación preventiva final), lonas de protección de trabajo pesado para pisos interiores.", tools: "Unidad hidrolavadora eléctrica montada en carrito (2,000 PSI / 2 GPM), boquilla estándar de penetración frontal/trasera.", time: "2 hrs", labor: "$150", overhead: "$150", matCost: "$30", profit: "$120" },
+            { level: "BETTER (Premium)", price: "$650", desc: "Lavado Premium de Línea Principal para tratar intrusiones severas de raíces de árboles o líneas de grasa comerciales livianas (restaurantes pequeños). Cubre hasta 100 pies. Limpieza de alto flujo (4,000 PSI). Incluye verificación visual con cámara de empuje.", mat: "Químico espumante destructor de raíces especializado (RootX), agentes desengrasantes industriales.", tools: "Jetter a gasolina montado sobre plataforma (skid) (4,000 PSI / 4+ GPM), boquilla rotatoria agresiva Warthog, cámara de inspección de línea principal.", time: "3-5 hrs", labor: "$250", overhead: "$200", matCost: "$50", profit: "$150" },
+            { level: "BEST (Ultra-Premium)", price: "$950", desc: "Lavado Ultra-Premium de Drenaje Pluvial y/o Comercial Pesado (hasta 300 pies). Acción de pulsación de alta frecuencia para desincrustar tuberías antiguas de hierro fundido (cast iron descaling) y extraer escombros pesados (rocas, grava, cemento).", mat: "Agentes químicos descalcificadores de grado industrial, alfombras/barreras de contención medioambiental para captura segura de desechos extraídos.", tools: "Unidad Jetter industrial montada en remolque tipo Vactor (hasta 4,000 PSI / 18 GPM), boquillas de mangal/cadena giratoria (chain flail), equipo completo de seguridad y mitigación de salpicaduras.", time: "1 Día", labor: "$350", overhead: "$300", matCost: "$80", profit: "$220" }
+          ]},
+          10: { title: "Actualización de Accesorios (Grifería e Inodoros)", tiers: [
+            { level: "GOOD (Standard)", price: "$350", desc: "Reemplazo Estándar de 1 Accesorio (1 Grifo o 1 Inodoro). Retiro de la unidad existente, limpieza meticulosa de la brida o base, instalación del nuevo accesorio suministrado (grado de constructor/builder-grade). Incluye el transporte y desecho ecológico (haul-away) de la unidad vieja.", mat: "Anillo de cera estándar con cuerno direccional, nuevas líneas de suministro flexibles trenzadas de acero inoxidable, pernos de montaje de inodoro, masilla de fontanero (plumber's putty), masilla de silicona.", tools: "Llave de lavabo (basin wrench) telescópica, llaves ajustables suaves, espátula de limpieza, aspiradora de taller para el agua residual.", time: "1-2 hrs", labor: "$120", overhead: "$100", matCost: "$80", profit: "$50" },
+            { level: "BETTER (Premium)", price: "$650", desc: "Actualización Premium de Accesorio. Instalación de un Grifo Sin Contacto (Motion Sensor) de alta gama o un inodoro de alto rendimiento (ej. Toto Drake). Incluye la sustitución obligatoria de las válvulas de cierre angulares viejas por modelos modernos de cuarto de vuelta (quarter-turn).", mat: "Anillo de cera de poliuretano extra grueso (Sani Seal), válvulas de cierre angulares de latón de 1/4 de vuelta, escudos decorativos (escutcheons) a la medida, paquetes de baterías de larga duración para sensores.", tools: "Pistola ProPress (para instalar nuevas válvulas en cañerías de cobre viejas), multímetro (para pruebas del sensor), nivel de precisión torpedo.", time: "2-4 hrs", labor: "$180", overhead: "$120", matCost: "$250", profit: "$100" },
+            { level: "BEST (Ultra-Premium)", price: "$1,200", desc: "Integración Ultra-Premium de Inodoro Inteligente y Bidet electrónico (por ejemplo, Toto Neorest/Washlet). Incluye el tendido de un nuevo circuito eléctrico protegido y la instalación de un receptáculo de 120V GFCI inmediatamente adyacente a la unidad del inodoro para cumplir con los códigos de construcción modernos.", mat: "Unidad electrónica Toto Neorest / Washlet, bridas de montaje de hierro fundido de servicio pesado, cable eléctrico Romex 12-2 con conexión a tierra, receptáculo GFCI, caja eléctrica para trabajos de remodelación (old-work box).", tools: "Sierra de precisión para paneles de yeso (drywall), probadores de voltaje sin contacto, cinta de pescar cables (fish tape), arreglo completo de herramientas avanzadas de plomería y electricidad menor.", time: "5-7 hrs", labor: "$300", overhead: "$150", matCost: "$550", profit: "$200" }
+          ]},
+          11: { title: "Instalación de Válvula Sísmica de Cierre Automático", tiers: [
+            { level: "GOOD (Standard)", price: "$650", desc: "Instalación Estándar de Válvula de Cierre Sísmico para medidores de gas residenciales (tubería de hasta 1\"). Sistema de cierre puramente mecánico que se activa automáticamente frente a un sismo de magnitud 5.4 o superior. Incluye trámites y permisos de la ciudad (inspección de código).", mat: "Válvula Sísmica Mecánica Aprobada por el Estado de California (ej. Little Firefighter o Pacific Seismic), cinta de Teflón gruesa clasificada específicamente para gas natural.", tools: "Llaves pesadas para tubos de 14\" y 18\", nivel de burbuja de alta precisión (la nivelación exacta es crítica para la calibración del sensor de péndulo), pasta selladora para roscas (pipe dope).", time: "2-3 hrs", labor: "$250", overhead: "$150", matCost: "$120", profit: "$130" },
+            { level: "BETTER (Premium)", price: "$850", desc: "Instalación de Válvula Sísmica de Grado Comercial Premium (para líneas de 1-1/2\" a 2\"). Incluye la fabricación a medida e instalación de anclajes rígidos (soportes unistrut) fijados a la pared estructural para evitar cortes falsos o disparos accidentales causados por vibraciones mecánicas cercanas o vientos fuertes.", mat: "Válvula sísmica de alto flujo de tamaño comercial, canales (strut) Unistrut galvanizados de calibre grueso, pernos de anclaje expansivos para concreto estructural, abrazaderas de conexión a tierra sólidas.", tools: "Taladro percutor rotatorio (rotary hammer drill), llave dinamométrica calibrada (para el ajuste de los anclajes de concreto), sierra de banda portátil para cortar metal (unistrut).", time: "4-6 hrs", labor: "$320", overhead: "$180", matCost: "$200", profit: "$150" },
+            { level: "BEST (Ultra-Premium)", price: "$1,450", desc: "Integración Inteligente Ultra-Premium. El sistema más avanzado del mercado. Detección sísmica física combinada con sensores electrónicos remotos de gases explosivos (metano/propano) y monóxido de carbono (CO), conectados mediante relé a una válvula solenoide electrónica de cierre ultrarrápido.", mat: "Válvula Inteligente de Solenoide de Gas, detectores remotos de gases explosivos/CO, carretes de cable de control de bajo voltaje (18 AWG o 22 AWG), unidad de batería de respaldo de larga duración.", tools: "Multímetros digitales de categoría III/IV, herramientas profesionales de terminación y empalme de cableado de bajo voltaje, tabletas inteligentes (IoT) de configuración para emparejamiento inalámbrico y de red.", time: "1 Día", labor: "$450", overhead: "$200", matCost: "$550", profit: "$250" }
+          ]},
+          12: { title: "Prueba e Instalación de Ensamblaje Antirretorno (Backflow)", tiers: [
+            { level: "GOOD (Standard)", price: "$850", desc: "Instalación Estándar de Zona de Presión Reducida (RPZ) residencial diseñada para proteger los sistemas de riego paisajístico (tubería de hasta 1\"). Previene el retroceso de aguas contaminadas hacia el sistema público de agua potable. Incluye las pruebas iniciales y la certificación gubernamental obligatoria.", mat: "Conjunto de prevención de reflujo de zona de presión reducida (RPZ) de latón sin plomo (ej. marca Watts o Wilkins) de 1\", conectores de unión de latón masivo, tubos elevadores de Cobre Tipo L duro.", tools: "Equipo completo de antorcha de soldadura fuerte o equipo ProPress (si no se permite llama), Kit Calibrado y Certificado de Prueba de Flujo Inverso (Mid-West o equivalente), llaves Stillson.", time: "3-4 hrs", labor: "$350", overhead: "$150", matCost: "$200", profit: "$150" },
+            { level: "BETTER (Premium)", price: "$1,250", desc: "Instalación Comercial Premium que incorpora un recinto termoaislado tipo ASSE 1060 con elementos calefactores integrados. Diseñado específicamente para proteger las aplicaciones comerciales en exteriores que quedan severamente expuestas durante las heladas y los climas extremos bajo cero.", mat: "Válvula RPZ Comercial de alto rendimiento de 2\", caja/recinto de aluminio rígido con calefacción aprobada ASSE 1060, mezcla y encofrado para base (pad) de concreto estructural, cinta aislante térmica eléctrica (heat tape).", tools: "Taladro sacatestigos (core drill) pesado (para perforar pasajes a través de las bases de concreto), multímetro digital (para certificar el cableado de resistencia del calentador), kit de prueba calibrado con mangueras reforzadas.", time: "6-8 hrs", labor: "$450", overhead: "$200", matCost: "$350", profit: "$250" },
+            { level: "BEST (Ultra-Premium)", price: "$2,500", desc: "Ensamblaje DCDA (Double Check Detector Assembly) Industrial de Alta Capacidad y Ultra-Premium para la protección de sistemas masivos de rociadores contra incendios (fire sprinklers). Instalación con bridas (flanged). Incluye la coordinación reglamentaria y la gestión del proyecto con OSHPD y el jefe de bomberos (Fire Marshal) del condado.", mat: "Válvula DCDA industrial pesada con bridas de 4\" o 6\", juntas/empaques de brida diseñados para extrema presión, pernos y tuercas estructurales Grado 8 para ensamblajes sísmicos, medidor de derivación (bypass meter) calibrado de precisión.", tools: "Polipastos de cadena y tensores de palanca (come-alongs) (para maniobras de izado pesado), llaves dinamométricas de gran tamaño de mango largo, pasadores (pins) cónicos de alineación de bridas de acero forjado.", time: "2 Días", labor: "$800", overhead: "$300", matCost: "$900", profit: "$500" }
+          ]},
+          13: { title: "Mantenimiento, Reconstrucción e Integración de Caldera Comercial", tiers: [
+            { level: "GOOD (Standard)", price: "$550", desc: "Mantenimiento Preventivo Estándar (anual) para sistemas de calderas comerciales ligeras (hasta 399,000 BTU). El servicio minucioso incluye: limpieza a fondo del conjunto del quemador, prueba de la barra de ignición/termopar, lavado superficial (flush) del intercambiador de calor y un análisis calibrado de los gases de escape.", mat: "Juntas de sellado OEM del fabricante original, barras de sensores de llama y kits de reemplazo del ignitor (pilotos), agente químico descalcificador de sistemas hidrónicos (p. ej., marca Haymaker).", tools: "Analizador electrónico avanzado de gases de combustión (Testo o Bacharach), manómetro digital diferencial, bomba de circulación portátil autocebante utilizada exclusivamente para los lavados químicos.", time: "3-5 hrs", labor: "$250", overhead: "$150", matCost: "$50", profit: "$100" },
+            { level: "BETTER (Premium)", price: "$950", desc: "Revisión Premium y Reconstrucción Dinámica de Bomba. Desarmado metódico y completo de los bucles de flujo primario y secundario. Reconstrucción integral de las pesadas bombas de circulación en línea de hierro fundido (por ejemplo, marca Bell & Gossett) y el dimensionamiento y sustitución exacta de los tanques de expansión presurizados del sistema.", mat: "Tanque de expansión hidrónico de grado comercial pesado, juntas tóricas y sellos de la voluta de la bomba de hierro fundido, ensamblajes completos del cartucho de rodamientos (bearing assemblies), uniones dieléctricas diseñadas para servicio a temperaturas extremas.", tools: "Kits extractores hidráulicos de rodamientos y poleas, herramientas micrométricas para la alineación del acoplamiento del motor, llaves para tubos masivas de 24\"/36\", cámara termográfica (para detectar cuellos de botella térmicos ocultos).", time: "1 Día", labor: "$450", overhead: "$200", matCost: "$150", profit: "$150" },
+            { level: "BEST (Ultra-Premium)", price: "$2,800", desc: "Modernización Completa del Sistema Ultra-Premium. Extraemos los anticuados controles de la vieja escuela y modernizamos toda la sala de máquinas (boiler room) instalando un Sistema de Gestión de Edificios (BMS) moderno. Integra restablecimiento por clima exterior y un agresivo control inteligente de etapas (staging) para maximizar la eficiencia térmica (ahorro de gas masivo).", mat: "Sistema de controlador de caldera inteligente modular (marca Tekmar o superior), termistores de precisión para detectar temperatura de aire exterior, válvulas de mezcla de fluido con actuador motorizado proporcional (motorized mixing valves), carretes completos de cableado blindado de instrumentación de bajo voltaje.", tools: "Instrumental eléctrico y electrónico avanzado para diagnósticos PID, computadora portátil rugerizada dedicada con el software propietario de programación de curvas de calentamiento del BMS, equipo industrial para calibración de termistores (baños de hielo/calor precisos).", time: "10-14 Días", labor: "$900", overhead: "$400", matCost: "$1,000", profit: "$500" }
+          ]},
+          14: { title: "Instalación de Sistema de Bomba de Sumidero (Sump Pump)", tiers: [
+            { level: "GOOD (Standard)", price: "$750", desc: "Reemplazo Estándar de la Bomba Principal en residencias. Remoción y desecho de la bomba averiada, limpieza aspirada del limo en el fondo del foso (pit), e instalación perfecta de una nueva y robusta bomba sumergible de hierro fundido de 1/3 HP accionada por un interruptor de flotador vertical confiable. Adecuado para pozos con una elevación total (lift) de hasta 10 pies antes del punto de descarga exterior.", mat: "Bomba comercial/residencial pesada Zoeller M53 (1/3 HP) (con carcasa de hierro fundido epóxico), válvula de retención silenciosa con resorte de 1-1/2\", tubería y accesorios de PVC blanco liso Cédula 40, sistema químico de imprimación y cemento disolvente (primer/glue) PVC para plomería.", tools: "Aspiradora industrial potente para agua/polvo de 16 galones, herramientas cortadoras de tubos de PVC tipo trinquete o disco abrasivo, herramientas de apriete manual básicas (destornilladores, llaves allen, llaves combinadas).", time: "2-3 hrs", labor: "$280", overhead: "$150", matCost: "$200", profit: "$120" },
+            { level: "BETTER (Premium)", price: "$1,450", desc: "Sistema Premium de Bomba Principal y Batería de Respaldo Integrada. Además de una robusta bomba principal alimentada por CA de 1/2 HP, se instala codo a codo en el foso un sistema de bomba secundaria de emergencia totalmente alimentado por corriente continua (12V DC). Este sistema híbrido garantiza una protección a prueba de balas para el sótano durante tormentas torrenciales acompañadas de cortes masivos y prolongados del suministro eléctrico.", mat: "Conjunto de Bomba Principal sumergible de 1/2 HP de alto flujo (Primary Pump), unidad separada de Bomba de Respaldo de 12V DC, Batería Marina de Ciclo Profundo AGM de 100Ah masiva sellada y libre de mantenimiento, múltiple en 'Y' a la medida que contiene válvulas de retención dobles de trabajo súper pesado (heavy-duty dual check valve manifold).", tools: "Multímetro digital de banco True-RMS para verificar el circuito de carga flotante de 12V, pinzas pelacables de aviación, crimpeadoras hidráulicas manuales para colocar conectores de anillo de latón estañado en los cables de terminales de la batería masiva.", time: "4-6 hrs", labor: "$450", overhead: "$200", matCost: "$550", profit: "$250" },
+            { level: "BEST (Ultra-Premium)", price: "$2,400", desc: "Sistema Inteligente Ultra-Premium de Doble Redundancia en Tiempo Real. Arquitectura crítica: Dos gigantescas bombas de grado comercial puro trabajan dentro del foso controladas por una placa inteligente que alterna los ciclos de trabajo (para desgaste parejo) y activa ambas bombas simultáneamente en eventos catastróficos de inundación masiva. Cuenta con bancos de baterías duales y un controlador central con telemetría celular independiente y WiFi que envía notificaciones de alerta (SMS/Email) al milisegundo de detectar cualquier anomalía.", mat: "Sistema de Doble Bomba Prefabricado Ion Technologies, controlador inteligente tipo microprocesador que alterna y prueba automáticamente las bombas (smart alternating controller), módulo de telemetría de red celular/WiFi, 2x baterías AGM de 100Ah cableadas en paralelo, módulos de alarma acústica de agua alta (high-water alarms).", tools: "Herramientas de diagnóstico de análisis de red y señal celular para ubicar la antena de telemetría, dobladoras manuales/hidráulicas para conductos metálicos eléctricos EMT y accesorios necesarios para enrutar los múltiples tendidos de cable con el aspecto ordenado e impecable de un panel de control industrial.", time: "1 Día", labor: "$650", overhead: "$300", matCost: "$1,000", profit: "$450" }
+          ]},
+          15: { title: "Infraestructura de Repipe de Cobre Élite", tiers: [
+            { level: "GOOD (Standard)", price: "$9,500", desc: "Repipe Básico de Cobre Élite enfocado exclusivamente en las áreas accesibles de tuberías. Cobertura de hasta 2 baños completos. Diseñado para realizar un reemplazo integral y directo (1 a 1) de antiguas tuberías de hierro galvanizado corroídas que discurren exclusivamente en el sótano, en el espacio de rastreo (crawlspace) o en el ático, utilizando conductos de Cobre Tipo M. El precio se ajusta basándose en la promesa de no requerir demoliciones mayores ni masivos reemplazos en los paneles de yeso decorativos.", mat: "Rollos y varas rectas de Tubería de Cobre Tipo M de pared fina (hasta 200 pies combinados de diversas medidas), soldadura de aleación de plata sin plomo estándar de la industria, tarros de fundente (flux) soluble en agua que previene la corrosión posterior a la instalación, abrazaderas de suspensión y montaje de cobre macizo (copper tube straps).", tools: "Equipamiento de soldadura pesada: soplete completo de gas MAPP o carrito de oxiacetileno portátil, cortadores de tubos industriales diseñados para corte en espacio confinado con cuchillas endurecidas para trabajo pesado, cepillos metálicos cónicos rotatorios de alambre, abundantes metros de lija de tela de esmeril (emery cloth) para pulir las juntas hasta que brillen antes de soldar.", time: "2-4 Días", labor: "$4,000", overhead: "$1,500", matCost: "$2,500", profit: "$1,500" },
+            { level: "BETTER (Premium)", price: "$14,500", desc: "Repipe Premium de Cobre de Casa Completa en Grado Comercial. Dimensionado para alimentar a plena capacidad hasta 3 baños operando simultáneamente. A lo largo de la infraestructura se utiliza tubería de Cobre Tipo L rígido de pared gruesa, reconocido por su vida útil centenaria. Todas las uniones reciben soldadura fuerte (brazing) y soldadura de plata de nivel hospitalario. A diferencia de un paquete estándar, este nivel PREMIUM cubre la apertura meticulosa, el ruteo interno de paredes de madera y el trabajo inicial rústico de parchado y cierre de todos los cortes en los paneles de yeso (drywall rough-in patches), así como una prueba hidrostática de alta presión al finalizar.", mat: "Líneas rectas (sticks) de Tubería de Cobre Rígida Tipo L (hasta 300 pies en total de 1\", 3/4\" y 1/2\"), varillas largas de aleación especial para soldadura fuerte con un 15% de contenido de plata (utilizadas en uniones bajo tierra/losa) o soldadura de plata súper premium sin plomo, válvulas de detención de ángulo de latón cromado masivo (brass angle stops), cientos de abrazaderas plásticas o acolchadas de aislamiento acústico para evitar por completo ruidos y golpes de ariete.", tools: "Configuración pesada de antorcha oxiacetilénica con múltiples boquillas rosebud especialmente preparadas para generar calor extremo rápido en soldadura fuerte, juegos de dobladores de tubos de cobre profesionales tipo palanca/engranaje (para doblar esquinas largas y así minimizar drásticamente el uso de accesorios soldables que frenan la presión y el flujo), costosos niveles láser auto-nivelantes proyectados para garantizar una pendiente de drenaje (pitching) impecable y arquitectónicamente perfecta a lo largo de docenas de metros.", time: "4-6 Días", labor: "$6,000", overhead: "$2,000", matCost: "$4,000", profit: "$2,500" },
+            { level: "BEST (Ultra-Premium)", price: "$18,500", desc: "Sistema de Cobre Arquitectónico Ultra-Premium con tecnología de crimpado en frío ProPress e implementando Aislamiento Térmico Total en cada centímetro. Especialmente dimensionado para el flujo masivo que exigen las mansiones/residencias de lujo (hasta 4 o más baños). El sistema goza de garantía de por vida. Esta es una instalación clasificada de \"Cero Riesgo de Incendio\" al omitir el uso de llamas o sopletes en maderas viejas (todo se hace en frío por prensa de mil libras). Cada pulgada de la tubería, ya sea fría o caliente, está totalmente envuelta herméticamente en cilindros densos de aislamiento de cañerías de fibra de vidrio.", mat: "Vigas de Cobre Duro Tipo L (hasta 400 pies en total para circuitos largos en serie), costosas y altamente especializadas conexiones/accesorios de latón de aleación pesada sin plomo Viega ProPress que poseen anillos selladores internos de EPDM de vida útil indefinida, pesados cilindros de aislamiento de tubos de fibra de vidrio preformado de 1 pulgada de grosor de pared que vienen revestidos con una duradera chaqueta blanca exterior ASJ, sistemas de soportes colgantes y anclajes estructurales de hierro tipo puntal comercial (commercial strut supports) que mantienen las líneas perfectamente rígidas.", tools: "Arma hidráulica a batería de calidad comercial Ridgid RP 350 ProPress junto con mordazas surtidas (desde 1/2\" hasta 2\"), costosos cuchillos afilados para cortar y biselar el espeso aislamiento de fibra de vidrio de manera hermética y perfecta en cruces e intersecciones, robustas herramientas eléctricas de fijación estructural a pólvora y potentes taladros percutores diseñados para incrustar anclajes profundos en viejas y gruesas vigas o cimientos de hormigón reforzado para asegurar que ninguna tubería vibre jamás.", time: "10-14 Días", labor: "$7,500", overhead: "$2,500", matCost: "$5,500", profit: "$3,000" }
+          ]}
+        };
+
+        const content = document.getElementById('content');
+        
+        for (let i = 1; i <= 15; i++) {
+            const svc = data[i];
+            let html = \`
+            <div class="activity-block">
+                <div class="activity-header">
+                    ACTIVIDAD \${i}: \${svc.title}
+                </div>
+            \`;
+            
+            svc.tiers.forEach(tier => {
+                html += \`
+                <div class="tier-box">
+                    <div class="tier-header">
+                        <span>\${tier.level}</span>
+                        <span class="tier-price">\${tier.price}</span>
+                    </div>
+                    <div class="tier-body">
+                        <div class="data-grid">
+                            <div class="data-section" style="grid-column: span 2;">
+                                <div class="data-title">Alcance Comercial y de Ingeniería</div>
+                                \${tier.desc}
+                            </div>
+                            <div class="data-section">
+                                <div class="data-title">Especificación de Materiales</div>
+                                \${tier.mat}
+                            </div>
+                            <div class="data-section">
+                                <div class="data-title">Equipamiento Industrial & Herramientas</div>
+                                \${tier.tools}
+                            </div>
+                        </div>
+                        
+                        <div class="cost-breakdown">
+                            <div class="cost-item">
+                                <span class="cost-label">Tiempo</span>
+                                <span class="cost-value">\${tier.time}</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-label">Materiales</span>
+                                <span class="cost-value">\${tier.matCost}</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-label">Mano de Obra</span>
+                                <span class="cost-value">\${tier.labor}</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-label">Overhead</span>
+                                <span class="cost-value">\${tier.overhead}</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-label">Margen Bruto</span>
+                                <span class="profit-value">\${tier.profit}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                \`;
+            });
+            
+            html += \`</div>\`;
+            content.innerHTML += html;
+        }
+    </script>
+</body>
+</html>
