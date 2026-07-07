@@ -235,9 +235,10 @@
     { id: 15, code: "OR-SAFE-015", nameKey: "pb_svc_15_name", userDescKey: "pb_svc_15_user", techDescKey: "pb_svc_15_tech", category: "Safety", image: "../assets/comic_terms.png" }
 ].map(s => {
     if (typeof PB_SERVICE_PRICES !== 'undefined' && PB_SERVICE_PRICES['svc_' + s.id]) {
-        s.price_good = "$" + PB_SERVICE_PRICES['svc_' + s.id].good.toLocaleString();
-        s.price_better = "$" + PB_SERVICE_PRICES['svc_' + s.id].better.toLocaleString();
-        s.price_best = "$" + PB_SERVICE_PRICES['svc_' + s.id].best.toLocaleString();
+        const formatP = p => typeof p === 'string' && p.includes('-') ? '$' + p.split('-').map(x=>x.trim()).join(' - $') : '$' + p.toLocaleString();
+        s.price_good = formatP(PB_SERVICE_PRICES['svc_' + s.id].good);
+        s.price_better = formatP(PB_SERVICE_PRICES['svc_' + s.id].better);
+        s.price_best = formatP(PB_SERVICE_PRICES['svc_' + s.id].best);
     } else {
         s.price_good = "$0"; s.price_better = "$0"; s.price_best = "$0";
     }

@@ -1,12 +1,37 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morales Plumbing | Elite Intelligent Infrastructure</title>
-    <meta name="description" content="Innovación tecnológica en plomería liderada por Alex Espinosa. Soluciones inteligentes, IA integrada — San Jose, CA.">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rajdhani:wght@700&family=Space+Grotesk:wght@300;400;700&family=Inter:wght@300;400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Morales Plumbing | Plomería Inteligente San Jose, CA — AI-Integrated Services</title>
+    <meta name="description" content="Morales Plumbing — Líder en plomería inteligente en San Jose, CA. Diagnóstico por termografía, eco-retrofitting, diseño hidráulico e IA integrada. Licencia C-36 #1156542. Llamar: (669) 234-2444.">
+    <meta name="keywords" content="plomería San Jose CA, plumber San Jose, Morales Plumbing, Alex Espinosa, eco-retrofitting, heat pump, termografía, CSLB, C-36">
+    <meta name="author" content="Alex G. Espinosa — Morales Plumbing">
+    <link rel="canonical" href="https://www.moralesplumbing.com/">
+
+    <!-- Open Graph — Facebook, LinkedIn, WhatsApp sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Morales Plumbing | Plomería Inteligente con IA — San Jose, CA">
+    <meta property="og:description" content="Servicios de plomería de élite con inteligencia artificial. Termografía, eco-retrofit, repipeo y más. Disponibles 24/7. Lic. C-36 #1156542.">
+    <meta property="og:image" content="https://www.moralesplumbing.com/assets/logo_portada.png">
+    <meta property="og:url" content="https://www.moralesplumbing.com/">
+    <meta property="og:site_name" content="Morales Plumbing">
+    <meta property="og:locale" content="es_US">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Morales Plumbing | Plomería Inteligente — San Jose, CA">
+    <meta name="twitter:description" content="Plomería de élite con IA integrada. Diagnóstico térmico, eco-retrofit, 24/7. San Jose, CA.">
+    <meta name="twitter:image" content="https://www.moralesplumbing.com/assets/logo_portada.png">
+
+    <!-- Sitemap discovery for search engines -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <link rel="stylesheet" href="style.css?v=7.4">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@700&family=Space+Grotesk:wght@300;400;700&family=Inter:wght@300;400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
 
     <!-- Google Site Verification (Search Console) -->
     <meta name="google-site-verification" content="Y8N5zKJIsC5vb3_DjNXSsWI9_eGrrYwgPXQpQ_2Vj6A" />
@@ -71,6 +96,9 @@
 </head>
 <body>
 
+    <!-- Skip-to-content: Accessibility for keyboard/screen-reader users -->
+    <a href="#home" class="skip-link">Saltar al contenido principal</a>
+
     <!-- EMERGENCY TOP BAR -->
     <div id="emergency-topbar" class="emergency-topbar">
         <div class="emergency-content">
@@ -97,9 +125,15 @@
     <!-- Background layers (Space/Water ripple) handled above -->
 
 
-    <header>
-        <nav>
-            <div class="logo-container" onclick="navigate('home')">
+    <header role="banner">
+        <nav role="navigation" aria-label="Navegación principal">
+            <!-- Mobile hamburger -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMobileMenu()">
+                <span class="ham-line"></span>
+                <span class="ham-line"></span>
+                <span class="ham-line"></span>
+            </button>
+            <div class="logo-container" onclick="navigate('home')" role="button" aria-label="Ir al inicio" tabindex="0">
                 <video autoplay muted loop class="nav-logo" playsinline>
                     <source src="assets/morales_logo_video.mp4" type="video/mp4">
                 </video>
@@ -119,27 +153,49 @@
                 <li><a href="#home" class="active" data-i18n="nav_nexus" onclick="navigate('home'); return false;">Nexus</a></li>
                 <li><a href="#ecosystem" data-i18n="nav_orion" onclick="navigate('ecosystem'); return false;">Ecosistema</a></li>
                 <li><a href="#services" data-i18n="nav_services" onclick="navigate('services'); return false;">Servicios</a></li>
-                <li><a href="docs/faq_100.html" data-i18n="faq_title">FAQ</a></li>
-                <li><a href="#multimedia" data-i18n="nav_multimedia" onclick="navigate('multimedia'); return false;">Multimedia</a></li>
+                
+                <!-- DROPDOWN FOR ORION TECH HUB -->
+                <li class="nav-dropdown">
+                    <a href="#" style="cursor: pointer; padding-right: 15px;">Tech Hub ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#diy" onclick="navigate('diy'); return false;">
+                            <strong data-i18n="diy_hub_title">Fix-It Hub</strong>
+                            <span class="desc" data-i18n="nav_desc_diy">Diagnóstico AR</span>
+                        </a>
+                        <a href="docs/faq_100.html">
+                            <strong data-i18n="faq_title">FAQ & Q&A</strong>
+                            <span class="desc" data-i18n="nav_desc_faq">Base de Conocimiento</span>
+                        </a>
+                        <a href="#multimedia" onclick="navigate('multimedia'); return false;">
+                            <strong data-i18n="nav_multimedia">Podcasts</strong>
+                            <span class="desc" data-i18n="nav_desc_media">Contenido Audiovisual</span>
+                        </a>
+                    </div>
+                </li>
+                
                 <li><a href="#about" data-i18n="nav_about" onclick="navigate('about'); return false;">Misión</a></li>
                 <li><a href="#contact" data-i18n="nav_terminal" onclick="navigate('contact'); return false;">Contacto</a></li>
                 <li><a href="#" class="nav-portal-btn" onclick="openClientPortal(); return false;">
-                    <img src="assets/orion_logo.png" style="width:18px; vertical-align:middle; margin-right:5px; filter: drop-shadow(0 0 5px rgba(0, 245, 255, 0.5));" alt="Portal">
                     <span data-i18n="nav_portal_header">Portal</span>
                 </a></li>
             </ul>
 
-            <div class="lang-selector">
-                <button class="lang-btn active" onclick="setLanguage('en')" data-lang="en">EN</button>
-                <button class="lang-btn" onclick="setLanguage('es')" data-lang="es">ES</button>
-                <button class="lang-btn" onclick="setLanguage('zh')" data-lang="zh">ZH</button>
-                <button class="lang-btn" onclick="setLanguage('tl')" data-lang="tl">TL</button>
-                <button class="lang-btn" onclick="setLanguage('vi')" data-lang="vi">VI</button>
+            <div class="lang-dropdown-wrapper">
+                <button class="lang-btn active" id="current-lang-display" style="font-size: 0.75rem; padding: 6px 12px; width: 60px; text-align: center;">EN ▾</button>
+                <div class="lang-dropdown-content">
+                    <button class="lang-btn active" onclick="setLanguage('en'); document.getElementById('current-lang-display').innerText='EN ▾';" data-lang="en">EN - English</button>
+                    <button class="lang-btn" onclick="setLanguage('es'); document.getElementById('current-lang-display').innerText='ES ▾';" data-lang="es">ES - Español</button>
+                    <button class="lang-btn" onclick="setLanguage('zh'); document.getElementById('current-lang-display').innerText='ZH ▾';" data-lang="zh">ZH - 中文</button>
+                    <button class="lang-btn" onclick="setLanguage('tl'); document.getElementById('current-lang-display').innerText='TL ▾';" data-lang="tl">TL - Tagalog</button>
+                    <button class="lang-btn" onclick="setLanguage('vi'); document.getElementById('current-lang-display').innerText='VI ▾';" data-lang="vi">VI - Tiếng Việt</button>
+                </div>
             </div>
         </nav>
     </header>
+    <!-- Mobile nav overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay" onclick="toggleMobileMenu()"></div>
 
-    <main>
+    <main role="main" aria-label="Contenido principal">
         <!-- HOME / NEXUS -->
         <section id="home" class="page-section active">
             <div class="hero-layout">
@@ -157,35 +213,14 @@
                         <div class="stat"><span class="glow">IA</span><span data-i18n="stat_ai">Integrado</span></div>
                     </div>
                     
-                    <!-- TRUST SIGNALS -->
-                    <div class="trust-signals">
-                        <div class="trust-badge">
-                            <span class="icon">📜</span>
-                            <span data-i18n="trust_license">Licencia C-36 #1156542</span>
-                        </div>
-                        <div class="trust-badge">
-                            <span class="icon">⭐⭐⭐⭐⭐</span>
-                            <span data-i18n="trust_reviews">Excelentes Reseñas</span>
-                        </div>
-                        <div class="trust-badge">
-                            <span class="icon">🛡️</span>
-                            <span data-i18n="trust_insurance">Asegurados & Afianzados</span>
-                        </div>
-                    </div>
-                    
-                    <!-- SERVICE AREA -->
-                    <div class="service-area-badge">
-                        <span class="icon">📍</span>
-                        <span data-i18n="area_desc">Sirviendo San Jose y toda la Bahía (Bay Area)</span>
-                    </div>
 
                     <div class="hero-actions">
                         <button onclick="navigate('ecosystem')" class="btn-primary-glow" data-i18n="hero_explore">Explorar Ecosistema</button>
-                        <button onclick="toggleJoe();" class="btn-primary-glow portal-hero-btn" style="background: rgba(0, 245, 255, 0.15); border: 1px solid var(--neon-cyan); color: #fff; box-shadow: 0 0 15px rgba(0, 245, 255, 0.25);">
-                            <img src="assets/joe_avatar.png" style="width:20px; border-radius:50%; vertical-align:middle; margin-right:8px; border:1px solid var(--neon-cyan);" alt="Joe">
+                        <button onclick="openBooking();" class="btn-primary-glow portal-hero-btn" style="background: rgba(0, 245, 255, 0.15); border: 1px solid var(--neon-cyan); color: #fff; box-shadow: 0 0 15px rgba(0, 245, 255, 0.25);" title="Schedule a service appointment">
+                            <span class="pico-icon pico-appointment" style="width:20px;height:20px;margin-right:6px;display:inline-block;vertical-align:middle;"></span>
                             <span data-i18n="hero_fast_booking">Agenda Rápido con Joe</span>
                         </button>
-                        <button onclick="navigate('services')" class="btn-outline" data-i18n="nav_services">Servicios Pro</button>
+                        <button onclick="window.location.href='docs/promocion_water_heaters.html'" class="btn-outline" style="border-color: var(--neon-orange); color: var(--neon-orange); text-shadow: 0 0 5px rgba(255,140,0,0.5); box-shadow: 0 0 15px rgba(255,140,0,0.2);" data-i18n="btn_eco_systems">⚡ Eco Water Heater Systems</button>
                     </div>
                 </div>
 
@@ -198,13 +233,13 @@
         <section id="ecosystem" class="page-section">
             <div class="section-title">
                 <h2 data-i18n="eco_title" class="graffiti-3d-metallic" style="font-size: 4rem;">Ecosistema ORION</h2>
-                <p data-i18n="eco_desc">Una suite unificada de aplicaciones de plomería inteligente diseñadas para la eficiencia profesional y la ingeniería de precisión.</p>
+                <p data-i18n="eco_desc">Una suite unificada de aplicaciones de plomería inteligente diseñadas para la eficiencia profesional y la Plomería Técnica de precisión.</p>
             </div>
             <div class="eco-grid">
                 <!-- Featured: Price Book -->
                 <div class="eco-card glass" data-app="pricebook">
                     <div class="eco-card-img">
-                        <video autoplay muted loop playsinline>
+                        <video autoplay muted loop playsinline loading="lazy">
                             <source src="assets/pricebook_demo.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -220,7 +255,7 @@
                 <!-- App 1: MP Plumbing Portal -->
                 <div class="eco-card glass" data-app="mp">
                     <div class="eco-card-img">
-                        <img src="assets/app_mp.png" alt="MP Portal">
+                        <img src="assets/app_mp.webp" alt="MP Portal" loading="lazy">
                     </div>
                     <div class="eco-card-content">
                         <h3 data-i18n="app_mp_title" class="graffiti-violet">Morales Plumbing ORION Client Portal</h3>
@@ -235,7 +270,7 @@
                 
                 <!-- MP Plumbing App Free -->
                 <div class="eco-card glass" data-app="mp_free">
-                    <div class="eco-card-img" style="background: url('assets/mp_app_free.png') no-repeat center/cover;">
+                    <div class="eco-card-img" style="background: url('assets/mp_app_free.webp') no-repeat center/cover;">
                         <!-- Using the generated image as background since it's a static image -->
                         <div style="width:100%; height:100%; background:rgba(0,0,0,0.3);"></div>
                     </div>
@@ -251,7 +286,7 @@
                 <!-- App 2: EP Plumbing -->
                 <div class="eco-card glass" data-app="ep">
                     <div class="eco-card-img">
-                        <img src="assets/app_ep_mockup.png" alt="EP Plumbing Mockup" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="assets/app_ep_mockup.webp" alt="EP Plumbing Mockup" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                     </div>
                     <div class="eco-card-content">
                         <h3 data-i18n="app_ep_title">EP Plumbing (Estimator Pro)</h3>
@@ -265,7 +300,7 @@
                 <!-- App 3: Podcast Library -->
                 <div class="eco-card glass" data-app="podcasts" style="border: 2px solid var(--primary-glow);">
                     <div class="eco-card-img">
-                        <img src="assets/comic_ai.png" alt="ORION Podcasts">
+                        <img src="assets/comic_ai.webp" alt="ORION Podcasts" loading="lazy">
                     </div>
                     <div class="eco-card-content">
                         <h3 data-i18n="eco_podcasts_card_title" class="graffiti-3d-metallic">Biblioteca de Podcasts ORION</h3>
@@ -336,10 +371,10 @@
                 <!-- SEPTIC -->
                 <div class="eco-card glass" data-app="septic">
                     <div class="eco-card-img">
-                        <img src="assets/service_septic_system_1778369053481.png" alt="Septic Engineering">
+                        <img src="assets/service_septic_system_1778369053481.png" alt="Septic Systems">
                     </div>
                     <div class="eco-card-content">
-                        <h3 data-i18n="service_septic_title">Ingeniería Séptica</h3>
+                        <h3 data-i18n="service_septic_title">Sistemas Sépticos</h3>
                         <p data-i18n="service_septic_desc">Sistemas avanzados de tratamiento in-situ.</p>
                         <div class="eco-actions">
                             <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
@@ -382,7 +417,7 @@
                     </div>
                     <div class="eco-card-content">
                         <h3 data-i18n="service_construction_title">Obra Nueva</h3>
-                        <p data-i18n="service_construction_desc">Ingeniería integral para nuevos edificios.</p>
+                        <p data-i18n="service_construction_desc">Plomería Técnica integral para nuevos edificios.</p>
                         <div class="eco-actions">
                             <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
                         </div>
@@ -416,21 +451,237 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Fix-It Hub Card (DIY) -->
+                <div class="eco-card glass highlight-card" data-app="diy" style="border: 2px solid var(--neon-lime);">
+                    <div class="eco-card-img">
+                        <img src="assets/diy_hero_1778369346415.png" alt="Hazlo Tu Mismo Hub" onerror="this.src='assets/comic_ai.png'">
+                    </div>
+                    <div class="eco-card-content">
+                        <h3 data-i18n="eco_diy_title" style="color: var(--neon-lime);">Hazlo Tú Mismo (DIY)</h3>
+                        <p data-i18n="eco_diy_desc">Guías visuales paso a paso y calculadora de materiales. Aprende a reparar tu hogar con IA.</p>
+                        <div class="eco-actions">
+                            <a href="docs/hazlo_tu_mismo.html" class="btn-eco-link" data-i18n="btn_open_diy" style="background: rgba(57, 255, 20, 0.1); border-color: var(--neon-lime); color: var(--neon-lime);">Ir al Fix-It Hub</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+        </section>
+        <!-- DIY / FIX-IT HUB -->
+        <section id="diy" class="page-section">
+            <div class="section-title">
+                <h2 data-i18n="diy_hub_title" class="graffiti-3d-metallic" style="font-size: 3.5rem;">ORION Fix-It Hub</h2>
+                <p data-i18n="diy_hub_subtitle">Tele-Triage & AI-Guided Troubleshooting</p>
+            </div>
+            
+            <div class="diy-grid">
+                <!-- Card 0: Custom AI Diagnostic -->
+                <div class="diy-card glass" style="border: 1px solid var(--neon-lime); box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/comic_ai.png" alt="AI Home Diagnostic" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_custom_title" style="color: var(--neon-lime);">Diagnóstico en Casa (AI)</h3>
+                        <p data-i18n="diy_custom_desc">Describe libremente tu problema a Joe AI para obtener un diagnóstico en tiempo real, materiales y presupuesto estimado.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=custom'" data-i18n="btn_diy_guide" style="border-color: var(--neon-lime); color: var(--neon-lime);">Iniciar Diagnóstico AI</button>
+                    </div>
+                </div>
+
+                <!-- Card 1 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/diy_disposal.png" alt="Disposal Jam" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_disposal_title">Garbage Disposal Jam</h3>
+                        <p data-i18n="diy_disposal_desc">Learn how to safely unjam your disposal using an Allen wrench in under 2 minutes.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=disposal'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/diy_heater.png" alt="Water Heater Reset" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_heater_title">Water Heater Reset</h3>
+                        <p data-i18n="diy_heater_desc">No hot water? Step-by-step guide to check the pilot light and reset the thermal switch.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=heater'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/diy_toilet.png" alt="Running Toilet" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_toilet_title">Running Toilet Fix</h3>
+                        <p data-i18n="diy_toilet_desc">Stop wasting water. Identify a bad flapper valve or adjust the fill float instantly.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=toilet'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/diy_sink.png" alt="Sink Clog" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_sink_title">Unclog Sink P-Trap</h3>
+                        <p data-i18n="diy_sink_desc">Clear a blocked bathroom or kitchen sink without harsh chemicals.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=sink'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/diy_shower.png" alt="Low Shower Pressure" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_shower_title">Low Shower Pressure</h3>
+                        <p data-i18n="diy_shower_desc">Descale your showerhead for maximum flow and pressure restoration.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=shower'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/diy_valve.png" alt="Main Valve" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_valve_title">Emergency Shut-Off</h3>
+                        <p data-i18n="diy_valve_desc">Locate and shut off your main water valve to prevent flood damage.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=valve'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/diy_faucet.png" alt="Leaky Faucet" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_faucet_title">Fix Leaky Faucet</h3>
+                        <p data-i18n="diy_faucet_desc">Stop the annoying drip by replacing the internal cartridge.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=faucet'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/diy_gfi.png" alt="GFI Reset" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_gfi_title">GFI Outlet Reset</h3>
+                        <p data-i18n="diy_gfi_desc">No power to the disposal or water heater? Try this quick electrical reset.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=gfi'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/diy_smell.png" alt="Bad Odor" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_smell_title">Eliminate Sewer Odor</h3>
+                        <p data-i18n="diy_smell_desc">Fix bad smells coming from your drains with a simple trap prime.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=smell'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+            <!-- Card 10 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/service_tankless.png" alt="Tankless Flush" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_tankless_flush_title">Tankless Heater Flush</h3>
+                        <p data-i18n="diy_tankless_flush_desc">Descalcifica tu calentador sin tanque para mantener la eficiencia térmica.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=tankless_flush'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/pb_svc_10.png" alt="Caulk Tub" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_caulk_title">Re-Caulk Bathtub</h3>
+                        <p data-i18n="diy_caulk_desc">Sella tu tina para prevenir daños por agua y moho dañino.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=caulk'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/pb_svc_11.png" alt="Clean Aerator" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_aerator_title">Clean Faucet Aerator</h3>
+                        <p data-i18n="diy_aerator_desc">Restaura la presión del agua limpiando el sedimento del aereador.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=aerator'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/pb_svc_12.png" alt="Washer Hoses" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_washer_hose_title">Washer Hose Swap</h3>
+                        <p data-i18n="diy_washer_hose_desc">Reemplaza mangueras viejas de lavadora para prevenir inundaciones catastróficas.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=washer_hose'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/pb_svc_13.png" alt="Dishwasher Clog" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_dishwasher_title">Dishwasher Drain</h3>
+                        <p data-i18n="diy_dishwasher_desc">Limpia la trampa de aire o manguera de la lavavajillas atascada.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=dishwasher'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+                <!-- Card 15 -->
+                <div class="diy-card glass">
+                    <div class="diy-icon-wrapper">
+                        <img src="assets/pb_svc_14.png" alt="Showerhead" loading="lazy">
+                    </div>
+                    <div class="diy-content">
+                        <h3 data-i18n="diy_showerhead_title">Showerhead Upgrade</h3>
+                        <p data-i18n="diy_showerhead_desc">Instala una cabeza de ducha de lluvia de forma profesional sin fugas.</p>
+                        <button class="btn-primary-glow" onclick="window.location.href='docs/hazlo_tu_mismo.html?issue=showerhead'" data-i18n="btn_diy_guide">Start AI Guide</button>
+                    </div>
+                </div>
+
+        </div>
         </section>
 
         <!-- MULTIMEDIA: PODCASTS -->
         <section id="multimedia" class="page-section">
             <div class="section-title">
                 <h2 data-i18n="multimedia_title" class="graffiti-3d-metallic" style="font-size: 4rem;">Audio Overviews | Multimedia</h2>
-                <p data-i18n="multimedia_subtitle">Insights into AI Infrastructure & Engineering</p>
+                <p data-i18n="multimedia_subtitle">Insights into AI Infrastructure & technical plumbing</p>
             </div>
             
             <div class="podcast-grid">
                 <!-- Morales Plumbing (MP) Series -->
                 <div class="podcast-group glass">
                     <div class="group-header">
-                        <img src="assets/app_mp.png" alt="MP" class="group-logo">
+                        <img src="assets/app_mp.png" alt="MP" class="group-logo" loading="lazy">
                         <h3 data-i18n="mp_podcasts_title">MP Ecosystem Series</h3>
                     </div>
                     <div class="podcast-list">
@@ -512,7 +763,7 @@
         <!-- SERVICES -->
         <section id="services" class="page-section">
             <div class="section-title">
-                <h2 data-i18n="services_title" class="graffiti-3d-metallic" style="font-size: 4rem;">Servicios de Ingeniería</h2>
+                <h2 data-i18n="services_title" class="graffiti-3d-metallic" style="font-size: 4rem;">Servicios Técnicos Especializados</h2>
             </div>
             <div class="services-grid">
                 <div class="service-card glass">
@@ -535,7 +786,7 @@
                     <div class="icon">
                         <img src="assets/comic_ai.png" alt="Hydraulic Design" style="width: 80px; height: 80px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
                     </div>
-                    <h4 data-i18n="service_3">Diseño de Infraestructura Hidráulica</h4>
+                    <h4 data-i18n="service_3">Diseño de Sistemas de Tuberías</h4>
                     <p data-i18n="service_3_desc">Planificación experta de redes hidráulicas de alta precisión para infraestructura residencial y comercial.</p>
                     <a href="docs/eng_diseno.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
                 </div>
@@ -549,11 +800,52 @@
                 </div>
                 <div class="service-card glass">
                     <div class="icon">
-                        <img src="assets/service_septic_system_1778369053481.png" alt="Septic Engineering" style="width: 80px; height: 80px; border-radius: 50%; filter: drop-shadow(0 0 10px var(--neon-lime)); object-fit: cover;">
+                        <img src="assets/service_septic_system_1778369053481.png" alt="Septic Systems" style="width: 80px; height: 80px; border-radius: 50%; filter: drop-shadow(0 0 10px var(--neon-lime)); object-fit: cover;">
                     </div>
-                    <h4 data-i18n="service_septic_title">Ingeniería Séptica</h4>
+                    <h4 data-i18n="service_septic_title">Sistemas Sépticos</h4>
                     <p data-i18n="service_septic_desc">Sistemas avanzados de tratamiento in-situ.</p>
                     <a href="docs/eng_septico.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
+                </div>
+            
+                <div class="service-card glass">
+                    <div class="icon">
+                        <img src="assets/service_wh.png" alt="Water Heaters" style="width: 80px; height: 80px; border-radius: 50%; filter: drop-shadow(0 0 10px var(--neon-cyan)); object-fit: cover;">
+                    </div>
+                    <h4 data-i18n="service_wh_title">Water Heaters</h4>
+                    <p data-i18n="service_wh_desc">Mantenimiento, cambio e instalación.</p>
+                    <a href="docs/eng_wh.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
+                </div>
+                <div class="service-card glass">
+                    <div class="icon">
+                        <img src="assets/service_valves.png" alt="Valves and Cartridges" style="width: 80px; height: 80px; border-radius: 50%; filter: drop-shadow(0 0 10px var(--neon-lime)); object-fit: cover;">
+                    </div>
+                    <h4 data-i18n="service_valves_title">Válvulas y Cartuchos</h4>
+                    <p data-i18n="service_valves_desc">Cambio de válvulas para duchas, tinas y lavabos.</p>
+                    <a href="docs/eng_valves.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
+                </div>
+                <div class="service-card glass">
+                    <div class="icon">
+                        <img src="assets/service_inspect.png" alt="Inspections" style="width: 80px; height: 80px; border-radius: 50%; filter: drop-shadow(0 0 10px var(--neon-blue)); object-fit: cover;">
+                    </div>
+                    <h4 data-i18n="service_inspect_title">Inspecciones</h4>
+                    <p data-i18n="service_inspect_desc">Asesoría para viviendas nuevas, usadas y ampliaciones.</p>
+                    <a href="docs/eng_inspect.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
+                </div>
+                <div class="service-card glass">
+                    <div class="icon">
+                        <img src="assets/service_training.png" alt="Training" style="width: 80px; height: 80px; border-radius: 50%; filter: drop-shadow(0 0 10px var(--neon-orange)); object-fit: cover;">
+                    </div>
+                    <h4 data-i18n="service_training_title">Capacitaciones</h4>
+                    <p data-i18n="service_training_desc">Formación de personal para empresas asociadas.</p>
+                    <a href="docs/eng_training.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
+                </div>
+                <div class="service-card glass">
+                    <div class="icon">
+                        <img src="assets/service_b2b.png" alt="B2B Partnerships" style="width: 80px; height: 80px; border-radius: 50%; filter: drop-shadow(0 0 10px var(--neon-purple)); object-fit: cover;">
+                    </div>
+                    <h4 data-i18n="service_b2b_title">Trabajos Especializados B2B</h4>
+                    <p data-i18n="service_b2b_desc">Alianzas con empresas del trade para proyectos complejos.</p>
+                    <a href="docs/eng_b2b.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
                 </div>
             </div>
         </section>
@@ -586,10 +878,10 @@
                 </div>
                 <div class="terminal-body">
                     <div class="contact-profile">
-                        <img src="assets/contact_card.png" alt="Alex Espinosa" class="profile-pic">
+                        <img src="assets/contact_card.webp" alt="Alex Espinosa" class="profile-pic" loading="lazy">
                 <div class="profile-details">
                     <div class="name neon-name">ALEX G. ESPINOSA</div>
-                    <div class="role" data-i18n="profile_role">Chief Engineer & Founder</div>
+                    <div class="role" data-i18n="profile_role">Chief Technical Officer & Founder</div>
                     <p class="location">San Jose, CA · Morales Plumbing</p>
                 </div>
                     </div>
@@ -632,11 +924,70 @@
         </div>
     </div>
 
+    <!-- ── BOOKING PANEL — opens alongside Joe when scheduling ── -->
+    <div id="booking-panel" class="booking-panel booking-panel-hidden">
+        <div class="booking-panel-header">
+            <div class="booking-panel-title">
+                <span>📅</span>
+                <span data-i18n="booking_panel_title">Formulario de Cita</span>
+            </div>
+            <div class="booking-panel-status">
+                <span class="booking-status-dot"></span>
+                <span id="booking-status-text" data-i18n="booking_status_filling">Joe está llenando el formulario...</span>
+            </div>
+            <button class="booking-panel-close" onclick="closeBookingPanel()" title="Cerrar">✕</button>
+        </div>
+        <div class="booking-panel-body">
+            <div class="booking-field-group">
+                <label class="booking-label" data-i18n="booking_name"><span class="pico-icon pico-person"></span> Nombre Completo</label>
+                <input type="text" id="bk-name" class="booking-input" placeholder="Tu nombre completo..." oninput="syncBookingField('name', this.value)">
+            </div>
+            <div class="booking-field-group">
+                <label class="booking-label" data-i18n="booking_phone"><span class="pico-icon pico-pipe_phone"></span> Teléfono</label>
+                <input type="text" id="bk-phone" class="booking-input" placeholder="(669) 234-XXXX..." oninput="syncBookingField('phone', this.value)">
+            </div>
+            <div class="booking-field-group">
+                <label class="booking-label" data-i18n="booking_address"><span class="pico-icon pico-drop_pin"></span> Dirección del Servicio</label>
+                <input type="text" id="bk-address" class="booking-input" placeholder="Dirección completa..." oninput="syncBookingField('address', this.value)">
+            </div>
+            <div class="booking-field-group">
+                <label class="booking-label" data-i18n="booking_service"><span class="pico-icon pico-wrench"></span> Tipo de Servicio</label>
+                <input type="text" id="bk-service" class="booking-input" placeholder="Ej: Water heater, repipe..." oninput="syncBookingField('service', this.value)">
+            </div>
+            <div class="booking-field-row">
+                <div class="booking-field-group">
+                    <label class="booking-label" data-i18n="booking_date"><span class="pico-icon pico-pipe_date"></span> Fecha Preferida</label>
+                    <input type="date" id="bk-date" class="booking-input" oninput="syncBookingField('date', this.value)">
+                </div>
+                <div class="booking-field-group">
+                    <label class="booking-label" data-i18n="booking_time"><span class="pico-icon pico-pressure_gauge"></span> Hora</label>
+                    <input type="time" id="bk-time" class="booking-input" oninput="syncBookingField('time', this.value)">
+                </div>
+            </div>
+            <div class="booking-field-group">
+                <label class="booking-label" data-i18n="booking_notes"><span class="pico-icon pico-clipboard"></span> Notas Adicionales</label>
+                <textarea id="bk-notes" class="booking-input booking-textarea" placeholder="Cualquier detalle adicional..." oninput="syncBookingField('notes', this.value)"></textarea>
+            </div>
+            <div id="booking-progress" class="booking-progress">
+                <div id="booking-progress-bar" class="booking-progress-bar" style="width:0%"></div>
+            </div>
+            <div id="booking-fields-filled" class="booking-fields-label">
+                <span id="booking-filled-count">0</span>/6 <span data-i18n="booking_fields_complete">campos completados</span>
+            </div>
+            <button id="booking-submit-btn" class="booking-submit-btn" disabled onclick="submitBooking()" data-i18n="booking_submit">
+                <span class="pico-icon pico-valve_check"></span> Confirmar Cita
+            </button>
+            <p class="booking-disclaimer" data-i18n="booking_disclaimer">
+                Recibirás confirmación por WhatsApp o correo electrónico.
+            </p>
+        </div>
+    </div>
+
     <!-- ── COPYRIGHT BADGE — visible on screen & in ads ── -->
     <div id="copyright-badge" aria-label="Copyright notice">
-        <span>&#9400; 2026</span>
+        <span>&#9400; 2026–2027</span>
         <strong>MORALES PLUMBING</strong>
-        <span data-i18n="footer_copyright_badge">· <span class="neon-name">Alex G. Espinosa</span> · Todos los derechos reservados · Marca Registrada</span>
+        <span data-i18n="footer_copyright_badge">· Todos los derechos reservados · Marca Registrada</span>
     </div>
 
     <!-- ── SCREEN WATERMARK — subtle diagonal overlay ── -->
@@ -659,7 +1010,7 @@
         <div class="company-card">
             <button class="close-modal" onclick="toggleCompanyCard()">&times;</button>
             <div class="card-header-img">
-                <img src="assets/logo_portada.png" class="card-logo" alt="Morales Logo">
+                <img src="assets/logo_portada.webp" class="card-logo" alt="Morales Logo" loading="lazy">
                 <div class="card-info-main">
                     <h3 class="contact-name" style="color: var(--neon-orange); font-family: 'Orbitron', sans-serif; font-size: 2.2rem; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 140, 0, 0.6);">Morales Plumbing</h3>
                     <p class="contact-tagline" style="color: var(--neon-lime); font-family: 'Orbitron', sans-serif; font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 1.5rem; text-shadow: 0 0 10px rgba(57, 255, 20, 0.4); display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
@@ -670,9 +1021,9 @@
             </div>
             <div class="card-content">
                 <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem;">
-                    <img src="assets/comic_eco.png" style="width: 60px; filter: drop-shadow(0 0 5px var(--neon-lime));" alt="Eco">
-                    <img src="assets/comic_ai.png" style="width: 60px; filter: drop-shadow(0 0 5px var(--neon-cyan));" alt="AI">
-                    <img src="assets/comic_terms.png" style="width: 60px; filter: drop-shadow(0 0 5px var(--neon-orange));" alt="Biz">
+                    <img src="assets/comic_eco.webp" style="width: 60px; filter: drop-shadow(0 0 5px var(--neon-lime));" alt="Eco" loading="lazy">
+                    <img src="assets/comic_ai.webp" style="width: 60px; filter: drop-shadow(0 0 5px var(--neon-cyan));" alt="AI" loading="lazy">
+                    <img src="assets/comic_terms.webp" style="width: 60px; filter: drop-shadow(0 0 5px var(--neon-orange));" alt="Biz" loading="lazy">
                 </div>
                     <div class="contact-item" style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 1.2rem;">
                         <span class="contact-label" data-i18n="contact_loc" style="color: var(--neon-lime); text-transform: uppercase; font-size: 0.98rem; letter-spacing: 1px; text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);">Location</span>
@@ -754,7 +1105,7 @@
         </div>
 
         <div class="footer-copyright-branded">
-            <span class="year">Ⓒ 2026</span> <span data-i18n="footer_rights_branded">MORALES PLUMBING · Alex G. Espinosa · Todos los derechos reservados · Marca Registrada</span>
+            <span class="year">Ⓒ 2026</span> <span data-i18n="footer_rights_branded">MORALES PLUMBING · Todos los derechos reservados · Marca Registrada</span>
         </div>
     </footer>
 
@@ -786,36 +1137,53 @@
             </div>
             
             <div class="portal-tabs">
-                <button id="tab-dashboard-btn" class="portal-tab-btn active" onclick="switchPortalTab('dashboard')"><img src="assets/logo_portada.png" style="width:18px; vertical-align:middle; margin-right:5px; filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));"><span data-i18n="tab_dashboard">Dashboard</span></button>
-                <button id="tab-schedule-btn" class="portal-tab-btn" onclick="switchPortalTab('schedule')"><img src="assets/icon_plumber_biz.png" style="width:18px; vertical-align:middle; margin-right:5px; filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));"><span data-i18n="tab_schedule">Agendar Cita</span></button>
-                <button id="tab-pqr-btn" class="portal-tab-btn" onclick="switchPortalTab('pqr')"><img src="assets/icon_plumber_eco.png" style="width:18px; vertical-align:middle; margin-right:5px; filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));"><span data-i18n="tab_pqr">PQR Support</span></button>
-                <button id="tab-profile-btn" class="portal-tab-btn" onclick="switchPortalTab('profile')"><img src="assets/icon_plumber_sat.png" style="width:18px; vertical-align:middle; margin-right:5px; filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));"><span data-i18n="tab_profile">Membresía &amp; Perfil</span></button>
-                <button id="tab-policies-btn" class="portal-tab-btn" onclick="switchPortalTab('policies')"><img src="assets/icon_location.png" style="width:18px; vertical-align:middle; margin-right:5px; filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));"><span data-i18n="tab_policies">Políticas</span></button>
-                <button id="tab-manual-btn" class="portal-tab-btn" onclick="switchPortalTab('manual')"><img src="assets/icon_plumber_biz.png" style="width:18px; vertical-align:middle; margin-right:5px; filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));"><span data-i18n="tab_manual">Manual</span></button>
+                <button id="tab-dashboard-btn" class="portal-tab-btn active" onclick="switchPortalTab('dashboard')">
+                    <span data-i18n="tab_dashboard">Dashboard</span>
+                    <span class="portal-tab-desc" data-i18n="desc_tab_dash">Panel de Control</span>
+                </button>
+                <button id="tab-schedule-btn" class="portal-tab-btn" onclick="switchPortalTab('schedule')">
+                    <span data-i18n="tab_schedule">Agendar Cita</span>
+                    <span class="portal-tab-desc" data-i18n="desc_tab_sched">Reservas y Citas</span>
+                </button>
+                <button id="tab-pqr-btn" class="portal-tab-btn" onclick="switchPortalTab('pqr')">
+                    <span data-i18n="tab_pqr">PQR Support</span>
+                    <span class="portal-tab-desc" data-i18n="desc_tab_pqr">Peticiones y Reclamos</span>
+                </button>
+                <button id="tab-profile-btn" class="portal-tab-btn" onclick="switchPortalTab('profile')">
+                    <span data-i18n="tab_profile">Membresía &amp; Perfil</span>
+                    <span class="portal-tab-desc" data-i18n="desc_tab_prof">Datos y Beneficios</span>
+                </button>
+                <button id="tab-policies-btn" class="portal-tab-btn" onclick="switchPortalTab('policies')">
+                    <span data-i18n="tab_policies">Políticas</span>
+                    <span class="portal-tab-desc" data-i18n="desc_tab_pol">Legales y Seguridad</span>
+                </button>
+                <button id="tab-manual-btn" class="portal-tab-btn" onclick="switchPortalTab('manual')">
+                    <span data-i18n="tab_manual">Manual</span>
+                    <span class="portal-tab-desc" data-i18n="desc_tab_man">Guía de Usuario</span>
+                </button>
             </div>
             
             <div class="portal-body">
                 <!-- DASHBOARD TAB -->
-                <div id="portal-tab-dashboard" class="portal-tab-content active">
+                <div id="portal-tab-dashboard" class="portal-tab-content active" style="background: linear-gradient(rgba(10, 15, 30, 0.85), rgba(10, 15, 30, 0.95)), url('assets/app_mp.webp') center/cover no-repeat; border-radius: 12px; padding: 20px; box-shadow: inset 0 0 30px rgba(0,245,255,0.1);">
                     <!-- JOE AI CALL TO ACTION -->
-                    <div style="background: rgba(0, 245, 255, 0.05); border: 1px solid var(--neon-cyan); border-radius: 12px; padding: 20px; margin-bottom: 25px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 0 20px rgba(0,245,255,0.1) inset;">
+                    <div style="background: rgba(0, 245, 255, 0.05); border: 1px solid var(--neon-cyan); border-radius: 12px; padding: 20px; margin-bottom: 25px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 0 20px rgba(0,245,255,0.1) inset; backdrop-filter: blur(5px);">
                         <div style="display: flex; align-items: center; gap: 15px;">
-                            <img src="assets/icon_plumber_ai.png" alt="Joe" style="width: 50px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
                             <div>
-                                <h3 style="color: var(--neon-cyan); font-family: 'Orbitron'; margin-bottom: 5px; font-size: 1.1rem;" data-i18n="joe_banner_title">Coordinador Joe</h3>
-                                <p style="color: #a0aec0; font-size: 0.85rem; margin: 0;" data-i18n="joe_banner_desc">Agenda citas, consulta tu saldo o reporta problemas al instante con inteligencia artificial.</p>
+                                <h3 style="color: var(--neon-cyan); font-family: 'Orbitron'; margin-bottom: 5px; font-size: 1.1rem; text-shadow: 0 0 10px var(--neon-cyan);" data-i18n="joe_banner_title">Coordinador Joe</h3>
+                                <p style="color: #fff; font-size: 0.85rem; margin: 0; text-shadow: 0 1px 3px #000;" data-i18n="joe_banner_desc">Agenda citas, consulta tu saldo o reporta problemas al instante con inteligencia artificial.</p>
                             </div>
                         </div>
                         <button class="portal-btn portal-btn-primary" style="white-space: nowrap; font-size: 0.9rem;" onclick="closeClientPortal(); toggleJoeChat();" data-i18n="btn_talk_to_joe">Hablar con Joe</button>
                     </div>
 
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-                        <div>
-                            <h3 style="font-family:'Orbitron', sans-serif; font-size:1rem; color:var(--neon-cyan); margin-bottom:10px;" data-i18n="dash_active_appointments">Mis Citas Agendadas</h3>
+                        <div style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                            <h3 style="font-family:'Orbitron', sans-serif; font-size:1rem; color:var(--neon-cyan); margin-bottom:10px; text-shadow: 0 0 5px var(--neon-cyan);" data-i18n="dash_active_appointments">Mis Citas Agendadas</h3>
                             <div id="portal-appointments-list"></div>
                         </div>
-                        <div>
-                            <h3 style="font-family:'Orbitron', sans-serif; font-size:1rem; color:var(--neon-orange); margin-bottom:10px;" data-i18n="dash_active_pqrs">Mis Reclamos / PQRs</h3>
+                        <div style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                            <h3 style="font-family:'Orbitron', sans-serif; font-size:1rem; color:var(--neon-orange); margin-bottom:10px; text-shadow: 0 0 5px var(--neon-orange);" data-i18n="dash_active_pqrs">Mis Reclamos / PQRs</h3>
                             <div id="portal-pqrs-list"></div>
                         </div>
                     </div>
@@ -843,9 +1211,9 @@
                 </div>
                 
                 <!-- SCHEDULE TAB -->
-                <div id="portal-tab-schedule" class="portal-tab-content">
+                <div id="portal-tab-schedule" class="portal-tab-content" style="background: linear-gradient(rgba(10, 15, 30, 0.85), rgba(10, 15, 30, 0.95)), url('assets/app_ep_mockup.webp') center/cover no-repeat; border-radius: 12px; padding: 20px; box-shadow: inset 0 0 30px rgba(0,245,255,0.1);">
                     <div id="portal-limit-warning-container"></div>
-                    <div id="portal-schedule-form-container">
+                    <div id="portal-schedule-form-container" style="background: rgba(0,0,0,0.5); padding: 20px; border-radius: 12px; border: 1px solid rgba(0,245,255,0.2); backdrop-filter: blur(5px);">
                         <form id="portal-schedule-form" onsubmit="event.preventDefault(); bookAppointmentFromUI();">
                             <div class="portal-form-group">
                                 <label for="schedule-service-select" data-i18n="lbl_service_to_schedule">Servicio a Agendar</label>
@@ -918,6 +1286,12 @@
                         </div>
                         
                         <button type="submit" class="portal-btn portal-btn-primary" style="width: 100%;" data-i18n="btn_submit_pqr">Enviar Reporte / File PQR</button>
+                    
+                        <div style="margin-top: 30px; text-align: center; border-top: 1px dashed var(--neon-cyan); padding-top: 20px;">
+                            <h4 style="color: var(--neon-cyan); font-family: 'Orbitron';" data-i18n="diy_pqr_title">¿Prefieres Repararlo Tú Mismo? / Prefer to DIY?</h4>
+                            <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 15px;" data-i18n="diy_pqr_desc">Antes de abrir un ticket de reclamo, revisa nuestras guías visuales paso a paso para reparaciones menores.</p>
+                            <a href="docs/hazlo_tu_mismo.html" class="portal-btn portal-btn-primary" style="background: rgba(0, 245, 255, 0.1); border-color: var(--neon-cyan); color: var(--neon-cyan); text-decoration: none; display: inline-block; text-align: center;" data-i18n="diy_pqr_btn">Ir a las Guías DIY / Go to DIY Hub</a>
+                        </div>
                     </form>
                 </div>
                 
@@ -997,7 +1371,7 @@
                         <h3 style="font-family:'Orbitron', sans-serif; font-size:1.1rem; color:var(--neon-cyan); margin-bottom:15px;" data-i18n="policies_title">Políticas de Privacidad, Seguridad y Propiedad Intelectual</h3>
                     </div>
                     
-                    <div style="display: flex; flex-direction: column; gap: 20px; max-height: 480px; overflow-y: auto; padding-right: 10px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding-bottom: 20px;">
                         <!-- Calidad y Mantenimiento Preventivo -->
                         <div class="glass" style="padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
                             <h4 style="font-family:'Orbitron', sans-serif; font-size:0.95rem; color:var(--neon-lime); margin-bottom:10px;" data-i18n="pol_quality_title">🛡️ SEGURIDAD DE CALIDAD Y MANTENIMIENTO PREVENTIVO</h4>
@@ -1032,7 +1406,7 @@
                         <p style="font-size:0.85rem; color:#a0aec0; margin:0;" data-i18n="manual_subtitle">Guía oficial paso a paso del ecosistema ORION.</p>
                     </div>
                     
-                    <div style="display: flex; flex-direction: column; gap: 20px; max-height: 480px; overflow-y: auto; padding-right: 10px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding-bottom: 20px;">
                         <!-- Section 1 -->
                         <div class="glass" style="padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); border-left: 3px solid var(--neon-cyan);">
                             <h4 style="font-family:'Orbitron', sans-serif; font-size:0.95rem; color:#fff; margin-bottom:10px;" data-i18n="man_step1_title">01. El Catálogo de Servicios</h4>
@@ -1131,8 +1505,125 @@
         </div>
     </div>
 
+    <!-- Floating Joe AI Button -->
+    <a href="#diy" class="floating-joe-btn" title="Talk to Joe AI" style="position: fixed; bottom: 30px; right: 30px; width: 70px; height: 70px; border-radius: 50%; background: var(--bg-dark); border: 2px solid var(--neon-cyan); box-shadow: 0 0 15px var(--neon-cyan); display: flex; align-items: center; justify-content: center; z-index: 1000; transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none;">
+        <img src="assets/joe_avatar.png" alt="Joe AI" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+        <span style="position: absolute; top: -5px; right: -5px; background: red; color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 0.7rem; font-family: 'Orbitron', sans-serif; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 5px red;">!</span>
+    </a>
+    <style>
+        .floating-joe-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px var(--neon-cyan), 0 0 10px inset var(--neon-cyan);
+        }
+        @media (max-width: 768px) {
+            .floating-joe-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+
     <!-- Config (API keys — local only) -->
-    <script src="config.js?v=6.0.1"></script>
-    <script src="app.js?v=6.0.1"></script>
+    <script src="config.js?v=6.0.2" defer></script>
+    <script src="app.js?v=7.2" defer></script>
+    <script>
+    // ── Mobile hamburger menu ──
+    function toggleMobileMenu() {
+        const nav = document.querySelector('.nav-links');
+        const btn = document.getElementById('hamburger-btn');
+        const overlay = document.getElementById('mobile-nav-overlay');
+        const isOpen = nav.classList.toggle('nav-open');
+        btn.setAttribute('aria-expanded', isOpen);
+        btn.classList.toggle('is-open', isOpen);
+        overlay.classList.toggle('visible', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+    // Close menu when a nav link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            const nav = document.querySelector('.nav-links');
+            if (nav.classList.contains('nav-open')) toggleMobileMenu();
+        });
+    });
+
+    // ── Dynamic Nav Descriptions Translation ──
+    window.addEventListener('DOMContentLoaded', () => {
+        if (typeof translations !== 'undefined') {
+            if(translations.en) Object.assign(translations.en, {
+                "nav_desc_diy": "AR Diagnostics",
+                "nav_desc_faq": "Knowledge Base",
+                "nav_desc_media": "Audio/Visual Content"
+            });
+            if(translations.es) Object.assign(translations.es, {
+                "nav_desc_diy": "Diagnóstico AR",
+                "nav_desc_faq": "Base de Conocimiento",
+                "nav_desc_media": "Contenido Audiovisual"
+            });
+            if(translations.zh) Object.assign(translations.zh, {
+                "nav_desc_diy": "增强现实诊断",
+                "nav_desc_faq": "知识库",
+                "nav_desc_media": "视听内容"
+            });
+            if(translations.tl) Object.assign(translations.tl, {
+                "nav_desc_diy": "AR Diagnostics",
+                "nav_desc_faq": "Base ng Kaalaman",
+                "nav_desc_media": "Nilalamang Audio/Visual"
+            });
+            if(translations.vi) Object.assign(translations.vi, {
+                "nav_desc_diy": "Chẩn đoán AR",
+                "nav_desc_faq": "Cơ sở Kiến thức",
+                "nav_desc_media": "Nội dung Âm/Hình"
+            });
+            
+            // Add dynamic translations for Portal Tabs
+            const portalEn = { "desc_tab_dash": "Control Panel", "desc_tab_sched": "Bookings & Apps", "desc_tab_pqr": "Claims & Support", "desc_tab_prof": "Data & Benefits", "desc_tab_pol": "Legal & Security", "desc_tab_man": "User Guide" };
+            const portalEs = { "desc_tab_dash": "Panel de Control", "desc_tab_sched": "Reservas y Citas", "desc_tab_pqr": "Peticiones y Reclamos", "desc_tab_prof": "Datos y Beneficios", "desc_tab_pol": "Legales y Seguridad", "desc_tab_man": "Guía de Usuario" };
+            const portalZh = { "desc_tab_dash": "控制面板", "desc_tab_sched": "预订与预约", "desc_tab_pqr": "索赔与支持", "desc_tab_prof": "数据与福利", "desc_tab_pol": "法律与安全", "desc_tab_man": "用户指南" };
+            const portalTl = { "desc_tab_dash": "Control Panel", "desc_tab_sched": "Mga Booking at App", "desc_tab_pqr": "Mga Claim at Suporta", "desc_tab_prof": "Data at Benepisyo", "desc_tab_pol": "Lokal at Seguridad", "desc_tab_man": "Patnubay ng Gumagamit" };
+            const portalVi = { "desc_tab_dash": "Bảng điều khiển", "desc_tab_sched": "Đặt chỗ & Ứng dụng", "desc_tab_pqr": "Khiếu nại & Hỗ trợ", "desc_tab_prof": "Dữ liệu & Lợi ích", "desc_tab_pol": "Pháp lý & Bảo mật", "desc_tab_man": "Hướng dẫn sử dụng" };
+            
+            if(translations.en) Object.assign(translations.en, portalEn);
+            if(translations.es) Object.assign(translations.es, portalEs);
+            if(translations.zh) Object.assign(translations.zh, portalZh);
+            if(translations.tl) Object.assign(translations.tl, portalTl);
+            if(translations.vi) Object.assign(translations.vi, portalVi);
+            
+            // Re-trigger language update if already loaded
+            if (typeof setLanguage === 'function') {
+                const currentLang = localStorage.getItem('morales_lang') || 'en';
+                setLanguage(currentLang);
+            }
+        }
+    });
+    </script>
+
+    <!-- ═══ FIREBASE SDK ═══ -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <!-- ═══ MORALES FIREBASE CONFIG ═══ -->
+    <script>
+    // Paste your Firebase config here after creating your project
+    // at https://console.firebase.google.com
+    window.MORALES_FIREBASE_CONFIG = {
+        apiKey:            "AIzaSyCesnI4-Kq5WpkGHFq-8ucb07dgd5yAKHY",
+        authDomain:        "mp-plumbing-ai.firebaseapp.com",
+        projectId:         "mp-plumbing-ai",
+        storageBucket:     "mp-plumbing-ai.firebasestorage.app",
+        messagingSenderId: "970139834631",
+        appId:             "1:970139834631:web:440cd54aa418611daa8da2"
+    };
+    </script>
+
+    <!-- ═══ PICO PLUMBING ICONS ═══ -->
+    <script src="pico-icons.js"></script>
+
+    <!-- ═══ FIREBASE SERVICE ═══ -->
+    <script src="firebase-service.js"></script>
+
 </body>
 </html>
+
