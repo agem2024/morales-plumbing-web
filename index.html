@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -1059,10 +1059,46 @@
 
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- GLOBAL SITE FOOTER -->
-    <footer class="site-footer">
+    <!-- Public Contact Section -->
+    <section id="contact-us" class="public-contact-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-i18n="contact_sec_title">Get in Touch</h2>
+            <p class="section-desc text-center" data-i18n="contact_sec_desc">Do you have an emergency or need a quick quote? Call us directly or contact us via WhatsApp. You can also leave your message.</p>
+            <div class="contact-grid">
+                <!-- Info Column -->
+                <div class="contact-info">
+                    <div class="info-item">
+                        <strong>Ubicación:</strong> San Jose, California
+                    </div>
+                    <div class="info-item">
+                        <strong>Correo:</strong> <a href="mailto:moralesplumbing026@gmail.com">moralesplumbing026@gmail.com</a>
+                    </div>
+                    <div class="info-item">
+                        <strong>Teléfono:</strong> <a href="tel:+16692342444">(669) 234-2444</a>
+                    </div>
+                    <div class="info-item">
+                        <strong>Licencia:</strong> C-36 #1156542
+                    </div>
+                </div>
+                <!-- Form Column -->
+                <div class="contact-form-container">
+                    <h3 data-i18n="contact_form_title">Send a Message</h3>
+                    <form id="public-contact-form" onsubmit="submitPublicContact(event)">
+                        <input type="text" id="pc-name" name="name" required placeholder="Name" data-i18n="contact_form_name">
+                        <input type="tel" id="pc-phone" name="phone" required placeholder="Phone" data-i18n="contact_form_phone">
+                        <input type="email" id="pc-email" name="email" placeholder="Email" data-i18n="contact_form_email">
+                        <textarea id="pc-message" name="message" rows="4" required placeholder="Message" data-i18n="contact_form_msg"></textarea>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact_form_submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer class="footer-area">
         <div class="footer-security">
             <span><span class="security-dot">●</span> <span data-i18n="footer_e2ee">Secure &amp; Privacy-First</span></span>
             <span><span class="security-dot">●</span> <span data-i18n="footer_cyber">AI-Powered Platform</span></span>

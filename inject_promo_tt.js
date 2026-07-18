@@ -1,0 +1,166 @@
+const fs = require('fs');
+
+const enDict = {
+  "promo_tt_title": "Tank to Tankless Upgrade",
+  "promo_tt_desc": "Transition to a high-efficiency Navien Tankless Water Heater. Endless hot water and massive space savings.",
+  "promo_tt_why_title": "Why Upgrade Now?",
+  "promo_tt_why_desc": "Tankless systems provide endless hot water on demand, lasting up to twice as long as traditional tank heaters while reducing energy bills.",
+  "promo_tt_tier_title": "Professional Installation Tiers",
+  "promo_tt_good_title": "GOOD (Standard)",
+  "promo_tt_good_desc": "Navien NPE-240A2 (199K BTU). Standard tank-to-tankless retrofit.",
+  "promo_tt_good_li1": "Navien NPE-240A2 High Efficiency Unit.",
+  "promo_tt_good_li2": "Gas line and venting modifications.",
+  "promo_tt_good_li3": "City permits & old tank haul-away.",
+  "promo_tt_good_li4": "1-Year Labor Warranty.",
+  "promo_tt_better_title": "BETTER (Premium)",
+  "promo_tt_better_desc": "Navien NPE-240A2. Includes NaviCirc Recirculation and Scale Prevention Filter.",
+  "promo_tt_better_li1": "Everything in GOOD, plus:",
+  "promo_tt_better_li2": "NaviCirc Recirculation Valve.",
+  "promo_tt_better_li3": "Thermal Expansion Tank installation.",
+  "promo_tt_better_li4": "Navien PeakFlow Scale Prevention System.",
+  "promo_tt_better_li5": "3-Year Labor Warranty.",
+  "promo_tt_best_title": "BEST (Ultra-Premium)",
+  "promo_tt_best_desc": "Navien NPE-240A2. Includes Dedicated Gas Line Upgrade & NaviLink WiFi Control.",
+  "promo_tt_best_li1": "Everything in BETTER, plus:",
+  "promo_tt_best_li2": "Whole-home Pressure Regulating Valve (PRV).",
+  "promo_tt_best_li3": "Dedicated High-Capacity Gas Line.",
+  "promo_tt_best_li4": "NaviLink WiFi Control Module.",
+  "promo_tt_best_li5": "Lifetime Labor Warranty.",
+  "promo_tt_legal_title": "Términos Legales, Mandatos y Reembolsos",
+  "promo_tt_legal_mandate_title": "1. Mandato BAAQMD (Reg 9, Regla 6):",
+  "promo_tt_legal_mandate_desc": "A partir del 1 de enero de 2027, la instalación de calentadores a gas estará estrictamente prohibida en el Área de la Bahía. Esta promoción prepara su hogar para el futuro.",
+  "promo_tt_legal_rebates_title": "2. Incentivos y Reembolsos (Rebates):",
+  "promo_tt_legal_rebates_desc": "Las bombas de calor califican para el Crédito Fiscal Federal IRA (hasta $2,000) y reembolsos de TECH Clean CA (hasta $3,100). Los fondos son limitados y dependen del código postal.",
+  "promo_tt_legal_apply_title": "3. Requisitos de Aplicación:",
+  "promo_tt_legal_apply_desc": "Aplica para propietarios residenciales que reemplacen equipos antiguos. Si su panel eléctrico requiere actualización a 240V, podría calificar para subsidios adicionales.",
+  "promo_tt_legal_time_title": "4. Vigencia y Responsabilidad:",
+  "promo_tt_legal_time_desc": "La ventana de transición es ahora. Morales Plumbing provee equipos certificados y el papeleo para el reembolso, pero no garantiza la aprobación ni los tiempos de pago del Estado.",
+  "promo_ttt_title": "Tankless to Tankless Replacement",
+  "promo_ttt_desc": "Upgrade your old tankless system to the latest Navien NPE-A2 series with advanced recirculation technology.",
+  "promo_ttt_why_title": "Why Upgrade Now?",
+  "promo_ttt_why_desc": "Older tankless models lose efficiency over time. The new Navien models offer ultra-high efficiency, built-in recirculation, and smart connectivity.",
+  "promo_ttt_tier_title": "Professional Installation Tiers",
+  "promo_ttt_good_title": "GOOD (Standard)",
+  "promo_ttt_good_desc": "Navien NPE-240A2 (199K BTU). Direct swap using existing venting and gas lines.",
+  "promo_ttt_good_li1": "Navien NPE-240A2 Direct Swap.",
+  "promo_ttt_good_li2": "Reuse of existing venting and gas.",
+  "promo_ttt_good_li3": "City permits & old unit haul-away.",
+  "promo_ttt_good_li4": "1-Year Labor Warranty.",
+  "promo_ttt_better_title": "BETTER (Premium)",
+  "promo_ttt_better_desc": "Navien NPE-240A2. Includes NaviCirc Recirculation and Scale Prevention Filter.",
+  "promo_ttt_better_li1": "Everything in GOOD, plus:",
+  "promo_ttt_better_li2": "Internal Recirculation Pump activation.",
+  "promo_ttt_better_li3": "Thermal Expansion Tank installation.",
+  "promo_ttt_better_li4": "Navien PeakFlow Scale Prevention System.",
+  "promo_ttt_better_li5": "3-Year Labor Warranty.",
+  "promo_ttt_best_title": "BEST (Ultra-Premium)",
+  "promo_ttt_best_desc": "Navien NPE-240A2. Includes Whole-home PRV & NaviLink WiFi Control.",
+  "promo_ttt_best_li1": "Everything in BETTER, plus:",
+  "promo_ttt_best_li2": "Whole-home Pressure Regulating Valve (PRV).",
+  "promo_ttt_best_li3": "Halo Water Treatment System integration.",
+  "promo_ttt_best_li4": "NaviLink WiFi Control Module.",
+  "promo_ttt_best_li5": "Lifetime Labor Warranty.",
+  "promo_ttt_legal_title": "Términos Legales, Mandatos y Reembolsos",
+  "promo_ttt_legal_mandate_title": "1. Mandato BAAQMD (Reg 9, Regla 6):",
+  "promo_ttt_legal_mandate_desc": "A partir del 1 de enero de 2027, la instalación de calentadores a gas estará estrictamente prohibida en el Área de la Bahía. Esta promoción prepara su hogar para el futuro.",
+  "promo_ttt_legal_rebates_title": "2. Incentivos y Reembolsos (Rebates):",
+  "promo_ttt_legal_rebates_desc": "Las bombas de calor califican para el Crédito Fiscal Federal IRA (hasta $2,000) y reembolsos de TECH Clean CA (hasta $3,100). Los fondos son limitados y dependen del código postal.",
+  "promo_ttt_legal_apply_title": "3. Requisitos de Aplicación:",
+  "promo_ttt_legal_apply_desc": "Aplica para propietarios residenciales que reemplacen equipos antiguos. Si su panel eléctrico requiere actualización a 240V, podría calificar para subsidios adicionales.",
+  "promo_ttt_legal_time_title": "4. Vigencia y Responsabilidad:",
+  "promo_ttt_legal_time_desc": "La ventana de transición es ahora. Morales Plumbing provee equipos certificados y el papeleo para el reembolso, pero no garantiza la aprobación ni los tiempos de pago del Estado."
+};
+
+const esDict = {
+  "promo_tt_title": "Actualización de Tanque a Tankless",
+  "promo_tt_desc": "Transición a un calentador de agua Tankless Navien de alta eficiencia. Agua caliente sin fin y ahorro masivo de espacio.",
+  "promo_tt_why_title": "¿Por qué actualizar ahora?",
+  "promo_tt_why_desc": "Los sistemas Tankless proporcionan agua caliente sin fin, duran hasta el doble que los calentadores de tanque tradicionales y reducen las facturas de energía.",
+  "promo_tt_tier_title": "Niveles de Instalación Profesional",
+  "promo_tt_good_title": "BUENO (Estándar)",
+  "promo_tt_good_desc": "Navien NPE-240A2 (199K BTU). Retrofit estándar de tanque a tankless.",
+  "promo_tt_good_li1": "Unidad de Alta Eficiencia Navien NPE-240A2.",
+  "promo_tt_good_li2": "Modificaciones de línea de gas y ventilación.",
+  "promo_tt_good_li3": "Permisos de la ciudad y retiro del tanque viejo.",
+  "promo_tt_good_li4": "1 Año de Garantía en Mano de Obra.",
+  "promo_tt_better_title": "MEJOR (Premium)",
+  "promo_tt_better_desc": "Navien NPE-240A2. Incluye Recirculación NaviCirc y Filtro de Prevención de Sarro.",
+  "promo_tt_better_li1": "Todo lo de BUENO, además de:",
+  "promo_tt_better_li2": "Válvula de Recirculación NaviCirc.",
+  "promo_tt_better_li3": "Instalación de Tanque de Expansión Térmica.",
+  "promo_tt_better_li4": "Sistema de Prevención de Sarro Navien PeakFlow.",
+  "promo_tt_better_li5": "3 Años de Garantía en Mano de Obra.",
+  "promo_tt_best_title": "EL MEJOR (Ultra-Premium)",
+  "promo_tt_best_desc": "Navien NPE-240A2. Incluye Mejora de Línea de Gas Dedicada y Control WiFi NaviLink.",
+  "promo_tt_best_li1": "Todo lo de MEJOR, además de:",
+  "promo_tt_best_li2": "Válvula Reguladora de Presión para todo el hogar (PRV).",
+  "promo_tt_best_li3": "Línea de Gas Dedicada de Alta Capacidad.",
+  "promo_tt_best_li4": "Módulo de Control WiFi NaviLink.",
+  "promo_tt_best_li5": "Garantía de por Vida en Mano de Obra.",
+  "promo_tt_legal_title": "Términos Legales, Mandatos y Reembolsos",
+  "promo_tt_legal_mandate_title": "1. Mandato BAAQMD (Reg 9, Regla 6):",
+  "promo_tt_legal_mandate_desc": "A partir del 1 de enero de 2027, la instalación de calentadores a gas estará estrictamente prohibida en el Área de la Bahía. Esta promoción prepara su hogar para el futuro.",
+  "promo_tt_legal_rebates_title": "2. Incentivos y Reembolsos (Rebates):",
+  "promo_tt_legal_rebates_desc": "Las bombas de calor califican para el Crédito Fiscal Federal IRA (hasta $2,000) y reembolsos de TECH Clean CA (hasta $3,100). Los fondos son limitados y dependen del código postal.",
+  "promo_tt_legal_apply_title": "3. Requisitos de Aplicación:",
+  "promo_tt_legal_apply_desc": "Aplica para propietarios residenciales que reemplacen equipos antiguos. Si su panel eléctrico requiere actualización a 240V, podría calificar para subsidios adicionales.",
+  "promo_tt_legal_time_title": "4. Vigencia y Responsabilidad:",
+  "promo_tt_legal_time_desc": "La ventana de transición es ahora. Morales Plumbing provee equipos certificados y el papeleo para el reembolso, pero no garantiza la aprobación ni los tiempos de pago del Estado.",
+  "promo_ttt_title": "Reemplazo de Tankless a Tankless",
+  "promo_ttt_desc": "Actualice su antiguo sistema tankless a la última serie Navien NPE-A2 con tecnología avanzada de recirculación.",
+  "promo_ttt_why_title": "¿Por qué actualizar ahora?",
+  "promo_ttt_why_desc": "Los modelos tankless antiguos pierden eficiencia con el tiempo. Los nuevos modelos Navien ofrecen eficiencia ultra alta, recirculación incorporada y conectividad inteligente.",
+  "promo_ttt_tier_title": "Niveles de Instalación Profesional",
+  "promo_ttt_good_title": "BUENO (Estándar)",
+  "promo_ttt_good_desc": "Navien NPE-240A2 (199K BTU). Cambio directo usando la ventilación y líneas de gas existentes.",
+  "promo_ttt_good_li1": "Cambio Directo Navien NPE-240A2.",
+  "promo_ttt_good_li2": "Reutilización de ventilación y gas existentes.",
+  "promo_ttt_good_li3": "Permisos de la ciudad y retiro de la unidad vieja.",
+  "promo_ttt_good_li4": "1 Año de Garantía en Mano de Obra.",
+  "promo_ttt_better_title": "MEJOR (Premium)",
+  "promo_ttt_better_desc": "Navien NPE-240A2. Incluye Recirculación NaviCirc y Filtro de Prevención de Sarro.",
+  "promo_ttt_better_li1": "Todo lo de BUENO, además de:",
+  "promo_ttt_better_li2": "Activación de la Bomba de Recirculación Interna.",
+  "promo_ttt_better_li3": "Instalación de Tanque de Expansión Térmica.",
+  "promo_ttt_better_li4": "Sistema de Prevención de Sarro Navien PeakFlow.",
+  "promo_ttt_better_li5": "3 Años de Garantía en Mano de Obra.",
+  "promo_ttt_best_title": "EL MEJOR (Ultra-Premium)",
+  "promo_ttt_best_desc": "Navien NPE-240A2. Incluye PRV para todo el hogar y Control WiFi NaviLink.",
+  "promo_ttt_best_li1": "Todo lo de MEJOR, además de:",
+  "promo_ttt_best_li2": "Válvula Reguladora de Presión para todo el hogar (PRV).",
+  "promo_ttt_best_li3": "Integración del Sistema de Tratamiento de Agua Halo.",
+  "promo_ttt_best_li4": "Módulo de Control WiFi NaviLink.",
+  "promo_ttt_best_li5": "Garantía de por Vida en Mano de Obra.",
+  "promo_ttt_legal_title": "Términos Legales, Mandatos y Reembolsos",
+  "promo_ttt_legal_mandate_title": "1. Mandato BAAQMD (Reg 9, Regla 6):",
+  "promo_ttt_legal_mandate_desc": "A partir del 1 de enero de 2027, la instalación de calentadores a gas estará estrictamente prohibida en el Área de la Bahía. Esta promoción prepara su hogar para el futuro.",
+  "promo_ttt_legal_rebates_title": "2. Incentivos y Reembolsos (Rebates):",
+  "promo_ttt_legal_rebates_desc": "Las bombas de calor califican para el Crédito Fiscal Federal IRA (hasta $2,000) y reembolsos de TECH Clean CA (hasta $3,100). Los fondos son limitados y dependen del código postal.",
+  "promo_ttt_legal_apply_title": "3. Requisitos de Aplicación:",
+  "promo_ttt_legal_apply_desc": "Aplica para propietarios residenciales que reemplacen equipos antiguos. Si su panel eléctrico requiere actualización a 240V, podría calificar para subsidios adicionales.",
+  "promo_ttt_legal_time_title": "4. Vigencia y Responsabilidad:",
+  "promo_ttt_legal_time_desc": "La ventana de transición es ahora. Morales Plumbing provee equipos certificados y el papeleo para el reembolso, pero no garantiza la aprobación ni los tiempos de pago del Estado."
+};
+
+let appJs = fs.readFileSync('app.js', 'utf8');
+
+const injectDict = (blockName, dict) => {
+    const blockStart = appJs.indexOf(`${blockName}: {`);
+    if (blockStart === -1) return;
+    
+    let injectedKeys = '';
+    for (const [key, val] of Object.entries(dict)) {
+        // Only inject if it does not already exist
+        if (!appJs.includes(`"${key}":`)) {
+            injectedKeys += `\n        "${key}": "${val.replace(/"/g, '\\"')}",`;
+        }
+    }
+    
+    appJs = appJs.substring(0, blockStart + blockName.length + 3) + injectedKeys + appJs.substring(blockStart + blockName.length + 3);
+};
+
+injectDict('en', enDict);
+injectDict('es', esDict);
+
+fs.writeFileSync('app.js', appJs, 'utf8');
+console.log('Translations for TT and TTT promos injected into app.js!');

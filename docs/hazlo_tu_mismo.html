@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazlo Tú Mismo | Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../universe.css">
+    <style>
+        :root { --cyan: #00f5ff; --orange: #ff8c00; --dark: #030712; --card: rgba(8, 14, 36, 0.45); --border: #000000; --text: #d9e8f0; }
+        body { background-color: var(--dark); background-image: url('../assets/service_smart_repair_1778369346415.webp'); background-size: cover; background-position: center; background-attachment: fixed; background-blend-mode: overlay; color: var(--text); font-family: 'Inter', sans-serif; min-height: 100vh; }
+        .faq-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: rgba(3, 7, 18, 0.9); backdrop-filter: blur(14px); border-bottom: 3px solid #000; }
+        .faq-nav a { color: var(--orange); text-decoration: none; font-family: 'Orbitron'; font-weight: 700; }
+        .faq-hero { padding: 120px 20px 40px; text-align: center; }
+        .graffiti-title { font-family: 'Black Ops One', cursive; font-size: 2.2rem; text-transform: uppercase; background: linear-gradient(to bottom, #ffffff, #00f5ff, #ff8c00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(2px 2px 0px #000); margin: 0; }
+        .search-container { max-width: 600px; margin: 30px auto; position: relative; }
+        .faq-search { width: 100%; padding: 15px 25px; border-radius: 30px; border: 3px solid #000; background: rgba(0, 245, 255, 0.1); color: #fff; font-size: 0.9rem; outline: none; transition: 0.3s; box-shadow: 4px 4px 0px #000; }
+        .faq-search:focus { border-color: var(--cyan); box-shadow: 6px 6px 0px var(--cyan); background: rgba(0,0,0,0.8); }
+        .nav-right { display: flex; gap: 10px; }
+        .lang-btn { background: transparent; border: 2px solid var(--orange); color: var(--orange); padding: 5px 10px; cursor: pointer; border-radius: 8px; font-weight: bold; }
+        .lang-btn:hover { background: var(--orange); color: #000; }
+        
+        .diy-container { max-width: 1200px; margin: 0 auto 100px; padding: 0 20px; display: flex; gap: 30px; align-items: flex-start; }
+        .diy-list { flex: 2; display: flex; flex-direction: column; gap: 20px; }
+        .joe-ai-panel { flex: 1; position: sticky; top: 100px; background: rgba(0,0,0,0.6); border: 2px solid var(--cyan); padding: 20px; border-radius: 12px; box-shadow: 0 0 15px rgba(0, 255, 170, 0.2); }
+        
+        .diy-task { background: var(--card); border: 2px solid #000; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; }
+        .diy-task:hover { border-color: var(--orange); box-shadow: 4px 4px 0px var(--orange); }
+        .diy-task-header { padding: 15px 20px; background: rgba(0,0,0,0.8); border-bottom: 2px solid #000; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .diy-task-header h3 { margin: 0; color: var(--cyan); font-family: 'Orbitron'; font-size: 1rem; }
+
+        .calc-input { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: 1px solid var(--cyan); background: rgba(0,0,0,0.8); color: #fff; }
+        .calc-btn { width: 100%; padding: 10px; background: var(--cyan); color: #000; border: none; font-weight: bold; cursor: pointer; font-family: 'Orbitron'; }
+        
+        .graffiti-title { font-size: 1.8rem; }
+        
+        @media(max-width: 768px) {
+            .diy-container { flex-direction: column; }
+            .joe-ai-panel { position: static; width: 100%; }
+        }
+
+
+    
+        /* Premium Visual Guide CSS */
+        .diy-task-content {
+            background: #0d1635;
+            border-radius: 0 0 10px 10px;
+            padding: 25px;
+            border: 1px solid var(--cyan);
+            border-top: none;
+            display: none;
+            flex-direction: column;
+        }
+                .diy-task-content.active { 
+            display: flex; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 99999;
+            background: rgba(8,14,36,0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 0;
+            padding: 80px 10% 50px;
+            overflow-y: auto;
+            border: none;
+            box-sizing: border-box;
+        }
+        .close-modal-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: #ff0044;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-family: 'Orbitron';
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255,0,68,0.5);
+        }
+        .close-modal-btn:hover { background: #fff; color: #ff0044; }
+        
+        .guide-hero {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 15px;
+            align-items: stretch;
+        }
+        .guide-hero img {
+            width: 45%;
+            object-fit: contain;
+            border: 2px solid var(--cyan);
+            border-radius: 8px;
+            background: rgba(0,0,0,0.5);
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.2);
+        }
+        .guide-info {
+            width: 55%;
+            background: rgba(0,0,0,0.6);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--orange);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .guide-box { margin-bottom: 20px; }
+        .guide-box:last-child { margin-bottom: 0; }
+        .guide-box h4 {
+            color: var(--orange);
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            border-bottom: 1px dashed var(--cyan);
+            padding-bottom: 5px;
+        }
+        .guide-box ul { list-style: none; padding-left: 0; margin: 0; }
+        .guide-box ul li { padding: 6px 0; font-size: 1.05rem; }
+        .guide-box ul li::before { content: "✔️"; margin-right: 10px; color: var(--cyan); }
+        
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .step-card {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            border-radius: 8px;
+            padding: 15px 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .step-card:hover {
+            transform: translateX(10px);
+            border-color: var(--cyan);
+            box-shadow: -5px 0 15px rgba(0,245,255,0.2);
+        }
+        .step-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #080e24;
+            background: var(--cyan);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+        .step-text {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            color: #eee;
+        }
+        @media (max-width: 768px) {
+            .guide-hero { flex-direction: column; }
+            .guide-hero img { width: 100%; max-height: 250px; }
+            .guide-info { width: 100%; }
+        }
+
+    
+        /* --- LANDING PAGE CSS --- */
+                .lp-hero {
+            position: relative;
+            padding: 150px 20px 80px;
+            text-align: center;
+            border-bottom: 3px solid var(--cyan);
+            overflow: hidden;
+            z-index: 1;
+        }
+        .lp-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('../assets/service_training.png') center/cover;
+            filter: blur(8px);
+            opacity: 0.4;
+            z-index: -1;
+        }
+        .lp-hero h1 { font-size: 2.2rem; color: #fff; text-shadow: 0 0 15px var(--cyan); font-family: 'Orbitron', sans-serif; margin-bottom: 20px; }
+        .lp-hero p { font-size: 1rem; color: #ccc; max-width: 800px; margin: 0 auto 40px; line-height: 1.6; }
+        .lp-cta-btn { display: inline-block; padding: 15px 40px; background: var(--orange); color: #080e24; font-size: 1rem; font-weight: bold; border-radius: 8px; text-decoration: none; text-transform: uppercase; transition: transform 0.2s; box-shadow: 0 0 20px rgba(255,140,0,0.5); font-family: 'Orbitron'; }
+        .lp-cta-btn:hover { transform: scale(1.05); }
+
+        .lp-hook { padding: 15px; text-align: center; background: #0a1128; }
+        .lp-hook h2 { color: var(--cyan); font-size: 1.8rem; font-family: 'Orbitron'; margin-bottom: 15px; }
+        .lp-hook p { font-size: 1rem; color: #eee; max-width: 700px; margin: auto; line-height: 1.6; }
+
+        .lp-features { padding: 15px; background: #080e24; }
+        .lp-features h2 { text-align: center; color: #fff; font-size: 1.8rem; font-family: 'Orbitron'; margin-bottom: 20px; }
+        .lp-feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; max-width: 1000px; margin: auto; }
+        .lp-feat-card { text-align: center; padding: 15px; background: rgba(0,245,255,0.05); border: 1px solid rgba(0,245,255,0.2); border-radius: 10px; transition: transform 0.3s; }
+        .lp-feat-card:hover { transform: translateY(-10px); border-color: var(--cyan); }
+        .lp-feat-card i { font-size: 2rem; color: var(--cyan); margin-bottom: 20px; text-shadow: 0 0 10px var(--cyan); }
+        .lp-feat-card h4 { color: var(--orange); font-size: 1rem; margin-bottom: 15px; }
+        .lp-feat-card p { color: #ccc; line-height: 1.5; }
+
+        .lp-testimonials { padding: 15px; background: #0a1128; text-align: center; }
+        .lp-testimonials h2 { color: var(--cyan); font-size: 1.8rem; font-family: 'Orbitron'; margin-bottom: 20px; }
+        .lp-test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: auto; }
+        .lp-test-card { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border-left: 5px solid var(--orange); text-align: left; font-style: italic; }
+        .lp-test-card p { font-size: 0.9rem; color: #ddd; line-height: 1.6; }
+        .lp-test-card h4 { margin-top: 20px; color: var(--cyan); text-align: right; }
+
+        .lp-faq { padding: 15px; background: #080e24; max-width: 800px; margin: auto; }
+        .lp-faq h2 { text-align: center; color: #fff; font-size: 1.8rem; font-family: 'Orbitron'; margin-bottom: 20px; }
+        .lp-faq-item { margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
+        .lp-faq-item h4 { color: var(--orange); font-size: 1rem; margin-bottom: 15px; }
+        .lp-faq-item p { color: #ccc; line-height: 1.6; font-size: 0.9rem; }
+        
+        @media (max-width: 768px) {
+            .lp-hero h1 { font-size: 2.2rem; }
+            .lp-hero p { font-size: 0.9rem; }
+            .lp-hook h2, .lp-features h2, .lp-testimonials h2, .lp-faq h2 { font-size: 2rem; }
+        }
+
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="faq-nav">
+        <a href="../index.html" data-i18n="nav_back">← BACK</a>
+        <div class="nav-right">
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+            <button class="lang-btn" onclick="setLanguage('zh')">ZH</button>
+            <button class="lang-btn" onclick="setLanguage('tl')">TL</button>
+            <button class="lang-btn" onclick="setLanguage('vi')">VI</button>
+        </div>
+    </nav>
+
+    
+    <!-- LANDING PAGE HERO -->
+    
+
+    <!-- EL GANCHO -->
+    
+
+    <!-- CARACTERÍSTICAS -->
+    
+
+    <!-- TESTIMONIOS -->
+    
+
+    <!-- FAQ DIY -->
+    
+
+
+    
+<header class="lp-hero">
+        <div class="lp-hero-content">
+            <h1 data-i18n="lp_h1">Transfórmate en un Experto en Casa</h1>
+            <p data-i18n="lp_sub">La guía definitiva paso a paso para reparar y mejorar tu hogar sin gastar cientos de dólares en visitas técnicas ni herramientas complejas.</p>
+            <div style="margin-top: 20px;">
+                <a href="../index.html" class="lp-cta-btn" style="background: transparent; border: 2px solid var(--orange); color: var(--orange); margin-right: 15px;"><i class="fas fa-home"></i> Inicio</a>
+                <a href="#search-section" class="lp-cta-btn" data-i18n="lp_cta1">¡Empezar a Construir y Reparar!</a>
+            </div>
+        </div>
+    </header>
+<section id="search-section" class="faq-hero" style="border-top: 3px solid var(--orange);">
+        <h1 class="graffiti-title" data-i18n="htm_title">Hazlo Tú Mismo</h1>
+        <p style="color: #aaa; margin-top: 10px; font-family: 'Orbitron'; letter-spacing: 1px;" data-i18n="htm_subtitle">Top 10 Easy Home Repairs from FAQ 100</p>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="faq-search" placeholder="Buscar reparación / Search repair..." onkeyup="filterTasks()">
+        </div>
+    </section>
+<div class="diy-container">
+        <!-- DIY LIST -->
+        <div class="diy-list" id="taskList">
+            <!-- Tasks will be injected here by JS -->
+        </div>
+
+        <!-- JOE AI PANEL -->
+        <div class="joe-ai-panel">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                <img src="../assets/joe_avatar.webp" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--cyan);">
+                <h3 style="margin: 0; color: var(--cyan); font-family: 'Orbitron';" data-i18n="htm_joe_title">Joe AI Assistant</h3>
+            </div>
+            <p data-i18n="htm_joe_desc" style="font-size: 0.9rem; color: #ccc;">Select a task to get material calculations, or ask me to navigate.</p>
+            
+            <div id="calculatorBox" style="display:none; margin-top: 20px; border-top: 1px dashed var(--cyan); padding-top: 20px;">
+                <h4 style="color: var(--orange); margin-top: 0;" id="calcTitle">Calculator</h4>
+                <label style="font-size: 0.8rem; color: #aaa;" id="calcLabel">Measurement:</label>
+                <input type="number" id="calcInput" class="calc-input" placeholder="e.g. 10">
+                <button class="calc-btn" onclick="calculateMaterials()" data-i18n="htm_calc_btn">Calculate Materials</button>
+                <p id="calcResult" style="margin-top: 15px; font-weight: bold; color: var(--cyan);"></p>
+            </div>
+        </div>
+    </div>
+
+    
+<section class="lp-hook">
+        <h2 data-i18n="lp_hook_title">¿Miedo a Repararlo Tú Mismo?</h2>
+        <p data-i18n="lp_hook_desc">Las emergencias de plomería son estresantes, pero el 80% de los problemas comunes pueden ser resueltos por cualquier persona en menos de 30 minutos. Ahorra dinero y pierde el miedo al fracaso: nuestras guías visuales están diseñadas específicamente para principiantes absolutos.</p>
+    </section>
+<section class="lp-features">
+        <h2 data-i18n="lp_feat_title">¿Qué Incluye Nuestro Hub Visual?</h2>
+        <div class="lp-feat-grid">
+            <div class="lp-feat-card">
+                <i class="fas fa-list-check"></i>
+                <h4 data-i18n="lp_f1">Lista Exacta</h4>
+                <p data-i18n="lp_f1_d">Conoce exactamente qué materiales económicos comprar en tu ferretería local.</p>
+            </div>
+            <div class="lp-feat-card">
+                <i class="fas fa-camera"></i>
+                <h4 data-i18n="lp_f2">100% Visual</h4>
+                <p data-i18n="lp_f2_d">Diseño en tarjetas interactivas e ilustraciones técnicas detalladas por Inteligencia Artificial.</p>
+            </div>
+            <div class="lp-feat-card">
+                <i class="fas fa-shield-halved"></i>
+                <h4 data-i18n="lp_f3">Cero Riesgos</h4>
+                <p data-i18n="lp_f3_d">Trucos PRO e indicaciones claras de seguridad para evitar desastres o inundaciones.</p>
+            </div>
+            <div class="lp-feat-card">
+                <i class="fas fa-stopwatch"></i>
+                <h4 data-i18n="lp_f4">Rápido</h4>
+                <p data-i18n="lp_f4_d">La mayoría de estas 20 reparaciones maestras toman menos de una hora en completarse.</p>
+            </div>
+        </div>
+    </section>
+<section class="lp-testimonials">
+        <h2 data-i18n="lp_test_title">Historias de Éxito de Nuestra Comunidad</h2>
+        <div class="lp-test-grid">
+            <div class="lp-test-card">
+                <p data-i18n="lp_t1_d">"No pensé que fuera tan fácil. Cambié la válvula del inodoro siguiendo los 4 pasos gráficos en 15 minutos y me ahorré $150 USD de un fontanero. ¡Excelente guía!"</p>
+                <h4 data-i18n="lp_t1_n">- Maria G., Los Angeles</h4>
+            </div>
+            <div class="lp-test-card">
+                <p data-i18n="lp_t2_d">"Cambiar el filtro principal de la casa sonaba aterrador, pero con el paso a paso visual y la calculadora de materiales de ORION lo hice sin derramar una gota."</p>
+                <h4 data-i18n="lp_t2_n">- Carlos V., San Diego</h4>
+            </div>
+            <div class="lp-test-card">
+                <p data-i18n="lp_t3_d">"Mi lavabo olía fatal. Gracias al truco del aereador y el vinagre, no tuve que gastar en limpiadores químicos costosos. ¡Funcionó perfecto!"</p>
+                <h4 data-i18n="lp_t3_n">- Elena R., San Francisco</h4>
+            </div>
+        </div>
+        <a href="#search-section" class="lp-cta-btn" style="margin-top: 50px;" data-i18n="lp_cta2">Explorar las 20 Guías Maestras</a>
+    </section>
+<section class="lp-faq">
+        <h2 data-i18n="lp_faq_title">Preguntas Frecuentes del DIY</h2>
+        <div class="lp-faq-item">
+            <h4 data-i18n="lp_q1">¿Necesito experiencia previa con herramientas?</h4>
+            <p data-i18n="lp_a1">Absolutamente no. Todas las guías de este portal fueron curadas asumiendo que nunca has tocado una pinza en tu vida. Empezamos desde lo más básico.</p>
+        </div>
+        <div class="lp-faq-item">
+            <h4 data-i18n="lp_q2">¿Cuánto dinero aproximado gastaré en materiales?</h4>
+            <p data-i18n="lp_a2">La gran mayoría de las reparaciones aquí listadas utilizan insumos que cuestan menos de $20 dólares, o incluso cosas que ya tienes en casa como Vinagre o Jabón.</p>
+        </div>
+        <div class="lp-faq-item">
+            <h4 data-i18n="lp_q3">¿Y si cometo un error y rompo algo?</h4>
+            <p data-i18n="lp_a3">Todas las guías inician con el paso de seguridad más importante (como cerrar la llave de paso). Si algo sale mal, tu casa está segura. Además, nuestro asistente Joe AI está disponible para ayudarte.</p>
+        </div>
+    </section>
+<script>
+        const tasks = [
+            {
+                id: "t1",
+                key: "disposal",
+                img: "../assets/diy_disposal.png?v=5",
+                yt: "https://www.youtube.com/results?search_query=how+to+unjam+garbage+disposal+allen+wrench"
+            },
+            {
+                id: "t2",
+                key: "heater",
+                img: "../assets/diy_heater.png?v=5",
+                yt: "https://www.youtube.com/results?search_query=how+to+reset+water+heater+thermal+switch"
+            },
+            {
+                id: "t3",
+                key: "toilet",
+                img: "../assets/diy_toilet.png?v=5",
+                yt: "https://www.youtube.com/results?search_query=how+to+fix+running+toilet+flapper"
+            },
+            {
+                id: "t4",
+                key: "sink",
+                img: "../assets/diy_sink.png?v=5",
+                yt: "https://www.youtube.com/results?search_query=how+to+unclog+sink+p-trap"
+            },
+            {
+                id: "t5",
+                key: "faucet",
+                img: "../assets/diy_faucet.png?v=5",
+                yt: "https://www.youtube.com/results?search_query=how+to+fix+leaky+faucet+cartridge"
+            },
+            {
+                id: "t6",
+                key: "showerhead",
+                img: "../assets/diy_shower.png?v=5",
+                yt: "https://www.youtube.com/results?search_query=how+to+replace+shower+head"
+            },
+            {
+                id: "t7",
+                key: "smell",
+                img: "../assets/diy_smell.png?v=5",
+                yt: "https://www.youtube.com/results?search_query=how+to+fix+sewer+gas+smell+floor+drain"
+            },
+            {
+                id: "t8",
+                key: "gfi",
+                img: "../assets/diy_gfi.png?v=5",
+                yt: "https://www.youtube.com/results?search_query=how+to+reset+gfci+outlet"
+            },
+            {
+                id: "t9",
+                key: "anode",
+                img: "../assets/diy_anode.png?v=5",
+                yt: "https://www.youtube.com/results?search_query=how+to+check+water+heater+anode+rod"
+            },
+            {
+                id: "t10",
+                key: "plunge_toilet",
+                img: "../assets/diy_plunger.png?v=5",
+                yt: "https://www.youtube.com/results?search_query=how+to+plunge+a+toilet"
+            },
+            {
+                id: "t11",
+                key: "washer_hose",
+                img: "../assets/diy_washer_hoses.png?v=5",
+                yt: "https://www.youtube.com/results?search_query=how+to+replace+washing+machine+hoses"
+            }
+
+        
+            ,{
+                id: "t12", key: "drain_heater", img: "../assets/wh_comic.png?v=5", yt: "https://www.youtube.com/results?search_query=how+to+drain+water+heater"
+            },{
+                id: "t13", key: "heater_temp", img: "../assets/comic_heaters.webp?v=5", yt: "https://www.youtube.com/results?search_query=how+to+adjust+water+heater+temperature"
+            },{
+                id: "t14", key: "dishwasher_filter", img: "../assets/diy_dishwasher_filter.png?v=5", yt: "https://www.youtube.com/results?search_query=how+to+clean+dishwasher+filter"
+            },{
+                id: "t15", key: "aerator", img: "../assets/diy_aerator.png?v=5", yt: "https://www.youtube.com/results?search_query=how+to+clean+faucet+aerator"
+            },{
+                id: "t16", key: "fill_valve", img: "../assets/valves_comic.png?v=5", yt: "https://www.youtube.com/results?search_query=how+to+replace+toilet+fill+valve"
+            },{
+                id: "t17", key: "caulk_tub", img: "../assets/diy_caulk_tub.png?v=5", yt: "https://www.youtube.com/results?search_query=how+to+recaulk+bathtub"
+            },{
+                id: "t18", key: "hvac_filter", img: "../assets/diy_hvac_filter.png?v=5", yt: "https://www.youtube.com/results?search_query=how+to+change+ac+filter"
+            },{
+                id: "t19", key: "house_filter", img: "../assets/diy_house_filter.png?v=5", yt: "https://www.youtube.com/results?search_query=how+to+replace+whole+house+water+filter"
+            },{
+                id: "t20", key: "tub_drain", img: "../assets/diy_tub_drain.png?v=5", yt: "https://www.youtube.com/results?search_query=how+to+unclog+bathtub+drain+with+snake"
+            }
+];
+
+        
+        function renderTasks() {
+            const list = document.getElementById('taskList');
+            list.innerHTML = '';
+            
+            tasks.forEach((task, index) => {
+                const html = `
+                    <div class="diy-task" id="task-${task.key}">
+                        <div class="diy-task-header" onclick="toggleTask('${task.key}')">
+                            <h3 data-i18n="htm_${task.key}_title">#${index+1} Task Title</h3>
+                            <span style="color: var(--cyan); font-weight: bold; font-size: 1.5rem;" id="icon-${task.key}">+</span>
+                        </div>
+                        <div class="diy-task-content" id="content-${task.key}">
+                            <button class="close-modal-btn" onclick="toggleTask('${task.key}')">✖ CERRAR GUÍA</button>
+                            <p data-i18n="htm_${task.key}_desc" style="font-size: 1.25rem; margin-top: 0; margin-bottom: 15px; text-align: center; color: #fff; font-style: italic;"></p>
+                            
+                            <div class="guide-hero">
+                                <img src="${task.img}" alt="Illustration">
+                                <div class="guide-info">
+                                    <div class="guide-box">
+                                        <h4 data-i18n="htm_materials"><i class="fas fa-box-open"></i> Materials Needed</h4>
+                                        <ul id="mat-${task.key}"></ul>
+                                    </div>
+                                    <div class="guide-box">
+                                        <h4 data-i18n="htm_tools"><i class="fas fa-wrench"></i> Tools Required</h4>
+                                        <ul id="tool-${task.key}"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 data-i18n="htm_steps" style="color: var(--cyan); font-size: 1.6rem; border-bottom: 2px solid rgba(0, 245, 255, 0.3); padding-bottom: 10px; margin-bottom: 20px; font-family: 'Orbitron', sans-serif;">Step-by-Step Guide</h4>
+                            <div class="step-container" id="steps-${task.key}"></div>
+                            
+                            <a href="${task.yt}" target="_blank" class="youtube-btn" style="width: 100%; text-align: center; margin-top: 10px;">
+                                <i class="fab fa-youtube"></i> Watch Video Tutorial
+                            </a>
+                        </div>
+                    </div>
+                `;
+                list.innerHTML += html;
+            });
+        }
+
+        let currentActive = null;
+        function toggleTask(key) {
+            if (currentActive && currentActive !== key) {
+                document.getElementById('content-'+currentActive).classList.remove('active');
+                document.getElementById('icon-'+currentActive).innerText = '+';
+            }
+            
+            const content = document.getElementById('content-'+key);
+            const icon = document.getElementById('icon-'+key);
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerText = '+';
+                currentActive = null;
+                document.getElementById('calculatorBox').style.display = 'none';
+            } else {
+                content.classList.add('active');
+                icon.innerText = '-';
+                currentActive = key;
+                setupCalculator(key);
+            }
+        }
+
+        function filterTasks() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            tasks.forEach(task => {
+                const el = document.getElementById('task-'+task.key);
+                const title = el.innerText.toLowerCase();
+                if (title.includes(query)) {
+                    el.style.display = 'flex';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+        }
+
+        function setupCalculator(key) {
+            const box = document.getElementById('calculatorBox');
+            const title = document.getElementById('calcTitle');
+            const label = document.getElementById('calcLabel');
+            const result = document.getElementById('calcResult');
+            const input = document.getElementById('calcInput');
+            
+            result.innerText = '';
+            input.value = '';
+            
+            if (key === 'caulk') {
+                box.style.display = 'block';
+                title.innerText = 'Caulk Calculator';
+                label.innerText = 'Linear feet of tub (ft):';
+                window.currentCalc = 'caulk';
+            } else if (key === 'washer_hose') {
+                box.style.display = 'block';
+                title.innerText = 'Hose Length Estimator';
+                label.innerText = 'Distance from wall to washer (ft):';
+                window.currentCalc = 'hose';
+            } else {
+                box.style.display = 'none';
+            }
+        }
+
+        function calculateMaterials() {
+            const val = parseFloat(document.getElementById('calcInput').value);
+            const res = document.getElementById('calcResult');
+            if (!val || isNaN(val)) {
+                res.innerText = "Please enter a valid number.";
+                return;
+            }
+            
+            if (window.currentCalc === 'caulk') {
+                const tubes = Math.ceil(val / 10);
+                res.innerText = `Joe AI says: You need ${tubes} tube(s) of 10oz 100% Silicone Caulk for ${val} ft.`;
+            } else if (window.currentCalc === 'hose') {
+                const length = val + 2; 
+                res.innerText = `Joe AI says: Buy hoses at least ${length} ft long to allow moving the washer safely.`;
+            }
+        }
+
+        // We will call setLanguage manually at the end of window.onload after rendering tasks
+    </script>
+    <script src="../app.js"></script>
+    <section class="lp-testimonials">
+        <h2 data-i18n="lp_test_title">Historias de Éxito de Nuestra Comunidad</h2>
+        <div class="lp-test-grid">
+            <div class="lp-test-card">
+                <p data-i18n="lp_t1_d">"No pensé que fuera tan fácil. Cambié la válvula del inodoro siguiendo los 4 pasos gráficos en 15 minutos y me ahorré $150 USD de un fontanero. ¡Excelente guía!"</p>
+                <h4 data-i18n="lp_t1_n">- Maria G., Los Angeles</h4>
+            </div>
+            <div class="lp-test-card">
+                <p data-i18n="lp_t2_d">"Cambiar el filtro principal de la casa sonaba aterrador, pero con el paso a paso visual y la calculadora de materiales de ORION lo hice sin derramar una gota."</p>
+                <h4 data-i18n="lp_t2_n">- Carlos V., San Diego</h4>
+            </div>
+            <div class="lp-test-card">
+                <p data-i18n="lp_t3_d">"Mi lavabo olía fatal. Gracias al truco del aereador y el vinagre, no tuve que gastar en limpiadores químicos costosos. ¡Funcionó perfecto!"</p>
+                <h4 data-i18n="lp_t3_n">- Elena R., San Francisco</h4>
+            </div>
+        </div>
+        <a href="#search-section" class="lp-cta-btn" style="margin-top: 50px;" data-i18n="lp_cta2">Explorar las 20 Guías Maestras</a>
+    </section>
+<section class="lp-faq">
+        <h2 data-i18n="lp_faq_title">Preguntas Frecuentes del DIY</h2>
+        <div class="lp-faq-item">
+            <h4 data-i18n="lp_q1">¿Necesito experiencia previa con herramientas?</h4>
+            <p data-i18n="lp_a1">Absolutamente no. Todas las guías de este portal fueron curadas asumiendo que nunca has tocado una pinza en tu vida. Empezamos desde lo más básico.</p>
+        </div>
+        <div class="lp-faq-item">
+            <h4 data-i18n="lp_q2">¿Cuánto dinero aproximado gastaré en materiales?</h4>
+            <p data-i18n="lp_a2">La gran mayoría de las reparaciones aquí listadas utilizan insumos que cuestan menos de $20 dólares, o incluso cosas que ya tienes en casa como Vinagre o Jabón.</p>
+        </div>
+        <div class="lp-faq-item">
+            <h4 data-i18n="lp_q3">¿Y si cometo un error y rompo algo?</h4>
+            <p data-i18n="lp_a3">Todas las guías inician con el paso de seguridad más importante (como cerrar la llave de paso). Si algo sale mal, tu casa está segura. Además, nuestro asistente Joe AI está disponible para ayudarte.</p>
+        </div>
+    </section>
+<script>
+        window.onload = () => {
+            renderTasks();
+            setTimeout(() => {
+                const lang = localStorage.getItem('morales_lang') || 'es';
+                setLanguage(lang);
+                populateDynamicLists(lang);
+            }, 100);
+        };
+        
+                function populateDynamicLists(lang) {
+            const data = {
+                en: {
+                    close: "✖ CLOSE GUIDE", stepWord: "STEP", descText: "Detailed visual guide",
+                    disposal: { m: ["None"], t: ["1/4 inch Allen Wrench"], s: ["Turn off power.", "Insert wrench into bottom center hole.", "Crank back and forth until loose.", "Press red reset button.", "Turn on power and test."] },
+                    heater: { m: ["None"], t: ["Screwdriver"], s: ["Turn off power to heater.", "Remove upper access panel.", "Press red reset button firmly.", "Replace panel and restore power."] },
+                    toilet: { m: ["Universal Flapper"], t: ["None"], s: ["Turn off wall valve.", "Flush to drain tank.", "Unhook old flapper chain.", "Install new flapper and connect chain.", "Turn on water."] },
+                    sink: { m: ["Bucket", "Towel"], t: ["Channel Locks (optional)"], s: ["Place bucket under P-trap.", "Unscrew the two slip nuts by hand.", "Empty trap and clean inside.", "Reassemble and hand tighten."] },
+                    aerator: { m: ["White Vinegar"], t: ["Pliers", "Rag"], s: ["Wrap rag around aerator.", "Unscrew with pliers.", "Soak in vinegar for 15 mins.", "Rinse and screw back on."] },
+                    faucet: { m: ["Replacement Cartridge"], t: ["Allen Wrench", "Adjustable Wrench"], s: ["Turn off water valves.", "Remove handle with Allen wrench.", "Unscrew retaining nut.", "Pull out cartridge and insert new one."] },
+                    caulk: { m: ["100% Silicone Caulk", "Alcohol"], t: ["Caulk Gun", "Scraper Tool"], s: ["Scrape off all old caulk.", "Wipe surface with alcohol.", "Apply steady bead of caulk.", "Smooth with wet finger."] },
+                    showerhead: { m: ["Teflon Tape", "New Showerhead"], t: ["Adjustable Wrench"], s: ["Unscrew old showerhead.", "Clean threads on pipe.", "Wrap Teflon tape clockwise 3 times.", "Screw on new head."] },
+                    smell: { m: ["Water", "Bleach (Optional)"], t: ["None"], s: ["Locate dry floor drain or unused tub.", "Pour 1 gallon of water down drain.", "This fills the P-trap, blocking gas."] },
+                    anode: { m: ["Teflon Tape"], t: ["Socket Wrench 1-1/16\""], s: ["Turn off water and heater.", "Drain a few gallons.", "Unscrew anode rod with socket.", "Inspect: if wire is showing, replace.", "Tape threads and reinstall."] },
+                    drain_heater: { m: ["Garden Hose"], t: ["Screwdriver"], s: ["Turn off heater and cold water.", "Attach hose to drain valve.", "Open hot water tap in house.", "Open drain valve and let flush.", "Close valve and refill."] },
+                    plunge_toilet: { m: ["Rubber Gloves"], t: ["Flange Plunger"], s: ["Ensure water covers plunger cup.", "Form tight seal over drain.", "Push down gently, pull up sharply.", "Repeat 5-10 times.", "Flush to test."] },
+                    main_filter: { m: ["New Filter Cartridge", "O-ring lube"], t: ["Filter Wrench"], s: ["Turn off main water valve.", "Press pressure relief button.", "Unscrew housing with wrench.", "Replace filter and lube O-ring.", "Tighten and turn on water."] },
+                    dishwasher_filter: { m: ["Dish Soap", "Old Toothbrush"], t: ["None"], s: ["Remove bottom rack.", "Twist and pull out cylinder filter.", "Wash under warm water with soap.", "Scrub mesh with toothbrush.", "Lock back into place."] },
+                    washer_hose: { m: ["Stainless Steel Hoses"], t: ["Channel Locks"], s: ["Turn off water valves.", "Unscrew old rubber hoses.", "Connect new hoses.", "Hand tighten, then 1/4 turn with pliers."] },
+                    heater_temp: { m: ["None"], t: ["Screwdriver"], s: ["Turn off power.", "Remove access panels.", "Turn dial to 120F (49C).", "Replace panels and turn on."] },
+                    fill_valve: { m: ["Universal Fill Valve"], t: ["Pliers", "Bucket"], s: ["Turn off water and flush.", "Place bucket under tank.", "Unscrew old valve nut.", "Install new valve and adjust height."] },
+                    caulk_tub: { m: ["100% Silicone Caulk", "Alcohol"], t: ["Caulk Gun", "Scraper"], s: ["Scrape all old caulk.", "Wipe surface with alcohol.", "Apply steady bead.", "Smooth with wet finger."] },
+                    hvac_filter: { m: ["New A/C Filter"], t: ["None"], s: ["Turn off AC unit.", "Open return grille on wall.", "Remove old dirty filter.", "Insert new filter (arrow towards unit)."] },
+                    house_filter: { m: ["Filter Cartridge", "O-ring lube"], t: ["Filter Wrench"], s: ["Turn off main water.", "Press pressure relief.", "Unscrew housing.", "Replace filter and turn on water."] },
+                    tub_drain: { m: ["Paper Towels"], t: ["Plastic Hair Snake"], s: ["Remove drain stopper.", "Insert hair snake deeply.", "Pull up slowly to remove hair.", "Flush with hot water."] },
+                    gfi: { m: ["None"], t: ["None"], s: ["Locate tripped GFI outlet.", "Unplug all appliances from it.", "Press the RESET button firmly.", "Plug in appliance and test."] }
+                },
+                es: {
+                    close: "✖ CERRAR GUÍA", stepWord: "PASO", descText: "Guía visual detallada",
+                    disposal: { m: ["Ninguno"], t: ["Llave Allen 1/4\""], s: ["Apaga la corriente.", "Inserta llave en orificio inferior.", "Gira de lado a lado hasta aflojar.", "Presiona botón rojo de reinicio.", "Enciende y prueba."] },
+                    heater: { m: ["Ninguno"], t: ["Destornillador"], s: ["Apaga el calentador.", "Quita el panel superior.", "Presiona el botón rojo de reinicio.", "Coloca panel y enciende."] },
+                    toilet: { m: ["Flapper Universal"], t: ["Ninguna"], s: ["Cierra válvula de pared.", "Tira cadena para vaciar tanque.", "Desengancha flapper viejo.", "Instala el nuevo y conecta cadena.", "Abre el agua."] },
+                    sink: { m: ["Cubeta", "Toalla"], t: ["Pinzas (Opcional)"], s: ["Pon cubeta bajo trampa P.", "Desenrosca tuercas a mano.", "Limpia el interior de la trampa.", "Vuelve a armar y aprieta a mano."] },
+                    aerator: { m: ["Vinagre Blanco"], t: ["Pinzas", "Trapo"], s: ["Envuelve el trapo en aereador.", "Desenrosca con pinzas.", "Remoja en vinagre 15 min.", "Enjuaga y vuelve a enroscar."] },
+                    faucet: { m: ["Cartucho de repuesto"], t: ["Llave Allen", "Llave Inglesa"], s: ["Cierra el agua.", "Quita manija con llave Allen.", "Desenrosca tuerca de retención.", "Saca el cartucho y pon el nuevo."] },
+                    caulk: { m: ["Silicón 100%", "Alcohol"], t: ["Pistola", "Espátula"], s: ["Raspa todo el silicón viejo.", "Limpia con alcohol.", "Aplica línea uniforme de silicón.", "Alisa con un dedo húmedo."] },
+                    showerhead: { m: ["Cinta Teflón", "Regadera Nueva"], t: ["Llave Inglesa"], s: ["Desenrosca regadera vieja.", "Limpia rosca del tubo.", "Aplica teflón 3 vueltas horario.", "Enrosca regadera nueva."] },
+                    smell: { m: ["Agua"], t: ["Ninguna"], s: ["Busca el drenaje de piso seco.", "Vierte 1 galón de agua.", "Esto sella la trampa P bloqueando gas."] },
+                    anode: { m: ["Cinta Teflón"], t: ["Dado 1-1/16\""], s: ["Apaga agua y calentador.", "Drena un poco de agua.", "Desenrosca el ánodo con dado.", "Inspecciona: si se ve alambre, cambia.", "Pon teflón y reinstala."] },
+                    drain_heater: { m: ["Manguera de jardín"], t: ["Destornillador"], s: ["Apaga calentador y agua fría.", "Conecta manguera a válvula.", "Abre una llave de agua caliente.", "Abre válvula y drena.", "Cierra válvula y llena."] },
+                    plunge_toilet: { m: ["Guantes"], t: ["Destapacaños (Plunger)"], s: ["Asegura que agua cubra el chupón.", "Sella bien el desagüe.", "Empuja suave, jala fuerte.", "Repite 5-10 veces.", "Descarga para probar."] },
+                    main_filter: { m: ["Filtro Nuevo", "Lubricante O-ring"], t: ["Llave de Filtro"], s: ["Cierra válvula principal.", "Presiona botón de alivio.", "Desenrosca vaso con la llave.", "Cambia filtro y lubrica O-ring.", "Aprieta y abre el agua."] },
+                    dishwasher_filter: { m: ["Jabón", "Cepillo viejo"], t: ["Ninguna"], s: ["Saca la canasta inferior.", "Gira y saca el filtro cilíndrico.", "Lava con agua tibia y jabón.", "Talla con cepillo de dientes.", "Vuelve a colocar y asegurar."] },
+                    washer_hose: { m: ["Mangueras Acero Inox"], t: ["Pinzas"], s: ["Cierra válvulas de agua.", "Quita mangueras viejas.", "Conecta mangueras nuevas.", "Aprieta a mano y luego 1/4 con pinza."] },
+                    heater_temp: { m: ["Ninguno"], t: ["Destornillador"], s: ["Apaga corriente.", "Quita tapas frontales.", "Gira dial a 120F.", "Cierra y enciende."] },
+                    fill_valve: { m: ["Válvula Universal"], t: ["Pinzas", "Cubeta"], s: ["Cierra agua y descarga.", "Pon cubeta bajo el tanque.", "Desenrosca tuerca vieja.", "Instala válvula nueva y ajusta altura."] },
+                    caulk_tub: { m: ["Silicón 100%"], t: ["Pistola", "Espátula"], s: ["Raspa silicón viejo.", "Limpia con alcohol.", "Aplica línea uniforme.", "Alisa con dedo húmedo."] },
+                    hvac_filter: { m: ["Filtro Nuevo"], t: ["Ninguna"], s: ["Apaga el aire acondicionado.", "Abre la rejilla de la pared.", "Saca el filtro sucio.", "Mete el nuevo (flecha hacia adentro)."] },
+                    house_filter: { m: ["Filtro Nuevo"], t: ["Llave de Filtro"], s: ["Cierra agua principal.", "Presiona botón de alivio.", "Saca el vaso.", "Cambia filtro y abre agua."] },
+                    tub_drain: { m: ["Papel toalla"], t: ["Gancho de plástico (Snake)"], s: ["Quita el tapón.", "Mete el gancho plástico.", "Jala despacio para sacar cabello.", "Enjuaga con agua caliente."] },
+                    gfi: { m: ["Ninguno"], t: ["Ninguno"], s: ["Localiza el tomacorriente GFI botado.", "Desconecta todos los aparatos.", "Presiona el botón RESET firmemente.", "Conecta un aparato para probar."] }
+                }
+            };
+            
+            // Add automatic ZH, TL, VI via deep copy from ES and minor string updates
+            data.zh = JSON.parse(JSON.stringify(data.es));
+            data.zh.close = "✖ 關閉指南"; data.zh.stepWord = "步"; data.zh.descText = "詳細的視覺指南";
+            
+            data.tl = JSON.parse(JSON.stringify(data.es));
+            data.tl.close = "✖ ISARA ANG GABAY"; data.tl.stepWord = "HAKBANG"; data.tl.descText = "Detalyadong gabay biswal";
+            
+            data.vi = JSON.parse(JSON.stringify(data.es));
+            data.vi.close = "✖ ĐÓNG HƯỚNG DẪN"; data.vi.stepWord = "BƯỚC"; data.vi.descText = "Hướng dẫn trực quan chi tiết";
+            
+            const d = data[lang] || data['es'];
+            
+            tasks.forEach(t => {
+                const contentEl = document.getElementById('content-'+t.key);
+                if (!contentEl) return;
+                
+                // Multilingual Close Button
+                const closeBtn = contentEl.querySelector('.close-modal-btn');
+                if(closeBtn) closeBtn.innerHTML = d.close;
+                
+                // Multilingual Description
+                const descEl = contentEl.querySelector('p[data-i18n]');
+                if(descEl) descEl.innerHTML = d.descText;
+
+                // Multilingual Subheaders
+                const matH4 = contentEl.querySelector('h4[data-i18n="htm_materials"]');
+                if(matH4) matH4.innerHTML = '<i class="fas fa-box-open"></i> ' + (lang==='en'?'Materials Needed':lang==='es'?'Materiales':'Materiales/Materials');
+                
+                const toolH4 = contentEl.querySelector('h4[data-i18n="htm_tools"]');
+                if(toolH4) toolH4.innerHTML = '<i class="fas fa-wrench"></i> ' + (lang==='en'?'Tools Required':lang==='es'?'Herramientas':'Herramientas/Tools');
+                
+                const stepH4 = contentEl.querySelector('h4[data-i18n="htm_steps"]');
+                if(stepH4) stepH4.innerHTML = (lang==='en'?'Step-by-Step Guide':lang==='es'?'Guía Paso a Paso':'Guía / Guide');
+                
+                // Populate dynamic lists
+                const matEl = document.getElementById('mat-'+t.key);
+                const toolEl = document.getElementById('tool-'+t.key);
+                const stepsEl = document.getElementById('steps-'+t.key);
+                
+                if(d[t.key] && matEl && toolEl && stepsEl) {
+                    matEl.innerHTML = d[t.key].m.map(x => `<li><i class="fas fa-check-circle" style="color:var(--cyan); margin-right: 10px;"></i>${x}</li>`).join('');
+                    toolEl.innerHTML = d[t.key].t.map(x => `<li><i class="fas fa-wrench" style="color:var(--orange); margin-right: 10px;"></i>${x}</li>`).join('');
+                    
+                    const stepIcons = ['fa-shield-halved', 'fa-wrench', 'fa-arrows-rotate', 'fa-check-double', 'fa-thumbs-up', 'fa-clipboard-check'];
+                    stepsEl.innerHTML = d[t.key].s.map((x, idx) => `
+                        <div class="step-card">
+                            <div class="step-number" style="font-size: 1.2rem;"><i class="fas ${stepIcons[idx] || 'fa-tools'}"></i></div>
+                            <div class="step-text">
+                                <strong style="color: var(--orange); display: block; margin-bottom: 5px;">${d.stepWord} ${idx + 1}</strong>
+                                <span style="font-size: 1.2rem;">${x}</span>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            });
+        }
+        const oldSetLanguage = setLanguage;
+        window.setLanguage = function(lang) {
+            oldSetLanguage(lang);
+            populateDynamicLists(lang);
+        };
+    </script>
+</body>
+</html>

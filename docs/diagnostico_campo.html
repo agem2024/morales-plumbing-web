@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Campo | Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #d9480f; --bg: #f9fafb; --surface: #ffffff; --border: #e5e7eb; --text-main: #111827; --text-muted: #6b7280; }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--bg); color: var(--text-main); margin: 0; padding: 0; }
+        .header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 10; display:flex; justify-content:space-between; align-items:center; }
+        .header h1 { margin: 0; font-size: 1.2rem; color: var(--primary); }
+        .header p { margin: 0.2rem 0 0 0; font-size: 0.8rem; color: var(--text-muted); }
+        .container { max-width: 600px; margin: 0 auto; padding: 1rem; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        h2 { font-size: 1rem; margin-top: 0; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1rem; color: var(--text-main); }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.3rem; color: var(--text-muted); }
+        input[type="text"], input[type="date"], textarea { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; box-sizing: border-box; background: #fff; }
+        input:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px rgba(217,72,15,0.1); }
+        .checkbox-row { display: flex; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6; }
+        .checkbox-row:last-child { border-bottom: none; }
+        .checkbox-row input { width: 18px; height: 18px; margin-right: 0.75rem; accent-color: var(--primary); }
+        .btn-camera { display: block; width: 100%; padding: 1rem; background: #fff; border: 1px dashed var(--primary); color: var(--primary); text-align: center; border-radius: 4px; font-weight: 500; cursor: pointer; margin-bottom: 1rem; }
+        .btn-submit { display: block; width: 100%; padding: 1rem; background: var(--primary); color: #fff; text-align: center; border: none; border-radius: 4px; font-weight: bold; font-size: 1rem; cursor: pointer; position: sticky; bottom: 1rem; box-shadow: 0 4px 6px rgba(217,72,15,0.2); }
+        .audience-banner { background: #eff6ff; color: #1d4ed8; padding: 0.75rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 1rem; font-weight: 500; text-align: center; }
+        .lang-btn { background: #eee; border:1px solid #ccc; padding: 0.3rem 0.5rem; border-radius: 4px; cursor: pointer; font-size: 0.8rem;}
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div style="width:50px;"></div>
+        <div>
+            <h1>Morales Plumbing</h1>
+            <p data-es="Captura de Datos en Sitio" data-en="On-site Data Capture">Captura de Datos en Sitio</p>
+        </div>
+        <button class="lang-btn" onclick="toggleLang()">EN/ES</button>
+    </header>
+
+    <div class="container">
+        <div id="audience-banner" class="audience-banner" style="display: none;"></div>
+
+        <div class="card">
+            <h2 data-es="1. Información del Proyecto" data-en="1. Project Information">1. Información del Proyecto</h2>
+            <div class="form-group"><label data-es="Cliente" data-en="Client">Cliente</label><input type="text"></div>
+            <div class="form-group"><label data-es="Dirección del Siniestro" data-en="Incident Address">Dirección del Siniestro</label><input type="text"></div>
+            <div class="form-group"><label data-es="Fecha de Inspección" data-en="Inspection Date">Fecha de Inspección</label><input type="date"></div>
+        </div>
+
+        <div class="card">
+            <h2 data-es="2. Puntos Críticos (Triage)" data-en="2. Critical Points (Triage)">2. Puntos Críticos (Triage)</h2>
+            <label class="checkbox-row"><input type="checkbox"> <span data-es="Fuga Activa / Inundación" data-en="Active Leak / Flooding">Fuga Activa / Inundación</span></label>
+            <label class="checkbox-row"><input type="checkbox"> <span data-es="Olor a Gas Detectado" data-en="Gas Odor Detected">Olor a Gas Detectado</span></label>
+            <label class="checkbox-row"><input type="checkbox"> <span data-es="Daño Estructural Cercano" data-en="Nearby Structural Damage">Daño Estructural Cercano</span></label>
+            <label class="checkbox-row"><input type="checkbox"> <span data-es="Falla en Calentador (Water Heater)" data-en="Water Heater Failure">Falla en Calentador (Water Heater)</span></label>
+            <label class="checkbox-row"><input type="checkbox"> <span data-es="Evidencia de Fuego / Quemaduras" data-en="Fire / Burn Evidence">Evidencia de Fuego / Quemaduras</span></label>
+        </div>
+
+        <div class="card">
+            <h2 data-es="3. Notas y Observaciones" data-en="3. Notes and Observations">3. Notas y Observaciones</h2>
+            <textarea rows="4" data-es-placeholder="Observaciones técnicas para el informe..." data-en-placeholder="Technical observations for the report..." placeholder="Observaciones técnicas para el informe..."></textarea>
+        </div>
+
+        <div class="card">
+            <h2 data-es="4. Registro Fotográfico" data-en="4. Photographic Record">4. Registro Fotográfico</h2>
+            <label class="btn-camera" for="camera-upload" data-es="Abrir Cámara / Subir Foto" data-en="Open Camera / Upload Photo">
+                Abrir Cámara / Subir Foto
+            </label>
+            <input type="file" id="camera-upload" accept="image/*" capture="environment" style="display: none;" multiple>
+            <div id="photo-preview" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;"></div>
+        </div>
+
+        <button class="btn-submit" onclick="saveData()" data-es="GUARDAR DIAGNÓSTICO" data-en="SAVE DIAGNOSTIC">GUARDAR DIAGNÓSTICO</button>
+    </div>
+
+    <script>
+        let currentLang = localStorage.getItem('mp_lang') || 'es';
+
+        function updateTexts() {
+            document.querySelectorAll('[data-es]').forEach(el => {
+                el.innerText = el.getAttribute('data-' + currentLang);
+            });
+            document.querySelectorAll('textarea').forEach(el => {
+                if (el.hasAttribute('data-es-placeholder')) {
+                    el.placeholder = el.getAttribute('data-' + currentLang + '-placeholder');
+                }
+            });
+            
+            const audience = localStorage.getItem('mp_audience');
+            if(audience) {
+                const banner = document.getElementById('audience-banner');
+                banner.style.display = 'block';
+                let txt = audience;
+                if(currentLang === 'en') {
+                    if(audience === 'insurance') txt = 'Insurance';
+                    if(audience === 'city') txt = 'City of Santa Clara';
+                    if(audience === 'both') txt = 'Insurance & City';
+                    if(audience === 'internal') txt = 'Internal Only';
+                    banner.innerText = 'Attention: Data collection for: ' + txt;
+                } else {
+                    if(audience === 'insurance') txt = 'Aseguradora';
+                    if(audience === 'city') txt = 'Ciudad';
+                    if(audience === 'both') txt = 'Aseguradora y Ciudad';
+                    if(audience === 'internal') txt = 'Uso Interno';
+                    banner.innerText = 'Atención: Datos a recopilar para: ' + txt;
+                }
+            }
+        }
+
+        function toggleLang() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            localStorage.setItem('mp_lang', currentLang);
+            updateTexts();
+        }
+
+        function saveData() {
+            const msg = currentLang === 'en' ? 'Data saved successfully.' : 'Datos guardados exitosamente.';
+            alert(msg);
+        }
+
+        updateTexts();
+
+        document.getElementById('camera-upload').addEventListener('change', function(e) {
+            const preview = document.getElementById('photo-preview');
+            Array.from(e.target.files).forEach(f => {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    const img = document.createElement('img');
+                    img.src = evt.target.result;
+                    img.style.width = '100%';
+                    img.style.borderRadius = '4px';
+                    img.style.border = '1px solid #e5e7eb';
+                    preview.appendChild(img);
+                }
+                reader.readAsDataURL(f);
+            });
+        });
+    </script>
+</body>
+</html>

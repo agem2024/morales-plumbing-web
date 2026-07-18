@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normativas y Leyes (2027) - Calentadores de Agua | Morales Plumbing</title>
+    <!-- CSS and Fonts matching Orion aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .law-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        .law-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .law-header h1 {
+            font-size: 3rem;
+            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+        }
+        .law-header p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 1rem auto;
+            line-height: 1.6;
+        }
+        .law-section {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-left: 5px solid var(--neon-cyan);
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        .law-section.reverse {
+            flex-direction: row-reverse;
+            border-left: none;
+            border-right: 5px solid var(--neon-lime);
+        }
+        .law-section-content {
+            flex: 1;
+        }
+        .law-section-image {
+            flex: 1;
+        }
+        .law-section-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .law-section h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .law-section h2.cyan { color: var(--neon-cyan); }
+        .law-section h2.lime { color: var(--neon-lime); }
+        .law-section h2.orange { color: var(--neon-orange); }
+        
+        .law-section p, .law-section ul {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .law-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .law-section ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        .law-section ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--neon-cyan);
+            font-size: 1.2rem;
+            top: -2px;
+        }
+        
+        @media (max-width: 768px) {
+            .law-section, .law-section.reverse {
+                flex-direction: column;
+                padding: 2rem;
+            }
+        }
+        
+        /* Background animations */
+        .cyber-bg-container {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -2;
+            background: radial-gradient(circle at center, #0a0f1e 0%, #000 100%);
+            overflow: hidden;
+            perspective: 1000px;
+            pointer-events: none;
+        }
+        .cyber-grid {
+            position: absolute;
+            bottom: -50vh;
+            left: -50vw;
+            width: 200vw;
+            height: 200vh;
+            background-image: 
+                linear-gradient(rgba(0, 245, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 245, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: rotateX(70deg);
+            animation: gridMove 4s linear infinite;
+        }
+        @keyframes gridMove {
+            0% { transform: rotateX(70deg) translateY(0); }
+            100% { transform: rotateX(70deg) translateY(50px); }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#00f5ff',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#00f5ff',
+                lineColor: '#39ff14',
+                secondaryColor: '#1e293b',
+                tertiaryColor: '#0f172a'
+            }
+        });
+    </script>
+    <style>
+        .mermaid { background: rgba(0,0,0,0.5); padding: 20px; border-radius: 8px; border: 1px solid var(--neon-cyan); box-shadow: 0 0 15px rgba(0, 245, 255, 0.2); }
+    </style>
+</head>
+<body class="dark-theme">
+
+    <div class="cyber-bg-container">
+        <div class="cyber-grid"></div>
+    </div>
+
+    <!-- Header -->
+    <header role="banner" style="background: rgba(0,0,0,0.95); border-bottom: 1px solid rgba(0, 245, 255, 0.3); position: fixed; top: 0; width: 100%; height: 70px; z-index: 100;">
+        <nav role="navigation" style="display:flex; align-items:center; justify-content: space-between; padding: 0 20px; height: 100%;">
+            <div class="logo-container" onclick="window.location.href='../index.html'" style="cursor:pointer; display:flex; align-items:center;">
+                <img src="../assets/logo_portada.webp" style="width: 45px; margin-right:15px; filter: drop-shadow(0 0 5px var(--neon-cyan));">
+                <div class="brand-info">
+                    <span class="brand-name" style="font-size: 1.1rem; margin-bottom: 0;">MORALES PLUMBING</span>
+                    <span class="brand-tag" style="font-size: 0.8rem; color: var(--neon-orange);">LEGAL & COMPLIANCE</span>
+                </div>
+            </div>
+            
+            <!-- Language Selector for this subpage -->
+            <div class="lang-selector" style="display: flex; gap: 0.5rem; margin-right: 20px;">
+                <button class="lang-btn" onclick="setLanguage('en')" data-lang="en">EN</button>
+                <button class="lang-btn" onclick="setLanguage('es')" data-lang="es">ES</button>
+                <button class="lang-btn" onclick="setLanguage('zh')" data-lang="zh">ZH</button>
+                <button class="lang-btn" onclick="setLanguage('tl')" data-lang="tl">TL</button>
+                <button class="lang-btn" onclick="setLanguage('vi')" data-lang="vi">VI</button>
+            </div>
+
+            <a href="promocion_water_heaters.html" class="btn-outline" style="border-color: var(--neon-cyan); color: var(--neon-cyan); padding: 8px 20px; font-family: 'Orbitron'; font-size: 0.9rem;">&lt; Volver</a>
+        </nav>
+    </header>
+
+    <main class="law-container" style="padding-top: 100px;">
+        
+        <div class="law-header">
+            <h1 data-i18n="law_title">Regulaciones BAAQMD & Código de Instalación</h1>
+            <p data-i18n="law_subtitle">La guía definitiva sobre el mandato 2027 de cero emisiones (Zero-NOx) para el Área de la Bahía, los nuevos tipos de calentadores y los estrictos requisitos de instalación de CSLB y el Título 24 de California.</p>
+        </div>
+
+        <section class="law-section">
+            <div class="law-section-content">
+                <h2 class="cyan" data-i18n="law_sec1_title">1. El Mandato de BAAQMD 2027 (Regulación 9, Regla 6)</h2>
+                <p data-i18n="law_sec1_p1">El Distrito de Gestión de la Calidad del Aire del Área de la Bahía (BAAQMD) ha emitido una enmienda histórica para reducir la contaminación por óxidos de nitrógeno (NOx).</p>
+                <p data-i18n="law_sec1_p2"><strong>¿Qué significa esto?</strong> A partir del 1 de enero de 2027, será ilegal vender o instalar nuevos calentadores de agua residenciales de gas natural que emitan NOx. Esto significa la eliminación gradual completa de los calentadores tradicionales a gas en el Área de la Bahía.</p>
+                <ul>
+                    <li data-i18n="law_sec1_li1"><strong>Impacto Inmediato:</strong> Los reemplazos de emergencia después de 2027 requerirán exclusivamente equipos eléctricos de cero emisiones.</li>
+                    <li data-i18n="law_sec1_li2"><strong>Transición:</strong> Se insta a los propietarios a migrar a calentadores de bomba de calor (Heat Pump) antes del colapso de inventario de 2027.</li>
+                </ul>
+            </div>
+            <div class="law-section-image">
+                <div class="mermaid">
+                pie title Impacto en Inventario de Calentadores (Proyección 2027)
+                "Gas Natural (Ilegal)" : 0
+                "Bomba de Calor (Requerido)" : 75
+                "Eléctrico Estándar" : 20
+                "Eléctrico Sin Tanque" : 5
+                </div>
+            </div>
+        </section>
+
+        <section class="law-section reverse">
+            <div class="law-section-content">
+                <h2 class="lime" data-i18n="law_sec2_title">2. Tipos de Calentadores de Agua (Transición a Eléctrico)</h2>
+                <p data-i18n="law_sec2_p1">Comprender las tecnologías aprobadas para la transición energética de California es vital para cumplir con el Título 24 (Title 24).</p>
+                <ul>
+                    <li data-i18n="law_sec2_li1"><strong>Bomba de Calor Híbrida (Heat Pump):</strong> Extrae calor del aire ambiental para calentar el agua, logrando eficiencias superiores al 300%. Es la opción #1 requerida por el estado y califica para los máximos reembolsos (Rebates).</li>
+                    <li data-i18n="law_sec2_li2"><strong>Eléctricos de Tanque Estándar:</strong> Utilizan resistencias térmicas, menos eficientes y generalmente penalizados bajo cálculos estrictos del Título 24, pero permitidos.</li>
+                    <li data-i18n="law_sec2_li3"><strong>Eléctricos Tankless (Sin Tanque):</strong> Calientan el agua al instante. Aunque no emiten NOx, requieren un amperaje masivo (a menudo paneles eléctricos de más de 200A) y rara vez son viables sin actualizaciones eléctricas costosas.</li>
+                </ul>
+            </div>
+            <div class="law-section-image" style="overflow:hidden;">
+                <div class="mermaid">
+                graph TD
+                    A[Aire Caliente Ambiental] -->|Evaporador| B(Refrigerante Gas)
+                    B -->|Compresor| C{Refrigerante Caliente}
+                    C -->|Condensador| D[Tanque de Agua]
+                    D --> E((Agua Caliente 300% Eficiencia))
+                    C -->|Válvula de Expansión| F(Refrigerante Frío)
+                    F --> A
+                </div>
+            </div>
+        </section>
+
+        <section class="law-section">
+            <div class="law-section-content">
+                <h2 class="orange" data-i18n="law_sec3_title">3. Especificaciones del Código (CSLB y Title 24)</h2>
+                <p data-i18n="law_sec3_p1">Instalar un calentador no es solo conectar agua. Morales Plumbing garantiza el cumplimiento estricto del Código Uniforme de Plomería (UPC) de California:</p>
+                <ul>
+                    <li data-i18n="law_sec3_li1"><strong>Sujeción Sísmica (Earthquake Straps):</strong> Ley de California requiere correas dobles en el tercio superior e inferior, ancladas directamente a montantes de pared para evitar el vuelco durante terremotos.</li>
+                    <li data-i18n="law_sec3_li2"><strong>Tanque de Expansión Térmica:</strong> Obligatorio en sistemas de plomería "cerrados" para absorber el exceso de presión, protegiendo las tuberías del hogar y evitando explosiones de válvulas.</li>
+                    <li data-i18n="law_sec3_li3"><strong>Bandeja de Drenaje (Drain Pan):</strong> Requerida si el calentador está en una plataforma interior, en ático o espacio donde una fuga cause daños a la estructura. La bandeja debe tener tubería que drene al exterior.</li>
+                    <li data-i18n="law_sec3_li4"><strong>Válvula T&P (Temperature & Pressure Relief):</strong> Crítica para la seguridad, su línea de descarga debe llevar el agua caliente a un desagüe seguro, típicamente al exterior.</li>
+                </ul>
+            </div>
+            <div class="law-section-image">
+                <div class="mermaid">
+                flowchart TB
+                    subgraph Instalación Cumplimiento CSLB
+                        A[Tanque de Expansión Térmica] --> B(Línea de Agua Fría)
+                        B --> C{Calentador Heat Pump}
+                        S1[Soporte Sísmico Superior] -.-> C
+                        S2[Soporte Sísmico Inferior] -.-> C
+                        C --> D(Válvula T&P)
+                        D --> E[Línea de Descarga al Exterior]
+                        C --> F((Bandeja de Drenaje))
+                        F --> G[Tubería de Drenaje al Exterior]
+                    end
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="promocion_water_heaters.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 40px;" data-i18n="law_btn_back">Ver Paquetes de Instalación Certificados</a>
+        </div>
+    </main>
+
+    <footer class="cyber-footer" style="margin-top: 4rem;">
+        <p>© MORALES PLUMBING 2026 | LICENSE C-36 #1156542</p>
+    </footer>
+
+    <!-- Multilingual Support -->
+    <script src="../app.js?v=law_update_2"></script>
+    <script>
+        function updateLangButtons(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('morales_lang') || 'en';
+            if (typeof setLanguage === 'function') {
+                setLanguage(savedLang);
+                updateLangButtons(savedLang);
+            }
+            
+            // Add click listeners to all lang buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const lang = e.target.getAttribute('data-lang');
+                    if(typeof setLanguage === 'function') {
+                        setLanguage(lang);
+                        updateLangButtons(lang);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

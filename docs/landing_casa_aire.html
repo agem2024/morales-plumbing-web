@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Oficial - Casa en el Aire | Morales Plumbing</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --primary: #ff5500;
+            --dark-bg: #0d0d0d;
+            --glass-bg: rgba(20, 20, 20, 0.85);
+            --border-glow: rgba(255, 85, 0, 0.3);
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .landing-header {
+            position: relative !important;
+            margin-top: 80px; /* Evitar que un nav global lo tape */
+            z-index: 10;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, rgba(255,85,0,0.1) 0%, var(--dark-bg) 100%);
+            border-bottom: 1px solid var(--border-glow);
+        }
+
+        .landing-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .landing-header p {
+            font-size: 1.2rem;
+            color: #aaaaaa;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            gap: 3rem;
+        }
+
+        .proposal-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .proposal-card h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            margin-top: 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1rem;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .proposal-image {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #333;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .proposal-image:hover {
+            transform: scale(1.02);
+            border-color: var(--primary);
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        .pricing-table th, .pricing-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        .pricing-table th {
+            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .pricing-table tr:hover {
+            background: rgba(255, 85, 0, 0.05);
+        }
+
+        .total-row {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #fff;
+            background: rgba(255, 85, 0, 0.1);
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 1rem 3rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 85, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: #ff7733;
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(255, 85, 0, 0.6);
+        }
+
+        .legal-note {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="landing-header">
+        <h1>Casa en el Aire Restaurante</h1>
+        <p>Propuesta Técnica de Inspección Post-Incendio y Certificación de Sistemas de Plomería Comercial</p>
+        <p style="margin-top: 1rem; font-weight: 600;">Licencia C-36 CSLB: #1156542 | Morales Plumbing</p>
+    </header>
+
+    <div class="content-container">
+        
+        <!-- Justification Section -->
+        <section class="proposal-card grid-2col">
+            <div>
+                <h2>1. Justificación y Normativa Legal</h2>
+                <p>Tras el incidente de incendio en sus instalaciones ubicadas en <strong>2323 The Alameda, Santa Clara</strong>, el sistema de plomería comercial (incluyendo líneas de agua, drenajes y, críticamente, tuberías de gas) ha sido expuesto a estrés térmico extremo y agentes corrosivos.</p>
+                <p>De acuerdo al <strong>California Plumbing Code (CPC)</strong> y al <strong>Uniform Plumbing Code (UPC)</strong>, operar un restaurante sin una inspección rigurosa y prueba de hermeticidad (Drop Test) representa un alto riesgo estructural y de responsabilidad civil (Liability).</p>
+                <p>Nuestra inspección garantiza el cumplimiento de los estándares de la ciudad de Santa Clara, permitiéndole entregar el reporte a su aseguradora comercial para el reclamo correspondiente y garantizar la seguridad de su personal y clientes.</p>
+            </div>
+            <div>
+                <img src="../assets/casa_aire_fire.png" alt="Daños Estructurales por Incendio Casa en el Aire" class="proposal-image">
+            </div>
+        </section>
+
+        <!-- Scope of Work Section -->
+        <section class="proposal-card grid-2col">
+            <div>
+                <img src="../assets/casa_aire_inspection.png" alt="Inspección Comercial de Plomería" class="proposal-image">
+            </div>
+            <div>
+                <h2>2. Alcance del Trabajo (Scope of Work)</h2>
+                <p>Esta propuesta cubre <strong>exclusivamente la inspección, pruebas y generación de reporte técnico</strong> requerido para seguros y permisos. <em>Las reparaciones se cotizarán por separado.</em></p>
+                <ul>
+                    <li style="margin-bottom: 0.5rem;"><strong>CCTV Drain Inspection:</strong> Inspección con cámara de alta definición en líneas primarias y trampas de grasa (Grease Traps) buscando colapsos térmicos.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Gas Line Drop Test:</strong> Prueba de presión rigurosa en la cocina comercial para descartar fugas milimétricas.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Evaluación de Suministro:</strong> Revisión de dilataciones en tuberías de cobre expuestas al fuego y evaluación del calentador comercial.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Reporte Oficial:</strong> Documento firmado bajo licencia C-36 detallando el daño exacto y el plan de mitigación.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="proposal-card">
+            <h2>3. Desglose de Inversión y Entregables</h2>
+            <p>Los costos a continuación representan tarifas comerciales altamente competitivas en el Área de la Bahía para inspecciones de emergencia post-siniestro. Este costo es típicamente reembolsable por su póliza de seguro de negocio.</p>
+            
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Descripción del Servicio</th>
+                        <th>Tarifa (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Inspección Base (Call-out) y Diagnóstico de Seguridad</td>
+                        <td>$450.00</td>
+                    </tr>
+                    <tr>
+                        <td>Prueba de Presión de Red de Gas Comercial (Drop Test)</td>
+                        <td>$250.00</td>
+                    </tr>
+                    <tr>
+                        <td>Inspección de Drenaje / Trampa de Grasa con Equipo CCTV</td>
+                        <td>$350.00</td>
+                    </tr>
+                    <tr>
+                        <td>Redacción de Reporte Técnico Oficial para Aseguradora</td>
+                        <td>$150.00</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>TOTAL ESTIMADO DE LA INSPECCIÓN:</td>
+                        <td>$1,200.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="legal-note">
+                <strong>Requisitos CSLB (Contractors State License Board):</strong><br>
+                1. <em>Down Payment (Anticipo):</em> Por ley de California, el anticipo máximo para iniciar este trabajo es del 10% del contrato o $1,000, lo que sea menor. Para este proyecto, el anticipo requerido es de <strong>$120.00 USD</strong>.<br>
+                2. <em>Liquidación:</em> El saldo restante ($1,080.00) se liquidará contra entrega del Reporte Técnico y Evidencia Fotográfica.
+            </div>
+        </section>
+
+        <!-- Timeline and Deliverables Section -->
+        <section class="proposal-card">
+            <h2>4. Tiempos de Ejecución y Entregables</h2>
+            <p>Morales Plumbing se compromete a una ejecución rápida y profesional para no retrasar los procesos de reclamación de seguros de Casa en el Aire Restaurante.</p>
+            <ul>
+                <li style="margin-bottom: 0.5rem;"><strong>Tiempo de Respuesta (Despliegue):</strong> Máximo 2 a 4 horas desde la firma del contrato CSLB y depósito del anticipo legal.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Duración de la Inspección en Sitio:</strong> Aproximadamente 3 a 4 horas. (El Gas Drop Test requiere tiempo de estabilización).</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Entrega del Reporte Forense:</strong> El reporte oficial (en formato PDF, firmado por un contratista C-36) será entregado vía correo electrónico en un plazo de 24 a 48 horas hábiles después de finalizar la visita en terreno.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Entregables Finales:</strong> 
+                    <ul>
+                        <li>Reporte Forense Técnico de Integridad y Afectación de Sistemas de Plomería.</li>
+                        <li>Carpeta digital con evidencia fotográfica en alta resolución.</li>
+                        <li>Certificado de Resultados de Prueba de Presión (Aprobado/Fallido).</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Copyright and Intellectual Property Section -->
+        <section class="proposal-card">
+            <h2>5. Derechos de Autor y Propiedad Intelectual</h2>
+            <p>Toda la documentación técnica, reportes forenses, metodologías de inspección, diagramas, esquemas y bases de datos de costos generados por Morales Plumbing para este proyecto constituyen material propietario protegido por las leyes de propiedad intelectual y derechos de autor (Copyright &copy;) de los Estados Unidos y del Estado de California.</p>
+            <ul>
+                <li style="margin-bottom: 0.5rem;"><strong>Uso de la Documentación:</strong> Casa en el Aire Restaurante (el Cliente) recibe una licencia limitada, intransferible y no exclusiva para utilizar los reportes generados <strong>únicamente</strong> para trámites de reclamación de seguros, gestión de permisos municipales y archivos internos del negocio.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Restricción de Copia:</strong> Queda estrictamente prohibida la reproducción, distribución, modificación o uso comercial de los formatos y diseños de documentos por parte de contratistas competidores o terceros sin la autorización expresa y por escrito de Morales Plumbing.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Propiedad del Software:</strong> Cualquier interacción con la plataforma web de Morales Plumbing y sus módulos interactivos, pertenecen exclusivamente a Morales Plumbing.</li>
+            </ul>
+        </section>
+
+        <div class="cta-section">
+            <a href="mailto:info@moralesplumbing.com?subject=Aprobación de Propuesta: Casa en el Aire" class="btn-primary">Aprobar Propuesta y Agendar Inspección</a>
+            <p style="margin-top: 1rem; color: #888;">Al aprobar, se le enviará el Contrato Digital CSLB para firma electrónica.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

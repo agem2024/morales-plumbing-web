@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictamen Técnico Forense | Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #d9480f; --text: #000000; --bg-body: #e5e7eb; --page: #ffffff; --border: #cccccc; --insurance-color: #2563eb; --city-color: #059669; }
+        body { background-color: var(--bg-body); color: var(--text); font-family: 'Roboto', Arial, sans-serif; margin: 0; padding: 2rem 0; font-size: 10pt; }
+        .document-page { width: 8.5in; margin: 0 auto 2rem auto; background: var(--page); box-shadow: 0 5px 15px rgba(0,0,0,0.15); padding: 0.8in; box-sizing: border-box; position: relative; }
+        h1, h2, h3 { font-family: 'Merriweather', serif; margin-top: 0; color: #111; }
+        .header { border-bottom: 2px solid var(--primary); padding-bottom: 1rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+        .header img { width: 140px; }
+        .header-text { text-align: right; }
+        .header-text h1 { font-size: 1.3rem; margin-bottom: 0.2rem; color: var(--primary); text-transform: uppercase; }
+        .header-text p { margin: 0; font-size: 0.8rem; color: #555; }
+        .section-title { background: #f8f9fa; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.3rem; font-size: 1rem; margin: 1rem 0 0.5rem 0; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: bold;}
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
+        .form-row { display: flex; margin-bottom: 0.3rem; align-items: flex-end; }
+        .form-row label { font-weight: 500; margin-right: 0.5rem; white-space: nowrap; font-size: 9pt; }
+        .form-row input[type="text"], .form-row input[type="date"], .form-row input[type="email"], .form-row input[type="tel"] { flex: 1; border: none; border-bottom: 1px dashed var(--border); background: transparent; font-family: inherit; font-size: 9.5pt; padding: 0.1rem 0; outline: none; }
+        .checkbox-grid { display: grid; gap: 0.3rem; margin-bottom: 0.5rem; }
+        .checkbox-item { display: flex; align-items: center; font-size: 9pt; }
+        .checkbox-item input { margin-right: 0.5rem; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 0.5rem; }
+        th, td { border: 1px solid var(--border); padding: 0.3rem; text-align: left; font-size: 8.5pt; }
+        th { background: #f1f3f5; font-weight: 600; }
+        td input { width: 100%; border: none; background: transparent; font-family: inherit; font-size: 8.5pt; outline: none; }
+        .textarea-box { width: 100%; border: 1px dashed var(--border); min-height: 50px; padding: 0.5rem; font-family: inherit; font-size: 9pt; resize: vertical; outline: none; box-sizing: border-box; margin-bottom: 0.5rem; }
+        .insurance-block, .city-block { display: none; padding: 1rem; margin: 1rem 0; border: 2px solid; border-radius: 4px; }
+        .insurance-block { border-color: var(--insurance-color); background: rgba(37, 99, 235, 0.05); }
+        .insurance-block .section-title { background: var(--insurance-color); color: white; border: none; }
+        .city-block { border-color: var(--city-color); background: rgba(5, 150, 105, 0.05); }
+        .city-block .section-title { background: var(--city-color); color: white; border: none; }
+        .signatures { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+        .sig-box { border-top: 1px solid #000; padding-top: 0.5rem; text-align: center; }
+        .page-break { page-break-before: always; }
+        .floating-action { position: fixed; bottom: 2rem; right: 2rem; background: var(--primary); color: #fff; border: none; padding: 1rem 2rem; font-size: 1.1rem; border-radius: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); cursor: pointer; font-weight: bold; z-index: 1000; }
+        .floating-action-2 { position: fixed; bottom: 2rem; right: 17rem; background: #333; color: #fff; border: none; padding: 1rem; font-size: 1.1rem; border-radius: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); cursor: pointer; font-weight: bold; z-index: 1000; }
+        
+        @media print {
+            body { background: #fff; padding: 0; margin: 0; }
+            .document-page { box-shadow: none; margin: 0; padding: 0.5in; width: 100%; min-height: auto; }
+            .floating-action, .floating-action-2 { display: none; }
+            .form-row input[type="text"], .form-row input[type="date"], .form-row input[type="email"], .form-row input[type="tel"] { border-bottom: 1px solid #000; }
+            .textarea-box { border: 1px solid #000; }
+            .insurance-block, .city-block { border: 1px solid #000; background: none; }
+            .insurance-block .section-title, .city-block .section-title { background: #eee; color: #000; border: 1px solid #000; -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="floating-action" onclick="window.print()">🖨️ Print / Imprimir</button>
+    <button class="floating-action-2" onclick="toggleLang()">🌐 EN / ES</button>
+
+    <!-- PAGE 1 -->
+    <div class="document-page">
+        <div class="header">
+            <img src="../assets/logo_portada.webp" alt="Morales Plumbing" onerror="this.src='https://via.placeholder.com/150x50?text=Morales+Plumbing'">
+            <div class="header-text">
+                <h1 data-es="Dictamen Pericial de Plomería" data-en="Plumbing Forensic Report">Dictamen Pericial de Plomería</h1>
+                <p data-es="Licencia CSLB C-36: 1156542" data-en="CSLB License C-36: 1156542">Licencia CSLB C-36: 1156542</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" data-es="1. Información Administrativa" data-en="1. Administrative Information">1. Información Administrativa</h2>
+        <div class="grid-2">
+            <div>
+                <div class="form-row"><label data-es="Nombre del Cliente:" data-en="Client Name:">Nombre del Cliente:</label><input type="text"></div>
+                <div class="form-row"><label data-es="Dirección del Siniestro:" data-en="Incident Address:">Dirección del Siniestro:</label><input type="text"></div>
+                <div class="form-row"><label data-es="Teléfono:" data-en="Phone:">Teléfono:</label><input type="tel"></div>
+                <div class="form-row"><label data-es="Email:" data-en="Email:">Email:</label><input type="email"></div>
+                <div class="form-row"><label data-es="APN (Parcel No.):" data-en="APN (Parcel No.):">APN (Parcel No.):</label><input type="text"></div>
+            </div>
+            <div>
+                <div class="form-row"><label data-es="Proyecto / Reporte No.:" data-en="Project / Report No.:">Proyecto / Reporte No.:</label><input type="text"></div>
+                <div class="form-row"><label data-es="Reclamación (Claim No.):" data-en="Claim No.:">Reclamación (Claim No.):</label><input type="text"></div>
+                <div class="form-row"><label data-es="Contacto Ajustador:" data-en="Adjuster Contact:">Contacto Ajustador:</label><input type="text"></div>
+                <div class="form-row"><label data-es="Fecha del Siniestro:" data-en="Date of Loss:">Fecha del Siniestro:</label><input type="date"></div>
+                <div class="form-row"><label data-es="Fecha de Inspección:" data-en="Date of Inspection:">Fecha de Inspección:</label><input type="date"></div>
+            </div>
+        </div>
+
+        <h2 class="section-title" data-es="2. Alcance y 3. Metodología" data-en="2. Scope and 3. Methodology">2. Alcance y 3. Metodología</h2>
+        <div class="grid-2">
+            <div>
+                <strong data-es="Sistemas Inspeccionados:" data-en="Inspected Systems:">Sistemas Inspeccionados:</strong><br>
+                <div class="checkbox-grid" style="grid-template-columns: 1fr;">
+                    <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Suministro Agua y Drenaje Sanitario" data-en="Water Supply and Sanitary Drain">Suministro Agua y Drenaje Sanitario</span></label>
+                    <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Sistema de Gas y Water Heaters" data-en="Gas System and Water Heaters">Sistema de Gas y Water Heaters</span></label>
+                    <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Dispositivos Backflow" data-en="Backflow Devices">Dispositivos Backflow</span></label>
+                </div>
+            </div>
+            <div>
+                <strong data-es="Pruebas Ejecutadas:" data-en="Executed Tests:">Pruebas Ejecutadas:</strong><br>
+                <div class="checkbox-grid" style="grid-template-columns: 1fr;">
+                    <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Inspección Visual In-Situ / NFPA 921" data-en="Visual Inspection On-Site / NFPA 921">Inspección Visual In-Situ / NFPA 921</span></label>
+                    <label class="checkbox-item"><input type="checkbox"> <span data-es="Video Inspección CCTV / Termografía" data-en="CCTV Video Inspection / Thermography">Video Inspección CCTV / Termografía</span></label>
+                    <label class="checkbox-item"><input type="checkbox"> <span data-es="Prueba Hidrostática / Neumática" data-en="Hydrostatic / Pneumatic Test">Prueba Hidrostática / Neumática</span></label>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" data-es="4. Descripción del Siniestro y Patologías" data-en="4. Incident Description and Pathologies">4. Descripción del Siniestro y Patologías</h2>
+        <div class="grid-2" style="margin-bottom:0.5rem;">
+            <div class="form-row"><label data-es="Naturaleza:" data-en="Nature of Damage:">Naturaleza:</label><input type="text"></div>
+            <div class="form-row"><label data-es="Origen/Área:" data-en="Origin Area:">Origen/Área:</label><input type="text"></div>
+        </div>
+        <strong data-es="Daños Observados en Sistemas de Plomería:" data-en="Damage Observed in Plumbing Systems:">Daños Observados en Sistemas de Plomería:</strong>
+        <div class="checkbox-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+            <label class="checkbox-item"><input type="checkbox"> <span data-es="Estrés térmico (PEX/CPVC)" data-en="Thermal Stress (PEX/CPVC)">Estrés térmico (PEX/CPVC)</span></label>
+            <label class="checkbox-item"><input type="checkbox"> <span data-es="Falla en juntas de cobre" data-en="Copper Joint Failure">Falla en juntas de cobre</span></label>
+            <label class="checkbox-item"><input type="checkbox"> <span data-es="Carbonización (PVC/ABS)" data-en="Charring (PVC/ABS)">Carbonización (PVC/ABS)</span></label>
+            <label class="checkbox-item"><input type="checkbox"> <span data-es="Olor a gas detectado" data-en="Gas Odor Detected">Olor a gas detectado</span></label>
+            <label class="checkbox-item"><input type="checkbox"> <span data-es="Infiltración de hollín" data-en="Soot Infiltration">Infiltración de hollín</span></label>
+            <label class="checkbox-item"><input type="checkbox"> <span data-es="Daño mecánico por escombros" data-en="Mechanical Damage by Debris">Daño mecánico por escombros</span></label>
+        </div>
+
+        <h2 class="section-title" data-es="5. Inventario de Equipos y 6. Mediciones Técnicas" data-en="5. Equipment Inventory and 6. Technical Measurements">5. Inventario de Equipos y 6. Mediciones Técnicas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th data-es="Equipo / Elemento" data-en="Equipment / Element">Equipo / Elemento</th>
+                    <th data-es="Estado Post-Siniestro" data-en="Post-Incident Status">Estado Post-Siniestro</th>
+                    <th data-es="Presión Inicial" data-en="Initial Pressure">Presión Inicial</th>
+                    <th data-es="Prueba / Caída" data-en="Test / Drop">Prueba / Caída</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            </tbody>
+        </table>
+
+        <!-- BLOQUE ASEGURADORA (COSTOS) -->
+        <div id="block-insurance" class="insurance-block">
+            <h2 class="section-title" data-es="ANÁLISIS DE COSTOS Y DAÑOS (EXCLUSIVO ASEGURADORA)" data-en="COST & DAMAGE ANALYSIS (INSURANCE EXCLUSIVE)">ANÁLISIS DE COSTOS Y DAÑOS (EXCLUSIVO ASEGURADORA)</h2>
+            <div class="grid-2">
+                <div>
+                    <div class="form-row"><label data-es="Costo Reparación Directa: $" data-en="Direct Repair Cost: $">Costo Reparación Directa: $</label><input type="text"></div>
+                    <div class="form-row"><label data-es="Costo Reemplazo Total: $" data-en="Total Replacement Cost: $">Costo Reemplazo Total: $</label><input type="text"></div>
+                    <div class="form-row"><label data-es="Limpieza/Descontaminación: $" data-en="Cleaning/Decontamination: $">Limpieza/Descontaminación: $</label><input type="text"></div>
+                    <div class="form-row"><label data-es="Permisos de Reconstrucción: $" data-en="Reconstruction Permits: $">Permisos de Reconstrucción: $</label><input type="text"></div>
+                </div>
+                <div>
+                    <div class="form-row"><label data-es="Mano de Obra Estimada: $" data-en="Estimated Labor: $">Mano de Obra Estimada: $</label><input type="text"></div>
+                    <div class="form-row"><label data-es="Materiales Estimados: $" data-en="Estimated Materials: $">Materiales Estimados: $</label><input type="text"></div>
+                    <div class="form-row"><label data-es="Depreciación Aplicada: %" data-en="Applied Depreciation: %">Depreciación Aplicada: %</label><input type="text"></div>
+                    <div class="form-row" style="font-weight:bold;"><label data-es="TOTAL ESTIMADO: $" data-en="ESTIMATED TOTAL: $">TOTAL ESTIMADO: $</label><input type="text"></div>
+                </div>
+            </div>
+            <strong data-es="Justificación para Ajustador:" data-en="Justification for Adjuster:">Justificación para Ajustador:</strong>
+            <textarea class="textarea-box"></textarea>
+        </div>
+
+        <!-- BLOQUE CIUDAD (PERMISOS/CODIGO) -->
+        <div id="block-city" class="city-block">
+            <h2 class="section-title" data-es="CUMPLIMIENTO DE CÓDIGO (EXCLUSIVO CIUDAD SANTA CLARA)" data-en="CODE COMPLIANCE (SANTA CLARA CITY EXCLUSIVE)">CUMPLIMIENTO DE CÓDIGO (EXCLUSIVO CIUDAD SANTA CLARA)</h2>
+            <div class="grid-2">
+                <div>
+                    <strong data-es="Normativa y Permisos:" data-en="Regulations and Permits:">Normativa y Permisos:</strong>
+                    <div class="checkbox-grid" style="grid-template-columns: 1fr;">
+                        <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Cumple CA Plumbing Code (CPC)" data-en="Complies with CA Plumbing Code (CPC)">Cumple CA Plumbing Code (CPC)</span></label>
+                        <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Cumple CA Building Code (CBC)" data-en="Complies with CA Building Code (CBC)">Cumple CA Building Code (CBC)</span></label>
+                        <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Requiere Plan Check Municipal" data-en="Requires Municipal Plan Check">Requiere Plan Check Municipal</span></label>
+                        <label class="checkbox-item"><input type="checkbox"> <span data-es="Requiere Inspección de Backflow" data-en="Requires Backflow Inspection">Requiere Inspección de Backflow</span></label>
+                    </div>
+                </div>
+                <div>
+                    <strong data-es="Evaluación de Riesgo (Life Safety):" data-en="Life Safety Risk Assessment:">Evaluación de Riesgo a la Salud y Vida (Life Safety):</strong>
+                    <div class="checkbox-grid" style="grid-template-columns: 1fr;">
+                        <label class="checkbox-item"><input type="radio" name="hab_city"> <span data-es="Seguro (Safe)" data-en="Safe">Seguro (Safe)</span></label>
+                        <label class="checkbox-item"><input type="radio" name="hab_city"> <span data-es="Uso Restringido (Restricted)" data-en="Restricted Use">Uso Restringido (Restricted)</span></label>
+                        <label class="checkbox-item"><input type="radio" name="hab_city"> <span data-es="Condenado (Condemned)" data-en="Condemned">Condenado por Riesgo de Gas/Salud</span></label>
+                    </div>
+                </div>
+            </div>
+            <textarea class="textarea-box"></textarea>
+        </div>
+
+    </div>
+
+    <!-- PAGE 2 (Firmas y Cierre) -->
+    <div class="document-page page-break">
+
+        <h2 class="section-title" data-es="7. Recomendaciones y Plan de Remediación" data-en="7. Recommendations and Remediation Plan">7. Recomendaciones y Plan de Remediación</h2>
+        <div class="checkbox-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 0.5rem;">
+            <label class="checkbox-item"><input type="checkbox"> <span data-es="Reemplazar toda tubería PEX/CPVC expuesta al calor" data-en="Replace all PEX/CPVC exposed to heat">Reemplazar toda tubería PEX/CPVC expuesta al calor</span></label>
+            <label class="checkbox-item"><input type="checkbox"> <span data-es="Protocolo de desinfección de línea potable" data-en="Potable line disinfection protocol">Protocolo de desinfección de línea potable</span></label>
+            <label class="checkbox-item"><input type="checkbox"> <span data-es="Reemplazar líneas de Gas Corrugado (CSST)" data-en="Replace Corrugated Gas lines (CSST)">Reemplazar líneas de Gas Corrugado (CSST)</span></label>
+            <label class="checkbox-item"><input type="checkbox"> <span data-es="Videoinspección final de drenajes" data-en="Final Sewer CCTV Video Inspection">Videoinspección final de drenajes</span></label>
+        </div>
+        <textarea class="textarea-box"></textarea>
+
+        <h2 class="section-title" data-es="8. Certificación Legal y Limitaciones" data-en="8. Legal Certification and Limitations">8. Certificación Legal y Limitaciones</h2>
+        <p class="legal-text">
+            <strong data-es="Certificación:" data-en="Certification:">Certificación:</strong> <span data-es="Morales Plumbing (Lic. #1156542) certifica que el diagnóstico emitido refleja de manera exacta e imparcial el estado operativo de los sistemas analizados." data-en="Morales Plumbing (Lic. #1156542) certifies that the issued diagnostic accurately and impartially reflects the operational state of the analyzed systems.">Morales Plumbing (Lic. #1156542) certifica que el diagnóstico emitido refleja de manera exacta e imparcial el estado operativo de los sistemas analizados.</span>
+            <br><br>
+            <strong data-es="Limitaciones (Inspección No Destructiva):" data-en="Limitations (Non-Destructive Inspection):">Limitaciones (Inspección No Destructiva):</strong> <span data-es="No se abrieron muros ni acabados para inspeccionar elementos ocultos. Morales Plumbing no asume responsabilidad por vicios ocultos no detectables mediante los métodos de inspección documentados tras el siniestro." data-en="Walls or finishes were not opened to inspect hidden elements. Morales Plumbing assumes no responsibility for hidden defects not detectable by the documented inspection methods after the incident.">No se abrieron muros ni acabados para inspeccionar elementos ocultos. Morales Plumbing no asume responsabilidad por vicios ocultos no detectables mediante los métodos de inspección documentados tras el siniestro.</span>
+        </p>
+
+        <h2 class="section-title" data-es="9. Firmas" data-en="9. Signatures">9. Firmas</h2>
+        <div class="signatures">
+            <div class="sig-box">
+                <p style="margin:0 0 30px 0; font-size:11pt; font-weight:bold; font-family:'Merriweather', serif;">Morales Plumbing</p>
+                <p data-es="Firma del Inspector Titular" data-en="Lead Inspector Signature">Firma del Inspector Titular</p>
+                <p style="font-size:8pt;" data-es="Lic. #1156542" data-en="License #1156542">Lic. #1156542</p>
+            </div>
+            <div class="sig-box">
+                <p style="margin:0 0 30px 0; color:#fff;">.</p>
+                <p data-es="Representante / Ajustador / Cliente" data-en="Representative / Adjuster / Client">Representante / Ajustador / Cliente</p>
+                <p style="font-size:8pt;" data-es="Aceptación de Resultados" data-en="Acceptance of Results">Aceptación de Resultados</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let currentLang = localStorage.getItem('mp_lang') || 'es';
+
+        function updateTexts() {
+            document.querySelectorAll('[data-es]').forEach(el => {
+                el.innerText = el.getAttribute('data-' + currentLang);
+            });
+            document.documentElement.lang = currentLang;
+        }
+
+        function toggleLang() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            localStorage.setItem('mp_lang', currentLang);
+            updateTexts();
+        }
+
+        // Show/Hide logic for blocks
+        const audience = localStorage.getItem('mp_audience') || 'both';
+        const blockIns = document.getElementById('block-insurance');
+        const blockCity = document.getElementById('block-city');
+
+        if(audience.includes('insurance') || audience === 'both') {
+            blockIns.style.display = 'block';
+        }
+        if(audience.includes('city') || audience === 'both') {
+            blockCity.style.display = 'block';
+        }
+        if(audience === 'internal') {
+            blockIns.style.display = 'block';
+            blockCity.style.display = 'block';
+        }
+
+        // Init language
+        updateTexts();
+    </script>
+</body>
+</html>

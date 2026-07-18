@@ -1,0 +1,475 @@
+import os
+
+file_path = "tarjeta_presentacion.html"
+
+new_html = """<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Morales Plumbing | Un Plomero En Tu Bolsillo</title>
+    <!-- Fonts for Technical, Graffiti, and Clean styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&family=Permanent+Marker&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --neon-cyan: #00f5ff;
+            --neon-orange: #ff8c00;
+            --neon-lime: #39ff14;
+            --neon-purple: #a855f7;
+            --glass-bg: rgba(10, 15, 30, 0.6);
+            --glass-border: rgba(0, 245, 255, 0.25);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Full Screen Animated Background */
+        .video-bg-container {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+        }
+        .video-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(12px) brightness(0.6);
+            transform: scale(1.1);
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(5,5,5,0.8) 0%, rgba(8,14,36,0.6) 100%);
+            z-index: -1;
+        }
+
+        /* Top Navigation Controls */
+        .top-controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        .btn-back {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        .btn-back:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+        .lang-switcher {
+            display: flex;
+            gap: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #ccc;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+        .lang-btn.active {
+            background: var(--neon-cyan);
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Professional Glassmorphism vCard */
+        .vcard {
+            width: 100%;
+            max-width: 420px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,245,255,0.05);
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+            margin-top: 50px; /* Space for top controls */
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header section */
+        .vcard-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .vcard-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.6));
+        }
+        .vcard-title {
+            display: flex;
+            flex-direction: column;
+        }
+        .vcard-name {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2.2rem;
+            color: var(--neon-orange);
+            line-height: 1;
+            transform: rotate(-3deg);
+            text-shadow: 2px 2px 0px #000, 0 0 15px rgba(255, 140, 0, 0.6);
+            margin-bottom: 8px;
+        }
+        .vcard-license {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            color: #a0aec0;
+            letter-spacing: 1px;
+            background: rgba(0,0,0,0.4);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border-left: 3px solid var(--neon-lime);
+            display: inline-block;
+        }
+        .vcard-license span {
+            color: var(--neon-cyan);
+            font-weight: bold;
+        }
+
+        /* Action Buttons */
+        .primary-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .action-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 15px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+        .action-btn i { font-size: 1.5rem; }
+        .action-call {
+            background: rgba(57, 255, 20, 0.1);
+            color: var(--neon-lime);
+            border-color: rgba(57, 255, 20, 0.3);
+        }
+        .action-call:hover {
+            background: var(--neon-lime);
+            color: #000;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+        }
+        .action-email {
+            background: rgba(0, 245, 255, 0.1);
+            color: var(--neon-cyan);
+            border-color: rgba(0, 245, 255, 0.3);
+        }
+        .action-email:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+        }
+
+        /* Info List */
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255,255,255,0.03);
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #e2e8f0;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+        .info-row:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--glass-border);
+            transform: translateX(5px);
+        }
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.4);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            color: var(--neon-cyan);
+            flex-shrink: 0;
+        }
+        .info-text {
+            font-size: 1.05rem;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+        }
+        .info-subtext {
+            font-size: 0.8rem;
+            color: #718096;
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        /* Social Media */
+        .social-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .social-icon:hover { transform: translateY(-3px); }
+        .social-icon.fb:hover { background: #1877F2; border-color: #1877F2; box-shadow: 0 0 15px #1877F2; }
+        .social-icon.ig:hover { background: #E4405F; border-color: #E4405F; box-shadow: 0 0 15px #E4405F; }
+        .social-icon.tk:hover { background: #00f2fe; border-color: #00f2fe; color: #000; box-shadow: 0 0 15px #00f2fe; }
+
+        /* Graffiti Footer */
+        .graffiti-footer {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .graffiti-text {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.8rem;
+            color: #fff;
+            text-shadow: 2px 2px 0px #000, 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-purple);
+            transform: rotate(-2deg);
+            opacity: 0.95;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- VIDEO BACKGROUND -->
+    <div class="video-bg-container">
+        <video autoplay loop muted playsinline class="video-bg">
+            <source src="assets/morales_logo_video.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- TOP CONTROLS -->
+    <div class="top-controls">
+        <a href="index.html" class="btn-back"><i class="fas fa-home"></i> <span id="t_back">INICIO</span></a>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLang('es', this)">ES</button>
+            <button class="lang-btn" onclick="setLang('en', this)">EN</button>
+            <button class="lang-btn" onclick="setLang('zh', this)">ZH</button>
+            <button class="lang-btn" onclick="setLang('tl', this)">TL</button>
+            <button class="lang-btn" onclick="setLang('vi', this)">VI</button>
+        </div>
+    </div>
+
+    <!-- MAIN VCARD -->
+    <main class="vcard">
+        <!-- Header -->
+        <header class="vcard-header">
+            <img src="assets/logo_portada.png" alt="Morales Logo" class="vcard-logo">
+            <div class="vcard-title">
+                <h1 class="vcard-name">MORALES<br>PLUMBING</h1>
+                <div class="vcard-license">CA LIC C-36 #<span>1156542</span></div>
+            </div>
+        </header>
+
+        <!-- Main Actions -->
+        <div class="primary-actions">
+            <a href="tel:+16692342444" class="action-btn action-call">
+                <i class="fas fa-phone-volume"></i>
+                <span id="t_call">LLAMAR AHORA</span>
+            </a>
+            <a href="mailto:moralesplumbing026@gmail.com" class="action-btn action-email">
+                <i class="fas fa-envelope-open-text"></i>
+                <span id="t_email">ENVIAR CORREO</span>
+            </a>
+        </div>
+
+        <!-- Contact Directory -->
+        <div class="info-list">
+            <a href="tel:+16692342444" class="info-row">
+                <div class="info-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="info-text">
+                    (669) 234-2444
+                    <span class="info-subtext" id="t_phone_sub">Línea Directa / 24 hrs</span>
+                </div>
+            </a>
+            <a href="https://maps.google.com/?q=San+Jose,+CA" target="_blank" class="info-row">
+                <div class="info-icon" style="color: var(--neon-orange);"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-text">
+                    San Jose, CA
+                    <span class="info-subtext" id="t_loc_sub">Servicio en Bay Area</span>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/@MoralesPlumbing" target="_blank" class="info-row">
+                <div class="info-icon" style="color: #FF0000;"><i class="fab fa-youtube"></i></div>
+                <div class="info-text">
+                    @MoralesPlumbing
+                    <span class="info-subtext" id="t_yt_joined">Se unió el 22 jun 2026</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Social Media -->
+        <div class="social-bar">
+            <a href="#" class="social-icon fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon tk" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+
+        <!-- Graffiti Slogan -->
+        <div class="graffiti-footer">
+            <div class="graffiti-text" id="t_slogan">Un Plomero En Tu Bolsillo</div>
+        </div>
+    </main>
+
+    <script>
+        const translations = {
+            es: {
+                slogan: "Un Plomero En Tu Bolsillo",
+                back: "INICIO",
+                call: "LLAMAR AHORA",
+                email: "ENVIAR CORREO",
+                yt_joined: "Se unió el 22 jun 2026",
+                phone_sub: "Línea Directa / 24 hrs",
+                loc_sub: "Servicio en Bay Area"
+            },
+            en: {
+                slogan: "A Plumber In Your Pocket",
+                back: "HOME",
+                call: "CALL NOW",
+                email: "SEND EMAIL",
+                yt_joined: "Joined Jun 22, 2026",
+                phone_sub: "Direct Line / 24 hrs",
+                loc_sub: "Serving Bay Area"
+            },
+            zh: {
+                slogan: "你口袋里的水管工",
+                back: "主页",
+                call: "立即致电",
+                email: "发送邮件",
+                yt_joined: "于2026年6月22日加入",
+                phone_sub: "直拨电话 / 24小时",
+                loc_sub: "湾区服务"
+            },
+            tl: {
+                slogan: "Tubero Sa Iyong Bulsa",
+                back: "BAHAY",
+                call: "TUMAWAG NGAYON",
+                email: "MAG-EMAIL",
+                yt_joined: "Sumali noong Hunyo 22, 2026",
+                phone_sub: "Direktang Linya / 24 oras",
+                loc_sub: "Serbisyo sa Bay Area"
+            },
+            vi: {
+                slogan: "Thợ Sửa Ống Nước Trong Túi Bạn",
+                back: "TRANG CHỦ",
+                call: "GỌI NGAY",
+                email: "GỬI EMAIL",
+                yt_joined: "Tham gia 22 thg 6, 2026",
+                phone_sub: "Đường Dây Nóng / 24 giờ",
+                loc_sub: "Phục Vụ Khu Vực Vịnh"
+            }
+        };
+
+        function setLang(lang, btnElement) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+            
+            document.getElementById('t_slogan').innerText = translations[lang].slogan;
+            document.getElementById('t_back').innerText = translations[lang].back;
+            document.getElementById('t_call').innerText = translations[lang].call;
+            document.getElementById('t_email').innerText = translations[lang].email;
+            document.getElementById('t_yt_joined').innerText = translations[lang].yt_joined;
+            document.getElementById('t_phone_sub').innerText = translations[lang].phone_sub;
+            document.getElementById('t_loc_sub').innerText = translations[lang].loc_sub;
+        }
+    </script>
+</body>
+</html>"""
+
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(new_html)
+
+print("Card rewritten completely.")

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Requirements - Heat Pump</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body { background-color: var(--bg-dark); color: #fff; font-family: 'Inter', sans-serif; padding-top: 100px; }
+        .req-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .req-title { font-family: 'Orbitron', sans-serif; color: var(--neon-cyan); text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+        .diagram-img { width: 100%; border: 2px solid var(--neon-cyan); border-radius: 8px; margin-bottom: 2rem; }
+        .req-list { background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem; }
+        .req-list h3 { color: #fff; font-family: 'Orbitron', sans-serif; margin-bottom: 1rem; border-bottom: 1px solid var(--neon-cyan); padding-bottom: 0.5rem; }
+        .req-list ul { list-style: none; padding: 0; }
+        .req-list li { margin-bottom: 1rem; padding-left: 25px; position: relative; color: #cbd5e1; }
+        .req-list li::before { content: '⚡'; position: absolute; left: 0; color: var(--neon-cyan); }
+        
+        .comic-panel { background: rgba(15, 23, 42, 0.8); border-radius: 12px; padding: 2rem; margin-bottom: 4rem; }
+        .comic-bubbles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; list-style: none; padding: 0; }
+        .comic-bubble { 
+            background: rgba(0, 0, 0, 0.9); 
+            border: 2px solid var(--neon-cyan); 
+            color: #ffcc00; /* Bright Neon Yellow Text */
+            padding: 1.2rem; 
+            font-family: 'Orbitron', sans-serif; 
+            font-size: 1.1rem; 
+            font-weight: bold; 
+            border-radius: 12px; 
+            position: relative; 
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); 
+            text-shadow: 0 0 5px rgba(255, 204, 0, 0.8);
+            margin-top: -20px; /* Pull it slightly over the image for cohesion */
+            z-index: 10;
+        }
+        
+        
+        
+    
+        .comic-img-wrapper img { width: 100%; border-radius: 8px; border: 3px solid #000; margin-bottom: 1.5rem; }
+    
+        
+            .cyber-nav .nav-links {
+                font-size: 0.85rem;
+            }
+            .lang-selector button {
+                padding: 0.2rem 0.4rem !important;
+                font-size: 0.75rem !important;
+            }
+        }
+        
+    
+        
+
+    
+        
+        /* ── CYBER NAV HEADER ── */
+        .cyber-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(3, 7, 18, 0.95);
+            border-bottom: 2px solid var(--neon-cyan);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+        .cyber-nav .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-cyan);
+            font-weight: 900;
+        }
+        .cyber-nav .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .cyber-nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .cyber-nav .nav-links a:hover {
+            color: var(--neon-cyan);
+        }
+        .lang-selector {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .lang-selector button {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 4px;
+            padding: 0.3rem 0.6rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-selector button:hover, .lang-selector button.active {
+            border-color: var(--neon-cyan);
+            background: rgba(0,245,255,.1);
+            color: var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0,245,255,.2);
+        }
+
+
+    </style>
+</head>
+<body class="orion-theme">
+    <nav class="cyber-nav" style="position:fixed; top:0; width:100%; z-index:999; display:flex; justify-content:space-between; padding:1rem 2rem; background:rgba(3,7,18,0.95); border-bottom:2px solid var(--neon-cyan);">
+        <div class="logo" style="color:var(--neon-cyan); font-family:'Orbitron', sans-serif; font-weight:bold;">MORALES PLUMBING</div>
+        <div class="nav-links"><a href="promocion_water_heaters.html">⬅ Regresar a Promociones</a></div>
+                <div class="lang-selector">
+            <button onclick="setLanguage('en')" >EN</button>
+            <button onclick="setLanguage('es')" >ES</button>
+            <button onclick="setLanguage('zh')" >ZH</button>
+            <button onclick="setLanguage('tl')" >TL</button>
+            <button onclick="setLanguage('vi')" >VI</button>
+        </div>
+    </nav>
+
+    <div class="req-container">
+        <h1 class="req-title" data-i18n="req_hp_title">Hybrid Heat Pump: Technical Requirements</h1>
+        
+        <img src="../assets/diagram_hp.png" alt="Heat Pump Diagram" class="diagram-img">
+
+        <div class="req-list">
+            <h3 data-i18n="req_hp_elec">Electrical & Spatial Requirements</h3>
+            <ul>
+                <li data-i18n="req_hp_1">Dedicated 240V / 30-Amp electrical circuit (for most 50-80 gallon models).</li>
+                <li data-i18n="req_hp_2">Minimum of 700 cubic feet of surrounding air space (unobstructed) for optimal heat exchange.</li>
+                <li data-i18n="req_hp_3">Condensate drain line routed to a suitable drain or condensate pump.</li>
+                <li data-i18n="req_hp_4">Clearance of at least 6 inches from the top of the unit for the air filter.</li>
+            </ul>
+        </div>
+        
+        <div class="req-list">
+            <h3 data-i18n="req_code">Code Compliance</h3>
+            <ul>
+                <li data-i18n="req_hp_5">Seismic strapping in upper and lower 1/3 of the tank.</li>
+                <li data-i18n="req_hp_6">Thermal expansion tank installed on the cold water inlet.</li>
+                <li data-i18n="req_hp_7">BAAQMD Rule 9-6 zero-emission standard compliance automatically met.</li>
+            </ul>
+        </div>
+
+        <h2 style="font-family:'Orbitron', sans-serif; text-align:center; color:#ffffff !important; margin: 4rem 0 2rem;" data-i18n="promo_comic_title">Installation Guide (Comic Narrative)</h2>
+        <style>
+            .comic-panel {
+                background: rgba(15, 23, 42, 0.8);
+                border-radius: 12px;
+                padding: 2rem;
+                position: relative;
+                margin-bottom: 2rem;
+                border: 2px solid var(--neon-cyan);
+            }
+            .comic-panel:nth-of-type(2) { border-color: #ffcc00; }
+            .comic-panel:nth-of-type(3) { border-color: #ff5500; }
+            
+            .comic-img-wrapper {
+                position: relative;
+                width: 100%;
+                border-radius: 8px;
+                border: 3px solid #000;
+                overflow: hidden;
+            }
+            .comic-img-wrapper img {
+                width: 100%;
+                display: block;
+            }
+            .comic-bubbles {
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%;
+                padding: 0; margin: 0; list-style: none;
+                pointer-events: none;
+            }
+            .comic-bubble {
+                position: absolute;
+                background: #fff;
+                border: 3px solid #000;
+                color: #000;
+                padding: 0.8rem 1.2rem;
+                font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+                font-size: 0.85rem;
+                font-weight: bold;
+                line-height: 1.3;
+                text-transform: uppercase;
+                box-shadow: 4px 4px 0 #000;
+                border-radius: 12px;
+                max-width: 40%;
+                pointer-events: auto;
+            }
+            
+            .bubble-1 { top: 5%; left: 5%; }
+            .bubble-2 { top: 25%; right: 5%; }
+            .bubble-3 { bottom: 30%; left: 5%; }
+            .bubble-4 { bottom: 5%; right: 5%; }
+            
+            .bubble-1::before { content:''; position:absolute; border-style:solid; top: 100%; left: 20px; border-width: 15px 15px 0 0; border-color: #000 transparent transparent transparent; }
+            .bubble-1::after { content:''; position:absolute; border-style:solid; top: 100%; left: 23px; border-width: 10px 10px 0 0; border-color: #fff transparent transparent transparent; }
+            
+            .bubble-2::before { content:''; position:absolute; border-style:solid; top: 100%; right: 20px; border-width: 15px 0 0 15px; border-color: #000 transparent transparent transparent; }
+            .bubble-2::after { content:''; position:absolute; border-style:solid; top: 100%; right: 23px; border-width: 10px 0 0 10px; border-color: #fff transparent transparent transparent; }
+            
+            .bubble-3::before { content:''; position:absolute; border-style:solid; bottom: 100%; left: 20px; border-width: 0 15px 15px 0; border-color: transparent #000 transparent transparent; }
+            .bubble-3::after { content:''; position:absolute; border-style:solid; bottom: 100%; left: 23px; border-width: 0 10px 10px 0; border-color: transparent #fff transparent transparent; }
+
+            .bubble-4::before { content:''; position:absolute; border-style:solid; bottom: 100%; right: 20px; border-width: 0 0 15px 15px; border-color: transparent transparent transparent #000; }
+            .bubble-4::after { content:''; position:absolute; border-style:solid; bottom: 100%; right: 23px; border-width: 0 0 10px 10px; border-color: transparent transparent transparent #fff; }
+            
+            .comic-narrator {
+                background: #ffeb3b;
+                border-radius: 0;
+            }
+            .comic-narrator::before, .comic-narrator::after { display: none; }
+            
+            @media (max-width: 768px) {
+                .comic-bubble {
+                    position: static;
+                    max-width: 100%;
+                    margin-bottom: 1rem;
+                }
+                .comic-bubbles {
+                    position: static;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 1rem;
+                }
+                .comic-bubble::before, .comic-bubble::after { display: none; }
+            }
+        </style>
+        
+        <div class="comic-panel">
+            <h3 style="color: var(--neon-cyan); font-family: 'Orbitron', sans-serif; text-align: center; margin-bottom: 1.5rem;" data-i18n="promo_wp_good_title">GOOD (Standard)</h3>
+            <div class="comic-img-wrapper">
+                <img src="../assets/comic_good.png" alt="Step 1">
+                <ul class="comic-bubbles">
+                    <li class="comic-bubble bubble-1 comic-narrator" data-i18n="promo_wp_good_comic_1">1. Drenar y retirar el viejo calentador de gas.</li>
+                    <li class="comic-bubble bubble-2" data-i18n="promo_wp_good_comic_2">2. Instalación de bomba de calor híbrida estándar.</li>
+                    <li class="comic-bubble bubble-3" data-i18n="promo_wp_good_comic_3">3. Garantiza el cumplimiento de las normativas BAAQMD 2027.</li>
+                    <li class="comic-bubble bubble-4" data-i18n="promo_wp_good_comic_4">4. Sistema activo: Agua caliente ecológica y confiable.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="comic-panel">
+            <h3 style="color: #ffcc00; font-family: 'Orbitron', sans-serif; text-align: center; margin-bottom: 1.5rem;" data-i18n="promo_wp_better_title">BETTER (Premium)</h3>
+            <div class="comic-img-wrapper">
+                <img src="../assets/comic_better.png" alt="Step 2">
+                <ul class="comic-bubbles">
+                    <li class="comic-bubble bubble-1 comic-narrator" data-i18n="promo_wp_better_comic_1">1. Instalación de la unidad Premium ProTerra.</li>
+                    <li class="comic-bubble bubble-2" data-i18n="promo_wp_better_comic_2">2. El equipo técnico conecta el sistema al WiFi del hogar.</li>
+                    <li class="comic-bubble bubble-3" data-i18n="promo_wp_better_comic_3">3. Activación de los sensores integrados de detección de fugas.</li>
+                    <li class="comic-bubble bubble-4" data-i18n="promo_wp_better_comic_4">4. El cliente disfruta de control total y alertas mediante la app.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="comic-panel">
+            <h3 style="color: #ff5500; font-family: 'Orbitron', sans-serif; text-align: center; margin-bottom: 1.5rem;" data-i18n="promo_wp_best_title">BEST (Ultra-Premium)</h3>
+            <div class="comic-img-wrapper">
+                <img src="../assets/comic_best.png" alt="Step 3">
+                <ul class="comic-bubbles">
+                    <li class="comic-bubble bubble-1 comic-narrator" data-i18n="promo_wp_best_comic_1">1. Evaluación del panel eléctrico y actualizaciones necesarias.</li>
+                    <li class="comic-bubble bubble-2" data-i18n="promo_wp_best_comic_2">2. Colocación del equipo AeroTherm de 80 galones para máxima capacidad.</li>
+                    <li class="comic-bubble bubble-3" data-i18n="promo_wp_best_comic_3">3. Protección de doble ánodo y tecnología de operación ultra silenciosa.</li>
+                    <li class="comic-bubble bubble-4" data-i18n="promo_wp_best_comic_4">4. Máxima integración domótica y aumento del valor de la propiedad.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('morales_lang') || 'es';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>

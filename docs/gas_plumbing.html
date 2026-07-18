@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Plumbing | Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body { background-color: var(--dark-bg); color: #fff; overflow-x: hidden; }
+        .page-content { padding: 4rem 10%; max-width: 1200px; margin: 0 auto; }
+        .hero-title { font-family: 'Orbitron', sans-serif; font-size: 3rem; color: var(--neon-cyan); margin-bottom: 2rem; }
+        .sub-header { color: var(--neon-orange); font-family: 'Orbitron', sans-serif; letter-spacing: 2px; margin-bottom: 3rem; }
+        
+        .service-detail-card { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 24px; padding: 3rem; margin-bottom: 4rem; display: flex; flex-direction: column; gap: 2rem; transition: all 0.3s ease; }
+        .service-detail-card:hover { border-color: var(--primary-glow); box-shadow: 0 0 20px rgba(0, 243, 255, 0.1); }
+        .service-detail-header { display: flex; align-items: center; gap: 2rem; }
+        .service-img-large { width: 100%; max-width: 450px; height: auto; border-radius: 12px; border: 2px solid rgba(255,255,255,0.1); }
+        .service-title-large { font-family: 'Orbitron', sans-serif; font-size: 2rem; color: var(--neon-cyan); margin-bottom: 1rem; }
+        
+        .info-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; font-size: 1.1rem; line-height: 1.6; }
+        .info-item { background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--neon-orange); }
+        .info-item h4 { color: #fff; margin-bottom: 0.5rem; font-family: 'Orbitron', sans-serif; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+        .info-item p { color: #ccc; }
+        .info-item.methodology { border-left-color: var(--neon-cyan); }
+        .info-item.full-width { grid-column: span 2; }
+        
+        .back-nav { padding: 1rem 5%; background: rgba(0,0,0,0.5); border-bottom: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center; }
+        .btn-back { color: var(--neon-cyan); text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; }
+        
+        @media (min-width: 900px) { .service-detail-header { flex-direction: row; } .info-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 899px) { .service-detail-header { flex-direction: column; text-align: center; } .service-img-large { max-width: 100%; } .info-item.full-width { grid-column: 1; } }
+    </style>
+    <link rel="stylesheet" href="../universe.css">
+</head>
+<body>
+    <canvas id="universe-canvas" data-universe-mode="matrix-stars"></canvas>
+    <div class="universe-overlay u-variant-info"></div>
+    <script src="../universe.js"></script>
+    <div class="back-nav">
+        <a href="../index.html" class="btn-back" data-i18n="back_home">< BACK TO HOME</a>
+        <div class="language-switcher">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+            <button class="lang-btn" data-lang="zh">ZH</button>
+            <button class="lang-btn" data-lang="tl">TL</button>
+            <button class="lang-btn" data-lang="vi">VI</button>
+        </div>
+    </div>
+    <div class="page-content">
+        <h1 class="hero-title">Gas Plumbing</h1>
+        <p class="sub-header">CERTIFICACIÓN Y SEGURIDAD EN INSTALACIONES DE GAS</p>
+        
+        <div class="service-detail-card">
+            <div class="service-detail-header">
+                <img src="../assets/service_gas.png" alt="Gas Line Installation" class="service-img-large">
+                <div>
+                    <h2 class="service-title-large">Gas Line Installation & Rerouting</h2>
+                    <p style="font-size: 1.2rem; color: #aaa;">Construcción y modificación de infraestructuras de gas rígidas.</p>
+                </div>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h4>¿Qué es?</h4>
+                    <p>La ingeniería, diseño y tendido físico de tuberías de gas natural o propano para alimentar nuevos sectores residenciales o comerciales de forma segura.</p>
+                </div>
+                <div class="info-item">
+                    <h4>¿Por qué se produce?</h4>
+                    <p>Al reconfigurar la cocina (Remodeling), construir ADUs (Unidades de Acceso Adicional), o cuando las líneas antiguas de acero están críticamente corroídas bajo tierra.</p>
+                </div>
+                <div class="info-item">
+                    <h4>¿Cuándo pasa?</h4>
+                    <p>Se planea durante las fases iniciales de construcción o se requiere de emergencia si PG&E clausura el suministro principal por una fuga detectada.</p>
+                </div>
+                <div class="info-item methodology full-width">
+                    <h4>Metodología y Acción (¿Qué se debería hacer?)</h4>
+                    <p>Cálculo estricto de carga térmica (BTU/h) para dimensionar correctamente el diámetro del tubo. Uso de Acero Inoxidable Corrugado (CSST) o tuberías rígidas de hierro negro. Prueba final de presión a 15 PSI monitoreada durante 24 horas, obteniendo la certificación oficial antes de la inspección municipal.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-detail-card">
+            <div class="service-detail-header">
+                <img src="../assets/comic_heaters.png" alt="Appliance Gas Connections" class="service-img-large">
+                <div>
+                    <h2 class="service-title-large">Appliance Gas Connections</h2>
+                    <p style="font-size: 1.2rem; color: #aaa;">Acoplamiento técnico de electrodomésticos de alta demanda.</p>
+                </div>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h4>¿Qué es?</h4>
+                    <p>La conexión final, segura y certificada entre la válvula principal de cierre de gas y un electrodoméstico específico (estufas, hornos, secadoras o calentadores).</p>
+                </div>
+                <div class="info-item">
+                    <h4>¿Por qué se produce?</h4>
+                    <p>Las conexiones caseras "DIY" en gas generan riesgo de explosión. Un acoplamiento profesional garantiza sellado perfecto sin microfugas de monóxido de carbono o metano.</p>
+                </div>
+                <div class="info-item">
+                    <h4>¿Cuándo pasa?</h4>
+                    <p>Al reemplazar electrodomésticos antiguos por modelos de lujo, o al adquirir estufas profesionales de grado comercial que requieren reguladores dedicados.</p>
+                </div>
+                <div class="info-item methodology full-width">
+                    <h4>Metodología y Acción (¿Qué se debería hacer?)</h4>
+                    <p>Instalación de nuevas mangueras flexibles de acero recubiertas de epoxi. Aplicación de sellador de roscas certificado para hidrocarburos. Verificación final de integridad usando detectores electrónicos de gas (Sniffers) e inspección visual de la llama para calibrar la mezcla de aire/gas en el quemador.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="tel:+16692342444" class="btn-solid" style="display: inline-block; padding: 1.5rem 3rem; font-size: 1.5rem; text-decoration: none;">SOLICITAR SERVICIO AHORA</a>
+        </div>
+    </div>
+    <script src="../config.js"></script>
+    <script src="../app.js"></script>
+</body>
+</html>

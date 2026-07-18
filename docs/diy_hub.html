@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORION Fix-It Hub | Morales Plumbing</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <script src="../config.js"></script>
+    <style>
+        /* Specific DIY styles */
+        body {
+            background-color: var(--bg-dark);
+            color: #fff;
+            margin: 0;
+            overflow: hidden; /* Prevent scrolling for the immersive app feel */
+        }
+        
+        /* Print Styles for PDF Generation */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-report-area, #printable-report-area * {
+                visibility: visible;
+            }
+            #printable-report-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                background: #fff;
+                color: #000;
+                padding: 20px;
+            }
+            @page {
+                size: letter portrait;
+                margin: 20mm;
+            }
+        }
+        
+        .diy-interface {
+            display: flex;
+            height: calc(100vh - 70px);
+            margin-top: 70px;
+            background: #000;
+        }
+        .ar-view {
+            flex: 2;
+            position: relative;
+            background: #111 center/cover no-repeat;
+            border-right: 2px solid rgba(0, 245, 255, 0.3);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            transition: background 0.5s ease;
+        }
+        .ar-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px var(--neon-cyan);
+            z-index: 10;
+        }
+        .ar-target {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            border: 2px dashed var(--neon-orange);
+            border-radius: 50%;
+            animation: pulse-target 2s infinite;
+        }
+        @keyframes pulse-target {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.3; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+        }
+        .joe-assistant-panel {
+            flex: 1;
+            background: rgba(0, 10, 20, 0.95);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            min-width: 350px;
+        }
+        .joe-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 245, 255, 0.3);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .joe-header img {
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid var(--neon-cyan);
+        }
+        .joe-header h3 {
+            color: #fff;
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+        }
+        .joe-header span {
+            color: var(--neon-lime);
+            font-size: 0.75rem;
+            display: block;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+        .joe-chat-area {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            padding-right: 10px;
+        }
+        .joe-chat-area {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            padding-right: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 15px;
+            align-content: start;
+        }
+        .joe-chat-area::-webkit-scrollbar {
+            width: 5px;
+        }
+        .joe-chat-area::-webkit-scrollbar-thumb {
+            background: var(--neon-cyan);
+            border-radius: 5px;
+        }
+        
+        /* Comic Panel Styles */
+        .comic-panel {
+            background: #fff;
+            color: #000;
+            border: 3px solid #000;
+            border-radius: 4px;
+            padding: 8px;
+            position: relative;
+            box-shadow: 4px 4px 0 var(--neon-cyan);
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            animation: slideUp 0.4s forwards;
+            background-image: radial-gradient(#ddd 15%, transparent 16%);
+            background-size: 8px 8px;
+        }
+        .comic-panel:first-child {
+            grid-column: 1 / -1;
+            flex-direction: row;
+            align-items: center;
+        }
+        .comic-panel:nth-child(even) {
+            box-shadow: 4px 4px 0 var(--neon-orange);
+        }
+        .comic-panel img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border: 2px solid #000;
+            border-radius: 4px;
+        }
+        .comic-panel:first-child img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .comic-panel .caption {
+            background: #ffeb3b;
+            border: 2px solid #000;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            position: absolute;
+            top: -12px;
+            left: -8px;
+            transform: rotate(-3deg);
+            box-shadow: 2px 2px 0 #000;
+            z-index: 2;
+        }
+        .comic-panel .dialogue {
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 8px;
+            padding: 8px;
+            margin-top: 10px;
+            position: relative;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            flex: 1;
+        }
+        .comic-panel:first-child .dialogue {
+            margin-top: 0;
+        }
+        .comic-panel .dialogue::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            border-width: 0 10px 10px 0;
+            border-style: solid;
+            border-color: transparent #000 transparent transparent;
+        }
+        .comic-panel .dialogue::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 21px;
+            border-width: 0 8px 9px 0;
+            border-style: solid;
+            border-color: transparent #fff transparent transparent;
+            z-index: 1;
+        }
+
+        @keyframes slideUp {
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .joe-voice-btn {
+            background: rgba(255, 50, 50, 0.1);
+            border: 2px solid #ff3333;
+            color: #fff;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 50, 50, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+        .joe-voice-btn:hover {
+            background: rgba(255, 50, 50, 0.3);
+            box-shadow: 0 0 30px rgba(255, 50, 50, 0.6);
+            transform: scale(1.02);
+        }
+        .joe-voice-btn:active {
+            transform: scale(0.98);
+        }
+        .mic-icon {
+            font-size: 1.8rem;
+        }
+        
+        .ar-actions {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+        .ar-btn {
+            background: rgba(0, 245, 255, 0.15);
+            border: 1px solid var(--neon-cyan);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .ar-btn:hover {
+            background: rgba(0, 245, 255, 0.4);
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+        .ar-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .diy-interface {
+                flex-direction: column;
+            }
+            .ar-view {
+                flex: 1;
+                border-right: none;
+                border-bottom: 2px solid rgba(0, 245, 255, 0.3);
+                min-height: 40vh;
+            }
+            .joe-assistant-panel {
+                flex: 1;
+            }
+            .joe-chat-area {
+                grid-template-columns: 1fr;
+            }
+        }
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(5px);
+            display: flex; justify-content: center; align-items: center; z-index: 1000;
+        }
+        .modal-content {
+            background: #111; border: 2px solid var(--neon-cyan); border-radius: 12px;
+            padding: 30px; max-width: 550px; width: 90%; text-align: center;
+            font-family: 'Inter', sans-serif; color: #fff;
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.2);
+        }
+        .tour-step h2 { margin-top: 0; color: var(--neon-cyan); font-family: 'Orbitron'; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .legal-box {
+            background: rgba(255, 50, 50, 0.1); border: 1px solid #ff3333;
+            padding: 15px; border-radius: 8px; font-size: 0.85rem; text-align: left;
+            margin: 20px 0; color: #ccc; height: 160px; overflow-y: auto; line-height: 1.5;
+        }
+        
+        /* Button Animations */
+        @keyframes pulseCyan {
+            0% { box-shadow: 0 0 5px var(--neon-cyan); }
+            50% { box-shadow: 0 0 20px var(--neon-cyan); }
+            100% { box-shadow: 0 0 5px var(--neon-cyan); }
+        }
+        @keyframes pulseRed {
+            0% { box-shadow: 0 0 5px #ff3333; }
+            50% { box-shadow: 0 0 25px #ff3333; }
+            100% { box-shadow: 0 0 5px #ff3333; }
+        }
+        .btn-pulse-red {
+            animation: pulseRed 2s infinite;
+        }
+        .btn-pulse-cyan:hover {
+            animation: pulseCyan 1s infinite;
+        }
+        
+        .ref-link-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            background: rgba(0, 245, 255, 0.08);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            border-radius: 6px;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        .ref-link-card:hover {
+            background: rgba(0, 245, 255, 0.2);
+            border-color: var(--neon-cyan);
+            transform: translateX(5px);
+            box-shadow: -2px 0 10px rgba(0, 245, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Onboarding / Disclaimer Modal -->
+    <div id="orion-tour-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content glass">
+            
+            <!-- Step 1: Legal Disclaimer -->
+            <div id="tour-step-1" class="tour-step">
+                <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 35px; height: 35px; stroke: #ff3333; filter: drop-shadow(0 0 5px #ff3333);"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> TÉRMINOS Y RESPONSABILIDAD</h2>
+                <p style="font-size: 0.9rem;">Bienvenido al <strong>ORION Fix-It Hub</strong> de Morales Plumbing.</p>
+                <div class="legal-box">
+                    <strong>1. DESCARGO DE RESPONSABILIDAD:</strong><br>
+                    Esta plataforma proporciona un prediagnóstico visual y soporte paso a paso con fines puramente educativos e ilustrativos. <strong>Morales Plumbing no asume NINGUNA RESPONSABILIDAD legal o técnica</strong> por daños a la propiedad, lesiones personales, o diagnósticos erróneos resultantes del mal uso de esta información o de intentos de reparación de bricolaje (DIY) realizados por personas no calificadas.<br><br>
+                    <strong>2. DERECHOS DE AUTOR:</strong><br>
+                    Todos los recursos gráficos, secuencias tipo cómic, la interfaz de AR y el asistente "Joe AI" son propiedad intelectual exclusiva de Morales Plumbing. Su reproducción o uso no autorizado está prohibido.<br><br>
+                    <strong>3. SOPORTE Y CONSULTA:</strong><br>
+                    Si no está seguro de poder realizar una reparación de forma segura, deténgase inmediatamente y comuníquese con un profesional con licencia.
+                </div>
+                <button class="ar-btn btn-pulse-cyan" onclick="nextTourStep(2)">ENTIENDO Y ACEPTO</button>
+            </div>
+            
+            <!-- Step 2: AR Buttons -->
+            <div id="tour-step-2" class="tour-step" style="display: none;">
+                <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 35px; height: 35px; stroke: var(--neon-cyan); filter: drop-shadow(0 0 5px var(--neon-cyan));"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg> HERRAMIENTAS AR</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 25px;">Utilice los botones sobre el visor de la cámara para manipular la alimentación visual:</p>
+                <div style="background: rgba(0,245,255,0.1); padding: 15px; border-radius: 8px; text-align: left; margin-bottom: 20px;">
+                    <p style="margin-top:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; vertical-align: text-bottom; margin-right: 5px;"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2z"/><path d="M14 8h6a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-6"/><line x1="6" y1="12" x2="10" y2="12"/></svg> <strong>Toggle Flashlight:</strong> Aumenta el brillo para simular la linterna táctica de su dispositivo.</p>
+                    <p style="margin-bottom:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; vertical-align: text-bottom; margin-right: 5px;"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg> <strong>X-Ray View:</strong> Activa el escáner de penetración para visualizar tuberías y piezas internas ocultas.</p>
+                </div>
+                <button class="ar-btn btn-pulse-cyan" onclick="nextTourStep(3)">SIGUIENTE</button>
+            </div>
+
+            <!-- Step 3: Voice & Emergency Buttons -->
+            <div id="tour-step-3" class="tour-step" style="display: none;">
+                <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 35px; height: 35px; stroke: #ff3333; filter: drop-shadow(0 0 5px #ff3333);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> ASISTENCIA Y EMERGENCIA</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 25px;">En la parte inferior de la pantalla encontrará dos botones críticos:</p>
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
+                    <div style="background: rgba(0,245,255,0.1); border-left: 4px solid var(--neon-cyan); padding: 10px; text-align: left;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; vertical-align: text-bottom; margin-right: 5px;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg> <strong>VOICE:</strong> Active este botón para enviar comandos de voz al asistente Joe AI.
+                    </div>
+                    <div style="background: rgba(255,50,50,0.1); border-left: 4px solid #ff3333; padding: 10px; text-align: left;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; vertical-align: text-bottom; margin-right: 5px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> <strong>EMERGENCY:</strong> Botón de pánico. Úselo SOLAMENTE en caso de fugas activas incontrolables para recibir el protocolo de cierre inmediato.
+                    </div>
+                </div>
+                <button class="ar-btn btn-pulse-cyan" style="border-color: var(--neon-cyan); color: var(--neon-cyan);" onclick="closeTour()">INICIAR DIAGNÓSTICO</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header role="banner" style="background: rgba(0,0,0,0.95); border-bottom: 1px solid rgba(0, 245, 255, 0.3); position: fixed; top: 0; width: 100%; height: 70px; z-index: 100;">
+        <nav role="navigation" style="display:flex; align-items:center; justify-content: space-between; padding: 0 20px; height: 100%;">
+            <div class="logo-container" onclick="window.location.href='../index.html#diy'" style="cursor:pointer; display:flex; align-items:center;">
+                <img src="../assets/logo_portada.webp" style="width: 45px; margin-right:15px; filter: drop-shadow(0 0 5px var(--neon-cyan));">
+                <div class="brand-info">
+                    <span class="brand-name" style="font-size: 1.1rem; margin-bottom: 0;">MORALES PLUMBING</span>
+                    <span class="brand-tag" style="font-size: 0.8rem; color: var(--neon-orange);">ORION FIX-IT HUB</span>
+                </div>
+            </div>
+            <a href="../index.html#diy" class="btn-outline" style="border-color: var(--neon-cyan); color: var(--neon-cyan); padding: 8px 20px; font-family: 'Orbitron'; font-size: 0.9rem;">&lt; Exit Hub</a>
+        </nav>
+    </header>
+
+    <div class="diy-interface">
+        <!-- AR Camera View Simulation / Real Feed -->
+        <div class="ar-view" id="ar-view" style="position: relative; overflow: hidden; background-color: #000;">
+            <!-- Real Hardware Camera Feed -->
+            <video id="camera-feed" autoplay playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transition: filter 0.3s;"></video>
+            
+            <div class="ar-overlay" style="z-index: 1;">
+                <div>[LIVE FEED] SENSOR ACTIVATED</div>
+                <div style="font-size: 0.85rem; color: #fff; margin-top: 5px;" id="ar-target-lbl">TARGET: INITIALIZING...</div>
+            </div>
+            
+            <div class="ar-target" style="z-index: 1;"></div>
+            
+            <div class="ar-actions" style="z-index: 1;">
+                <button class="ar-btn btn-pulse-cyan" onclick="toggleFlashlight(this)" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2z"/><path d="M14 8h6a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-6"/><line x1="6" y1="12" x2="10" y2="12"/></svg> Flashlight
+                </button>
+                <button class="ar-btn btn-pulse-cyan" onclick="toggleXRay(this)" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg> X-Ray Scan
+                </button>
+            </div>
+        </div>
+
+        <!-- Joe AI Assistant Panel -->
+        <div class="joe-assistant-panel">
+            <div class="joe-header">
+                <img src="../assets/joe_avatar.webp" alt="Joe AI">
+                <div>
+                    <h3>Joe AI - Tele-Triage</h3>
+                    <span id="joe-status-text">STATUS: ANALYZING CAMERA FEED...</span>
+                </div>
+            </div>
+            
+            <div class="joe-chat-area" id="joe-diy-chat">
+                <!-- Comic Panels Injected Here -->
+            </div>
+
+            <!-- Real-World References Section -->
+            <div id="reference-links" style="margin-bottom:20px; padding: 15px; background: rgba(0,245,255,0.05); border: 1px solid rgba(0,245,255,0.2); border-left: 4px solid var(--neon-cyan); border-radius: 4px; display: none;">
+                <h4 style="margin-top:0; margin-bottom:10px; font-family:'Orbitron'; color:var(--neon-cyan); font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg> FUENTES DE CONSULTA REALES
+                </h4>
+                <p style="font-size: 0.8rem; color: #888; margin-top: 0; margin-bottom: 12px; font-family: 'Inter', sans-serif;">Ejemplos prácticos y tutoriales en video de la red:</p>
+                <div id="ref-links-list" style="display: flex; flex-direction: column; gap: 8px;">
+                    <!-- Links Injected Here -->
+                </div>
+            </div>
+
+            <!-- Actions Controls -->
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                <button id="btn-voice" class="joe-voice-btn" style="flex: 1; padding: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;" onclick="activateVoice()">
+                    <span class="mic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 25px; height: 25px; margin-bottom: 2px;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span> 
+                    <span style="font-size: 0.75rem; font-family:'Orbitron'; font-weight: bold;">VOICE</span>
+                </button>
+                <button id="btn-report" class="joe-voice-btn" style="flex: 1; padding: 10px; border-color: var(--neon-lime); color: var(--neon-lime); background: rgba(0, 255, 170, 0.05); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;" onclick="generateDiagnosticReport()">
+                    <span class="mic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 25px; height: 25px; margin-bottom: 2px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span> 
+                    <span style="font-size: 0.75rem; font-family:'Orbitron'; font-weight: bold;">PDF REPORT</span>
+                </button>
+                <button id="btn-panic" class="joe-voice-btn btn-pulse-red" style="flex: 1; padding: 10px; border-color: #ff3333; color: #ff3333; background: rgba(255, 50, 50, 0.05); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;" onclick="activatePanic()">
+                    <span class="mic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 25px; height: 25px; margin-bottom: 2px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span> 
+                    <span style="font-size: 0.75rem; font-family:'Orbitron'; font-weight: bold;">EMERGENCY</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Diagnostic Report Generator
+        async function generateDiagnosticReport() {
+            const issue = window.currentIssueKey || 'general';
+            const btn = document.getElementById('btn-report');
+            const originalHtml = btn.innerHTML;
+            
+            // --- CUSTOM AI DIAGNOSTIC WITH GEMINI ---
+            if (issue === 'custom') {
+                const chatTexts = Array.from(document.querySelectorAll('.joe-diy-chat .dialogue')).map(el => el.innerText).join(' | ');
+                
+                btn.innerHTML = '<span style="font-size: 0.75rem; font-family:\'Orbitron\'; font-weight: bold; color: var(--neon-lime);">GENERANDO AI...</span>';
+                btn.style.boxShadow = '0 0 20px rgba(0, 255, 170, 0.8)';
+                btn.disabled = true;
+
+                try {
+                    const apiKey = GEMINI_KEYS[0];
+                    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+                    
+                    const prompt = `Actúa como un Maestro Plomero y experto de CSLB. Basado en esta descripción del cliente: "${chatTexts || 'El cliente solicita una inspección general'}", genera un pre-diagnóstico técnico de plomería EN FORMATO JSON ESTRICTAMENTE (SIN MARKDOWN). 
+                    El JSON debe tener exactamente estas llaves:
+                    {
+                      "name": "Título Corto del Diagnóstico",
+                      "cpc": "Código CPC aplicable (ej. CPC 414.0 o general)",
+                      "cslb": "Clase CSLB (ej. C-36)",
+                      "materials": ["Material o herramienta 1", "Material 2"],
+                      "supplier": "Proveedor local sugerido (Home Depot, Ferguson, etc.)",
+                      "labor": "Tiempo estimado (ej. 2.0 horas)",
+                      "options": ["Opción A: Descripción (Hágalo usted mismo) - Costo $0", "Opción B: Visita técnica profesional - $150"]
+                    }`;
+
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                    });
+                    
+                    const data = await response.json();
+                    let jsonStr = data.candidates[0].content.parts[0].text;
+                    jsonStr = jsonStr.replace(/```json/g, '').replace(/```/g, '').trim();
+                    const dynamicDiag = JSON.parse(jsonStr);
+                    
+                    printReport(dynamicDiag);
+                } catch (e) {
+                    console.error("Gemini AI Error:", e);
+                    alert("Error contactando a Joe AI (Gemini). Imprimiendo reporte de contingencia.");
+                    printReport({ name: "Diagnóstico AI Contingencia", cpc: "N/A", cslb: "C-36", materials: ["Inspección visual recomendada"], supplier: "N/A", labor: "TBD", options: ["Llamar al (669) 234-2444"] });
+                } finally {
+                    btn.innerHTML = originalHtml;
+                    btn.style.boxShadow = 'none';
+                    btn.disabled = false;
+                }
+            } else {
+                // --- PRE-FABRICATED SCENARIOS ---
+                const diagData = {
+                disposal: { name: "Garbage Disposal Jam / Replacement", cpc: "CPC 414.0", cslb: "C-36 Class", materials: ["Insinkerator Badger 5 1/2 HP", "Plumber's Putty", "1-1/2\" Tailpiece washer"], supplier: "Ferguson Enterprises", labor: "1.5 hours", options: ["Option A: Unjam (Basic) - $95", "Option B: Full Replacement - $350"] },
+                heater: { name: "Water Heater Pilot / Thermocouple", cpc: "CPC 507.0", cslb: "C-36 Class", materials: ["Universal Thermocouple 24\"", "Gas Sealant Tape"], supplier: "Winsupply", labor: "2.0 hours", options: ["Option A: Pilot Assembly Replacement - $185", "Option B: Tankless Upgrade (Retrofit) - $4,200"] },
+                toilet: { name: "Toilet Tank Rebuild", cpc: "CPC 411.0", cslb: "C-36 Class", materials: ["Fluidmaster Pro 400A Fill Valve", "3-inch Flapper", "Tank-to-Bowl Gasket"], supplier: "The Home Depot Pro", labor: "1.0 hours", options: ["Option A: Tank Rebuild - $150", "Option B: New Toto Drake Installation - $650"] },
+                sink: { name: "P-Trap Blockage / Replacement", cpc: "CPC 1003.0", cslb: "C-36 Class", materials: ["1-1/2\" Tubular ABS P-Trap", "Slip Joint Washers"], supplier: "Morales Internal Stock", labor: "1.0 hours", options: ["Option A: Drain Snaking & Clean - $125", "Option B: Repipe Trap Assembly - $195"] },
+                shower: { name: "Shower Cartridge Replacement", cpc: "CPC 408.0", cslb: "C-36 Class", materials: ["Moen 1222 Positemp Cartridge", "Silicone Grease"], supplier: "Ferguson Enterprises", labor: "1.5 hours", options: ["Option A: Cartridge Replacement - $225", "Option B: Full Valve Retrofit - $850"] },
+                valve: { name: "Main Shut-Off Valve Replacement", cpc: "CPC 606.0", cslb: "C-36 Class", materials: ["3/4\" Brass Ball Valve", "Copper Press Fittings"], supplier: "Hirsch Pipe & Supply", labor: "2.5 hours", options: ["Option A: Replace Valve (Press) - $350", "Option B: Smart Water Monitor Install - $850"] },
+                faucet: { name: "Faucet Drip Repair", cpc: "CPC 417.0", cslb: "C-36 Class", materials: ["Ceramic Stem Cartridges (Hot/Cold)"], supplier: "Kohler Direct", labor: "1.0 hours", options: ["Option A: Stem Replacement - $145", "Option B: Install New Fixture - $295"] },
+                gfi: { name: "GFCI / Electrical Fault (Appliance)", cpc: "CEC Article 210.8", cslb: "C-10 Class (Sub)", materials: ["20A GFCI Receptacle", "Weatherproof Cover"], supplier: "CES", labor: "1.0 hours", options: ["Option A: Outlet Reset/Test - $85", "Option B: Replace Outlet - $150"] },
+                smell: { name: "Sewer Gas / Dry Trap Prime", cpc: "CPC 1007.0", cslb: "C-36 Class", materials: ["Trap Primer Valve", "Bio-Enzymatic Drain Cleaner"], supplier: "Ferguson Enterprises", labor: "1.5 hours", options: ["Option A: Video Camera Inspection - $250", "Option B: Install Trap Primer - $450"] },
+
+                tankless_flush: {
+                    target: "KNOWLEDGE BASE: TANKLESS FLUSH",
+                    bg: "url('../assets/service_tankless.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/wh_comic.png", text: t.tf1 },
+                        { cap: "HOW-TO:", img: "../assets/pb_svc_2.png", text: t.tf2 },
+                        { cap: "SOLUTION:", img: "../assets/plan_best.png", text: t.tf3 }
+                    ]
+                },
+                caulk: {
+                    target: "KNOWLEDGE BASE: TUB CAULKING",
+                    bg: "url('../assets/pb_svc_10.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/pb_svc_3.png", text: t.ck1 },
+                        { cap: "HOW-TO:", img: "../assets/plan_good.png", text: t.ck2 },
+                        { cap: "SOLUTION:", img: "../assets/pb_svc_4.png", text: t.ck3 }
+                    ]
+                },
+                aerator: {
+                    target: "KNOWLEDGE BASE: FAUCET AERATOR",
+                    bg: "url('../assets/pb_svc_11.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/pb_svc_5.png", text: t.ae1 },
+                        { cap: "HOW-TO:", img: "../assets/plan_better.png", text: t.ae2 },
+                        { cap: "SOLUTION:", img: "../assets/pb_svc_6.png", text: t.ae3 }
+                    ]
+                },
+                washer_hose: {
+                    target: "KNOWLEDGE BASE: WASHER HOSES",
+                    bg: "url('../assets/pb_svc_12.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/pb_svc_7.png", text: t.wh1 },
+                        { cap: "HOW-TO:", img: "../assets/pb_svc_8.png", text: t.wh2 },
+                        { cap: "SOLUTION:", img: "../assets/pb_svc_9.png", text: t.wh3 }
+                    ]
+                },
+                dishwasher: {
+                    target: "KNOWLEDGE BASE: DISHWASHER DRAIN",
+                    bg: "url('../assets/pb_svc_13.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/valves_comic.png", text: t.dw1 },
+                        { cap: "HOW-TO:", img: "../assets/pb_svc_1.png", text: t.dw2 },
+                        { cap: "SOLUTION:", img: "../assets/pb_svc_15.png", text: t.dw3 }
+                    ]
+                },
+                showerhead: {
+                    target: "KNOWLEDGE BASE: SHOWERHEAD",
+                    bg: "url('../assets/pb_svc_14.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/inspect_comic.png", text: t.shw1 },
+                        { cap: "HOW-TO:", img: "../assets/training_comic.png", text: t.shw2 },
+                        { cap: "SOLUTION:", img: "../assets/termo_comic.png", text: t.shw3 }
+                    ]
+                }
+,
+
+                tankless_flush: { name: "Tankless Flush / Descale", cpc: "CPC 507.0", cslb: "C-36 Class", materials: ["Submersible Pump", "Flow-Aide Descaler", "Washing Machine Hoses"], supplier: "The Home Depot Pro", labor: "1.5 hours", options: ["Option A: DIY Flush - $45", "Option B: Pro Flush & Service - $295"] },
+                caulk: { name: "Bathtub Re-Caulking", cpc: "General Maintenance", cslb: "N/A", materials: ["100% Silicone Caulk", "Caulk Removal Tool", "Denatured Alcohol"], supplier: "Local Hardware", labor: "1.0 hours", options: ["Option A: DIY Caulk - $15", "Option B: Professional Seal - $150"] },
+                aerator: { name: "Faucet Aerator Clean", cpc: "CPC 417.0", cslb: "N/A", materials: ["White Vinegar", "Aerator Key / Pliers", "Thread Seal Tape"], supplier: "Household", labor: "0.5 hours", options: ["Option A: Soak & Clean - $0", "Option B: Replace Aerator - $10"] },
+                washer_hose: { name: "Washer Hoses Replacement", cpc: "CPC 606.0", cslb: "C-36 Class", materials: ["Stainless Steel Braided Hoses", "Channel Locks"], supplier: "Ferguson Enterprises", labor: "0.5 hours", options: ["Option A: Replace Hoses - $35", "Option B: Pro Install & Valve Test - $120"] },
+                dishwasher: { name: "Dishwasher Drain Clog", cpc: "CPC 414.0", cslb: "C-36 Class", materials: ["Shop-Vac", "Air Gap Cleaning Brush"], supplier: "Morales Internal Stock", labor: "1.0 hours", options: ["Option A: Clear Air Gap - $0", "Option B: Replace Drain Hose - $185"] },
+                showerhead: { name: "Showerhead Replacement", cpc: "CPC 408.0", cslb: "N/A", materials: ["New Showerhead", "Teflon Tape", "Adjustable Wrench"], supplier: "Kohler Direct", labor: "0.5 hours", options: ["Option A: Swap Head - $40", "Option B: Pro Install & Pressure Check - $125"] }
+
+            };
+
+            const data = diagData[issue] || diagData['sink'];
+            printReport(data);
+        }
+        // End of generateDiagnosticReport
+        }
+
+        function printReport(data) {
+            const dateStr = new Date().toLocaleString();
+
+            const reportHTML = `
+                <div class="print-container">
+                    <div style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end;">
+                        <div>
+                            <h1 style="margin: 0; font-family: Arial, sans-serif; font-size: 24px; text-transform: uppercase;">MORALES PLUMBING</h1>
+                            <p style="margin: 5px 0 0 0; font-size: 12px; color: #555;">CSLB #1156542 | ORION TELE-TRIAGE SYSTEM</p>
+                        </div>
+                        <div style="text-align: right; font-size: 12px; color: #555;">
+                            <strong>Date:</strong> ${dateStr}<br>
+                            <strong>Ref ID:</strong> ORION-${Math.floor(Math.random()*100000)}
+                        </div>
+                    </div>
+                    
+                    <h2 style="font-family: Arial, sans-serif; font-size: 18px; background: #eee; padding: 10px;">DIAGNOSTIC REPORT: ${data.name.toUpperCase()}</h2>
+                    
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; font-family: Arial, sans-serif; font-size: 14px;">
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ccc; background: #f9f9f9; width: 30%;"><strong>CPC Compliance Code</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">${data.cpc}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ccc; background: #f9f9f9;"><strong>CSLB License Requirement</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">${data.cslb}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ccc; background: #f9f9f9;"><strong>Estimated Labor Time</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">${data.labor}</td>
+                        </tr>
+                    </table>
+
+                    <h3 style="font-family: Arial, sans-serif; font-size: 16px; border-bottom: 1px solid #ccc; padding-bottom: 5px;">Required Materials & Suppliers</h3>
+                    <ul style="font-family: Arial, sans-serif; font-size: 14px; margin-bottom: 20px;">
+                        ${data.materials.map(m => `<li>${m}</li>`).join('')}
+                    </ul>
+                    <p style="font-family: Arial, sans-serif; font-size: 14px; margin-bottom: 20px;"><strong>Primary Supplier:</strong> ${data.supplier}</p>
+
+                    <h3 style="font-family: Arial, sans-serif; font-size: 16px; border-bottom: 1px solid #ccc; padding-bottom: 5px;">Proposed Action Plans</h3>
+                    <div style="background: #fdfdfd; border: 1px solid #ddd; padding: 15px; font-family: Arial, sans-serif; font-size: 14px;">
+                        ${data.options.map(o => `<p style="margin: 0 0 10px 0;"><strong>&#10003;</strong> ${o}</p>`).join('')}
+                    </div>
+
+                    <div style="margin-top: 40px; text-align: center; font-size: 11px; color: #777; border-top: 1px dashed #ccc; padding-top: 15px;">
+                        This document is an AI-generated pre-diagnostic estimate and does not constitute a binding legal contract.<br>
+                        Generated securely by Joe AI | ORION Fix-It Hub.
+                    </div>
+                </div>
+            `;
+
+            const printDiv = document.getElementById('printable-report-area');
+            printDiv.innerHTML = reportHTML;
+            
+            // Trigger browser print
+            setTimeout(() => { window.print(); }, 500);
+        }
+
+        // Haptic feedback simulation
+
+        function toggleHaptic(btn) {
+            if (navigator.vibrate) navigator.vibrate(50);
+            const originalText = btn.innerText;
+            btn.innerText = "ACTIVATING...";
+            btn.style.boxShadow = "0 0 20px var(--neon-cyan)";
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.boxShadow = "none";
+            }, 800);
+        }
+
+        function toggleFlashlight(btn) {
+            toggleHaptic(btn);
+            const targetEl = window.currentIssueKey === 'custom' ? document.getElementById('camera-feed') : document.getElementById('ar-view');
+            const currentFilter = targetEl.style.filter || "";
+            if(currentFilter.includes('brightness(2)')) {
+                targetEl.style.filter = currentFilter.replace('brightness(2)', '').trim();
+            } else {
+                targetEl.style.filter = currentFilter + ' brightness(2)';
+            }
+        }
+
+        function toggleXRay(btn) {
+            toggleHaptic(btn);
+            const video = document.getElementById('camera-feed');
+            const arView = document.getElementById('ar-view');
+            const targetEl = window.currentIssueKey === 'custom' ? video : arView;
+            const currentFilter = targetEl.style.filter || "";
+            
+            if(currentFilter.includes('invert(1)')) {
+                targetEl.style.filter = currentFilter.replace('invert(1) hue-rotate(180deg) contrast(1.5)', '').trim();
+                
+                if (window.currentIssueKey === 'custom') {
+                    video.style.opacity = "1";
+                    arView.style.backgroundImage = "none";
+                }
+            } else {
+                targetEl.style.filter = currentFilter + ' invert(1) hue-rotate(180deg) contrast(1.5)';
+                
+                // If there's a specific blueprint/xray overlay for this issue, show it
+                const data = getIssuesData()[window.currentIssueKey];
+                if(data && data.bg_xray) {
+                    arView.style.backgroundImage = data.bg_xray;
+                    arView.style.backgroundSize = "cover";
+                    arView.style.backgroundPosition = "center";
+                    if (window.currentIssueKey === 'custom') {
+                        video.style.opacity = "0.5";
+                    }
+                }
+            }
+        }
+
+        function activateVoice() {
+            const btn = document.getElementById('btn-voice');
+            const chat = document.getElementById('joe-diy-chat');
+            const status = document.getElementById('joe-status-text');
+
+            // Real Hardware Web Speech API
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRecognition) {
+                alert("La API de micrófono no está soportada en este navegador. Usa Chrome o Safari móvil.");
+                return;
+            }
+
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'es-ES'; // Listen in Spanish by default, or can be en-US
+            recognition.interimResults = false;
+            
+            recognition.onstart = function() {
+                if (navigator.vibrate) navigator.vibrate(50);
+                btn.innerHTML = '<span class="mic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 35px; height: 35px; margin-bottom: 5px; animation: pulseCyan 1s infinite;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span> <span style="font-size: 0.9rem; font-family:\'Orbitron\'; font-weight:bold;">ESCUCHANDO...</span>';
+                btn.style.boxShadow = '0 0 20px rgba(0, 245, 255, 0.8)';
+                btn.style.background = 'rgba(0, 245, 255, 0.2)';
+                status.innerText = "STATUS: MICROPHONE ACTIVE...";
+                status.style.color = "var(--neon-cyan)";
+            };
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                const lowerTranscript = transcript.toLowerCase();
+                
+                // Inject user's real voice transcribed text
+                chat.innerHTML += `
+                    <div class="comic-panel" style="border-color:#ccc; box-shadow: 4px 4px 0 #ccc;">
+                        <div class="caption" style="background:#ccc; color:#000;">TÚ (VOICE)</div>
+                        <div class="dialogue" style="color:#000;">"${transcript}"</div>
+                    </div>
+                `;
+                chat.scrollTop = chat.scrollHeight;
+
+                // Joe AI dynamic response logic
+                setTimeout(() => {
+                    let aiResponse = "He registrado tu comentario. Por favor sigue los pasos visuales en pantalla o dime si hay una fuga.";
+                    
+                    if (lowerTranscript.includes("fuga") || lowerTranscript.includes("agua") || lowerTranscript.includes("leak") || lowerTranscript.includes("roto")) {
+                        aiResponse = "⚠️ ALERTA: Mencionaste una posible fuga de agua. Por favor ubica la válvula de cierre principal inmediatamente. Usa el botón de EMERGENCIA si no puedes controlarla.";
+                    } else if (lowerTranscript.includes("ayuda") || lowerTranscript.includes("no sé") || lowerTranscript.includes("help")) {
+                        aiResponse = "Tranquilo. Estoy aquí para guiarte. Revisa cuidadosamente la secuencia de paneles que he cargado para ti.";
+                    } else if (lowerTranscript.includes("listo") || lowerTranscript.includes("ya") || lowerTranscript.includes("done")) {
+                        aiResponse = "¡Excelente trabajo! Recuerda hacer una prueba con baja presión antes de abrir el sistema por completo.";
+                    }
+
+                    chat.innerHTML += `
+                        <div class="comic-panel" style="border-color:var(--neon-cyan); box-shadow: 6px 6px 0 var(--neon-cyan);">
+                            <div class="caption" style="background:var(--neon-cyan); color:#000;">JOE AI</div>
+                            <div class="dialogue" style="color:#000;">${aiResponse}</div>
+                        </div>
+                    `;
+                    chat.scrollTop = chat.scrollHeight;
+                }, 1000);
+            };
+
+            recognition.onerror = function(event) {
+                console.error("Speech recognition error", event.error);
+                status.innerText = "STATUS: MICROPHONE ERROR";
+            };
+
+            recognition.onend = function() {
+                btn.innerHTML = '<span class="mic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 35px; height: 35px; margin-bottom: 5px;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span> <span style="font-size: 0.9rem; font-family:\'Orbitron\'; font-weight:bold;">VOICE</span>';
+                btn.style.boxShadow = 'none';
+                btn.style.background = 'rgba(255, 50, 50, 0.1)';
+                status.innerText = "STATUS: ANALYZING CAMERA FEED...";
+            };
+
+            recognition.start();
+        }
+
+        function activatePanic() {
+            if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+            
+            const btn = document.getElementById('btn-panic');
+            btn.innerHTML = '<span class="mic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 35px; height: 35px; margin-bottom: 5px; animation: pulseRed 0.5s infinite;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span> <span style="font-size: 0.9rem; font-family:\'Orbitron\'; font-weight:bold;">OVERRIDE...</span>';
+            btn.style.boxShadow = '0 0 40px rgba(255, 0, 0, 0.8)';
+            btn.style.background = 'rgba(255, 0, 0, 0.4)';
+            
+            const chat = document.getElementById('joe-diy-chat');
+            document.getElementById('joe-status-text').innerText = "STATUS: EMERGENCY OVERRIDE";
+            document.getElementById('joe-status-text').style.color = "#ff3333";
+            
+            setTimeout(() => {
+                chat.innerHTML += `
+                    <div class="comic-panel" style="border-color:#ff3333; box-shadow: 6px 6px 0 #ff3333;">
+                        <div class="caption" style="background:#ff3333; color:#fff;">EMERGENCY</div>
+                        <div class="dialogue" style="color:#ff3333;"><strong>DANGER DETECTED.</strong><br>If there is an active water leak or gas smell, EVACUATE THE AREA and SHUT OFF THE MAIN VALVE immediately. <br><br><a href="tel:123456789" style="display:inline-block; margin-top:10px; background:#ff3333; color:#fff; padding: 5px 10px; text-decoration:none; border-radius:4px; font-weight:bold;">CALL DISPATCH NOW</a></div>
+                    </div>
+                `;
+                chat.scrollTop = chat.scrollHeight;
+                
+                btn.innerHTML = '<span class="mic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 35px; height: 35px; margin-bottom: 5px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span> <span style="font-size: 0.9rem; font-family:\'Orbitron\'; font-weight:bold;">EMERGENCY</span>';
+                btn.style.boxShadow = '0 0 20px rgba(255, 50, 50, 0.2)';
+                btn.style.background = 'rgba(255, 50, 50, 0.05)';
+            }, 1000);
+        }
+
+        // Tour Logic
+        function showTour() {
+            document.getElementById('orion-tour-modal').style.display = 'flex';
+        }
+        function nextTourStep(stepNum) {
+            document.querySelectorAll('.tour-step').forEach(el => el.style.display = 'none');
+            document.getElementById('tour-step-' + stepNum).style.display = 'block';
+        }
+        function closeTour() {
+            document.getElementById('orion-tour-modal').style.display = 'none';
+            localStorage.setItem('orionTourCompleted', 'true');
+        }
+        
+        // 10 Different DIY Cases (1 Custom AI + 9 Pre-fabricated)
+        
+        const diyTrans = {
+    "en": {
+        "ai": "Hello! I am Joe AI. Press the VOICE button below and tell me in detail what plumbing issue you have at home today.",
+        "d1": "Most common issues: Blades jammed by hard/fibrous food, or motor overheated (auto shut-off).",
+        "d2": "If the unit hums but won't spin, insert a 1/4\" Allen wrench into the bottom hex hole and turn to free the blades.",
+        "d3": "If it makes no sound, press the red RESET button on the bottom. Always use cold water when grinding to solidify grease.",
+        "h1": "Most common issues: Damaged thermocouple, blown pilot, or scale buildup causing 'popping' noises and low efficiency.",
+        "h2": "WARNING: Emissions regulations (BAAQMD / Title 24) in California will ban traditional NOx gas heaters by 2027.",
+        "h3": "Transitioning to Hybrid Heat Pump Water Heaters is essential for zero emissions and state rebate eligibility.",
+        "t1": "Most common issues: Toilet constantly running water (phantom leak) due to a chlorine-degraded flapper or broken fill valve.",
+        "t2": "A leaking toilet can waste up to 200 gallons of drinking water a day, skyrocketing your monthly bill.",
+        "t3": "Shut off the wall valve. Replace the rubber flapper in the tank or install a complete rebuild kit.",
+        "s1": "Most common issues: P-Trap blockage from hair buildup, soap, or solidified cooking grease.",
+        "s2": "Place a bucket underneath. Manually unscrew the slip nuts on the U-bend and clean the pipe directly.",
+        "s3": "Avoid corrosive chemicals (Drano) that destroy PVC. Use strainers and monthly bio-enzymatic cleaners.",
+        "sh1": "Most common issues: Low pressure due to calcification (scale) in the nozzles, or constant drip from a worn ceramic cartridge.",
+        "sh2": "For scale: Soak the showerhead in white vinegar for 4 hours using a plastic bag and rubber band.",
+        "sh3": "For drips: Requires shutting off the main house water and replacing the internal valve cartridge (e.g., Moen 1222).",
+        "v1": "Most common issues: Old gate valves (wheel type) get stuck or leak from the stem when trying to close them in an emergency.",
+        "v2": "If there is a leak, shut off the main valve at the curb (city meter) using a special meter key.",
+        "v3": "We recommend replacing old wheel valves with brass ball valves (1/4 turn) for quick and safe shut-off.",
+        "f1": "Most common issues: Constant drip from the spout or leaking at the handle base due to dry O-rings.",
+        "f2": "Turn off the supply stops under the sink. Remove the handle with an Allen wrench and replace the internal cartridge.",
+        "f3": "Install new 1.2 GPM aerators to reduce water consumption and comply with CALGreen standards.",
+        "g1": "Most common issues: Power loss in garbage disposals or tankless heaters. GFCI cuts power if it detects moisture.",
+        "g2": "Locate the GFCI outlet on the wall (usually near water). Ensure it is completely dry.",
+        "g3": "Firmly press the red/black 'RESET' button. If it trips again immediately, there is a dangerous short circuit.",
+        "sm1": "Most common issues: Rotten egg smell (sewer gas). Occurs when water in a P-trap evaporates from lack of use.",
+        "sm2": "Pour a bucket of water down floor drains, guest sinks, or unused tubs to restore the water seal.",
+        "sm3": "If the odor persists, the roof vent pipe may be blocked, requiring specialized equipment.",
+        "tf1": "Most common issues: Scale buildup in the heat exchanger causes error codes or low hot water flow.",
+        "tf2": "Turn off power and gas. Connect a submersible pump and hoses to the isolation valves.",
+        "tf3": "Circulate white vinegar or Flow-Aide for 45 minutes, then flush with cold water.",
+        "ck1": "Most common issues: Old caulk cracks and molds, allowing water to seep behind walls.",
+        "ck2": "Scrape away ALL old caulk using a special tool or razor, and clean with alcohol.",
+        "ck3": "Apply a smooth bead of 100% silicone and smooth it out with a wet finger.",
+        "ae1": "Most common issues: Calcium/sediment from hard water clogs the aerator, dropping pressure.",
+        "ae2": "Unscrew the tip of the faucet (use an aerator key or pliers with a rag).",
+        "ae3": "Soak the pieces in vinegar and scrub with an old toothbrush, then reassemble.",
+        "wh1": "Most common issues: Old rubber washing machine hoses burst under pressure, flooding homes.",
+        "wh2": "Turn off the hot and cold wall valves. Disconnect the old rubber hoses with channel locks.",
+        "wh3": "Install new stainless steel braided burst-proof hoses. Hand tighten, then 1/4 turn with wrench.",
+        "dw1": "Most common issues: Food debris clogs the sink air gap or the dishwasher corrugated drain hose.",
+        "dw2": "Pop off the silver air gap cover on the sink and clear any gunk with a bottle brush.",
+        "dw3": "If it still won't drain, check the connection where the hose meets the garbage disposal.",
+        "shw1": "Most common issues: Upgrading to a more efficient or larger rain showerhead.",
+        "shw2": "Unscrew the old head. Clean the pipe threads completely removing old tape.",
+        "shw3": "Wrap new Teflon tape clockwise 3-4 times. Screw on the new head and tighten gently."
+
+    },
+    "es": {
+        "ai": "¡Hola! Soy Joe AI. Presiona el botón de VOICE abajo y cuéntame detalladamente qué problema de plomería tienes en tu casa hoy.",
+        "d1": "Fallas más comunes: Atasco de las aspas por alimentos duros/fibrosos, o motor sobrecalentado (apagado automático).",
+        "d2": "Si el equipo zumba pero no gira, inserta una llave Allen de 1/4\" en el orificio hexagonal inferior y gírala para destrabar las cuchillas.",
+        "d3": "Si no hace ningún ruido, presiona el botón rojo de RESET en la base. Usa siempre agua fría al moler para solidificar la grasa.",
+        "h1": "Fallas más comunes: Termopar dañado, piloto apagado, o acumulación calcárea que provoca ruidos de 'estallido' y baja eficiencia.",
+        "h2": "ATENCIÓN: Regulaciones de emisiones (BAAQMD / Título 24) en California prohibirán los calentadores de gas tradicionales de NOx para 2027.",
+        "h3": "Es indispensable la transición a Calentadores Híbridos con Bomba de Calor (Heat Pump) para cero emisiones y aprovechar reembolsos estatales.",
+        "t1": "Fallas más comunes: Inodoro corriendo agua sin parar (fuga fantasma) debido a un 'flapper' degradado por cloro, o válvula de llenado rota.",
+        "t2": "Un inodoro con fugas puede desperdiciar hasta 200 galones de agua potable al día, disparando su factura mensual.",
+        "t3": "Cierre la válvula de pared. Reemplace el 'flapper' de goma en el tanque o instale un kit de reconstrucción completo.",
+        "s1": "Fallas más comunes: Obstrucción de la trampa P (P-Trap) por acumulación de cabello, jabón, o grasa de cocina solidificada.",
+        "s2": "Coloque una cubeta debajo. Desenrosque manualmente las tuercas deslizantes de la curva en U y limpie la tubería directamente.",
+        "s3": "Evite químicos corrosivos (Drano) que destruyen el PVC. Use coladores y limpiadores bio-enzimáticos mensuales.",
+        "sh1": "Fallas más comunes: Baja presión por calcificación (sarro) en los aspersores, o goteo constante por cartucho cerámico desgastado.",
+        "sh2": "Para el sarro: Sumerja el cabezal en vinagre blanco por 4 horas usando una bolsa plástica y liga.",
+        "sh3": "Para goteo: Se requiere cerrar el agua de la casa y reemplazar el cartucho interno de la válvula (ej. Moen 1222).",
+        "v1": "Fallas más comunes: Las válvulas de compuerta antiguas (de rueda) se atascan o gotean por el vástago al intentar cerrarlas en una emergencia.",
+        "v2": "Si hay fuga, cierre la válvula principal en la acera (medidor de la ciudad) usando una llave especial.",
+        "v3": "Recomendamos reemplazar válvulas de rueda viejas por válvulas de bola de latón (1/4 de vuelta) para un cierre rápido y seguro.",
+        "f1": "Fallas más comunes: Goteo constante desde la boquilla o filtración por la base de las manijas debido a O-rings secos.",
+        "f2": "Cierre las llaves de paso bajo el lavamanos. Retire la manija con llave Allen y reemplace el cartucho cilíndrico interno.",
+        "f3": "Instale aereadores nuevos de 1.2 GPM para reducir el consumo de agua y cumplir con las normas CALGreen.",
+        "g1": "Fallas más comunes: Pérdida de energía en trituradores de basura o calentadores de paso. El GFCI corta la luz si detecta humedad.",
+        "g2": "Localice el tomacorriente GFCI en la pared (generalmente cerca del agua). Asegúrese de que esté seco.",
+        "g3": "Presione firmemente el botón rojo/negro de 'RESET'. Si vuelve a saltar inmediatamente, hay un cortocircuito peligroso.",
+        "sm1": "Fallas más comunes: Olor a huevo podrido (gas de alcantarilla). Ocurre cuando el agua de una trampa P se evapora por falta de uso.",
+        "sm2": "Vierta una cubeta de agua en drenajes de piso, lavamanos de visitas o tinas sin uso para restaurar el sello de agua.",
+        "sm3": "Si el olor persiste, es posible que la tubería de ventilación en el techo esté bloqueada, requiriendo equipo especializado.",
+        "tf1": "Fallas comunes: El sarro en el intercambiador causa códigos de error o baja presión de agua caliente.",
+        "tf2": "Apaga gas y luz. Conecta una bomba sumergible y mangueras a las válvulas de servicio.",
+        "tf3": "Circula vinagre blanco por 45 minutos, luego purga con agua limpia.",
+        "ck1": "Fallas comunes: Silicona vieja se agrieta y forma moho, filtrando agua al muro.",
+        "ck2": "Raspa TODA la silicona vieja y limpia profundamente con alcohol.",
+        "ck3": "Aplica una línea uniforme de silicón 100% y alísala con un dedo húmedo.",
+        "ae1": "Fallas comunes: Sedimentos tapan la malla del aereador, bajando la presión.",
+        "ae2": "Desenrosca la punta de la llave. Usa un trapo para no rayar el metal.",
+        "ae3": "Remoja las piezas en vinagre, cepilla y vuelve a armar.",
+        "wh1": "Fallas comunes: Las mangueras de goma viejas de lavadora explotan, inundando casas.",
+        "wh2": "Cierra las válvulas de la pared. Desconecta las mangueras viejas de goma.",
+        "wh3": "Instala mangueras nuevas trenzadas de acero inoxidable (anti-explosión).",
+        "dw1": "Fallas comunes: Comida tapa la trampa de aire o la manguera de drenaje de la lavavajillas.",
+        "dw2": "Quita la tapa del 'air gap' en el lavamanos y límpialo con un cepillo.",
+        "dw3": "Si sigue sin drenar, revisa la conexión con el triturador de basura.",
+        "shw1": "Fallas comunes: Querer actualizar a una regadera más grande o eficiente.",
+        "shw2": "Desenrosca la regadera vieja. Limpia la rosca del tubo completamente.",
+        "shw3": "Aplica cinta teflón en sentido horario 3-4 vueltas y enrosca la nueva regadera."
+
+    },
+    "zh": {
+        "ai": "你好！我是 Joe AI。按下方的 VOICE 按钮，详细告诉我你今天家里遇到的管道问题。",
+        "d1": "最常见的问题：刀片被坚硬/纤维状食物卡住，或电机过热（自动断电）。",
+        "d2": "如果设备发出嗡嗡声但不转动，请将 1/4\" 内六角扳手插入底部六角孔并转动以释放刀片。",
+        "d3": "如果不发出任何声音，请按下底部的红色 RESET 按钮。研磨时始终使用冷水使油脂凝固。",
+        "h1": "最常见的问题：热电偶损坏，导火索熄灭，或水垢堆积引起'爆裂'声和效率低下。",
+        "h2": "警告：加州的排放法规（BAAQMD / Title 24）将于2027年禁止传统的NOx燃气热水器。",
+        "h3": "向混合热泵热水器过渡对于实现零排放和获得州补贴资格至关重要。",
+        "t1": "最常见的问题：由于氯气降解的挡板或注水阀损坏，马桶不断流水（幻影泄漏）。",
+        "t2": "漏水的马桶每天可浪费多达200加仑的饮用水，导致您的月账单飙升。",
+        "t3": "关闭墙壁阀门。更换水箱中的橡胶挡板或安装完整的重建套件。",
+        "s1": "最常见的问题：由于头发堆积、肥皂或凝固的烹饪油脂导致 P-Trap 堵塞。",
+        "s2": "在下面放一个桶。手动拧开 U 形弯头上的滑环螺母，直接清洁管道。",
+        "s3": "避免使用破坏 PVC 的腐蚀性化学品 (Drano)。使用过滤器和每月的生物酶清洁剂。",
+        "sh1": "最常见的问题：喷嘴中钙化（水垢）导致水压低，或磨损的陶瓷滤芯导致持续滴水。",
+        "sh2": "去水垢：使用塑料袋和橡皮筋将淋浴头浸泡在白醋中4小时。",
+        "sh3": "对于滴水：需要关闭房屋的主水源，并更换内部阀门滤芯（例如，Moen 1222）。",
+        "v1": "最常见的问题：在紧急情况下尝试关闭时，旧的闸阀（手轮式）卡住或阀杆漏水。",
+        "v2": "如果有泄漏，请使用特殊的仪表钥匙关闭路边（城市水表）的主阀门。",
+        "v3": "我们建议用黄铜球阀（1/4圈）替换旧的手轮阀，以便快速安全地关闭。",
+        "f1": "最常见的问题：由于O形圈干燥，喷口不断滴水或手柄底部漏水。",
+        "f2": "关闭水槽下的供水停止阀。用内六角扳手拆下手柄，并更换内部滤芯。",
+        "f3": "安装新的 1.2 GPM 曝气器以减少用水量并符合 CALGreen 标准。",
+        "g1": "最常见的问题：垃圾处理器或无罐热水器断电。如果检测到湿气，GFCI 会切断电源。",
+        "g2": "找到墙上的 GFCI 插座（通常靠近水）。确保其完全干燥。",
+        "g3": "用力按下红/黑“RESET”按钮。如果立即再次跳闸，则存在危险的短路。",
+        "sm1": "最常见的问题：臭鸡蛋味（下水道气体）。当 P-trap 中的水因未使用而蒸发时发生。",
+        "sm2": "将一桶水倒入地漏、客用洗手池或未使用的浴缸中以恢复水封。",
+        "sm3": "如果气味持续存在，屋顶通风管可能被堵塞，需要专用设备。"
+    },
+    "tl": {
+        "ai": "Kamusta! Ako si Joe AI. Pindutin ang VOICE button sa ibaba at sabihin sa akin ng detalyado kung anong problema sa tubo ang meron ka sa bahay ngayon.",
+        "d1": "Pinaka-karaniwang isyu: Nabara ang mga blades ng matigas/mabuhok na pagkain, o nag-overheat ang motor (auto shut-off).",
+        "d2": "Kung ang unit ay umuugong ngunit hindi umiikot, ipasok ang 1/4\" Allen wrench sa ilalim na hex hole at iikot upang paluwagin ang mga blades.",
+        "d3": "Kung walang tunog, pindutin ang pulang RESET button sa ibaba. Palaging gumamit ng malamig na tubig habang naghihiwa para patigasin ang mantika.",
+        "h1": "Pinaka-karaniwang isyu: Sira ang thermocouple, patay ang pilot, o namumuong dumi na nagiging sanhi ng 'popping' na tunog at mababang efficiency.",
+        "h2": "BABALA: Ipagbabawal ng mga regulasyon sa emisyon (BAAQMD / Title 24) sa California ang tradisyunal na NOx gas heaters bago ang 2027.",
+        "h3": "Mahalaga ang paglipat sa Hybrid Heat Pump Water Heaters para sa zero emissions at kwalipikasyon sa state rebate.",
+        "t1": "Pinaka-karaniwang isyu: Patuloy na umaagos ang tubig sa inidoro (phantom leak) dahil sa sirang flapper o fill valve.",
+        "t2": "Ang tumutulong inidoro ay maaaring mag-aksaya ng hanggang 200 galon ng tubig bawat araw, na magpapalaki sa iyong buwanang bill.",
+        "t3": "Patayin ang wall valve. Palitan ang rubber flapper sa tangke o mag-install ng buong rebuild kit.",
+        "s1": "Pinaka-karaniwang isyu: P-Trap blockage mula sa naipong buhok, sabon, o tumigas na mantika.",
+        "s2": "Maglagay ng balde sa ilalim. Manwal na tanggalin ang slip nuts sa U-bend at direktang linisin ang tubo.",
+        "s3": "Iwasan ang matatapang na kemikal (Drano) na nakakasira sa PVC. Gumamit ng strainers at buwanang bio-enzymatic cleaners.",
+        "sh1": "Pinaka-karaniwang isyu: Mahinang pressure dahil sa calcification (scale) sa mga nozzle, o patuloy na pagtulo mula sa sirang ceramic cartridge.",
+        "sh2": "Para sa scale: Ibabad ang showerhead sa white vinegar sa loob ng 4 na oras gamit ang plastic bag at rubber band.",
+        "sh3": "Para sa pagtulo: Kailangang patayin ang pangunahing tubig sa bahay at palitan ang internal valve cartridge (hal. Moen 1222).",
+        "v1": "Pinaka-karaniwang isyu: Ang mga lumang gate valves (wheel type) ay naiipit o tumutulo mula sa stem kapag sinusubukang isara ito sa emergency.",
+        "v2": "Kung may tulo, isara ang pangunahing balbula sa kurbada (city meter) gamit ang espesyal na meter key.",
+        "v3": "Inirerekomenda naming palitan ang lumang wheel valves ng brass ball valves (1/4 turn) para mabilis at ligtas na pagsasara.",
+        "f1": "Pinaka-karaniwang isyu: Patuloy na pagtulo mula sa spout o pag-leak sa base ng handle dahil sa tuyong O-rings.",
+        "f2": "Patayin ang supply stops sa ilalim ng lababo. Tanggalin ang handle gamit ang Allen wrench at palitan ang internal cartridge.",
+        "f3": "Maglagay ng bagong 1.2 GPM aerators para mabawasan ang pagkonsumo ng tubig at sumunod sa CALGreen standards.",
+        "g1": "Pinaka-karaniwang isyu: Nawalan ng kuryente sa garbage disposals o tankless heaters. Pinuputol ng GFCI ang kuryente kung may ma-detect na basa.",
+        "g2": "Hanapin ang GFCI outlet sa dingding (karaniwang malapit sa tubig). Siguraduhing ito ay tuyo.",
+        "g3": "Mariing pindutin ang pula/itim na 'RESET' button. Kung agad itong mag-trip muli, may mapanganib na short circuit.",
+        "sm1": "Pinaka-karaniwang isyu: Amoy bulok na itlog (sewer gas). Nangyayari kapag natutuyo ang tubig sa P-trap dahil hindi ginagamit.",
+        "sm2": "Magbuhos ng isang balde ng tubig sa floor drains, guest sinks, o hindi ginagamit na tubs para ibalik ang water seal.",
+        "sm3": "Kung hindi nawala ang amoy, maaaring nakabara ang roof vent pipe, na nangangailangan ng espesyal na kagamitan."
+    },
+    "vi": {
+        "ai": "Xin chào! Tôi là Joe AI. Hãy nhấn nút VOICE bên dưới và mô tả chi tiết vấn đề hệ thống ống nước bạn đang gặp phải tại nhà hôm nay.",
+        "d1": "Các vấn đề phổ biến nhất: Lưỡi dao bị kẹt do thức ăn cứng/xơ, hoặc động cơ quá nóng (tự động ngắt).",
+        "d2": "Nếu thiết bị kêu vo vo nhưng không quay, cắm cờ lê Allen 1/4\" vào lỗ lục giác dưới đáy và xoay để nới lỏng lưỡi dao.",
+        "d3": "Nếu không có âm thanh, nhấn nút RESET màu đỏ ở dưới. Luôn dùng nước lạnh khi xay để làm đông mỡ.",
+        "h1": "Các vấn đề phổ biến nhất: Cặp nhiệt điện hỏng, đèn hoa tiêu tắt, hoặc cặn bám gây ra tiếng 'lốp bốp' và hiệu suất thấp.",
+        "h2": "CẢNH BÁO: Các quy định về khí thải (BAAQMD / Title 24) tại California sẽ cấm các máy nước nóng khí NOx truyền thống vào năm 2027.",
+        "h3": "Chuyển sang Máy Nước Nóng Bơm Nhiệt Lai là cần thiết để không phát thải và đủ điều kiện nhận trợ cấp của tiểu bang.",
+        "t1": "Các vấn đề phổ biến nhất: Bồn cầu liên tục chảy nước (rò rỉ ảo) do van cao su bị clo làm thoái hóa hoặc van cấp bị hỏng.",
+        "t2": "Bồn cầu rò rỉ có thể lãng phí tới 200 gallon nước sạch mỗi ngày, làm hóa đơn hàng tháng của bạn tăng vọt.",
+        "t3": "Tắt van trên tường. Thay thế van cao su trong bể hoặc lắp một bộ phụ tùng thay thế hoàn chỉnh.",
+        "s1": "Các vấn đề phổ biến nhất: Nghẹt P-Trap do tích tụ tóc, xà phòng, hoặc mỡ nấu ăn bị đông đặc.",
+        "s2": "Đặt một cái xô bên dưới. Xoay tay để mở các đai ốc trên ống chữ U và trực tiếp làm sạch đường ống.",
+        "s3": "Tránh các hóa chất ăn mòn (Drano) làm hỏng PVC. Sử dụng lưới lọc và chất tẩy rửa sinh học hàng tháng.",
+        "sh1": "Các vấn đề phổ biến nhất: Áp lực yếu do vôi hóa (cặn) trong vòi phun, hoặc nhỏ giọt liên tục từ lõi gốm bị mòn.",
+        "sh2": "Xử lý cặn: Ngâm đầu vòi hoa sen trong giấm trắng 4 giờ bằng túi ni lông và dây chun.",
+        "sh3": "Xử lý nhỏ giọt: Cần khóa nước chính của nhà và thay thế lõi van bên trong (vd: Moen 1222).",
+        "v1": "Các vấn đề phổ biến nhất: Van cổng cũ (loại bánh xe) bị kẹt hoặc rò rỉ từ trục khi cố gắng đóng chúng trong trường hợp khẩn cấp.",
+        "v2": "Nếu có rò rỉ, khóa van chính ngoài lề đường (đồng hồ thành phố) bằng chìa khóa đồng hồ đặc biệt.",
+        "v3": "Chúng tôi khuyên nên thay van bánh xe cũ bằng van bi đồng (quay 1/4) để khóa nước nhanh và an toàn.",
+        "f1": "Các vấn đề phổ biến nhất: Nhỏ giọt liên tục từ vòi hoặc rò rỉ ở đế tay cầm do vòng đệm chữ O bị khô.",
+        "f2": "Tắt các chốt cấp nước dưới bồn rửa. Tháo tay cầm bằng cờ lê Allen và thay thế lõi bên trong.",
+        "f3": "Lắp đặt máy tạo bọt 1.2 GPM mới để giảm tiêu thụ nước và tuân thủ tiêu chuẩn CALGreen.",
+        "g1": "Các vấn đề phổ biến nhất: Mất điện ở máy xay rác hoặc máy nước nóng không bình. GFCI cắt điện nếu phát hiện hơi ẩm.",
+        "g2": "Tìm ổ cắm GFCI trên tường (thường gần nước). Đảm bảo nó hoàn toàn khô ráo.",
+        "g3": "Nhấn mạnh nút 'RESET' đỏ/đen. Nếu nó lập tức nhảy lại, có một đoạn mạch ngắn nguy hiểm.",
+        "sm1": "Các vấn đề phổ biến nhất: Mùi trứng thối (khí cống). Xảy ra khi nước trong P-trap bay hơi do không sử dụng.",
+        "sm2": "Đổ một xô nước xuống cống thoát sàn, bồn rửa khách, hoặc bồn tắm không dùng để khôi phục nút nước.",
+        "sm3": "Nếu mùi vẫn còn, ống thông hơi trên mái có thể bị tắc, cần thiết bị chuyên dụng."
+    }
+};
+        function getIssuesData() {
+            const lang = localStorage.getItem('morales_lang') || 'es';
+            const t = diyTrans[lang] || diyTrans['es'];
+            return {
+                custom: {
+                    target: "TARGET: AI SENSOR ANALYSIS",
+                    bg: "url('../assets/comic_ai.webp')",
+                    panels: [{ cap: "Joe AI:", img: "../assets/joe_avatar.webp", text: t.ai }]
+                },
+                disposal: {
+                    target: "KNOWLEDGE BASE: GARBAGE DISPOSAL",
+                    bg: "url('../assets/diy_disposal.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/comic_wrench.png", text: t.d1 },
+                        { cap: "HOW-TO / CÓMO:", img: "../assets/disp_step2.png", text: t.d2 },
+                        { cap: "PREVENTION:", img: "../assets/disp_step1.png", text: t.d3 }
+                    ]
+                },
+                heater: {
+                    target: "KNOWLEDGE BASE: WATER HEATERS",
+                    bg: "url('../assets/diy_heater.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/comic_heaters.webp", text: t.h1 },
+                        { cap: "WARNING / AVISO:", img: "../assets/comic_warning.png", text: t.h2 },
+                        { cap: "SOLUTION:", img: "../assets/comic_best.png", text: t.h3 }
+                    ]
+                },
+                toilet: {
+                    target: "KNOWLEDGE BASE: TOILET SYSTEMS",
+                    bg: "url('../assets/diy_toilet.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/comic_eco.webp", text: t.t1 },
+                        { cap: "IMPACT:", img: "../assets/comic_good.png", text: t.t2 },
+                        { cap: "HOW-TO / CÓMO:", img: "../assets/comic_best_v2.png", text: t.t3 }
+                    ]
+                },
+                sink: {
+                    target: "KNOWLEDGE BASE: SINK DRAINAGE",
+                    bg: "url('../assets/diy_sink.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/comic_catalog.webp", text: t.s1 },
+                        { cap: "HOW-TO / CÓMO:", img: "../assets/comic_wrench.png", text: t.s2 },
+                        { cap: "PREVENTION:", img: "../assets/comic_good_v2.png", text: t.s3 }
+                    ]
+                },
+                shower: {
+                    target: "KNOWLEDGE BASE: SHOWER FIXTURES",
+                    bg: "url('../assets/diy_shower.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/comic_treatment.webp", text: t.sh1 },
+                        { cap: "HOW-TO / CÓMO:", img: "../assets/comic_eco.webp", text: t.sh2 },
+                        { cap: "ADVANCED:", img: "../assets/comic_shield.webp", text: t.sh3 }
+                    ]
+                },
+                valve: {
+                    target: "KNOWLEDGE BASE: SHUT-OFF VALVES",
+                    bg: "url('../assets/diy_valve.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/comic_warning.png", text: t.v1 },
+                        { cap: "HOW-TO / CÓMO:", img: "../assets/comic_expansion.webp", text: t.v2 },
+                        { cap: "UPGRADE:", img: "../assets/comic_terms.webp", text: t.v3 }
+                    ]
+                },
+                faucet: {
+                    target: "KNOWLEDGE BASE: FAUCETS",
+                    bg: "url('../assets/diy_faucet.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/comic_copper.webp", text: t.f1 },
+                        { cap: "HOW-TO / CÓMO:", img: "../assets/comic_wrench.png", text: t.f2 },
+                        { cap: "EFFICIENCY:", img: "../assets/comic_good.png", text: t.f3 }
+                    ]
+                },
+                gfi: {
+                    target: "KNOWLEDGE BASE: ELECTRICAL GFI",
+                    bg: "url('../assets/diy_gfi.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/comic_shield.webp", text: t.g1 },
+                        { cap: "HOW-TO / CÓMO:", img: "../assets/comic_warning.png", text: t.g2 },
+                        { cap: "PREVENTION:", img: "../assets/comic_best.png", text: t.g3 }
+                    ]
+                },
+                smell: {
+                    target: "KNOWLEDGE BASE: SEWER GAS ODOR",
+                    bg: "url('../assets/diy_smell.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/comic_septic.webp", text: t.sm1 },
+                        { cap: "HOW-TO / CÓMO:", img: "../assets/comic_treatment.webp", text: t.sm2 },
+                        { cap: "PREVENTION:", img: "../assets/comic_eco.webp", text: t.sm3 }
+                    ]
+                },
+
+                tankless_flush: {
+                    target: "KNOWLEDGE BASE: TANKLESS FLUSH",
+                    bg: "url('../assets/service_tankless.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/wh_comic.png", text: t.tf1 },
+                        { cap: "HOW-TO:", img: "../assets/pb_svc_2.png", text: t.tf2 },
+                        { cap: "SOLUTION:", img: "../assets/plan_best.png", text: t.tf3 }
+                    ]
+                },
+                caulk: {
+                    target: "KNOWLEDGE BASE: TUB CAULKING",
+                    bg: "url('../assets/pb_svc_10.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/pb_svc_3.png", text: t.ck1 },
+                        { cap: "HOW-TO:", img: "../assets/plan_good.png", text: t.ck2 },
+                        { cap: "SOLUTION:", img: "../assets/pb_svc_4.png", text: t.ck3 }
+                    ]
+                },
+                aerator: {
+                    target: "KNOWLEDGE BASE: FAUCET AERATOR",
+                    bg: "url('../assets/pb_svc_11.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/pb_svc_5.png", text: t.ae1 },
+                        { cap: "HOW-TO:", img: "../assets/plan_better.png", text: t.ae2 },
+                        { cap: "SOLUTION:", img: "../assets/pb_svc_6.png", text: t.ae3 }
+                    ]
+                },
+                washer_hose: {
+                    target: "KNOWLEDGE BASE: WASHER HOSES",
+                    bg: "url('../assets/pb_svc_12.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/pb_svc_7.png", text: t.wh1 },
+                        { cap: "HOW-TO:", img: "../assets/pb_svc_8.png", text: t.wh2 },
+                        { cap: "SOLUTION:", img: "../assets/pb_svc_9.png", text: t.wh3 }
+                    ]
+                },
+                dishwasher: {
+                    target: "KNOWLEDGE BASE: DISHWASHER DRAIN",
+                    bg: "url('../assets/pb_svc_13.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/valves_comic.png", text: t.dw1 },
+                        { cap: "HOW-TO:", img: "../assets/pb_svc_1.png", text: t.dw2 },
+                        { cap: "SOLUTION:", img: "../assets/pb_svc_15.png", text: t.dw3 }
+                    ]
+                },
+                showerhead: {
+                    target: "KNOWLEDGE BASE: SHOWERHEAD",
+                    bg: "url('../assets/pb_svc_14.png')",
+                    panels: [
+                        { cap: "INFO:", img: "../assets/inspect_comic.png", text: t.shw1 },
+                        { cap: "HOW-TO:", img: "../assets/training_comic.png", text: t.shw2 },
+                        { cap: "SOLUTION:", img: "../assets/termo_comic.png", text: t.shw3 }
+                    ]
+                }
+            };
+        }
+
+        window.currentIssueKey = 'disposal'; // global for XRay toggle
+
+        const issuesLinks = {
+            disposal: [
+                { text: "YouTube: Unjamming a disposal with an Allen wrench", url: "https://www.youtube.com/results?search_query=how+to+unjam+garbage+disposal+allen+wrench" },
+                { text: "The Home Depot: Garbage Disposal Repair", url: "https://www.youtube.com/results?search_query=home+depot+garbage+disposal+repair" }
+            ],
+            heater: [
+                { text: "YouTube: How to light a gas water heater pilot", url: "https://www.youtube.com/results?search_query=how+to+light+gas+water+heater+pilot" },
+                { text: "This Old House: Water Heater Pilot Lighting", url: "https://www.youtube.com/results?search_query=this+old+house+water+heater+pilot" }
+            ],
+            toilet: [
+                { text: "YouTube: Replace a running toilet flapper", url: "https://www.youtube.com/results?search_query=how+to+replace+running+toilet+flapper" },
+                { text: "Home Depot: How to fix a running toilet", url: "https://www.youtube.com/results?search_query=home+depot+fix+running+toilet" }
+            ],
+            sink: [
+                { text: "YouTube: Clean a sink P-Trap", url: "https://www.youtube.com/results?search_query=how+to+clean+sink+p-trap" }
+            ],
+            shower: [
+                { text: "YouTube: Descale a showerhead with vinegar", url: "https://www.youtube.com/results?search_query=how+to+descale+showerhead+vinegar" }
+            ],
+            valve: [
+                { text: "YouTube: Locate and shut off main water valve", url: "https://www.youtube.com/results?search_query=how+to+find+shut+off+main+water+valve" }
+            ],
+            faucet: [
+                { text: "YouTube: Replace a bathroom faucet cartridge", url: "https://www.youtube.com/results?search_query=how+to+replace+bathroom+faucet+cartridge" }
+            ],
+            gfi: [
+                { text: "YouTube: Reset a tripped GFCI outlet", url: "https://www.youtube.com/results?search_query=how+to+reset+tripped+gfci+outlet" }
+            ],
+            smell: [
+                { text: "YouTube: Fix sewer gas smell from floor drain", url: "https://www.youtube.com/results?search_query=how+to+fix+sewer+gas+smell+floor+drain" }
+            ],
+
+            tankless_flush: [
+                { text: "YouTube: How to flush a tankless water heater", url: "https://www.youtube.com/results?search_query=how+to+flush+tankless+water+heater" }
+            ],
+            caulk: [
+                { text: "YouTube: How to caulk a bathtub", url: "https://www.youtube.com/results?search_query=how+to+caulk+a+bathtub" }
+            ],
+            aerator: [
+                { text: "YouTube: Clean a faucet aerator", url: "https://www.youtube.com/results?search_query=how+to+clean+faucet+aerator" }
+            ],
+            washer_hose: [
+                { text: "YouTube: Replace washing machine hoses", url: "https://www.youtube.com/results?search_query=replace+washing+machine+hoses" }
+            ],
+            dishwasher: [
+                { text: "YouTube: Unclog dishwasher air gap", url: "https://www.youtube.com/results?search_query=unclog+dishwasher+air+gap" }
+            ],
+            showerhead: [
+                { text: "YouTube: Replace a shower head", url: "https://www.youtube.com/results?search_query=replace+shower+head" }
+            ]
+
+        };
+
+        // Hardware Camera Initialization
+        async function initCamera() {
+            try {
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                    throw new Error("WebRTC not supported in this context (check if using file:// or missing HTTPS)");
+                }
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: { ideal: 'environment' } } // Prefer rear camera, fallback to front
+                });
+                const videoEl = document.getElementById('camera-feed');
+                videoEl.srcObject = stream;
+                
+                // Clear any fallback background if camera succeeds
+                document.getElementById('ar-view').style.backgroundImage = "none";
+            } catch (err) {
+                console.warn("Camera access denied or unavailable. Fallback to placeholder background.", err);
+                const data = getIssuesData()[window.currentIssueKey];
+                if(data) {
+                    document.getElementById('ar-view').style.backgroundImage = data.bg;
+                    document.getElementById('ar-view').style.backgroundSize = "cover";
+                    document.getElementById('ar-view').style.backgroundPosition = "center";
+                }
+                
+                // Show a small UI alert for the developer/user about why it failed
+                const overlay = document.querySelector('.ar-overlay');
+                overlay.innerHTML += `<div style="color:#ff3333; font-size:0.7rem; margin-top:5px; background:rgba(0,0,0,0.8); padding:5px; border-radius:4px;">CAMERA ERROR: ${err.message}<br>Note: Camera requires HTTPS or localhost server.</div>`;
+            }
+        }
+
+        window.onload = () => {
+            const params = new URLSearchParams(window.location.search);
+            const issueKey = params.get('issue') || 'disposal';
+            window.currentIssueKey = issueKey;
+            
+            // Check if tour should run (Only run for custom AR!)
+            if (issueKey === 'custom' && !localStorage.getItem('orionTourCompleted')) {
+                showTour();
+            }
+
+            if (issueKey === 'custom') {
+                // Init real camera for the custom diagnostic
+                initCamera();
+            } else {
+                // Static Knowledge Base View (No Camera/Diagnostics)
+                const camFeed = document.getElementById('camera-feed');
+                if (camFeed) camFeed.style.display = 'none';
+                
+                // Hide Voice, Report, Emergency controls panel
+                const lastPanelChild = document.querySelector('.joe-assistant-panel > div:last-child');
+                if (lastPanelChild) lastPanelChild.style.display = 'none';
+                
+                const statusText = document.getElementById('joe-status-text');
+                if (statusText) statusText.innerText = "STATUS: VIEWING KNOWLEDGE BASE";
+                
+                const arView = document.getElementById('ar-view');
+                const data = getIssuesData()[issueKey];
+                if (data && data.bg) {
+                    arView.style.backgroundImage = data.bg;
+                    arView.style.backgroundSize = "cover";
+                    arView.style.backgroundPosition = "center";
+                }
+            }
+            
+            const data = getIssuesData()[issueKey] || getIssuesData()['disposal'];
+            document.getElementById('ar-target-lbl').innerText = data.target;
+            
+            const chat = document.getElementById('joe-diy-chat');
+            chat.innerHTML = '';
+            
+            // Build Panels
+            data.panels.forEach((p, idx) => {
+                const delay = (idx * 0.4).toFixed(1);
+                chat.innerHTML += `
+                    <div class="comic-panel" style="animation-delay: ${delay}s;">
+                        <div class="caption">${p.cap}</div>
+                        <img src="${p.img}" alt="Step Image">
+                        <div class="dialogue">${p.text}</div>
+                    </div>
+                `;
+            });
+            
+            // Render Real-World Reference Links
+            const refLinksDiv = document.getElementById('reference-links');
+            const refLinksList = document.getElementById('ref-links-list');
+            const links = issuesLinks[issueKey];
+            
+            if (links && links.length > 0) {
+                refLinksDiv.style.display = 'block';
+                refLinksList.innerHTML = '';
+                links.forEach(link => {
+                    refLinksList.innerHTML += `
+                        <a href="${link.url}" target="_blank" class="ref-link-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; min-width: 16px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            <span>${link.text}</span>
+                        </a>
+                    `;
+                });
+            } else {
+                refLinksDiv.style.display = 'none';
+            }
+        };
+    </script>
+
+    <!-- Hidden Printable Report Area -->
+    <div id="printable-report-area" style="display: none;"></div>
+    <script>
+        // Ensure it only displays during printing
+        window.onbeforeprint = function() {
+            document.getElementById('printable-report-area').style.display = 'block';
+        };
+        window.onafterprint = function() {
+            document.getElementById('printable-report-area').style.display = 'none';
+        };
+    </script>
+</body>
+</html>

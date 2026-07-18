@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Peritaje | Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #d9480f; --bg-gray: #f4f6f8; --border: #dfe3e8; --text-main: #212b36; --text-muted: #637381; }
+        body { background-color: var(--bg-gray); color: var(--text-main); font-family: 'Roboto', sans-serif; margin: 0; padding: 0; display: flex; min-height: 100vh; }
+        .sidebar { width: 250px; background: #fff; border-right: 1px solid var(--border); padding: 2rem 1rem; box-shadow: 2px 0 5px rgba(0,0,0,0.02); }
+        .sidebar img { width: 100%; max-width: 150px; display: block; margin: 0 auto 2rem auto; }
+        .sidebar-menu { list-style: none; padding: 0; margin: 0; }
+        .sidebar-menu li { margin-bottom: 0.5rem; }
+        .sidebar-menu a { display: block; padding: 0.8rem 1rem; color: var(--text-main); text-decoration: none; border-radius: 4px; font-weight: 500; font-size: 0.9rem; transition: background 0.2s; }
+        .sidebar-menu a:hover, .sidebar-menu a.active { background: rgba(217, 72, 15, 0.1); color: var(--primary); }
+        .main-content { flex: 1; padding: 3rem; position: relative; }
+        h1 { font-size: 1.8rem; margin-top: 0; color: var(--text-main); }
+        .subtitle { color: var(--text-muted); margin-bottom: 2rem; }
+        .card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 2rem; max-width: 800px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; font-weight: 500; margin-bottom: 0.5rem; color: var(--text-main); }
+        select { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; font-size: 1rem; color: var(--text-main); background: #fff; }
+        select:focus { outline: none; border-color: var(--primary); }
+        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+        .btn { display: inline-block; text-align: center; padding: 1rem; border-radius: 4px; text-decoration: none; font-weight: 500; transition: all 0.2s; border: 1px solid transparent; }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary:hover { background: #b93d0c; }
+        .btn-outline { background: #fff; border-color: var(--border); color: var(--text-main); }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+        .lang-toggle { position: absolute; top: 2rem; right: 3rem; background: #fff; border: 1px solid var(--border); padding: 0.5rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .lang-toggle:hover { border-color: var(--primary); color: var(--primary); }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <img src="../assets/logo_portada.webp" alt="Morales Plumbing" onerror="this.src='https://via.placeholder.com/150x50?text=Morales+Plumbing'">
+        <ul class="sidebar-menu">
+            <li><a href="#" class="active" data-es="Generador de Informes" data-en="Report Generator">Generador de Informes</a></li>
+            <li><a href="#" data-es="Historial de Proyectos" data-en="Project History">Historial de Proyectos</a></li>
+            <li><a href="#" data-es="Ajustes de Plantillas" data-en="Template Settings">Ajustes de Plantillas</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <button class="lang-toggle" onclick="toggleLang()">🌐 EN / ES</button>
+
+        <h1 data-es="Centro de Documentación Pericial" data-en="Forensic Documentation Center">Centro de Documentación Pericial</h1>
+        <p class="subtitle" data-es="Herramienta corporativa para la generación de dictámenes técnicos y diagnósticos de campo." data-en="Corporate tool for generating technical reports and field diagnostics.">Herramienta corporativa para la generación de dictámenes técnicos y diagnósticos de campo.</p>
+
+        <div class="card">
+            <div class="form-group">
+                <label for="report-audience" data-es="Audiencia del Documento" data-en="Document Audience">Audiencia del Documento</label>
+                <select id="report-audience">
+                    <option value="insurance" data-es="Aseguradora / Ajustador (Seguros Comerciales)" data-en="Insurance / Adjuster (Commercial)">Aseguradora / Ajustador (Seguros Comerciales)</option>
+                    <option value="city" data-es="Ciudad de Santa Clara (Building Dept.)" data-en="City of Santa Clara (Building Dept.)">Ciudad de Santa Clara (Building Dept.)</option>
+                    <option value="both" data-es="Reporte Unificado (Aseguradora y Ciudad)" data-en="Unified Report (Insurance & City)">Reporte Unificado (Aseguradora y Ciudad)</option>
+                    <option value="internal" data-es="Solo Cliente (Uso Privado)" data-en="Client Only (Private Use)">Solo Cliente (Uso Privado)</option>
+                </select>
+            </div>
+
+            <div class="btn-grid">
+                <a href="diagnostico_campo.html" class="btn btn-outline" onclick="saveData()" data-es="Formulario de Diagnóstico (Campo)" data-en="Field Diagnostic Form">
+                    Formulario de Diagnóstico (Campo)
+                </a>
+                <a href="informe_forense.html" class="btn btn-primary" onclick="saveData()" data-es="Generar Informe Forense Oficial" data-en="Generate Official Forensic Report">
+                    Generar Informe Forense Oficial
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let currentLang = localStorage.getItem('mp_lang') || 'es';
+
+        function updateTexts() {
+            document.querySelectorAll('[data-es]').forEach(el => {
+                if (el.tagName === 'OPTION') {
+                    el.innerText = el.getAttribute('data-' + currentLang);
+                } else {
+                    el.innerText = el.getAttribute('data-' + currentLang);
+                }
+            });
+            document.documentElement.lang = currentLang;
+        }
+
+        function toggleLang() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            localStorage.setItem('mp_lang', currentLang);
+            updateTexts();
+        }
+
+        function saveData() {
+            const sel = document.getElementById('report-audience').value;
+            localStorage.setItem('mp_audience', sel);
+        }
+
+        // Init
+        updateTexts();
+        document.getElementById('report-audience').value = localStorage.getItem('mp_audience') || 'insurance';
+    </script>
+</body>
+</html>

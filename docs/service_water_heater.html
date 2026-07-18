@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Heater Services - Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        
+        .service-header {
+            text-align: center;
+            padding: 1.5rem 1rem 0.5rem; /* Drastically reduced vertical padding */
+            background: transparent; /* Removed the heavy block gradient */
+        }
+
+        .service-header h1 {
+            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+        .comic-panel {
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            margin-bottom: 4rem;
+        }
+        .comic-img-wrapper {
+            position: relative;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        .comic-img-wrapper img {
+            width: 100%;
+            border-radius: 8px;
+            border: 3px solid #000;
+        }
+        .comic-bubbles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .comic-bubble {
+            background: #fff;
+            border: 3px solid #000;
+            color: #000;
+            padding: 1rem;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+            font-size: 0.95rem;
+            font-weight: bold;
+            line-height: 1.4;
+            text-transform: uppercase;
+            box-shadow: 4px 4px 0 #000;
+            border-radius: 8px;
+            position: relative;
+        }
+        .comic-bubble::before {
+            content: '';
+            position: absolute;
+            top: -18px;
+            left: 20px;
+            border-width: 0 15px 18px 0;
+            border-style: solid;
+            border-color: transparent #000 transparent transparent;
+        }
+        .comic-bubble::after {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 23px;
+            border-width: 0 10px 14px 0;
+            border-style: solid;
+            border-color: transparent #fff transparent transparent;
+        }
+        .comic-narrator {
+            background: #ffeb3b;
+            border-radius: 0;
+        }
+        .comic-narrator::before, .comic-narrator::after {
+            display: none;
+        }
+        .nav-btn {
+            display: inline-block;
+            background: rgba(15, 23, 42, 0.8);
+            border: 2px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+        .nav-btn:hover {
+            background: var(--neon-cyan);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+    
+        
+            .cyber-nav .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+            .lang-selector button {
+                padding: 0.2rem 0.4rem;
+                font-size: 0.75rem;
+            }
+        }
+    
+    
+        
+
+    
+        
+        /* ── CYBER NAV HEADER ── */
+        .cyber-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(3, 7, 18, 0.95);
+            border-bottom: 2px solid var(--neon-cyan);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+        .cyber-nav .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-cyan);
+            font-weight: 900;
+        }
+        .cyber-nav .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .cyber-nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .cyber-nav .nav-links a:hover {
+            color: var(--neon-cyan);
+        }
+        .lang-selector {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .lang-selector button {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 4px;
+            padding: 0.3rem 0.6rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-selector button:hover, .lang-selector button.active {
+            border-color: var(--neon-cyan);
+            background: rgba(0,245,255,.1);
+            color: var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0,245,255,.2);
+        }
+
+
+    </style>
+</head>
+<body class="orion-theme">
+    <!-- 3D Animated Background -->
+    <div class="cyber-bg-container">
+        <div class="cyber-grid"></div>
+        <div class="cyber-particles"></div>
+    </div>
+    <style>
+        .cyber-bg-container {
+            position: sticky;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -2;
+            background: radial-gradient(circle at center, #0a0f1e 0%, #000 100%);
+            overflow: hidden;
+            perspective: 1000px;
+            pointer-events: none;
+        }
+        .cyber-grid {
+            position: absolute;
+            bottom: -50vh;
+            left: -50vw;
+            width: 200vw;
+            height: 200vh;
+            background-image: 
+                linear-gradient(rgba(0, 245, 255, 0.15) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(0, 245, 255, 0.15) 2px, transparent 2px);
+            background-size: 60px 60px;
+            transform: rotateX(70deg);
+            animation: gridMove 3s linear infinite;
+        }
+        .cyber-grid::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, transparent 50%, rgba(0,0,0,1) 100%);
+            pointer-events: none;
+        }
+        .cyber-particles {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 40px 60px, #fff, rgba(0,0,0,0)), 
+                radial-gradient(2px 2px at 150px 150px, rgba(255,255,255,0.8), rgba(0,0,0,0)), 
+                radial-gradient(2px 2px at 90px 40px, #00f5ff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: starMove 60s linear infinite;
+            opacity: 0.4;
+        }
+        @keyframes gridMove {
+            0% { transform: rotateX(70deg) translateY(0); }
+            100% { transform: rotateX(70deg) translateY(60px); }
+        }
+        @keyframes starMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-2000px); }
+        }
+        
+        /* ── CYBER NAV HEADER ── */
+        .cyber-nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #030712; 
+            border-bottom: 2px solid var(--neon-cyan);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+        .cyber-nav .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-cyan);
+            font-weight: 900;
+        }
+        .cyber-nav .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .cyber-nav .nav-links a {
+            color: #ffffff !important;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .cyber-nav .nav-links a:hover {
+            color: var(--neon-cyan);
+        }
+        .lang-selector {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .lang-selector button {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 4px;
+            padding: 0.3rem 0.6rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ffffff !important;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-selector button:hover, .lang-selector button.active {
+            border-color: var(--neon-cyan);
+            background: rgba(0,245,255,.1);
+            color: var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0,245,255,.2);
+        }
+    </style>
+    <nav class="cyber-nav">
+        <div class="logo">MORALES PLUMBING</div>
+        <div class="nav-links">
+            <a href="../index.html" data-i18n="nav_home">Inicio</a>
+            <a href="promocion_water_heaters.html" style="color: var(--neon-cyan);">Heat Pumps 2027</a>
+            <a href="pricebook.html" data-i18n="nav_services">Servicios</a>
+        </div>
+        <div class="lang-selector">
+            <button onclick="setLanguage('en')">EN</button>
+            <button onclick="setLanguage('es')">ES</button>
+            <button onclick="setLanguage('zh')">ZH</button>
+            <button onclick="setLanguage('tl')">TL</button>
+            <button onclick="setLanguage('vi')">VI</button>
+        </div>
+    </nav>
+
+    <header class="service-header" style="padding-top: 80px;">
+        <h1 data-i18n="swh_title" style="font-size: 1.8rem; margin-bottom: 0.2rem;">Water Heater Services</h1>
+        <h3 style="color: #cbd5e1; font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; margin-top:0; margin-bottom: 0.2rem;" data-i18n="swh_subtitle">Installation, Replacement & Upgrades</h3>
+        <p style="color: #94a3b8; max-width: 700px; margin: 0.5rem auto 1rem; font-size: 0.9rem; line-height: 1.3;" data-i18n="swh_intro">Explore the different types of water heating technology available for your home and discover our professional installation process.</p>
+    </header>
+
+    <main class="container" style="max-width: 1000px; margin: 0 auto; padding: 2rem;">
+        
+        <!-- Tankless Panel -->
+        <div class="comic-panel" style="border: 2px solid #38bdf8;">
+            <h3 style="color: #38bdf8; font-family: 'Orbitron', sans-serif; text-align: center; margin-bottom: 1.5rem;" data-i18n="swh_tankless_title">Tankless Water Heaters</h3>
+            <div class="comic-img-wrapper">
+                <img src="../assets/service_tankless.png" alt="Tankless Water Heater">
+            </div>
+            <div class="comic-narrative">
+                <ul class="comic-bubbles">
+                    <li class="comic-bubble comic-narrator" data-i18n="swh_tankless_comic_1">Endless hot water on demand.</li>
+                    <li class="comic-bubble" data-i18n="swh_tankless_comic_2">Wall-mounted, saving valuable space.</li>
+                    <li class="comic-bubble" data-i18n="swh_tankless_comic_3">Highly efficient, only heats when you need it.</li>
+                </ul>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="promo_tank_to_tankless.html" class="nav-btn" style="border-color: #38bdf8; color: #38bdf8;" data-i18n="nav_tt_upgrade">Tank to Tankless Upgrade</a>
+                <a href="promo_tankless_to_tankless.html" class="nav-btn" style="border-color: #38bdf8; color: #38bdf8;" data-i18n="nav_ttt_replace">Tankless to Tankless Replacement</a>
+            </div>
+        </div>
+
+        <!-- Gas Panel -->
+        <div class="comic-panel" style="border: 2px solid #ef4444;">
+            <h3 style="color: #ef4444; font-family: 'Orbitron', sans-serif; text-align: center; margin-bottom: 1.5rem;" data-i18n="swh_gas_title">Standard Gas Heaters</h3>
+            <div class="comic-img-wrapper">
+                <img src="../assets/service_gas.png" alt="Standard Gas Water Heater">
+            </div>
+            <div class="comic-narrative">
+                <ul class="comic-bubbles">
+                    <li class="comic-bubble comic-narrator" data-i18n="swh_gas_comic_1">Reliable and traditional tank storage.</li>
+                    <li class="comic-bubble" data-i18n="swh_gas_comic_2">Fast recovery times for heavy usage.</li>
+                    <li class="comic-bubble" data-i18n="swh_gas_comic_3">Note: Phasing out in 2027 under BAAQMD rules.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Heat Pump Panel -->
+        <div class="comic-panel" style="border: 2px solid #10b981;">
+            <h3 style="color: #10b981; font-family: 'Orbitron', sans-serif; text-align: center; margin-bottom: 1.5rem;" data-i18n="swh_hp_title">Hybrid Heat Pumps</h3>
+            <div class="comic-img-wrapper">
+                <img src="../assets/service_hp.png" alt="Hybrid Heat Pump Water Heater">
+            </div>
+            <div class="comic-narrative">
+                <ul class="comic-bubbles">
+                    <li class="comic-bubble comic-narrator" data-i18n="swh_hp_comic_1">The future of zero-emission water heating.</li>
+                    <li class="comic-bubble" data-i18n="swh_hp_comic_2">Extracts heat from the air, saving up to 70% energy.</li>
+                    <li class="comic-bubble" data-i18n="swh_hp_comic_3">Qualifies for maximum government rebates.</li>
+                </ul>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="promocion_water_heaters.html" class="nav-btn" style="border-color: #10b981; color: #10b981;" data-i18n="nav_hp_packages">Heat Pump 2027 Mandate Packages</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="promocion_water_heaters.html" class="nav-btn">⬅ Volver a Promoción Heat Pump</a>
+        </div>
+    </main>
+
+    <footer class="cyber-footer">
+        <p data-i18n="footer_print_watermark">© MORALES PLUMBING 2026</p>
+    </footer>
+
+    <script src="../app.js_swh_1"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('morales_lang') || 'en';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>
