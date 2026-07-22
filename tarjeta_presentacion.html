@@ -445,6 +445,12 @@
             <a href="#" class="social-icon tk" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
         </div>
 
+        <!-- QR Code -->
+        <div class="qr-section" style="text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p style="font-size: 0.8rem; color: #a0aec0; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; text-transform: uppercase;" id="t_scan">ESCANEA PARA COMPARTIR</p>
+            <img src="assets/qr_tarjeta_digital.png" alt="QR Code" style="width: 100px; height: 100px; border-radius: 12px; border: 2px solid var(--neon-cyan); padding: 5px; background: #fff; box-shadow: 0 0 15px rgba(0,245,255,0.3);">
+        </div>
+
         <!-- Graffiti Slogan -->
         <div class="graffiti-footer">
             <div class="graffiti-text" id="t_slogan">Un Plomero En Tu Bolsillo</div>
@@ -460,7 +466,8 @@
                 email: "ENVIAR CORREO",
                 yt_joined: "Se unió el 22 jun 2026",
                 phone_sub: "Línea Directa / 24 hrs",
-                loc_sub: "Servicio en Bay Area"
+                loc_sub: "Servicio en Bay Area",
+                scan: "ESCANEA PARA COMPARTIR"
             },
             en: {
                 slogan: "A Plumber In Your Pocket",
@@ -469,7 +476,8 @@
                 email: "SEND EMAIL",
                 yt_joined: "Joined Jun 22, 2026",
                 phone_sub: "Direct Line / 24 hrs",
-                loc_sub: "Serving Bay Area"
+                loc_sub: "Serving Bay Area",
+                scan: "SCAN TO SHARE"
             },
             zh: {
                 slogan: "你口袋里的水管工",
@@ -478,7 +486,8 @@
                 email: "发送邮件",
                 yt_joined: "于2026年6月22日加入",
                 phone_sub: "直拨电话 / 24小时",
-                loc_sub: "湾区服务"
+                loc_sub: "湾区服务",
+                scan: "扫码分享"
             },
             tl: {
                 slogan: "Tubero Sa Iyong Bulsa",
@@ -487,7 +496,8 @@
                 email: "MAG-EMAIL",
                 yt_joined: "Sumali noong Hunyo 22, 2026",
                 phone_sub: "Direktang Linya / 24 oras",
-                loc_sub: "Serbisyo sa Bay Area"
+                loc_sub: "Serbisyo sa Bay Area",
+                scan: "I-SCAN UPANG IBAHAGI"
             },
             vi: {
                 slogan: "Thợ Sửa Ống Nước Trong Túi Bạn",
@@ -496,7 +506,8 @@
                 email: "GỬI EMAIL",
                 yt_joined: "Tham gia 22 thg 6, 2026",
                 phone_sub: "Đường Dây Nóng / 24 giờ",
-                loc_sub: "Phục Vụ Khu Vực Vịnh"
+                loc_sub: "Phục Vụ Khu Vực Vịnh",
+                scan: "QUÉT ĐỂ CHIA SẺ"
             }
         };
 
@@ -511,6 +522,7 @@
             document.getElementById('t_yt_joined').innerText = translations[lang].yt_joined;
             document.getElementById('t_phone_sub').innerText = translations[lang].phone_sub;
             document.getElementById('t_loc_sub').innerText = translations[lang].loc_sub;
+            document.getElementById('t_scan').innerText = translations[lang].scan;
         }
     </script>
 </body>
