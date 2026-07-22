@@ -26,6 +26,12 @@
 
     <!-- Sitemap discovery for search engines -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
@@ -1061,21 +1067,25 @@
         </div>
     </div>
 
-    <!-- Public Contact Section -->
-    <section id="contact-us" class="public-contact-section" style="padding-bottom: 2rem;">
-        <div class="container">
-            <h2 class="section-title text-center" data-i18n="contact_sec_title">Get in Touch</h2>
-            <p class="section-desc text-center" data-i18n="contact_sec_desc">Do you have an emergency or need a quick quote? Call us directly or contact us via WhatsApp. You can also leave your message.</p>
-            <div class="contact-form-container" style="max-width: 600px; margin: 0 auto;">
-                <h3 data-i18n="contact_form_title" style="text-align: center; margin-bottom: 1.5rem;">Send a Message</h3>
-                <form id="public-contact-form" onsubmit="submitPublicContact(event)">
-                    <input type="text" id="pc-name" name="name" required placeholder="Name" data-i18n="contact_form_name">
-                    <input type="tel" id="pc-phone" name="phone" required placeholder="Phone" data-i18n="contact_form_phone">
-                    <input type="email" id="pc-email" name="email" placeholder="Email" data-i18n="contact_form_email">
-                    <textarea id="pc-message" name="message" rows="4" required placeholder="Message" data-i18n="contact_form_msg"></textarea>
-                    <button type="submit" class="btn btn-primary" data-i18n="contact_form_submit" style="width: 100%;">Send Message</button>
-                </form>
+        <!-- Public Contact Section (Subtle & Elegant) -->
+    <section id="contact-us" class="public-contact-section" style="padding: 2rem 0; background: transparent; position: relative; z-index: 5;">
+        <div class="container" style="max-width: 700px; margin: 0 auto; background: rgba(10, 15, 30, 0.45); border: 1px solid rgba(0, 245, 255, 0.15); border-radius: 12px; padding: 2rem; backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <h2 style="font-family: 'Orbitron', sans-serif; font-size: 1.4rem; color: var(--neon-cyan); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;" data-i18n="contact_sec_title">Get in Touch</h2>
+                <p style="color: #a0aec0; font-size: 0.9rem; margin-bottom: 0;" data-i18n="contact_sec_desc">Do you have an emergency or need a quick quote? Call us directly or contact us via WhatsApp. You can also leave your message.</p>
             </div>
+            
+            <form id="public-contact-form" onsubmit="submitPublicContact(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <input type="text" id="pc-name" name="name" required placeholder="Name" data-i18n="contact_form_name" style="flex: 1; min-width: 200px; background: rgba(0,0,0,0.5); border: 1px solid rgba(0,245,255,0.2); border-radius: 6px; padding: 12px; color: #fff; font-family: 'Inter', sans-serif;">
+                    <input type="tel" id="pc-phone" name="phone" required placeholder="Phone" data-i18n="contact_form_phone" style="flex: 1; min-width: 200px; background: rgba(0,0,0,0.5); border: 1px solid rgba(0,245,255,0.2); border-radius: 6px; padding: 12px; color: #fff; font-family: 'Inter', sans-serif;">
+                </div>
+                <input type="email" id="pc-email" name="email" placeholder="Email" data-i18n="contact_form_email" style="background: rgba(0,0,0,0.5); border: 1px solid rgba(0,245,255,0.2); border-radius: 6px; padding: 12px; color: #fff; font-family: 'Inter', sans-serif;">
+                <textarea id="pc-message" name="message" rows="3" required placeholder="Message" data-i18n="contact_form_msg" style="background: rgba(0,0,0,0.5); border: 1px solid rgba(0,245,255,0.2); border-radius: 6px; padding: 12px; color: #fff; font-family: 'Inter', sans-serif; resize: vertical;"></textarea>
+                <div style="display: flex; justify-content: center; margin-top: 0.5rem;">
+                    <button type="submit" class="btn btn-primary" data-i18n="contact_form_submit" style="padding: 10px 35px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; border-radius: 6px;">Send Message</button>
+                </div>
+            </form>
         </div>
     </section>
 
@@ -1086,10 +1096,39 @@
             <span><span class="security-dot">●</span> <span data-i18n="footer_cyber">AI-Powered Platform</span></span>
         </div>
 
-        <div class="footer-branding-block">
+                <div class="footer-branding-block">
             <div class="footer-slogan">
                 <span data-i18n="slogan_text">Defining the Future of Flow. Innovation for Life. —</span>
                 <span class="graffiti-text" style="font-size: 1.8rem;">EcoAIBiz</span>
+            </div>
+            
+            <!-- Company Info & Social Links (LOCKED) -->
+            <div class="company-fixed-info" style="margin-top: 1.5rem; text-align: center; color: #a0aec0; font-family: 'Inter', sans-serif;">
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 1rem; font-size: 0.9rem;">
+                    <span><strong data-i18n="contact_loc" style="color: var(--neon-cyan);">Location:</strong> San Jose, California</span>
+                    <span><strong data-i18n="contact_email" style="color: var(--neon-cyan);">Email:</strong> <a href="mailto:moralesplumbing026@gmail.com" style="color: #fff; text-decoration: none;">moralesplumbing026@gmail.com</a></span>
+                    <span><strong data-i18n="contact_phone" style="color: var(--neon-cyan);">Phone:</strong> <a href="tel:+16692342444" style="color: #fff; text-decoration: none;">(669) 234-2444</a></span>
+                    <span><strong data-i18n="contact_lic" style="color: var(--neon-cyan);">License:</strong> C-36 #1156542</span>
+                </div>
+                
+                <div class="social-links" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="#" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        Instagram
+                    </a>
+                    <a href="#" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Facebook
+                    </a>
+                    <a href="#" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://www.youtube.com/@MoralesPlumbing" target="_blank" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        YouTube
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -1116,6 +1155,8 @@
             <a href="#about" data-i18n="nav_about">MISIÓN</a>
             <a href="docs/pricebook.html" data-i18n="nav_pricebook">PRICE BOOK</a>
             <a href="docs/legal.html" data-i18n="nav_legal">LEGAL</a>
+            <a href="#" onclick="openPrivacyModal(); return false;" style="color: #00f5ff; text-decoration: none;" aria-label="Política de Privacidad">PRIVACY POLICY</a>
+            <a href="#" onclick="openTermsModal(); return false;" style="color: #00f5ff; text-decoration: none;" aria-label="Términos de Servicio">TERMS OF SERVICE</a>
         </nav>
 
         <div class="footer-copyright-main" data-i18n="footer_rights_long">
@@ -1125,7 +1166,151 @@
         <div class="footer-copyright-branded">
             <span class="year">Ⓒ 2026</span> <span data-i18n="footer_rights_branded">MORALES PLUMBING · Todos los derechos reservados · Marca Registrada</span>
         </div>
+
+        <!-- CCPA/CalOPPA Legal Notice -->
+        <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.07); text-align: center; font-size: 0.73rem; color: #4a5568; line-height: 1.6;">
+            Morales Plumbing collects contact information solely to process service requests. We do not sell personal data.
+            California residents have rights under <strong style="color:#718096;">CCPA</strong>.
+            Data stored locally on your device. See our <a href="#" onclick="openPrivacyModal(); return false;" style="color:#00f5ff; text-decoration:underline;">Privacy Policy</a> and <a href="#" onclick="openTermsModal(); return false;" style="color:#00f5ff; text-decoration:underline;">Terms of Service</a>.
+            Lic. CSLB C-36 #1156542 | San Jose, CA | (669) 234-2444
+        </div>
     </footer>
+
+    <!-- ═══ COOKIE CONSENT BANNER (CCPA) ═══ -->
+    <div id="cookie-banner" role="region" aria-label="Cookie consent" style="display:none; position:fixed; bottom:0; left:0; right:0; background:rgba(10,25,47,0.97); border-top:2px solid #D4AF37; padding:16px 24px; z-index:99999; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; font-family:'Inter',sans-serif; font-size:0.82rem; color:#a0aec0;">
+        <span style="flex:1; min-width:200px;">🍪 This site uses local storage to save your preferences. We do not use third-party tracking cookies. <a href="#" onclick="openPrivacyModal(); return false;" style="color:#00f5ff;">Privacy Policy</a></span>
+        <div style="display:flex; gap:10px; flex-shrink:0;">
+            <button onclick="acceptCookies()" style="background:#D4AF37; color:#0A192F; border:none; padding:8px 18px; border-radius:5px; font-weight:700; cursor:pointer; font-size:0.82rem;">Accept</button>
+            <button onclick="declineCookies()" style="background:transparent; color:#a0aec0; border:1px solid rgba(255,255,255,0.2); padding:8px 14px; border-radius:5px; cursor:pointer; font-size:0.82rem;">Decline</button>
+        </div>
+    </div>
+
+    <!-- ═══ PRIVACY POLICY MODAL (CCPA / CalOPPA Compliant) ═══ -->
+    <div id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:100000; overflow-y:auto; padding:20px;">
+        <div style="max-width:780px; margin:40px auto; background:#0A192F; border:1px solid rgba(212,175,55,0.4); border-radius:12px; padding:40px; font-family:'Inter',sans-serif; color:#a0aec0; font-size:0.88rem; line-height:1.7; position:relative;">
+            <button onclick="closePrivacyModal()" aria-label="Close" style="position:absolute; top:16px; right:20px; background:transparent; border:none; color:#718096; font-size:1.5rem; cursor:pointer;">✕</button>
+            <h2 id="privacy-modal-title" style="font-family:'Orbitron',sans-serif; color:#D4AF37; font-size:1.2rem; margin-bottom:6px;">🔒 Privacy Policy</h2>
+            <p style="color:#718096; font-size:0.78rem; margin-bottom:24px;">Effective Date: January 1, 2026 · Morales Plumbing · San Jose, CA · Lic. C-36 #1156542</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">1. Information We Collect</h3>
+            <p>We collect information you voluntarily provide when using our website, including: name, phone number, email address, service requests, and appointment preferences. This information is stored <strong style="color:#e2e8f0;">locally on your device</strong> (Web LocalStorage) and is not transmitted to external servers unless you explicitly submit a booking or contact form.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">2. How We Use Your Information</h3>
+            <p>Information collected is used solely to: (a) process and confirm service appointments; (b) respond to your inquiries; (c) deliver the services you request; and (d) improve our website. We do <strong style="color:#e2e8f0;">not sell, share, or rent</strong> your personal information to any third party.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">3. California Privacy Rights (CCPA / CalOPPA)</h3>
+            <p>If you are a California resident, you have the right to: (a) know what personal information we collect; (b) request deletion of your personal information; (c) opt out of the sale of personal information (we do not sell data); and (d) receive non-discriminatory service regardless of privacy choices. To exercise these rights, contact us at <a href="mailto:moralesplumbing026@gmail.com" style="color:#00f5ff;">moralesplumbing026@gmail.com</a> or call <a href="tel:+16692342444" style="color:#00f5ff;">(669) 234-2444</a>.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">4. Cookies &amp; Local Storage</h3>
+            <p>Our website uses <strong style="color:#e2e8f0;">browser Local Storage</strong> (not cookies) to save your language preference and portal settings. We use Google Analytics (GA4) for anonymous traffic analysis. Google Analytics may set cookies. You may opt out via your browser settings or <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style="color:#00f5ff;">Google's opt-out tool</a>.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">5. Third-Party Services</h3>
+            <p>We use the following third-party services: Google Analytics (analytics), Google Fonts (typography), Firebase (optional appointment sync), and Netlify (website hosting). Each has their own privacy policy. AI chat features (Joe) are powered by OpenAI or Google Gemini via secure server-side functions.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">6. Data Security</h3>
+            <p>We implement industry-standard security measures including HTTPS (TLS), HTTP security headers (HSTS, X-Frame-Options, CSP), and server-side key management. API keys are never exposed in client-side code.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">7. Children's Privacy</h3>
+            <p>Our services are not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us information, contact us immediately.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">8. Contact</h3>
+            <p>For privacy questions: <a href="mailto:moralesplumbing026@gmail.com" style="color:#00f5ff;">moralesplumbing026@gmail.com</a> | <a href="tel:+16692342444" style="color:#00f5ff;">(669) 234-2444</a> | Morales Plumbing, San Jose, CA</p>
+
+            <div style="margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); text-align:center;">
+                <button onclick="closePrivacyModal()" style="background:#D4AF37; color:#0A192F; border:none; padding:10px 30px; border-radius:6px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ TERMS OF SERVICE MODAL ═══ -->
+    <div id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-modal-title" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:100000; overflow-y:auto; padding:20px;">
+        <div style="max-width:780px; margin:40px auto; background:#0A192F; border:1px solid rgba(212,175,55,0.4); border-radius:12px; padding:40px; font-family:'Inter',sans-serif; color:#a0aec0; font-size:0.88rem; line-height:1.7; position:relative;">
+            <button onclick="closeTermsModal()" aria-label="Close" style="position:absolute; top:16px; right:20px; background:transparent; border:none; color:#718096; font-size:1.5rem; cursor:pointer;">✕</button>
+            <h2 id="terms-modal-title" style="font-family:'Orbitron',sans-serif; color:#D4AF37; font-size:1.2rem; margin-bottom:6px;">📋 Terms of Service</h2>
+            <p style="color:#718096; font-size:0.78rem; margin-bottom:24px;">Effective Date: January 1, 2026 · Morales Plumbing · San Jose, CA · Lic. C-36 #1156542</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">1. Acceptance of Terms</h3>
+            <p>By accessing or using the Morales Plumbing website and ORION ecosystem, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree, please do not use this site.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">2. Services</h3>
+            <p>Morales Plumbing provides licensed plumbing services in San Jose, California (CSLB License C-36 #1156542). All service descriptions, pricing, and availability are subject to change. Price Book v6.0 PRO estimates are non-binding until a written contract is executed.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">3. AI Assistant (Joe)</h3>
+            <p>The Joe AI assistant is provided as a convenience tool. Responses are generated by AI and may contain errors. All service quotes generated by Joe are <strong style="color:#e2e8f0;">non-binding estimates</strong>. Final pricing requires on-site assessment by a licensed technician.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">4. Membership Plans</h3>
+            <p>Membership plans (Free, Standard $19.99/mo, Premium $49.99/mo) are month-to-month. Cancellation may be requested at any time. Morales Plumbing reserves the right to modify plan benefits with 30-day notice. Membership fees are non-refundable for the current billing period.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">5. Intellectual Property</h3>
+            <p>All content on this website — including the ORION system, Joe AI, Price Book v6.0 PRO, service graphics, podcast content, and hydraulic diagrams — is the exclusive intellectual property of Morales Plumbing. Reproduction without written consent is prohibited.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">6. Limitation of Liability</h3>
+            <p>Morales Plumbing shall not be liable for any indirect, incidental, or consequential damages arising from the use of this website or its services, except where required by California law. Our total liability shall not exceed the amount paid for the specific service in question.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">7. Governing Law</h3>
+            <p>These Terms are governed by the laws of the State of California. Disputes shall be resolved in Santa Clara County courts.</p>
+
+            <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">8. Contact</h3>
+            <p><a href="mailto:moralesplumbing026@gmail.com" style="color:#00f5ff;">moralesplumbing026@gmail.com</a> | <a href="tel:+16692342444" style="color:#00f5ff;">(669) 234-2444</a></p>
+
+            <div style="margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); text-align:center;">
+                <button onclick="closeTermsModal()" style="background:#D4AF37; color:#0A192F; border:none; padding:10px 30px; border-radius:6px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ PRIVACY / TERMS / COOKIE SCRIPTS ═══ -->
+    <script>
+    // Cookie consent
+    (function() {
+        if (!localStorage.getItem('mp_cookie_consent')) {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) banner.style.display = 'flex';
+        }
+    })();
+    function acceptCookies() {
+        localStorage.setItem('mp_cookie_consent', 'accepted');
+        const b = document.getElementById('cookie-banner'); if(b) b.style.display = 'none';
+    }
+    function declineCookies() {
+        localStorage.setItem('mp_cookie_consent', 'declined');
+        const b = document.getElementById('cookie-banner'); if(b) b.style.display = 'none';
+    }
+    // Privacy modal
+    function openPrivacyModal() {
+        document.getElementById('privacy-modal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function closePrivacyModal() {
+        document.getElementById('privacy-modal').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    // Terms modal
+    function openTermsModal() {
+        document.getElementById('terms-modal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function closeTermsModal() {
+        document.getElementById('terms-modal').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    // Close modals on backdrop click
+    ['privacy-modal','terms-modal'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('click', function(e) {
+            if (e.target === el) {
+                el.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    // Close modals on ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closePrivacyModal(); closeTermsModal();
+        }
+    });
+    </script>
 
     <!-- ── MP CLIENT PORTAL MODAL ── -->
     <div id="mp-portal-modal" class="portal-modal">

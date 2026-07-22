@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background -->
+  <rect width="64" height="64" rx="10" fill="#0A192F"/>
+  <!-- Gold border bottom accent -->
+  <rect x="0" y="58" width="64" height="6" rx="0" fill="#D4AF37"/>
+  <rect x="0" y="54" width="64" height="4" fill="#D4AF37" opacity="0.6"/>
+  <!-- Wrench icon (simplified plumbing symbol) -->
+  <circle cx="32" cy="28" r="14" fill="none" stroke="#D4AF37" stroke-width="2.5"/>
+  <!-- MP letters -->
+  <text x="32" y="34" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="16" fill="#D4AF37" letter-spacing="-1">MP</text>
+  <!-- Small AI dot indicator -->
+  <circle cx="50" cy="12" r="4" fill="#00f5ff" opacity="0.9"/>
+</svg>

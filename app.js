@@ -9067,6 +9067,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial Navigation based on hash
     const initialSection = window.location.hash.substring(1) || 'home';
     navigate(initialSection, false);
+
+    // CCPA Banner Check
+    if (!localStorage.getItem('ccpa_accepted')) {
+        const banner = document.getElementById('ccpa-cookie-banner');
+        if (banner) {
+            banner.style.display = 'flex';
+        }
+    }
 });
 
 
@@ -10437,3 +10445,13 @@ function submitPublicContact(e) {
         document.getElementById('publicContactForm').reset();
     });
 }
+
+
+// 🔒 CCPA COOKIE CONSENT 🔒
+window.acceptCCPA = function() {
+    localStorage.setItem('ccpa_accepted', 'true');
+    const banner = document.getElementById('ccpa-cookie-banner');
+    if (banner) {
+        banner.style.display = 'none';
+    }
+};

@@ -1,6 +1,48 @@
-# Security: Prevent API leaks
-config.js
+# ============================================================
+# MORALES PLUMBING — .gitignore / Netlify Deploy Exclusions
+# ============================================================
+
+# API Keys & Credentials (NEVER deploy)
+# config.js is safe to commit — it has empty arrays; real keys are in Netlify env vars
 .env
-*.log
+*.env
+.env.local
+.env.production
+
+# Development / Admin Scripts (internal tools — NOT for production)
+add_trans.js
+check_es.js
+check_keys.js
+check_queries.js
+debug_keys.js
+extract_keys.js
+find_key.js
+fix_encoding.js
+fix_es.js
+fix_es2.js
+inject_keys.js
+inject_promo_translations.js
+inject_promo_tt.js
+inject_services.js
+inject_services_translations.js
+inject_translations_topbar.js
+inject_trust_translations.js
+merge_services.js
+super_fix.js
+test_load.js
+test_load_run.js
+update_form.js
+
+# Personal / Internal Documents (NEVER expose publicly)
+*.pdf
+AsbestosOpenBookExamAnswerSheet_*.pdf
+
+# Build artifacts & OS files
 node_modules/
+*.log
 .DS_Store
+Thumbs.db
+
+# Firebase local emulator
+.firebase/
+firebase-debug.log
