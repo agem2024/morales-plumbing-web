@@ -335,8 +335,9 @@
             const query = document.getElementById('serviceSearch').value.toLowerCase();
             const filtered = services.filter(s => {
                 const matchesSearch = s.code.toLowerCase().includes(query) || 
-                                     s.nameKey.toLowerCase().includes(query) || 
-                                     s.descKey.toLowerCase().includes(query);
+                                     (s.nameKey && s.nameKey.toLowerCase().includes(query)) || 
+                                     (s.userDescKey && s.userDescKey.toLowerCase().includes(query)) ||
+                                     (s.techDescKey && s.techDescKey.toLowerCase().includes(query));
                 const matchesCategory = activeCategory === 'all' || s.category === activeCategory;
                 return matchesSearch && matchesCategory;
             });

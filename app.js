@@ -9884,7 +9884,7 @@ function updatePortalUI() {
                     <div>
                         <strong style="color:var(--neon-cyan);">${a.serviceName}</strong><br>
                         <span style="font-size:0.75rem; color:var(--text-muted);">${a.date} @ ${a.time} (${a.tier.toUpperCase()}) · ${labelCost}: ${costText}</span><br>
-                        `${a.notes ? '<div style="margin-top:5px; padding:5px; background:rgba(212,175,55,0.1); border-left:2px solid var(--neon-gold); font-size:0.8rem; color:#fff;"><strong>Diag:</strong> ' + a.notes + '</div>' : ''`
+                        ${a.notes ? '<div style="margin-top:5px; padding:5px; background:rgba(212,175,55,0.1); border-left:2px solid var(--neon-gold); font-size:0.8rem; color:#fff;"><strong>Diag:</strong> ' + a.notes + '</div>' : ''}
                     </div>
                     <button onclick="cancelAppointment('${a.id}')" style="background:none; border:none; color:#ff4444; font-size:1.1rem; cursor:pointer;" title="Cancelar Cita">&times;</button>
                 </div>`;
