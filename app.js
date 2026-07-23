@@ -8849,7 +8849,8 @@ function addMessage(text, sender) {
     if (!container) return;
     const msg = document.createElement('div');
     msg.classList.add('msg', sender);
-    msg.innerText = text;
+    const cleanText = text.replace(/\*\*/g, '').replace(/\*/g, '').replace(/\n/g, '<br>');
+    msg.innerHTML = cleanText;
     container.appendChild(msg);
     container.scrollTop = container.scrollHeight;
 }
