@@ -8849,7 +8849,7 @@ function addMessage(text, sender) {
     if (!container) return;
     const msg = document.createElement('div');
     msg.classList.add('msg', sender);
-    const cleanText = text.replace(/\*\*/g, '').replace(/\*/g, '').replace(/\n/g, '<br>');
+    let cleanText = text.replace(/### (.*)/g, '<h3>$1</h3>').replace(/## (.*)/g, '<h2>$1</h2>').replace(/# (.*)/g, '<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\*(.*?)\*/g, '<i>$1</i>').replace(/\n/g, '<br>');
     msg.innerHTML = cleanText;
     container.appendChild(msg);
     container.scrollTop = container.scrollHeight;
