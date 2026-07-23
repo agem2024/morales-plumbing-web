@@ -9500,7 +9500,7 @@ function getServiceTitleById(id) {
     return svc ? svc.name : id;
 }
 
-function addAppointmentToLocal(serviceId, date, time, tier = "good") {
+function addAppointmentToLocal(serviceId, date, time, tier = "good", notes = "") {
     const appts = loadAppointments();
     const serviceName = getServiceTitleById(serviceId);
     
@@ -9525,6 +9525,7 @@ function addAppointmentToLocal(serviceId, date, time, tier = "good") {
         date: date,
         time: time,
         tier: tier,
+        notes: notes,
         price: finalPrice,
         status: "Scheduled",
         createdAt: new Date().toISOString()
@@ -9882,7 +9883,8 @@ function updatePortalUI() {
                 <div class="glass" style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.05); display:flex; justify-content:space-between; align-items:center;">
                     <div>
                         <strong style="color:var(--neon-cyan);">${a.serviceName}</strong><br>
-                        <span style="font-size:0.75rem; color:var(--text-muted);">${a.date} @ ${a.time} (${a.tier.toUpperCase()}) · ${labelCost}: ${costText}</span>
+                        <span style="font-size:0.75rem; color:var(--text-muted);">${a.date} @ ${a.time} (${a.tier.toUpperCase()}) · ${labelCost}: ${costText}</span><br>
+                        `${a.notes ? '<div style="margin-top:5px; padding:5px; background:rgba(212,175,55,0.1); border-left:2px solid var(--neon-gold); font-size:0.8rem; color:#fff;"><strong>Diag:</strong> ' + a.notes + '</div>' : ''`
                     </div>
                     <button onclick="cancelAppointment('${a.id}')" style="background:none; border:none; color:#ff4444; font-size:1.1rem; cursor:pointer;" title="Cancelar Cita">&times;</button>
                 </div>`;
@@ -10023,6 +10025,7 @@ function processJoeActions(responseText) {
             const date = data.date;
             const time = data.time;
             const tier = data.tier || 'good';
+            const notes = data.notes || '';
             
             const eligibility = checkMembershipEligibility();
             if (!eligibility.eligible) {
@@ -10034,7 +10037,7 @@ function processJoeActions(responseText) {
                 return;
             }
             
-            addAppointmentToLocal(serviceId, date, time, tier);
+            addAppointmentToLocal(serviceId, date, time, tier, notes);
             const curLang = localStorage.getItem('morales_lang') || 'es';
             const confirmMsg = curLang === 'es' ? 
                 `📅 �Cita programada con �xito! He agendado la cita para el ${date} a las ${time}. Puedes verla en tu Portal de Cliente.` : 
