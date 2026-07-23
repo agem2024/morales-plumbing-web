@@ -246,6 +246,43 @@ function listenForAdminNotifications(callback) {
         });
 }
 
+// ─── CONTACT MESSAGES ─────────────────────────────────────────
+async function saveContactMessage(messageData) {
+    const uid = getCurrentUserId();
+    const msg = {
+        ...messageData,
+        userId: uid,
+        status: 'open',
+        createdAt: new Date().toISOString(),
+        id: messageData.id || Date.now().toString()
+    };
+
+    // Save locally
+    const local = JSON.parse(localStorage.getItem('morales_contact_msgs') || '[]');
+    local.push(msg);
+    localStorage.setItem('morales_contact_msgs', JSON.stringify(local));
+
+    if (_firebaseReady && _db) {
+        try {
+            await _db.collection('contact_messages').doc(msg.id).set(msg);
+            await _db.collection('admin_notifications').add({
+                type: 'new_contact_message',
+                messageId: msg.id,
+                clientName: msg.name,
+                clientPhone: msg.phone,
+                clientEmail: msg.email,
+                message: msg.notes,
+                createdAt: msg.createdAt,
+                status: 'unread'
+            });
+            console.log('Contact message saved to Firestore:', msg.id);
+        } catch (e) {
+            console.warn('Firestore contact message save failed:', e.message);
+        }
+    }
+    return msg;
+}
+
 // ─── EXPORT (global scope for use in app.js) ──────────────────
 window.MoralesFirebase = {
     init:                    initFirebase,
@@ -254,6 +291,7 @@ window.MoralesFirebase = {
     saveAppointment:         saveAppointment,
     getAppointments:         getUserAppointments,
     savePQR:                 savePQR,
+    saveContactMessage:      saveContactMessage,
     saveJoeSession:          saveJoeSession,
     listenNotifications:     listenForAdminNotifications,
     getCurrentUserId,
