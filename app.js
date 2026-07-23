@@ -10395,13 +10395,8 @@ function submitBooking() {
     }
 
     // ── SECURE BACKEND SUBMISSION ────────────────────────────
-    fetch('/.netlify/functions/sendBooking', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ appointment: appt })
-    }).then(res => res.json()).then(data => {
-        console.log('Backend mail/booking response:', data);
-    }).catch(e => console.warn('Backend booking error:', e));
+    const waMessage = `Hola Morales Plumbing!%0ANueva Cita Reservada por Bot Joe:%0A*Nombre:* ${d.name}%0A*Tel:* ${d.phone}%0A*Dir:* ${d.address}%0A*Servicio:* ${d.service}%0A*Fecha:* ${d.date}%0A*Hora:* ${d.time}%0A*Notas:* ${d.notes}`;
+    window.open('https://wa.me/16692342444?text=' + waMessage, '_blank');
 
     // Joe confirmation message
     const confirmMsg = lang === 'es'
