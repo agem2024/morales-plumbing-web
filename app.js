@@ -8713,8 +8713,33 @@ async function sendToJoe() {
 
     let reply = null;
 
-    // Try Gemini first (rotate through keys)
-    if (typeof GEMINI_KEYS !== 'undefined' && GEMINI_KEYS.length > 0) {
+    // 1. Try Netlify Cloud Function (For Web/Production - SECURE)
+    try {
+        let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en plomera.';
+        if (typeof getJoeDynamicContext === 'function') sysPrompt += getJoeDynamicContext();
+        if (typeof BOOKING_SYSTEM_ADDITION !== 'undefined') sysPrompt += BOOKING_SYSTEM_ADDITION;
+
+        const resp = await fetch('/.netlify/functions/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                provider: 'gemini',
+                model: (typeof GEMINI_MODEL !== 'undefined') ? GEMINI_MODEL : 'gemini-2.5-flash',
+                systemPrompt: sysPrompt,
+                messages: joeHistory
+            })
+        });
+
+        if (resp.ok) {
+            const data = await resp.json();
+            if (data.reply) reply = data.reply;
+        }
+    } catch (e) {
+        console.warn("Servidor seguro no disponible (ejecutando en local):", e.message);
+    }
+
+    // 2. Try Gemini Local Keys (Fallback for local testing only)
+    if (!reply && typeof GEMINI_KEYS !== 'undefined' && GEMINI_KEYS.length > 0) {
         for (let attempt = 0; attempt < GEMINI_KEYS.length; attempt++) {
             const keyIdx = (geminiKeyIndex + attempt) % GEMINI_KEYS.length;
             const key    = GEMINI_KEYS[keyIdx];
@@ -8730,7 +8755,7 @@ async function sendToJoe() {
         }
     }
 
-    // Fallback to OpenAI if Gemini failed
+    // 3. Try OpenAI Local Keys
     if (!reply && typeof OPENAI_KEYS !== 'undefined' && OPENAI_KEYS.length > 0) {
         for (let attempt = 0; attempt < OPENAI_KEYS.length; attempt++) {
             const keyIdx = (openaiKeyIndex + attempt) % OPENAI_KEYS.length;
@@ -8747,7 +8772,7 @@ async function sendToJoe() {
         }
     }
 
-    // Final fallback - local smart response
+    // 4. Final fallback - local smart response
     if (!reply) {
         reply = getJoeLocalFallback(text.toLowerCase());
     }
