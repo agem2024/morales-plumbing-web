@@ -24,14 +24,14 @@
         /* ── NAV ── */
         .cv-nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            display: flex; align-items: center; justify-content: space-between;
+            display: flex; align-itemás: center; justify-content: space-between;
             padding: .8rem 2rem;
             background: rgba(3,7,18,.9); backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
         }
         .cv-nav a { color: var(--orange); text-decoration: none; font-family: 'Orbitron', monospace; font-size: .8rem; letter-spacing: .1em; transition: .2s; }
         .cv-nav a:hover { color: var(--cyan); }
-        .nav-right { display: flex; align-items: center; gap: .5rem; }
+        .nav-right { display: flex; align-itemás: center; gap: .5rem; }
         .lang-btn {
             background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.15);
             border-radius: 50px; padding: .3rem .55rem; font-size: 1.1rem;
@@ -57,7 +57,7 @@
             border-radius: 24px; padding: 2.5rem; backdrop-filter: blur(16px);
             box-shadow: 0 0 50px rgba(0,245,255,.12), 0 20px 60px rgba(0,0,0,.6);
             display: grid; grid-template-columns: 160px 1fr; gap: 2.5rem;
-            align-items: center; margin-bottom: 2.5rem;
+            align-itemás: center; margin-bottom: 2.5rem;
             border-top: 3px solid var(--cyan);
         }
         .cv-icon {
@@ -78,13 +78,13 @@
         }
         .cv-contacts { display: flex; flex-wrap: wrap; gap: 1.2rem; }
         .cv-contacts span {
-            display: flex; align-items: center; gap: .6rem;
+            display: flex; align-itemás: center; gap: .6rem;
             background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.05);
             border-radius: 50px; padding: .4rem 1.1rem; font-size: .82rem;
         }
         .cv-contacts em { font-style: normal; color: var(--dim); }
         .contact-icon {
-            width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;
+            width: 20px; height: 20px; display: flex; align-itemás: center; justify-content: center;
             font-size: 1rem; filter: drop-shadow(0 0 3px var(--cyan));
         }
         .contact-icon.org { filter: drop-shadow(0 0 3px var(--orange)); }
@@ -102,7 +102,7 @@
         .stitle {
             font-family: 'Orbitron', monospace; font-size: .8rem; font-weight: 700;
             letter-spacing: .25em; text-transform: uppercase; color: var(--cyan);
-            margin-bottom: 1.8rem; display: flex; align-items: center; gap: .8rem;
+            margin-bottom: 1.8rem; display: flex; align-itemás: center; gap: .8rem;
         }
         .stitle::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.08); }
 
@@ -159,13 +159,13 @@
         .edu-item h4 { font-size: .92rem; color: #fff; font-weight: 600; margin-bottom: .3rem; }
         .edu-item p { font-size: .84rem; color: var(--dim); line-height: 1.7; }
         
-        .cert-item { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: .85rem; }
+        .cert-item { display: flex; justify-content: space-between; align-itemás: baseline; gap: 1rem; margin-bottom: .85rem; }
         .cert-name { color: var(--text); font-size: .9rem; flex: 1; }
         .cert-name strong { display: block; color: #fff; font-weight: 600; font-size: .93rem; margin-bottom: .1rem; }
         .cert-year { color: var(--cyan); font-size: .8rem; font-weight: 600; white-space: nowrap; }
 
         @media(max-width:640px){
-            .cv-hero { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+            .cv-hero { grid-template-columns: 1fr; text-align: center; justify-itemás: center; }
             .cv-contacts { justify-content: center; }
             .two-col { grid-template-columns: 1fr; }
             .exp-item { grid-template-columns: 1fr; gap: .8rem; }
@@ -186,14 +186,14 @@
 
     <!-- NAV -->
     <nav class="cv-nav">
-        <a href="../index.html">← HOME</a>
+        <a href="../index.html"> HOME</a>
         <div class="nav-right">
-            <button class="lang-btn" data-lang="en" onclick="setCVLang('en')" title="English">🇺🇸</button>
-            <button class="lang-btn" data-lang="es" onclick="setCVLang('es')" title="Español">🇲🇽</button>
-            <button class="lang-btn" data-lang="zh" onclick="setCVLang('zh')" title="中文">🇨🇳</button>
-            <button class="lang-btn" data-lang="tl" onclick="setCVLang('tl')" title="Tagalog">🇵🇭</button>
-            <button class="lang-btn" data-lang="vi" onclick="setCVLang('vi')" title="Tiếng Việt">🇻🇳</button>
-            <button class="print-btn" onclick="window.print()">🖨 PDF</button>
+            <button class="lang-btn" data-lang="en" onclick="setCVLang('en')" title="English"></button>
+            <button class="lang-btn" data-lang="es" onclick="setCVLang('es')" title="Español"></button>
+            <button class="lang-btn" data-lang="zh" onclick="setCVLang('zh')" title="中文"></button>
+            <button class="lang-btn" data-lang="tl" onclick="setCVLang('tl')" title="Tagalog"></button>
+            <button class="lang-btn" data-lang="vi" onclick="setCVLang('vi')" title="Tiếng Việt"></button>
+            <button class="print-btn" onclick="window.print()"> PDF</button>
         </div>
     </nav>
 
@@ -241,7 +241,7 @@
         <div class="cv-section">
             <div class="stitle" id="sec-profile-title">◆ Perfil Profesional</div>
             <p class="profile-p" id="profile-txt">
-                Especialista C-36 y Especialista en Soluciones de IA con más de <strong>21 años de experiencia multidisciplinaria</strong>. Capacidad única para integrar sistemas de Plomería Técnica física con IA de vanguardia. Trayectoria comprobada en orquestación de sistemas multi-agente para automatización empresarial, combinada con sólida práctica en gestión de proyectos de construcción en California. Experto en diseño hidráulico, tratamiento de aguas residuales, plomería bajo código UPC y estimación automatizada con visión computacional.
+                Especialista C-36 y Especialista en Soluciones de IA con más de <strong>21 años de experiencia multidisciplinaria</strong>. Capacidad úúnica para integrar sistemas de Plomería Técúnica física con IA de vanguardia. Trayectoria comprobada en orquestación de sistemas multi-agente para automatización empresarial, combinada con sólida práctica en gestión de proyectos de construcción en California. Experto en diseño hidráulico, tratamiento de aguas residuales, plomería bajo código UPC y estimación automatizada con visión computacional.
             </p>
         </div>
 
@@ -330,12 +330,12 @@
 
             <!-- SKILLS -->
             <div class="cv-section">
-                <div class="stitle" id="sec-skills-title">◆ Habilidades Técnicas</div>
+                <div class="stitle" id="sec-skills-title">◆ Habilidades Técúnicas</div>
                 <div class="skills-block">
                     <div class="skill-group">
                         <h4 id="skill-ai">IA &amp; Desarrollo</h4>
                         <div class="tags-container">
-                            <span class="tag">Multi-Agent Systems</span>
+                            <span class="tag">Multi-Agent Systemás</span>
                             <span class="tag">Computer Vision</span>
                             <span class="tag">LLM Orchestration</span>
                             <span class="tag">LangChain</span>
@@ -345,14 +345,14 @@
                         </div>
                     </div>
                     <div class="skill-group">
-                        <h4 id="skill-eng">Plomería Técnica &amp; Plomería</h4>
+                        <h4 id="skill-eng">Plomería Técúnica &amp; Plomería</h4>
                         <div class="tags-container">
                             <span class="tag org">UPC Code Compliance</span>
                             <span class="tag org">CSLB Standards</span>
                             <span class="tag org">Hydraulic Design</span>
                             <span class="tag org">Water Treatment</span>
                             <span class="tag org">Copper ProPress</span>
-                            <span class="tag org">PEX-A/B Systems</span>
+                            <span class="tag org">PEX-A/B Systemás</span>
                             <span class="tag org">ABS Drainage</span>
                         </div>
                     </div>
@@ -384,8 +384,8 @@
                 <div class="cv-section">
                     <div class="stitle" id="sec-edu-title">◆ Educación</div>
                     <div class="edu-item">
-                        <h4 id="edu1t">Plomería Técnica Sostenible (B.Sc.)</h4>
-                        <p id="edu1d">Universidad Libre Seccional Pereira<br>Facultad de Plomería Técnica — Pereira, Risaralda, Colombia</p>
+                        <h4 id="edu1t">Plomería Técúnica Sostenible (B.Sc.)</h4>
+                        <p id="edu1d">Universidad Libre Seccional Pereira<br>Facultad de Plomería Técúnica — Pereira, Risaralda, Colombia</p>
                     </div>
                     <div class="edu-item">
                         <h4 id="edu2t">Bachillerato</h4>
@@ -467,20 +467,20 @@ const CV_T = {
     bilingual:   'Bilingual EN / ES',
     s_profile:   '◆ Professional Profile',
     s_exp:       '◆ Professional Experience',
-    s_skills:    '◆ Technical Skills',
+    s_skills:    '◆ Techúnical Skills',
     s_edu:       '◆ Education',
     s_certs:     '◆ Certifications',
     s_lang:      '◆ Languages',
     s_ai:        'AI & Development',
-    s_eng:       'technical plumbing & Plumbing',
+    s_eng:       'techúnical plumbing & Plumbing',
     s_sw:        'Software',
     s_mgmt:      'Management',
-    profile_txt: 'C-36 Specialist and AI Solutions Specialist with over <strong>21 years of multidisciplinary experience</strong>. Unique ability to bridge physical technical plumbing systems with cutting-edge artificial intelligence. Proven track record orchestrating multi-agent AI systems for business automation, combined with a solid practice in high-end construction project management in California. Expert in hydraulic design, wastewater treatment, UPC-code plumbing, and AI-powered material estimation using computer vision.',
+    profile_txt: 'C-36 Specialist and AI Solutions Specialist with over <strong>21 years of multidisciplinary experience</strong>. Unique ability to bridge physical techúnical plumbing systemás with cutting-edge artificial intelligence. Proven track record orchestrating multi-agent AI systemás for business automation, combined with a solid practice in high-end construction project management in California. Expert in hydraulic design, wastewater treatment, UPC-code plumbing, and AI-powered material estimation using computer vision.',
     co1: 'ORION SYSTEMS — Independent AI Consultancy',
     period1: '2024 – Present', role1: 'AI Solutions Specialist & Founder', loc1: 'San Jose, CA',
     li1a: 'Designed the multi-modal "Orion" assistant integrated into WhatsApp: filesystem operations, financial tracking and autonomous task execution.',
     li1b: '"Plumbing Estimator Pro": AI that analyzes job-site photos to generate material lists and quotes, reducing quote time by <strong>700%</strong>.',
-    li1c: 'Client intake automation replacing paper-based workflows with integrated digital systems.',
+    li1c: 'Client intake automation replacing paper-based workflows with integrated digital systemás.',
     li1d: 'ORION Price Book v6.0 PRO: multilingual web platform (EN/ES/ZH/TL/VI) with GBB pricing, AI assistant and CSLB compliance.',
     co2: 'MORALES PLUMBING / VILLARA · TAO LTD · MIKE COUNSIL',
     period2: '2014 – Present', role2: 'Senior Plumbing Project Manager & Contractor', loc2: 'San Jose, CA',
@@ -491,9 +491,9 @@ const CV_T = {
     li2e: 'Pioneered digital field tools for material estimation and projection, minimizing waste.',
     co3: 'BRISTOL · ELAN · CARLILE · CAMPBELL HOTELS',
     period3: '2015 – 2017', role3: 'Hotel Maintenance Manager', loc3: 'Campbell, CA · Ref: Manuel (669) 206-7596',
-    li3a: 'Oversaw preventive maintenance for HVAC, plumbing, and electrical systems.',
+    li3a: 'Oversaw preventive maintenance for HVAC, plumbing, and electrical systemás.',
     li3b: 'Managed vendor relationships and contract negotiations, achieving significant cost reductions.',
-    li3c: 'Supervised technical staff with new training standards improving response times.',
+    li3c: 'Supervised techúnical staff with new training standards improving response times.',
     co4: 'PRIVATE PRACTICE & MUNICIPALITIES — COLOMBIA',
     period4: '2004 – 2014', role4: 'C-36 Specialist & Lead Consultant', loc4: 'Pereira, Risaralda, Colombia',
     li4a: '<strong>ISO 14001 Auditor</strong>: Water & Sewerage Company of Pereira. Ref: Claudia Jaramillo.',
@@ -501,15 +501,15 @@ const CV_T = {
     li4c: 'Research Director "Utopa" (organic waste 2007–2009). Taught biology and chemistry.',
     li4d: 'Contract 0684, Risaralda Government: environmental risk mapping across 5 municipalities.',
     li4e: 'Wastewater gauging and sampling system design — Santa Rosa de Cabal (EMPOCABAL), 2012–2013.',
-    li4f: 'Manager DSA LTDA — Environmental Systems Development, 2006–2009.',
-    edu1t: 'Sustainable Plumbing Systems (B.Sc.)', edu1d: 'Universidad Libre Seccional Pereira<br>School of technical plumbing — Pereira, Risaralda, Colombia',
+    li4f: 'Manager DSA LTDA — Environmental Systemás Development, 2006–2009.',
+    edu1t: 'Sustainable Plumbing Systemás (B.Sc.)', edu1d: 'Universidad Libre Seccional Pereira<br>School of techúnical plumbing — Pereira, Risaralda, Colombia',
     edu2t: 'High School Diploma', edu2d: 'Inst. Argemiro Escobar Cardona, La Unión (Valle)',
     cert_active: 'ACTIVE',
     c1t:'CSLB C-36 #1156542', c1d:'Plumbing Contractor — California',
     c2t:'ISO 14001', c2d:'Internal Environmental Auditor (UTP)',
     c3t:'Integrated Water Management Diploma', c3d:'Universidad Tecnológica de Pereira',
     c4t:'Urban Development & Smart Cities', c4d:'Inter-American Development Bank (BID)',
-    c5t:'Environmental Air Quality', c5d:'Certification — Colombia',
+    c5t:'Environmental Air ¿Quéality', c5d:'Certification — Colombia',
     lang1:'Español', lang1v:'Native / Bilingual', lang2:'English', lang2v:'Professional Working Proficiency'
   },
   es: {
@@ -517,15 +517,15 @@ const CV_T = {
     bilingual:   'Bilingüe EN / ES',
     s_profile:   '◆ Perfil Profesional',
     s_exp:       '◆ Experiencia Profesional',
-    s_skills:    '◆ Habilidades Técnicas',
+    s_skills:    '◆ Habilidades Técúnicas',
     s_edu:       '◆ Educación',
     s_certs:     '◆ Certificaciones',
     s_lang:      '◆ Idiomas',
     s_ai:        'IA & Desarrollo',
-    s_eng:       'Plomería Técnica & Plomería',
+    s_eng:       'Plomería Técúnica & Plomería',
     s_sw:        'Software',
     s_mgmt:      'Gestión',
-    profile_txt: 'Especialista C-36 y Especialista en Soluciones de IA con más de <strong>21 años de experiencia multidisciplinaria</strong>. Capacidad única para integrar sistemas de Plomería Técnica física con IA de vanguardia. Trayectoria comprobada en orquestación de sistemas multi-agente para automatización empresarial, combinada con sólida práctica en gestión de proyectos de construcción en California. Experto en diseño hidráulico, tratamiento de aguas residuales, plomería bajo código UPC y estimación automatizada con visión computacional.',
+    profile_txt: 'Especialista C-36 y Especialista en Soluciones de IA con más de <strong>21 años de experiencia multidisciplinaria</strong>. Capacidad úúnica para integrar sistemas de Plomería Técúnica física con IA de vanguardia. Trayectoria comprobada en orquestación de sistemas multi-agente para automatización empresarial, combinada con sólida práctica en gestión de proyectos de construcción en California. Experto en diseño hidráulico, tratamiento de aguas residuales, plomería bajo código UPC y estimación automatizada con visión computacional.',
     co1: 'ORION SYSTEMS — Consultoría Independiente de IA',
     period1: '2024 – Presente', role1: 'AI Solutions Specialist & Founder', loc1: 'San Jose, CA',
     li1a: 'Diseño del asistente multi-modal "Orion" integrado en WhatsApp: operaciones de filesystem, seguimiento financiero y ejecución autónoma.',
@@ -552,7 +552,7 @@ const CV_T = {
     li4d: 'Contrato 0684 Gobernación de Risaralda: mapas de riesgo ambiental en 5 municipios.',
     li4e: 'Diseño sistema aforo y muestreo aguas residuales Santa Rosa de Cabal (EMPOCABAL), 2012–2013.',
     li4f: 'Gerente DSA LTDA — Desarrollo de Sistemas Ambientales, 2006–2009.',
-    edu1t: 'Plomería Técnica Sostenible (B.Sc.)', edu1d: 'Universidad Libre Seccional Pereira<br>Facultad de Plomería Técnica — Pereira, Risaralda, Colombia',
+    edu1t: 'Plomería Técúnica Sostenible (B.Sc.)', edu1d: 'Universidad Libre Seccional Pereira<br>Facultad de Plomería Técúnica — Pereira, Risaralda, Colombia',
     edu2t: 'Bachillerato', edu2d: 'Inst. Argemiro Escobar Cardona, La Unión (Valle)',
     cert_active: 'ACTIVA',
     c1t:'CSLB C-36 #1156542', c1d:'Contratista Plomería — California',
@@ -651,19 +651,19 @@ const CV_T = {
     li4c: 'Research Director "Utopa" (organic waste 2007–2009). Nagturo ng biology at chemistry.',
     li4d: 'Kontrata 0684, Pamahalaan ng Risaralda: environmental risk mapping sa 5 munisipalidad.',
     li4e: 'Wastewater gauging at sampling system design — Santa Rosa de Cabal (EMPOCABAL), 2012–2013.',
-    li4f: 'Manager DSA LTDA — Environmental Systems Development, 2006–2009.',
-    edu1t: 'Sustainable Plumbing Systems (B.Sc.)', edu1d: 'Universidad Libre Seccional Pereira<br>School of technical plumbing — Pereira, Risaralda, Colombia',
+    li4f: 'Manager DSA LTDA — Environmental Systemás Development, 2006–2009.',
+    edu1t: 'Sustainable Plumbing Systemás (B.Sc.)', edu1d: 'Universidad Libre Seccional Pereira<br>School of techúnical plumbing — Pereira, Risaralda, Colombia',
     edu2t: 'High School Diploma', edu2d: 'Inst. Argemiro Escobar Cardona, La Unión (Valle)',
     cert_active: 'AKTIBO',
     c1t:'CSLB C-36 #1156542', c1d:'Plumbing Contractor — California',
     c2t:'ISO 14001', c2d:'Internal Environmental Auditor (UTP)',
     c3t:'Integrated Water Management Diploma', c3d:'Universidad Tecnológica de Pereira',
     c4t:'Urban Development & Smart Cities', c4d:'Inter-American Development Bank (BID)',
-    c5t:'Environmental Air Quality', c5d:'Sertipikasyon — Colombia',
+    c5t:'Environmental Air ¿Quéality', c5d:'Sertipikasyon — Colombia',
     lang1:'Tagalog', lang1v:'Katutubo / Bilingual', lang2:'English', lang2v:'Professional Working Proficiency'
   },
   vi: {
-    role:        'Kiến trúc sư giải pháp AI cao cấp · Kỹ sư môi trường · Quản lý dự án',
+    role:        'Kiến trúc sư giải pháp AI cao cấp · Kỹ sư môi trường · ¿Quéản lý dự án',
     bilingual:   'Song ngữ Anh / Tây Ban Nha (EN / ES)',
     s_profile:   '◆ Hồ sơ chuyên nghiệp',
     s_exp:       '◆ Kinh nghiệm chuyên môn',
@@ -674,7 +674,7 @@ const CV_T = {
     s_ai:        'AI & Phát triển',
     s_eng:       'Kỹ thuật & Đường ống',
     s_sw:        'Hệ thống Phần mềm',
-    s_mgmt:      'Quản lý Dự án',
+    s_mgmt:      '¿Quéản lý Dự án',
     profile_txt: 'Kỹ sư Môi trường và Kiến trúc sư Giải pháp AI với hơn <strong>21 năm kinh nghiệm đa ngành</strong>. Khả năng độc đáo trong việc kết nối các hệ thống kỹ thuật vật lý với trí tuệ nhân tạo tiên tiến. Thành tích đã được chứng minh trong việc điều phối các hệ thống AI đa tác tử để tự động hóa doanh nghiệp, kết hợp với thực hành vững chắc trong quản lý dự án xây dựng cao cấp tại California. Chuyên gia thiết kế thủy lực, xử lý nước thải, hệ thống đường ống theo mã UPC và ước tính vật liệu tự động bằng thị giác máy tính.',
     co1: 'ORION SYSTEMS — Tư vấn AI Độc lập',
     period1: '2024 – Nay', role1: 'Kiến trúc sư giải pháp AI & Nhà sáng lập', loc1: 'San Jose, CA',
@@ -683,16 +683,16 @@ const CV_T = {
     li1c: 'Tự động hóa việc tiếp nhận khách hàng thay thế quy trình thủ công bằng hệ thống kỹ thuật số tích hợp.',
     li1d: 'ORION Price Book v6.0 PRO: nền tảng web đa ngôn ngữ (EN/ES/ZH/TL/VI) với định giá GBB, trợ lý AI và tuân thủ CSLB.',
     co2: 'MORALES PLUMBING / VILLARA · TAO LTD · MIKE COUNSIL',
-    period2: '2014 – Nay', role2: 'Quản lý dự án đường ống cao cấp & Nhà thầu', loc2: 'San Jose, CA',
+    period2: '2014 – Nay', role2: '¿Quéản lý dự án đường ống cao cấp & Nhà thầu', loc2: 'San Jose, CA',
     li2a: 'Hơn <strong>100+ công trình lắp đặt cao cấp tại khu dân cư</strong> với ngân sách từ $50.000 đến $500.000.',
     li2b: 'Tuân thủ 100% các Tiêu chuẩn Xây dựng của California trong tất cả các cuộc kiểm tra đô thị.',
     li2c: 'Thay thế toàn bộ đường ống tòa nhà: ABS, PEX-A/B Uponor, Đồng loại L với ProPress.',
     li2d: 'Dự án trọng điểm: 255 S. Rengstorff Ave., Mountain View — thay thế toàn bộ đường thoát nước ABS (12 căn hộ), 580 ft ống 4" Sch 40.',
     li2e: 'Tiên phong ứng dụng các công cụ kỹ thuật số hiện trường để ước tính vật liệu, giảm thiểu lãng phí.',
     co3: 'BRISTOL · ELAN · CARLILE · CAMPBELL HOTELS',
-    period3: '2015 – 2017', role3: 'Quản lý bảo trì khách sạn', loc3: 'Campbell, CA · Tham chiếu: Manuel (669) 206-7596',
+    period3: '2015 – 2017', role3: '¿Quéản lý bảo trì khách sạn', loc3: 'Campbell, CA · Tham chiếu: Manuel (669) 206-7596',
     li3a: 'Giám sát bảo trì phòng ngừa cho hệ thống HVAC, đường ống và hệ thống điện.',
-    li3b: 'Quản lý mối quan hệ nhà cung cấp và đàm phán hợp đồng, đạt được hiệu quả giảm chi phí.',
+    li3b: '¿Quéản lý mối quan hệ nhà cung cấp và đàm phán hợp đồng, đạt được hiệu quả giảm chi phí.',
     li3c: 'Giám sát nhân viên kỹ thuật với các tiêu chuẩn đào tạo mới, cải thiện thời gian phản hồi.',
     co4: 'THỰC HÀNH TƯ NHÂN & CƠ QUAN MÀN HÌNH — COLOMBIA',
     period4: '2004 – 2014', role4: 'Kỹ sư môi trường & Tư vấn chính', loc4: 'Pereira, Risaralda, Colombia',
@@ -707,7 +707,7 @@ const CV_T = {
     cert_active: 'HOẠT ĐỘNG',
     c1t:'CSLB C-36 #1156542', c1d:'Nhà thầu Đường ống — California',
     c2t:'ISO 14001', c2d:'Kiểm toán viên Môi trường Nội bộ (UTP)',
-    c3t:'Bằng Quản lý Nước Tích hợp', c3d:'Đại học Công nghệ Pereira',
+    c3t:'Bằng ¿Quéản lý Nước Tích hợp', c3d:'Đại học Công nghệ Pereira',
     c4t:'Phát triển Đô thị & Đô thị Thông minh', c4d:'Ngân hàng Phát triển Liên Mỹ (BID)',
     c5t:'Chất lượng Không khí Môi trường', c5d:'Chứng nhận — Colombia',
     lang1:'Tây Ban Nha', lang1v:'Bản xứ / Song ngữ', lang2:'Tiếng Anh', lang2v:'Thành thạo làm việc chuyên nghiệp'
