@@ -9160,9 +9160,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Joe Input
-    const joe¿Quéery = document.getElementById('joe-query');
-    if (joe¿Quéery) {
-        joe¿Quéery.addEventListener('keypress', (e) => {
+    const joeQuery = document.getElementById('joe-query');
+    if (joeQuery) {
+        joeQuery.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') sendToJoe();
         });
     }
