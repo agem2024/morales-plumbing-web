@@ -3,17 +3,15 @@
 //  Agrega tus keys aquí. No publicar este archivo.
 // ============================================================
 
+// ============================================================
+//  MORALES PLUMBING — AI Config (LOCAL ONLY — DO NOT SHARE)
+//  Agrega tus keys aquí. No publicar este archivo.
+// ============================================================
+
 // --- GEMINI KEYS (Google AI Studio: aistudio.google.com) ---
-const GEMINI_KEYS = [];
-
-// --- OPENAI KEYS (platform.openai.com) ---
-const OPENAI_KEYS = [];
-
-// Gemini model
-const GEMINI_MODEL = "gemini-2.5-flash";
-
-// OpenAI model
-const OPENAI_MODEL = "gpt-4o-mini";
+const GEMINI_KEYS = [
+    "AIzaSyD9jAvyn1UamNhxKNc_pWlxoOlZlqCCSuk",
+    "AIzaSyDNrPToe2abPx1Cf_dFz49OyWa1pVvZMp8"
 
 // System prompt para Joe
 const JOE_SYSTEM_PROMPT = `Eres Joe, el asistente de inteligencia artificial avanzada y CRM inteligente de Morales Plumbing (Ecosistema ORION).

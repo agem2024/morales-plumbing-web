@@ -8540,7 +8540,7 @@ function setLanguage(lang) {
     }
 
     // Custom updates (like Joe's initial greeting)
-    const joeMsg = document.querySelector('.másg.bot');
+    const joeMsg = document.querySelector('.msg.bot');
     if (joeMsg && translations[lang]['joe_welcome']) {
         // Only update if it's the first message
         if (joeHistory.length === 0) {
@@ -8624,7 +8624,7 @@ function toggleJoe() {
     container.classList.toggle('assistant-hidden');
     
     if (!container.classList.contains('assistant-hidden') && !joeHasGreeted) {
-        const joeMsg = document.querySelector('.másg.bot');
+        const joeMsg = document.querySelector('.msg.bot');
         if (joeMsg && joeHistory.length === 0) {
             speakJoe(joeMsg.innerText);
         }
@@ -8654,7 +8654,7 @@ function openBooking() {
         'vi': 'Toi muon dat lich hen dich vu sua ong nuoc.'
     };
 
-    const másg = bookingMessages[lang] || bookingMessages['es'];
+    const msg = bookingMessages[lang] || bookingMessages['es'];
     input.value = másg;
 
     // Open booking panel simultaneously
@@ -8668,7 +8668,7 @@ function openBooking() {
 
     // Greet if first time
     if (!joeHasGreeted) {
-        const joeMsg = document.querySelector('.másg.bot');
+        const joeMsg = document.querySelector('.msg.bot');
         if (joeMsg && joeHistory.length === 0) {
             speakJoe(joeMsg.innerText);
         }
@@ -8680,7 +8680,7 @@ function openBooking() {
 function speakJoe(text) {
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
-        const másg = new SpeechSynthesisUtterance(text);
+        const msg = new SpeechSynthesisUtterance(text);
         const curLang = localStorage.getItem('morales_lang') || 'es';
         const langMap = {
             'en': 'en-US',
@@ -8689,18 +8689,18 @@ function speakJoe(text) {
             'tl': 'tl-PH',
             'vi': 'vi-VN'
         };
-        másg.lang = langMap[curLang] || 'es-MX';
+        msg.lang = langMap[curLang] || 'es-MX';
         window.speechSynthesis.speak(másg);
     }
 }
 
 async function sendToJoe() {
     const input = document.getElementById('joe-query');
-    const text  = input.value.trim();
+    const text  = input ? input.value.trim() : '';
     if (!text) return;
 
     addMessage(text, 'user');
-    input.value = '';
+    if (input) input.value = '';
 
     // Handle booking state machine FIRST (independent of AI)
     if (typeof handleBookingState === 'function' && handleBookingState(text)) return;
@@ -8713,32 +8713,56 @@ async function sendToJoe() {
 
     let reply = null;
 
-    // 1. Try Netlify Cloud Function (For Web/Production - SECURE)
+    // 1. Try Orion Cloud endpoint (Render Server)
     try {
-        let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en plomera.';
-        if (typeof getJoeDynamicContext === 'function') sysPrompt += getJoeDynamicContext();
-        if (typeof BOOKING_SYSTEM_ADDITION !== 'undefined') sysPrompt += BOOKING_SYSTEM_ADDITION;
-
-        const resp = await fetch('/.netlify/functions/chat', {
+        const curLang = localStorage.getItem('morales_lang') || 'es';
+        const resp = await fetch('https://orion-cloud.onrender.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                provider: 'gemini',
-                model: (typeof GEMINI_MODEL !== 'undefined') ? GEMINI_MODEL : 'gemini-2.5-flash',
-                systemPrompt: sysPrompt,
-                messages: joeHistory
+                message: text,
+                lang: curLang
             })
         });
 
         if (resp.ok) {
             const data = await resp.json();
-            if (data.reply) reply = data.reply;
+            if (data.response && !data.error && !data.response.includes('ocupado')) {
+                reply = data.response;
+            }
         }
     } catch (e) {
-        console.warn("Servidor seguro no disponible (ejecutando en local):", e.message);
+        console.warn("Orion Cloud API no disponible:", e.message);
     }
 
-    // 2. Try Gemini Local Keys (Fallback for local testing only)
+    // 2. Try Netlify Cloud Function (For Netlify deployments)
+    if (!reply) {
+        try {
+            let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en plomeria.';
+            if (typeof getJoeDynamicContext === 'function') sysPrompt += getJoeDynamicContext();
+            if (typeof BOOKING_SYSTEM_ADDITION !== 'undefined') sysPrompt += BOOKING_SYSTEM_ADDITION;
+
+            const resp = await fetch('/.netlify/functions/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    provider: 'gemini',
+                    model: 'gemini-1.5-flash',
+                    systemPrompt: sysPrompt,
+                    messages: joeHistory
+                })
+            });
+
+            if (resp.ok) {
+                const data = await resp.json();
+                if (data.reply) reply = data.reply;
+            }
+        } catch (e) {
+            console.warn("Netlify function no disponible:", e.message);
+        }
+    }
+
+    // 3. Try Gemini Local Keys
     if (!reply && typeof GEMINI_KEYS !== 'undefined' && GEMINI_KEYS.length > 0) {
         for (let attempt = 0; attempt < GEMINI_KEYS.length; attempt++) {
             const keyIdx = (geminiKeyIndex + attempt) % GEMINI_KEYS.length;
@@ -8755,7 +8779,7 @@ async function sendToJoe() {
         }
     }
 
-    // 3. Try OpenAI Local Keys
+    // 4. Try OpenAI Local Keys
     if (!reply && typeof OPENAI_KEYS !== 'undefined' && OPENAI_KEYS.length > 0) {
         for (let attempt = 0; attempt < OPENAI_KEYS.length; attempt++) {
             const keyIdx = (openaiKeyIndex + attempt) % OPENAI_KEYS.length;
@@ -8772,7 +8796,7 @@ async function sendToJoe() {
         }
     }
 
-    // 4. Final fallback - local smart response
+    // 5. Smart Local Fallback
     if (!reply) {
         reply = getJoeLocalFallback(text.toLowerCase());
     }
@@ -8781,6 +8805,11 @@ async function sendToJoe() {
     addMessage(reply, 'bot');
     joeHistory.push({ role: 'assistant', content: reply });
     
+    // Save history to LocalStorage
+    try {
+        localStorage.setItem('morales_joe_history', JSON.stringify(joeHistory));
+    } catch(e) {}
+
     // Process any JSON action tags embedded in Joe's response
     if (typeof processJoeActions === 'function') {
         processJoeActions(reply);
@@ -8872,10 +8901,10 @@ function getJoeLocalFallback(input) {
 function addMessage(text, sender) {
     const container = document.getElementById('joe-messages');
     if (!container) return;
-    const másg = document.createElement('div');
-    másg.classList.add('másg', sender);
+    const msg = document.createElement('div');
+    msg.classList.add('msg', sender);
     let cleanText = text.replace(/### (.*)/g, '<h3>$1</h3>').replace(/## (.*)/g, '<h2>$1</h2>').replace(/# (.*)/g, '<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\*(.*?)\*/g, '<i>$1</i>').replace(/\n/g, '<br>');
-    másg.innerHTML = cleanText;
+    msg.innerHTML = cleanText;
     container.appendChild(másg);
     container.scrollTop = container.scrollHeight;
 }
@@ -8885,7 +8914,7 @@ function addTypingIndicator() {
     if (!container) return;
     const id = 'typing-' + Date.now();
     const div = document.createElement('div');
-    div.classList.add('másg', 'bot', 'typing-indicator');
+    div.classList.add('msg', 'bot', 'typing-indicator');
     div.id = id;
     div.innerHTML = '<span></span><span></span><span></span>';
     container.appendChild(div);
@@ -9549,7 +9578,7 @@ function clearProfileLocal() {
         joeHistory.length = 0;
         const container = document.getElementById('joe-messages');
         if (container) {
-            container.innerHTML = '<div class="másg bot">�¡Hola! He borrado mi memoria de sesi�n. �¿En qué�te puedo colaborar hoy? </div>';
+            container.innerHTML = '<div class="msg bot">�¡Hola! He borrado mi memoria de sesi�n. �¿En qué�te puedo colaborar hoy? </div>';
         }
         
         updatePortalUI();
@@ -9674,8 +9703,8 @@ function updateMembershipTier(tier) {
         tierText = translations[curLang][`lbl_membership_badge_${tier}`];
     }
     
-    let másg = translations[curLang]?.másg_membership_updated || "Membership updated to {tier}";
-    másg = másg.replace("{tier}", tierText);
+    let msg = translations[curLang]?.msg_membership_updated || "Membership updated to {tier}";
+    msg = msg.replace("{tier}", tierText);
     showPortalNotification(másg);
 }
 
@@ -10030,7 +10059,7 @@ function clearJoeHistory() {
         joeHistory.length = 0;
         const container = document.getElementById('joe-messages');
         if (container) {
-            container.innerHTML = '<div class="másg bot">Entendido. Conversaci�n reiniciada. �¿En qué�te puedo asistir hoy? </div>';
+            container.innerHTML = '<div class="msg bot">Entendido. Conversaci�n reiniciada. �¿En qué�te puedo asistir hoy? </div>';
         }
         showPortalNotification("Historial de chat borrado.");
     }
