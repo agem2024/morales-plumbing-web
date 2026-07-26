@@ -8678,6 +8678,8 @@ function openBooking() {
 
 
 function speakJoe(text) {
+    if (window.isJoeMuted) return;
+
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const msg = new SpeechSynthesisUtterance(text);
@@ -10529,4 +10531,12 @@ window.acceptCCPA = function() {
     if (banner) {
         banner.style.display = 'none';
     }
+};
+
+window.isJoeMuted = false;
+window.toggleJoeMic = function() {
+  window.isJoeMuted = !window.isJoeMuted;
+  const btn = document.getElementById('joe-mic-btn');
+  if (btn) btn.innerHTML = window.isJoeMuted ? '🔇' : '🎤';
+  if (window.isJoeMuted && 'speechSynthesis' in window) window.speechSynthesis.cancel();
 };
