@@ -1755,13 +1755,13 @@ const translations = {
         "eng_wh_li3": "Cumplimiento del Ttulo 24: Validacin de permisos y refuerzos ssmicos estructurales.",
 
         "eng_valves_comic_title": "Metodologa: Resolucin Precisa de Fugas",
-        "eng_valves_title": "Reemplazo de Cartuchos y Vlvulas",
-        "eng_valves_desc": "Reemplazo preciso de vlvulas defectuosas de duchas, tinas y lavabos.",
-        "eng_valves_p1": "La alta presin del agua municipal en el Área de la Baha suele reventar cartuchos y causar micro-fugas detrs de las paredes de la ducha, provocando moho devastador. Utilizamos tecnologa trmica FLIR para detectar la fuga oculta antes de demoler su costosa cermica.",
-        "eng_valves_p2": "Reemplazamos vlvulas plsticas bsicas por manifolds de bronce de grado comercial (Moen, Kohler, Delta). Cada instalacin incluye calibracin anti-quemaduras conforme al Cdigo de Plomera de California (CPC).",
-        "eng_valves_li1": "Deteccin Trmica de Fugas: Encontramos el punto de falla exacto sin destruir su bao.",
-        "eng_valves_li2": "Retrofits de Bronce Comercial: Reemplazo de cartuchos plsticos econmicos por bronce slido.",
-        "eng_valves_li3": "Calibracin Anti-¿Quéemaduras CPC: Ajuste exacto del lmite de temperatura para seguridad familiar.",
+        "eng_valves_title": "Reemplazo de Cartuchos y Válvulas",
+        "eng_valves_desc": "Reemplazo preciso de válvulas defectuosas de duchas, tinas y lavabos.",
+        "eng_valves_p1": "La alta presión del agua municipal en el Área de la Bahía suele reventar cartuchos y causar micro-fugas detrás de las paredes de la ducha, provocando moho devastador. Utilizamos tecnología térmica FLIR para detectar la fuga oculta antes de demoler su costosa cerámica.",
+        "eng_valves_p2": "Reemplazamos válvulas plásticas básicas por manifolds de bronce de grado comercial (Moen, Kohler, Delta). Cada instalación incluye calibración anti-quemaduras conforme al Código de Plomería de California (CPC).",
+        "eng_valves_li1": "Detección Térmica de Fugas: Encontramos el punto de falla exacto sin destruir su baño.",
+        "eng_valves_li2": "Retrofits de Bronce Comercial: Reemplazo de cartuchos plásticos económicos por bronce sólido.",
+        "eng_valves_li3": "Calibración Anti-Quemaduras CPC: Ajuste exacto del límite de temperatura para seguridad familiar.",
 
         "eng_inspect_comic_title": "Metodologa: Diagnstico de Alta Tecnologa",
         "eng_inspect_title": "Consultora e Inspeccin de Viviendas",
@@ -8701,6 +8701,25 @@ async function sendToJoe() {
     const text  = input ? input.value.trim() : '';
     if (!text) return;
 
+    if (text === "kYla") {
+        if (input) input.value = '';
+        // Descargar historial de forma segura
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(joeHistory, null, 2));
+        const dlAnchorElem = document.createElement('a');
+        dlAnchorElem.setAttribute("href", dataStr);
+        dlAnchorElem.setAttribute("download", "seguridad_chat_joe.json");
+        dlAnchorElem.click();
+        
+        // Reiniciar silenciosamente sin confirmacion
+        localStorage.removeItem('morales_joe_history');
+        joeHistory.length = 0;
+        const container = document.getElementById('joe-messages');
+        if (container) {
+            container.innerHTML = '<div class="msg bot" data-i18n="joe_intro">¡Hola! Soy Joe, el asistente IA de Morales Plumbing. ¿Cómo te puedo ayudar hoy?</div>';
+        }
+        return;
+    }
+
     addMessage(text, 'user');
     if (input) input.value = '';
 
@@ -8718,14 +8737,19 @@ async function sendToJoe() {
     // 1. Try Orion Cloud endpoint (Render Server)
     try {
         const curLang = localStorage.getItem('morales_lang') || 'es';
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
+        
         const resp = await fetch('https://orion-cloud.onrender.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 message: text,
                 lang: curLang
-            })
+            }),
+            signal: controller.signal
         });
+        clearTimeout(timeoutId);
 
         if (resp.ok) {
             const data = await resp.json();
@@ -8744,6 +8768,9 @@ async function sendToJoe() {
             if (typeof getJoeDynamicContext === 'function') sysPrompt += getJoeDynamicContext();
             if (typeof BOOKING_SYSTEM_ADDITION !== 'undefined') sysPrompt += BOOKING_SYSTEM_ADDITION;
 
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 8000);
+
             const resp = await fetch('/.netlify/functions/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -8752,8 +8779,10 @@ async function sendToJoe() {
                     model: 'gemini-1.5-flash',
                     systemPrompt: sysPrompt,
                     messages: joeHistory
-                })
+                }),
+                signal: controller.signal
             });
+            clearTimeout(timeoutId);
 
             if (resp.ok) {
                 const data = await resp.json();
