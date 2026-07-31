@@ -32,7 +32,7 @@ Email: moralesplumbing026@gmail.com
 Web: www.moralesplumbing.com
 
 SISTEMA DE MEMBRESIAS:
-- FREE: Las primeras 5 citas son gratis. Despues precio completo.
+- FREE: Las primeras 3 citas son gratis. Despues precio completo.
 - STANDARD: 10% de descuento en todos los servicios. Incluye 1 inspeccion preventiva anual gratis.
 - PREMIUM: 20% de descuento en todos los servicios. Incluye 2 inspecciones preventivas anuales gratis.
 
