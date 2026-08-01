@@ -1,6 +1,25 @@
 // Translation Dictionary (5 Bay Area Languages)
 const translations = {
     "en": {
+        
+        "qs_title": "What service do you need?",
+        "qs_desc": "Select your need and request a quote instantly.",
+        "qs_tab_plumbing": "General Plumbing",
+        "qs_tab_bathroom": "Bathrooms & Remodel",
+        "qs_tab_heaters": "Water Heaters",
+        "qs_tab_leaks": "Leak Detection",
+        "qs_tab_repipe": "Re-Pipe",
+        "qs_tab_ai": "AI Diagnosis",
+        "qs_plumb_t1": "Pipe Repair",
+        "qs_plumb_d1": "Professional diagnosis and repair of broken, clogged, or leaking pipes anywhere in the home.",
+        "qs_btn_call": "Call: (669) 234-2444",
+        "qs_plumb_t2": "24/7 Emergencies",
+        "qs_plumb_d2": "Flooding, burst pipes, or total water loss. We respond in San Jose with no evaluation fee.",
+        "qs_btn_emerg": "Emergency Now",
+        "qs_plumb_t3": "Plumbing Inspection",
+        "qs_plumb_d3": "Complete evaluation for home buying/selling. Detailed report with thermography included.",
+        "qs_btn_insp": "Request Inspection",
+
         "contact_sec_title": "Get in Touch",
         "contact_sec_desc": "Do you have an emergency or need a quick quote? Call us directly or contact us via WhatsApp. You can also leave your message.",
         "contact_form_title": "Send a Message",
