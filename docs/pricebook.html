@@ -207,7 +207,7 @@
     <footer class="site-footer">
         <div class="footer-nav">
             <a href="../index.html" data-i18n="nav_nexus">NEXUS</a>
-            <a href="propuesta_estrategica.html" data-i18n="nav_framework">ESTRATEGIA</a>
+            <a href="../index.html#services" data-i18n="nav_framework">ESTRATEGIA</a>
             <a href="legal.html" data-i18n="nav_legal">LEGAL</a>
         </div>
         <p class="footer-copyright-main" data-i18n="footer_rights">
@@ -252,7 +252,7 @@
             if(!grid) return;
             grid.innerHTML = filtered.map(s => `
                 <div class="pb-service-card glass animate-in">
-                    <img src="${s.image}" alt="Service" class="pb-service-img" onerror="this.src='../assets/service_default.png'">
+                    <img src="${s.image}" alt="Service" class="pb-service-img" onerror="this.src='../assets/digital_plumber_banner.jpg'">
                     <div class="pb-service-body">
                         <span class="pb-category-tag" data-i18n="cat_${s.category.toLowerCase()}">${s.category}</span>
                         <div class="pb-service-code">${s.code}</div>
