@@ -42,7 +42,7 @@ Si las env vars de AI no están configuradas, el chat de Joe usa respuestas loca
 
 ---
 
-## Dominio Personalizado
+## Repositorio Oficial
 
-El sitio apunta a `www.moralesplumbing.com`.  
-Configurar en Netlify → Domain settings → Add custom domain.
+El proyecto se despliega desde GitHub: `https://github.com/agem2024/morales-plumbing-web.git`
+Notificaciones configuradas a: `moralesplumbing026@gmail.com`

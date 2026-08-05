@@ -159,7 +159,28 @@
             <ul class="nav-links">
                 <li><a href="#home" class="active" data-i18n="nav_nexus" onclick="navigate('home'); return false;">Nexus</a></li>
                 <li><a href="#ecosystem" data-i18n="nav_orion" onclick="navigate('ecosystem'); return false;">Ecosistema</a></li>
-                <li><a href="#services" data-i18n="nav_services" onclick="navigate('services'); return false;">Servicios</a></li>
+                <!-- SERVICIOS DROPDOWN -->
+                <li class="nav-dropdown">
+                    <a href="#services" data-i18n="nav_services" onclick="navigate('services'); return false;" style="cursor: pointer; padding-right: 15px;">Servicios &#x25BE;</a>
+                    <div class="dropdown-content">
+                        <a href="docs/remodelacion-de-banos.html">
+                            <strong>Remodelacion de Banos</strong>
+                            <span class="desc">San Jose, CA - Cotizacion Gratis</span>
+                        </a>
+                        <a href="docs/calentadores-de-agua.html">
+                            <strong>Calentadores de Agua</strong>
+                            <span class="desc">Tankless, Heat Pump, Rebates CA</span>
+                        </a>
+                        <a href="docs/deteccion-de-fugas-ai.html">
+                            <strong>Deteccion de Fugas con IA</strong>
+                            <span class="desc">Termografia - Sin Demolicion</span>
+                        </a>
+                        <a href="docs/reparacion-de-tuberias.html">
+                            <strong>Reparacion de Tuberias</strong>
+                            <span class="desc">Emergencias 24/7 - Re-Pipe</span>
+                        </a>
+                    </div>
+                </li>
                 
                 <!-- DROPDOWN FOR ORION TECH HUB -->
                 <li class="nav-dropdown">
@@ -183,28 +204,6 @@
                 <li><a href="#about" data-i18n="nav_about" onclick="navigate('about'); return false;">Mision</a></li>
                 <li><a href="#contact" data-i18n="nav_terminal" onclick="navigate('contact'); return false;">Contacto</a></li>
 
-                <!-- V.02: SERVICIOS DROPDOWN -->
-                <li class="nav-dropdown">
-                    <a href="docs/remodelacion-de-banos.html" style="cursor: pointer; padding-right: 15px;">Servicios &#x25BE;</a>
-                    <div class="dropdown-content">
-                        <a href="docs/remodelacion-de-banos.html">
-                            <strong>Remodelacion de Banos</strong>
-                            <span class="desc">San Jose, CA - Cotizacion Gratis</span>
-                        </a>
-                        <a href="docs/calentadores-de-agua.html">
-                            <strong>Calentadores de Agua</strong>
-                            <span class="desc">Tankless, Heat Pump, Rebates CA</span>
-                        </a>
-                        <a href="docs/deteccion-de-fugas-ai.html">
-                            <strong>Deteccion de Fugas con IA</strong>
-                            <span class="desc">Termografia - Sin Demolicion</span>
-                        </a>
-                        <a href="docs/reparacion-de-tuberias.html">
-                            <strong>Reparacion de Tuberias</strong>
-                            <span class="desc">Emergencias 24/7 - Re-Pipe</span>
-                        </a>
-                    </div>
-                </li>
 
                 <li><a href="#" class="nav-portal-btn" onclick="openClientPortal(); return false;">
                     <span data-i18n="nav_portal_header">Portal</span>
@@ -317,14 +316,14 @@
                             <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;" data-i18n="qs_plumb_t1">Reparacion de Tuberias</h3>
                             <p style="color: #718096; font-size: 0.88rem; margin: 0;" data-i18n="qs_plumb_d1">Diagnostico y reparacion profesional de tuberias rotas, obstruidas o filtradas en cualquier parte del hogar.</p>
                         </div>
-                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; transition: all 0.3s;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'" data-i18n="qs_btn_call">Llamar: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> <a href="tel:+16692134422" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:bold;"><i class="fas fa-robot"></i> Oficina: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; transition: all 0.3s;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'" data-i18n="qs_btn_call">Llamar: (669) 213-4422</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div>
                             <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;" data-i18n="qs_plumb_t2">Emergencias 24/7</h3>
                             <p style="color: #718096; font-size: 0.88rem; margin: 0;" data-i18n="qs_plumb_d2">Inundaciones, tuberias reventadas o perdida total de agua. Respondemos en San Jose sin costo de evaluacion.</p>
                         </div>
-                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; transition: all 0.3s;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'" data-i18n="qs_btn_emerg">Emergencia Ahora</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> <a href="tel:+16692134422" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:bold;"><i class="fas fa-robot"></i> Oficina: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; transition: all 0.3s;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'" data-i18n="qs_btn_emerg">Emergencia Ahora</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div>
@@ -348,7 +347,7 @@
                             <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Drenajes y Desague</h3>
                             <p style="color: #718096; font-size: 0.88rem; margin: 0;">Limpieza y reparacion de drenajes de bano, tina y lavabo con tecnologia de presion hidrostatica.</p>
                         </div>
-                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Llamar: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> <a href="tel:+16692134422" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:bold;"><i class="fas fa-robot"></i> Oficina: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Llamar: (669) 213-4422</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div>
@@ -366,7 +365,7 @@
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Mantenimiento Preventivo</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Flush anual, revision de anodo y ajuste de temperatura para alargar la vida util del equipo.</p></div>
-                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Llamar Ahora</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> <a href="tel:+16692134422" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:bold;"><i class="fas fa-robot"></i> Oficina: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Llamar Ahora</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Heat Pump Water Heaters</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Rebates disponibles en California. Calificamos bajo el programa de incentivos estatales TECH Clean CA.</p></div>
@@ -381,7 +380,7 @@
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Fugas en Slab</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Especialistas en deteccion y reparacion de fugas bajo la losa de concreto. Cobertura de seguro aplicable.</p></div>
-                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">Diagnostico Urgente</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> <a href="tel:+16692134422" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:bold;"><i class="fas fa-robot"></i> Oficina: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">Diagnostico Urgente</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">AI Leak Prediction</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Sistema predictivo con sensores IoT que alerta fugas antes de que ocurran. Instalacion disponible.</p></div>
@@ -396,7 +395,7 @@
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">PEX Piping</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Instalacion de tuberias PEX de ultima generacion. Flexible, resistente a la corrosion y de bajo costo.</p></div>
-                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">Llamar Ahora</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> <a href="tel:+16692134422" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:bold;"><i class="fas fa-robot"></i> Oficina: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">Llamar Ahora</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Nueva Construccion</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Plomeria integral para proyectos residenciales y comerciales desde cero. Coordinamos permisos.</p></div>
@@ -423,7 +422,7 @@
                 <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px;">
                     <p style="color: #a0aec0; font-size: 0.9rem; margin: 0 0 1rem;">No encuentra su servicio? Llamenos y resolvemos cualquier necesidad de plomeria en San Jose, CA.</p>
                     <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 12px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Llamar: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> <a href="tel:+16692134422" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:bold;"><i class="fas fa-robot"></i> Oficina: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 12px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Llamar: (669) 213-4422</a>
                         <a href="mailto:moralesplumbing026@gmail.com" style="background: transparent; color: #D4AF37; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1px solid #D4AF37;">Email: moralesplumbing026@gmail.com</a> <a href="https://t.me/nekon" target="_blank" class="hero-btn secondary" style="margin-left:10px; display:inline-flex; align-items:center; background:#1a2332; color:#D4AF37; border:1px solid #D4AF37; padding:12px 28px; font-weight:700; border-radius:8px; text-decoration:none;"><img src="assets/nekon_app_card.png" onerror="this.src='../assets/nekon_app_card.png'" alt="Telegram Bot" style="height:24px; margin-right:8px; border-radius:50%;"> Chat NeKon AI</a>
                     </div>
                 </div>
@@ -1305,22 +1304,22 @@
                 <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 1rem; font-size: 0.9rem;">
                     <span><strong data-i18n="contact_loc" style="color: var(--neon-cyan);">Location:</strong> San Jose, California</span>
                     <span><strong data-i18n="contact_email" style="color: var(--neon-cyan);">Email:</strong> <a href="mailto:moralesplumbing026@gmail.com" style="color: #fff; text-decoration: none;">moralesplumbing026@gmail.com</a> <a href="https://t.me/nekon" target="_blank" class="hero-btn secondary" style="margin-left:10px; display:inline-flex; align-items:center; background:#1a2332; color:#D4AF37; border:1px solid #D4AF37; padding:12px 28px; font-weight:700; border-radius:8px; text-decoration:none;"><img src="assets/nekon_app_card.png" onerror="this.src='../assets/nekon_app_card.png'" alt="Telegram Bot" style="height:24px; margin-right:8px; border-radius:50%;"> Chat NeKon AI</a></span>
-                    <span><strong data-i18n="contact_phone" style="color: var(--neon-cyan);">Phone:</strong> <a href="tel:+16692134422" style="color: #fff; text-decoration: none;">(669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> <a href="tel:+16692134422" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:bold;"><i class="fas fa-robot"></i> Oficina: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a></span>
+                    <span><strong data-i18n="contact_phone" style="color: var(--neon-cyan);">Phone:</strong> <a href="tel:+16692134422" style="color: #fff; text-decoration: none;">(669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a></span>
                     <span><strong data-i18n="contact_lic" style="color: var(--neon-cyan);">License:</strong> C-36 #1156542</span>
                 </div>
                 
                 <div class="social-links" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                    <a href="#" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-itemás: center; gap: 8px;">
+                    <a href="https://www.instagram.com/plumbingmorales" target="_blank" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-itemás: center; gap: 8px;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         Instagram
                     </a>
-                    <a href="#" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-itemás: center; gap: 8px;">
+                    <a href="https://www.facebook.com/profile.php?id=61592635708632" target="_blank" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-itemás: center; gap: 8px;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         Facebook
                     </a>
-                    <a href="#" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-itemás: center; gap: 8px;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        LinkedIn
+                    <a href="https://t.me/nekon" target="_blank" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-itemás: center; gap: 8px;">
+                        <img src="assets/nekon_app_card.png" onerror="this.src='../assets/nekon_app_card.png'" alt="Telegram Bot" style="height:20px; border-radius:50%;">
+                        Telegram
                     </a>
                     <a href="https://www.youtube.com/@MoralesPlumbing" target="_blank" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-itemás: center; gap: 8px;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
@@ -1419,7 +1418,7 @@
             <p>Information collected is used solely to: (a) process and confirm service appointments; (b) respond to your inquiries; (c) deliver the services you request; and (d) improve our website. We do <strong style="color:#e2e8f0;">not sell, share, or rent</strong> your personal information to any third party.</p>
 
             <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">3. California Privacy Rights (CCPA / CalOPPA)</h3>
-            <p>If you are a California resident, you have the right to: (a) know what personal information we collect; (b) request deletion of your personal information; (c) opt out of the sale of personal information (we do not sell data); and (d) receive non-discriminatory service regardless of privacy choices. To exercise these rights, contact us at <a href="mailto:moralesplumbing026@gmail.com" style="color:#00f5ff;">moralesplumbing026@gmail.com</a> <a href="https://t.me/nekon" target="_blank" class="hero-btn secondary" style="margin-left:10px; display:inline-flex; align-items:center; background:#1a2332; color:#D4AF37; border:1px solid #D4AF37; padding:12px 28px; font-weight:700; border-radius:8px; text-decoration:none;"><img src="assets/nekon_app_card.png" onerror="this.src='../assets/nekon_app_card.png'" alt="Telegram Bot" style="height:24px; margin-right:8px; border-radius:50%;"> Chat NeKon AI</a> or call <a href="tel:+16692134422" style="color:#00f5ff;">(669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> <a href="tel:+16692134422" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:bold;"><i class="fas fa-robot"></i> Oficina: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a>.</p>
+            <p>If you are a California resident, you have the right to: (a) know what personal information we collect; (b) request deletion of your personal information; (c) opt out of the sale of personal information (we do not sell data); and (d) receive non-discriminatory service regardless of privacy choices. To exercise these rights, contact us at <a href="mailto:moralesplumbing026@gmail.com" style="color:#00f5ff;">moralesplumbing026@gmail.com</a> <a href="https://t.me/nekon" target="_blank" class="hero-btn secondary" style="margin-left:10px; display:inline-flex; align-items:center; background:#1a2332; color:#D4AF37; border:1px solid #D4AF37; padding:12px 28px; font-weight:700; border-radius:8px; text-decoration:none;"><img src="assets/nekon_app_card.png" onerror="this.src='../assets/nekon_app_card.png'" alt="Telegram Bot" style="height:24px; margin-right:8px; border-radius:50%;"> Chat NeKon AI</a> or call <a href="tel:+16692134422" style="color:#00f5ff;">(669) 213-4422</a>.</p>
 
             <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">4. Cookies &amp; Local Storage</h3>
             <p>Our website uses <strong style="color:#e2e8f0;">browser Local Storage</strong> (not cookies) to save your language preference and portal settings. We use Google Analytics (GA4) for anonymous traffic analysis. Google Analytics may set cookies. You may opt out via your browser settings or <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style="color:#00f5ff;">Google's opt-out tool</a>.</p>
@@ -1434,7 +1433,7 @@
             <p>Our services are not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us information, contact us immediately.</p>
 
             <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">8. Contact</h3>
-            <p>For privacy questions: <a href="mailto:moralesplumbing026@gmail.com" style="color:#00f5ff;">moralesplumbing026@gmail.com</a> <a href="https://t.me/nekon" target="_blank" class="hero-btn secondary" style="margin-left:10px; display:inline-flex; align-items:center; background:#1a2332; color:#D4AF37; border:1px solid #D4AF37; padding:12px 28px; font-weight:700; border-radius:8px; text-decoration:none;"><img src="assets/nekon_app_card.png" onerror="this.src='../assets/nekon_app_card.png'" alt="Telegram Bot" style="height:24px; margin-right:8px; border-radius:50%;"> Chat NeKon AI</a> | <a href="tel:+16692134422" style="color:#00f5ff;">(669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> <a href="tel:+16692134422" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:bold;"><i class="fas fa-robot"></i> Oficina: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> | Morales Plumbing, San Jose, CA</p>
+            <p>For privacy questions: <a href="mailto:moralesplumbing026@gmail.com" style="color:#00f5ff;">moralesplumbing026@gmail.com</a> <a href="https://t.me/nekon" target="_blank" class="hero-btn secondary" style="margin-left:10px; display:inline-flex; align-items:center; background:#1a2332; color:#D4AF37; border:1px solid #D4AF37; padding:12px 28px; font-weight:700; border-radius:8px; text-decoration:none;"><img src="assets/nekon_app_card.png" onerror="this.src='../assets/nekon_app_card.png'" alt="Telegram Bot" style="height:24px; margin-right:8px; border-radius:50%;"> Chat NeKon AI</a> | <a href="tel:+16692134422" style="color:#00f5ff;">(669) 213-4422</a> | Morales Plumbing, San Jose, CA</p>
 
             <div style="margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); text-align:center;">
                 <button onclick="closePrivacyModal()" style="background:#D4AF37; color:#0A192F; border:none; padding:10px 30px; border-radius:6px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif;">Close</button>
@@ -1471,7 +1470,7 @@
             <p>These Termás are governed by the laws of the State of California. Disputes shall be resolved in Santa Clara County courts.</p>
 
             <h3 style="color:#00f5ff; font-size:0.95rem; margin-top:20px;">8. Contact</h3>
-            <p><a href="mailto:moralesplumbing026@gmail.com" style="color:#00f5ff;">moralesplumbing026@gmail.com</a> <a href="https://t.me/nekon" target="_blank" class="hero-btn secondary" style="margin-left:10px; display:inline-flex; align-items:center; background:#1a2332; color:#D4AF37; border:1px solid #D4AF37; padding:12px 28px; font-weight:700; border-radius:8px; text-decoration:none;"><img src="assets/nekon_app_card.png" onerror="this.src='../assets/nekon_app_card.png'" alt="Telegram Bot" style="height:24px; margin-right:8px; border-radius:50%;"> Chat NeKon AI</a> | <a href="tel:+16692134422" style="color:#00f5ff;">(669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a> <a href="tel:+16692134422" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:bold;"><i class="fas fa-robot"></i> Oficina: (669) 213-4422</a> <a href="https://wa.me/16692134422" target="_blank" style="margin-left:15px; color:#25D366; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
+            <p><a href="mailto:moralesplumbing026@gmail.com" style="color:#00f5ff;">moralesplumbing026@gmail.com</a> <a href="https://t.me/nekon" target="_blank" class="hero-btn secondary" style="margin-left:10px; display:inline-flex; align-items:center; background:#1a2332; color:#D4AF37; border:1px solid #D4AF37; padding:12px 28px; font-weight:700; border-radius:8px; text-decoration:none;"><img src="assets/nekon_app_card.png" onerror="this.src='../assets/nekon_app_card.png'" alt="Telegram Bot" style="height:24px; margin-right:8px; border-radius:50%;"> Chat NeKon AI</a> | <a href="tel:+16692134422" style="color:#00f5ff;">(669) 213-4422</a></p>
 
             <div style="margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); text-align:center;">
                 <button onclick="closeTermásModal()" style="background:#D4AF37; color:#0A192F; border:none; padding:10px 30px; border-radius:6px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif;">Close</button>
