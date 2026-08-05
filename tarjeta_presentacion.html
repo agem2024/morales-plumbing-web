@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -410,48 +410,43 @@
         </header>
 
         <!-- Main Actions -->
+        <style>
+            .action-btn { position: relative; overflow: hidden; z-index: 1; }
+            .btn-video {
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                opacity: 0.5;
+            }
+            .action-btn:hover .btn-video { opacity: 0.8; }
+        </style>
         <div class="primary-actions">
-            <a href="tel:+16692342444" class="action-btn action-call" style="margin-bottom:10px;">
-                <i class="fas fa-phone-volume"></i>
-                <span id="t_call">DIRECTO (ALEX)</span>
+            <a href="tel:+16692342444" class="action-btn action-call" style="margin-bottom:10px; border-color: rgba(212, 175, 55, 0.5); color: #fff;">
+                <video class="btn-video" autoplay loop muted playsinline src="assets/videos/alex_ceo.mp4"></video>
+                <i class="fas fa-phone-volume" style="text-shadow: 1px 1px 3px #000;"></i>
+                <span id="t_call" style="text-shadow: 1px 1px 3px #000; font-weight:bold;">DIRECTO (ALEX)</span>
             </a>
-            <a href="tel:+16692134422" class="action-btn action-call" style="margin-bottom:10px; background: linear-gradient(135deg, #1a2332, #0A192F); color: #D4AF37; border: 1px solid rgba(212, 175, 55, 0.5);">
-                <i class="fas fa-robot"></i>
-                <span>OFICINA (24/7)</span>
+            <a href="tel:+16692134422" class="action-btn action-call" style="margin-bottom:10px; border: 1px solid rgba(212, 175, 55, 0.5); color: #fff;">
+                <video class="btn-video" autoplay loop muted playsinline src="assets/videos/capability_247_ops.mp4"></video>
+                <i class="fas fa-robot" style="text-shadow: 1px 1px 3px #000;"></i>
+                <span style="text-shadow: 1px 1px 3px #000; font-weight:bold;">OFICINA (24/7)</span>
             </a>
-            <a href="mailto:moralesplumbing026@gmail.com" class="action-btn action-email" style="margin-bottom:10px;">
-                <i class="fas fa-envelope-open-text"></i>
-                <span id="t_email">ENVIAR CORREO</span>
+            <a href="mailto:moralesplumbing026@gmail.com" class="action-btn action-email" style="margin-bottom:10px; color:#fff; border: 1px solid rgba(212, 175, 55, 0.5);">
+                <video class="btn-video" autoplay loop muted playsinline src="assets/videos/jarvis_email.mp4"></video>
+                <i class="fas fa-envelope-open-text" style="text-shadow: 1px 1px 3px #000;"></i>
+                <span id="t_email" style="text-shadow: 1px 1px 3px #000; font-weight:bold;">ENVIAR CORREO</span>
             </a>
-            <a href="https://t.me/nekon" target="_blank" class="action-btn" style="background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.9)), url('assets/digital_plumber_banner.jpg') center/cover no-repeat; color: #D4AF37; border: 1px solid rgba(212, 175, 55, 0.5); text-decoration:none; padding: 20px 10px; border-radius: 12px; box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);">
-                <i class="fab fa-telegram-plane" style="font-size: 1.5rem; margin-right: 10px;"></i>
-                <span style="font-size: 1.1rem; font-weight: 800; text-shadow: 1px 1px 4px rgba(0,0,0,0.9);">CHAT NEKON AI</span>
+            <a href="https://t.me/nekon" target="_blank" class="action-btn" style="color: #fff; border: 1px solid rgba(212, 175, 55, 0.5); text-decoration:none; padding: 20px 10px; border-radius: 12px; box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);">
+                <video class="btn-video" autoplay loop muted playsinline src="assets/videos/xona_bot.mp4" style="opacity: 0.7;"></video>
+                <i class="fab fa-telegram-plane" style="font-size: 1.5rem; margin-right: 10px; text-shadow: 1px 1px 4px #000;"></i>
+                <span style="font-size: 1.1rem; font-weight: 800; text-shadow: 1px 1px 4px #000;">CHAT NEKON AI</span>
             </a>
         </div>
 
         <!-- Contact Directory -->
         <div class="info-list">
-            <a href="tel:+16692134422" class="info-row">
-                <div class="info-icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="info-text">
-                    (669) 213-4422
-                    <span class="info-subtext" id="t_phone_sub">Línea Directa / 24 hrs</span>
-                </div>
-            </a>
-            <a href="tel:+16692134422" class="info-row">
-                <div class="info-icon" style="color: #D4AF37;"><i class="fas fa-robot"></i></div>
-                <div class="info-text">
-                    <div class="info-label">Oficina (24/7)</div>
-                    <div class="info-value" style="color: #D4AF37;">(669) 213-4422</div>
-                </div>
-            </a>
-            <a href="https://wa.me/16692134422" target="_blank" class="info-row" style="background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.2);">
-                <div class="info-icon" style="color: #25D366;"><i class="fab fa-whatsapp"></i></div>
-                <div class="info-text">
-                    <div class="info-label">WhatsApp (Oficina)</div>
-                    <div class="info-value" style="color: #25D366;">(669) 213-4422</div>
-                </div>
-            </a>
             <a href="https://maps.google.com/?q=San+Jose,+CA" target="_blank" class="info-row">
                 <div class="info-icon" style="color: var(--neon-orange);"><i class="fas fa-map-marker-alt"></i></div>
                 <div class="info-text">
@@ -470,6 +465,7 @@
 
         <!-- Social Media -->
         <div class="social-bar">
+            <a href="https://wa.me/16692134422" target="_blank" class="social-icon" style="background:#25D366; color:#fff;" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61592635708632" target="_blank" class="social-icon fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/plumbingmorales" target="_blank" class="social-icon ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="#" class="social-icon tk" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
@@ -557,4 +553,6 @@
     </script>
 </body>
 </html>
+
+
 
