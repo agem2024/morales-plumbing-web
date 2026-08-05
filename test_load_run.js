@@ -9155,7 +9155,7 @@ function getJoeLocalFallback(input) {
     if (input.match(/servicio|service|hacen|cuale/)) return "Ofrecemos Plomería Técnica de precisión: Diagnóstico por Termografía, Elite Copper Renovations, Septic Systems, Eco-Retrofitting y Diseño CAD de Redes Hidráulicas.";
     if (input.match(/fuga|leak/)) return "🚨 Para fugas, cierra el suministro principal de inmediato. Usamos termografía infrarroja FLIR y sensores acústicos para localizar la falla sin destruir tus paredes. Contacta a nuestro equipo ya.";
     if (input.match(/plomeria|plumbing|tuber/)) return "Somos los especialistas del agua en San Jose. Especialistas en infraestructura hidráulica inteligente, integración de IA (Ecosistema ORION) y plomería CSLB C-36.";
-    if (input.match(/emergencia|emergency/)) return "🚨 Esto es una emergencia. Por favor llama inmediatamente a nuestra terminal de contacto al (669) 234-2444.";
+    if (input.match(/emergencia|emergency/)) return "🚨 Esto es una emergencia. Por favor llama inmediatamente a nuestra terminal de contacto al (669) 234-2444 / (669) 213-4422.";
     if (input.match(/app|aplicacion|estimador|orion|price book/)) return "ORION es nuestro ecosistema tecnológico de plomería: Estimador Pro, Price Book v6.0, Portal MP y simuladores hidráulicos CAD. Tecnología de punta al servicio del flujo.";
     return "¡Excelente pregunta! Como IA, aún estoy aprendiendo algunos detalles específicos. Te invito a explorar nuestros servicios Elite en la sección 'Ecosistema' o contactar a Alex Espinosa directamente para Plomería Técnica de alto nivel. 🔧";
 }
@@ -10681,7 +10681,7 @@ Tu cita con Morales Plumbing ha sido recibida:
 Te confirmaremos por teléfono al ${d.phone}.
 
 Gracias por confiar en Morales Plumbing — CSLB C-36 #1156542
-📞 (669) 234-2444 | moralesplumbing026@gmail.com
+📞 (669) 234-2444 / (669) 213-4422 | moralesplumbing026@gmail.com
 `);
         userMailto = `mailto:${userEmail}?subject=${userSubject}&body=${userBody}`;
     }

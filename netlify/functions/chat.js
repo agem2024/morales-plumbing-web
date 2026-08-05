@@ -27,7 +27,7 @@ COMO SONAR HUMANO (EJEMPLOS):
 INFORMACION DE LA EMPRESA:
 Nombre: Morales Plumbing
 Licencia: CSLB C-36 numero 1156542, San Jose, California
-Telefono: (669) 234-2444
+Telefono: (669) 234-2444 / (669) 213-4422
 Email: moralesplumbing026@gmail.com
 Web: sunny-taffy-b28025.netlify.app
 
