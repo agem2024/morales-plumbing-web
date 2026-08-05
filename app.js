@@ -8701,11 +8701,16 @@ function speakJoe(text) {
 
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
-        const msg = new SpeechSynthesisUtterance(text);
+        
+        // Limpiar el texto de emojis y caracteres especiales para que la voz no suene robotica
+        let cleanText = text.replace(/[\u1000-\uFFFF]+/g, ''); // Remueve emojis y caracteres extranos
+        cleanText = cleanText.replace(/[*#_~>\\-]/g, ''); // Remueve markdown
+        
+        const msg = new SpeechSynthesisUtterance(cleanText);
         const curLang = localStorage.getItem('morales_lang') || 'es';
         const langMap = {
-            'en': 'en-US',
             'es': 'es-MX',
+            'en': 'en-US',
             'zh': 'zh-CN',
             'tl': 'tl-PH',
             'vi': 'vi-VN'
@@ -8869,7 +8874,7 @@ async function sendToJoe() {
 
 async function callGemini(apiKey) {
     const model   = (typeof GEMINI_MODEL !== 'undefined') ? GEMINI_MODEL : 'gemini-1.5-flash';
-    let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en Plomería.';
+    let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en Plomería. REGLA CRITICA: NO USES EMOJIS, NI ASTERISCOS, NI FORMATO MARKDOWN EN TUS RESPUESTAS PORQUE SERAN LEIDAS POR VOZ.';
     sysPrompt += getJoeDynamicContext();
     if (typeof BOOKING_SYSTEM_ADDITION !== 'undefined') sysPrompt += BOOKING_SYSTEM_ADDITION;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
@@ -8904,7 +8909,7 @@ async function callGemini(apiKey) {
 
 async function callOpenAI(apiKey) {
     const model = (typeof OPENAI_MODEL !== 'undefined') ? OPENAI_MODEL : 'gpt-4o-mini';
-    let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en Plomería.';
+    let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en Plomería. REGLA CRITICA: NO USES EMOJIS, NI ASTERISCOS, NI FORMATO MARKDOWN EN TUS RESPUESTAS PORQUE SERAN LEIDAS POR VOZ.';
     sysPrompt += getJoeDynamicContext();
 
     const messages = [
@@ -10588,5 +10593,6 @@ window.toggleJoeMic = function() {
   if (btn) btn.innerHTML = window.isJoeMuted ? '🔇' : '🎤';
   if (window.isJoeMuted && 'speechSynthesis' in window) window.speechSynthesis.cancel();
 };
+
 
 
