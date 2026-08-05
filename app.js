@@ -1,4 +1,4 @@
-// Translation Dictionary (5 Bay Area Languages)
+﻿// Translation Dictionary (5 Bay Area Languages)
 const translations = {
     "en": {
         
@@ -9173,7 +9173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (form) form.reset();
             
             const waMessage = `Hola Morales Plumbing!%0ANueva solicitud de contacto:%0A*Nombre:* ${data.name}%0A*Tel:* ${data.phone}%0A*Email:* ${data.email}%0A*Mensaje:* ${data.notes}`;
-            window.open('https://wa.me/16692342444?text=' + waMessage, '_blank');
+            window.open('https://wa.me/16692134422?text=' + waMessage, '_blank');
             
             setTimeout(() => {
                 if (btn) {
@@ -10501,7 +10501,7 @@ function submitBooking() {
 
     // ── SECURE BACKEND SUBMISSION ────────────────────────────
     const waMessage = `Hola Morales Plumbing!%0ANueva Cita Reservada por Bot Joe:%0A*Nombre:* ${d.name}%0A*Tel:* ${d.phone}%0A*Dir:* ${d.address}%0A*Servicio:* ${d.service}%0A*Fecha:* ${d.date}%0A*Hora:* ${d.time}%0A*Notas:* ${d.notes}`;
-    window.open('https://wa.me/16692342444?text=' + waMessage, '_blank');
+    window.open('https://wa.me/16692134422?text=' + waMessage, '_blank');
 
     // Joe confirmation message
     const confirmMsg = lang === 'es'
@@ -10588,3 +10588,4 @@ window.toggleJoeMic = function() {
   if (btn) btn.innerHTML = window.isJoeMuted ? '🔇' : '🎤';
   if (window.isJoeMuted && 'speechSynthesis' in window) window.speechSynthesis.cancel();
 };
+
