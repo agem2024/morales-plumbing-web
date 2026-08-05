@@ -527,17 +527,7 @@
                 </div>
 
                 
-                <!-- MULTIMEDIA SHOWCASE -->
-                <div style="margin-bottom: 50px; text-align: center;">
-                    
-                    <!-- EN VERSION: Video + Infographics -->
-                    <div class="lang-en" style="display: none;">
-                        <video src="assets/videos/ai_in_bluecollar_trades.mp4" controls preload="metadata" style="max-width: 100%; border-radius: 15px; border: 1px solid rgba(0,245,255,0.3); margin-bottom: 20px;"></video>
-                        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                            <img src="assets/images/morales_plumbing_ai_technology_infographic.png" style="max-width: 48%; border-radius: 10px; border: 1px solid rgba(212,175,55,0.3);" alt="AI Technology">
-                            <img src="assets/images/morales_plumbing_aiintegrated_services.png" style="max-width: 48%; border-radius: 10px; border: 1px solid rgba(212,175,55,0.3);" alt="AI Services">
-                        </div>
-                    </div>
+                
 
                     <!-- ES VERSION: Video + Infographic -->
                     <div class="lang-es">
@@ -547,11 +537,7 @@
 
                 </div>
 
-                <!-- ORION ARTICLES -->
-                <div style="text-align: center; margin-bottom: 50px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                    <a href="docs/inteligencia_artificial.html" class="btn-primary-glow" style="background: rgba(0, 245, 255, 0.1); color: #00f5ff; border: 1px solid #00f5ff; border-radius: 8px; padding: 12px 24px; text-decoration: none; font-weight: bold;"><span style="margin-right:8px;">🤖</span> IA & Joe AI</a>
-                    <a href="docs/deteccion_termica.html" class="btn-primary-glow" style="background: rgba(212, 175, 55, 0.1); color: #D4AF37; border: 1px solid #D4AF37; border-radius: 8px; padding: 12px 24px; text-decoration: none; font-weight: bold;"><span style="margin-right:8px;">🔥</span> Detección Térmica MSX</a>
-                </div>
+                
 
 <!-- NEW ECOSYSTEM MODULES (High-Fidelity) -->
                 <!-- COPPER -->
@@ -886,18 +872,30 @@
                     </div>
                     <div class="podcast-list">
 
+                        <!-- New V02 Podcasts -->
                         <div class="pod-item" id="item-ai_sledgehammer">
                             <div class="pod-info">
-                                <span class="pod-ep">Ep Especial (EN)</span>
-                                <span class="pod-title">AI Replaces the Plumber's Sledgehammer</span>
+                                <span class="pod-badge deep-dive" data-i18n="pod_type_deep_dive">Deep Dive</span>
+                                <span class="pod-lang">EN</span>
+                                <h4 data-i18n="ai_sledgehammer_title">AI Replaces the Plumber's Sledgehammer</h4>
                             </div>
-                            <button class="btn-play-pod" onclick="playPodcast('assets/podcasts/ai_replaces_the_plumber_s_sledgehammer.m4a', 'item-ai_sledgehammer')">▶</button>
+                            <button class="btn-play-pod" onclick="playPodcast('assets/podcasts/ai_replaces_the_plumber_s_sledgehammer.m4a', 'item-ai_sledgehammer')">
+                                <span class="play-icon">▶</span> <span data-i18n="btn_listen">Listen Now</span>
+                            </button>
                         </div>
                         <div class="pod-item" id="item-ia_militar">
                             <div class="pod-info">
-                                <span class="pod-ep">Ep Especial (ES)</span>
-                                <span class="pod-title">Fontaneros con IA y Tecnología Militar</span>
+                                <span class="pod-badge deep-dive" data-i18n="pod_type_deep_dive">Deep Dive</span>
+                                <span class="pod-lang">ES</span>
+                                <h4 data-i18n="ia_militar_title">Fontaneros con IA y Tecnología Militar</h4>
                             </div>
+                            <button class="btn-play-pod" onclick="playPodcast('assets/podcasts/fontaneros_con_ia_y_tecnologia_militar.m4a', 'item-ia_militar')">
+                                <span class="play-icon">▶</span> <span data-i18n="btn_listen">Listen Now</span>
+                            </button>
+                        </div>
+
+
+                        
                             <button class="btn-play-pod" onclick="playPodcast('assets/podcasts/fontaneros_con_ia_y_tecnologia_militar.m4a', 'item-ia_militar')">▶</button>
                         </div>
 
@@ -942,18 +940,7 @@
                     </div>
                     <div class="podcast-list">
 
-                        <div class="pod-item" id="item-ai_sledgehammer">
-                            <div class="pod-info">
-                                <span class="pod-ep">Ep Especial (EN)</span>
-                                <span class="pod-title">AI Replaces the Plumber's Sledgehammer</span>
-                            </div>
-                            <button class="btn-play-pod" onclick="playPodcast('assets/podcasts/ai_replaces_the_plumber_s_sledgehammer.m4a', 'item-ai_sledgehammer')">▶</button>
-                        </div>
-                        <div class="pod-item" id="item-ia_militar">
-                            <div class="pod-info">
-                                <span class="pod-ep">Ep Especial (ES)</span>
-                                <span class="pod-title">Fontaneros con IA y Tecnología Militar</span>
-                            </div>
+                        
                             <button class="btn-play-pod" onclick="playPodcast('assets/podcasts/fontaneros_con_ia_y_tecnologia_militar.m4a', 'item-ia_militar')">▶</button>
                         </div>
 
