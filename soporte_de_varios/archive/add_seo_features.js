@@ -10,8 +10,8 @@ const emergencyBar = `
     <div id="emergency-topbar" class="emergency-topbar">
         <div class="emergency-content">
             <span class="emergency-text" data-i18n="topbar_emergency">🚨 Servicio de Emergencia 24/7</span>
-            <a href="tel:+16692342444" class="emergency-call">
-                <span data-i18n="topbar_call">Llamar Ahora:</span> <span class="phone-number">(669) 234-2444</span>
+            <a href="tel:+16692134422" class="emergency-call">
+                <span data-i18n="topbar_call">Llamar Ahora:</span> <span class="phone-number">(669) 213-4422</span>
             </a>
         </div>
     </div>
