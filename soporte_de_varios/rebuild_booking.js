@@ -296,7 +296,7 @@ Tu cita con Morales Plumbing ha sido recibida:
 Te confirmaremos por teléfono al \${d.phone}.
 
 Gracias por confiar en Morales Plumbing — CSLB C-36 #1156542
-📞 (669) 213-4422 | moralesplumbing026@gmail.com
+📞 (669) 234-2444 | moralesplumbing026@gmail.com
 \`);
         userMailto = \`mailto:\${userEmail}?subject=\${userSubject}&body=\${userBody}\`;
     }
