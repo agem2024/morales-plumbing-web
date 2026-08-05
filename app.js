@@ -9233,8 +9233,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initial Navigation based on hash
-    const initialSection = window.location.hash.substring(1) || 'home';
+    const initialSection = 'home';
     navigate(initialSection, false);
+    if (window.history.replaceState) { window.history.replaceState(null, null, window.location.pathname); }
 
     // CCPA Banner Check
     if (!localStorage.getItem('ccpa_accepted')) {
@@ -10594,6 +10595,7 @@ window.toggleJoeMic = function() {
   if (btn) btn.innerHTML = window.isJoeMuted ? '🔇' : '🎤';
   if (window.isJoeMuted && 'speechSynthesis' in window) window.speechSynthesis.cancel();
 };
+
 
 
 
