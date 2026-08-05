@@ -158,6 +158,7 @@
             <ul class="nav-links">
                 <li><a href="#home" class="active" data-i18n="nav_nexus" onclick="navigate('home'); return false;">Nexus</a></li>
                 <li><a href="#ecosystem" data-i18n="nav_orion" onclick="navigate('ecosystem'); return false;">Ecosistema</a></li>
+                <li><a href="docs/portal_documental.html" data-i18n="nav_docs">Documentos</a></li>
                 <li><a href="#services" data-i18n="nav_services" onclick="navigate('services'); return false;">Servicios</a></li>
                 
                 <!-- DROPDOWN FOR ORION TECH HUB -->
@@ -526,7 +527,27 @@
                     </div>
                 </div>
 
-                <!-- NEW ECOSYSTEM MODULES (High-Fidelity) -->
+                
+                <!-- MULTIMEDIA SHOWCASE -->
+                <div style="margin-bottom: 50px; text-align: center;">
+                    
+                    <!-- EN VERSION: Video + Infographics -->
+                    <div class="lang-en" style="display: none;">
+                        <video src="assets/videos/ai_in_bluecollar_trades.mp4" controls preload="metadata" style="max-width: 100%; border-radius: 15px; border: 1px solid rgba(0,245,255,0.3); margin-bottom: 20px;"></video>
+                        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                            <img src="assets/images/morales_plumbing_ai_technology_infographic.png" style="max-width: 48%; border-radius: 10px; border: 1px solid rgba(212,175,55,0.3);" alt="AI Technology">
+                            <img src="assets/images/morales_plumbing_aiintegrated_services.png" style="max-width: 48%; border-radius: 10px; border: 1px solid rgba(212,175,55,0.3);" alt="AI Services">
+                        </div>
+                    </div>
+
+                    <!-- ES VERSION: Video + Infographic -->
+                    <div class="lang-es">
+                        <video src="assets/videos/morales_plumbing__innovacion.mp4" controls preload="metadata" style="max-width: 100%; border-radius: 15px; border: 1px solid rgba(0,245,255,0.3); margin-bottom: 20px;"></video>
+                        <img src="assets/images/innovacion_en_plomeria_con_ia.png" style="max-width: 100%; border-radius: 10px; border: 1px solid rgba(212,175,55,0.3);" alt="Innovación IA">
+                    </div>
+
+                </div>
+<!-- NEW ECOSYSTEM MODULES (High-Fidelity) -->
                 <!-- COPPER -->
                 <div class="eco-card glass" data-app="copper">
                     <div class="eco-card-img">
@@ -858,6 +879,22 @@
                         <h3 data-i18n="mp_podcasts_title">MP Ecosystem Series</h3>
                     </div>
                     <div class="podcast-list">
+
+                        <div class="pod-item" id="item-ai_sledgehammer">
+                            <div class="pod-info">
+                                <span class="pod-ep">Ep Especial (EN)</span>
+                                <span class="pod-title">AI Replaces the Plumber's Sledgehammer</span>
+                            </div>
+                            <button class="btn-play-pod" onclick="playPodcast('assets/podcasts/ai_replaces_the_plumber_s_sledgehammer.m4a', 'item-ai_sledgehammer')">▶</button>
+                        </div>
+                        <div class="pod-item" id="item-ia_militar">
+                            <div class="pod-info">
+                                <span class="pod-ep">Ep Especial (ES)</span>
+                                <span class="pod-title">Fontaneros con IA y Tecnología Militar</span>
+                            </div>
+                            <button class="btn-play-pod" onclick="playPodcast('assets/podcasts/fontaneros_con_ia_y_tecnologia_militar.m4a', 'item-ia_militar')">▶</button>
+                        </div>
+
                         <div class="pod-item" id="item-mp_pod_1">
                             <div class="pod-info">
                                 <span class="pod-badge deep-dive" data-i18n="pod_type_deep_dive">Deep Dive</span>
@@ -898,6 +935,22 @@
                         <h3 data-i18n="ep_podcasts_title">EP Estimator Pro Series</h3>
                     </div>
                     <div class="podcast-list">
+
+                        <div class="pod-item" id="item-ai_sledgehammer">
+                            <div class="pod-info">
+                                <span class="pod-ep">Ep Especial (EN)</span>
+                                <span class="pod-title">AI Replaces the Plumber's Sledgehammer</span>
+                            </div>
+                            <button class="btn-play-pod" onclick="playPodcast('assets/podcasts/ai_replaces_the_plumber_s_sledgehammer.m4a', 'item-ai_sledgehammer')">▶</button>
+                        </div>
+                        <div class="pod-item" id="item-ia_militar">
+                            <div class="pod-info">
+                                <span class="pod-ep">Ep Especial (ES)</span>
+                                <span class="pod-title">Fontaneros con IA y Tecnología Militar</span>
+                            </div>
+                            <button class="btn-play-pod" onclick="playPodcast('assets/podcasts/fontaneros_con_ia_y_tecnologia_militar.m4a', 'item-ia_militar')">▶</button>
+                        </div>
+
                         <div class="pod-item" id="item-ep_pod_1">
                             <div class="pod-info">
                                 <span class="pod-badge deep-dive" data-i18n="pod_type_deep_dive">Deep Dive</span>

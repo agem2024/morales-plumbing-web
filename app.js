@@ -8512,6 +8512,11 @@ function setLanguage(lang) {
     if (!translations[lang]) lang = 'es';
     localStorage.setItem('morales_lang', lang);
 
+    // Toggle language specific media blocks
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? 'block' : 'none');
+
+
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang][key]) {
