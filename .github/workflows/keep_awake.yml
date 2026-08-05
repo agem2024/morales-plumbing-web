@@ -1,4 +1,4 @@
-name: Keep Render Bot Awake
+﻿name: Keep Render Bot Awake
 
 on:
   schedule:
@@ -14,8 +14,9 @@ jobs:
         run: |
           # REEMPLAZA ESTA URL CON LA URL REAL DE TU BOT EN RENDER
           # EJEMPLO: https://orion-telegram.onrender.com
-          BOT_URL="https://REEMPLAZAR_CON_TU_URL.onrender.com"
+          BOT_URL="https://orion-cloud-1.onrender.com"
           
           echo "Pinging $BOT_URL to keep it awake..."
           curl -sS "$BOT_URL" > /dev/null
           echo "Ping finished."
+
