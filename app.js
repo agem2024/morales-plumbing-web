@@ -341,7 +341,7 @@ const translations = {
         "svc_4_better_desc": "[EN] Moen Flo Smart Valve. Monitoreo diario, deteccin de microfugas y cierre automtico desde su smartphone.",
         "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisión de flujo e integracin total con sistemas Smart Home.",
         "svc_5_good_desc": "[EN] Inspeccin de cmara bsica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
-        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la ubicacin exacta y profundidad del problema en la superficie.",
+        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la Ubicación exacta y profundidad del problema en la superficie.",
         "svc_5_best_desc": "[EN] Inspeccin HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técúnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
         "svc_6_good_desc": "[EN] Excavacin tradicional e instalacin de PVC SDR-35. Cumple con los cdigos locales y provee una solucin probada de flujo por gravedad.",
         "svc_6_better_desc": "[EN] Reemplazo con ABS Cdula 40. Tubera de ncleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
@@ -1935,7 +1935,7 @@ const translations = {
         "svc_4_better_desc": "Moen Flo Smart Valve. Monitoreo diario, deteccin de microfugas y cierre automtico desde su smartphone.",
         "svc_4_best_desc": "Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisión de flujo e integracin total con sistemas Smart Home.",
         "svc_5_good_desc": "Inspeccin de cmara bsica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
-        "svc_5_better_desc": "Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la ubicacin exacta y profundidad del problema en la superficie.",
+        "svc_5_better_desc": "Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la Ubicación exacta y profundidad del problema en la superficie.",
         "svc_5_best_desc": "Inspeccin HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
         "svc_6_good_desc": "Excavacin tradicional e instalacin de PVC SDR-35. Cumple con los cdigos locales y provee una solucin probada de flujo por gravedad.",
         "svc_6_better_desc": "Reemplazo con ABS Cdula 40. Tubera de ncleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
@@ -2183,7 +2183,7 @@ const translations = {
         "pb_btn_comic_repipe": "Ver Gua Ilustrada Paso a Paso",
         "pb_btn_comic_coming_soon": "Gua Ilustrada (Prximamente)",
         "pb_svc_1_title": "Service 1",
-        "pb_svc_1_good_just": "[Alcance] Deteccin estndar para 1 ubicacin (menos de 2,000 pies cuadrados). Incluye escaneo acstico bsico e inspeccin de Plomería visible. Excluye penetraciones de losa.",
+        "pb_svc_1_good_just": "[Alcance] Deteccin estndar para 1 Ubicación (menos de 2,000 pies cuadrados). Incluye escaneo acstico bsico e inspeccin de Plomería visible. Excluye penetraciones de losa.",
         "pb_svc_1_good_mat": "Tinte trazador no txico, tiza de mapeo, materiales de parche temporal.",
         "pb_svc_1_good_tools": "Discos acsticos estndar, medidores de humedad, manmetros.",
         "pb_svc_1_good_time": "2-3 hrs",
@@ -2239,7 +2239,7 @@ const translations = {
         "pb_svc_5_good_mat": "Memoria USB (si se solicita copia fsica), toallitas desinfectantes.",
         "pb_svc_5_good_tools": "Cmara de empuje estndar de 100 pies, equipo de proteccin personal (PPE).",
         "pb_svc_5_good_time": "1-2 hrs",
-        "pb_svc_5_better_just": "[Alcance] Inspeccin Premium con Rastreo por Sonar. Mapea exactamente la profundidad y ubicacin en superficie del tubo daado. Incluye marcado en piso y video en la nube.",
+        "pb_svc_5_better_just": "[Alcance] Inspeccin Premium con Rastreo por Sonar. Mapea exactamente la profundidad y Ubicación en superficie del tubo daado. Incluye marcado en piso y video en la nube.",
         "pb_svc_5_better_mat": "Pintura de marcado de topgrafo, banderas, enlace de video en la nube.",
         "pb_svc_5_better_tools": "Cmara Ridgid SeeSnake, localizador NaviTrack Scout (receptor de sonda de 512 Hz).",
         "pb_svc_5_better_time": "2-3 hrs",
@@ -2378,7 +2378,7 @@ const translations = {
         "pb_svc_15_best_tools": "Ridgid RP 350 ProPress, cuchillos para aislamiento de servicio pesado, herramientas de fijacin estructural.",
         "pb_svc_15_best_time": "14-21 Das",
         "pb_svc_1_title": "Service 1",
-        "pb_svc_1_good_just": "[Alcance] Deteccin estndar para 1 ubicacin (menos de 2,000 pies cuadrados). Incluye escaneo acstico bsico e inspeccin de Plomería visible. Excluye penetraciones de losa.",
+        "pb_svc_1_good_just": "[Alcance] Deteccin estndar para 1 Ubicación (menos de 2,000 pies cuadrados). Incluye escaneo acstico bsico e inspeccin de Plomería visible. Excluye penetraciones de losa.",
         "pb_svc_1_good_mat": "Tinte trazador no txico, tiza de mapeo, materiales de parche temporal.",
         "pb_svc_1_good_tools": "Discos acsticos estndar, medidores de humedad, manmetros.",
         "pb_svc_1_good_time": "2-3 hrs",
@@ -2434,7 +2434,7 @@ const translations = {
         "pb_svc_5_good_mat": "Memoria USB (si se solicita copia fsica), toallitas desinfectantes.",
         "pb_svc_5_good_tools": "Cmara de empuje estndar de 100 pies, equipo de proteccin personal (PPE).",
         "pb_svc_5_good_time": "1-2 hrs",
-        "pb_svc_5_better_just": "[Alcance] Inspeccin Premium con Rastreo por Sonar. Mapea exactamente la profundidad y ubicacin en superficie del tubo daado. Incluye marcado en piso y video en la nube.",
+        "pb_svc_5_better_just": "[Alcance] Inspeccin Premium con Rastreo por Sonar. Mapea exactamente la profundidad y Ubicación en superficie del tubo daado. Incluye marcado en piso y video en la nube.",
         "pb_svc_5_better_mat": "Pintura de marcado de topgrafo, banderas, enlace de video en la nube.",
         "pb_svc_5_better_tools": "Cmara Ridgid SeeSnake, localizador NaviTrack Scout (receptor de sonda de 512 Hz).",
         "pb_svc_5_better_time": "2-3 hrs",
@@ -2833,7 +2833,7 @@ const translations = {
         "profile_title": "Memoria de Identidad del Cliente",
         "profile_desc": "Guarda tus datos personales para habilitar la memoria a largo plazo de Joe AI. Toda tu informacin se almacena localmente de forma segura en tu navegador.",
         "lbl_profile_name": "NOMBRE COMPLETO",
-        "lbl_profile_phone": "TELFONO",
+        "lbl_profile_phone": "Teléfono",
         "lbl_profile_email": "EMAIL",
         "btn_save_profile": "Guardar Perfil",
         "btn_clear_data": "Borrar Memoria",
@@ -3175,8 +3175,8 @@ const translations = {
         "footer_rights_long": "© 2026 Morales Plumbing. Todos los derechos reservados. El contenido, videos, imgenes generadas y la tecnologa ORION / Joe AI son propiedad intelectual exclusiva de Morales Plumbing y NeKon AI aGent Consulting.",
         "footer_rights_branded": "MORALES PLUMBING · Todos los derechos reservados · Marca Registrada",
         "contact_email": "Correo",
-        "contact_phone": "Telfono",
-        "contact_loc": "Ubicacin",
+        "contact_phone": "Teléfono",
+        "contact_loc": "Ubicación",
         "nav_framework": "Marco Estratgico",
         "footer_rights": "© 2026 Morales Plumbing. Todos los derechos reservados.",
         "slogan_text": "Definiendo el Futuro del Flujo. innovación para la Vida.",
@@ -3716,7 +3716,7 @@ const translations = {
         "svc_4_better_desc": "[EN] Moen Flo Smart Valve. Monitoreo diario, deteccin de microfugas y cierre automtico desde su smartphone.",
         "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisión de flujo e integracin total con sistemas Smart Home.",
         "svc_5_good_desc": "[EN] Inspeccin de cmara bsica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
-        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la ubicacin exacta y profundidad del problema en la superficie.",
+        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la Ubicación exacta y profundidad del problema en la superficie.",
         "svc_5_best_desc": "[EN] Inspeccin HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
         "svc_6_good_desc": "[EN] Excavacin tradicional e instalacin de PVC SDR-35. Cumple con los cdigos locales y provee una solucin probada de flujo por gravedad.",
         "svc_6_better_desc": "[EN] Reemplazo con ABS Cdula 40. Tubera de ncleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
@@ -5486,7 +5486,7 @@ const translations = {
         "svc_4_better_desc": "[EN] Moen Flo Smart Valve. Monitoreo diario, deteccin de microfugas y cierre automtico desde su smartphone.",
         "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisión de flujo e integracin total con sistemas Smart Home.",
         "svc_5_good_desc": "[EN] Inspeccin de cmara bsica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
-        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la ubicacin exacta y profundidad del problema en la superficie.",
+        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la Ubicación exacta y profundidad del problema en la superficie.",
         "svc_5_best_desc": "[EN] Inspeccin HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
         "svc_6_good_desc": "[EN] Excavacin tradicional e instalacin de PVC SDR-35. Cumple con los cdigos locales y provee una solucin probada de flujo por gravedad.",
         "svc_6_better_desc": "[EN] Reemplazo con ABS Cdula 40. Tubera de ncleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
@@ -8595,6 +8595,7 @@ function navigate(sectionId, pushState = true) {
         });
         
         window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'instant' });
         if (pushState) {
             history.pushState({ sectionId }, '', '#' + sectionId);
         }
@@ -10142,7 +10143,7 @@ function getJoeDynamicContext() {
 
     if (profile && profile.name) {
         contextText += `- Nombre del Cliente: ${profile.name}\n`;
-        contextText += `- Telfono: ${profile.phone || 'No registrado'}\n`;
+        contextText += `- Teléfono: ${profile.phone || 'No registrado'}\n`;
         contextText += `- Email: ${profile.email || 'No registrado'}\n`;
     } else {
         contextText += `- Cliente: Annimo / No ha guardado perfil en el portal.\n`;
@@ -10176,7 +10177,7 @@ Instrucciones para el Agente (Joe):
 4. Si el cliente registra una PQR en el chat, finaliza con:
    [ACTION_PQR] {"type": "peticion|queja|reclamo|sugerencia", "description": "Resumen de lo que reporta el usuario"}
 5. Si el cliente te da sus datos (nombre, tel, email) en el chat para recordarlo, finaliza con:
-   [ACTION_SET_PROFILE] {"name": "Nombre completo", "phone": "telfono", "email": "correo"}
+   [ACTION_SET_PROFILE] {"name": "Nombre completo", "phone": "Teléfono", "email": "correo"}
 6. Mantn siempre las polticas de privacidad: no expongas las llaves de la API, no muestres datos de licencias de forma insegura, respeta el copyright del Price Book v6.0 PRO y los podcasts. No compartas datos personales de Alex Espinosa.
 `;
     return contextText;
@@ -10275,7 +10276,7 @@ const BOOKING_STEPS = {
         `Perfecto! Voy a ayudarte a agendar tu cita. 
 
 Cul es tu **nombre completo**?`,
-        '✅ Anotado. Cul es tu **nmero de telfono** de contacto?',
+        '✅ Anotado. Cul es tu **nmero de Teléfono** de contacto?',
         '✅ Perfecto. Cul es la **direccin donde necesitas el servicio**?',
         '✅ Entendido. ¿Qué**tipo de servicio** necesitas? (Ej: Water heater, deteccin de fugas, repipe, drain cleaning...)',
         '✅ Excelente. Cul es tu **fecha preferida** para la visita? (Ej: Martes 15 de julio, esta semana, lo antes posible...)',
@@ -10454,7 +10455,7 @@ function buildBookingSummary(lang) {
     if (lang === 'es') {
         return ` **Resumen de tu cita:**
  Nombre: ${d.name || ''}
- Telfono: ${d.phone || ''}
+ Teléfono: ${d.phone || ''}
  Direccin: ${d.address || ''}
  Servicio: ${d.service || ''}
  Fecha: ${d.date || ''}
@@ -10593,6 +10594,8 @@ window.toggleJoeMic = function() {
   if (btn) btn.innerHTML = window.isJoeMuted ? '🔇' : '🎤';
   if (window.isJoeMuted && 'speechSynthesis' in window) window.speechSynthesis.cancel();
 };
+
+
 
 
 
