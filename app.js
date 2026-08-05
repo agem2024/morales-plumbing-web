@@ -12,7 +12,7 @@ const translations = {
         "qs_tab_ai": "AI Diagnosis",
         "qs_plumb_t1": "Pipe Repair",
         "qs_plumb_d1": "Professional diagnosis and repair of broken, clogged, or leaking pipes anywhere in the home.",
-        "qs_btn_call": "Call: (669) 234-2444",
+        "qs_btn_call": "Call: (669) 213-4422",
         "qs_plumb_t2": "24/7 Emergencies",
         "qs_plumb_d2": "Flooding, burst pipes, or total water loss. We respond in San Jose with no evaluation fee.",
         "qs_btn_emerg": "Emergency Now",
@@ -8944,7 +8944,7 @@ function getJoeLocalFallback(input) {
     if (input.match(/servicio|service|hacen|cuale/)) return "Ofrecemos Plomería Técúnica de precisin: Diagnstico por Termografa, Elite Copper Renovations, Septic Systemás, Eco-Retrofitting y Diseo CAD de Redes Hidrulicas.";
     if (input.match(/fuga|leak/)) return " Para fugas, cierra el suministro principal de inmediato. Usamos termografa infrarroja FLIR y sensores acsticos para localizar la falla sin destruir tus paredes. Contacta a nuestro equipo ya.";
     if (input.match(/plomeria|plumbing|tuber/)) return "Somos los especialistas del agua en San Jose. Especialistas en infraestructura hidrulica inteligente, integracin de IA (Ecosistema ORION) y plomera CSLB C-36.";
-    if (input.match(/emergencia|emergency/)) return " Esto es una emergencia. Por favor llama inmediatamente a nuestra terminal de contacto al (669) 234-2444.";
+    if (input.match(/emergencia|emergency/)) return " Esto es una emergencia. Por favor llama inmediatamente a nuestra terminal de contacto al (669) 213-4422.";
     if (input.match(/app|aplicacion|estimador|orion|price book/)) return "ORION es nuestro ecosistema tecnolgico de plomera: Estimador Pro, Price Book v6.0, Portal MP y simuladores hidráulicos CAD. Tecnologa de punta al servicio del flujo.";
     return "Excelente pregunta! Como IA, an estoy aprendiendo algunos detalles especficos. Te invito a explorar nuestros servicios Elite en la seccin 'Ecosistema' o contactar a Alex Espinosa directamente para Plomería Técúnica de alto nivel. ";
 }
