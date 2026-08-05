@@ -42,7 +42,7 @@ Si las env vars de AI no están configuradas, el chat de Joe usa respuestas loca
 
 ---
 
-## Repositorio Oficial
+## Repositorio Oficial y Notificaciones
 
 El proyecto se despliega desde GitHub: `https://github.com/agem2024/morales-plumbing-web.git`
 Notificaciones configuradas a: `moralesplumbing026@gmail.com`

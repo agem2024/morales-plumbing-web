@@ -356,7 +356,7 @@ new_html = """<!DOCTYPE html>
 
         <!-- Main Actions -->
         <div class="primary-actions">
-            <a href="tel:+16692342444" class="action-btn action-call">
+            <a href="tel:+16692134422" class="action-btn action-call">
                 <i class="fas fa-phone-volume"></i>
                 <span id="t_call">LLAMAR AHORA</span>
             </a>
@@ -368,10 +368,10 @@ new_html = """<!DOCTYPE html>
 
         <!-- Contact Directory -->
         <div class="info-list">
-            <a href="tel:+16692342444" class="info-row">
+            <a href="tel:+16692134422" class="info-row">
                 <div class="info-icon"><i class="fas fa-mobile-alt"></i></div>
                 <div class="info-text">
-                    (669) 234-2444
+                    (669) 213-4422
                     <span class="info-subtext" id="t_phone_sub">Línea Directa / 24 hrs</span>
                 </div>
             </a>

@@ -1,25 +1,6 @@
-﻿// Translation Dictionary (5 Bay Area Languages)
+// Translation Dictionary (5 Bay Area Languages)
 const translations = {
     "en": {
-        
-        "qs_title": "What service do you need?",
-        "qs_desc": "Select your need and request a quote instantly.",
-        "qs_tab_plumbing": "General Plumbing",
-        "qs_tab_bathroom": "Bathrooms & Remodel",
-        "qs_tab_heaters": "Water Heaters",
-        "qs_tab_leaks": "Leak Detection",
-        "qs_tab_repipe": "Re-Pipe",
-        "qs_tab_ai": "AI Diagnosis",
-        "qs_plumb_t1": "Pipe Repair",
-        "qs_plumb_d1": "Professional diagnosis and repair of broken, clogged, or leaking pipes anywhere in the home.",
-        "qs_btn_call": "Call: (669) 213-4422",
-        "qs_plumb_t2": "24/7 Emergencies",
-        "qs_plumb_d2": "Flooding, burst pipes, or total water loss. We respond in San Jose with no evaluation fee.",
-        "qs_btn_emerg": "Emergency Now",
-        "qs_plumb_t3": "Plumbing Inspection",
-        "qs_plumb_d3": "Complete evaluation for home buying/selling. Detailed report with thermography included.",
-        "qs_btn_insp": "Request Inspection",
-
         "contact_sec_title": "Get in Touch",
         "contact_sec_desc": "Do you have an emergency or need a quick quote? Call us directly or contact us via WhatsApp. You can also leave your message.",
         "contact_form_title": "Send a Message",
@@ -339,9 +320,9 @@ const translations = {
         "svc_3_best_desc": "[EN] Halo 5 Whole House System. Sistema sin sal que no requiere mantenimiento, filtra cloro, metales pesados e incluye un módulo de esterilizacin UV para proteccin bacteriolgica total.",
         "svc_4_good_desc": "[EN] Instalacin de vlvula de bola de latn manual de 1/4 de vuelta de grado comercial para aislamiento rpido principal.",
         "svc_4_better_desc": "[EN] Moen Flo Smart Valve. Monitoreo diario, deteccin de microfugas y cierre automtico desde su smartphone.",
-        "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisión de flujo e integracin total con sistemas Smart Home.",
+        "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisin de flujo e integracin total con sistemas Smart Home.",
         "svc_5_good_desc": "[EN] Inspeccin de cmara bsica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
-        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la Ubicación exacta y profundidad del problema en la superficie.",
+        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la ubicacin exacta y profundidad del problema en la superficie.",
         "svc_5_best_desc": "[EN] Inspeccin HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técúnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
         "svc_6_good_desc": "[EN] Excavacin tradicional e instalacin de PVC SDR-35. Cumple con los cdigos locales y provee una solucin probada de flujo por gravedad.",
         "svc_6_better_desc": "[EN] Reemplazo con ABS Cdula 40. Tubera de ncleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
@@ -782,7 +763,7 @@ const translations = {
         "pb_svc_15_best_time": "14-21 Das",
         "footer_copyright_badge": "· All Rights Reserved · Registered Trademark",
         "footer_screen_watermark": "MORALES PLUMBING © 2026 · INTELLECTUAL PROPERTY PROTECTED",
-        "footer_print_copyright": "&#9400; Copyright 2026 Morales Plumbing™ · All Rights Reserved · Intellectual Property of Alex Espinosa · Registered Trademark. Total or partial reproduction prohibited without written authorization. San Jose, CA · sunny-taffy-b28025.netlify.app",
+        "footer_print_copyright": "&#9400; Copyright 2026 Morales Plumbing™ · All Rights Reserved · Intellectual Property of Alex Espinosa · Registered Trademark. Total or partial reproduction prohibited without written authorization. San Jose, CA · moralesplumbing.com",
         "faq100_q_1": "Why is it important to maintain the correct pressure in the property?",
         "faq100_a_1": "Maintaining the correct pressure prevents pipe damage, protects appliances, and prevents catastrophic leaks or ruptures.",
         "faq100_q_2": "What happens if the water pressure is too high?",
@@ -1768,33 +1749,33 @@ const translations = {
         "eng_wh_title": "Mantenimiento e Instalacin de Water Heaters",
         "eng_wh_desc": "Servicios integrales de calentadores de agua, desde mantenimiento de rutina hasta reemplazos completos del sistema.",
         "eng_wh_p1": "El agua extremadamente dura de Silicon Valley destruye los calentadores estndar en 6 a 8 aos. Nos especializamos en mitigacin de sarro, descalcificacin profesional y retrofits de sistemas sin tanque de alta tecnologa, diseados especficamente para el perfil del agua en San Josy el Condado de Santa Clara.",
-        "eng_wh_p2": "Todas nuestras instalaciones cumplen estrictamente con los mandatos de emisiones ultra-bajas (zero-NOx) de BAAQMD y los estándares de Eficiencia Energtica Ttulo 24 de California. Garantizamos la aprobacin de los permisos de la ciudad en cada instalacin.",
+        "eng_wh_p2": "Todas nuestras instalaciones cumplen estrictamente con los mandatos de emisiones ultra-bajas (zero-NOx) de BAAQMD y los Estndares de Eficiencia Energtica Ttulo 24 de California. Garantizamos la aprobacin de los permisos de la ciudad en cada instalacin.",
         "eng_wh_li1": "Descalcificacin y Optimizacin: Extendiendo la vida til a pesar del agua dura de San Jos.",
         "eng_wh_li2": "Actualizaciones Tankless BAAQMD: Cero emisiones NOx y agua caliente ilimitada.",
         "eng_wh_li3": "Cumplimiento del Ttulo 24: Validacin de permisos y refuerzos ssmicos estructurales.",
 
         "eng_valves_comic_title": "Metodologa: Resolucin Precisa de Fugas",
-        "eng_valves_title": "Reemplazo de Cartuchos y Válvulas",
-        "eng_valves_desc": "Reemplazo preciso de válvulas defectuosas de duchas, tinas y lavabos.",
-        "eng_valves_p1": "La alta presión del agua municipal en el Área de la Bahía suele reventar cartuchos y causar micro-fugas detrás de las paredes de la ducha, provocando moho devastador. Utilizamos tecnología térmica FLIR para detectar la fuga oculta antes de demoler su costosa cerámica.",
-        "eng_valves_p2": "Reemplazamos válvulas plásticas básicas por manifolds de bronce de grado comercial (Moen, Kohler, Delta). Cada instalación incluye calibración anti-quemaduras conforme al Código de Plomería de California (CPC).",
-        "eng_valves_li1": "Detección Térmica de Fugas: Encontramos el punto de falla exacto sin destruir su baño.",
-        "eng_valves_li2": "Retrofits de Bronce Comercial: Reemplazo de cartuchos plásticos económicos por bronce sólido.",
-        "eng_valves_li3": "Calibración Anti-Quemaduras CPC: Ajuste exacto del límite de temperatura para seguridad familiar.",
+        "eng_valves_title": "Reemplazo de Cartuchos y Vlvulas",
+        "eng_valves_desc": "Reemplazo preciso de vlvulas defectuosas de duchas, tinas y lavabos.",
+        "eng_valves_p1": "La alta presin del agua municipal en el Área de la Baha suele reventar cartuchos y causar micro-fugas detrs de las paredes de la ducha, provocando moho devastador. Utilizamos tecnologa trmica FLIR para detectar la fuga oculta antes de demoler su costosa cermica.",
+        "eng_valves_p2": "Reemplazamos vlvulas plsticas bsicas por manifolds de bronce de grado comercial (Moen, Kohler, Delta). Cada instalacin incluye calibracin anti-quemaduras conforme al Cdigo de Plomera de California (CPC).",
+        "eng_valves_li1": "Deteccin Trmica de Fugas: Encontramos el punto de falla exacto sin destruir su bao.",
+        "eng_valves_li2": "Retrofits de Bronce Comercial: Reemplazo de cartuchos plsticos econmicos por bronce slido.",
+        "eng_valves_li3": "Calibracin Anti-¿Quéemaduras CPC: Ajuste exacto del lmite de temperatura para seguridad familiar.",
 
         "eng_inspect_comic_title": "Metodologa: Diagnstico de Alta Tecnologa",
         "eng_inspect_title": "Consultora e Inspeccin de Viviendas",
-        "eng_inspect_desc": "Inspecciones expertas de Plomería para viviendas nuevas y usadas.",
+        "eng_inspect_desc": "Inspecciones expertas de plomera para viviendas nuevas y usadas.",
         "eng_inspect_p1": "El mercado inmobiliario en el Área de la Baha se mueve rpido. Muchas casas de 1950-1970 en el Condado de Santa Clara an dependen de alcantarillados de hierro fundido a punto de fallar. Nuestras inspecciones robticas con fibra ptica revelan intrusiones de races y colapsos estructurales antes del cierre del escrow.",
         "eng_inspect_p2": "Planea un ADU (Accesory Dwelling Unit) o una remodelacin mayor? Proveemos consultora BIM 3D, clculos de capacidad del alcantarillado lateral y revisiones de planos para garantizar que su proyecto pase las inspecciones municipales a la primera.",
         "eng_inspect_li1": "Auditoras de Alcantarillado con Fibra ptica: Proteja su inversin inmobiliaria.",
         "eng_inspect_li2": "Clculos de Capacidad para ADUs: Asegurando que su lnea principal soporte la nueva carga.",
-        "eng_inspect_li3": "Consultora para Aprobacin de Permisos: ReVisión de planos contra el cdigo de California.",
+        "eng_inspect_li3": "Consultora para Aprobacin de Permisos: Revisin de planos contra el cdigo de California.",
 
         "eng_training_comic_title": "Metodologa: Empoderando a la Fuerza Laboral",
         "eng_training_title": "Capacitacin de Personal Corporativo",
         "eng_training_desc": "Programas de formacin profesional para empresas asociadas.",
-        "eng_training_p1": "La industria de la Plomería evoluciona rpidamente hacia soluciones tecnolgicas. Morales Plumbing ofrece capacitaciones prcticas de nivel maestro para administradores de edificios, equipos de mantenimiento y tcnicos HVAC en todo Silicon Valley.",
+        "eng_training_p1": "La industria de la plomera evoluciona rpidamente hacia soluciones tecnolgicas. Morales Plumbing ofrece capacitaciones prcticas de nivel maestro para administradores de edificios, equipos de mantenimiento y tcnicos HVAC en todo Silicon Valley.",
         "eng_training_p2": "Nuestro currculo cubre fusin de cobre ProPress, tuberas de gas MegaPress, diagnsticos trmicos y cumplimiento de CalGreen. Convertimos a su personal bsico de mantenimiento en operadores tcnicos altamente capacitados.",
         "eng_training_li1": "Tecnologa Avanzada de Unin: Certificacin en expansin PEX-A, ProPress y MegaPress.",
         "eng_training_li2": "Dominio de CalGreen y Ttulo 24: Navegando las complejas leyes de conservacin de California.",
@@ -1805,18 +1786,18 @@ const translations = {
         "eng_b2b_desc": "Trabajo colaborativo especializado con otros contratistas y oficios.",
         "eng_b2b_p1": "Morales Plumbing es el subcontratista C-36 principal para General Contractors y desarrolladores de campus tecnolgicos en Silicon Valley. Manejamos la infraestructura hidrulica compleja mientras usted se enfoca en la construccin principal.",
         "eng_b2b_p2": "Desde sistemas comerciales de manifolds hasta lneas de gas de alto volumen para unidades HVAC industriales en techos, nos integramos sin problemas en el cronograma de su proyecto. Completamente licenciados, con fianzas (bonded) y asegurados.",
-        "eng_b2b_li1": "Subcontratacin Comercial C-36: Soporte de Plomería de lite para Contratistas Generales.",
+        "eng_b2b_li1": "Subcontratacin Comercial C-36: Soporte de plomera de lite para Contratistas Generales.",
         "eng_b2b_li2": "Integracin con HVAC y Electricidad: Lneas de gas, drenajes de condensado y sistemas hbridos.",
         "eng_b2b_li3": "Responsabilidad Corporativa: Seguros completos, formularios W-9 listos y cumplimiento OSHA.",
 
-        "pb_svc_1_name": "Deteccin de Fugas de precisión",
+        "pb_svc_1_name": "Deteccin de Fugas de Precisin",
         "pb_svc_1_user": "Encuentre fugas ocultas sin romper paredes o pisos.",
         "pb_svc_1_tech": "Despliegue de dispositivos acsticos, imgenes trmicas y gas trazador para localizar microfisuras en lneas presurizadas. Requerido para protocolos de reparacin no invasivos.",
         "pb_svc_2_name": "Retrofit Ecolgico",
         "pb_svc_2_user": "Actualice sus accesorios a tecnologas de alta eficiencia que ahorran agua.",
         "pb_svc_2_tech": "Instalacin de accesorios certificados WaterSense, aireadores compensadores de presin y mecanismos de doble descarga para optimizar caudales volumtricos.",
         "pb_svc_3_name": "Diseo de Infraestructura Hidrulica",
-        "pb_svc_3_user": "Planos de Plomería personalizados y dimensionamiento de sistemas.",
+        "pb_svc_3_user": "Planos de plomera personalizados y dimensionamiento de sistemas.",
         "pb_svc_3_tech": "Clculos basados en demanda de unidades (FU), anlisis de presin esttica y ecuaciones de prdida por friccin para disear dimetros de tubera ptimos.",
         "pb_svc_4_name": "Renovaciones en Cobre Elite",
         "pb_svc_4_user": "Reemplace tuberas viejas con cobre premium de larga duracin.",
@@ -1824,14 +1805,14 @@ const translations = {
         "pb_svc_5_name": "Sistemas Spticos Avanzados",
         "pb_svc_5_user": "Instalacin, reparacin y optimizacin biolgica de tanques spticos.",
         "pb_svc_5_tech": "Anlisis de percolacin de suelos, dimensionamiento de campo de lixiviacin e instalacin de biorreactores de mltiples cmaras con filtros de efluentes.",
-        "pb_svc_6_name": "Plomería para Construccin Nueva",
-        "pb_svc_6_user": "Instalacin completa de Plomería para casas nuevas y adiciones.",
+        "pb_svc_6_name": "Plomera para Construccin Nueva",
+        "pb_svc_6_user": "Instalacin completa de plomera para casas nuevas y adiciones.",
         "pb_svc_6_tech": "Instalacin subterrnea (DWV), distribucin de agua superior y colocacin de accesorios en estricto cumplimiento con UPC y cdigos municipales.",
         "pb_svc_7_name": "Calentadores de Agua Avanzados",
         "pb_svc_7_user": "Instalacin de calentadores ultra eficientes Heat Pump e Hbridos.",
         "pb_svc_7_tech": "Integracin de unidades de bomba de calor con compresor que requieren manejo de condensado, circuitos dedicados de 240V y cumplimiento BAAQMD.",
         "pb_svc_8_name": "Sistemas de Expansin Trmica",
-        "pb_svc_8_user": "Proteja su Plomería de picos de presin peligrosos.",
+        "pb_svc_8_user": "Proteja su plomera de picos de presin peligrosos.",
         "pb_svc_8_tech": "Dimensionamiento e instalacin de tanques de expansin hidroneumticos en el suministro de agua fra para absorber la expansin volumtrica.",
         "pb_svc_9_name": "Diagnsticos Inteligentes",
         "pb_svc_9_user": "Inspecciones de alta tecnologa con cmara en lneas de drenaje.",
@@ -1859,7 +1840,7 @@ const translations = {
 
         "svc_1_step_1": "Mapeo diagnstico inicial.",
         "svc_1_step_2": "Aislamiento del sistema.",
-        "svc_1_step_3": "Parcheo de fuga con precisión.",
+        "svc_1_step_3": "Parcheo de fuga con precisin.",
         "svc_1_step_4": "Prueba de flujo y restauracin.",
         "svc_2_step_1": "Auditora de uso de agua.",
         "svc_2_step_2": "Retiro de accesorios viejos.",
@@ -1867,7 +1848,7 @@ const translations = {
         "svc_2_step_4": "Verificacin de eficiencia.",
         "svc_3_step_1": "Modelado BIM 3D.",
         "svc_3_step_2": "Simulacin de gradiente de presin.",
-        "svc_3_step_3": "ReVisión de cumplimiento de cdigo.",
+        "svc_3_step_3": "Revisin de cumplimiento de cdigo.",
         "svc_3_step_4": "Entrega final de planos.",
         "svc_4_step_1": "Retiro de tuberas viejas.",
         "svc_4_step_2": "Enrutamiento de cobre Tipo L.",
@@ -1878,7 +1859,7 @@ const translations = {
         "svc_5_step_3": "Instalacin de bio-reactor.",
         "svc_5_step_4": "Validacin de flujo de efluentes.",
         "svc_6_step_1": "Instalacin subterrnea.",
-        "svc_6_step_2": "Plomería en estructura.",
+        "svc_6_step_2": "Plomera en estructura.",
         "svc_6_step_3": "Instalacin de accesorios.",
         "svc_6_step_4": "Aprobacin de inspeccin municipal.",
         "svc_7_step_1": "Retiro de unidad vieja.",
@@ -1916,7 +1897,7 @@ const translations = {
         "svc_15_step_1": "Auditora estructural.",
         "svc_15_step_2": "Refuerzo ssmico.",
         "svc_15_step_3": "Inspeccin de corrosin.",
-        "svc_15_step_4": "EMisión de certificacin.",
+        "svc_15_step_4": "Emisin de certificacin.",
 
         "comic_step_1": "Inspeccin Diagnstica Inicial.",
         "comic_step_2": "Aislamiento de la zona afectada.",
@@ -1933,10 +1914,10 @@ const translations = {
         "svc_3_best_desc": "Halo 5 Whole House System. Sistema sin sal que no requiere mantenimiento, filtra cloro, metales pesados e incluye un mdulo de esterilizacin UV para proteccin bacteriolgica total.",
         "svc_4_good_desc": "Instalacin de vlvula de bola de latn manual de 1/4 de vuelta de grado comercial para aislamiento rpido principal.",
         "svc_4_better_desc": "Moen Flo Smart Valve. Monitoreo diario, deteccin de microfugas y cierre automtico desde su smartphone.",
-        "svc_4_best_desc": "Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisión de flujo e integracin total con sistemas Smart Home.",
+        "svc_4_best_desc": "Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisin de flujo e integracin total con sistemas Smart Home.",
         "svc_5_good_desc": "Inspeccin de cmara bsica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
-        "svc_5_better_desc": "Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la Ubicación exacta y profundidad del problema en la superficie.",
-        "svc_5_best_desc": "Inspeccin HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
+        "svc_5_better_desc": "Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la ubicacin exacta y profundidad del problema en la superficie.",
+        "svc_5_best_desc": "Inspeccin HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomera Tcúnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
         "svc_6_good_desc": "Excavacin tradicional e instalacin de PVC SDR-35. Cumple con los cdigos locales y provee una solucin probada de flujo por gravedad.",
         "svc_6_better_desc": "Reemplazo con ABS Cdula 40. Tubera de ncleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
         "svc_6_best_desc": "Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadas. Tubera continua sin costuras, imposible de penetrar por races. Garanta de por vida.",
@@ -2055,11 +2036,11 @@ const translations = {
         "law_sec2_p1": "Comprender las tecnologas aprobadas para la transicin energtica de California es vital para cumplir con el Ttulo 24 (Title 24).",
         "law_sec2_li1": "<strong>Bomba de Calor Hbrida (Heat Pump):</strong> Extrae calor del aire ambiental para calentar el agua, logrando eficiencias superiores al 300%. Es la opcin #1 requerida por el estado y califica para los mximos reembolsos (Rebates).",
         "law_sec2_li2": "<strong>Elctricos de Tanque Estndar:</strong> Utilizan resistencias trmicas, menos eficientes y generalmente penalizados bajo clculos estrictos del Ttulo 24, pero permitidos.",
-        "law_sec2_li3": "<strong>Elctricos Tankless (Sin Tanque):</strong> Calientan el agua al instante. Aunque no emiten NOx, requieren un amperaje masivo (a menudo paneles elctricos de más de 200A) y rara vez son viables sin actualizaciones elctricas costosas.",
+        "law_sec2_li3": "<strong>Elctricos Tankless (Sin Tanque):</strong> Calientan el agua al instante. Aunque no emiten NOx, requieren un amperaje masivo (a menudo paneles elctricos de ms de 200A) y rara vez son viables sin actualizaciones elctricas costosas.",
         "law_sec3_title": "3. Especificaciones del Cdigo (CSLB y Title 24)",
-        "law_sec3_p1": "Instalar un calentador no es solo conectar agua. Morales Plumbing garantiza el cumplimiento estricto del Cdigo Uniforme de Plomería (UPC) de California:",
+        "law_sec3_p1": "Instalar un calentador no es solo conectar agua. Morales Plumbing garantiza el cumplimiento estricto del Cdigo Uniforme de Plomera (UPC) de California:",
         "law_sec3_li1": "<strong>Sujecin Ssmica (Earthquake Straps):</strong> Ley de California requiere correas dobles en el tercio superior e inferior, ancladas directamente a montantes de pared para evitar el vuelco durante terremotos.",
-        "law_sec3_li2": "<strong>Tanque de Expansin Trmica:</strong> Obligatorio en sistemas de Plomería cerrados para absorber el exceso de presin, protegiendo las tuberas del hogar y evitando explosiones de vlvulas.",
+        "law_sec3_li2": "<strong>Tanque de Expansin Trmica:</strong> Obligatorio en sistemas de plomera cerrados para absorber el exceso de presin, protegiendo las tuberas del hogar y evitando explosiones de vlvulas.",
         "law_sec3_li3": "<strong>Bandeja de Drenaje (Drain Pan):</strong> Requerida si el calentador esten una plataforma interior, en tico o espacio donde una fuga cause daos a la estructura. La bandeja debe tener tubera que drene al exterior.",
         "law_sec3_li4": "<strong>Vlvula T&P (Temperature & Pressure Relief):</strong> Crtica para la seguridad, su lnea de descarga debe llevar el agua caliente a un desage seguro, tpicamente al exterior.",
         "law_btn_back": "Ver Paquetes de Instalacin Certificados",
@@ -2183,7 +2164,7 @@ const translations = {
         "pb_btn_comic_repipe": "Ver Gua Ilustrada Paso a Paso",
         "pb_btn_comic_coming_soon": "Gua Ilustrada (Prximamente)",
         "pb_svc_1_title": "Service 1",
-        "pb_svc_1_good_just": "[Alcance] Deteccin estndar para 1 Ubicación (menos de 2,000 pies cuadrados). Incluye escaneo acstico bsico e inspeccin de Plomería visible. Excluye penetraciones de losa.",
+        "pb_svc_1_good_just": "[Alcance] Deteccin estndar para 1 ubicacin (menos de 2,000 pies cuadrados). Incluye escaneo acstico bsico e inspeccin de plomera visible. Excluye penetraciones de losa.",
         "pb_svc_1_good_mat": "Tinte trazador no txico, tiza de mapeo, materiales de parche temporal.",
         "pb_svc_1_good_tools": "Discos acsticos estndar, medidores de humedad, manmetros.",
         "pb_svc_1_good_time": "2-3 hrs",
@@ -2239,7 +2220,7 @@ const translations = {
         "pb_svc_5_good_mat": "Memoria USB (si se solicita copia fsica), toallitas desinfectantes.",
         "pb_svc_5_good_tools": "Cmara de empuje estndar de 100 pies, equipo de proteccin personal (PPE).",
         "pb_svc_5_good_time": "1-2 hrs",
-        "pb_svc_5_better_just": "[Alcance] Inspeccin Premium con Rastreo por Sonar. Mapea exactamente la profundidad y Ubicación en superficie del tubo daado. Incluye marcado en piso y video en la nube.",
+        "pb_svc_5_better_just": "[Alcance] Inspeccin Premium con Rastreo por Sonar. Mapea exactamente la profundidad y ubicacin en superficie del tubo daado. Incluye marcado en piso y video en la nube.",
         "pb_svc_5_better_mat": "Pintura de marcado de topgrafo, banderas, enlace de video en la nube.",
         "pb_svc_5_better_tools": "Cmara Ridgid SeeSnake, localizador NaviTrack Scout (receptor de sonda de 512 Hz).",
         "pb_svc_5_better_time": "2-3 hrs",
@@ -2306,7 +2287,7 @@ const translations = {
         "pb_svc_10_good_time": "1-2 hrs",
         "pb_svc_10_better_just": "[Alcance] Actualizacin Premium. Instalacin de un Grifo Sin Contacto de alta gama o inodoro Toto Drake. Incluye actualizacin de vlvula de cierre a un cuarto de vuelta.",
         "pb_svc_10_better_mat": "Anillo de cera extra grueso premium (Sani Seal), vlvulas angulares de 1/4 de vuelta, escudos a medida, bateras de sensores.",
-        "pb_svc_10_better_tools": "ProPress (para nuevas vlvulas), multmetro, nivel de precisión.",
+        "pb_svc_10_better_tools": "ProPress (para nuevas vlvulas), multmetro, nivel de precisin.",
         "pb_svc_10_better_time": "2-4 hrs",
         "pb_svc_10_best_just": "[Alcance] Integracin Ultra-Premium de Inodoro Inteligente / Bidet (ej. Toto Neorest). Incluye la instalacin de un nuevo receptculo elctrico GFCI de 120V dedicado.",
         "pb_svc_10_best_mat": "Unidad Toto Neorest / Washlet, bridas de montaje pesado, cable Romex 12-2, receptculo GFCI, caja elctrica.",
@@ -2315,7 +2296,7 @@ const translations = {
         "pb_svc_11_title": "Service 11",
         "pb_svc_11_good_just": "[Alcance] Instalacin Estndar de Vlvula Ssmica para medidor residencial (lnea de hasta 1\"). Cierre mecnico por magnitud 5.4+. Incluye permisos.",
         "pb_svc_11_good_mat": "Vlvula Ssmica Mecúnica aprobada por California (ej. Little Firefighter), cinta de Tefln para gas.",
-        "pb_svc_11_good_tools": "Llaves para tubos de 14\" y 18\", nivel de precisión (crtico), pasta para roscas.",
+        "pb_svc_11_good_tools": "Llaves para tubos de 14\" y 18\", nivel de precisin (crtico), pasta para roscas.",
         "pb_svc_11_good_time": "2-3 hrs",
         "pb_svc_11_better_just": "[Alcance] Instalacin de Vlvula Ssmica Premium (Lnea de 1-1/2\" a 2\"). Incluye fabricacin de soportes rgidos unistrut para evitar activaciones falsas.",
         "pb_svc_11_better_mat": "Vlvula ssmica de tamao comercial, Unistrut galvanizado grueso, anclajes de concreto, abrazaderas de tierra.",
@@ -2343,13 +2324,13 @@ const translations = {
         "pb_svc_13_good_mat": "Juntas de repuesto OEM, sensores de llama, qumico descalcificador del sistema (ej. Haymaker).",
         "pb_svc_13_good_tools": "Analizador de gases de combustin, manmetro digital, bomba de circulacin para lavado.",
         "pb_svc_13_good_time": "3-5 hrs",
-        "pb_svc_13_better_just": "[Alcance] ReVisión Premium y Reconstruccin de Bomba. Desarme de lazos primarios/secundarios. Reconstruccin de bombas (ej. Bell & Gossett), reemplazo de tanques de expansin.",
+        "pb_svc_13_better_just": "[Alcance] Revisin Premium y Reconstruccin de Bomba. Desarme de lazos primarios/secundarios. Reconstruccin de bombas (ej. Bell & Gossett), reemplazo de tanques de expansin.",
         "pb_svc_13_better_mat": "Tanque de expansin comercial, juntas de bomba de hierro fundido, ensamblajes de rodamientos, uniones dielctricas de alta temp.",
         "pb_svc_13_better_tools": "Extractores de rodamientos, herramientas de alineacin, llaves para tubos pesadas, cmara trmica.",
         "pb_svc_13_better_time": "1 Da",
         "pb_svc_13_best_just": "[Alcance] Modernizacin Completa del Sistema Ultra-Premium. Actualizacin de controles a un Sistema de Gestin de Edificios (BMS) con control inteligente por etapas.",
         "pb_svc_13_best_mat": "Sistema de control inteligente Tekmar o similar, sensores de temperatura exterior, vlvulas mezcladoras motorizadas, cableado de bajo voltaje.",
-        "pb_svc_13_best_tools": "Herramientas elctricas avanzadas, laptop para programacin BMS, equipo de calibracin de precisión.",
+        "pb_svc_13_best_tools": "Herramientas elctricas avanzadas, laptop para programacin BMS, equipo de calibracin de precisin.",
         "pb_svc_13_best_time": "2-3 Das",
         "pb_svc_14_title": "Service 14",
         "pb_svc_14_good_just": "[Alcance] Reemplazo Estndar de Bomba Principal. Remueve bomba averiada, limpia el foso, instala bomba de hierro fundido de 1/3 HP. Elevacin de hasta 10 pies.",
@@ -2378,7 +2359,7 @@ const translations = {
         "pb_svc_15_best_tools": "Ridgid RP 350 ProPress, cuchillos para aislamiento de servicio pesado, herramientas de fijacin estructural.",
         "pb_svc_15_best_time": "14-21 Das",
         "pb_svc_1_title": "Service 1",
-        "pb_svc_1_good_just": "[Alcance] Deteccin estndar para 1 Ubicación (menos de 2,000 pies cuadrados). Incluye escaneo acstico bsico e inspeccin de Plomería visible. Excluye penetraciones de losa.",
+        "pb_svc_1_good_just": "[Alcance] Deteccin estndar para 1 ubicacin (menos de 2,000 pies cuadrados). Incluye escaneo acstico bsico e inspeccin de plomera visible. Excluye penetraciones de losa.",
         "pb_svc_1_good_mat": "Tinte trazador no txico, tiza de mapeo, materiales de parche temporal.",
         "pb_svc_1_good_tools": "Discos acsticos estndar, medidores de humedad, manmetros.",
         "pb_svc_1_good_time": "2-3 hrs",
@@ -2434,7 +2415,7 @@ const translations = {
         "pb_svc_5_good_mat": "Memoria USB (si se solicita copia fsica), toallitas desinfectantes.",
         "pb_svc_5_good_tools": "Cmara de empuje estndar de 100 pies, equipo de proteccin personal (PPE).",
         "pb_svc_5_good_time": "1-2 hrs",
-        "pb_svc_5_better_just": "[Alcance] Inspeccin Premium con Rastreo por Sonar. Mapea exactamente la profundidad y Ubicación en superficie del tubo daado. Incluye marcado en piso y video en la nube.",
+        "pb_svc_5_better_just": "[Alcance] Inspeccin Premium con Rastreo por Sonar. Mapea exactamente la profundidad y ubicacin en superficie del tubo daado. Incluye marcado en piso y video en la nube.",
         "pb_svc_5_better_mat": "Pintura de marcado de topgrafo, banderas, enlace de video en la nube.",
         "pb_svc_5_better_tools": "Cmara Ridgid SeeSnake, localizador NaviTrack Scout (receptor de sonda de 512 Hz).",
         "pb_svc_5_better_time": "2-3 hrs",
@@ -2501,7 +2482,7 @@ const translations = {
         "pb_svc_10_good_time": "1-2 hrs",
         "pb_svc_10_better_just": "[Alcance] Actualizacin Premium. Instalacin de un Grifo Sin Contacto de alta gama o inodoro Toto Drake. Incluye actualizacin de vlvula de cierre a un cuarto de vuelta.",
         "pb_svc_10_better_mat": "Anillo de cera extra grueso premium (Sani Seal), vlvulas angulares de 1/4 de vuelta, escudos a medida, bateras de sensores.",
-        "pb_svc_10_better_tools": "ProPress (para nuevas vlvulas), multmetro, nivel de precisión.",
+        "pb_svc_10_better_tools": "ProPress (para nuevas vlvulas), multmetro, nivel de precisin.",
         "pb_svc_10_better_time": "2-4 hrs",
         "pb_svc_10_best_just": "[Alcance] Integracin Ultra-Premium de Inodoro Inteligente / Bidet (ej. Toto Neorest). Incluye la instalacin de un nuevo receptculo elctrico GFCI de 120V dedicado.",
         "pb_svc_10_best_mat": "Unidad Toto Neorest / Washlet, bridas de montaje pesado, cable Romex 12-2, receptculo GFCI, caja elctrica.",
@@ -2510,7 +2491,7 @@ const translations = {
         "pb_svc_11_title": "Service 11",
         "pb_svc_11_good_just": "[Alcance] Instalacin Estndar de Vlvula Ssmica para medidor residencial (lnea de hasta 1\"). Cierre mecnico por magnitud 5.4+. Incluye permisos.",
         "pb_svc_11_good_mat": "Vlvula Ssmica Mecúnica aprobada por California (ej. Little Firefighter), cinta de Tefln para gas.",
-        "pb_svc_11_good_tools": "Llaves para tubos de 14\" y 18\", nivel de precisión (crtico), pasta para roscas.",
+        "pb_svc_11_good_tools": "Llaves para tubos de 14\" y 18\", nivel de precisin (crtico), pasta para roscas.",
         "pb_svc_11_good_time": "2-3 hrs",
         "pb_svc_11_better_just": "[Alcance] Instalacin de Vlvula Ssmica Premium (Lnea de 1-1/2\" a 2\"). Incluye fabricacin de soportes rgidos unistrut para evitar activaciones falsas.",
         "pb_svc_11_better_mat": "Vlvula ssmica de tamao comercial, Unistrut galvanizado grueso, anclajes de concreto, abrazaderas de tierra.",
@@ -2538,13 +2519,13 @@ const translations = {
         "pb_svc_13_good_mat": "Juntas de repuesto OEM, sensores de llama, qumico descalcificador del sistema (ej. Haymaker).",
         "pb_svc_13_good_tools": "Analizador de gases de combustin, manmetro digital, bomba de circulacin para lavado.",
         "pb_svc_13_good_time": "3-5 hrs",
-        "pb_svc_13_better_just": "[Alcance] ReVisión Premium y Reconstruccin de Bomba. Desarme de lazos primarios/secundarios. Reconstruccin de bombas (ej. Bell & Gossett), reemplazo de tanques de expansin.",
+        "pb_svc_13_better_just": "[Alcance] Revisin Premium y Reconstruccin de Bomba. Desarme de lazos primarios/secundarios. Reconstruccin de bombas (ej. Bell & Gossett), reemplazo de tanques de expansin.",
         "pb_svc_13_better_mat": "Tanque de expansin comercial, juntas de bomba de hierro fundido, ensamblajes de rodamientos, uniones dielctricas de alta temp.",
         "pb_svc_13_better_tools": "Extractores de rodamientos, herramientas de alineacin, llaves para tubos pesadas, cmara trmica.",
         "pb_svc_13_better_time": "1 Da",
         "pb_svc_13_best_just": "[Alcance] Modernizacin Completa del Sistema Ultra-Premium. Actualizacin de controles a un Sistema de Gestin de Edificios (BMS) con control inteligente por etapas.",
         "pb_svc_13_best_mat": "Sistema de control inteligente Tekmar o similar, sensores de temperatura exterior, vlvulas mezcladoras motorizadas, cableado de bajo voltaje.",
-        "pb_svc_13_best_tools": "Herramientas elctricas avanzadas, laptop para programacin BMS, equipo de calibracin de precisión.",
+        "pb_svc_13_best_tools": "Herramientas elctricas avanzadas, laptop para programacin BMS, equipo de calibracin de precisin.",
         "pb_svc_13_best_time": "2-3 Das",
         "pb_svc_14_title": "Service 14",
         "pb_svc_14_good_just": "[Alcance] Reemplazo Estndar de Bomba Principal. Remueve bomba averiada, limpia el foso, instala bomba de hierro fundido de 1/3 HP. Elevacin de hasta 10 pies.",
@@ -2574,7 +2555,7 @@ const translations = {
         "pb_svc_15_best_time": "14-21 Das",
         "footer_copyright_badge": "· Todos los derechos reservados · Marca Registrada",
         "footer_screen_watermark": "MORALES PLUMBING © 2026 · PROPIEDAD INTELECTUAL PROTEGIDA",
-        "footer_print_copyright": "&#9400; Copyright 2026 Morales Plumbing™ · Todos los derechos reservados · Propiedad intelectual de Alex Espinosa · Marca registrada. Prohibida la reproduccin total o parcial sin autorizacin escrita del titular. San Jose, CA · sunny-taffy-b28025.netlify.app",
+        "footer_print_copyright": "&#9400; Copyright 2026 Morales Plumbing™ · Todos los derechos reservados · Propiedad intelectual de Alex Espinosa · Marca registrada. Prohibida la reproduccin total o parcial sin autorizacin escrita del titular. San Jose, CA · moralesplumbing.com",
         "footer_print_watermark": "© MORALES PLUMBING 2026",
         "faq100_q_1": "¿Por qué es importante mantener la presin correcta en la propiedad?",
         "faq100_a_1": "Mantener la presin correcta previene daos en las tuberas, protege los electrodomsticos y evita fugas o rupturas catastrficas.",
@@ -2697,7 +2678,7 @@ const translations = {
         "faq100_q_60": "Fregadero doble devuelve agua por el otro lado?",
         "faq100_a_60": "Obstruccin en la tubera principal debajo de la unin en 'T'. Se requiere una culebra.",
         "faq100_q_61": "¿Quées el agua dura?",
-        "faq100_a_61": "Agua con alto nivel de calcio y magnesio, que causa sarro y daa la Plomería.",
+        "faq100_a_61": "Agua con alto nivel de calcio y magnesio, que causa sarro y daa la plomera.",
         "faq100_q_62": "Cundo necesito un ablandador de agua?",
         "faq100_a_62": "Si tienes manchas blancas, piel reseca y tu calentador se daa rpidamente por sarro.",
         "faq100_q_63": "Diferencia entre ablandador y filtro?",
@@ -2736,7 +2717,7 @@ const translations = {
         "faq100_a_79": "Mezcla agua para entregar una temperatura constante, evitando quemaduras en la ducha.",
         "faq100_q_80": "Mantenimiento de bomba sumidero (sump pump)?",
         "faq100_a_80": "Limpiar escombros anualmente y verter agua para verificar que se active sola.",
-        "faq100_q_81": "¿Quées una emergencia de Plomería?",
+        "faq100_q_81": "¿Quées una emergencia de plomera?",
         "faq100_a_81": "Fugas de gas, rotura de tuberas activas, u obstruccin de alcantarillado devolviendo aguas negras.",
         "faq100_q_82": "¿Quéhacer si se rompe una tubera?",
         "faq100_a_82": "1. Cierra la vlvula principal. 2. Corta electricidad cercana. 3. Llama al plomero.",
@@ -2756,7 +2737,7 @@ const translations = {
         "faq100_a_89": "Extremadamente peligroso e ilegal en California sin licencia CSLB.",
         "faq100_q_90": "Bloqueo es mi problema o de la ciudad?",
         "faq100_a_90": "Si el tapn estdentro de los lmites de tu propiedad, eres responsable de la reparacin.",
-        "faq100_q_91": "¿Quées Plomería Inteligente (Smart Plumbing)?",
+        "faq100_q_91": "¿Quées Plomera Inteligente (Smart Plumbing)?",
         "faq100_a_91": "Vlvulas Wi-Fi (como Flo by Moen) que monitorean el agua y cierran la lnea sola si detectan fuga.",
         "faq100_q_92": "Diferencia Cobre Tipo L y M?",
         "faq100_a_92": "El Tipo L es grueso para usos subterrneos comerciales. El Tipo M es delgado, para usos ligeros interiores.",
@@ -2769,7 +2750,7 @@ const translations = {
         "faq100_q_96": "Puedo usar lluvia para el inodoro?",
         "faq100_a_96": "S, usando redes de tuberas moradas y captacin de grises, siguiendo estrictos cdigos ecolgicos.",
         "faq100_q_97": "¿Por qué mi inodoro nuevo tiene poca agua?",
-        "faq100_a_97": "estándares estatales para ahorrar agua obligan a modelos de alta eficiencia de bajo flujo (1.28 GPM).",
+        "faq100_a_97": "Estndares estatales para ahorrar agua obligan a modelos de alta eficiencia de bajo flujo (1.28 GPM).",
         "faq100_q_98": "¿Quées un calentador Hbrido (Heat Pump)?",
         "faq100_a_98": "Usa temperatura ambiente para calentar el agua, siendo hasta 3 veces ms eficiente que uno elctrico normal.",
         "faq100_q_99": "¿Québeneficios ecolgicos tiene Morales Plumbing?",
@@ -2808,10 +2789,10 @@ const translations = {
         "dash_active_appointments": " Citas Programadas",
         "dash_active_pqrs": " Requerimientos PQR",
         "dash_feedback_title": "⭐ Valoracin y Retroalimentacin de Servicio",
-        "dash_feedback_desc": "Tu opinin nos ayuda a retroalimentar la IA Joe y mejorar nuestra Plomería Técnica.",
+        "dash_feedback_desc": "Tu opinin nos ayuda a retroalimentar la IA Joe y mejorar nuestra Plomera Tcúnica.",
         "feedback_rating": "Calificacin:",
         "btn_submit_feedback": "Enviar Valoracin",
-        "schedule_title": "Agendar Nueva Cita Técnica",
+        "schedule_title": "Agendar Nueva Cita Tcúnica",
         "schedule_desc": "Selecciona uno de nuestros 15 servicios del Price Book v6.0 PRO para programar una visita.",
         "lbl_select_service": "SERVICIO REQUERIDO",
         "lbl_select_tier": "NIVEL DE SERVICIO (PRICE BOOK)",
@@ -2820,7 +2801,7 @@ const translations = {
         "lbl_tier_best": "BEST (Ultra-Premium)",
         "lbl_select_date": "FECHA",
         "lbl_select_time": "HORA",
-        "btn_confirm_appointment": "Confirmar Cita de Plomería Técnica",
+        "btn_confirm_appointment": "Confirmar Cita de Plomera Tcúnica",
         "pqr_title": "Centro de PQRS (Peticiones, ¿Quéejas, Reclamos y Sugerencias)",
         "pqr_desc": "Registra tus quejas, sugerencias o solicitudes de forma directa. Cada caso es procesado bajo estrictos protocolos.",
         "lbl_pqr_type": "TIPO DE SOLICITUD",
@@ -2833,15 +2814,15 @@ const translations = {
         "profile_title": "Memoria de Identidad del Cliente",
         "profile_desc": "Guarda tus datos personales para habilitar la memoria a largo plazo de Joe AI. Toda tu informacin se almacena localmente de forma segura en tu navegador.",
         "lbl_profile_name": "NOMBRE COMPLETO",
-        "lbl_profile_phone": "Teléfono",
+        "lbl_profile_phone": "TELFONO",
         "lbl_profile_email": "EMAIL",
         "btn_save_profile": "Guardar Perfil",
         "btn_clear_data": "Borrar Memoria",
         "policies_title": "Polticas de Privacidad, Seguridad y Propiedad Intelectual",
         "pol_quality_title": "️ SEGURIDAD DE CALIDAD Y MANTENIMIENTO PREVENTIVO",
-        "pol_quality_text": "Garantizamos la mxima calidad de instalacin y servicio a travs de un estricto protocolo de doble inspeccin. Para asegurar la durabilidad del sistema a largo plazo, Morales Plumbing ofrece a sus afiliados Estndar 1 inspeccin preventiva anual gratuita (deteccin de fugas o lavado de calentador de agua) y a sus afiliados Premium 2 inspecciones preventivas anuales gratuitas (cmara SeeSnake en drenajes, anlisis qumico de agua, calibracin de PRV o termografa). Todo el trabajo cumple con el Cdigo Uniforme de Plomería (UPC).",
+        "pol_quality_text": "Garantizamos la mxima calidad de instalacin y servicio a travs de un estricto protocolo de doble inspeccin. Para asegurar la durabilidad del sistema a largo plazo, Morales Plumbing ofrece a sus afiliados Estndar 1 inspeccin preventiva anual gratuita (deteccin de fugas o lavado de calentador de agua) y a sus afiliados Premium 2 inspecciones preventivas anuales gratuitas (cmara SeeSnake en drenajes, anlisis qumico de agua, calibracin de PRV o termografa). Todo el trabajo cumple con el Cdigo Uniforme de Plomera (UPC).",
         "pol_sec_title": " SEGURIDAD HÍDRICA Y CUMPLIMIENTO CSLB",
-        "pol_sec_text": "Todas las operaciones de Morales Plumbing estn regidas por la Junta de Licencias del Estado de Contratistas de California (CSLB #1156542 C-36). Implementamos protocolos estrictos de doble inspeccin y cumplimiento con el Cdigo Uniforme de Plomería (UPC).",
+        "pol_sec_text": "Todas las operaciones de Morales Plumbing estn regidas por la Junta de Licencias del Estado de Contratistas de California (CSLB #1156542 C-36). Implementamos protocolos estrictos de doble inspeccin y cumplimiento con el Cdigo Uniforme de Plomera (UPC).",
         "pol_priv_title": "️ CONFIDENCIALIDAD E2EE Y CERO EXPOSICIN",
         "pol_priv_text": "Tu privacidad es absoluta. Este sistema web utiliza encriptacin de datos local (Web LocalStorage). Tus datos de contacto, direccin y detalles de citas nunca son transmitidos a servidores de terceros ni expuestos.",
         "pol_copy_title": "©️ DERECHOS DE AUTOR Y PROPIEDAD INTELECTUAL",
@@ -2865,7 +2846,7 @@ const translations = {
         "eng_termo_code": "ENG-CENT-001",
         "eng_termo_p1": "El Diagnstico por Termografa es un pilar fundamental de nuestros Servicios Tcnicos Especializados. Consiste en la deteccin de fugas de forma totalmente no invasiva utilizando imgenes trmicas de alta resolucin y sensores acsticos.",
         "eng_termo_p2": "En lugar de realizar costosas y destructivas demoliciones exploratorias, utilizamos tecnologa infrarroja FLIR para visualizar los gradientes trmicos dentro de las paredes y bajo las losas.",
-        "eng_termo_tech1_title": "Imgenes Infrarrojas de Alta precisión",
+        "eng_termo_tech1_title": "Imgenes Infrarrojas de Alta Precisin",
         "eng_termo_tech1_desc": "Nuestras cmaras captan diferencias de temperatura de hasta 0.1°C, mostrando exactamente por dnde viaja el agua filtrada.",
         "eng_termo_tech2_title": "Anlisis Acstico Computarizado",
         "eng_termo_tech2_desc": "Empleamos micrfonos hipersensibles con filtros de IA que diferencian el ruido ambiente del siseo provocado por agua a presin escapando.",
@@ -2883,27 +2864,27 @@ const translations = {
         "eng_eco_tech3_desc": "Entregamos clculos de Retorno de Inversin (ROI) y ahorro hdrico garantizado (hasta un 40% mensual), apto para aplicar a rebates estatales.",
         "eng_diseno_title": "Diseo de Sistemas de Tuberas",
         "eng_diseno_code": "ENG-CENT-003",
-        "eng_diseno_p1": "El Diseo de Sistemas de Tuberas de Morales Plumbing es un servicio avanzado de Plomería Técnica que garantiza la viabilidad, eficiencia y escalabilidad.",
+        "eng_diseno_p1": "El Diseo de Sistemas de Tuberas de Morales Plumbing es un servicio avanzado de Plomera Tcúnica que garantiza la viabilidad, eficiencia y escalabilidad.",
         "eng_diseno_p2": "Nuestros ingenieros utilizan software de modelado 3D y simuladores de dinmica de fluidos para calcular gradientes de presin, expansin trmica y velocidad de flujo.",
         "eng_diseno_tech1_title": "Modelado BIM Integrado",
         "eng_diseno_tech1_desc": "Diseo paramtrico compatible con Autodesk Revit, permitiendo una coordinacin impecable con arquitectos y contratistas.",
         "eng_diseno_tech2_title": "Simulacin de Flujo y Presin",
         "eng_diseno_tech2_desc": "Pruebas de estrs virtual en el modelo digital para garantizar un suministro equilibrado incluso durante picos mximos de demanda.",
         "eng_diseno_tech3_title": "Cumplimiento de Cdigo (UPC/CPC)",
-        "eng_diseno_tech3_desc": "Aprobacin garantizada en inspecciones de la ciudad gracias a un estricto apego a los Cdigos Uniformes y de California para Plomería.",
+        "eng_diseno_tech3_desc": "Aprobacin garantizada en inspecciones de la ciudad gracias a un estricto apego a los Cdigos Uniformes y de California para Plomera.",
         "eng_cobre_title": "Renovaciones en Cobre (Elite)",
         "eng_cobre_code": "ENG-CENT-004",
         "eng_cobre_p1": "Las Renovaciones en Cobre Elite representan el estndar dorado en la infraestructura hidrulica. Reemplazamos sistemas obsoletos con tuberas de Cobre Tipo L y Tipo K.",
         "eng_cobre_p2": "El cobre proporciona propiedades antimicrobianas naturales que purifican pasivamente el flujo de agua y garantizan nula liberacin de microplsticos.",
-        "eng_cobre_tech1_title": "Soldadura de precisión y Sistema ProPress",
+        "eng_cobre_tech1_title": "Soldadura de Precisin y Sistema ProPress",
         "eng_cobre_tech1_desc": "Empleamos tcúnicas de unin mecúnica sin fuego (ProPress) o soldadura de grado aeroespacial sin plomo.",
         "eng_cobre_tech2_title": "Longevidad y Retorno de Inversin",
-        "eng_cobre_tech2_desc": "Expectativa de vida til de más de 50 aos. Eleva instantneamente la valoracin estructural de la propiedad hasta en un 15%.",
+        "eng_cobre_tech2_desc": "Expectativa de vida til de ms de 50 aos. Eleva instantneamente la valoracin estructural de la propiedad hasta en un 15%.",
         "eng_cobre_tech3_title": "Calidad Acstica y Flujo Constante",
         "eng_cobre_tech3_desc": "El espesor de las paredes de cobre Tipo L elimina el 'golpe de ariete' y soporta presiones extremas.",
         "eng_septico_title": "Sistemas Spticos Avanzada",
         "eng_septico_code": "ENG-CENT-005",
-        "eng_septico_p1": "Nuestra diVisión de Sistemas Spticos Avanzada disea, despliega y mantiene sistemas de manejo de efluentes fuera de la red utilizando biotecnologa moderna.",
+        "eng_septico_p1": "Nuestra divisin de Sistemas Spticos Avanzada disea, despliega y mantiene sistemas de manejo de efluentes fuera de la red utilizando biotecnologa moderna.",
         "eng_septico_p2": "En lugar de instalar fosas convencionales, implementamos Sistemas de Tratamiento Aerbico (ATU) que procesan el agua a un nivel casi apto para riego.",
         "eng_septico_tech1_title": "Estudios de Percolacin y Diseo Topogrfico",
         "eng_septico_tech1_desc": "Evaluacin geolgica del terreno para determinar la tasa exacta de absorcin y dimensionar el campo de lixiviacin.",
@@ -3006,22 +2987,22 @@ const translations = {
         "nav_back": " Volver al Catlogo",
         "nav_nexus": "Nexus Inicio",
         "nav_orion": "Ecosistema Orion",
-        "nav_services": "Plomería Técnica Pro",
+        "nav_services": "Plomera Tcúnica Pro",
         "nav_multimedia": "Podcasts",
-        "nav_about": "Misión",
+        "nav_about": "Misin",
         "nav_terminal": "Terminal",
-        "hero_badge": "Plomería Técnica PROFESIONAL Y CERTIFICACIN CSLB C-36",
+        "hero_badge": "Plomera Tcúnica PROFESIONAL Y CERTIFICACIN CSLB C-36",
         "hero_title": "MORALES PLUMBING",
-        "hero_desc": "Integrando más de 21 aos de experiencia en Plomería Técnica con estimacin por IA y diseo hidrulico sostenible.",
+        "hero_desc": "Integrando ms de 21 aos de experiencia en Plomera Tcúnica con estimacin por IA y diseo hidrulico sostenible.",
         "stat_ready": "Licenciado",
         "stat_eco": "ISO 14001",
         "stat_ai": "IA Activa",
         "hero_explore": "Ver Soluciones",
         "hero_joe": "Asistente Joe",
-        "projects_title": "Excelencia en Plomería Técnica",
+        "projects_title": "Excelencia en Plomera Tcúnica",
         "projects_desc": "Nuestras aplicaciones tecnolgicas del mundo real y sistemas de gestin de proyectos.",
         "app_ep_title": "ORION ESTIMATOR PRO",
-        "app_ep_desc": "Estimacin automatizada basada en Visión Artificial con catlogo de +8000 artculos. Optimizacin de margen >70%.",
+        "app_ep_desc": "Estimacin automatizada basada en Visin Artificial con catlogo de +8000 artculos. Optimizacin de margen >70%.",
         "app_mp_title": "Morales Plumbing ORION Portal de Clientes",
         "app_mp_desc": "Portal de comuúnicacin con el cliente y gestin inteligente de agendamiento.",
         "app_redes_title": "HYDRAULIC REDES DESIGN",
@@ -3030,10 +3011,10 @@ const translations = {
         "app_tratamiento_desc": "Gestin remota de sistemas de purificacin y monitoreo de calidad del agua.",
         "app_heaters_title": "THERMO CORE DIAGNOSTICS",
         "app_heaters_desc": "Mdulo especializado en optimizacin y diagnstico de calentadores de agua sin tanque.",
-        "joe_status": "JOE: ASISTENTE DE Plomería Técnica AI",
+        "joe_status": "JOE: ASISTENTE DE Plomera Tcúnica AI",
         "joe_welcome": "Bienvenido. Soy Joe. Cmo puedo ayudarte con el diagnstico de tu proyecto o Servicios Tcnicos Especializados hoy?",
         "joe_intro": "¡Hola! Soy Joe, el asistente de IA de Morales Plumbing. ¿En qué puedo ayudarte hoy? ",
-        "joe_placeholder": "Pregunta sobre Plomería, servicios o proyectos...",
+        "joe_placeholder": "Pregunta sobre plomera, servicios o proyectos...",
         "joe_send": "ENVIAR",
         "joe_trigger_title": "Hablar con Joe · Asistente AI",
         "nav_pricebook": "Libro de Precios",
@@ -3050,27 +3031,27 @@ const translations = {
         "nav_termás": "Trminos",
         "nav_warranties": "Garantas",
         "pb_hero_badge": " Edicin Estndar de la Industria",
-        "pb_hero_subtitle": "Servicios Profesionales de Plomería | Bay Area, CA",
+        "pb_hero_subtitle": "Servicios Profesionales de Plomera | Bay Area, CA",
         "pb_hero_location": " Bay Area, California",
         "pb_hero_updated": "Actualizado: Diciembre 2024",
         "pb_hero_details": "15 Servicios Profesionales Detallados",
         "pb_hero_rates": "Lder: $185/hr | Ayudante: $95/hr | Margen: 30%",
         "pb_hero_compliance": "Calidad Garantizada: Servicio Personalizado en Tiempo Real",
         "pb_hero_powered": "Desarrollado por NeKon AI aGent Consulting | Sistema ORION",
-        "app_pricebook_detail": "El Libro de Precios Orion v6.0 PRO es una herramienta de Plomería Técnica de costos que estandariza las tarifas de servicio en todo el Área de la Baha. Utiliza un sistema de niveles (Bueno/Mejor/Excelente) para ofrecer opciones flexibles que cumplen con los estándares de seguridad UPC.",
+        "app_pricebook_detail": "El Libro de Precios Orion v6.0 PRO es una herramienta de Plomera Tcúnica de costos que estandariza las tarifas de servicio en todo el Área de la Baha. Utiliza un sistema de niveles (Bueno/Mejor/Excelente) para ofrecer opciones flexibles que cumplen con los estndares de seguridad UPC.",
         "app_mp_detail": "El Portal Morales Plumbing (MP) centraliza la comuúnicacin con el cliente, permitiendo el agendamiento inteligente y el acceso a reportes tcnicos generados por nuestra IA Joe. Garantiza transparencia total en cada fase del proyecto.",
-        "app_ep_detail": "Orion Estimator Pro utiliza algoritmos de Visión artificial para analizar planos y fotos de sitio, generando listas de materiales (BOM) y estimaciones de mano de obra con un 99% de precisión. Integrado con catlogos de +8000 artculos actualizados en tiempo real para el mercado de California.",
+        "app_ep_detail": "Orion Estimator Pro utiliza algoritmos de visin artificial para analizar planos y fotos de sitio, generando listas de materiales (BOM) y estimaciones de mano de obra con un 99% de precisin. Integrado con catlogos de +8000 artculos actualizados en tiempo real para el mercado de California.",
         "app_redes_detail": "Software de diseo hidrulico con integracin CAD que permite modelar flujos, presiones y gradientes trmicos. Esencial para infraestructura de alta complejidad en el Área de la Baha.",
         "app_tratamiento_detail": "Sistema de gestin Aqua Guard para el monitoreo remoto de sistemas de purificacin. Analiza la calidad del agua y automatiza los ciclos de mantenimiento preventivo.",
         "app_heaters_detail": "Mdulo de diagnstico Thermo Core especializado en calentadores de agua sin tanque de alta eficiencia. Optimiza el consumo energtico y predice fallos mediante anlisis de datos trmicos.",
         "btn_pricing": "Ver Catlogo de Precios",
-        "service_copper_content": "Sustitucin integral de sistemas legados (Galvanizado/PEX) por Cobre Tipo L y K con soldadura de precisión certificada.",
+        "service_copper_content": "Sustitucin integral de sistemas legados (Galvanizado/PEX) por Cobre Tipo L y K con soldadura de precisin certificada.",
         "service_copper_purpose": "Eliminar la degradacin de polmeros y la corrosin metlica, asegurando la pureza del agua y aumentando la plusvala en el Bay Area.",
         "service_copper_usage": "Proyectos residenciales de lujo en San Jose, Palo Alto y Los Gatos, donde la durabilidad y el cdigo ssmico son crticos.",
         "service_copper_potential": "Sistemas diseados para durar 50+ aos, totalmente reciclables y compatibles con filtracin centralizada de alto flujo.",
         "service_copper_costs": "ROI inmediato mediante la reduccin de primas de seguro y eliminacin de reparaciones recurrentes por fugas.",
         "service_copper_comp": "Superamos a la competencia que utiliza PEX de baja densidad y uniones mecúnicas propensas a fallas por presin.",
-        "service_copper_plus": "Plomería Técnica Sostenible: Protocolos de sanitizacin post-instalacin y certificacin de soldadura sin plomo.",
+        "service_copper_plus": "Plomera Tcúnica Sostenible: Protocolos de sanitizacin post-instalacin y certificacin de soldadura sin plomo.",
         "service_copper_lean": "Metodologa Lean: Kit de pre-fabricacin en taller que reduce el tiempo en sitio en un 40%.",
         "service_expansion_content": "Diseo y ejecucin de nuevas ramificaciones hidrulicas para ADUs, cocinas gourmet y expansiones maestras.",
         "service_expansion_purpose": "Asegurar que la carga hidrulica adicional no comprometa la presin o integridad del sistema existente.",
@@ -3080,21 +3061,21 @@ const translations = {
         "service_expansion_comp": "Uso de gemelos digitales para simular presin antes de la primera perforacin.",
         "service_expansion_plus": "Morales Plus: Verificacin de balanceo trmico en lneas de agua caliente expandidas.",
         "service_expansion_lean": "Lean Process: Logstica 'Just-in-Time' para materiales, manteniendo el sitio de obra limpio.",
-        "service_construction_content": "Planificacin desde el nivel de cimentacin, rough-in de alta velocidad y acabados de Plomería Técnica premium.",
-        "service_construction_purpose": "Establecer una base de infraestructura impecable que exceda los estándares de inspeccin de California.",
+        "service_construction_content": "Planificacin desde el nivel de cimentacin, rough-in de alta velocidad y acabados de Plomera Tcúnica premium.",
+        "service_construction_purpose": "Establecer una base de infraestructura impecable que exceda los estndares de inspeccin de California.",
         "service_construction_usage": "Nuevas residencias modernas y complejos multifamiliares de vanguardia tecnolgica.",
         "service_construction_potential": "Preparacin nativa para integracin completa con Smart Home e IoT hdrico.",
-        "service_construction_costs": "Optimizacin del presupuesto mediante Plomería Técnica de valor y seleccin estratgica de materiales.",
+        "service_construction_costs": "Optimizacin del presupuesto mediante Plomera Tcúnica de valor y seleccin estratgica de materiales.",
         "service_construction_comp": "Colaboracin directa con arquitectos mediante archivos BIM, eliminando conflictos de diseo en sitio.",
         "service_construction_plus": "Protocolos Ambientales: Certificacin LEED para la instalacin hidrulica.",
         "service_construction_lean": "Lean Process: Planificacin de tareas concurrentes para reducir el cronograma de obra en un 15%.",
         "service_repair_content": "Localizacin precisa de fallas invisibles y reparaciones quirrgicas con mnima interrupcin estructural.",
-        "service_repair_purpose": "Resolver problemas complejos de Plomería sin necesidad de demoliciones masivas innecesarias.",
+        "service_repair_purpose": "Resolver problemas complejos de plomera sin necesidad de demoliciones masivas innecesarias.",
         "service_repair_usage": "Mantenimiento crtico en residencias habitadas y edificios comerciales de operacin continua.",
         "service_repair_potential": "Historial digital de reparaciones almacenado en el ecosistema ORION para mantenimiento predictivo.",
         "service_repair_costs": "Evita el costo masivo de reconstruccin post-reparacin al localizar el punto exacto de falla.",
         "service_repair_comp": "Uso de Joe AI Assistant para anlisis de patrones de flujo vs. 'prueba y error' tradicional.",
-        "service_repair_plus": "Morales Plus: Garanta extendida basada en la precisión del diagnstico digital.",
+        "service_repair_plus": "Morales Plus: Garanta extendida basada en la precisin del diagnstico digital.",
         "service_repair_lean": "Lean Process: Estandarizacin de kits de reparacin rpida para resolucin en la primera visita.",
         "service_septic_content": "Instalacin de biodigestores anaerbicos de flujo ascendente y campos de infiltracin inteligentes con sensores de nivel.",
         "service_septic_purpose": "Gestin ecolgica de residuos en reas fuera de la red (Saratoga/Santa Cruz Mountains), protegiendo mantos acuferos locales.",
@@ -3109,8 +3090,8 @@ const translations = {
         "service_water_usage": "Sistemas integrados en jardines inteligentes y flushing de sanitarios bajo normativas de ahorro extremo.",
         "service_water_potential": "Independencia hdrica parcial de hasta el 65% del consumo anual residencial.",
         "service_water_costs": "Ahorro masivo en facturas de agua y acceso a incentivos estatales por conservacin ambiental.",
-        "service_water_comp": "Diseos personalizados frente a barriles de lluvia simples; nosotros entregamos Plomería Técnica de filtracin de grado 2.",
-        "service_water_plus": "Plomería Técnica Sostenible: Sistemas de desinfeccin UV integrados para prevenir la proliferacin de patgenos.",
+        "service_water_comp": "Diseos personalizados frente a barriles de lluvia simples; nosotros entregamos Plomera Tcúnica de filtracin de grado 2.",
+        "service_water_plus": "Plomera Tcúnica Sostenible: Sistemas de desinfeccin UV integrados para prevenir la proliferacin de patgenos.",
         "service_water_lean": "Lean Process: Mapeo de flujo dinmico para minimizar el uso de bombas elctricas.",
         "btn_buy": "Comprar Licencia",
         "btn_proposal": "Marco Estratgico",
@@ -3121,12 +3102,12 @@ const translations = {
         "service_2": "Eco-Retrofitting",
         "service_2_desc": "Modernizacin del sistema utilizando materiales ecolgicos y ahorro de agua de alta eficiencia (ISO 14001).",
         "service_3": "Diseo de Sistemas de Tuberas",
-        "service_3_desc": "Planificacin experta de redes hidrulicas de alta precisión para infraestructura residencial y comercial.",
+        "service_3_desc": "Planificacin experta de redes hidrulicas de alta precisin para infraestructura residencial y comercial.",
         "manifesto_title": "Manifiesto de Morales Plumbing",
-        "mission_title": "Misión",
-        "mission_desc": "Liderar la industria integrando más de 21 aos de experiencia en Plomería Técnica con inteligencia artificial, ofreciendo soluciones de alta precisión bajo los estándares regulatorios de la CSLB y el Cdigo Uniforme de Plomería (UPC).",
-        "vision_title": "Visión",
-        "vision_desc": "Ser el estndar global para la fontanería Técnica y la Plomería Técnica sostenible  definido por la innovación constante, la excelencia operativa y la integridad absoluta en cada proyecto.",
+        "mission_title": "MISIN",
+        "mission_desc": "Liderar la industria integrando ms de 21 aos de experiencia en Plomera Tcúnica con inteligencia artificial, ofreciendo soluciones de alta precisin bajo los estndares regulatorios de la CSLB y el Cdigo Uniforme de Plomera (UPC).",
+        "vision_title": "VISIN",
+        "vision_desc": "Ser el estndar global para la fontanera tcúnica y la Plomera Tcúnica sostenible  definido por la innovacin constante, la excelencia operativa y la integridad absoluta en cada proyecto.",
         "terminal_title": "MORALES_EXECUTIVE_V1.0",
         "profile_role": "Ingeniero Principal y Fundador",
         "cv_link": "> ACCEDER AL CURRÍCULUM PROFESIONAL",
@@ -3168,51 +3149,51 @@ const translations = {
         "cat_all": "Todos",
         "cat_diagnostic": "Diagnstico",
         "cat_eco": "Sostenible",
-        "cat_techúnical plumbing": "Plomería Técnica",
+        "cat_techúnical plumbing": "Plomera Tcúnica",
         "cat_safety": "Seguridad",
         "footer_e2ee": "Cifrado E2EE",
         "footer_cyber": "Ciberseguridad por IA Activa",
         "footer_rights_long": "© 2026 Morales Plumbing. Todos los derechos reservados. El contenido, videos, imgenes generadas y la tecnologa ORION / Joe AI son propiedad intelectual exclusiva de Morales Plumbing y NeKon AI aGent Consulting.",
         "footer_rights_branded": "MORALES PLUMBING · Todos los derechos reservados · Marca Registrada",
         "contact_email": "Correo",
-        "contact_phone": "Teléfono",
-        "contact_loc": "Ubicación",
+        "contact_phone": "Telfono",
+        "contact_loc": "Ubicacin",
         "nav_framework": "Marco Estratgico",
         "footer_rights": "© 2026 Morales Plumbing. Todos los derechos reservados.",
-        "slogan_text": "Definiendo el Futuro del Flujo. innovación para la Vida.",
+        "slogan_text": "Definiendo el Futuro del Flujo. Innovacin para la Vida.",
         "contact_lic": "Licencia",
-        "pb_method_p1": "La metodologa de clculo de ORION se basa en un enfoque de Plomería Técnica de precisión para el costeo hidrulico. Utilizamos algoritmos de grado industrial que consideran la durabilidad del material, la intensidad de la mano de obra (categorizada por roles de Lder y Ayudante) y la complejidad Técnica. Esto elimina la variabilidad de la estimacin, proporcionando una estructura de tarifa fija alineada con los estándares de la CSLB y la volatilidad del mercado de la construccin en California.",
-        "pb_method_p2": "Al integrar datos de la cadena de suministro en tiempo real y protocolos de flujo de trabajo de marca propia altamente eficientes, nuestra metodologa garantiza un margen optimizado del 30% mientras mantiene mrgenes sostenibles para una ejecucin Técnica de alta fidelidad. Este enfoque cientfico de fijacin de precios asegura que cada proyecto estrespaldado por datos hidrulicos verificados y una asignacin transparente de recursos.",
-        "pb_tiers_p1": "El sistema Bueno/Mejor/Excelente proporciona a nuestros clientes tres niveles distintos de soluciones de Plomería Técnica, adaptados a los diferentes objetivos del ciclo de vida del proyecto. El nivel 'Bueno' se centra en reparaciones que cumplen con el UPC y una restauracin eficiente. El nivel 'Mejor' introduce una mayor durabilidad de los componentes y mejoras de rendimiento de rango medio. El nivel 'Excelente' representa el estndar de ORION Tech: materiales premium de grado industrial, monitoreo integrado por IA y garantas de ciclo de vida extendidas.",
+        "pb_method_p1": "La metodologa de clculo de ORION se basa en un enfoque de Plomera Tcúnica de precisin para el costeo hidrulico. Utilizamos algoritmos de grado industrial que consideran la durabilidad del material, la intensidad de la mano de obra (categorizada por roles de Lder y Ayudante) y la complejidad tcúnica. Esto elimina la variabilidad de la estimacin, proporcionando una estructura de tarifa fija alineada con los estndares de la CSLB y la volatilidad del mercado de la construccin en California.",
+        "pb_method_p2": "Al integrar datos de la cadena de suministro en tiempo real y protocolos de flujo de trabajo de marca propia altamente eficientes, nuestra metodologa garantiza un margen optimizado del 30% mientras mantiene mrgenes sostenibles para una ejecucin tcúnica de alta fidelidad. Este enfoque cientfico de fijacin de precios asegura que cada proyecto estrespaldado por datos hidrulicos verificados y una asignacin transparente de recursos.",
+        "pb_tiers_p1": "El sistema Bueno/Mejor/Excelente proporciona a nuestros clientes tres niveles distintos de soluciones de Plomera Tcúnica, adaptados a los diferentes objetivos del ciclo de vida del proyecto. El nivel 'Bueno' se centra en reparaciones que cumplen con el UPC y una restauracin eficiente. El nivel 'Mejor' introduce una mayor durabilidad de los componentes y mejoras de rendimiento de rango medio. El nivel 'Excelente' representa el estndar de ORION Tech: materiales premium de grado industrial, monitoreo integrado por IA y garantas de ciclo de vida extendidas.",
         "pb_tiers_p2": "Cada nivel estdiseado para ofrecer el mximo valor dentro de su alcance, permitiendo a los interesados residenciales y comerciales tomar decisiones informadas basadas en su estrategia de infraestructura a largo plazo, no solo en la necesidad inmediata.",
         "pb_upsells_p1": "Nuestro sistema de ventas adicionales estdiseado para ofrecer una proteccin proactiva de la infraestructura. Ms allde la solicitud principal, analizamos el entorno hidrulico para recomendar actualizaciones crticas como vlvulas de cierre inteligentes, sistemas de filtracin de agua y bombas de recirculacin de alta eficiencia. Estas adiciones no son solo opciones, sino inversiones estratgicas en la seguridad de la propiedad.",
         "pb_upsells_p2": "Cada recomendacin estrespaldada por datos de diagnstico, lo que garantiza que cada integracin desempee un papel funcional en la prevencin de fallas futuras y la reduccin de los costos operativos a largo plazo.",
-        "pb_promo_p1": "El marco de promociones de Morales Plumbing recompensa el mantenimiento proactivo y los compromisos de proyectos de gran volumen. Ofrecemos incentivos peridicos para el cambio de tuberas en todo el hogar, optimizaciones estacionales de calentadores de agua e integraciones de ORION Tech por primera vez. Estas promociones estn diseadas para reducir la barrera de entrada a soluciones de Plomería Técnica de alta precisión.",
-        "pb_promo_p2": "Todas las promociones activas estn sujetas a reVisión de Plomería Técnica y no pueden combinarse con otros descuentos estratgicos, asegurando que la calidad del proyecto siga siendo la prioridad absoluta.",
-        "pb_termás_p1": "Todos los servicios proporcionados por Morales Plumbing se rigen por la Junta de Licencias del Estado de Contratistas de California (CSLB) y el Cdigo Uniforme de Plomería (UPC). Cada contrato incluye un alcance detallado del trabajo, precios de tarifa fija (sin tarifas ocultas) y una declaracin clara de la metodologa Técnica. Los pagos estn estructurados para alinearse con los hitos del proyecto.",
-        "pb_termás_p2": "La responsabilidad y la resolucin de disputas siguen los estándares industriales de California, asegurando una asociacin profesional y transparente entre el equipo de Plomería Técnica y el cliente.",
+        "pb_promo_p1": "El marco de promociones de Morales Plumbing recompensa el mantenimiento proactivo y los compromisos de proyectos de gran volumen. Ofrecemos incentivos peridicos para el cambio de tuberas en todo el hogar, optimizaciones estacionales de calentadores de agua e integraciones de ORION Tech por primera vez. Estas promociones estn diseadas para reducir la barrera de entrada a soluciones de Plomera Tcúnica de alta precisin.",
+        "pb_promo_p2": "Todas las promociones activas estn sujetas a revisin de Plomera Tcúnica y no pueden combinarse con otros descuentos estratgicos, asegurando que la calidad del proyecto siga siendo la prioridad absoluta.",
+        "pb_termás_p1": "Todos los servicios proporcionados por Morales Plumbing se rigen por la Junta de Licencias del Estado de Contratistas de California (CSLB) y el Cdigo Uniforme de Plomera (UPC). Cada contrato incluye un alcance detallado del trabajo, precios de tarifa fija (sin tarifas ocultas) y una declaracin clara de la metodologa tcúnica. Los pagos estn estructurados para alinearse con los hitos del proyecto.",
+        "pb_termás_p2": "La responsabilidad y la resolucin de disputas siguen los estndares industriales de California, asegurando una asociacin profesional y transparente entre el equipo de Plomera Tcúnica y el cliente.",
         "pb_warranty_p1": "Morales Plumbing ofrece una garanta estndar de 1 ao en toda la mano de obra e integraciones tcúnicas, con garantas extendidas disponibles para sistemas de nivel 'Excelente' e instalaciones de ORION Tech. Adems, contamos con planes de crdito y sistemas de garanta en mano de obra de por vida con repipe completo, ya sea de agua, drenaje o gas. Nuestro equipo de soporte utiliza datos de monitoreo de IoT para proporcionar respuestas de diagnstico rpidas, minimizando el tiempo de inactividad y asegurando la integridad del sistema.",
         "pb_warranty_p2": "Las garantas del fabricante se aplican a todos los materiales industriales utilizados, con Morales Plumbing como el principal punto de contacto tcnico para todas las consultas relacionadas con la garanta y las auditoras del sistema.",
         "pb_warranty_note": "*Monitoreo de IoT:* Se refiere al uso de tecnologa inteligente (vlvulas de corte de agua Wi-Fi, sensores de fugas, calentadores inteligentes) que envan datos y alertas a la nube para un diagnstico preventivo rpido.",
-        "pb_prose_p1": "El ORION Price Book v6.0 PRO es el ncleo operativo de Morales Plumbing, diseado para ofrecer una transparencia absoluta en la Plomería Técnica de costos. Este catlogo, actualizado a diciembre de 2024 para el Área de la Baha de California, ha sido desarrollado bajo los rigurosos lineamientos de la Junta de Licencias del Estado de Contratistas de California (CSLB) y el Cdigo Uniforme de Plomería (UPC), asegurando que cada intervencin Técnica estrespaldada por estándares de seguridad industrial y sostenibilidad ambiental.",
-        "pb_prose_p2": "La estructura de este documento prioriza la claridad para el cliente, eliminando clculos complejos en sitio y garantizando que cada presupuesto refleje el uso de materiales de grado industrial y metodologas de precisión auditadas por protocolos de alta eficiencia. En Morales Plumbing, no solo arreglamos tuberas; diseamos sistemas hidrulicos sostenibles para la prxima generacin.",
-        "pb_prose_p3": "Nuestro enfoque integra estimaciones impulsadas por IA con más de 21 aos de experiencia en el campo, lo que permite una tasa de precisión del 99% en la asignacin de recursos y la proyeccin de plazos. Al elegir ORION, esteligiendo un socio de infraestructura estratgica comprometido con los niveles ms altos de excelencia Técnica e integridad.",
+        "pb_prose_p1": "El ORION Price Book v6.0 PRO es el ncleo operativo de Morales Plumbing, diseado para ofrecer una transparencia absoluta en la Plomera Tcúnica de costos. Este catlogo, actualizado a diciembre de 2024 para el Área de la Baha de California, ha sido desarrollado bajo los rigurosos lineamientos de la Junta de Licencias del Estado de Contratistas de California (CSLB) y el Cdigo Uniforme de Plomera (UPC), asegurando que cada intervencin tcúnica estrespaldada por estndares de seguridad industrial y sostenibilidad ambiental.",
+        "pb_prose_p2": "La estructura de este documento prioriza la claridad para el cliente, eliminando clculos complejos en sitio y garantizando que cada presupuesto refleje el uso de materiales de grado industrial y metodologas de precisin auditadas por protocolos de alta eficiencia. En Morales Plumbing, no solo arreglamos tuberas; diseamos sistemas hidrulicos sostenibles para la prxima generacin.",
+        "pb_prose_p3": "Nuestro enfoque integra estimaciones impulsadas por IA con ms de 21 aos de experiencia en el campo, lo que permite una tasa de precisin del 99% en la asignacin de recursos y la proyeccin de plazos. Al elegir ORION, esteligiendo un socio de infraestructura estratgica comprometido con los niveles ms altos de excelencia tcúnica e integridad.",
         "aq_title": "ORION AQUA GUARD v1.0",
-        "aq_desc": "Monitoreo y gestin avanzada de sistemas de tratamiento de agua de alta precisión. Anlisis en tiempo real de pH, dureza y filtracin.",
+        "aq_desc": "Monitoreo y gestin avanzada de sistemas de tratamiento de agua de alta precisin. Anlisis en tiempo real de pH, dureza y filtracin.",
         "aq_feat1": "Monitoreo IoT",
         "aq_feat2": "Retrolavado Automtico",
         "aq_feat3": "Alertas de Pureza",
         "aq_prose_p1": "ORION AQUA GUARD v1.0 representa la cspide de la gestin de purificacin de agua residencial y comercial. Este sistema utiliza una network de sensores IoT para monitorear continuamente la calidad del agua entrante, midiendo variables como la dureza (granos por galn), los niveles de pH y las concentraciones de contaminantes. Los datos se procesan a travs de nuestro motor patentado ORION para optimizar la eficiencia de la filtracin y el consumo de sal.",
-        "aq_prose_p2": "Ms alldel simple ablandamiento, Aqua Guard gestiona unidades de smosis inversa de mltiples etapas y sistemas de esterilizacin por UV. Los usuarios reciben alertas en tiempo real a travs del ecosistema ORION sobre los ciclos de vida de los filtros y las cadas de pureza, asegurando que el agua utilizada para el consumo e infraestructura se mantenga en estándares de grado de laboratorio.",
+        "aq_prose_p2": "Ms alldel simple ablandamiento, Aqua Guard gestiona unidades de smosis inversa de mltiples etapas y sistemas de esterilizacin por UV. Los usuarios reciben alertas en tiempo real a travs del ecosistema ORION sobre los ciclos de vida de los filtros y las cadas de pureza, asegurando que el agua utilizada para el consumo e infraestructura se mantenga en estndares de grado de laboratorio.",
         "aq_prose_p3": "Al integrar Aqua Guard en su red hidrulica, prolonga la vida til de todos los electrodomsticos y accesorios aguas abajo. Las capacidades de mantenimiento predictivo del sistema aseguran que la intervencin solo se requiera cuando sea estadsticamente necesario, maximizando tanto la calidad del agua como el ROI del sistema.",
         "hn_title": "ORION HYDRAULIC NEXUS",
         "hn_desc": "Diseo hidrulico integrado en CAD y simulacin de presin para infraestructuras complejas. Distribucin optimizada de flujo y volumen.",
         "hn_feat1": "Integracin CAD",
         "hn_feat2": "Mapeo de Presin",
         "hn_feat3": "Simulacin de Fugas",
-        "hn_prose_p1": "ORION HYDRAULIC NEXUS es nuestra suite de diseo de grado profesional para planificar y simular infraestructuras hidrulicas de alta presin. Utilizando planos integrados en CAD, creamos un gemelo digital de su sistema de Plomería para analizar la dinmica del flujo, las cadas de presin en tramos largos y las variables de expansin trmica. Esto es crtico para proyectos residenciales de alta gama y comerciales de varios pisos donde la estimacin estndar falla.",
+        "hn_prose_p1": "ORION HYDRAULIC NEXUS es nuestra suite de diseo de grado profesional para planificar y simular infraestructuras hidrulicas de alta presin. Utilizando planos integrados en CAD, creamos un gemelo digital de su sistema de plomera para analizar la dinmica del flujo, las cadas de presin en tramos largos y las variables de expansin trmica. Esto es crtico para proyectos residenciales de alta gama y comerciales de varios pisos donde la estimacin estndar falla.",
         "hn_prose_p2": "El sistema permite a nuestros ingenieros realizar pruebas de estrs en la red virtual bajo varios escenarios de demanda mxima, identificando posibles puntos dbiles antes de instalar una sola tubera. Esta metodologa asegura que cada accesorio reciba la presin exacta requerida por el UPC, eliminando las 'zonas muertas' y optimizando la velocidad de entrega de agua.",
-        "hn_prose_p3": "Hydraulic Nexus tambin se integra con nuestros diagnsticos de termografa, permitindonos superponer datos trmicos en tiempo real sobre los planos originales para una deteccin de fugas y auditora de infraestructura precisas. Es la herramienta definitiva para la Plomería Técnica Avanzada de precisión.",
+        "hn_prose_p3": "Hydraulic Nexus tambin se integra con nuestros diagnsticos de termografa, permitindonos superponer datos trmicos en tiempo real sobre los planos originales para una deteccin de fugas y auditora de infraestructura precisas. Es la herramienta definitiva para la Plomera Tcúnica Avanzada de precisin.",
         "wh_title": "ORION THERMO CORE v2.0",
         "wh_desc": "Sistema inteligente de diagnstico y optimizacin para calentadores de agua sin tanque de alta eficiencia. Alertas predictivas de incrustacin y ajuste de combustin.",
         "wh_feat1": "Ajuste de Combustin",
@@ -3224,17 +3205,17 @@ const translations = {
         "aca_back": "Volver a Mdulos",
         "aca_mod_badge": "MDULO 01 | SEMANA 1",
         "aca_hero_title": "Conoce ORION Tech",
-        "aca_hero_desc": "Misión, Visión, valores, estructura organizacional y cultura de la empresa. Este mdulo te darlas bases para entender quines somos y hacia dnde vamos.",
+        "aca_hero_desc": "Misin, visin, valores, estructura organizacional y cultura de la empresa. Este mdulo te darlas bases para entender quines somos y hacia dnde vamos.",
         "aca_video_title": "Video: Estructura Organizacional",
-        "aca_mission_title": " Nuestra Misión",
+        "aca_mission_title": " Nuestra Misin",
         "aca_mission_desc": "Democratizar la automatizacin inteligente para pequeas y medianas empresas, permitindoles competir con grandes compaas utilizando tecnologa de punta.",
-        "aca_vision_title": " Nuestra Visión",
+        "aca_vision_title": " Nuestra Visin",
         "aca_vision_desc": "Ser la plataforma de automatizacin por IA lder para negocios de habla hispana en todo el mundo para el 2028.",
         "aca_what_title": " ¿QuéHacemos",
         "aca_what_desc": "Creamos asistentes de IA que responden mensajes 24/7 en WhatsApp, Instagram, Facebook, Telegram y ms. Automatizamos reservas, citas, ventas y atencin al cliente.",
         "aca_org_title": "Estructura Organizacional",
         "aca_values_title": "Nuestros Valores",
-        "aca_val1_title": "innovación",
+        "aca_val1_title": "Innovacin",
         "aca_val1_desc": "Buscamos nuevas formas de resolver problemas",
         "aca_val2_title": "Confianza",
         "aca_val2_desc": "Hacemos lo que decimos",
@@ -3258,57 +3239,57 @@ const translations = {
         "aca_mex_li2": "En desarrollo - 2025",
         "aca_nav_next": "Mdulo 2: Producto →",
         "card_ep_title": "ORION ESTIMATOR PRO",
-        "card_ep_desc": "Estimacin automtica basada en Visión por computadora con catlogo de +8000 artculos. Optimizacin de mrgenes >70%.",
+        "card_ep_desc": "Estimacin automtica basada en visin por computadora con catlogo de +8000 artculos. Optimizacin de mrgenes >70%.",
         "card_orion_title": "SISTEMAS ESTRATGICOS ORION",
         "card_orion_desc": "Soluciones de flujo de trabajo digital para proyectos de alto volumen. Contratos inteligentes y seguimiento en tiempo real.",
         "network_link": "> RED: ORION TECH",
         "service_copper_title": "Renovaciones en Cobre Elite",
         "service_copper_desc": "Infraestructura hidrulica de alta gama con cumplimiento UPC 2024.",
-        "service_copper_detail": "CONTENIDO: Sistemas completos de tuberas de cobre (Tipos L, M, K) para infraestructura residencial y comercial. PROPSITO: Integridad estructural garantizada y eficiencia de flujo. USO: Renovaciones, ampliaciones, construcciones nuevas y reparaciones. POTENCIALIDADES: Vida til de más de 50 aos, sin microplsticos. COSTOS: Reduccin del 30% en mantenimiento a largo plazo vs PEX. COMPETENCIA: Superamos los estándares locales con soldadura especializada. PLUS: Plomería Técnica Sostenible, protocolos internacionales y procesos Lean. COPYRIGHT: © 2026 Morales Plumbing. Todos los derechos reservados.",
+        "service_copper_detail": "CONTENIDO: Sistemas completos de tuberas de cobre (Tipos L, M, K) para infraestructura residencial y comercial. PROPSITO: Integridad estructural garantizada y eficiencia de flujo. USO: Renovaciones, ampliaciones, construcciones nuevas y reparaciones. POTENCIALIDADES: Vida til de ms de 50 aos, sin microplsticos. COSTOS: Reduccin del 30% en mantenimiento a largo plazo vs PEX. COMPETENCIA: Superamos los estndares locales con soldadura especializada. PLUS: Plomera Tcúnica Sostenible, protocolos internacionales y procesos Lean. COPYRIGHT: © 2026 Morales Plumbing. Todos los derechos reservados.",
         "service_expansion_title": "Ampliaciones Hidrulicas Pro",
         "service_expansion_desc": "Expansin estratgica de redes para renovaciones y anexos (ADUs).",
-        "service_expansion_detail": "CONTENIDO: Bloques de expansin hidrulica modular. PROPSITO: Integracin perfecta de nuevos accesorios sin prdida de presin. USO: Adiciones comerciales y ampliaciones residenciales. POTENCIALIDADES: Escalabilidad infinita. COSTOS: Evita el rediseo total del sistema. PLUS: Plomería Técnica avanzada y procesos Lean. COPYRIGHT: © 2026 Morales Plumbing. Todos los derechos reservados.",
-        "service_construction_title": "Plomería Técnica de Obra Nueva",
+        "service_expansion_detail": "CONTENIDO: Bloques de expansin hidrulica modular. PROPSITO: Integracin perfecta de nuevos accesorios sin prdida de presin. USO: Adiciones comerciales y ampliaciones residenciales. POTENCIALIDADES: Escalabilidad infinita. COSTOS: Evita el rediseo total del sistema. PLUS: Plomera Tcúnica avanzada y procesos Lean. COPYRIGHT: © 2026 Morales Plumbing. Todos los derechos reservados.",
+        "service_construction_title": "Plomera Tcúnica de Obra Nueva",
         "service_construction_desc": "Diseo y despliegue integral de infraestructura para edificios inteligentes.",
-        "service_construction_detail": "CONTENIDO: Planos CAD, Rough-in y acabados de lujo. PROPSITO: Excelencia Técnica desde cero. USO: Nuevos edificios residenciales y comerciales. POTENCIALIDADES: Valorizacin inmediata de la propiedad. COSTOS: Optimizacin de materiales mediante Lean Process. PLUS: Protocolos Ambientales Internacionales. COPYRIGHT: © 2026 Morales Plumbing. Todos los derechos reservados.",
+        "service_construction_detail": "CONTENIDO: Planos CAD, Rough-in y acabados de lujo. PROPSITO: Excelencia tcúnica desde cero. USO: Nuevos edificios residenciales y comerciales. POTENCIALIDADES: Valorizacin inmediata de la propiedad. COSTOS: Optimizacin de materiales mediante Lean Process. PLUS: Protocolos Ambientales Internacionales. COPYRIGHT: © 2026 Morales Plumbing. Todos los derechos reservados.",
         "service_repair_title": "Diagnstico y Reparacin Smart",
-        "service_repair_desc": "Restauracin Técnica mediante termografa y acstica no invasiva.",
-        "service_repair_detail": "CONTENIDO: Diagnstico por termografa y reparacin de precisión. PROPSITO: Restauracin inmediata de la operatividad. USO: Emergencias y mantenimiento preventivo. POTENCIALIDADES: Deteccin temprana de fallas invisibles. COSTOS: Evita daos estructurales costosos. PLUS: Joe AI Assistant para diagnsticos. COPYRIGHT: © 2026 Morales Plumbing. Todos los derechos reservados.",
+        "service_repair_desc": "Restauracin tcúnica mediante termografa y acstica no invasiva.",
+        "service_repair_detail": "CONTENIDO: Diagnstico por termografa y reparacin de precisin. PROPSITO: Restauracin inmediata de la operatividad. USO: Emergencias y mantenimiento preventivo. POTENCIALIDADES: Deteccin temprana de fallas invisibles. COSTOS: Evita daos estructurales costosos. PLUS: Joe AI Assistant para diagnsticos. COPYRIGHT: © 2026 Morales Plumbing. Todos los derechos reservados.",
         "service_septic_title": "Sistemas Spticos Avanzada",
         "service_septic_desc": "Sistemas de tratamiento in-situ para infraestructura rural y eco-sostenible.",
         "service_water_title": "Sistemas de Recoleccin Hdrica",
-        "service_water_desc": "Plomería Técnica de captura de lluvia y reutilizacin de aguas grises estratgicas.",
+        "service_water_desc": "Plomera Tcúnica de captura de lluvia y reutilizacin de aguas grises estratgicas.",
         "faq_title": "P&R | Centro Tcnico",
-        "faq_cat_plumbing": "Sistemas de Plomería",
-        "faq_cat_eco": "Mezcla de Eco-Plomería",
+        "faq_cat_plumbing": "Sistemas de Plomera",
+        "faq_cat_eco": "Mezcla de Eco-Plomera",
         "faq_cat_env": "Regulaciones Ambientales",
         "faq_q1": "¿Por qué usar cobre en lugar de PEX para construcciones nuevas?",
         "faq_a1": "El cobre proporciona una durabilidad superior, resistencia al fuego y previene el crecimiento bacteriano. Bajo el UPC de California, sigue siendo el estndar de oro para el valor de alta gama. Por otro lado, el PEX ofrece una flexibilidad excepcional, menos conexiones de unin (reduciendo puntos de fuga), instalacin ms rpida y menores costos iniciales de material. <span class=\"comic-choice\">La decisin es suya</span>: elija la longevidad premium y el valor clsico del cobre, o la rentabilidad moderna y la resiliencia elstica del PEX.",
         "faq_q2": "Cules son las regulaciones spticas y ambientales de California para 2026?",
-        "faq_a2": "Las regulaciones se centran en la reduccin de nitrgeno, proteccin de aguas subterrneas y eficiencia en la reutilizacin de agua. Morales Plumbing garantiza el 100% de cumplimiento mediante Plomería Técnica avanzada y protocolos de la Junta de Agua. Adems, diseamos sistemas spticos estndar que minimizan los costos iniciales utilizando rutas de permisos locales tradicionales. <span class=\"comic-choice\">La decisin es suya</span>: invierta en sistemas ecolgicos avanzados para anticiparse a las normas de 2030, o seleccione una configuracin estndar de bajo costo inmediato.",
-        "faq_q3": "Cmo beneficia el Proceso Lean y la Plomería Técnica Sostenible a mi proyecto?",
+        "faq_a2": "Las regulaciones se centran en la reduccin de nitrgeno, proteccin de aguas subterrneas y eficiencia en la reutilizacin de agua. Morales Plumbing garantiza el 100% de cumplimiento mediante Plomera Tcúnica avanzada y protocolos de la Junta de Agua. Adems, diseamos sistemas spticos estndar que minimizan los costos iniciales utilizando rutas de permisos locales tradicionales. <span class=\"comic-choice\">La decisin es suya</span>: invierta en sistemas ecolgicos avanzados para anticiparse a las normas de 2030, o seleccione una configuracin estndar de bajo costo inmediato.",
+        "faq_q3": "Cmo beneficia el Proceso Lean y la Plomera Tcúnica Sostenible a mi proyecto?",
         "faq_a3": "Al eliminar desperdicios y usar materiales sostenibles, reducimos costos en un 25% y plazos en un 30%. Nuestros protocolos aseguran una menor huella de carbono y mayor ROI de infraestructura. Como alternativa, ofrecemos mtodos de construccin clsicos enfocados en la mxima personalizacin y redundancia estructural manual absoluta sin los lmites del proceso Lean. <span class=\"comic-choice\">La decisin es suya</span>: elija el proceso ecolgico Lean acelerado para mxima eficiencia, o nuestra construccin manual clsica para una personalizacin tradicional a medida.",
-        "faq_q4": "Puedo integrar la recoleccin de agua en mi sistema de Plomería existente?",
+        "faq_q4": "Puedo integrar la recoleccin de agua en mi sistema de plomera existente?",
         "faq_a4": "S, nos especializamos en la adaptacin de captaciones y sistemas de aguas grises a redes existentes, reduciendo significativamente la dependencia municipal y los costos operativos.",
         "faq_q5": "Cul es la ventaja del marco Morales Plumbing PLUS?",
-        "faq_a5": "Combina la experiencia CSLB C-36 con Plomería Técnica Sostenible, diagnsticos por IA y Proceso Lean, brindando un nivel de precisión y sostenibilidad inigualable.",
+        "faq_a5": "Combina la experiencia CSLB C-36 con Plomera Tcúnica Sostenible, diagnsticos por IA y Proceso Lean, brindando un nivel de precisin y sostenibilidad inigualable.",
         "faq_q6": "Cmo asegura Morales Plumbing el cumplimiento del UPC?",
-        "faq_a6": "Nuestros ingenieros cuentan con certificacin CSLB C-36 y utilizan protocolos de verificacin por IA para asegurar que cada conexin supere los estándares de California. Adems, ofrecemos inspecciones fsicas tradicionales de doble inspector y listas de verificacin manuales para clientes que prefieren la superVisión mecúnica clsica. <span class=\"comic-choice\">La decisin es suya</span>: elija nuestra validacin digital de alta precisión asistida por IA, o nuestra inspeccin humana manual probada en el tiempo con garantas mecúnicas.",
+        "faq_a6": "Nuestros ingenieros cuentan con certificacin CSLB C-36 y utilizan protocolos de verificacin por IA para asegurar que cada conexin supere los estndares de California. Adems, ofrecemos inspecciones fsicas tradicionales de doble inspector y listas de verificacin manuales para clientes que prefieren la supervisin mecúnica clsica. <span class=\"comic-choice\">La decisin es suya</span>: elija nuestra validacin digital de alta precisin asistida por IA, o nuestra inspeccin humana manual probada en el tiempo con garantas mecúnicas.",
         "faq_q7": "¿Quémtricas 'Lean' especficas rastrean?",
-        "faq_a7": "Rastreamos Takt Time, Lead Time y First-Pass Yield para asegurar un flujo de trabajo predecible y sin desperdicios en proyectos de gran escala. Al mismo tiempo, apoyamos el seguimiento clsico por hitos del proyecto y auditoras de horas de trabajo tradicionales para una superVisión ms simple y directa. <span class=\"comic-choice\">La decisin es suya</span>: optimice con tableros de datos Lean en tiempo real, o gestione mediante hitos tradicionales sencillos.",
+        "faq_a7": "Rastreamos Takt Time, Lead Time y First-Pass Yield para asegurar un flujo de trabajo predecible y sin desperdicios en proyectos de gran escala. Al mismo tiempo, apoyamos el seguimiento clsico por hitos del proyecto y auditoras de horas de trabajo tradicionales para una supervisin ms simple y directa. <span class=\"comic-choice\">La decisin es suya</span>: optimice con tableros de datos Lean en tiempo real, o gestione mediante hitos tradicionales sencillos.",
         "faq_q8": "Cmo puedo preparar mi infraestructura para el futuro?",
         "faq_a8": "Al integrar sistemas de recoleccin de agua y reutilizacin de aguas grises hoy, evita futuros mandatos y aumenta el valor de su propiedad hasta en un 15%. Como alternativa, puede optar por un diseo pasivo ultra confiable con tuberas de alta durabilidad y colectores simplificados que minimizan las partes mecúnicas activas. <span class=\"comic-choice\">La decisin es suya</span>: invierta en tecnologas de agua activas y sostenibles, o seleccione un sistema de bucle pasivo de bajo mantenimiento y alta confiabilidad.",
-        "service_septic_detail": "CONTENIDO: Sistemas avanzados de biodigestores y campos de infiltracin. PROPSITO: Tratamiento de aguas residuales ecolgico y autnomo. USO: Zonas rurales y proyectos sostenibles. POTENCIALIDADES: Independencia total del drenaje municipal. COSTOS: Eliminacin de cuotas de alcantarillado. COMPETENCIA: Plomería Técnica biolgica vs tanques spticos simples. PLUS: Cumplimiento ambiental estricto. LEAN: Mantenimiento automatizado.",
-        "service_water_detail": "CONTENIDO: Plomería Técnica de recoleccin de lluvia y tratamiento de aguas grises. PROPSITO: Autonoma hdrica extrema y conservacin. USO: Riego y uso domstico reciclado. POTENCIALIDADES: Resiliencia ante sequas. COSTOS: Reduccin del 60% en consumo de agua potable. COMPETENCIA: Filtracin avanzada vs barriles simples. PLUS: Protocolos de sostenibilidad gubernamentales. LEAN: Automatizacin de ciclos hdricos.",
+        "service_septic_detail": "CONTENIDO: Sistemas avanzados de biodigestores y campos de infiltracin. PROPSITO: Tratamiento de aguas residuales ecolgico y autnomo. USO: Zonas rurales y proyectos sostenibles. POTENCIALIDADES: Independencia total del drenaje municipal. COSTOS: Eliminacin de cuotas de alcantarillado. COMPETENCIA: Plomera Tcúnica biolgica vs tanques spticos simples. PLUS: Cumplimiento ambiental estricto. LEAN: Mantenimiento automatizado.",
+        "service_water_detail": "CONTENIDO: Plomera Tcúnica de recoleccin de lluvia y tratamiento de aguas grises. PROPSITO: Autonoma hdrica extrema y conservacin. USO: Riego y uso domstico reciclado. POTENCIALIDADES: Resiliencia ante sequas. COSTOS: Reduccin del 60% en consumo de agua potable. COMPETENCIA: Filtracin avanzada vs barriles simples. PLUS: Protocolos de sostenibilidad gubernamentales. LEAN: Automatizacin de ciclos hdricos.",
         "pb_hero_title": "ORION PRICE BOOK v6.0 PRO",
         "pb_search_placeholder": "Buscar servicio...",
         "pb_promotions_p1": "Promociones exclusivas para el Área de la Baha en renovaciones y modernizacin.",
         "pb_warranties_p1": "Garantas integrales de 1 a 5 aos en mano de obra y materiales certificados.",
         "price_standard": "Tarifa Estndar",
         "price_member": "Tarifa Miembro",
-        "lbl_client_view": "Visión Cliente:",
-        "lbl_tech_view": "Esp. Técnica & Materiales (3 Niveles):",
-        "profile_header_role": "Liderazgo en Plomería Técnica",
+        "lbl_client_view": "Visin Cliente:",
+        "lbl_tech_view": "Esp. Tcúnica & Materiales (3 Niveles):",
+        "profile_header_role": "Liderazgo en Plomera Tcúnica",
         "legal_title": "MARCO LEGAL Y CUMPLIMIENTO",
         "doc_title": "DOCUMENTO TCNICO",
         "doc_subtitle": "ESTÁNDARES DE OPERACIN",
@@ -3318,7 +3299,7 @@ const translations = {
         "sec1_legal_li1": "Licencia CSLB C-36 Activa",
         "sec1_legal_li2": "Certificacin C-36 en Sistemas Sostenibles",
         "sec2_legal_title": "SECCIN 2: ESTÁNDARES UPC",
-        "sec2_legal_p1": "Nuestras instalaciones siguen estrictamente el Cdigo Uniforme de Plomería.",
+        "sec2_legal_p1": "Nuestras instalaciones siguen estrictamente el Cdigo Uniforme de Plomera.",
         "sec2_legal_li1": "Tuberas Certificadas",
         "sec2_legal_li2": "Pruebas de Presin Digitales",
         "sec2_legal_li3": "Protocolos de Sanitizacin",
@@ -3337,7 +3318,7 @@ const translations = {
         "multimedia_subtitle": "Perspectivas en Audio de Alta Fidelidad y Anlisis Crticos",
         "mp_podcasts_title": "Serie Ecosistema MP",
         "pod_type_deep_dive": "Inmersin Profunda",
-        "mp_pod_1_title": "La IA de Silicon Valley transforma la Plomería moderna",
+        "mp_pod_1_title": "La IA de Silicon Valley transforma la plomera moderna",
         "btn_listen": "Escuchar Ahora",
         "pod_type_brief": "Resumen",
         "mp_pod_2_title": "IA para predecir fugas de agua",
@@ -3388,7 +3369,7 @@ const translations = {
         "req_tt_4": "Vlvulas de aislamiento dedicadas para lavado anual y mantenimiento.",
         "req_tt_5": "Kit neutralizador de condensado (si descarga en hierro fundido o alcantarillado pblico).",
         "req_ttt_title": "Tankless a Tankless: Requerimientos Tcnicos",
-        "req_ttt_plumb": "Consideraciones de Plomería y Reequipamiento",
+        "req_ttt_plumb": "Consideraciones de Plomera y Reequipamiento",
         "req_ttt_1": "Reutilizacin de la lnea de gas existente asumiendo que cumple con la demanda de 199,000 BTU/h.",
         "req_ttt_2": "Adaptacin de la ventilacin PVC o concntrica existente al collar de escape de la nueva unidad.",
         "req_ttt_3": "Actualizacin de vlvulas de aislamiento si las antiguas estn muy calcificadas o presentan fugas.",
@@ -3714,10 +3695,10 @@ const translations = {
         "svc_3_best_desc": "[EN] Halo 5 Whole House System. Sistema sin sal que no requiere mantenimiento, filtra cloro, metales pesados e incluye un mdulo de esterilizacin UV para proteccin bacteriolgica total.",
         "svc_4_good_desc": "[EN] Instalacin de vlvula de bola de latn manual de 1/4 de vuelta de grado comercial para aislamiento rpido principal.",
         "svc_4_better_desc": "[EN] Moen Flo Smart Valve. Monitoreo diario, deteccin de microfugas y cierre automtico desde su smartphone.",
-        "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisión de flujo e integracin total con sistemas Smart Home.",
+        "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisin de flujo e integracin total con sistemas Smart Home.",
         "svc_5_good_desc": "[EN] Inspeccin de cmara bsica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
-        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la Ubicación exacta y profundidad del problema en la superficie.",
-        "svc_5_best_desc": "[EN] Inspeccin HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
+        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la ubicacin exacta y profundidad del problema en la superficie.",
+        "svc_5_best_desc": "[EN] Inspeccin HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomera Tcúnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
         "svc_6_good_desc": "[EN] Excavacin tradicional e instalacin de PVC SDR-35. Cumple con los cdigos locales y provee una solucin probada de flujo por gravedad.",
         "svc_6_better_desc": "[EN] Reemplazo con ABS Cdula 40. Tubera de ncleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
         "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadas. Tubera continua sin costuras, imposible de penetrar por races. Garanta de por vida.",
@@ -4355,7 +4336,7 @@ const translations = {
         "pb_svc_15_best_time": "14-21 Das",
         "footer_copyright_badge": "· 版权所有 · 注册商标",
         "footer_screen_watermark": "MORALES PLUMBING © 2026 · 受知识产权保护",
-        "footer_print_copyright": "&#9400; 版权所有 2026 Morales Plumbing™ · 版权所有 · Alex Espinosa 的知识产权 · 注册商标。未经书面授权，严禁全部或部分复制。San Jose, CA · sunny-taffy-b28025.netlify.app",
+        "footer_print_copyright": "&#9400; 版权所有 2026 Morales Plumbing™ · 版权所有 · Alex Espinosa 的知识产权 · 注册商标。未经书面授权，严禁全部或部分复制。San Jose, CA · moralesplumbing.com",
         "footer_print_watermark": "© MORALES PLUMBING 2026",
         "faq100_q_1": "为什么保持房屋内的正确压力很重要？",
         "faq100_a_1": "保持正确的压力可以防止管道损坏、保护设备并防止灾难性泄漏或破裂。",
@@ -5484,10 +5465,10 @@ const translations = {
         "svc_3_best_desc": "[EN] Halo 5 Whole House System. Sistema sin sal que no requiere mantenimiento, filtra cloro, metales pesados e incluye un mdulo de esterilizacin UV para proteccin bacteriolgica total.",
         "svc_4_good_desc": "[EN] Instalacin de vlvula de bola de latn manual de 1/4 de vuelta de grado comercial para aislamiento rpido principal.",
         "svc_4_better_desc": "[EN] Moen Flo Smart Valve. Monitoreo diario, deteccin de microfugas y cierre automtico desde su smartphone.",
-        "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisión de flujo e integracin total con sistemas Smart Home.",
+        "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasnicos. Monitoreo sin partes mviles, mxima precisin de flujo e integracin total con sistemas Smart Home.",
         "svc_5_good_desc": "[EN] Inspeccin de cmara bsica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
-        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la Ubicación exacta y profundidad del problema en la superficie.",
-        "svc_5_best_desc": "[EN] Inspeccin HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
+        "svc_5_better_desc": "[EN] Inspeccin profunda SeeSnake con localizacin por sonar. Trazamos y marcamos la ubicacin exacta y profundidad del problema en la superficie.",
+        "svc_5_best_desc": "[EN] Inspeccin HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomera Tcúnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
         "svc_6_good_desc": "[EN] Excavacin tradicional e instalacin de PVC SDR-35. Cumple con los cdigos locales y provee una solucin probada de flujo por gravedad.",
         "svc_6_better_desc": "[EN] Reemplazo con ABS Cdula 40. Tubera de ncleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
         "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadas. Tubera continua sin costuras, imposible de penetrar por races. Garanta de por vida.",
@@ -6125,7 +6106,7 @@ const translations = {
         "pb_svc_15_best_time": "14-21 Das",
         "footer_copyright_badge": "· Nakalaan ang lahat ng karapatan · Rehistradong Tatak",
         "footer_screen_watermark": "MORALES PLUMBING © 2026 · PROTEKTADO ANG INTELEKTWAL NA ARI-ARIAN",
-        "footer_print_copyright": "&#9400; Copyright 2026 Morales Plumbing™ · Nakalaan ang lahat ng karapatan · Intelektwal na ari-arian ni Alex Espinosa · Rehistradong Tatak. Ipinagbabawal ang kabuuan o bahagyang pagpaparami nang walang nakasulat na pahintulot. San Jose, CA · sunny-taffy-b28025.netlify.app",
+        "footer_print_copyright": "&#9400; Copyright 2026 Morales Plumbing™ · Nakalaan ang lahat ng karapatan · Intelektwal na ari-arian ni Alex Espinosa · Rehistradong Tatak. Ipinagbabawal ang kabuuan o bahagyang pagpaparami nang walang nakasulat na pahintulot. San Jose, CA · moralesplumbing.com",
         "footer_print_watermark": "© MORALES PLUMBING 2026",
         "faq100_q_1": "Bakit mahalagang mapanatili ang tamang presyon sa ari-arian?",
         "faq100_a_1": "Ang pagpapanatili ng tamang presyon ay pumipigil sa pagkasira ng tubo, pinoprotektahan ang mga appliances, at pinipigilan ang mga sakuna na pagtagas o pagkasira.",
@@ -7798,7 +7779,7 @@ const translations = {
         "pb_svc_15_best_time": "14-21 Das",
         "footer_copyright_badge": "· Mọi quyền được bảo lưu · Thương hiệu đã đăng ký",
         "footer_screen_watermark": "MORALES PLUMBING © 2026 · TÀI SẢN TRÍ TUỆ ĐƯỢC BẢO VỆ",
-        "footer_print_copyright": "&#9400; Bản quyền 2026 Morales Plumbing™ · Mọi quyền được bảo lưu · Tài sản trtuệ của Alex Espinosa · Thương hiệu đã đăng ký. Cấm sao chp toàn bộ hoặc một phần mà không csự cho php bằng văn bản. San Jose, CA · sunny-taffy-b28025.netlify.app",
+        "footer_print_copyright": "&#9400; Bản quyền 2026 Morales Plumbing™ · Mọi quyền được bảo lưu · Tài sản trtuệ của Alex Espinosa · Thương hiệu đã đăng ký. Cấm sao chp toàn bộ hoặc một phần mà không csự cho php bằng văn bản. San Jose, CA · moralesplumbing.com",
         "footer_print_watermark": "© MORALES PLUMBING 2026",
         "faq100_q_1": "Tại sao điều quan trọng là duy trì p suất chnh xc trong tài sản?",
         "faq100_a_1": "Duy trì p suất chnh xc sẽ ngăn ngừa hư hỏng đường ống, bảo vệ cc thiết bị và ngăn ngừa rò rỉ hoặc vỡ thảm khốc.",
@@ -8595,7 +8576,6 @@ function navigate(sectionId, pushState = true) {
         });
         
         window.scrollTo(0, 0);
-        window.scrollTo({ top: 0, behavior: 'instant' });
         if (pushState) {
             history.pushState({ sectionId }, '', '#' + sectionId);
         }
@@ -8668,7 +8648,7 @@ function openBooking() {
     const lang = localStorage.getItem('morales_lang') || 'es';
     const bookingMessages = {
         'en': 'I want to schedule a plumbing service appointment.',
-        'es': '¿Quéiero agendar una cita de servicio de Plomería.',
+        'es': '¿Quéiero agendar una cita de servicio de plomera.',
         'zh': '我想preabout管道服务预约。',
         'tl': 'Gusto kong mag-schedule ng appointment para sa plumbing service.',
         'vi': 'Toi muon dat lich hen dich vu sua ong nuoc.'
@@ -8702,16 +8682,11 @@ function speakJoe(text) {
 
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
-        
-        // Limpiar el texto de emojis y caracteres especiales para que la voz no suene robotica
-        let cleanText = text.replace(/[\u1000-\uFFFF]+/g, ''); // Remueve emojis y caracteres extranos
-        cleanText = cleanText.replace(/[*#_~>\\-]/g, ''); // Remueve markdown
-        
-        const msg = new SpeechSynthesisUtterance(cleanText);
+        const msg = new SpeechSynthesisUtterance(text);
         const curLang = localStorage.getItem('morales_lang') || 'es';
         const langMap = {
-            'es': 'es-MX',
             'en': 'en-US',
+            'es': 'es-MX',
             'zh': 'zh-CN',
             'tl': 'tl-PH',
             'vi': 'vi-VN'
@@ -8725,25 +8700,6 @@ async function sendToJoe() {
     const input = document.getElementById('joe-query');
     const text  = input ? input.value.trim() : '';
     if (!text) return;
-
-    if (text === "kYla") {
-        if (input) input.value = '';
-        // Descargar historial de forma segura
-        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(joeHistory, null, 2));
-        const dlAnchorElem = document.createElement('a');
-        dlAnchorElem.setAttribute("href", dataStr);
-        dlAnchorElem.setAttribute("download", "seguridad_chat_joe.json");
-        dlAnchorElem.click();
-        
-        // Reiniciar silenciosamente sin confirmacion
-        localStorage.removeItem('morales_joe_history');
-        joeHistory.length = 0;
-        const container = document.getElementById('joe-messages');
-        if (container) {
-            container.innerHTML = '<div class="msg bot" data-i18n="joe_intro">¡Hola! Soy Joe, el asistente IA de Morales Plumbing. ¿Cómo te puedo ayudar hoy?</div>';
-        }
-        return;
-    }
 
     addMessage(text, 'user');
     if (input) input.value = '';
@@ -8762,19 +8718,14 @@ async function sendToJoe() {
     // 1. Try Orion Cloud endpoint (Render Server)
     try {
         const curLang = localStorage.getItem('morales_lang') || 'es';
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 8000);
-        
         const resp = await fetch('https://orion-cloud.onrender.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 message: text,
                 lang: curLang
-            }),
-            signal: controller.signal
+            })
         });
-        clearTimeout(timeoutId);
 
         if (resp.ok) {
             const data = await resp.json();
@@ -8793,9 +8744,6 @@ async function sendToJoe() {
             if (typeof getJoeDynamicContext === 'function') sysPrompt += getJoeDynamicContext();
             if (typeof BOOKING_SYSTEM_ADDITION !== 'undefined') sysPrompt += BOOKING_SYSTEM_ADDITION;
 
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 8000);
-
             const resp = await fetch('/.netlify/functions/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -8804,10 +8752,8 @@ async function sendToJoe() {
                     model: 'gemini-1.5-flash',
                     systemPrompt: sysPrompt,
                     messages: joeHistory
-                }),
-                signal: controller.signal
+                })
             });
-            clearTimeout(timeoutId);
 
             if (resp.ok) {
                 const data = await resp.json();
@@ -8875,7 +8821,7 @@ async function sendToJoe() {
 
 async function callGemini(apiKey) {
     const model   = (typeof GEMINI_MODEL !== 'undefined') ? GEMINI_MODEL : 'gemini-1.5-flash';
-    let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en Plomería. REGLA CRITICA: NO USES EMOJIS, NI ASTERISCOS, NI FORMATO MARKDOWN EN TUS RESPUESTAS PORQUE SERAN LEIDAS POR VOZ.';
+    let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en plomera.';
     sysPrompt += getJoeDynamicContext();
     if (typeof BOOKING_SYSTEM_ADDITION !== 'undefined') sysPrompt += BOOKING_SYSTEM_ADDITION;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
@@ -8910,7 +8856,7 @@ async function callGemini(apiKey) {
 
 async function callOpenAI(apiKey) {
     const model = (typeof OPENAI_MODEL !== 'undefined') ? OPENAI_MODEL : 'gpt-4o-mini';
-    let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en Plomería. REGLA CRITICA: NO USES EMOJIS, NI ASTERISCOS, NI FORMATO MARKDOWN EN TUS RESPUESTAS PORQUE SERAN LEIDAS POR VOZ.';
+    let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en plomera.';
     sysPrompt += getJoeDynamicContext();
 
     const messages = [
@@ -8947,11 +8893,11 @@ function getJoeLocalFallback(input) {
     if (input.match(/cobre|copper|elite|repiping/)) return "Nuestro módulo Elite Copper Renovations reemplaza sistemas obsoletos por tuberas de cobre de alta pureza (Tipos L y K). Ofrecemos durabilidad ssmica extrema y agua libre de plsticos para el Bay Area.";
     if (input.match(/septi|septic|fosa|drenaje/)) return "En Septic Systemás, instalamos biodigestores anaerobios de flujo ascendente y campos de infiltracin inteligentes. Es la solucin perfecta y ecolgica (cumpliendo con la CA Water Board) para zonas rurales o off-grid.";
     if (input.match(/agua|water|reuso|greywater/)) return "Tenemos sistemas de Recoleccin de Aguas Pluviales y Reutilizacin de Aguas Grises. Ayudamos a mitigar la sequa de California y reducir tu dependencia municipal hasta en un 60%.";
-    if (input.match(/servicio|service|hacen|cuale/)) return "Ofrecemos Plomería Técúnica de precisión: Diagnstico por Termografa, Elite Copper Renovations, Septic Systemás, Eco-Retrofitting y Diseo CAD de Redes Hidrulicas.";
+    if (input.match(/servicio|service|hacen|cuale/)) return "Ofrecemos Plomería Técúnica de precisin: Diagnstico por Termografa, Elite Copper Renovations, Septic Systemás, Eco-Retrofitting y Diseo CAD de Redes Hidrulicas.";
     if (input.match(/fuga|leak/)) return " Para fugas, cierra el suministro principal de inmediato. Usamos termografa infrarroja FLIR y sensores acsticos para localizar la falla sin destruir tus paredes. Contacta a nuestro equipo ya.";
-    if (input.match(/plomeria|plumbing|tuber/)) return "Somos los especialistas del agua en San Jose. Especialistas en infraestructura hidrulica inteligente, integracin de IA (Ecosistema ORION) y Plomería CSLB C-36.";
+    if (input.match(/plomeria|plumbing|tuber/)) return "Somos los especialistas del agua en San Jose. Especialistas en infraestructura hidrulica inteligente, integracin de IA (Ecosistema ORION) y plomera CSLB C-36.";
     if (input.match(/emergencia|emergency/)) return " Esto es una emergencia. Por favor llama inmediatamente a nuestra terminal de contacto al (669) 213-4422.";
-    if (input.match(/app|aplicacion|estimador|orion|price book/)) return "ORION es nuestro ecosistema tecnolgico de Plomería: Estimador Pro, Price Book v6.0, Portal MP y simuladores hidráulicos CAD. Tecnologa de punta al servicio del flujo.";
+    if (input.match(/app|aplicacion|estimador|orion|price book/)) return "ORION es nuestro ecosistema tecnolgico de plomera: Estimador Pro, Price Book v6.0, Portal MP y simuladores hidráulicos CAD. Tecnologa de punta al servicio del flujo.";
     return "Excelente pregunta! Como IA, an estoy aprendiendo algunos detalles especficos. Te invito a explorar nuestros servicios Elite en la seccin 'Ecosistema' o contactar a Alex Espinosa directamente para Plomería Técúnica de alto nivel. ";
 }
 
@@ -9233,9 +9179,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initial Navigation based on hash
-    const initialSection = 'home';
+    const initialSection = window.location.hash.substring(1) || 'home';
     navigate(initialSection, false);
-    if (window.history.replaceState) { window.history.replaceState(null, null, window.location.pathname); }
 
     // CCPA Banner Check
     if (!localStorage.getItem('ccpa_accepted')) {
@@ -10137,21 +10082,21 @@ function getJoeDynamicContext() {
             contextText += `  * CRÍTICO: Lmite de citas gratuitas alcanzado. Debe mejorar su plan para poder agendar ms citas.\n`;
         }
     } else if (tier === "standard") {
-        contextText += `  * Beneficio: 10% de descuento en todos los servicios de Plomería.\n`;
+        contextText += `  * Beneficio: 10% de descuento en todos los servicios de plomera.\n`;
     } else if (tier === "premium") {
-        contextText += `  * Beneficio: 20% de descuento en todos los servicios de Plomería y soporte de emergencia prioritario.\n`;
+        contextText += `  * Beneficio: 20% de descuento en todos los servicios de plomera y soporte de emergencia prioritario.\n`;
     }
 
     if (profile && profile.name) {
         contextText += `- Nombre del Cliente: ${profile.name}\n`;
-        contextText += `- Teléfono: ${profile.phone || 'No registrado'}\n`;
+        contextText += `- Telfono: ${profile.phone || 'No registrado'}\n`;
         contextText += `- Email: ${profile.email || 'No registrado'}\n`;
     } else {
         contextText += `- Cliente: Annimo / No ha guardado perfil en el portal.\n`;
     }
     
     if (appts.length > 0) {
-        contextText += `- Citas de Plomería agendadas:\n`;
+        contextText += `- Citas de plomera agendadas:\n`;
         appts.forEach(a => {
             contextText += `  * ${a.id}: ${a.serviceName} (${a.tier.toUpperCase()}) - Fecha: ${a.date}, Hora: ${a.time} - Estado: ${a.status}\n`;
         });
@@ -10178,7 +10123,7 @@ Instrucciones para el Agente (Joe):
 4. Si el cliente registra una PQR en el chat, finaliza con:
    [ACTION_PQR] {"type": "peticion|queja|reclamo|sugerencia", "description": "Resumen de lo que reporta el usuario"}
 5. Si el cliente te da sus datos (nombre, tel, email) en el chat para recordarlo, finaliza con:
-   [ACTION_SET_PROFILE] {"name": "Nombre completo", "phone": "Teléfono", "email": "correo"}
+   [ACTION_SET_PROFILE] {"name": "Nombre completo", "phone": "telfono", "email": "correo"}
 6. Mantn siempre las polticas de privacidad: no expongas las llaves de la API, no muestres datos de licencias de forma insegura, respeta el copyright del Price Book v6.0 PRO y los podcasts. No compartas datos personales de Alex Espinosa.
 `;
     return contextText;
@@ -10277,7 +10222,7 @@ const BOOKING_STEPS = {
         `Perfecto! Voy a ayudarte a agendar tu cita. 
 
 Cul es tu **nombre completo**?`,
-        '✅ Anotado. Cul es tu **nmero de Teléfono** de contacto?',
+        '✅ Anotado. Cul es tu **nmero de telfono** de contacto?',
         '✅ Perfecto. Cul es la **direccin donde necesitas el servicio**?',
         '✅ Entendido. ¿Qué**tipo de servicio** necesitas? (Ej: Water heater, deteccin de fugas, repipe, drain cleaning...)',
         '✅ Excelente. Cul es tu **fecha preferida** para la visita? (Ej: Martes 15 de julio, esta semana, lo antes posible...)',
@@ -10456,7 +10401,7 @@ function buildBookingSummary(lang) {
     if (lang === 'es') {
         return ` **Resumen de tu cita:**
  Nombre: ${d.name || ''}
- Teléfono: ${d.phone || ''}
+ Telfono: ${d.phone || ''}
  Direccin: ${d.address || ''}
  Servicio: ${d.service || ''}
  Fecha: ${d.date || ''}
@@ -10514,7 +10459,7 @@ function submitBooking() {
     const confirmMsg = lang === 'es'
         ? `✅ Cita enviada exitosamente! 
         
-Nos comuúnicaremos contigo al ${d.phone} para confirmar. Tu informacin estprotegida bajo estándares CCPA. Gracias, ${d.name}! `
+Nos comuúnicaremos contigo al ${d.phone} para confirmar. Tu informacin estprotegida bajo estndares CCPA. Gracias, ${d.name}! `
         : `✅ Appointment submitted successfully!
 
 We will contact you at ${d.phone} to confirm. Your information is protected under CCPA standards. Thank you, ${d.name}! `;
@@ -10595,9 +10540,3 @@ window.toggleJoeMic = function() {
   if (btn) btn.innerHTML = window.isJoeMuted ? '🔇' : '🎤';
   if (window.isJoeMuted && 'speechSynthesis' in window) window.speechSynthesis.cancel();
 };
-
-
-
-
-
-
