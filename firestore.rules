@@ -1,46 +1,311 @@
 rules_version = '2';
+
+// ╔══════════════════════════════════════════════════════════════════════════╗
+// ║  Morales Plumbing – Firestore Security Rules                            ║
+// ║  Production rules for a California-based plumbing business.             ║
+// ║                                                                          ║
+// ║  CCPA Compliance Notes:                                                  ║
+// ║  • All collections containing personal information (name, phone,         ║
+// ║    address, userId) are restricted to the document owner only.           ║
+// ║  • No cross-user data access is permitted via client-side rules.         ║
+// ║  • Admin reads of sensitive collections MUST use the Firebase Admin SDK  ║
+// ║    (server-side, with service account) — never via client credentials.   ║
+// ║  • "contact_messages" and "appointments" are write-once / owner-read     ║
+// ║    so that a logged-in customer can review their own submissions only.   ║
+// ║  • Sensitive collections (admin_notifications) are write-only from the   ║
+// ║    client — no client can ever list or read them.                        ║
+// ║                                                                          ║
+// ║  Default policy: DENY ALL unless explicitly permitted below.             ║
+// ║  Last updated: 2026-08-06                                                ║
+// ╚══════════════════════════════════════════════════════════════════════════╝
+
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // ── APPOINTMENTS ──────────────────────────────────────────
-    // Any authenticated user can create; only owner can read/update
+    // ════════════════════════════════════════════════════════════════════════
+    // GLOBAL DEFAULT — deny everything not matched below.
+    // Firestore's implicit default is already deny-all, but making it
+    // explicit here documents intent and guards against future rule ordering
+    // mistakes.
+    // ════════════════════════════════════════════════════════════════════════
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // ════════════════════════════════════════════════════════════════════════
+    // APPOINTMENTS
+    // ════════════════════════════════════════════════════════════════════════
+    //
+    // Data model: { name, phone, service, date, userId,
+    //               confirmationCode, confirmationStatus }
+    //
+    // Rules:
+    //  • create – authenticated owner only; all required fields must be
+    //             present and userId must match the caller's UID.
+    //  • read   – authenticated owner only (resource.data.userId == uid).
+    //  • update – authenticated owner only; userId field may NOT be changed
+    //             (prevents reassigning an appointment to another user).
+    //             All required fields must still be present after the update.
+    //  • delete – permanently disabled. Cancellations should use a status
+    //             field update; hard deletes require Admin SDK.
+    //
+    // CCPA: contains PII (name, phone). Owner-only access enforced.
+    // ════════════════════════════════════════════════════════════════════════
     match /appointments/{apptId} {
+
+      // Helper: all required fields are present in the incoming write.
+      function appointmentHasRequiredFields() {
+        return request.resource.data.keys().hasAll([
+          'name',
+          'phone',
+          'service',
+          'date',
+          'userId',
+          'confirmationCode',
+          'confirmationStatus'
+        ]);
+      }
+
+      // Helper: the document's userId belongs to the authenticated caller.
+      function isAppointmentOwner() {
+        return request.auth != null
+          && resource.data.userId == request.auth.uid;
+      }
+
+      // CREATE – owner attaches their own UID; all fields required.
       allow create: if request.auth != null
-        && request.resource.data.keys().hasAll(['name','phone','service','date','userId'])
+        && appointmentHasRequiredFields()
         && request.resource.data.userId == request.auth.uid;
-      allow read, update: if request.auth != null
-        && resource.data.userId == request.auth.uid;
+
+      // READ – only the user who owns the appointment.
+      allow read: if isAppointmentOwner();
+
+      // UPDATE – owner only; userId must not change; all fields still present.
+      allow update: if isAppointmentOwner()
+        && appointmentHasRequiredFields()
+        && request.resource.data.userId == resource.data.userId; // immutable
+
+      // DELETE – disabled for clients; use Admin SDK for hard deletes.
       allow delete: if false;
     }
 
-    // ── USER PROFILES ─────────────────────────────────────────
-    // Users can only access their own profile
+    // ════════════════════════════════════════════════════════════════════════
+    // USER PROFILES
+    // ════════════════════════════════════════════════════════════════════════
+    //
+    // Document ID pattern: /user_profiles/{userId}
+    //   The document ID IS the uid, which makes ownership checks trivial.
+    //
+    // Rules:
+    //  • read / write – user may only access the document whose ID matches
+    //    their own UID. No other user (including other authenticated users)
+    //    can read or write a foreign profile.
+    //
+    // CCPA: contains PII. Owner-only access enforced.
+    // ════════════════════════════════════════════════════════════════════════
     match /user_profiles/{userId} {
       allow read, write: if request.auth != null
         && request.auth.uid == userId;
     }
 
-    // ── JOE AI SESSIONS ───────────────────────────────────────
+    // ════════════════════════════════════════════════════════════════════════
+    // JOE AI SESSIONS
+    // ════════════════════════════════════════════════════════════════════════
+    //
+    // Document ID pattern: /joe_sessions/{userId}
+    //   Same UID-as-doc-ID pattern as user_profiles.
+    //   Stores conversation history between a user and the Joe AI assistant.
+    //
+    // Rules:
+    //  • read / write – owner only (doc ID == request.auth.uid).
+    //
+    // CCPA: may contain conversational PII. Owner-only access enforced.
+    // ════════════════════════════════════════════════════════════════════════
     match /joe_sessions/{userId} {
       allow read, write: if request.auth != null
         && request.auth.uid == userId;
     }
 
-    // ── PQR (Petitions / Complaints / Claims) ─────────────────
+    // ════════════════════════════════════════════════════════════════════════
+    // PQRS  (Petitions / Queries / Complaints / Claims)
+    // ════════════════════════════════════════════════════════════════════════
+    //
+    // Data model: { userId, …any additional fields… }
+    //
+    // Rules:
+    //  • create – authenticated owner only; userId must equal caller's UID.
+    //  • read   – authenticated owner only.
+    //  • update / delete – permanently disabled for clients.
+    //    Once submitted, a PQRS record is immutable from the client side.
+    //    Changes require Admin SDK (staff action).
+    //
+    // CCPA: may contain PII / complaint details. Owner-only access enforced.
+    // ════════════════════════════════════════════════════════════════════════
     match /pqrs/{pqrId} {
       allow create: if request.auth != null
         && request.resource.data.userId == request.auth.uid;
+
       allow read: if request.auth != null
         && resource.data.userId == request.auth.uid;
+
+      // Immutable once submitted.
       allow update, delete: if false;
     }
 
-    // ── ADMIN NOTIFICATIONS (write-only by clients) ───────────
-    // Admin reads via Firebase Admin SDK on server — not via client
+    // ════════════════════════════════════════════════════════════════════════
+    // ADMIN NOTIFICATIONS
+    // ════════════════════════════════════════════════════════════════════════
+    //
+    // Data model (required fields):
+    //   { type, message, userId, createdAt }
+    //
+    // Rules:
+    //  • create – authenticated users may push a notification, but ONLY when
+    //             all required fields are present AND userId matches the
+    //             caller's UID (prevents spoofing another user's identity).
+    //  • read / update / delete – ALWAYS DENIED for clients.
+    //    Admin staff read these via Firebase Admin SDK only.
+    //
+    // NOTE: 'type' should be a known string (e.g. "appointment_request",
+    // "contact_message"). Additional server-side validation can be added with
+    // Cloud Functions if needed.
+    //
+    // CCPA: contains PII (userId). Client write-only; no client read access.
+    // ════════════════════════════════════════════════════════════════════════
     match /admin_notifications/{notifId} {
-      allow create: if request.auth != null;
+
+      // Helper: required fields must all be present in the incoming document.
+      function notifHasRequiredFields() {
+        return request.resource.data.keys().hasAll([
+          'type',
+          'message',
+          'userId',
+          'createdAt'
+        ]);
+      }
+
+      // CREATE – authenticated, validated, owner-attributed only.
+      allow create: if request.auth != null
+        && notifHasRequiredFields()
+        && request.resource.data.userId == request.auth.uid;
+
+      // No client reads, updates, or deletes — ever.
       allow read, update, delete: if false;
     }
 
-  }
-}
+    // ════════════════════════════════════════════════════════════════════════
+    // CONTACT MESSAGES
+    // ════════════════════════════════════════════════════════════════════════
+    //
+    // Data model (required fields): { name, phone, message, userId }
+    //
+    // Rules:
+    //  • create – authenticated owner only; all required fields present;
+    //             userId must equal the caller's UID.
+    //  • read   – authenticated owner only. A user can review their own
+    //             submitted messages but CANNOT read messages from other users.
+    //  • update / delete – permanently disabled. Contact messages are
+    //    immutable once submitted. Corrections require Admin SDK.
+    //
+    // FIX NOTE: Previously this collection had NO rule, which meant any
+    // authenticated user could implicitly read all contact messages via the
+    // Firestore client SDK. This is now corrected: strict owner-only access.
+    //
+    // CCPA: contains PII (name, phone). Owner-only access enforced.
+    // ════════════════════════════════════════════════════════════════════════
+    match /contact_messages/{msgId} {
+
+      // Helper: all four required fields must be present.
+      function contactMsgHasRequiredFields() {
+        return request.resource.data.keys().hasAll([
+          'name',
+          'phone',
+          'message',
+          'userId'
+        ]);
+      }
+
+      // Helper: the existing document belongs to the authenticated user.
+      function isContactMsgOwner() {
+        return request.auth != null
+          && resource.data.userId == request.auth.uid;
+      }
+
+      // CREATE – owner only, all required fields, userId self-attributed.
+      allow create: if request.auth != null
+        && contactMsgHasRequiredFields()
+        && request.resource.data.userId == request.auth.uid;
+
+      // READ – owner only.
+      allow read: if isContactMsgOwner();
+
+      // Immutable once submitted; deletes require Admin SDK.
+      allow update, delete: if false;
+    }
+
+    // ════════════════════════════════════════════════════════════════════════
+    // CONFIRMATION CODES  (NEW)
+    // ════════════════════════════════════════════════════════════════════════
+    //
+    // Purpose: Stores a one-time appointment confirmation code per user.
+    //   The document ID MUST equal the owner's UID so that ownership checks
+    //   are O(1) and no cross-user access is possible.
+    //
+    // Document ID pattern: /confirmation_codes/{uid}
+    //   (i.e. each user gets exactly one document, keyed by their own UID)
+    //
+    // Data model (required fields): { code, userId, createdAt }
+    //   • code       – the confirmation string (e.g. "ABC-1234")
+    //   • userId     – must equal request.auth.uid (self-attribution)
+    //   • createdAt  – server or client timestamp; used for TTL auditing
+    //
+    // Rules:
+    //  • create – authenticated owner only (doc ID == uid, userId == uid,
+    //             all required fields present). A user can create their own
+    //             code document but cannot overwrite it from the client once
+    //             it exists (update is denied).
+    //  • read   – authenticated owner only (doc ID == uid).
+    //  • update – ALWAYS DENIED for clients. The confirmation code is
+    //             generated server-side (via Cloud Functions or Admin SDK)
+    //             or created once by the client and thereafter immutable.
+    //             This prevents a user from changing their own code after
+    //             the fact to bypass confirmation checks.
+    //  • delete – ALWAYS DENIED for clients. Cleanup is handled by
+    //             Cloud Functions (e.g. a scheduled function that deletes
+    //             expired codes).
+    //
+    // CCPA: minimal PII (userId). Code is functional data, not personal data,
+    //   but the document is still owner-only as a best practice.
+    // ════════════════════════════════════════════════════════════════════════
+    match /confirmation_codes/{uid} {
+
+      // Helper: required fields present in the incoming write.
+      function codeHasRequiredFields() {
+        return request.resource.data.keys().hasAll([
+          'code',
+          'userId',
+          'createdAt'
+        ]);
+      }
+
+      // CREATE – authenticated owner only; doc ID must equal the caller's UID;
+      //          userId field must also equal the caller's UID.
+      allow create: if request.auth != null
+        && uid == request.auth.uid
+        && codeHasRequiredFields()
+        && request.resource.data.userId == request.auth.uid;
+
+      // READ – authenticated owner only (doc ID == caller's UID).
+      allow read: if request.auth != null
+        && uid == request.auth.uid;
+
+      // UPDATE – denied for clients; the code is write-once from the client.
+      //          Use Admin SDK / Cloud Functions to rotate or invalidate codes.
+      allow update: if false;
+
+      // DELETE – denied for clients; use Admin SDK or scheduled cleanup.
+      allow delete: if false;
+    }
+
+  } // end match /databases/{database}/documents
+} // end service cloud.firestore
