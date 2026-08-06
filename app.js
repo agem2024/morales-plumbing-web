@@ -8700,6 +8700,31 @@ function speakJoe(text) {
         window.speechSynthesis.speak(másg);
     }
 }
+// ═══════════════════════════════════════════════════════════
+// ORION CLOUD KEEP-ALIVE — pings Render every 10 min
+// Prevents cold-start delays (Render free tier sleeps after 15min)
+// ═══════════════════════════════════════════════════════════
+(function startOrionKeepAlive() {
+    const ORION_URL = 'https://orion-cloud.onrender.com/api/chat';
+    const INTERVAL  = 10 * 60 * 1000; // 10 minutes
+
+    async function pingOrion() {
+        try {
+            const resp = await fetch(ORION_URL, {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify({ message: '__ping__', lang: 'en' }),
+                signal:  AbortSignal.timeout(8000)
+            });
+            console.debug('[KeepAlive] Orion ping', resp.ok ? '✅ awake' : '⚠️ ' + resp.status);
+        } catch (e) {
+            console.debug('[KeepAlive] Orion unreachable:', e.message);
+        }
+    }
+
+    pingOrion();                        // Pre-warm immediately on page load
+    setInterval(pingOrion, INTERVAL);   // Keep alive every 10 minutes
+})();
 
 async function sendToJoe() {
     const input = document.getElementById('joe-query');
