@@ -612,7 +612,7 @@
         window.onload = () => {
             renderTasks();
             setTimeout(() => {
-                const lang = localStorage.getItem('morales_lang') || 'es';
+                const lang = localStorage.getItem('morales_lang') || 'en';
                 setLanguage(lang);
                 populateDynamicLists(lang);
             }, 100);

@@ -352,7 +352,7 @@
     <script>
         // Sync language from localStorage on load
         window.addEventListener('load', () => {
-            const savedLang = localStorage.getItem('morales_lang') || 'es';
+            const savedLang = localStorage.getItem('morales_lang') || 'en';
             if (typeof setLanguage === 'function') {
                 setLanguage(savedLang);
             }

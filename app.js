@@ -8508,8 +8508,8 @@ const translations = {
 };
 
 
-function setLanguíage(lang) {
-    if (!translations[lang]) lang = 'es';
+function setLanguage(lang) {
+    if (!translations[lang]) lang = 'en';
     localStorage.setItem('morales_lang', lang);
 
     // Toggle languíage specific media blocks
@@ -8650,7 +8650,7 @@ function openBooking() {
     container.scrollIntoView({ behavior: 'smooth', block: 'end' });
 
     // Pre-fill and auto-send the booking trigger based on languíage
-    const lang = localStorage.getItem('morales_lang') || 'es';
+    const lang = localStorage.getItem('morales_lang') || 'en';
     const bookingMessages = {
         'en': 'I want to schedule a plumbing service appointment.',
         'es': '¿Quéiero agendar una cita de servicio de plomería.',
@@ -8688,7 +8688,7 @@ function speakJoe(text) {
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const másg = new SpeechSynthesisUtterance(text);
-        const curLang = localStorage.getItem('morales_lang') || 'es';
+        const curLang = localStorage.getItem('morales_lang') || 'en';
         const langMap = {
             'en': 'en-US',
             'es': 'es-MX',
@@ -8722,7 +8722,7 @@ async function sendToJoe() {
 
     // 1. Try Orion Cloud endpoint (Render Server)
     try {
-        const curLang = localStorage.getItem('morales_lang') || 'es';
+        const curLang = localStorage.getItem('morales_lang') || 'en';
         const resp = await fetch('https://orion-cloud.onrender.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -9152,8 +9152,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Default Languíage
-    const savedLang = localStorage.getItem('morales_lang') || 'es';
-    setLanguíage(savedLang);
+    const savedLang = localStorage.getItem('morales_lang') || 'en';
+    setLanguage(savedLang);
 
     // Link Nav - Fix: only prevent default for internal hash links
     document.querySelectorAll('.nav-links a').forEach(link => {
@@ -9179,7 +9179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const btn = e.target.closestá('.lang-btn');
         if (btn && btn.hasAttribute('data-lang')) {
-            setLanguíage(btn.getAttribute('data-lang'));
+            setLanguage(btn.getAttribute('data-lang'));
         }
     });
 
@@ -9236,7 +9236,7 @@ let activePodLang = null;
 
 function playPodcast(button) {
     const baseAudioSrc = button.getAttribute('data-audio');
-    const curLang = localStorage.getItem('morales_lang') || 'es';
+    const curLang = localStorage.getItem('morales_lang') || 'en';
     
     // Determine the dynamic audio source using the selected languíage
     let audioSrc = baseAudioSrc;
@@ -9705,7 +9705,7 @@ function updateMembershipTier(tier) {
     updatePortalUI();
     updatePricePreview();
     
-    const curLang = localStorage.getItem('morales_lang') || 'es';
+    const curLang = localStorage.getItem('morales_lang') || 'en';
     let tierText = tier.toUpperCase();
     if (translations[curLang] && translations[curLang][`lbl_membership_badge_${tier}`]) {
         tierText = translations[curLang][`lbl_membership_badge_${tier}`];
@@ -9718,7 +9718,7 @@ function updateMembershipTier(tier) {
 
 function updateMembershipCardsUI() {
     const activeTier = getMembershipTier();
-    const curLang = localStorage.getItem('morales_lang') || 'es';
+    const curLang = localStorage.getItem('morales_lang') || 'en';
     
     const cards = {
         free: document.getElementById('membership-card-free'),
@@ -9784,7 +9784,7 @@ function updatePricePreview() {
     let finalPrice = basePrice;
     let noteText = "";
     
-    const curLang = localStorage.getItem('morales_lang') || 'es';
+    const curLang = localStorage.getItem('morales_lang') || 'en';
     
     if (activeTier === "free") {
         if (appts.length < 5) {
@@ -9954,7 +9954,7 @@ function populateServiceDropdown() {
     const select = document.getElementById('schedule-service-select');
     if (!select) return;
     select.innerHTML = '';
-    const curLang = localStorage.getItem('morales_lang') || 'es';
+    const curLang = localStorage.getItem('morales_lang') || 'en';
     PB_SERVICES.forEach(s => {
         const opt = document.createElement('option');
         opt.value = s.id;
@@ -9976,7 +9976,7 @@ function updatePortalUI() {
             apptsList.innerHTML = '<p style="color:var(--text-muted); font-style:italic;">No hay citas agendadas.</p>';
         } else {
             let html = '<div style="display:flex; flex-direction:column; gap:10px;">';
-            const curLang = localStorage.getItem('morales_lang') || 'es';
+            const curLang = localStorage.getItem('morales_lang') || 'en';
             const labelListPrice = translations[curLang]?.lbl_list_price || "List Price";
             const labelDiscounted = translations[curLang]?.lbl_discounted_price || "Tiered Discounted Price";
             const labelFreeTrial = translations[curLang]?.lbl_free_trial || "Free Trial";
@@ -10147,7 +10147,7 @@ function processJoeActions(responseText) {
             
             const eligibility = checkMembershipEligibility();
             if (!eligibility.eligible) {
-                const curLang = localStorage.getItem('morales_lang') || 'es';
+                const curLang = localStorage.getItem('morales_lang') || 'en';
                 const warnMsg = curLang === 'es' ? 
                     "Socio, has alcanzado tu lmite de 5 citas gratis. Por favor, mejora a un plan Standard o Premium en tu perfil para continuar agendando." : 
                     "Partner, you have reached your limit of 5 free appointments. Please upgrade to a Standard or Premium plan in your profile to continue booking.";
@@ -10156,7 +10156,7 @@ function processJoeActions(responseText) {
             }
             
             addAppointmentToLocal(serviceId, date, time, tier, notes);
-            const curLang = localStorage.getItem('morales_lang') || 'es';
+            const curLang = localStorage.getItem('morales_lang') || 'en';
             const confirmMsg = curLang === 'es' ? 
                 ` Cita programada con xito! He agendado la cita para el ${date} a las ${time}. Puedes verla en tu Portal de Cliente.` : 
                 ` Appointment successfully scheduled! I've booked it for ${date} at ${time}. You can view it in your Client Portal.`;
@@ -10171,7 +10171,7 @@ function processJoeActions(responseText) {
         try {
             const data = JSON.parse(pqrMatch[1]);
             addPQRToLocal(data.type, data.description);
-            const curLang = localStorage.getItem('morales_lang') || 'es';
+            const curLang = localStorage.getItem('morales_lang') || 'en';
             const pqrMsg = curLang === 'es' ? 
                 `✅ He registrado tu requerimiento PQR (${data.type.toUpperCase()}) en el sistema. Le daremos seguimiento inmediato.` : 
                 `✅ I've filed your PQR requestá (${data.type.toUpperCase()}) in the system. We will follow up immediately.`;
@@ -10193,7 +10193,7 @@ function processJoeActions(responseText) {
             updatePortalUI();
             updatePricePreview();
             
-            const curLang = localStorage.getItem('morales_lang') || 'es';
+            const curLang = localStorage.getItem('morales_lang') || 'en';
             const profileMsg = curLang === 'es' ? 
                 ` Listo! He actualizado los datos de tu perfil: ${profile.name}.` : 
                 ` All set! I've updated your profile details: ${profile.name}.`;
@@ -10331,7 +10331,7 @@ function updateBookingProgress() {
     if (filled >= BOOKING_FIELDS.length) {
         if (btn) { btn.disabled = false; btn.removeAttribute('disabled'); }
         if (status) {
-            const lang = localStorage.getItem('morales_lang') || 'es';
+            const lang = localStorage.getItem('morales_lang') || 'en';
             status.textContent = lang === 'es' ? '✅ Formulario completo!' : '✅ Form complete!';
         }
     }
@@ -10348,7 +10348,7 @@ function isBookingMessage(text) {
 function handleBookingState(userText) {
     if (!bookingState.active && !isBookingMessage(userText)) return false;
 
-    const lang = localStorage.getItem('morales_lang') || 'es';
+    const lang = localStorage.getItem('morales_lang') || 'en';
     bookingState.lang = lang;
     const steps = BOOKING_STEPS[lang] || BOOKING_STEPS['es'];
 
@@ -10429,7 +10429,7 @@ Does everything look correct? Click **✅ Confirm Appointment** in the form to s
 
 // ─── SUBMIT: send confirmation to admin + user ───────────────
 function submitBooking() {
-    const lang = localStorage.getItem('morales_lang') || 'es';
+    const lang = localStorage.getItem('morales_lang') || 'en';
     const d = bookingData;
 
     // Save appointment  Firebase if available, always localStorage as backup
