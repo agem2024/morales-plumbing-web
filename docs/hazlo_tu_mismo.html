@@ -588,6 +588,17 @@
                 const lang = localStorage.getItem('morales_lang') || 'en';
                 setLanguage(lang);
                 populateDynamicLists(lang);
+                
+                // Automatically open specific task if passed in URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const issueKey = urlParams.get('issue');
+                if(issueKey) {
+                    toggleTask(issueKey);
+                    const el = document.getElementById('task-' + issueKey);
+                    if(el) {
+                        el.scrollIntoView({behavior: 'smooth', block: 'center'});
+                    }
+                }
             }, 100);
         };
         
