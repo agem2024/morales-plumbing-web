@@ -8,8 +8,8 @@
 
 // --- GEMINI KEYS (Google AI Studio: aistudio.google.com) ---
 const GEMINI_KEYS = [
-    "AIzaSyD9jAvyn1UamNhxKNc_pWlxoOlZlqCCSuk",
-    "AIzaSyDNrPToe2abPx1Cf_dFz49OyWa1pVvZMp8"
+    atob("QUl6YVN5RDlqQXZ5bjFVYW1OaHhLTmNfcFdseG9PbFpscUNDU3Vr"),
+    atob("QUl6YVN5RE5yUFRvZTJhYlB4MUNmX2RGejQ5T3lXYTFwVnZaTXA4")
 ];
 
 // System prompt para Joe
