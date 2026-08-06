@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App de Campo | Morales Plumbing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>ápp de Campo | Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #d9480f; --bg: #f9fafb; --surface: #ffffff; --border: #e5e7eb; --text-main: #111827; --text-muted: #6b7280; }
         body { font-family: 'Roboto', sans-serif; background-color: var(--bg); color: var(--text-main); margin: 0; padding: 0; }
@@ -44,13 +44,13 @@
         <div class="card">
             <h2 data-es="1. Información del Proyecto" data-en="1. Project Information">1. Información del Proyecto</h2>
             <div class="form-group"><label data-es="Cliente" data-en="Client">Cliente</label><input type="text"></div>
-            <div class="form-group"><label data-es="Dirección del Siniestro" data-en="Incident Address">Dirección del Siniestro</label><input type="text"></div>
+            <div class="form-group"><label data-es="Dirección del Siniestro" data-en="Incident áddress">Dirección del Siniestro</label><input type="text"></div>
             <div class="form-group"><label data-es="Fecha de Inspección" data-en="Inspection Date">Fecha de Inspección</label><input type="date"></div>
         </div>
 
         <div class="card">
             <h2 data-es="2. Puntos Críticos (Triage)" data-en="2. Critical Points (Triage)">2. Puntos Críticos (Triage)</h2>
-            <label class="checkbox-row"><input type="checkbox"> <span data-es="Fuga Activa / Inundación" data-en="Active Leak / Flooding">Fuga Activa / Inundación</span></label>
+            <label class="checkbox-row"><input type="checkbox"> <span data-es="Fuga áctiva / Inundación" data-en="áctive Leak / Flooding">Fuga áctiva / Inundación</span></label>
             <label class="checkbox-row"><input type="checkbox"> <span data-es="Olor a Gas Detectado" data-en="Gas Odor Detected">Olor a Gas Detectado</span></label>
             <label class="checkbox-row"><input type="checkbox"> <span data-es="Daño Estructural Cercano" data-en="Nearby Structural Damage">Daño Estructural Cercano</span></label>
             <label class="checkbox-row"><input type="checkbox"> <span data-es="Falla en Calentador (Water Heater)" data-en="Water Heater Failure">Falla en Calentador (Water Heater)</span></label>
@@ -64,26 +64,26 @@
 
         <div class="card">
             <h2 data-es="4. Registro Fotográfico" data-en="4. Photographic Record">4. Registro Fotográfico</h2>
-            <label class="btn-camera" for="camera-upload" data-es="Abrir Cámara / Subir Foto" data-en="Open Camera / Upload Photo">
-                Abrir Cámara / Subir Foto
+            <label class="btn-camera" for="camera-upload" data-es="ábrir Cámara / Subir Foto" data-en="Open Camera / Upload Photo">
+                ábrir Cámara / Subir Foto
             </label>
             <input type="file" id="camera-upload" accept="image/*" capture="environment" style="display: none;" multiple>
             <div id="photo-preview" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;"></div>
         </div>
 
-        <button class="btn-submit" onclick="saveData()" data-es="GUARDAR DIAGNÓSTICO" data-en="SAVE DIAGNOSTIC">GUARDAR DIAGNÓSTICO</button>
+        <button class="btn-submit" onclick="saveData()" data-es="GUáRDáR DIáGNÓSTICO" data-en="SáVE DIáGNOSTIC">GUáRDáR DIáGNÓSTICO</button>
     </div>
 
     <script>
         let currentLang = localStorage.getItem('mp_lang') || 'es';
 
         function updateTexts() {
-            document.querySelectorAll('[data-es]').forEach(el => {
-                el.innerText = el.getAttribute('data-' + currentLang);
+            document.querySelectoráll('[data-es]').forEach(el => {
+                el.innerText = el.getáttribute('data-' + currentLang);
             });
-            document.querySelectorAll('textarea').forEach(el => {
-                if (el.hasAttribute('data-es-placeholder')) {
-                    el.placeholder = el.getAttribute('data-' + currentLang + '-placeholder');
+            document.querySelectoráll('textarea').forEach(el => {
+                if (el.hasáttribute('data-es-placeholder')) {
+                    el.placeholder = el.getáttribute('data-' + currentLang + '-placeholder');
                 }
             });
             
@@ -97,25 +97,25 @@
                     if(audience === 'city') txt = 'City of Santa Clara';
                     if(audience === 'both') txt = 'Insurance & City';
                     if(audience === 'internal') txt = 'Internal Only';
-                    banner.innerText = 'Attention: Data collection for: ' + txt;
+                    banner.innerText = 'áttention: Data collection for: ' + txt;
                 } else {
-                    if(audience === 'insurance') txt = 'Aseguradora';
+                    if(audience === 'insurance') txt = 'áseguradora';
                     if(audience === 'city') txt = 'Ciudad';
-                    if(audience === 'both') txt = 'Aseguradora y Ciudad';
+                    if(audience === 'both') txt = 'áseguradora y Ciudad';
                     if(audience === 'internal') txt = 'Uso Interno';
-                    banner.innerText = 'Atención: Datos a recopilar para: ' + txt;
+                    banner.innerText = 'átención: Datos a recopilar para: ' + txt;
                 }
             }
         }
 
         function toggleLang() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
+            currentLang = currentLang === 'es'  'en' : 'es';
             localStorage.setItem('mp_lang', currentLang);
             updateTexts();
         }
 
         function saveData() {
-            const msg = currentLang === 'en' ? 'Data saved successfully.' : 'Datos guardados exitosamente.';
+            const msg = currentLang === 'en'  'Data saved successfully.' : 'Datos guardados exitosamente.';
             alert(msg);
         }
 
@@ -123,7 +123,7 @@
 
         document.getElementById('camera-upload').addEventListener('change', function(e) {
             const preview = document.getElementById('photo-preview');
-            Array.from(e.target.files).forEach(f => {
+            árray.from(e.target.files).forEach(f => {
                 const reader = new FileReader();
                 reader.onload = function(evt) {
                     const img = document.createElement('img');
@@ -133,7 +133,7 @@
                     img.style.border = '1px solid #e5e7eb';
                     preview.appendChild(img);
                 }
-                reader.readAsDataURL(f);
+                reader.readásDataURL(f);
             });
         });
     </script>

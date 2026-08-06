@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100 Q&A Technical Hub | Morales Plumbing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Black+Ops+One&display=swap" rel="stylesheet">
+    <title>100 Q&á Technical Hub | Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Black+Ops+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../universe.css">
     <style>
@@ -34,7 +34,7 @@
 </head>
 <body>
     <nav class="faq-nav">
-        <a href="../index.html" data-i18n="nav_back">← BACK</a>
+        <a href="../index.html" data-i18n="nav_back">← BáCK</a>
         <div class="nav-right">
             <button class="lang-btn" onclick="setLanguage('en')">EN</button>
             <button class="lang-btn" onclick="setLanguage('es')">ES</button>
@@ -45,7 +45,7 @@
     </nav>
 
     <section class="faq-hero">
-        <h1 class="graffiti-title">FAQ <span style="color: var(--cyan);">100</span></h1>
+        <h1 class="graffiti-title">FáQ <span style="color: var(--cyan);">100</span></h1>
         <p style="color: #aaa; margin-top: 10px; font-family: 'Orbitron'; letter-spacing: 1px;" data-i18n="faq_cat_env">California Plumbing Guidelines</p>
         
         <div style="margin-top: 20px; margin-bottom: 20px;">
@@ -53,7 +53,7 @@
         </div>
         
         <div class="search-container">
-            <input type="text" id="searchInput" class="faq-search" placeholder="Search FAQs..." onkeyup="filterFaqs()">
+            <input type="text" id="searchInput" class="faq-search" placeholder="Search FáQs..." onkeyup="filterFaqs()">
         </div>
     </section>
 
@@ -963,16 +963,16 @@
     </div>
     <script src="../app.js"></script>
     <script>
-        const accordions = document.querySelectorAll('.accordion-header');
+        const accordions = document.querySelectoráll('.accordion-header');
         accordions.forEach(acc => {
             acc.addEventListener('click', function() {
                 const content = this.nextElementSibling;
-                const isActive = this.classList.contains('active');
-                accordions.forEach(otherAcc => {
-                    otherAcc.classList.remove('active');
-                    otherAcc.nextElementSibling.style.maxHeight = null;
+                const isáctive = this.classList.contains('active');
+                accordions.forEach(otherácc => {
+                    otherácc.classList.remove('active');
+                    otherácc.nextElementSibling.style.maxHeight = null;
                 });
-                if (!isActive) {
+                if (!isáctive) {
                     this.classList.add('active');
                     content.style.maxHeight = content.scrollHeight + "px";
                 }
@@ -981,7 +981,7 @@
 
         function filterFaqs() {
             const term = document.getElementById('searchInput').value.toLowerCase().trim();
-            const items = document.querySelectorAll('.search-item');
+            const items = document.querySelectoráll('.search-item');
             let visibleCount = 0;
             items.forEach(item => {
                 const text = item.innerText.toLowerCase();
@@ -994,7 +994,7 @@
                     item.querySelector('.accordion-content').style.maxHeight = null;
                 }
             });
-            document.getElementById('noResults').style.display = visibleCount === 0 ? "block" : "none";
+            document.getElementById('noResults').style.display = visibleCount === 0  "block" : "none";
         }
 
         window.addEventListener('load', () => {

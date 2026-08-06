@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,8 +8,8 @@
     <!-- Open Graph / Link Previews for WhatsApp/iMessage -->
     <meta property="og:title" content="Morales Plumbing | Un Plomero En Tu Bolsillo" />
     <meta property="og:description" content="Lic. C-36 #1156542 | San Jose, CA. Tarjeta digital de contacto, línea directa 24 hrs y presupuesto." />
-    <meta property="og:image" content="https://agem2024.github.io/morales-plumbing-web/assets/og_image.jpg" />
-    <meta property="og:url" content="https://agem2024.github.io/morales-plumbing-web/tarjeta_presentacion.html" />
+    <meta property="og:image" content="https://morales-plumbing.com/assets/og_image.jpg" />
+    <meta property="og:url" content="https://morales-plumbing.com/tarjeta_presentacion.html" />
     <meta property="og:type" content="website" />
     
     <!-- Fonts for Technical, Graffiti, and Clean styling -->
@@ -78,7 +78,10 @@
             z-index: 10;
         }
         .btn-back {
-            background: rgba(0,0,0,0.5);
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
             border: 1px solid var(--neon-cyan);
             color: var(--neon-cyan);
             font-family: 'Orbitron', sans-serif;
@@ -92,6 +95,7 @@
             gap: 8px;
             transition: 0.3s;
             backdrop-filter: blur(5px);
+            z-index: 1000;
         }
         .btn-back:hover {
             background: var(--neon-cyan);
@@ -388,7 +392,7 @@
 
     <!-- TOP CONTROLS -->
     <div class="top-controls">
-        <a href="index.html" class="btn-back"><i class="fas fa-home"></i> <span id="t_back">INICIO</span></a>
+        <a href="index.html" class="btn-back"><img src="assets/logo_portada.png" alt="Morales Plumbing" style="width: 24px; height: 24px; object-fit: contain;"> <span id="t_back">INICIO</span></a>
         <div class="lang-switcher">
             <button class="lang-btn active" onclick="setLang('es', this)">ES</button>
             <button class="lang-btn" onclick="setLang('en', this)">EN</button>
@@ -410,31 +414,55 @@
         </header>
 
         <!-- Main Actions -->
+        <style>
+            .action-btn { position: relative; overflow: hidden; z-index: 1; }
+            .btn-video {
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                opacity: 0.5;
+            }
+            .action-btn:hover .btn-video { opacity: 0.8; }
+        </style>
         <div class="primary-actions">
-            <a href="tel:+16692134422" class="action-btn action-call">
-                <i class="fas fa-phone-volume"></i>
-                <span id="t_call">LLAMAR AHORA</span>
+            <a href="tel:+16692342444" class="action-btn action-call" style="margin-bottom:10px; border-color: rgba(212, 175, 55, 0.5); color: #fff;">
+                <video class="btn-video" autoplay loop muted playsinline src="assets/videos/alex_ceo.mp4"></video>
+                <i class="fas fa-phone-volume" style="text-shadow: 1px 1px 3px #000;"></i>
+                <span id="t_call" style="text-shadow: 1px 1px 3px #000; font-weight:bold;">DIRECTO (ALEX)</span>
             </a>
-            <a href="mailto:moralesplumbing026@gmail.com" class="action-btn action-email">
-                <i class="fas fa-envelope-open-text"></i>
-                <span id="t_email">ENVIAR CORREO</span>
-            </a> | <a href="https://t.me/nekon" target="_blank" style="color: inherit; font-weight: bold;">Telegram: @nekon</a>
+            <a href="tel:+16692134422" class="action-btn action-call" style="margin-bottom:10px; border: 1px solid rgba(212, 175, 55, 0.5); color: #fff;">
+                <video class="btn-video" autoplay loop muted playsinline src="assets/videos/capability_247_ops.mp4"></video>
+                <i class="fas fa-robot" style="text-shadow: 1px 1px 3px #000;"></i>
+                <span style="text-shadow: 1px 1px 3px #000; font-weight:bold;">OFICINA (24/7)</span>
+            </a>
+            <a href="mailto:moralesplumbing026@gmail.com" class="action-btn action-email" style="margin-bottom:10px; color:#fff; border: 1px solid rgba(212, 175, 55, 0.5);">
+                <video class="btn-video" autoplay loop muted playsinline src="assets/videos/jarvis_email.mp4"></video>
+                <i class="fas fa-envelope-open-text" style="text-shadow: 1px 1px 3px #000;"></i>
+                <span id="t_email" style="text-shadow: 1px 1px 3px #000; font-weight:bold;">ENVIAR CORREO</span>
+            </a>
+            <a href="https://t.me/nekon" target="_blank" class="action-btn" style="color: #fff; border: 1px solid rgba(212, 175, 55, 0.5); text-decoration:none; padding: 20px 10px; border-radius: 12px; box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);">
+                <video class="btn-video" autoplay loop muted playsinline src="assets/videos/xona_bot.mp4" style="opacity: 0.7;"></video>
+                <i class="fab fa-telegram-plane" style="font-size: 1.5rem; margin-right: 10px; text-shadow: 1px 1px 4px #000;"></i>
+                <span style="font-size: 1.1rem; font-weight: 800; text-shadow: 1px 1px 4px #000;">CHAT NEKON AI</span>
+            </a>
         </div>
 
         <!-- Contact Directory -->
         <div class="info-list">
-            <a href="tel:+16692134422" class="info-row">
-                <div class="info-icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="info-text">
-                    (669) 213-4422
-                    <span class="info-subtext" id="t_phone_sub">Línea Directa / 24 hrs</span>
-                </div>
-            </a>
             <a href="https://maps.google.com/?q=San+Jose,+CA" target="_blank" class="info-row">
                 <div class="info-icon" style="color: var(--neon-orange);"><i class="fas fa-map-marker-alt"></i></div>
                 <div class="info-text">
                     San Jose, CA
                     <span class="info-subtext" id="t_loc_sub">Servicio en Bay Area</span>
+                </div>
+            </a>
+            <a href="https://morales-plumbing.com" target="_blank" class="info-row">
+                <div class="info-icon" style="color: var(--neon-lime);"><i class="fas fa-globe"></i></div>
+                <div class="info-text">
+                    morales-plumbing.com
+                    <span class="info-subtext" id="t_web_sub">Sitio Web Oficial</span>
                 </div>
             </a>
             <a href="https://www.youtube.com/@MoralesPlumbing" target="_blank" class="info-row">
@@ -448,8 +476,9 @@
 
         <!-- Social Media -->
         <div class="social-bar">
-            <a href="#" class="social-icon fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/16692134422" target="_blank" class="social-icon" style="background:#25D366; color:#fff;" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61592635708632" target="_blank" class="social-icon fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/plumbingmorales" target="_blank" class="social-icon ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="#" class="social-icon tk" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
         </div>
 
@@ -535,3 +564,8 @@
     </script>
 </body>
 </html>
+
+
+
+
+

@@ -10545,3 +10545,27 @@ window.toggleJoeMic = function() {
   if (btn) btn.innerHTML = window.isJoeMuted ? '🔇' : '🎤';
   if (window.isJoeMuted && 'speechSynthesis' in window) window.speechSynthesis.cancel();
 };
+
+// Tab switching for V02 Quick Services
+window.v02ShowTab = function(tabId) {
+    document.querySelectorAll('.v02-tab-panel').forEach(panel => panel.style.display = 'none');
+    const targetPanel = document.getElementById('v02-panel-' + tabId);
+    if(targetPanel) targetPanel.style.display = 'grid';
+    
+    const tabs = ['plumbing', 'bathroom', 'heaters', 'leaks', 'repipe', 'ai'];
+    tabs.forEach(t => {
+        const btn = document.getElementById('v02-tab-' + t);
+        if(btn) {
+            btn.style.background = 'rgba(255,255,255,0.07)';
+            btn.style.color = '#a0aec0';
+            btn.style.border = '1px solid rgba(255,255,255,0.15)';
+        }
+    });
+    
+    const activeBtn = document.getElementById('v02-tab-' + tabId);
+    if(activeBtn) {
+        activeBtn.style.background = '#D4AF37';
+        activeBtn.style.color = '#0A192F';
+        activeBtn.style.border = 'none';
+    }
+};
