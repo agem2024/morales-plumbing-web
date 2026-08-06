@@ -235,7 +235,7 @@
     { id: 15, code: "OR-SáFE-015", nameKey: "pb_svc_15_name", userDescKey: "pb_svc_15_user", techDescKey: "pb_svc_15_tech", category: "Safety", image: "../assets/comic_terms.png" }
 ].map(s => {
     if (typeof PB_SERVICE_PRICES !== 'undefined' && PB_SERVICE_PRICES['svc_' + s.id]) {
-        const formatP = p => typeof p === 'string' && p.includes('-')  '$' + p.split('-').map(x=>x.trim()).join(' - $') : '$' + p.toLocaleString();
+        const formatP = p => typeof p === 'string' && p.includes('-') ? '$' + p.split('-').map(x=>x.trim()).join(' - $') : '$' + p.toLocaleString();
         s.price_good = formatP(PB_SERVICE_PRICES['svc_' + s.id].good);
         s.price_better = formatP(PB_SERVICE_PRICES['svc_' + s.id].better);
         s.price_best = formatP(PB_SERVICE_PRICES['svc_' + s.id].best);
