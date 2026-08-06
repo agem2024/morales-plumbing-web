@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="../universe.css">
     <style>
         body { background-color: var(--dark-bg); color: #fff; overflow-x: hidden; font-family: 'Inter', sans-serif; }
-        .page-content { padding: 4rem 10%; max-width: 1000px; margin: 0 auto; }
+        .page-content { position: relative; z-index: 10; padding: 4rem 10%; max-width: 1000px; margin: 0 auto; }
         .hero-title { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--neon-cyan); margin-bottom: 1rem; text-align: center; }
-        .article-content { background: rgba(10, 25, 47, 0.8); border: 1px solid var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 245, 255, 0.1); padding: 3rem; border-radius: 12px; line-height: 1.8; color: #cbd5e1; }
+        .article-content { background: rgba(10, 25, 47, 0.85); border: 1px solid var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 245, 255, 0.15); padding: 3rem; border-radius: 12px; line-height: 1.8; color: #cbd5e1; font-size: 1.1rem; }
         .article-content h1, .article-content h2, .article-content h3 { color: var(--neon-orange); font-family: 'Orbitron', sans-serif; margin-top: 2rem; margin-bottom: 1rem; }
         .article-content p { margin-bottom: 1.5rem; }
         .article-content strong { color: #fff; }
-        .back-nav { padding: 1rem 5%; background: rgba(0,0,0,0.5); border-bottom: 1px solid var(--glass-border); display: flex; justify-content: flex-start; }
+        .back-nav { position: relative; z-index: 10; padding: 1rem 5%; background: rgba(0,0,0,0.5); border-bottom: 1px solid var(--glass-border); display: flex; justify-content: flex-start; }
         .btn-back { color: var(--neon-cyan); text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; transition: 0.3s; }
         .btn-back:hover { text-shadow: 0 0 8px var(--neon-cyan); }
     </style>
@@ -27,78 +27,104 @@
     <script src="../universe.js"></script>
 
     <div class="back-nav">
-        <a href="../index.html#multimedia" class="btn-back">< BACK TO MULTIMEDIA</a>
+        <a href="../index.html#multimedia" class="btn-back">&lt; BACK TO MULTIMEDIA</a>
     </div>
 
     <div class="page-content">
         <h1 class="hero-title">Inteligencia Artificial y Joe AI</h1>
         <div class="article-content">
-<header>
-        <div class="header-logo">
-            <a href="../index.html"><img src="../assets/logo_portada.png" alt="Morales Plumbing Logo"></a>
-        </div>
-        <div class="header-contact">
-            <div class="cslb">Lic. C-36 #1156542</div>
-            <div class="info">(669) 213-4422 | moralesplumbing026@gmail.com</div>
-        </div>
-    </header>
-
-    <section class="article-hero">
-        <h1>El Futuro de la Plomería</h1>
-        <p>Una nueva era de servicios Tech-Service. Conoce a nuestro copiloto digital de Inteligencia Artificial que elimina las adivinanzas.</p>
-        <a href="../index.html" class="back-link">← Volver al Inicio</a>
-    </section>
-
-    <div class="content-container">
-        
-        <div class="glass-panel">
-            <h2><span style="font-size: 2.5rem;">🤖</span> Tu Copiloto Digital: ¿Quién es Joe AI?</h2>
-            <p>En Morales Plumbing, hemos dejado atrás la era de la adivinanza manual para entrar en la era de la <strong>precisión algorítmica</strong>. No somos simples plomeros; somos consultores tecnológicos equipados con la Inteligencia Artificial más avanzada del mercado de servicios para el hogar.</p>
-
-            <p>Nuestro asistente virtual multimodal, <strong>Joe AI</strong>, es un Modelo de Lenguaje de Gran Escala (LLM) que ha sido entrenado específicamente con el Código de Plomería de California (CPC) y los esquemas técnicos de los fabricantes líderes. Joe no adivina; procesa datos en tiempo real.</p>
-            
-            <div class="highlight-box">
-                <p>"A través del Reconocimiento Óptico de Caracteres (OCR), escaneamos la placa de datos de cualquier equipo y Joe AI nos entrega, en menos de 3 segundos, el manual exacto y el árbol de diagnóstico paso a paso. Esta es la razón por la cual reducimos el tiempo de diagnóstico en un 40%."</p>
-            </div>
-            
-            <table class="tech-table">
-                <thead>
-                    <tr>
-                        <th>Característica</th>
-                        <th>Método Tradicional</th>
-                        <th>Método Morales (Joe AI)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Diagnóstico</strong></td>
-                        <td>Adivinación basada en prueba y error.</td>
-                        <td>Precisión basada en bases de datos y manuales del fabricante.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tiempo de Resolución</strong></td>
-                        <td>Horas de búsqueda y desmontaje innecesario.</td>
-                        <td>Reducción del 40% mediante diagnóstico OCR instantáneo.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Fiabilidad</strong></td>
-                        <td>Subjetiva a la experiencia del plomero.</td>
-                        <td>Validado cruzadamente con el Código de Plomería de California.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="glass-panel" style="border-color: #D4AF37;">
-            <h2 style="color: #fff;"><span style="font-size: 2.5rem;">🚀</span> El Ecosistema Orion Tech</h2>
-            <p>La integración de IA en cada punto de contacto garantiza una transparencia total. Al eliminar la asimetría de información entre el técnico y tú como cliente, transformamos la reparación de una emergencia caótica en una intervención de ingeniería planificada.</p>
-
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="../index.html" class="btn-primary-glow" style="background: linear-gradient(45deg, #D4AF37, #f39c12);">Habla con Joe AI Ahora</a>
-            </div>
-        </div>
-
-    </div>
+<p>El Futuro de la Plomería: Guía de Introducción a la Era de la IA</p>
+<p>Bienvenidos a la Academia Morales. Soy su Instructor Senior y hoy no solo les entrego una</p>
+<p>llave inglesa, sino las llaves del ecosistema tecnológico más avanzado en la historia de los</p>
+<p>servicios hídricos. En Morales Plumbing, hemos dejado atrás la era de la adivinanza manual</p>
+<p>para entrar en la era de la  "precisión quirúrgica" . Ustedes no son simples aprendices;</p>
+<p>son la nueva  élite técnica de Silicon Valley , una fuerza operativa que combina el sudor</p>
+<p>del oficio con el cerebro de la inteligencia artificial de  Grado Militar .Observen nuestro</p>
+<p>escudo: esa gota de agua translúcida que resguarda un microchip en su interior no es solo</p>
+<p>diseño. Simboliza nuestra filosofía de "Tech-Service": el control absoluto del flujo mediante</p>
+<p>la innovación digital."Nuestra misión es brindar soluciones de la más alta calidad,</p>
+<p>fusionando la experiencia técnica artesanal con tecnologías avanzadas de IA para proteger</p>
+<p>la salud pública y la integridad de los hogares de forma rápida y definitiva." —  Filosofía</p>
+<p>Morales PlumbingEsta mentalidad de vanguardia es lo que separa a un plomero</p>
+<p>convencional de un consultor tecnológico de la Academia Morales. Para dominar este</p>
+<p>entorno, su primera herramienta no será un soplete, sino su copiloto digital.</p>
+<h2>1. Tu Copiloto Digital: ¿Quién es Joe AI?</h2>
+<p>En el campo de batalla de la infraestructura hídrica, el conocimiento es poder.  Joe AI  es</p>
+<p>nuestro asistente virtual multimodal, un Modelo de Lenguaje de Gran Escala ( LLM ) que ha</p>
+<p>sido  fine-tuned  (ajustado finamente) específicamente con el Código de Plomería de</p>
+<p>California (CPC) y los esquemas técnicos de fabricantes líderes. Joe no "adivina"; Joe</p>
+<p>procesa datos vectoriales en tiempo real.A través del Reconocimiento Óptico de Caracteres</p>
+<p>(OCR), ustedes pueden escanear la placa de datos de cualquier equipo y Joe AI les</p>
+<p>entregará, en menos de 3 segundos, el manual exacto y el árbol de diagnóstico paso a</p>
+<p>paso. Esta herramienta es la razón por la cual reducimos el tiempo de diagnóstico en un</p>
+<p>40% .| Característica | Método Tradicional (Adivinanza) | Método Morales (Joe AI) || ------ |</p>
+<p>------ | ------ || Diagnóstico | Basado en "prueba y error". | Basado en datos vectoriales y</p>
+<p>manuales exactos. || Recuperación de Conocimiento | Minutos u horas buscando en</p>
+<p>PDFs. | < 3 segundos  vía lenguaje natural. || Información | Búsqueda manual en libros o</p>
+<p>internet. | Acceso instantáneo vía OCR de placas de datos. || Velocidad | Lenta, propensa a</p>
+<p>segundas visitas. | 40% más rápida; resolución en la primera cita. |</p>
+<p>Esta eficiencia nos permite ser infalibles no solo en la técnica, sino también en el blindaje</p>
+<p>normativo de cada intervención.</p>
+<p>2. PlumbAssist AI: Tu Garantía de Cumplimiento Técnico</p>
+<p>Como la élite de California, operamos bajo el microscopio legal.  PlumbAssist AI  es su</p>
+<p>guardián de cumplimiento. Mientras ustedes trabajan, este sistema cruza cada decisión con</p>
+<p>el Código de Plomería de California (CPC) en tiempo real. Pero su función va más allá de la</p>
+<p>normativa técnica; está integrado con el  Generador Legal Morales .Este sistema</p>
+<p>automatiza la creación de documentos críticos que protegen nuestra responsabilidad y los</p>
+<p>derechos del cliente, asegurando que cada contrato sea inexpugnable.</p>
+<p>●​ Seguridad Normativa:  Consulta instantánea del CPC, eliminando errores por</p>
+<p>memorización deficiente.</p>
+<p>●​ Gestión Documental Automática:  Generación inmediata de avisos de "Derecho a</p>
+<p>Cancelar" y el documento "Notice to Owner" (NTO) para proteger nuestros derechos</p>
+<p>de retención mecánica.</p>
+<p>●​ Blindaje de Responsabilidad:  Crea exenciones de responsabilidad ( Waivers )</p>
+<p>personalizadas antes de iniciar cualquier labor destructiva.Los datos y las leyes</p>
+<p>protegen nuestra responsabilidad, pero nuestros sensores nos permiten</p>
+<p>atravesar el concreto sólido.</p>
+<p>3. Ver lo Invisible: Termografía FLIR con Inteligencia Artificial</p>
+<p>Para alcanzar la verdadera precisión de  Grado Militar , utilizamos cámaras termográficas</p>
+<p>de alta resolución (modelos  FLIR E8-XT o C5 ). Al integrar estas cámaras con algoritmos</p>
+<p>de IA, realizamos un  "Mapeo Térmico"  que identifica gradientes de temperatura invisibles</p>
+<p>al ojo humano.Esto nos permite detectar "anomalías florales" —el efecto de pluma térmica o</p>
+<p>"feathering" que genera el agua caliente al escapar bajo una losa— localizando fugas ( slab</p>
+<p>leaks ) sin demoliciones innecesarias.La Tecnología MSX (Multi-Spectral Dynamic</p>
+<p>Imaging)  Esta función de alta gama extrae los detalles estructurales de la cámara visual y</p>
+<p>los graba sobre la imagen térmica. Gracias al MSX y al procesamiento de IA, el margen de</p>
+<p>error para localizar una ruptura bajo el concreto se reduce a  menos de 3 pulgadas</p>
+<p>cuadradas .Una vez que hemos "visto" lo invisible, el siguiente paso es presentar la</p>
+<p>solución con el mismo nivel de sofisticación tecnológica.</p>
+<p>4. La Tablet como Herramienta de Cierre: Orion Price Book</p>
+<p>El profesionalismo extremo se consolida en el momento de la cotización. El sistema  Orion</p>
+<p>Price Book POS  utiliza la psicología de ventas para eliminar la fricción del precio.</p>
+<p>Presentamos siempre tres opciones:  "Good, Better, Best" .Como instructores, les</p>
+<p>enseñamos el secreto: la opción "Best" (Premium) funciona como un  ancla de precio ,</p>
+<p>haciendo que la opción "Better" (Recomendada) sea percibida como el valor lógico más</p>
+<p>alto. Aquí es donde transformamos una reparación en una actualización de activos.Para un</p>
+<p>cierre exitoso, sigan este protocolo en su tablet:</p>
+<h2>1.​</h2>
+<p>Evidencia Visual:  Muestren al cliente las imágenes de la cámara FLIR y el reporte</p>
+<p>de Joe AI.</p>
+<h2>2.​</h2>
+<p>Presentación de Opciones:  Ofrezcan soluciones reales, como un  Navien</p>
+<p>NPE-240A  para agua caliente infinita o un sistema de repiping integral con  Uponor</p>
+<h2>PEX-A .</h2>
+<h2>3.​</h2>
+<p>Transparencia Flat Rate:  Usen precios cerrados. El cliente paga por la solución, no</p>
+<p>por las horas que ustedes pasen en el sitio.</p>
+<h2>4.​</h2>
+<p>Cierre y Firma Legal:  El cliente firma el contrato generado por el Generador Legal</p>
+<p>Morales, recibiendo su copia digital al instante.Este proceso genera un</p>
+<p>"hiper-profesionalismo" que justifica nuestras tarifas premium y consolida su</p>
+<p>autoridad ante el cliente.</p>
+<h2>5. Conclusión: El Técnico del Mañana</h2>
+<p>En la Academia Morales, no los estamos formando para ser plomeros; los estamos</p>
+<p>entrenando para gestionar un ecosistema de alta tecnología. Al dominar Joe AI, la</p>
+<p>termografía de grado militar y el sistema Orion, garantizamos una  tasa de resolución en la</p>
+<p>primera visita superior al 95% .Ustedes son el futuro de un oficio dignificado por la</p>
+<p>ciencia. No solo reparan tuberías; protegen la infraestructura de Silicon Valley con la</p>
+<p>precisión de un cirujano y la inteligencia de un ingeniero de datos.Recuerden: la</p>
+<p>innovación y la dignidad técnica son nuestro estandarte. Bienvenidos a la élite.</p>
+<p>Bienvenidos a Morales Plumbing.</p>
         </div>
     </div>
     
