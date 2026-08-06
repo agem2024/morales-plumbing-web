@@ -8705,7 +8705,7 @@ function speakJoe(text) {
 // Prevents cold-start delays (Render free tier sleeps after 15min)
 // ═══════════════════════════════════════════════════════════
 (function startOrionKeepAlive() {
-    const ORION_URL = 'https://orion-cloud.onrender.com/api/chat';
+    const ORION_URL = 'https://orion-cloud-1.onrender.com/api/chat';
     const INTERVAL  = 10 * 60 * 1000; // 10 minutes
 
     async function pingOrion() {
@@ -8748,7 +8748,7 @@ async function sendToJoe() {
     // 1. Try Orion Cloud endpoint (Render Server)
     try {
         const curLang = localStorage.getItem('morales_lang') || 'en';
-        const resp = await fetch('https://orion-cloud.onrender.com/api/chat', {
+        const resp = await fetch('https://orion-cloud-1.onrender.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
