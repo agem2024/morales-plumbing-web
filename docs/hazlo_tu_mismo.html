@@ -299,11 +299,11 @@
 
     
 <section class="lp-hook">
-        <h2 data-i18n="lp_hook_title">¿Miedo a Repararlo Tú Mismo</h2>
+        <h2 data-i18n="lp_hook_title">¿Miedo a Repararlo Tú Mismo?</h2>
         <p data-i18n="lp_hook_desc">Las emergencias de plomería son estresantes, pero el 80% de los problemas comunes pueden ser resueltos por cualquier persona en menos de 30 minutos. áhorra dinero y pierde el miedo al fracaso: nuestras guías visuales están diseñadas específicamente para principiantes absolutos.</p>
     </section>
 <section class="lp-features">
-        <h2 data-i18n="lp_feat_title">¿¿Quéé Incluye Nuestro Hub Visual</h2>
+        <h2 data-i18n="lp_feat_title">¿Qué Incluye Nuestro Hub Visual?</h2>
         <div class="lp-feat-grid">
             <div class="lp-feat-card">
                 <i class="fas fa-list-check"></i>
@@ -348,15 +348,15 @@
 <section class="lp-faq">
         <h2 data-i18n="lp_faq_title">Preguntas Frecuentes del DIY</h2>
         <div class="lp-faq-item">
-            <h4 data-i18n="lp_q1">¿¿Necesito experiencia previa con herramientas</h4>
+            <h4 data-i18n="lp_q1">¿Necesito experiencia previa con herramientas?</h4>
             <p data-i18n="lp_a1">ábsolutamente no. Todas las guías de este portal fueron curadas asumiendo que nunca has tocado una pinza en tu vida. Empezamos desde lo más básico.</p>
         </div>
         <div class="lp-faq-item">
-            <h4 data-i18n="lp_q2">¿Cuánto dinero aproximado gastaré en materiales</h4>
+            <h4 data-i18n="lp_q2">¿Cuánto dinero aproximado gastaré en materiales?</h4>
             <p data-i18n="lp_a2">La gran mayoría de las reparaciones aquí listadas utilizan insumos que cuestan menos de $20 dólares, o incluso cosas que ya tienes en casa como Vinagre o Jabón.</p>
         </div>
         <div class="lp-faq-item">
-            <h4 data-i18n="lp_q3">¿Y si cometo un error y rompo algo</h4>
+            <h4 data-i18n="lp_q3">¿Y si cometo un error y rompo algo?</h4>
             <p data-i18n="lp_a3">Todas las guías inician con el paso de seguridad más importante (como cerrar la llave de paso). Si algo sale mal, tu casa está segura. ádemás, nuestro asistente Joe áI está disponible para ayudarte.</p>
         </div>
     </section>
@@ -596,15 +596,15 @@
 <section class="lp-faq">
         <h2 data-i18n="lp_faq_title">Preguntas Frecuentes del DIY</h2>
         <div class="lp-faq-item">
-            <h4 data-i18n="lp_q1">¿¿Necesito experiencia previa con herramientas</h4>
+            <h4 data-i18n="lp_q1">¿Necesito experiencia previa con herramientas?</h4>
             <p data-i18n="lp_a1">ábsolutamente no. Todas las guías de este portal fueron curadas asumiendo que nunca has tocado una pinza en tu vida. Empezamos desde lo más básico.</p>
         </div>
         <div class="lp-faq-item">
-            <h4 data-i18n="lp_q2">¿Cuánto dinero aproximado gastaré en materiales</h4>
+            <h4 data-i18n="lp_q2">¿Cuánto dinero aproximado gastaré en materiales?</h4>
             <p data-i18n="lp_a2">La gran mayoría de las reparaciones aquí listadas utilizan insumos que cuestan menos de $20 dólares, o incluso cosas que ya tienes en casa como Vinagre o Jabón.</p>
         </div>
         <div class="lp-faq-item">
-            <h4 data-i18n="lp_q3">¿Y si cometo un error y rompo algo</h4>
+            <h4 data-i18n="lp_q3">¿Y si cometo un error y rompo algo?</h4>
             <p data-i18n="lp_a3">Todas las guías inician con el paso de seguridad más importante (como cerrar la llave de paso). Si algo sale mal, tu casa está segura. ádemás, nuestro asistente Joe áI está disponible para ayudarte.</p>
         </div>
     </section>
@@ -698,13 +698,13 @@
 
                 // Multilingual Subheaders
                 const matH4 = contentEl.querySelector('h4[data-i18n="htm_materials"]');
-                if(matH4) matH4.innerHTML = '<i class="fas fa-box-open"></i> ' + (lang==='en''Materials Needed':lang==='es''Materiales':'Materiales/Materials');
+                if(matH4) matH4.innerHTML = '<i class="fas fa-box-open"></i> ' + (lang==='en' ? 'Materials Needed' : lang==='es' ? 'Materiales' : 'Materiales/Materials');
                 
                 const toolH4 = contentEl.querySelector('h4[data-i18n="htm_tools"]');
-                if(toolH4) toolH4.innerHTML = '<i class="fas fa-wrench"></i> ' + (lang==='en''Tools Required':lang==='es''Herramientas':'Herramientas/Tools');
+                if(toolH4) toolH4.innerHTML = '<i class="fas fa-wrench"></i> ' + (lang==='en' ? 'Tools Required' : lang==='es' ? 'Herramientas' : 'Herramientas/Tools');
                 
                 const stepH4 = contentEl.querySelector('h4[data-i18n="htm_steps"]');
-                if(stepH4) stepH4.innerHTML = (lang==='en''Step-by-Step Guide':lang==='es''Guía Paso a Paso':'Guía / Guide');
+                if(stepH4) stepH4.innerHTML = (lang==='en' ? 'Step-by-Step Guide' : lang==='es' ? 'Guía Paso a Paso' : 'Guía / Guide');
                 
                 // Populate dynamic lists
                 const matEl = document.getElementById('mat-'+t.key);
