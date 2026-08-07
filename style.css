@@ -4641,11 +4641,15 @@ footer {
 
 
 /* Global fixes for Mobile Multimedia Overflow */
-iframe, video, object, embed, .promo-hero-image img, .page-section video, .page-section img, .page-section audio {
-    max-width: 100% !important;
-    height: auto !important;
+iframe, object, embed, .promo-hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+.multimedia-content video, .multimedia-content img, .multimedia-content audio {
+    max-width: 100%;
+    height: auto;
 }
 #bg-video {
-    object-fit: cover !important;
+    object-fit: cover;
 }
 
