@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100 Q&á Technical Hub | Morales Plumbing</title>
+    <title>100 Q&Ã¡ Technical Hub | Morales Plumbing</title>
     <link href="https://fonts.googleapis.com/css2family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Black+Ops+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../universe.css">
@@ -38,7 +38,7 @@
     <header style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 4px solid #D4AF37; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: relative; z-index: 1000;">
         <div style="display: flex; align-items: center;">
             <a href="../index.html">
-                <img src="../logo_portada.png" alt="Morales Plumbing Logo" style="height: 60px; width: auto;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
+                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 60px; width: auto;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
             </a>
         </div>
         <div style="text-align: right; color: #fff;">
@@ -49,7 +49,7 @@
     </header>
 
     <nav class="faq-nav">
-        <a href="../index.html" data-i18n="nav_back">← BáCK</a>
+        <a href="../index.html" data-i18n="nav_back">â† BÃ¡CK</a>
         <div class="nav-right">
             <button class="lang-btn" onclick="setLanguage('en')">EN</button>
             <button class="lang-btn" onclick="setLanguage('es')">ES</button>
@@ -60,15 +60,15 @@
     </nav>
 
     <section class="faq-hero">
-        <h1 class="graffiti-title">FáQ <span style="color: var(--cyan);">100</span></h1>
+        <h1 class="graffiti-title">FÃ¡Q <span style="color: var(--cyan);">100</span></h1>
         <p style="color: #aaa; margin-top: 10px; font-family: 'Orbitron'; letter-spacing: 1px;" data-i18n="faq_cat_env">California Plumbing Guidelines</p>
         
         <div style="margin-top: 20px; margin-bottom: 20px;">
-            <a href="hazlo_tu_mismo.html" style="display: inline-block; padding: 12px 25px; background: rgba(0,245,255,0.1); border: 2px solid var(--cyan); color: var(--cyan); font-family: 'Orbitron'; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 0 10px rgba(0,255,170,0.3); transition: 0.3s;" onmouseover="this.style.background='var(--cyan)'; this.style.color='#000';" onmouseout="this.style.background='rgba(0,245,255,0.1)'; this.style.color='var(--cyan)';" data-i18n="htm_title">Hazlo Tú Mismo</a>
+            <a href="hazlo_tu_mismo.html" style="display: inline-block; padding: 12px 25px; background: rgba(0,245,255,0.1); border: 2px solid var(--cyan); color: var(--cyan); font-family: 'Orbitron'; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 0 10px rgba(0,255,170,0.3); transition: 0.3s;" onmouseover="this.style.background='var(--cyan)'; this.style.color='#000';" onmouseout="this.style.background='rgba(0,245,255,0.1)'; this.style.color='var(--cyan)';" data-i18n="htm_title">Hazlo TÃº Mismo</a>
         </div>
         
         <div class="search-container">
-            <input type="text" id="searchInput" class="faq-search" placeholder="Search FáQs..." onkeyup="filterFaqs()">
+            <input type="text" id="searchInput" class="faq-search" placeholder="Search FÃ¡Qs..." onkeyup="filterFaqs()">
         </div>
     </section>
 
@@ -978,16 +978,16 @@
     </div>
     <script src="../app.js"></script>
     <script>
-        const accordions = document.querySelectoráll('.accordion-header');
+        const accordions = document.querySelectorÃ¡ll('.accordion-header');
         accordions.forEach(acc => {
             acc.addEventListener('click', function() {
                 const content = this.nextElementSibling;
-                const isáctive = this.classList.contains('active');
-                accordions.forEach(otherácc => {
-                    otherácc.classList.remove('active');
-                    otherácc.nextElementSibling.style.maxHeight = null;
+                const isÃ¡ctive = this.classList.contains('active');
+                accordions.forEach(otherÃ¡cc => {
+                    otherÃ¡cc.classList.remove('active');
+                    otherÃ¡cc.nextElementSibling.style.maxHeight = null;
                 });
-                if (!isáctive) {
+                if (!isÃ¡ctive) {
                     this.classList.add('active');
                     content.style.maxHeight = content.scrollHeight + "px";
                 }
@@ -996,7 +996,7 @@
 
         function filterFaqs() {
             const term = document.getElementById('searchInput').value.toLowerCase().trim();
-            const items = document.querySelectoráll('.search-item');
+            const items = document.querySelectorÃ¡ll('.search-item');
             let visibleCount = 0;
             items.forEach(item => {
                 const text = item.innerText.toLowerCase();
@@ -1036,3 +1036,4 @@
 
 </body>
 </html>
+

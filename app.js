@@ -8614,6 +8614,10 @@ function navigate(sectionId, pushState = true) {
     
     // If we are not on a page with sections (like index.html), let the hash links work normally
     if (sections.length === 0) return;
+    const overlay = document.getElementById(\"mobile-nav-overlay\");
+    const navLinks = document.querySelector(\".nav-links\");
+    if (overlay) overlay.classList.remove(\"visible\");
+    if (navLinks) navLinks.classList.remove(\"open\");
 
     // Hide all sections
     sections.forEach(section => {

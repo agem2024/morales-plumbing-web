@@ -4499,11 +4499,13 @@ footer {
 
 @media (max-width: 900px) {
     .booking-panel {
-        right: 10px;
-        bottom: auto;
-        top: 70px;
-        width: calc(100vw - 20px);
-        max-width: 380px;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        max-width: 100%;
+        height: 100dvh;
+        overflow-y: auto;
+        border-radius: 0;
     }
 }
 /* -- PUBLIC CONTACT SECTION -- */
@@ -4636,3 +4638,14 @@ footer {
         padding-bottom: 20px !important; /* padding for iOS home bar */
     }
 }
+
+
+/* Global fixes for Mobile Multimedia Overflow */
+iframe, video, object, embed, .promo-hero-image img, .page-section video, .page-section img, .page-section audio {
+    max-width: 100% !important;
+    height: auto !important;
+}
+#bg-video {
+    object-fit: cover !important;
+}
+

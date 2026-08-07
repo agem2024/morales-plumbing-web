@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ápp de Campo | Morales Plumbing</title>
+    <title>Ã¡pp de Campo | Morales Plumbing</title>
     <link href="https://fonts.googleapis.com/css2family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #d9480f; --bg: #f9fafb; --surface: #ffffff; --border: #e5e7eb; --text-main: #111827; --text-muted: #6b7280; }
@@ -33,7 +33,7 @@
     <header style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 4px solid #D4AF37; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: relative; z-index: 1000;">
         <div style="display: flex; align-items: center;">
             <a href="../index.html">
-                <img src="../logo_portada.png" alt="Morales Plumbing Logo" style="height: 60px; width: auto;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
+                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 60px; width: auto;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
             </a>
         </div>
         <div style="text-align: right; color: #fff;">
@@ -57,48 +57,48 @@
         <div id="audience-banner" class="audience-banner" style="display: none;"></div>
 
         <div class="card">
-            <h2 data-es="1. Información del Proyecto" data-en="1. Project Information">1. Información del Proyecto</h2>
+            <h2 data-es="1. InformaciÃ³n del Proyecto" data-en="1. Project Information">1. InformaciÃ³n del Proyecto</h2>
             <div class="form-group"><label data-es="Cliente" data-en="Client">Cliente</label><input type="text"></div>
-            <div class="form-group"><label data-es="Dirección del Siniestro" data-en="Incident áddress">Dirección del Siniestro</label><input type="text"></div>
-            <div class="form-group"><label data-es="Fecha de Inspección" data-en="Inspection Date">Fecha de Inspección</label><input type="date"></div>
+            <div class="form-group"><label data-es="DirecciÃ³n del Siniestro" data-en="Incident Ã¡ddress">DirecciÃ³n del Siniestro</label><input type="text"></div>
+            <div class="form-group"><label data-es="Fecha de InspecciÃ³n" data-en="Inspection Date">Fecha de InspecciÃ³n</label><input type="date"></div>
         </div>
 
         <div class="card">
-            <h2 data-es="2. Puntos Críticos (Triage)" data-en="2. Critical Points (Triage)">2. Puntos Críticos (Triage)</h2>
-            <label class="checkbox-row"><input type="checkbox"> <span data-es="Fuga áctiva / Inundación" data-en="áctive Leak / Flooding">Fuga áctiva / Inundación</span></label>
+            <h2 data-es="2. Puntos CrÃ­ticos (Triage)" data-en="2. Critical Points (Triage)">2. Puntos CrÃ­ticos (Triage)</h2>
+            <label class="checkbox-row"><input type="checkbox"> <span data-es="Fuga Ã¡ctiva / InundaciÃ³n" data-en="Ã¡ctive Leak / Flooding">Fuga Ã¡ctiva / InundaciÃ³n</span></label>
             <label class="checkbox-row"><input type="checkbox"> <span data-es="Olor a Gas Detectado" data-en="Gas Odor Detected">Olor a Gas Detectado</span></label>
-            <label class="checkbox-row"><input type="checkbox"> <span data-es="Daño Estructural Cercano" data-en="Nearby Structural Damage">Daño Estructural Cercano</span></label>
+            <label class="checkbox-row"><input type="checkbox"> <span data-es="DaÃ±o Estructural Cercano" data-en="Nearby Structural Damage">DaÃ±o Estructural Cercano</span></label>
             <label class="checkbox-row"><input type="checkbox"> <span data-es="Falla en Calentador (Water Heater)" data-en="Water Heater Failure">Falla en Calentador (Water Heater)</span></label>
             <label class="checkbox-row"><input type="checkbox"> <span data-es="Evidencia de Fuego / Quemaduras" data-en="Fire / Burn Evidence">Evidencia de Fuego / Quemaduras</span></label>
         </div>
 
         <div class="card">
             <h2 data-es="3. Notas y Observaciones" data-en="3. Notes and Observations">3. Notas y Observaciones</h2>
-            <textarea rows="4" data-es-placeholder="Observaciones técnicas para el informe..." data-en-placeholder="Technical observations for the report..." placeholder="Observaciones técnicas para el informe..."></textarea>
+            <textarea rows="4" data-es-placeholder="Observaciones tÃ©cnicas para el informe..." data-en-placeholder="Technical observations for the report..." placeholder="Observaciones tÃ©cnicas para el informe..."></textarea>
         </div>
 
         <div class="card">
-            <h2 data-es="4. Registro Fotográfico" data-en="4. Photographic Record">4. Registro Fotográfico</h2>
-            <label class="btn-camera" for="camera-upload" data-es="ábrir Cámara / Subir Foto" data-en="Open Camera / Upload Photo">
-                ábrir Cámara / Subir Foto
+            <h2 data-es="4. Registro FotogrÃ¡fico" data-en="4. Photographic Record">4. Registro FotogrÃ¡fico</h2>
+            <label class="btn-camera" for="camera-upload" data-es="Ã¡brir CÃ¡mara / Subir Foto" data-en="Open Camera / Upload Photo">
+                Ã¡brir CÃ¡mara / Subir Foto
             </label>
             <input type="file" id="camera-upload" accept="image/*" capture="environment" style="display: none;" multiple>
             <div id="photo-preview" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;"></div>
         </div>
 
-        <button class="btn-submit" onclick="saveData()" data-es="GUáRDáR DIáGNÓSTICO" data-en="SáVE DIáGNOSTIC">GUáRDáR DIáGNÓSTICO</button>
+        <button class="btn-submit" onclick="saveData()" data-es="GUÃ¡RDÃ¡R DIÃ¡GNÃ“STICO" data-en="SÃ¡VE DIÃ¡GNOSTIC">GUÃ¡RDÃ¡R DIÃ¡GNÃ“STICO</button>
     </div>
 
     <script>
         let currentLang = localStorage.getItem('mp_lang') || 'en';
 
         function updateTexts() {
-            document.querySelectoráll('[data-es]').forEach(el => {
-                el.innerText = el.getáttribute('data-' + currentLang);
+            document.querySelectorÃ¡ll('[data-es]').forEach(el => {
+                el.innerText = el.getÃ¡ttribute('data-' + currentLang);
             });
-            document.querySelectoráll('textarea').forEach(el => {
-                if (el.hasáttribute('data-es-placeholder')) {
-                    el.placeholder = el.getáttribute('data-' + currentLang + '-placeholder');
+            document.querySelectorÃ¡ll('textarea').forEach(el => {
+                if (el.hasÃ¡ttribute('data-es-placeholder')) {
+                    el.placeholder = el.getÃ¡ttribute('data-' + currentLang + '-placeholder');
                 }
             });
             
@@ -112,13 +112,13 @@
                     if(audience === 'city') txt = 'City of Santa Clara';
                     if(audience === 'both') txt = 'Insurance & City';
                     if(audience === 'internal') txt = 'Internal Only';
-                    banner.innerText = 'áttention: Data collection for: ' + txt;
+                    banner.innerText = 'Ã¡ttention: Data collection for: ' + txt;
                 } else {
-                    if(audience === 'insurance') txt = 'áseguradora';
+                    if(audience === 'insurance') txt = 'Ã¡seguradora';
                     if(audience === 'city') txt = 'Ciudad';
-                    if(audience === 'both') txt = 'áseguradora y Ciudad';
+                    if(audience === 'both') txt = 'Ã¡seguradora y Ciudad';
                     if(audience === 'internal') txt = 'Uso Interno';
-                    banner.innerText = 'átención: Datos a recopilar para: ' + txt;
+                    banner.innerText = 'Ã¡tenciÃ³n: Datos a recopilar para: ' + txt;
                 }
             }
         }
@@ -138,7 +138,7 @@
 
         document.getElementById('camera-upload').addEventListener('change', function(e) {
             const preview = document.getElementById('photo-preview');
-            árray.from(e.target.files).forEach(f => {
+            Ã¡rray.from(e.target.files).forEach(f => {
                 const reader = new FileReader();
                 reader.onload = function(evt) {
                     const img = document.createElement('img');
@@ -148,7 +148,7 @@
                     img.style.border = '1px solid #e5e7eb';
                     preview.appendChild(img);
                 }
-                reader.readásDataURL(f);
+                reader.readÃ¡sDataURL(f);
             });
         });
     </script>
@@ -172,3 +172,4 @@
 <script src="../app.js"></script>
 </body>
 </html>
+
