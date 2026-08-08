@@ -556,10 +556,12 @@ nav {
     z-index: 1000;
     backdrop-filter: blur(10px);
 }
-.nav-dropdown:hover .dropdown-content {
+.nav-dropdown:hover .dropdown-content,
+.dropdown-content.dropdown-open {
     display: flex;
     flex-direction: column;
 }
+
 .dropdown-content a {
     padding: 15px 20px;
     display: flex;

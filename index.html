@@ -8,14 +8,14 @@
     <meta name="description" content="Morales Plumbing — Líder en plomería inteligente en San Jose, CA. Diagnóstico por termografía, eco-retrofitting, diseño hidráulico e IA integrada. Licencia C-36 #1156542. Llamar: (669) 213-4422.">
     <meta name="keywords" content="plomería San Jose CA, plumber San Jose, Morales Plumbing, Alex Espinosa, eco-retrofitting, heat pump, termografía, CSLB, C-36">
     <meta name="author" content="Alex G. Espinosa — Morales Plumbing">
-    <link rel="canoúnical" href="https://agem2024.github.io/morales-plumbing-web/">
+    <link rel="canonical" href="https://www.moralesplumbing.com/">
 
     <!-- Open Graph — Facebook, LinkedIn, WhatsApp sharing -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Morales Plumbing | Plomería Inteligente con IA — San Jose, CA">
     <meta property="og:description" content="Servicios de plomería de élite con inteligencia artificial. Termografía, eco-retrofit, repipeo y más. Disponibles 24/7. Lic. C-36 #1156542.">
-    <meta property="og:image" content="https://agem2024.github.io/morales-plumbing-web/assets/logo_portada.png">
-    <meta property="og:url" content="https://agem2024.github.io/morales-plumbing-web/">
+    <meta property="og:image" content="https://www.moralesplumbing.com/assets/logo_portada.png">
+    <meta property="og:url" content="https://www.moralesplumbing.com/">
     <meta property="og:site_name" content="Morales Plumbing">
     <meta property="og:locale" content="es_US">
 
@@ -62,9 +62,9 @@
       "@context": "https://schema.org",
       "@type": "Plumber",
       "name": "Morales Plumbing",
-      "image": "https://agem2024.github.io/morales-plumbing-web/assets/logo_portada.png",
-      "@id": "",
-      "url": "https://agem2024.github.io/morales-plumbing-web",
+      "image": "https://www.moralesplumbing.com/assets/logo_portada.png",
+      "@id": "https://www.moralesplumbing.com/",
+      "url": "https://www.moralesplumbing.com",
       "telephone": "+16692134422",
       "email": "moralesplumbing026@gmail.com",
       "address": {
@@ -163,9 +163,9 @@
                 <li><a href="#services" data-i18n="nav_services" onclick="navigate('services'); return false;">Servicios</a></li>
                 
                 <!-- DROPDOWN FOR ORION TECH HUB -->
-                <li class="nav-dropdown">
-                    <a href="#" style="cursor: pointer; padding-right: 15px;">Tech Hub ▾</a>
-                    <div class="dropdown-content">
+                <li class="nav-dropdown" id="nav-dropdown-techhub">
+                    <a href="#" style="cursor: pointer; padding-right: 15px;" onclick="toggleTechHubDropdown(event); return false;">Tech Hub ▾</a>
+                    <div class="dropdown-content" id="techhub-dropdown">
                         <a href="#diy" onclick="navigate('diy'); return false;">
                             <strong data-i18n="diy_hub_title">Fix-It Hub</strong>
                             <span class="desc" data-i18n="nav_desc_diy">Diagnóstico AR</span>
@@ -1922,9 +1922,9 @@
     </div>
 
     <!-- Floating Joe AI Button -->
-    <a href="#diy" class="floating-joe-btn" title="Talk to Joe AI" style="position: fixed; bottom: 30px; right: 30px; width: 70px; height: 70px; border-radius: 50%; background: var(--bg-dark); border: 2px solid var(--neon-cyan); box-shadow: 0 0 15px var(--neon-cyan); display: flex; align-itemás: center; justify-content: center; z-index: 1000; transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none;">
+    <a href="#diy" class="floating-joe-btn" title="Talk to Joe AI" onclick="navigate('diy'); return false;" style="position: fixed; bottom: 30px; right: 30px; width: 70px; height: 70px; border-radius: 50%; background: var(--bg-dark); border: 2px solid var(--neon-cyan); box-shadow: 0 0 15px var(--neon-cyan); display: flex; align-items: center; justify-content: center; z-index: 1000; transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none;">
         <img src="assets/joe_avatar.png" alt="Joe AI" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-        <span style="position: absolute; top: -5px; right: -5px; background: red; color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 0.7rem; font-family: 'Orbitron', sans-serif; display: flex; justify-content: center; align-itemás: center; box-shadow: 0 0 5px red;">!</span>
+        <span style="position: absolute; top: -5px; right: -5px; background: red; color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 0.7rem; font-family: 'Orbitron', sans-serif; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 5px red;">!</span>
     </a>
     <style>
         .floating-joe-btn:hover {
@@ -1962,6 +1962,21 @@
             const nav = document.querySelector('.nav-links');
             if (nav.classList.contains('nav-open')) toggleMobileMenu();
         });
+    });
+
+    // ── Tech Hub Dropdown Toggle (touch-friendly) ──
+    function toggleTechHubDropdown(e) {
+        e.stopPropagation();
+        const dropdown = document.getElementById('techhub-dropdown');
+        const isOpen = dropdown.classList.toggle('dropdown-open');
+    }
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        const wrapper = document.getElementById('nav-dropdown-techhub');
+        if (wrapper && !wrapper.contains(e.target)) {
+            const dropdown = document.getElementById('techhub-dropdown');
+            if (dropdown) dropdown.classList.remove('dropdown-open');
+        }
     });
 
     // ── Dynamic Nav Descriptions Translation ──

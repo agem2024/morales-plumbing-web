@@ -8616,8 +8616,14 @@ function navigate(sectionId, pushState = true) {
     if (sections.length === 0) return;
     const overlay = document.getElementById("mobile-nav-overlay");
     const navLinks = document.querySelector(".nav-links");
+    const hamburger = document.getElementById("hamburger-btn");
     if (overlay) overlay.classList.remove("visible");
-    if (navLinks) navLinks.classList.remove("open");
+    if (navLinks) navLinks.classList.remove("nav-open");
+    if (hamburger) {
+        hamburger.classList.remove("is-open");
+        hamburger.setAttribute("aria-expanded", "false");
+    }
+    document.body.style.overflow = '';
 
     // Hide all sections
     sections.forEach(section => {
@@ -9140,6 +9146,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     } catch(e) {
         console.error(e);
+    }
+    
+    // Auto-trigger translation for all pages
+    if (typeof setLanguage === 'function') {
+        const currentLang = localStorage.getItem('morales_lang') || 'en';
+        setLanguage(currentLang);
     }
     
     // Initialize Portal UI
