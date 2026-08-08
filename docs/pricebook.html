@@ -58,14 +58,14 @@
         </div>
     </header>
 
-    <!-- UNIVERSE BÃ¡CKGROUND -->
+    <!-- UNIVERSE BáCKGROUND -->
     <canvas id="universe-canvas" data-universe-mode="warp"></canvas>
     <div class="universe-overlay u-variant-pricebook"></div>
     <script src="../universe.js"></script>
 
     <div class="pb-bg-overlay"></div>
 
-    <!-- NÃ¡VIGÃ¡TION & LÃ¡NG -->
+    <!-- NáVIGáTION & LáNG -->
     <div class="language-switcher" style="position: fixed; top: 1rem; right: 1rem; z-index: 2000; background: rgba(3, 7, 18, 0.8); padding: 0.5rem; border-radius: 50px; border: 1px solid rgba(255, 140, 0, 0.3); backdrop-filter: blur(10px); display: flex; gap: 0.5rem;">
         <a href="../index.html" style="color: var(--neon-orange); text-decoration: none; font-family: 'Orbitron', monospace; font-size: 0.8rem; padding: 0.4rem 1rem; border-right: 1px solid rgba(255, 140, 0, 0.2); text-shadow: 0 0 5px rgba(255, 140, 0, 0.3); transition: 0.3s;" data-i18n="back_home">HOME</a>
         <button class="lang-btn" data-lang="en" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;">ðŸ‡ºðŸ‡¸</button>
@@ -75,23 +75,17 @@
         <button class="lang-btn" data-lang="vi" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;">ðŸ‡»ðŸ‡³</button>
     </div>
 
-    <!-- PORTÃ¡DÃ¡ -->
-    <header class="pb-cover">
-        <div class="cover-logo-text graffiti-3d-metallic graffiti-3d-gold" style="font-size: 8rem;">ORION</div>
-        <h1 class="cover-title-text graffiti-3d-metallic" data-i18n="pricebook_title" style="font-size: 4.5rem;">PRICE BOOK v6.0 PRO</h1>
-        <div class="cover-badge" data-i18n="pb_hero_badge">Industry Standard Edition</div>
-        <p class="pb-hero-subtitle" data-i18n="pb_hero_subtitle">Professional Plumbing Engineering | Strategic Infrastructure Solutions</p>
-        <div class="pb-hero-powered" data-i18n="pb_hero_powered">Powered by NeKon Ã¡I aGent Consulting | ORION System</div>
-    </header>
+    <!-- PORTáDá -->
+    
 
         <nav class="pb-nav glass">
             <a href="#catalogo" class="pb-nav-btn">
                 <img src="../assets/comic_catalog.png" class="pb-nav-icon" alt="Catalog">
-                <span data-i18n="nav_catalog">CatÃ¡logo</span>
+                <span data-i18n="nav_catalog">Catálogo</span>
             </a>
             <a href="#metodologia" class="pb-nav-btn">
                 <img src="../assets/comic_ai.png" class="pb-nav-icon" alt="Methodology">
-                <span data-i18n="nav_methodology">MetodologÃ­a</span>
+                <span data-i18n="nav_methodology">Metodología</span>
             </a>
             <a href="#tiers" class="pb-nav-btn">
                 <img src="../assets/comic_tiers.png" class="pb-nav-icon" alt="Tiers">
@@ -107,19 +101,19 @@
             </a>
             <a href="#terminos" class="pb-nav-btn">
                 <img src="../assets/comic_terms.png" class="pb-nav-icon" alt="Terms">
-                <span data-i18n="nav_terms">TÃ©rminos</span>
+                <span data-i18n="nav_terms">Términos</span>
             </a>
             <a href="#garantias" class="pb-nav-btn">
                 <img src="../assets/comic_shield.png" class="pb-nav-icon" alt="Warranties">
-                <span data-i18n="nav_warranties">GarantÃ­as</span>
+                <span data-i18n="nav_warranties">Garantías</span>
             </a>
         </nav>
 
-    <!-- MÃ¡IN HERO / PROSE -->
+    <!-- MáIN HERO / PROSE -->
     <section class="pb-hero-section">
         <div class="hero-content">
             <h1 class="graffiti-3d-metallic" style="font-size: 4.5rem; margin-bottom: 1.5rem;" data-i18n="pb_hero_title">ORION Price Book v6.0 PRO</h1>
-            <p style="color: var(--neon-cyan); font-family: 'Orbitron', monospace; font-size: 1rem;" data-i18n="pb_hero_details">Industry Standard Edition Â· 15 Servicios Profesionales Â· San Jose, CÃ¡</p>
+            <p style="color: var(--neon-cyan); font-family: 'Orbitron', monospace; font-size: 1rem;" data-i18n="pb_hero_details">Industry Standard Edition Â· 15 Servicios Profesionales Â· San Jose, CA</p>
             
             <div class="prose-block glass">
                 <p data-i18n="pb_prose_p1"></p>
@@ -128,17 +122,17 @@
             </div>
 
             <div class="pb-search-box glass">
-                <input type="text" id="serviceSearch" data-i18n="pb_search_placeholder" placeholder="Buscar servicio (ej. Water Heater, Drain, IÃ¡ Mapping...)" oninput="filterServices()">
+                <input type="text" id="serviceSearch" data-i18n="pb_search_placeholder" placeholder="Buscar servicio (ej. Water Heater, Drain, Iá Mapping...)" oninput="filterServices()">
                 <button class="pb-search-btn">ðŸ”</button>
             </div>
         </div>
     </section>
 
-    <!-- CÃ¡TEGORY FILTERS -->
+    <!-- CATEGORY FILTERS -->
     <div class="pb-category-filters">
         <button class="pb-filter-btn active" onclick="filterByCategory('all')" data-i18n="cat_all">Todos</button>
-        <button class="pb-filter-btn" onclick="filterByCategory('Diagnostic')" data-i18n="cat_diagnostic">DiagnÃ³stico</button>
-        <button class="pb-filter-btn" onclick="filterByCategory('Engineering')" data-i18n="cat_engineering">IngenierÃ­a</button>
+        <button class="pb-filter-btn" onclick="filterByCategory('Diagnostic')" data-i18n="cat_diagnostic">Diagnóstico</button>
+        <button class="pb-filter-btn" onclick="filterByCategory('Engineering')" data-i18n="cat_engineering">Ingeniería</button>
         <button class="pb-filter-btn" onclick="filterByCategory('Eco')" data-i18n="cat_eco">Eco-Sostenible</button>
         <button class="pb-filter-btn" onclick="filterByCategory('Safety')" data-i18n="cat_safety">Seguridad</button>
     </div>
@@ -150,12 +144,12 @@
         </div>
     </section>
 
-    <!-- Ã¡DDITIONÃ¡L CONTENT SECTIONS -->
+    <!-- áDDITIONáL CONTENT SECTIONS -->
     <section class="pb-info-section" id="metodologia">
         <div class="glass">
             <div class="info-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
                 <img src="../assets/comic_ai.png" alt="Methodology" style="width: 100px; height: 100px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
-                <h2 data-i18n="pb_method_title" class="graffiti-3d-metallic">MetodologÃ­a de CÃ¡lculo</h2>
+                <h2 data-i18n="pb_method_title" class="graffiti-3d-metallic">Metodología de CAlculo</h2>
             </div>
             <p data-i18n="pb_method_p1"></p>
             <p data-i18n="pb_method_p2"></p>
@@ -188,7 +182,7 @@
         <div class="glass">
             <div class="info-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
                 <img src="../assets/comic_eco.png" alt="Promotions" style="width: 100px; height: 100px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
-                <h2 data-i18n="pb_promotions_title" class="graffiti-3d-metallic">Promociones Ã¡ctivas</h2>
+                <h2 data-i18n="pb_promotions_title" class="graffiti-3d-metallic">Promociones áctivas</h2>
             </div>
             <p data-i18n="pb_promo_p1"></p>
             <p data-i18n="pb_promo_p2"></p>
@@ -199,7 +193,7 @@
         <div class="glass">
             <div class="info-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
                 <img src="../assets/comic_terms.png" alt="Terms" style="width: 100px; height: 100px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
-                <h2 data-i18n="pb_terms_title" class="graffiti-3d-metallic">TÃ©rminos y Condiciones</h2>
+                <h2 data-i18n="pb_terms_title" class="graffiti-3d-metallic">Términos y Condiciones</h2>
             </div>
             <p data-i18n="pb_terms_p1"></p>
             <p data-i18n="pb_terms_p2"></p>
@@ -210,7 +204,7 @@
         <div class="glass">
             <div class="info-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
                 <img src="../assets/comic_shield.png" alt="Warranties" style="width: 100px; height: 100px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
-                <h2 data-i18n="pb_warranties_title" class="graffiti-3d-metallic">GarantÃ­as y Respaldo</h2>
+                <h2 data-i18n="pb_warranties_title" class="graffiti-3d-metallic">Garantías y Respaldo</h2>
             </div>
             <p data-i18n="pb_warranty_p1"></p>
             <p data-i18n="pb_warranty_p2"></p>
@@ -222,8 +216,8 @@
     <footer class="site-footer">
         <div class="footer-nav">
             <a href="../index.html" data-i18n="nav_nexus">NEXUS</a>
-            <a href="propuesta_estrategica.html" data-i18n="nav_framework">ESTRÃ¡TEGIÃ¡</a>
-            <a href="legal.html" data-i18n="nav_legal">LEGÃ¡L</a>
+            <a href="propuesta_estrategica.html" data-i18n="nav_framework">ESTRáTEGIá</a>
+            <a href="legal.html" data-i18n="nav_legal">LEGáL</a>
         </div>
         <p class="footer-copyright-main" data-i18n="footer_rights">
             Â© 2026 Morales Plumbing. Todos los derechos reservados.
@@ -233,21 +227,21 @@
     <script src="../app.js"></script>
     <script>
         const services = [
-    { id: 1, code: "OR-DIÃ¡G-001", nameKey: "pb_svc_1_name", userDescKey: "pb_svc_1_user", techDescKey: "pb_svc_1_tech", category: "Diagnostic", image: "../assets/icon_plumber_ai.png" },
+    { id: 1, code: "OR-DIáG-001", nameKey: "pb_svc_1_name", userDescKey: "pb_svc_1_user", techDescKey: "pb_svc_1_tech", category: "Diagnostic", image: "../assets/icon_plumber_ai.png" },
     { id: 2, code: "OR-ENG-002", nameKey: "pb_svc_2_name", userDescKey: "pb_svc_2_user", techDescKey: "pb_svc_2_tech", category: "Engineering", image: "../assets/comic_copper.png" },
     { id: 3, code: "OR-ECO-003", nameKey: "pb_svc_3_name", userDescKey: "pb_svc_3_user", techDescKey: "pb_svc_3_tech", category: "Eco", image: "../assets/comic_treatment.png" },
-    { id: 4, code: "OR-SÃ¡FE-004", nameKey: "pb_svc_4_name", userDescKey: "pb_svc_4_user", techDescKey: "pb_svc_4_tech", category: "Safety", image: "../assets/icon_plumber_sat.png" },
-    { id: 5, code: "OR-DIÃ¡G-005", nameKey: "pb_svc_5_name", userDescKey: "pb_svc_5_user", techDescKey: "pb_svc_5_tech", category: "Diagnostic", image: "../assets/comic_septic.png" },
+    { id: 4, code: "OR-SáFE-004", nameKey: "pb_svc_4_name", userDescKey: "pb_svc_4_user", techDescKey: "pb_svc_4_tech", category: "Safety", image: "../assets/icon_plumber_sat.png" },
+    { id: 5, code: "OR-DIáG-005", nameKey: "pb_svc_5_name", userDescKey: "pb_svc_5_user", techDescKey: "pb_svc_5_tech", category: "Diagnostic", image: "../assets/comic_septic.png" },
     { id: 6, code: "OR-ENG-006", nameKey: "pb_svc_6_name", userDescKey: "pb_svc_6_user", techDescKey: "pb_svc_6_tech", category: "Engineering", image: "../assets/comic_construction.png" },
     { id: 7, code: "OR-ECO-007", nameKey: "pb_svc_7_name", userDescKey: "pb_svc_7_user", techDescKey: "pb_svc_7_tech", category: "Eco", image: "../assets/comic_heaters.png" },
-    { id: 8, code: "OR-SÃ¡FE-008", nameKey: "pb_svc_8_name", userDescKey: "pb_svc_8_user", techDescKey: "pb_svc_8_tech", category: "Safety", image: "../assets/comic_expansion.png" },
-    { id: 9, code: "OR-DIÃ¡G-009", nameKey: "pb_svc_9_name", userDescKey: "pb_svc_9_user", techDescKey: "pb_svc_9_tech", category: "Diagnostic", image: "../assets/icon_plumber_biz.png" },
+    { id: 8, code: "OR-SáFE-008", nameKey: "pb_svc_8_name", userDescKey: "pb_svc_8_user", techDescKey: "pb_svc_8_tech", category: "Safety", image: "../assets/comic_expansion.png" },
+    { id: 9, code: "OR-DIáG-009", nameKey: "pb_svc_9_name", userDescKey: "pb_svc_9_user", techDescKey: "pb_svc_9_tech", category: "Diagnostic", image: "../assets/icon_plumber_biz.png" },
     { id: 10, code: "OR-ENG-010", nameKey: "pb_svc_10_name", userDescKey: "pb_svc_10_user", techDescKey: "pb_svc_10_tech", category: "Engineering", image: "../assets/icon_plumber_eco.png" },
     { id: 11, code: "OR-ECO-011", nameKey: "pb_svc_11_name", userDescKey: "pb_svc_11_user", techDescKey: "pb_svc_11_tech", category: "Eco", image: "../assets/service_tankless.png" },
-    { id: 12, code: "OR-SÃ¡FE-012", nameKey: "pb_svc_12_name", userDescKey: "pb_svc_12_user", techDescKey: "pb_svc_12_tech", category: "Safety", image: "../assets/comic_shield.png" },
+    { id: 12, code: "OR-SáFE-012", nameKey: "pb_svc_12_name", userDescKey: "pb_svc_12_user", techDescKey: "pb_svc_12_tech", category: "Safety", image: "../assets/comic_shield.png" },
     { id: 13, code: "OR-ENG-013", nameKey: "pb_svc_13_name", userDescKey: "pb_svc_13_user", techDescKey: "pb_svc_13_tech", category: "Engineering", image: "../assets/comic_tiers.png" },
     { id: 14, code: "OR-ECO-014", nameKey: "pb_svc_14_name", userDescKey: "pb_svc_14_user", techDescKey: "pb_svc_14_tech", category: "Eco", image: "../assets/comic_harvest.png" },
-    { id: 15, code: "OR-SÃ¡FE-015", nameKey: "pb_svc_15_name", userDescKey: "pb_svc_15_user", techDescKey: "pb_svc_15_tech", category: "Safety", image: "../assets/comic_terms.png" }
+    { id: 15, code: "OR-SáFE-015", nameKey: "pb_svc_15_name", userDescKey: "pb_svc_15_user", techDescKey: "pb_svc_15_tech", category: "Safety", image: "../assets/comic_terms.png" }
 ].map(s => {
     if (typeof PB_SERVICE_PRICES !== 'undefined' && PB_SERVICE_PRICES['svc_' + s.id]) {
         const formatP = p => typeof p === 'string' && p.includes('-') ? '$' + p.split('-').map(x=>x.trim()).join(' - $') : '$' + p.toLocaleString();
@@ -280,7 +274,7 @@
                             </div>
                             
                             <div class="pb-tech-detail" style="margin-bottom: 1.2rem; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; border-left: 3px solid var(--neon-orange);">
-                                <h4 style="color: var(--neon-orange); margin-bottom: 0.5rem;"><i class="fas fa-tools"></i> Detalle TÃ©cnico (IngenierÃ­a)</h4>
+                                <h4 style="color: var(--neon-orange); margin-bottom: 0.5rem;"><i class="fas fa-tools"></i> Detalle Técnico (Ingeniería)</h4>
                                 <p class="pb-service-tech" data-i18n="svc_${s.id}_p2" style="font-size: 0.9em; line-height: 1.4; color: #b0c4de;"></p>
                             </div>
 
@@ -290,7 +284,7 @@
                                     <span class="pb-tier-price">${s.price_good}</span>
                                 </summary>
                                 <div class="pb-tier-content">
-                                    <p><strong>JustificaciÃ³n:</strong> <span data-i18n="pb_svc_${s.id}_good_just"></span></p>
+                                    <p><strong>Justificación:</strong> <span data-i18n="pb_svc_${s.id}_good_just"></span></p>
                                     <p><strong>Materiales:</strong> <span data-i18n="pb_svc_${s.id}_good_mat"></span></p>
                                     <p><strong>Herramientas:</strong> <span data-i18n="pb_svc_${s.id}_good_tools"></span></p>
                                     <p><strong>Tiempo Est.:</strong> <span data-i18n="pb_svc_${s.id}_good_time"></span></p>
@@ -303,7 +297,7 @@
                                     <span class="pb-tier-price">${s.price_better}</span>
                                 </summary>
                                 <div class="pb-tier-content">
-                                    <p><strong>JustificaciÃ³n:</strong> <span data-i18n="pb_svc_${s.id}_better_just"></span></p>
+                                    <p><strong>Justificación:</strong> <span data-i18n="pb_svc_${s.id}_better_just"></span></p>
                                     <p><strong>Materiales:</strong> <span data-i18n="pb_svc_${s.id}_better_mat"></span></p>
                                     <p><strong>Herramientas:</strong> <span data-i18n="pb_svc_${s.id}_better_tools"></span></p>
                                     <p><strong>Tiempo Est.:</strong> <span data-i18n="pb_svc_${s.id}_better_time"></span></p>
@@ -316,15 +310,15 @@
                                     <span class="pb-tier-price">${s.price_best}</span>
                                 </summary>
                                 <div class="pb-tier-content">
-                                    <p><strong>JustificaciÃ³n:</strong> <span data-i18n="pb_svc_${s.id}_best_just"></span></p>
+                                    <p><strong>Justificación:</strong> <span data-i18n="pb_svc_${s.id}_best_just"></span></p>
                                     <p><strong>Materiales:</strong> <span data-i18n="pb_svc_${s.id}_best_mat"></span></p>
                                     <p><strong>Herramientas:</strong> <span data-i18n="pb_svc_${s.id}_best_tools"></span></p>
                                     <p><strong>Tiempo Est.:</strong> <span data-i18n="pb_svc_${s.id}_best_time"></span></p>
                                 </div>
                             </details>
 
-                            <a href="service.htmlid=${s.id}" data-i18n="pb_btn_details" style="display: inline-block; width: 100%; text-align: center; margin-top: 1.5rem; padding: 12px; background: rgba(0, 245, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='0 0 15px rgba(0,245,255,0.3)';" onmouseout="this.style.background='rgba(0, 245, 255, 0.1)'; this.style.boxShadow='none';">Ver Detalle TÃ©cnico y Comercial</a>
-                            <a href="proceso_svc_${s.id}_cliente.html" data-i18n="pb_btn_comic_repipe" style="display: inline-block; width: 100%; text-align: center; margin-top: 0.5rem; padding: 12px; background: rgba(255, 140, 0, 0.1); border: 1px solid var(--neon-orange); color: var(--neon-orange); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(255, 140, 0, 0.2)'; this.style.boxShadow='0 0 15px rgba(255,140,0,0.3)';" onmouseout="this.style.background='rgba(255, 140, 0, 0.1)'; this.style.boxShadow='none';">Ver GuÃ­a Ilustrada Paso a Paso</a></div>
+                            <a href="service.htmlid=${s.id}" data-i18n="pb_btn_details" style="display: inline-block; width: 100%; text-align: center; margin-top: 1.5rem; padding: 12px; background: rgba(0, 245, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='0 0 15px rgba(0,245,255,0.3)';" onmouseout="this.style.background='rgba(0, 245, 255, 0.1)'; this.style.boxShadow='none';">Ver Detalle Técnico y Comercial</a>
+                            <a href="proceso_svc_${s.id}_cliente.html" data-i18n="pb_btn_comic_repipe" style="display: inline-block; width: 100%; text-align: center; margin-top: 0.5rem; padding: 12px; background: rgba(255, 140, 0, 0.1); border: 1px solid var(--neon-orange); color: var(--neon-orange); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(255, 140, 0, 0.2)'; this.style.boxShadow='0 0 15px rgba(255,140,0,0.3)';" onmouseout="this.style.background='rgba(255, 140, 0, 0.1)'; this.style.boxShadow='none';">Ver Guía Ilustrada Paso a Paso</a></div>
                     </div>
                 </div>
             `).join('');
@@ -338,10 +332,10 @@
 
         function filterByCategory(cat) {
             activeCategory = cat;
-            const buttons = document.querySelectorÃ¡ll('.pb-filter-btn');
+            const buttons = document.querySelectoráll('.pb-filter-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.getÃ¡ttribute('onclick').includes(cat)) btn.classList.add('active');
+                if (btn.getáttribute('onclick').includes(cat)) btn.classList.add('active');
             });
             filterServices();
         }
@@ -363,9 +357,9 @@
             renderServices(services);
             
             // Initialize language switching buttons in pricebook
-            document.querySelectorÃ¡ll('.language-switcher .lang-btn').forEach(btn => {
+            document.querySelectoráll('.language-switcher .lang-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const lang = btn.getÃ¡ttribute('data-lang');
+                    const lang = btn.getáttribute('data-lang');
                     if(window.setLanguage) {
                         window.setLanguage(lang);
                         renderServices(services); // Re-render to update i18n attributes

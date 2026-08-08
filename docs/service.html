@@ -42,7 +42,7 @@
         </div>
     </header>
 
-    <!-- UNIVERSE BÃ¡CKGROUND -->
+    <!-- UNIVERSE BáCKGROUND -->
     <canvas id="universe-canvas" data-universe-mode="nebula"></canvas>
     <div class="universe-overlay u-variant-service"></div>
     <script src="../universe.js"></script>
@@ -52,16 +52,7 @@
     <div class="layer layer-2"></div>
     <div class="layer layer-3"></div>
 
-    <header>
-        <div class="logo">ORION <span style="font-weight: 300;">TECH</span></div>
-        <div class="lang-switch">
-            <button onclick="setLanguage('en')">EN</button>
-            <button onclick="setLanguage('es')">ES</button>
-            <button onclick="setLanguage('zh')">ä¸­æ–‡</button>
-            <button onclick="setLanguage('tl')">TL</button>
-            <button onclick="setLanguage('vi')">VI</button>
-        </div>
-    </header>
+    
 
     <div class="service-detail-container animate-in">
         <div class="service-header">
@@ -96,20 +87,20 @@
         let sid = urlParams.get('id') || 1;
         
         const codes = {
-            1: "OR-DIÃ¡G-001", 2: "OR-REP-002", 3: "OR-FIL-003", 4: "OR-IOT-004", 5: "OR-CÃ¡M-005",
-            6: "OR-SWR-006", 7: "OR-HTR-007", 8: "OR-PRV-008", 9: "OR-EMG-009", 10: "OR-CÃ¡D-010",
+            1: "OR-DIáG-001", 2: "OR-REP-002", 3: "OR-FIL-003", 4: "OR-IOT-004", 5: "OR-CAM-005",
+            6: "OR-SWR-006", 7: "OR-HTR-007", 8: "OR-PRV-008", 9: "OR-EMG-009", 10: "OR-CAD-010",
             11: "OR-TNK-011", 12: "OR-BFL-012", 13: "OR-FIX-013", 14: "OR-CHM-014", 15: "OR-JET-015"
         };
         
         document.getElementById('dyn-code').innerText = codes[sid] || "OR-XXX";
         document.getElementById('dyn-img').src = "../assets/images/service_" + sid + ".png";
         
-        document.getElementById('dyn-title').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_title');
-        document.getElementById('dyn-p1').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_p1');
-        document.getElementById('dyn-p2').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_p2');
-        document.getElementById('dyn-good').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_good');
-        document.getElementById('dyn-better').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_better');
-        document.getElementById('dyn-best').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_best');
+        document.getElementById('dyn-title').setáttribute('data-i18n', 'svc_' + sid + '_title');
+        document.getElementById('dyn-p1').setáttribute('data-i18n', 'svc_' + sid + '_p1');
+        document.getElementById('dyn-p2').setáttribute('data-i18n', 'svc_' + sid + '_p2');
+        document.getElementById('dyn-good').setáttribute('data-i18n', 'svc_' + sid + '_good');
+        document.getElementById('dyn-better').setáttribute('data-i18n', 'svc_' + sid + '_better');
+        document.getElementById('dyn-best').setáttribute('data-i18n', 'svc_' + sid + '_best');
         
         if (typeof setLanguage === 'function') {
             setLanguage(localStorage.getItem('morales_lang') || 'en');
