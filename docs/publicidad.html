@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicidad y Promociones - Morales Plumbing</title>
+    <!-- Google tag (gtag.js) for Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-939YTT7Y4D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-939YTT7Y4D');
+    </script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0a1128;
+            --secondary: #1c2541;
+            --cyan: #00f5ff;
+            --gold: #d4af37;
+            --text: #f0f0f0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px;
+            color: var(--cyan);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--gold);
+            margin: 20px 0;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        .lang-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0 40px;
+        }
+        
+        .lang-btn {
+            background: rgba(28, 37, 65, 0.7);
+            border: 1px solid var(--cyan);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--cyan);
+            color: var(--primary);
+            box-shadow: 0 0 10px var(--cyan);
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 0 20px 50px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .media-item {
+            width: 100%;
+            background: rgba(28, 37, 65, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+        
+        .media-item:hover {
+            transform: scale(1.02);
+            border-color: var(--gold);
+        }
+
+        .media-item img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+        
+        .empty-state {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MORALES PLUMBING OFFICIAL HEADER -->
+    <header style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 4px solid #D4AF37; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: relative; z-index: 1000;">
+        <div style="display: flex; align-items: center;">
+            <a href="../index.html">
+                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 60px; width: auto;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
+            </a>
+        </div>
+        <div style="text-align: right; color: #fff;">
+            <h2 style="margin: 0; font-size: 1.2rem; color: #D4AF37; font-weight: bold;">MORALES PLUMBING</h2>
+            <p style="margin: 3px 0 0; font-size: 0.9rem;">AI-INTEGRATED SERVICES</p>
+            <p style="margin: 3px 0 0; font-size: 0.8rem; color: #aaa;">Lic. C-36 #1156542 | San Jose, CA</p>
+        </div>
+    </header>
+
+
+    <a href="multimedia.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver a Multimedia</a>
+
+    <h2 class="section-title">Publicidad y Promociones</h2>
+    
+    <div class="lang-filter">
+        <button class="lang-btn active" onclick="filterLanguage('es')">Español</button>
+        <button class="lang-btn" onclick="filterLanguage('en')">English</button>
+    </div>
+
+    <div class="gallery-container" id="gallery">
+        <!-- Content will be injected here via JS -->
+    </div>
+
+    <script>
+        let allData = [];
+        
+        async function loadMedia() {
+            try {
+                // Fetch dynamic json data
+                const response = await fetch('../assets/publicidad/data.json');
+                if(!response.ok) throw new Error("No data.json");
+                allData = await response.json();
+                
+                // Set default language from global settings or default to ES
+                const currentLang = localStorage.getItem('selectedLanguage') || 'es';
+                
+                // Activate the correct button
+                document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+                const targetBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent.toLowerCase().includes(currentLang === 'en' ? 'english' : 'español'));
+                if(targetBtn) targetBtn.classList.add('active');
+                
+                renderMedia(currentLang);
+            } catch(e) {
+                document.getElementById('gallery').innerHTML = "<div class='empty-state'>Aún no hay imágenes publicadas o ocurrió un error al cargar los datos.</div>";
+                console.error(e);
+            }
+        }
+        
+        function filterLanguage(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderMedia(lang);
+        }
+        
+        function renderMedia(lang) {
+            const gallery = document.getElementById('gallery');
+            gallery.innerHTML = '';
+            
+            const filtered = allData.filter(item => item.lang === lang || lang === 'all');
+            
+            if(filtered.length === 0) {
+                gallery.innerHTML = "<div class='empty-state'>No hay contenido disponible para este idioma.</div>";
+                return;
+            }
+            
+            filtered.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'media-item';
+                div.innerHTML = `<img src="${item.path}" alt="${item.filename}" loading="lazy">`;
+                gallery.appendChild(div);
+            });
+        }
+        
+        // Listen to global app.js changes just in case
+        window.addEventListener('languageChanged', (e) => {
+            if(e.detail) {
+                const targetBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent.toLowerCase().includes(e.detail === 'en' ? 'english' : 'español'));
+                if(targetBtn) {
+                    targetBtn.click();
+                } else {
+                    renderMedia(e.detail);
+                }
+            }
+        });
+
+        loadMedia();
+    </script>
+
+    <!-- MORALES PLUMBING OFFICIAL FOOTER -->
+    <footer style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-top: 4px solid #D4AF37; padding: 30px 20px; text-align: center; font-family: 'Inter', sans-serif; color: #fff; margin-top: 50px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h3 style="color: #D4AF37; margin-bottom: 15px; font-weight: bold;">MORALES PLUMBING</h3>
+            <p style="margin: 5px 0; font-size: 0.9rem;">San Jose, CA | Lic. C-36 #1156542</p>
+            <p style="margin: 5px 0; font-size: 0.9rem;">
+                <a href="tel:+16692134422" style="color: #00f5ff; text-decoration: none;">(669) 213-4422</a> | 
+                <a href="mailto:moralesplumbing026@gmail.com" style="color: #00f5ff; text-decoration: none;">moralesplumbing026@gmail.com</a>
+            </p>
+            <p style="margin: 20px 0 0; font-size: 0.8rem; color: #888;">
+                &copy; 2026 Morales Plumbing. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
+

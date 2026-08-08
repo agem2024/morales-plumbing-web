@@ -1,0 +1,253 @@
+const fs = require('fs');
+
+const replacements = {
+    "en": {
+        "promo_tt_title": "Tank to Tankless Upgrade",
+        "promo_tt_desc": "Upgrade from your old traditional tank to an endless hot water Navien Tankless system. Save space and cut your gas bill.",
+        "promo_tt_why_title": "Why Go Tankless?",
+        "promo_tt_why_desc": "Endless hot water on demand, space-saving wall mount design, and energy efficiency that pays for itself over time.",
+        "promo_tt_tier_title": "Tank to Tankless Packages",
+        "promo_tt_good_title": "GOOD (Standard)",
+        "promo_tt_good_price": "$5,200",
+        "promo_tt_good_desc": "Navien NPE-240A2 (199K BTU). Standard tank-to-tankless retrofit.",
+        "promo_tt_better_title": "BETTER (Premium)",
+        "promo_tt_better_price": "$6,800",
+        "promo_tt_better_desc": "Navien NPE-240A2. Includes NaviCirc Recirculation and Scale Prevention Filter.",
+        "promo_tt_best_title": "BEST (Ultra-Premium)",
+        "promo_tt_best_price": "$8,500",
+        "promo_tt_best_desc": "Navien NPE-240A2. Includes Dedicated Gas Line Upgrade & NaviLink WiFi Control.",
+        "promo_tt_good_li1": "Navien NPE-240A2 Condensing Unit.",
+        "promo_tt_good_li2": "New PVC Venting (Wall/Roof).",
+        "promo_tt_good_li3": "Standard gas line retrofit.",
+        "promo_tt_good_li4": "1-Year Labor Warranty.",
+        "promo_tt_better_li1": "Everything in GOOD, plus:",
+        "promo_tt_better_li2": "NaviCirc Recirculation Activation.",
+        "promo_tt_better_li3": "Scale Prevention Water Filter.",
+        "promo_tt_better_li4": "Isolation Valve Kit.",
+        "promo_tt_better_li5": "3-Year Labor Warranty.",
+        "promo_tt_best_li1": "Everything in BETTER, plus:",
+        "promo_tt_best_li2": "Dedicated Gas Line Upgrade (if required).",
+        "promo_tt_best_li3": "NaviLink WiFi Smart Control module.",
+        "promo_tt_best_li4": "Whole-home Pressure Regulating Valve (PRV).",
+        "promo_tt_best_li5": "Lifetime Labor Warranty.",
+        "promo_tt_comic_title": "Installation Guide (Tank to Tankless)",
+        "promo_tt_good_comic_1": "1. Drain and safely remove old heavy tank.",
+        "promo_tt_good_comic_2": "2. Reroute water and gas lines to new wall mount.",
+        "promo_tt_good_comic_3": "3. Install high-efficiency PVC venting.",
+        "promo_tt_good_comic_4": "4. Endless hot water system activated.",
+        "promo_tt_better_comic_1": "1. Navien Premium installation process.",
+        "promo_tt_better_comic_2": "2. Connect Scale Prevention filter to protect unit.",
+        "promo_tt_better_comic_3": "3. Activate NaviCirc for faster hot water delivery.",
+        "promo_tt_better_comic_4": "4. Maximum efficiency and prolonged unit lifespan.",
+        "promo_tt_best_comic_1": "1. Evaluate gas pressure and upgrade trunk line.",
+        "promo_tt_best_comic_2": "2. Install whole-home PRV for pipe protection.",
+        "promo_tt_best_comic_3": "3. Connect NaviLink module to home WiFi network.",
+        "promo_tt_best_comic_4": "4. Ultimate smart control and lifetime peace of mind."
+    },
+    "es": {
+        "promo_tt_title": "Actualización: Tanque a Tankless",
+        "promo_tt_desc": "Cambia tu viejo tanque por un sistema Navien Tankless para tener agua caliente infinita, ahorrar espacio y reducir el recibo de gas.",
+        "promo_tt_why_title": "¿Por qué cambiar a Tankless?",
+        "promo_tt_why_desc": "Agua caliente infinita a demanda, diseño de pared que ahorra espacio y eficiencia energética.",
+        "promo_tt_tier_title": "Paquetes de Instalación Tankless",
+        "promo_tt_good_title": "GOOD (Estándar)",
+        "promo_tt_good_price": "$5,200",
+        "promo_tt_good_desc": "Navien NPE-240A2 (199K BTU). Adaptación estándar de tanque a tankless.",
+        "promo_tt_better_title": "BETTER (Premium)",
+        "promo_tt_better_price": "$6,800",
+        "promo_tt_better_desc": "Navien NPE-240A2. Incluye recirculación NaviCirc y filtro anticalcáreo.",
+        "promo_tt_best_title": "BEST (Ultra-Premium)",
+        "promo_tt_best_price": "$8,500",
+        "promo_tt_best_desc": "Navien NPE-240A2. Incluye mejora de línea de gas dedicada y control WiFi NaviLink.",
+        "promo_tt_good_li1": "Unidad Condensadora Navien NPE-240A2.",
+        "promo_tt_good_li2": "Nueva Ventilación de PVC (Pared/Techo).",
+        "promo_tt_good_li3": "Adaptación estándar de línea de gas.",
+        "promo_tt_good_li4": "1 Año de Garantía en Mano de Obra.",
+        "promo_tt_better_li1": "Todo lo de GOOD, más:",
+        "promo_tt_better_li2": "Activación de Recirculación NaviCirc.",
+        "promo_tt_better_li3": "Filtro de Agua Anticalcáreo.",
+        "promo_tt_better_li4": "Kit de Válvulas de Aislamiento.",
+        "promo_tt_better_li5": "3 Años de Garantía en Mano de Obra.",
+        "promo_tt_best_li1": "Todo lo de BETTER, más:",
+        "promo_tt_best_li2": "Mejora de línea de gas dedicada (si se requiere).",
+        "promo_tt_best_li3": "Módulo de Control Inteligente WiFi NaviLink.",
+        "promo_tt_best_li4": "Válvula Reguladora de Presión (PRV) principal.",
+        "promo_tt_best_li5": "Garantía de por Vida en Mano de Obra.",
+        "promo_tt_comic_title": "Guía de Instalación (Tanque a Tankless)",
+        "promo_tt_good_comic_1": "1. Drenar y retirar de forma segura el pesado tanque viejo.",
+        "promo_tt_good_comic_2": "2. Reubicar líneas de agua y gas hacia el montaje en pared.",
+        "promo_tt_good_comic_3": "3. Instalar ventilación de PVC de alta eficiencia.",
+        "promo_tt_good_comic_4": "4. Sistema de agua caliente infinita activado.",
+        "promo_tt_better_comic_1": "1. Proceso de instalación Premium de Navien.",
+        "promo_tt_better_comic_2": "2. Conectar filtro Anticalcáreo para proteger la unidad.",
+        "promo_tt_better_comic_3": "3. Activar NaviCirc para agua caliente más rápida.",
+        "promo_tt_better_comic_4": "4. Máxima eficiencia y vida útil prolongada del equipo.",
+        "promo_tt_best_comic_1": "1. Evaluar presión de gas y mejorar la línea principal.",
+        "promo_tt_best_comic_2": "2. Instalar PRV para toda la casa protegiendo las tuberías.",
+        "promo_tt_best_comic_3": "3. Conectar el módulo NaviLink a la red WiFi del hogar.",
+        "promo_tt_best_comic_4": "4. Máximo control inteligente y tranquilidad de por vida."
+    },
+    "zh": {
+        "promo_tt_title": "有水箱到无水箱升级",
+        "promo_tt_desc": "将旧式传统水箱升级为无限热水的 Navien 无水箱系统。节省空间并削减燃气费。",
+        "promo_tt_why_title": "为什么选择无水箱？",
+        "promo_tt_why_desc": "即需即用的无限热水、节省空间的壁挂式设计，以及长远来看能回本的能源效率。",
+        "promo_tt_tier_title": "有水箱到无水箱套餐",
+        "promo_tt_good_title": "GOOD (标准)",
+        "promo_tt_good_price": "$5,200",
+        "promo_tt_good_desc": "Navien NPE-240A2 (199K BTU)。标准的有水箱到无水箱改装。",
+        "promo_tt_better_title": "BETTER (高级)",
+        "promo_tt_better_price": "$6,800",
+        "promo_tt_better_desc": "Navien NPE-240A2。包括 NaviCirc 循环和防垢过滤器。",
+        "promo_tt_best_title": "BEST (超高级)",
+        "promo_tt_best_price": "$8,500",
+        "promo_tt_best_desc": "Navien NPE-240A2。包括专用燃气管道升级和 NaviLink WiFi 控制。",
+        "promo_tt_good_li1": "Navien NPE-240A2 冷凝机组。",
+        "promo_tt_good_li2": "新型 PVC 通风（墙壁/屋顶）。",
+        "promo_tt_good_li3": "标准燃气管道改造。",
+        "promo_tt_good_li4": "1年人工保修。",
+        "promo_tt_better_li1": "包括GOOD中的所有内容，加上：",
+        "promo_tt_better_li2": "NaviCirc 循环激活。",
+        "promo_tt_better_li3": "防垢水过滤器。",
+        "promo_tt_better_li4": "隔离阀套件。",
+        "promo_tt_better_li5": "3年人工保修。",
+        "promo_tt_best_li1": "包括BETTER中的所有内容，加上：",
+        "promo_tt_best_li2": "专用燃气管道升级（如果需要）。",
+        "promo_tt_best_li3": "NaviLink WiFi 智能控制模块。",
+        "promo_tt_best_li4": "全屋水压调节阀（PRV）。",
+        "promo_tt_best_li5": "终身人工保修。",
+        "promo_tt_comic_title": "安装指南（有水箱到无水箱）",
+        "promo_tt_good_comic_1": "1. 排空并安全移除笨重的旧水箱。",
+        "promo_tt_good_comic_2": "2. 重新连接水管和燃气管到新的壁挂式位置。",
+        "promo_tt_good_comic_3": "3. 安装高效的 PVC 通风系统。",
+        "promo_tt_good_comic_4": "4. 无限热水系统启动。",
+        "promo_tt_better_comic_1": "1. Navien 高级安装流程。",
+        "promo_tt_better_comic_2": "2. 连接防垢过滤器以保护机组。",
+        "promo_tt_better_comic_3": "3. 激活 NaviCirc 以便更快提供热水。",
+        "promo_tt_better_comic_4": "4. 达到最高效率并延长设备使用寿命。",
+        "promo_tt_best_comic_1": "1. 评估燃气压力并升级主干管道。",
+        "promo_tt_best_comic_2": "2. 安装全屋 PRV 保护管道。",
+        "promo_tt_best_comic_3": "3. 将 NaviLink 模块连接到家庭 WiFi 网络。",
+        "promo_tt_best_comic_4": "4. 终极智能控制和终身安心体验。"
+    },
+    "tl": {
+        "promo_tt_title": "Tank to Tankless Upgrade",
+        "promo_tt_desc": "Mag-upgrade mula sa lumang tanke papunta sa walang katapusang hot water Navien Tankless system. Makatipid ng espasyo at pababain ang gas bill.",
+        "promo_tt_why_title": "Bakit Mag-Tankless?",
+        "promo_tt_why_desc": "Walang katapusang hot water on demand, space-saving wall mount design, at energy efficiency na bawi ang gastos.",
+        "promo_tt_tier_title": "Tank to Tankless Packages",
+        "promo_tt_good_title": "GOOD (Standard)",
+        "promo_tt_good_price": "$5,200",
+        "promo_tt_good_desc": "Navien NPE-240A2 (199K BTU). Standard na tank-to-tankless retrofit.",
+        "promo_tt_better_title": "BETTER (Premium)",
+        "promo_tt_better_price": "$6,800",
+        "promo_tt_better_desc": "Navien NPE-240A2. Kasama ang NaviCirc Recirculation at Scale Prevention Filter.",
+        "promo_tt_best_title": "BEST (Ultra-Premium)",
+        "promo_tt_best_price": "$8,500",
+        "promo_tt_best_desc": "Navien NPE-240A2. Kasama ang Dedicated Gas Line Upgrade & NaviLink WiFi Control.",
+        "promo_tt_good_li1": "Navien NPE-240A2 Condensing Unit.",
+        "promo_tt_good_li2": "Bagong PVC Venting (Wall/Roof).",
+        "promo_tt_good_li3": "Standard na gas line retrofit.",
+        "promo_tt_good_li4": "1-Year Labor Warranty.",
+        "promo_tt_better_li1": "Lahat ng nasa GOOD, at higit pa:",
+        "promo_tt_better_li2": "NaviCirc Recirculation Activation.",
+        "promo_tt_better_li3": "Scale Prevention Water Filter.",
+        "promo_tt_better_li4": "Isolation Valve Kit.",
+        "promo_tt_better_li5": "3-Year Labor Warranty.",
+        "promo_tt_best_li1": "Lahat ng nasa BETTER, at higit pa:",
+        "promo_tt_best_li2": "Dedicated Gas Line Upgrade (kung kailangan).",
+        "promo_tt_best_li3": "NaviLink WiFi Smart Control module.",
+        "promo_tt_best_li4": "Whole-home Pressure Regulating Valve (PRV).",
+        "promo_tt_best_li5": "Lifetime Labor Warranty.",
+        "promo_tt_comic_title": "Installation Guide (Tank to Tankless)",
+        "promo_tt_good_comic_1": "1. I-drain at ligtas na tanggalin ang lumang mabigat na tanke.",
+        "promo_tt_good_comic_2": "2. Ilipat ang mga tubo ng tubig at gas sa bagong wall mount.",
+        "promo_tt_good_comic_3": "3. Mag-install ng high-efficiency PVC venting.",
+        "promo_tt_good_comic_4": "4. Aktibo na ang endless hot water system.",
+        "promo_tt_better_comic_1": "1. Navien Premium installation process.",
+        "promo_tt_better_comic_2": "2. Ikonekta ang Scale Prevention filter upang maprotektahan ang unit.",
+        "promo_tt_better_comic_3": "3. I-activate ang NaviCirc para sa mas mabilis na mainit na tubig.",
+        "promo_tt_better_comic_4": "4. Mataas na efficiency at mahabang buhay ng equipment.",
+        "promo_tt_best_comic_1": "1. Suriin ang gas pressure at i-upgrade ang trunk line.",
+        "promo_tt_best_comic_2": "2. Mag-install ng whole-home PRV para sa proteksyon ng tubo.",
+        "promo_tt_best_comic_3": "3. Ikonekta ang NaviLink module sa home WiFi network.",
+        "promo_tt_best_comic_4": "4. Ultimate smart control at panghabambuhay na peace of mind."
+    },
+    "vi": {
+        "promo_tt_title": "Nâng cấp từ bình chứa sang không bình chứa (Tank to Tankless)",
+        "promo_tt_desc": "Nâng cấp từ bình chứa truyền thống cũ của bạn sang hệ thống Navien Tankless nước nóng vô tận. Tiết kiệm không gian và cắt giảm hóa đơn khí đốt.",
+        "promo_tt_why_title": "Tại sao nên chọn Tankless?",
+        "promo_tt_why_desc": "Nước nóng vô tận theo yêu cầu, thiết kế treo tường tiết kiệm không gian và hiệu quả năng lượng tự hoàn vốn theo thời gian.",
+        "promo_tt_tier_title": "Các gói từ Bình chứa sang Không bình chứa",
+        "promo_tt_good_title": "GOOD (Tiêu chuẩn)",
+        "promo_tt_good_price": "$5,200",
+        "promo_tt_good_desc": "Navien NPE-240A2 (199K BTU). Nâng cấp tiêu chuẩn từ bình chứa sang không bình chứa.",
+        "promo_tt_better_title": "BETTER (Cao cấp)",
+        "promo_tt_better_price": "$6,800",
+        "promo_tt_better_desc": "Navien NPE-240A2. Bao gồm Tuần hoàn NaviCirc và Bộ lọc Chống đóng cặn.",
+        "promo_tt_best_title": "BEST (Siêu cao cấp)",
+        "promo_tt_best_price": "$8,500",
+        "promo_tt_best_desc": "Navien NPE-240A2. Bao gồm nâng cấp Đường ống Gas riêng & Điều khiển WiFi NaviLink.",
+        "promo_tt_good_li1": "Máy ngưng tụ Navien NPE-240A2.",
+        "promo_tt_good_li2": "Hệ thống thông hơi PVC mới (Tường/Mái).",
+        "promo_tt_good_li3": "Điều chỉnh đường ống gas tiêu chuẩn.",
+        "promo_tt_good_li4": "Bảo hành nhân công 1 năm.",
+        "promo_tt_better_li1": "Tất cả trong GOOD, cộng thêm:",
+        "promo_tt_better_li2": "Kích hoạt chức năng tuần hoàn NaviCirc.",
+        "promo_tt_better_li3": "Bộ lọc nước chống đóng cặn.",
+        "promo_tt_better_li4": "Bộ van cách ly.",
+        "promo_tt_better_li5": "Bảo hành nhân công 3 năm.",
+        "promo_tt_best_li1": "Tất cả trong BETTER, cộng thêm:",
+        "promo_tt_best_li2": "Nâng cấp đường ống Gas riêng (nếu cần).",
+        "promo_tt_best_li3": "Mô-đun điều khiển thông minh WiFi NaviLink.",
+        "promo_tt_best_li4": "Van điều áp nước toàn nhà (PRV).",
+        "promo_tt_best_li5": "Bảo hành nhân công trọn đời.",
+        "promo_tt_comic_title": "Hướng dẫn cài đặt (Tank to Tankless)",
+        "promo_tt_good_comic_1": "1. Xả nước và tháo bỏ an toàn bình chứa nặng cũ.",
+        "promo_tt_good_comic_2": "2. Đổi hướng đường ống nước và gas tới vị trí treo tường mới.",
+        "promo_tt_good_comic_3": "3. Lắp đặt hệ thống thông hơi PVC hiệu suất cao.",
+        "promo_tt_good_comic_4": "4. Hệ thống nước nóng vô tận đã được kích hoạt.",
+        "promo_tt_better_comic_1": "1. Quy trình lắp đặt Cao cấp của Navien.",
+        "promo_tt_better_comic_2": "2. Lắp bộ lọc Chống đóng cặn để bảo vệ thiết bị.",
+        "promo_tt_better_comic_3": "3. Kích hoạt NaviCirc để có nước nóng nhanh hơn.",
+        "promo_tt_better_comic_4": "4. Hiệu suất tối đa và kéo dài tuổi thọ thiết bị.",
+        "promo_tt_best_comic_1": "1. Đánh giá áp suất gas và nâng cấp đường ống chính.",
+        "promo_tt_best_comic_2": "2. Lắp đặt PRV toàn nhà để bảo vệ đường ống.",
+        "promo_tt_best_comic_3": "3. Kết nối mô-đun NaviLink vào mạng WiFi gia đình.",
+        "promo_tt_best_comic_4": "4. Điều khiển thông minh tối ưu và an tâm trọn đời."
+    }
+};
+
+let appJs = fs.readFileSync('app.js', 'utf8');
+const langs = ["en", "es", "zh", "tl", "vi"];
+let newAppJs = "";
+let currentIdx = 0;
+
+for (let i = 0; i < langs.length; i++) {
+    const lang = langs[i];
+    const searchString = `"${lang}": {`;
+    const startIdx = appJs.indexOf(searchString, currentIdx);
+    let endIdx = -1;
+    if (i < langs.length - 1) {
+        endIdx = appJs.indexOf(`"${langs[i+1]}": {`, startIdx + 1);
+    } else {
+        endIdx = appJs.indexOf('};', startIdx + 1);
+    }
+
+    let langBlock = appJs.substring(startIdx, endIdx);
+    
+    let injectionStr = "";
+    for (const key in replacements[lang]) {
+        injectionStr += `\n        "${key}": "${replacements[lang][key]}",`;
+    }
+    
+    // Inject at the end of the block
+    langBlock = langBlock.replace(/\s*,?\s*$/, `,${injectionStr}\n    `);
+    
+    newAppJs += appJs.substring(currentIdx, startIdx);
+    newAppJs += langBlock;
+    currentIdx = endIdx;
+}
+newAppJs += appJs.substring(currentIdx);
+fs.writeFileSync('app.js', newAppJs);
+console.log('Injected tank-to-tankless strings into app.js');

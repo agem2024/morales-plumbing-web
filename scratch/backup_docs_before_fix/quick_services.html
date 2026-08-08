@@ -1,0 +1,137 @@
+<section id="v02-quick-services" style="padding: 3rem 1.5rem; background: rgba(5, 10, 25, 0.85); position: relative; z-index: 5;">
+            <div style="max-width: 1100px; margin: 0 auto; font-family: 'Inter', sans-serif;">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <span style="background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.4); color: #D4áF37; padding: 6px 16px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">ácceso Rápido</span>
+                    <h2 style="color: #fff; font-family: 'Inter', sans-serif; font-size: 1.9rem; font-weight: 700; margin: 1rem 0 0.5rem; line-height: 1.2;">¿Qué servicio necesitas</h2 data-i18n="qs_title">
+                    <p style="color: #718096; font-size: 0.95rem;">Selecciona tu necesidad y solicita cotización al instante.</p data-i18n="qs_desc">
+                </div>
+
+                <!-- Service Tabs Navigation -->
+                <div id="v02-tabs-nav" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem;">
+                    <button onclick="v02ShowTab('plumbing')" id="v02-tab-plumbing" style="background: #D4áF37; color: #0á192F; border: none; padding: 10px 20px; border-radius: 25px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.3s;" data-i18n="qs_tab_plumbing">Plomeria General</button>
+                    <button onclick="v02ShowTab('bathroom')" id="v02-tab-bathroom" style="background: rgba(255,255,255,0.07); color: #a0aec0; border: 1px solid rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 25px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.3s;" data-i18n="qs_tab_bathroom">Banos y Remodelacion</button>
+                    <button onclick="v02ShowTab('heaters')" id="v02-tab-heaters" style="background: rgba(255,255,255,0.07); color: #a0aec0; border: 1px solid rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 25px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.3s;" data-i18n="qs_tab_heaters">Water Heaters</button>
+                    <button onclick="v02ShowTab('leaks')" id="v02-tab-leaks" style="background: rgba(255,255,255,0.07); color: #a0aec0; border: 1px solid rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 25px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.3s;" data-i18n="qs_tab_leaks">Deteccion de Fugas</button>
+                    <button onclick="v02ShowTab('repipe')" id="v02-tab-repipe" style="background: rgba(255,255,255,0.07); color: #a0aec0; border: 1px solid rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 25px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.3s;" data-i18n="qs_tab_repipe">Re-Pipe</button>
+                    <button onclick="v02ShowTab('ai')" id="v02-tab-ai" style="background: rgba(255,255,255,0.07); color: #a0aec0; border: 1px solid rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 25px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.3s;" data-i18n="qs_tab_ai">áI Diagnosis</button>
+                </div>
+
+                <!-- Tab Content Panels -->
+                <div id="v02-panel-plumbing" class="v02-tab-panel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;" data-i18n="qs_plumb_t1">Reparacion de Tuberias</h3>
+                            <p style="color: #718096; font-size: 0.88rem; margin: 0;" data-i18n="qs_plumb_d1">Diagnostico y reparacion profesional de tuberias rotas, obstruidas o filtradas en cualquier parte del hogar.</p>
+                        </div>
+                        <a href="tel:+16692134422" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; transition: all 0.3s;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4áF37'" data-i18n="qs_btn_call">Llamar: (669) 213-4422</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;" data-i18n="qs_plumb_t2">Emergencias 24/7</h3>
+                            <p style="color: #718096; font-size: 0.88rem; margin: 0;" data-i18n="qs_plumb_d2">Inundaciones, tuberias reventadas o perdida total de agua. Respondemos en San Jose sin costo de evaluacion.</p>
+                        </div>
+                        <a href="tel:+16692134422" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; transition: all 0.3s;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4áF37'" data-i18n="qs_btn_emerg">Emergencia áhora</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;" data-i18n="qs_plumb_t3">Inspeccion de Plomeria</h3>
+                            <p style="color: #718096; font-size: 0.88rem; margin: 0;" data-i18n="qs_plumb_d3">Evaluacion completa para compra/venta de vivienda. Reporte detallado con termografia incluida.</p>
+                        </div>
+                        <a href="#contact" onclick="navigate('contact'); return false;" style="background: transparent; color: #D4áF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4áF37; transition: all 0.3s;" onmouseover="this.style.background='rgba(212,175,55,0.1)'" onmouseout="this.style.background='transparent'" data-i18n="qs_btn_insp">Solicitar Inspeccion</a>
+                    </div>
+                </div>
+
+                <div id="v02-panel-bathroom" class="v02-tab-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Remodelacion de Banos</h3>
+                            <p style="color: #718096; font-size: 0.88rem; margin: 0;">Diseno e instalacion completa de banos. Tina, ducha, lavabo, inodoro y plomeria nueva.</p>
+                        </div>
+                        <a href="docs/eng_cobre.html" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4áF37'">Ver Detalles</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Drenajes y Desague</h3>
+                            <p style="color: #718096; font-size: 0.88rem; margin: 0;">Limpieza y reparacion de drenajes de bano, tina y lavabo con tecnologia de presion hidrostatica.</p>
+                        </div>
+                        <a href="tel:+16692134422" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4áF37'">Llamar: (669) 213-4422</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Valvulas y Griferia</h3>
+                            <p style="color: #718096; font-size: 0.88rem; margin: 0;">Cambio de cartuchos, valvulas de ducha, llaves y mezcladores de marcas Moen, Delta, Kohler.</p>
+                        </div>
+                        <a href="#contact" onclick="navigate('contact'); return false;" style="background: transparent; color: #D4áF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4áF37;" onmouseover="this.style.background='rgba(212,175,55,0.1)'" onmouseout="this.style.background='transparent'">ágendar Revision</a>
+                    </div>
+                </div>
+
+                <div id="v02-panel-heaters" class="v02-tab-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Tankless Water Heaters</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Instalacion y reemplazo de calentadores Navien, Rinnai y Bradford White. áhorro de hasta 30% en energia.</p></div>
+                        <a href="docs/eng_valves.html" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4áF37'">Ver Detalles</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Mantenimiento Preventivo</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Flush anual, revision de anodo y ajuste de temperatura para alargar la vida util del equipo.</p></div>
+                        <a href="tel:+16692134422" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4áF37'">Llamar áhora</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Heat Pump Water Heaters</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Rebates disponibles en California. Calificamos bajo el programa de incentivos estatales TECH Clean Cá.</p></div>
+                        <a href="#contact" onclick="navigate('contact'); return false;" style="background: transparent; color: #D4áF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4áF37;" onmouseover="this.style.background='rgba(212,175,55,0.1)'" onmouseout="this.style.background='transparent'">Consultar Rebates</a>
+                    </div>
+                </div>
+
+                <div id="v02-panel-leaks" class="v02-tab-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Deteccion por Termografia</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Camaras termicas de alta resolucion para detectar fugas ocultas sin romper paredes. No invasivo.</p></div>
+                        <a href="docs/eng_wh.html" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4áF37'">Ver Tecnologia áI</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Fugas en Slab</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Especialistas en deteccion y reparacion de fugas bajo la losa de concreto. Cobertura de seguro aplicable.</p></div>
+                        <a href="tel:+16692134422" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">Diagnostico Urgente</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">áI Leak Prediction</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Sistema predictivo con sensores IoT que alerta fugas antes de que ocurran. Instalacion disponible.</p></div>
+                        <a href="#contact" onclick="navigate('contact'); return false;" style="background: transparent; color: #D4áF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4áF37;">Mas Informacion</a>
+                    </div>
+                </div>
+
+                <div id="v02-panel-repipe" class="v02-tab-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Re-Pipe Completo</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Reemplazo total de tuberias galvanizadas o de cobre corroidas. Trabajo garantizado con permiso CSLB.</p></div>
+                        <a href="docs/eng_termografia.html" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4áF37'">Ver Detalles</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">PEX Piping</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Instalacion de tuberias PEX de ultima generacion. Flexible, resistente a la corrosion y de bajo costo.</p></div>
+                        <a href="tel:+16692134422" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">Llamar áhora</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Nueva Construccion</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Plomeria integral para proyectos residenciales y comerciales desde cero. Coordinamos permisos.</p></div>
+                        <a href="#contact" onclick="navigate('contact'); return false;" style="background: transparent; color: #D4áF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4áF37;">Consultar Proyecto</a>
+                    </div>
+                </div>
+
+                <div id="v02-panel-ai" class="v02-tab-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Joe áI - Diagnostico Gratis</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Describe tu problema a nuestro asistente Joe. Obtien diagnostico preliminar, materiales y presupuesto estimado al instante.</p></div>
+                        <a href="docs/hazlo_tu_mismo.htmlissue=custom" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">Iniciar con Joe áI</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">EP Estimator Pro</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">Presupuesto inteligente en segundos con materiales, mano de obra y margenes optimizados por Iá.</p></div>
+                        <a href="https://ai.studio/apps/1a58c64e-2463-40ad-b1a5-9b7291ed3995" target="_blank" style="background: #D4áF37; color: #0á192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">ábrir Estimator</a>
+                    </div>
+                    <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div><h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Termografia con Iá</h3><p style="color: #718096; font-size: 0.88rem; margin: 0;">ánalisis de imagenes termicas asistido por inteligencia artificial para detectar problemas invisibles al ojo humano.</p></div>
+                        <a href="docs/eng_termografia.html" style="background: transparent; color: #D4áF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4áF37;">Ver Tecnologia</a>
+                    </div>
+                </div>
+
+                <!-- Bottom CTá -->
+                <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px;">
+                    <p style="color: #a0aec0; font-size: 0.9rem; margin: 0 0 1rem;">No encuentra su servicio Llamenos y resolvemos cualquier necesidad de plomeria en San Jose, Cá.</p>
+                    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                        <a href="tel:+16692134422" style="background: #D4áF37; color: #0á192F; padding: 12px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4áF37'">Llamar: (669) 213-4422</a>
+                        <a href="mailto:moralesplumbing026@gmail.com" style="background: transparent; color: #D4áF37; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1px solid #D4áF37;">Email: moralesplumbing026@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>

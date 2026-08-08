@@ -1,0 +1,9 @@
+->
+                        <div class="glass" style="padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                            <h4 style="font-family:'Orbitron', sans-serif; font-size:0.95rem; color:var(--neon-orange); margin-bottom:10px;" data-i18n="pol_priv_title">️ CONFIDENCIALIDAD E2EE Y CERO EXPOSICIÓN</h4>
+                            <p style="font-size:0.85rem; color:#a0aec0; line-height:1.5; margin:0;" data-i18n="pol_priv_text">Tu privacidad es absoluta. Este sistema web utiliza encriptación de datos local (Web LocalStorage). Tus datos de contacto, dirección y detalles de citas nunca son transmitidos a servidores de terceros ni expuestos.</p>
+                        </div>
+                        
+                        <!-- Copyright -->
+                        <div class="glass" style="padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                            <h4 style="font-family:'Orbitron', sans-serif; font-
