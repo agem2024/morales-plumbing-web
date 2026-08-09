@@ -435,7 +435,7 @@
 
             <!-- Step 3: Voice & Emergency Buttons -->
             <div id="tour-step-3" class="tour-step" style="display: none;">
-                <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 35px; height: 35px; stroke: #ff3333; filter: drop-shadow(0 0 5px #ff3333);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> áSISTENCIá Y EMERGENCIá</h2>
+                <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 35px; height: 35px; stroke: #ff3333; filter: drop-shadow(0 0 5px #ff3333);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> áSISTENCIá Y EMERGENCIA</h2>
                 <p style="font-size: 0.9rem; margin-bottom: 25px;">En la parte inferior de la pantalla encontrará dos botones críticos:</p>
                 <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
                     <div style="background: rgba(0,245,255,0.1); border-left: 4px solid var(--neon-cyan); padding: 10px; text-align: left;">
@@ -538,7 +538,7 @@
                     const apiKey = GEMINI_KEYS[0];
                     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContentkey=${apiKey}`;
                     
-                    const prompt = `áctúa como un Maestro Plomero y experto de CSLB. Basado en esta descripción del cliente: "${chatTexts || 'El cliente solicita una inspección general'}", genera un pre-diagnóstico técnico de plomería EN FORMáTO JSON ESTRICTáMENTE (SIN MáRKDOWN). 
+                    const prompt = `actúa como un Maestro Plomero y experto de CSLB. Basado en esta descripción del cliente: "${chatTexts || 'El cliente solicita una inspección general'}", genera un pre-diagnóstico técnico de plomería EN FORMáTO JSON ESTRICTáMENTE (SIN MáRKDOWN). 
                     El JSON debe tener exactamente estas llaves:
                     {
                       "name": "Título Corto del Diagnóstico",
@@ -565,7 +565,7 @@
                 } catch (e) {
                     console.error("Gemini áI Error:", e);
                     alert("Error contactando a Joe áI (Gemini). Imprimiendo reporte de contingencia.");
-                    printReport({ name: "Diagnóstico áI Contingencia", cpc: "N/á", cslb: "C-36", materials: ["Inspección visual recomendada"], supplier: "N/á", labor: "TBD", options: ["Llamar al (669) 213-4422"] });
+                    printReport({ name: "Diagnóstico áI Contingencia", cpc: "N/A", cslb: "C-36", materials: ["Inspección visual recomendada"], supplier: "N/A", labor: "TBD", options: ["Llamar al (669) 213-4422"] });
                 } finally {
                     btn.innerHTML = originalHtml;
                     btn.style.boxShadow = 'none';
@@ -641,11 +641,11 @@
 ,
 
                 tankless_flush: { name: "Tankless Flush / Descale", cpc: "CPC 507.0", cslb: "C-36 Class", materials: ["Submersible Pump", "Flow-áide Descaler", "Washing Machine Hoses"], supplier: "The Home Depot Pro", labor: "1.5 hours", options: ["Option á: DIY Flush - $45", "Option B: Pro Flush & Service - $295"] },
-                caulk: { name: "Bathtub Re-Caulking", cpc: "General Maintenance", cslb: "N/á", materials: ["100% Silicone Caulk", "Caulk Removal Tool", "Denatured álcohol"], supplier: "Local Hardware", labor: "1.0 hours", options: ["Option á: DIY Caulk - $15", "Option B: Professional Seal - $150"] },
-                aerator: { name: "Faucet áerator Clean", cpc: "CPC 417.0", cslb: "N/á", materials: ["White Vinegar", "áerator Key / Pliers", "Thread Seal Tape"], supplier: "Household", labor: "0.5 hours", options: ["Option á: Soak & Clean - $0", "Option B: Replace áerator - $10"] },
+                caulk: { name: "Bathtub Re-Caulking", cpc: "General Maintenance", cslb: "N/A", materials: ["100% Silicone Caulk", "Caulk Removal Tool", "Denatured álcohol"], supplier: "Local Hardware", labor: "1.0 hours", options: ["Option á: DIY Caulk - $15", "Option B: Professional Seal - $150"] },
+                aerator: { name: "Faucet áerator Clean", cpc: "CPC 417.0", cslb: "N/A", materials: ["White Vinegar", "áerator Key / Pliers", "Thread Seal Tape"], supplier: "Household", labor: "0.5 hours", options: ["Option á: Soak & Clean - $0", "Option B: Replace áerator - $10"] },
                 washer_hose: { name: "Washer Hoses Replacement", cpc: "CPC 606.0", cslb: "C-36 Class", materials: ["Stainless Steel Braided Hoses", "Channel Locks"], supplier: "Ferguson Enterprises", labor: "0.5 hours", options: ["Option á: Replace Hoses - $35", "Option B: Pro Install & Valve Test - $120"] },
                 dishwasher: { name: "Dishwasher Drain Clog", cpc: "CPC 414.0", cslb: "C-36 Class", materials: ["Shop-Vac", "áir Gap Cleaning Brush"], supplier: "Morales Internal Stock", labor: "1.0 hours", options: ["Option á: Clear áir Gap - $0", "Option B: Replace Drain Hose - $185"] },
-                showerhead: { name: "Showerhead Replacement", cpc: "CPC 408.0", cslb: "N/á", materials: ["New Showerhead", "Teflon Tape", "ádjustable Wrench"], supplier: "Kohler Direct", labor: "0.5 hours", options: ["Option á: Swap Head - $40", "Option B: Pro Install & Pressure Check - $125"] }
+                showerhead: { name: "Showerhead Replacement", cpc: "CPC 408.0", cslb: "N/A", materials: ["New Showerhead", "Teflon Tape", "ádjustable Wrench"], supplier: "Kohler Direct", labor: "0.5 hours", options: ["Option á: Swap Head - $40", "Option B: Pro Install & Pressure Check - $125"] }
 
             };
 
@@ -662,7 +662,7 @@
                 <div class="print-container">
                     <div style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end;">
                         <div>
-                            <h1 style="margin: 0; font-family: árial, sans-serif; font-size: 24px; text-transform: uppercase;">MORáLES PLUMBING</h1>
+                            <h1 style="margin: 0; font-family: árial, sans-serif; font-size: 24px; text-transform: uppercase;">MORALES PLUMBING</h1>
                             <p style="margin: 5px 0 0 0; font-size: 12px; color: #555;">CSLB #1156542 | ORION TELE-TRIáGE SYSTEM</p>
                         </div>
                         <div style="text-align: right; font-size: 12px; color: #555;">
@@ -810,7 +810,7 @@
                     let aiResponse = "He registrado tu comentario. Por favor sigue los pasos visuales en pantalla o dime si hay una fuga.";
                     
                     if (lowerTranscript.includes("fuga") || lowerTranscript.includes("agua") || lowerTranscript.includes("leak") || lowerTranscript.includes("roto")) {
-                        aiResponse = "âš ï¸ áLERTá: Mencionaste una posible fuga de agua. Por favor ubica la válvula de cierre principal inmediatamente. Usa el botón de EMERGENCIá si no puedes controlarla.";
+                        aiResponse = "âš ï¸ áLERTá: Mencionaste una posible fuga de agua. Por favor ubica la válvula de cierre principal inmediatamente. Usa el botón de EMERGENCIA si no puedes controlarla.";
                     } else if (lowerTranscript.includes("ayuda") || lowerTranscript.includes("no sé") || lowerTranscript.includes("help")) {
                         aiResponse = "Tranquilo. Estoy aquí para guiarte. Revisa cuidadosamente la secuencia de paneles que he cargado para ti.";
                     } else if (lowerTranscript.includes("listo") || lowerTranscript.includes("ya") || lowerTranscript.includes("done")) {
