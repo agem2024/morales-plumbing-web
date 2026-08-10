@@ -9201,60 +9201,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // -- PUBLIC CONTACT FORM SUBMISSION --
+        // -- PUBLIC CONTACT FORM SUBMISSION --
     window.submitPublicContact = async function(e) {
-        e.preventDefault();
+        if(e) e.preventDefault();
         const btn = document.getElementById('pc-btn');
         let oldText = 'Send Message';
+        
+        const form = document.getElementById('public-contact-form');
+        
         if (btn) {
             btn.disabled = true;
             oldText = btn.innerText;
             btn.innerText = 'Enviando...';
         }
-
-        const form = document.getElementById('public-contact-form');
         
         const data = {
             name: document.getElementById('pc-name').value,
             phone: document.getElementById('pc-phone').value,
             email: document.getElementById('pc-email').value,
-            notes: document.getElementById('pc-message').value,
-            service: 'Contact Form',
-            date: new Date().toLocaleDateString(),
-            time: new Date().toLocaleTimeString(),
-            id: Date.now().toString()
+            message: document.getElementById('pc-message').value
         };
 
         try {
-            if (window.MoralesFirebase && window.MoralesFirebase.saveContactMessage) {
-                await window.MoralesFirebase.saveContactMessage(data);
-            } else {
-                console.warn('Firebase not ready, could not save message.');
-            }
+            // 1. Send silent email via FormSubmit API
+            await fetch("https://formsubmit.co/ajax/moralesplumbing026@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
 
-            if (btn) btn.innerText = '? Mensaje Enviado';
-            if (form) form.reset();
-            
-            const waMessage = `Hola Morales Plumbing!%0ANueva solicitud de contacto:%0A*Nombre:* ${data.name}%0A*Tel:* ${data.phone}%0A*Email:* ${data.email}%0A*Mensaje:* ${data.notes}`;
-            window.open('https://wa.me/16692134422?text=' + waMessage, '_blank');
-            
-            setTimeout(() => {
-                if (btn) {
-                    btn.disabled = false;
-                    btn.innerText = oldText;
-                }
-            }, 4000);
-        } catch (err) {
+            // 2. Save to Firebase (if available)
+            if (window.MoralesFirebase && window.MoralesFirebase.saveContactMessage) {
+                const fbData = {
+                    ...data,
+                    notes: data.message,
+                    service: 'Contact Form',
+                    date: new Date().toLocaleDateString(),
+                    time: new Date().toLocaleTimeString(),
+                    id: Date.now().toString()
+                };
+                await window.MoralesFirebase.saveContactMessage(fbData);
+            }
+        } catch(err) {
             console.warn('Error sending contact form:', err);
-            if (btn) btn.innerText = '? Mensaje Enviado'; // Fake success to not break UX
-            if (form) form.reset();
-            setTimeout(() => {
-                if (btn) {
-                    btn.disabled = false;
-                    btn.innerText = oldText;
-                }
-            }, 4000);
         }
+
+        if (btn) btn.innerText = '✓ Mensaje Enviado';
+        if (form) form.reset();
+        
+        setTimeout(() => {
+            if (btn) {
+                btn.disabled = false;
+                btn.innerText = oldText;
+            }
+        }, 4000);
     }
 
     // Default Langu�age
