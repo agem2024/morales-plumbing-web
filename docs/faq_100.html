@@ -72,7 +72,7 @@
     
 
     <section class="faq-hero">
-        <h1 class="graffiti-title">FáQ <span style="color: var(--cyan);">100</span></h1>
+        <h1 class="graffiti-title">FAQ <span style="color: var(--cyan);">100</span></h1>
         <p style="color: #aaa; margin-top: 10px; font-family: 'Orbitron'; letter-spacing: 1px;" data-i18n="faq_cat_env">California Plumbing Guidelines</p>
         
         <div style="margin-top: 20px; margin-bottom: 20px;">
@@ -80,7 +80,7 @@
         </div>
         
         <div class="search-container">
-            <input type="text" id="searchInput" class="faq-search" placeholder="Search FáQs..." onkeyup="filterFaqs()">
+            <input type="text" id="searchInput" class="faq-search" placeholder="Search FAQs..." onkeyup="filterFaqs()">
         </div>
     </section>
 
@@ -1021,7 +1021,7 @@
                     item.querySelector('.accordion-content').style.maxHeight = null;
                 }
             });
-            document.getElementById('noResults').style.display = visibleCount === 0  "block" : "none";
+            document.getElementById('noResults').style.display = visibleCount === 0 ? "block" : "none";
         }
 
         window.addEventListener('load', () => {
