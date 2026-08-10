@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inteligencia Artificial y Joe AI | ORION Ecosystem</title>
+    <title data-i18n="ai_title">Inteligencia Artificial | ORION Ecosystem</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../universe.css">
@@ -15,157 +15,159 @@
         .article-content h1, .article-content h2, .article-content h3 { color: var(--neon-orange); font-family: 'Orbitron', sans-serif; margin-top: 2rem; margin-bottom: 1rem; }
         .article-content p { margin-bottom: 1.5rem; }
         .article-content strong { color: #fff; }
-        .back-nav { position: relative; z-index: 10; padding: 1rem 5%; background: rgba(0,0,0,0.5); border-bottom: 1px solid var(--glass-border); display: flex; justify-content: flex-start; }
+        .back-nav { position: relative; z-index: 10; padding: 1rem 5%; background: rgba(0,0,0,0.5); border-bottom: 1px solid var(--glass-border); display: flex; justify-content: flex-start; margin-top: 60px; }
         .btn-back { color: var(--neon-cyan); text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; transition: 0.3s; }
         .btn-back:hover { text-shadow: 0 0 8px var(--neon-cyan); }
+        .custom-table { width: 100%; border-collapse: collapse; margin-top: 20px; color: #fff; font-size: 1rem; }
+        .custom-table th { padding: 12px; text-align: left; background: rgba(0, 245, 255, 0.2); border-bottom: 2px solid var(--neon-cyan); color: var(--neon-cyan); }
+        .custom-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .image-container { text-align: center; margin: 2rem 0; }
+        .image-container img { width: 100%; max-width: 800px; border-radius: 12px; border: 2px solid rgba(0,245,255,0.3); box-shadow: 0 0 15px rgba(0,245,255,0.2); }
     </style>
 </head>
 <body>
 
     <!-- MORALES PLUMBING OFFICIAL HEADER -->
-<header class="mp-global-header" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 2px solid #D4AF37; padding: 8px 15px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 999999; height: 60px; box-sizing: border-box; width: 100vw; max-width: 100%;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="../index.html" style="display: flex; align-items: center;">
-            <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 38px; width: auto; max-width: 140px; object-fit: contain;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
-        </a>
-    </div>
-    <div style="position: relative; display: flex; align-items: center; gap: 10px;">
-        <div style="text-align: right; color: #fff; display: none;" class="header-contact-info">
-            <h2 style="margin: 0; font-size: 0.9rem; color: #D4AF37; font-weight: bold; line-height: 1;">MORALES PLUMBING</h2>
-            <p style="margin: 2px 0 0; font-size: 0.7rem; color: #aaa; line-height: 1;">Lic. C-36 #1156542</p>
+    <header class="mp-global-header" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 4px solid #D4AF37; padding: 8px 15px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 999999; height: 60px; box-sizing: border-box; width: 100vw; max-width: 100%;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="../index.html" style="display: flex; align-items: center;">
+                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 38px; width: auto; max-width: 140px; object-fit: contain;">
+            </a>
         </div>
-        <button onclick="document.getElementById('globalLangMenu').classList.toggle('show-lang')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(0,245,255,0.3); cursor: pointer; padding: 4px 8px; outline: none; border-radius: 6px; display: flex; align-items: center; gap: 5px; transition: 0.2s;">
-            <img src="../assets/plan_good_clean.png" alt="Language" style="height: 22px; width: auto; border-radius: 4px; box-shadow: 0 0 5px rgba(0,245,255,0.4);">
-            <span style="color: #00f5ff; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.5px;">LANG</span>
-        </button>
-        <div id="globalLangMenu" style="display: none; position: absolute; right: 0; top: 45px; background: rgba(3, 7, 18, 0.98); border: 1px solid #D4AF37; border-radius: 8px; flex-direction: column; min-width: 140px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.9); z-index: 1000000;">
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Español</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - 中文</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Tiếng Việt</button>
+        <div style="position: relative; display: flex; align-items: center; gap: 15px;">
+            <div style="text-align: right; color: #fff;" class="header-contact-info">
+                <h2 style="margin: 0; font-size: 0.95rem; color: #D4AF37; font-weight: bold; line-height: 1;">MORALES PLUMBING</h2>
+                <p style="margin: 2px 0 0; font-size: 0.75rem; color: #ddd; line-height: 1;">Lic. C-36 #1156542</p>
+            </div>
+            <button onclick="document.getElementById('globalLangMenu').classList.toggle('show-lang')" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(0,245,255,0.5); cursor: pointer; padding: 6px 10px; outline: none; border-radius: 6px; display: flex; align-items: center; gap: 8px; transition: 0.2s;" title="Cambiar Idioma">
+                <img src="../assets/plan_good_clean.png" alt="Language" style="height: 20px; width: auto; border-radius: 3px;">
+                <span style="color: #00f5ff; font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: bold; letter-spacing: 0.5px;">LANG</span>
+            </button>
+            <div id="globalLangMenu" style="display: none; position: absolute; right: 0; top: 45px; background: rgba(3, 7, 18, 0.98); border: 1px solid #D4AF37; border-radius: 8px; flex-direction: column; min-width: 140px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.9); z-index: 1000000;">
+                <button onclick="if(typeof setLanguage === 'function') setLanguage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
+                <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Español</button>
+                <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - 中文</button>
+                <button onclick="if(typeof setLanguage === 'function') setLanguage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
+                <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Tiếng Việt</button>
+            </div>
         </div>
-    </div>
-</header>
-<style>
-    body { padding-top: 60px !important; }
-    .show-lang { display: flex !important; }
-    #globalLangMenu button:hover { background: rgba(0, 245, 255, 0.15) !important; color: #00f5ff !important; }
-    @media (min-width: 480px) {
-        .header-contact-info { display: block !important; }
-    }
-</style>
-
-
-    <!-- UNIVERSE BACKGROUND -->
-    <canvas id="universe-canvas" data-universe-mode="galaxy-spin"></canvas>
-    <div class="universe-overlay u-variant-service"></div>
-    <script src="../universe.js"></script>
+    </header>
 
     <div class="back-nav">
-        <a href="../index.html#multimedia" class="btn-back">&lt; BACK TO MULTIMEDIA</a>
+        <a href="../index.html" class="btn-back">« VOLVER / BACK</a>
     </div>
 
     <div class="page-content">
-        <h1 class="hero-title">Inteligencia Artificial y Joe AI</h1>
         <div class="article-content">
-<p>El Futuro de la Plomería: Guía de Introducción a la Era de la IA</p>
-<p>Bienvenidos a la Academia Morales. Soy su Instructor Senior y hoy no solo les entrego una</p>
-<p>llave inglesa, sino las llaves del ecosistema tecnológico más avanzado en la historia de los</p>
-<p>servicios hídricos. En Morales Plumbing, hemos dejado atrás la era de la adivinanza manual</p>
-<p>para entrar en la era de la  "precisión quirúrgica" . Ustedes no son simples aprendices;</p>
-<p>son la nueva  élite técnica de Silicon Valley , una fuerza operativa que combina el sudor</p>
-<p>del oficio con el cerebro de la inteligencia artificial de  Grado Militar .Observen nuestro</p>
-<p>escudo: esa gota de agua translúcida que resguarda un microchip en su interior no es solo</p>
-<p>diseño. Simboliza nuestra filosofía de "Tech-Service": el control absoluto del flujo mediante</p>
-<p>la innovación digital."Nuestra misión es brindar soluciones de la más alta calidad,</p>
-<p>fusionando la experiencia técnica artesanal con tecnologías avanzadas de IA para proteger</p>
-<p>la salud pública y la integridad de los hogares de forma rápida y definitiva." â€”  Filosofía</p>
-<p>Morales PlumbingEsta mentalidad de vanguardia es lo que separa a un plomero</p>
-<p>convencional de un consultor tecnológico de la Academia Morales. Para dominar este</p>
-<p>entorno, su primera herramienta no será un soplete, sino su copiloto digital.</p>
-<h2>1. Tu Copiloto Digital: ¿Quién es Joe AI?</h2>
-<p>En el campo de batalla de la infraestructura hídrica, el conocimiento es poder.  Joe AI  es</p>
-<p>nuestro asistente virtual multimodal, un Modelo de Lenguaje de Gran Escala ( LLM ) que ha</p>
-<p>sido  fine-tuned  (ajustado finamente) específicamente con el Código de Plomería de</p>
-<p>California (CPC) y los esquemas técnicos de fabricantes líderes. Joe no "adivina"; Joe</p>
-<p>procesa datos vectoriales en tiempo real.A través del Reconocimiento Óptico de Caracteres</p>
-<p>(OCR), ustedes pueden escanear la placa de datos de cualquier equipo y Joe AI les</p>
-<p>entregará, en menos de 3 segundos, el manual exacto y el árbol de diagnóstico paso a</p>
-<p>paso. Esta herramienta es la razón por la cual reducimos el tiempo de diagnóstico en un</p>
-<p>40% .| Característica | Método Tradicional (Adivinanza) | Método Morales (Joe AI) || ------ |</p>
-<p>------ | ------ || Diagnóstico | Basado en "prueba y error". | Basado en datos vectoriales y</p>
-<p>manuales exactos. || Recuperación de Conocimiento | Minutos u horas buscando en</p>
-<p>PDFs. | < 3 segundos  vía lenguaje natural. || Información | Búsqueda manual en libros o</p>
-<p>internet. | Acceso instantáneo vía OCR de placas de datos. || Velocidad | Lenta, propensa a</p>
-<p>segundas visitas. | 40% más rápida; resolución en la primera cita. |</p>
-<p>Esta eficiencia nos permite ser infalibles no solo en la técnica, sino también en el blindaje</p>
-<p>normativo de cada intervención.</p>
-<p>2. PlumbAssist AI: Tu Garantía de Cumplimiento Técnico</p>
-<p>Como la élite de California, operamos bajo el microscopio legal.  PlumbAssist AI  es su</p>
-<p>guardián de cumplimiento. Mientras ustedes trabajan, este sistema cruza cada decisión con</p>
-<p>el Código de Plomería de California (CPC) en tiempo real. Pero su función va más allá de la</p>
-<p>normativa técnica; está integrado con el  Generador Legal Morales .Este sistema</p>
-<p>automatiza la creación de documentos críticos que protegen nuestra responsabilidad y los</p>
-<p>derechos del cliente, asegurando que cada contrato sea inexpugnable.</p>
-<p>â—â€‹ Seguridad Normativa:  Consulta instantánea del CPC, eliminando errores por</p>
-<p>memorización deficiente.</p>
-<p>â—â€‹ Gestión Documental Automática:  Generación inmediata de avisos de "Derecho a</p>
-<p>Cancelar" y el documento "Notice to Owner" (NTO) para proteger nuestros derechos</p>
-<p>de retención mecánica.</p>
-<p>â—â€‹ Blindaje de Responsabilidad:  Crea exenciones de responsabilidad ( Waivers )</p>
-<p>personalizadas antes de iniciar cualquier labor destructiva.Los datos y las leyes</p>
-<p>protegen nuestra responsabilidad, pero nuestros sensores nos permiten</p>
-<p>atravesar el concreto sólido.</p>
-<p>3. Ver lo Invisible: Termografía FLIR con Inteligencia Artificial</p>
-<p>Para alcanzar la verdadera precisión de  Grado Militar , utilizamos cámaras termográficas</p>
-<p>de alta resolución (modelos  FLIR E8-XT o C5 ). Al integrar estas cámaras con algoritmos</p>
-<p>de IA, realizamos un  "Mapeo Térmico"  que identifica gradientes de temperatura invisibles</p>
-<p>al ojo humano.Esto nos permite detectar "anomalías florales" â€”el efecto de pluma térmica o</p>
-<p>"feathering" que genera el agua caliente al escapar bajo una losaâ€” localizando fugas ( slab</p>
-<p>leaks ) sin demoliciones innecesarias.La Tecnología MSX (Multi-Spectral Dynamic</p>
-<p>Imaging)  Esta función de alta gama extrae los detalles estructurales de la cámara visual y</p>
-<p>los graba sobre la imagen térmica. Gracias al MSX y al procesamiento de IA, el margen de</p>
-<p>error para localizar una ruptura bajo el concreto se reduce a  menos de 3 pulgadas</p>
-<p>cuadradas .Una vez que hemos "visto" lo invisible, el siguiente paso es presentar la</p>
-<p>solución con el mismo nivel de sofisticación tecnológica.</p>
-<p>4. La Tablet como Herramienta de Cierre: Orion Price Book</p>
-<p>El profesionalismo extremo se consolida en el momento de la cotización. El sistema  Orion</p>
-<p>Price Book POS  utiliza la psicología de ventas para eliminar la fricción del precio.</p>
-<p>Presentamos siempre tres opciones:  "Good, Better, Best" .Como instructores, les</p>
-<p>enseñamos el secreto: la opción "Best" (Premium) funciona como un  ancla de precio ,</p>
-<p>haciendo que la opción "Better" (Recomendada) sea percibida como el valor lógico más</p>
-<p>alto. Aquí es donde transformamos una reparación en una actualización de activos.Para un</p>
-<p>cierre exitoso, sigan este protocolo en su tablet:</p>
-<h2>1.â€‹</h2>
-<p>Evidencia Visual:  Muestren al cliente las imágenes de la cámara FLIR y el reporte</p>
-<p>de Joe AI.</p>
-<h2>2.â€‹</h2>
-<p>Presentación de Opciones:  Ofrezcan soluciones reales, como un  Navien</p>
-<p>NPE-240A  para agua caliente infinita o un sistema de repiping integral con  Uponor</p>
-<h2>PEX-A .</h2>
-<h2>3.â€‹</h2>
-<p>Transparencia Flat Rate:  Usen precios cerrados. El cliente paga por la solución, no</p>
-<p>por las horas que ustedes pasen en el sitio.</p>
-<h2>4.â€‹</h2>
-<p>Cierre y Firma Legal:  El cliente firma el contrato generado por el Generador Legal</p>
-<p>Morales, recibiendo su copia digital al instante.Este proceso genera un</p>
-<p>"hiper-profesionalismo" que justifica nuestras tarifas premium y consolida su</p>
-<p>autoridad ante el cliente.</p>
-<h2>5. Conclusión: El Técnico del Mañana</h2>
-<p>En la Academia Morales, no los estamos formando para ser plomeros; los estamos</p>
-<p>entrenando para gestionar un ecosistema de alta tecnología. Al dominar Joe AI, la</p>
-<p>termografía de grado militar y el sistema Orion, garantizamos una  tasa de resolución en la</p>
-<p>primera visita superior al 95% .Ustedes son el futuro de un oficio dignificado por la</p>
-<p>ciencia. No solo reparan tuberías; protegen la infraestructura de Silicon Valley con la</p>
-<p>precisión de un cirujano y la inteligencia de un ingeniero de datos.Recuerden: la</p>
-<p>innovación y la dignidad técnica son nuestro estandarte. Bienvenidos a la élite.</p>
-<p>Bienvenidos a Morales Plumbing.</p>
+            <h1 class="hero-title" data-i18n="ai_title">El Futuro de la Plomería: Guía de Introducción a la Era de la IA</h1>
+            
+            <p data-i18n="ai_intro_1"></p>
+            <p data-i18n="ai_intro_2"></p>
+            <p data-i18n="ai_intro_3"></p>
+            
+            <div class="image-container">
+                <img src="../assets/ai_tech_logo.jpg" alt="AI Tech-Service Logo">
+            </div>
+            
+            <blockquote style="border-left: 4px solid var(--neon-cyan); padding-left: 15px; font-style: italic; color: #aaa; margin: 2rem 0;" data-i18n="ai_quote"></blockquote>
+            
+            <p data-i18n="ai_intro_4"></p>
+
+            <h2 data-i18n="ai_s1_title"></h2>
+            <p data-i18n="ai_s1_p1"></p>
+            
+            <div class="image-container">
+                <img src="../assets/joe_ai_interface.jpg" alt="Joe AI Interface">
+            </div>
+            
+            <p data-i18n="ai_s1_p2"></p>
+            
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="ai_t_h1"></th>
+                        <th data-i18n="ai_t_h2"></th>
+                        <th data-i18n="ai_t_h3"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-i18n="ai_t_r1_1"></td>
+                        <td data-i18n="ai_t_r1_2"></td>
+                        <td data-i18n="ai_t_r1_3"></td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="ai_t_r2_1"></td>
+                        <td data-i18n="ai_t_r2_2"></td>
+                        <td data-i18n="ai_t_r2_3"></td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="ai_t_r3_1"></td>
+                        <td data-i18n="ai_t_r3_2"></td>
+                        <td data-i18n="ai_t_r3_3"></td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="ai_t_r4_1"></td>
+                        <td data-i18n="ai_t_r4_2"></td>
+                        <td data-i18n="ai_t_r4_3"></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p data-i18n="ai_s1_p3" style="margin-top: 20px;"></p>
+
+            <h2 data-i18n="ai_s2_title"></h2>
+            <p data-i18n="ai_s2_p1"></p>
+            <ul style="margin-bottom: 1.5rem; padding-left: 20px; line-height: 1.8;">
+                <li data-i18n="ai_s2_li1" style="margin-bottom: 10px;"></li>
+                <li data-i18n="ai_s2_li2" style="margin-bottom: 10px;"></li>
+                <li data-i18n="ai_s2_li3" style="margin-bottom: 10px;"></li>
+            </ul>
+            <p data-i18n="ai_s2_p2"></p>
+
+            <h2 data-i18n="ai_s3_title"></h2>
+            <p data-i18n="ai_s3_p1"></p>
+            
+            <div class="image-container">
+                <img src="../assets/flir_thermal_vision.jpg" alt="FLIR Thermal Vision">
+            </div>
+            
+            <p data-i18n="ai_s3_p2"></p>
+            <p data-i18n="ai_s3_p3"></p>
+
+            <h2 data-i18n="ai_s4_title"></h2>
+            <p data-i18n="ai_s4_p1"></p>
+            
+            <div class="image-container">
+                <img src="../assets/orion_tablet.jpg" alt="Orion Price Book Tablet">
+            </div>
+            
+            <p data-i18n="ai_s4_p2"></p>
+            <ol style="margin-bottom: 1.5rem; padding-left: 20px; line-height: 1.8;">
+                <li data-i18n="ai_s4_li1" style="margin-bottom: 10px;"></li>
+                <li data-i18n="ai_s4_li2" style="margin-bottom: 10px;"></li>
+                <li data-i18n="ai_s4_li3" style="margin-bottom: 10px;"></li>
+                <li data-i18n="ai_s4_li4" style="margin-bottom: 10px;"></li>
+            </ol>
+            <p data-i18n="ai_s4_p3"></p>
+
+            <h2 data-i18n="ai_s5_title"></h2>
+            <p data-i18n="ai_s5_p1"></p>
+            <p data-i18n="ai_s5_p2"></p>
+            <h3 style="text-align:center; color:var(--neon-cyan); margin-top:30px; font-size: 1.8rem;" data-i18n="ai_s5_p3"></h3>
         </div>
     </div>
     
     <script src="../config.js"></script>
     <script src="../app.js"></script>
+    
+    <script>
+        window.addEventListener('load', () => {
+            if (typeof setLanguage === 'function') {
+                setLanguage(localStorage.getItem('morales_lang') || 'en');
+            }
+        });
+    </script>
 
     <!-- MORALES PLUMBING OFFICIAL FOOTER -->
     <footer style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-top: 4px solid #D4AF37; padding: 30px 20px; text-align: center; font-family: 'Inter', sans-serif; color: #fff; margin-top: 50px;">
@@ -184,4 +186,3 @@
 
 </body>
 </html>
-
