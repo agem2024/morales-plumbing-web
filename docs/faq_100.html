@@ -990,7 +990,7 @@
     </div>
     <script src="../app.js"></script>
     <script>
-        const accordions = document.querySelectoráll('.accordion-header');
+        const accordions = document.querySelectorAll('.accordion-header');
         accordions.forEach(acc => {
             acc.addEventListener('click', function() {
                 const content = this.nextElementSibling;
@@ -1008,7 +1008,7 @@
 
         function filterFaqs() {
             const term = document.getElementById('searchInput').value.toLowerCase().trim();
-            const items = document.querySelectoráll('.search-item');
+            const items = document.querySelectorAll('.search-item');
             let visibleCount = 0;
             items.forEach(item => {
                 const text = item.innerText.toLowerCase();

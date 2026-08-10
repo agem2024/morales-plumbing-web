@@ -534,7 +534,7 @@
             
             // --- CUSTOM AI DIAGNOSTIC WITH GEMINI ---
             if (issue === 'custom') {
-                const chatTexts = Array.from(document.querySelectoráll('.joe-diy-chat .dialogue')).map(el => el.innerText).join(' | ');
+                const chatTexts = Array.from(document.querySelectorAll('.joe-diy-chat .dialogue')).map(el => el.innerText).join(' | ');
                 
                 btn.innerHTML = '<span style="font-size: 0.75rem; font-family:\'Orbitron\'; font-weight: bold; color: var(--neon-lime);">GENERANDO AI...</span>';
                 btn.style.boxShadow = '0 0 20px rgba(0, 255, 170, 0.8)';
@@ -880,7 +880,7 @@
             document.getElementById('orion-tour-modal').style.display = 'flex';
         }
         function nextTourStep(stepNum) {
-            document.querySelectoráll('.tour-step').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.tour-step').forEach(el => el.style.display = 'none');
             document.getElementById('tour-step-' + stepNum).style.display = 'block';
         }
         function closeTour() {

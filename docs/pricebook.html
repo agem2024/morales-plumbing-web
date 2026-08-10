@@ -163,7 +163,7 @@
         <div class="glass">
             <div class="info-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
                 <img src="../assets/comic_ai.png" alt="Methodology" style="width: 100px; height: 100px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
-                <h2 data-i18n="pb_method_title" class="graffiti-3d-metallic">Metodología de CAlculo</h2>
+                <h2 data-i18n="pb_method_title" class="graffiti-3d-metallic">Metodología de Cálculo</h2>
             </div>
             <p data-i18n="pb_method_p1"></p>
             <p data-i18n="pb_method_p2"></p>
@@ -196,7 +196,7 @@
         <div class="glass">
             <div class="info-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
                 <img src="../assets/comic_eco.png" alt="Promotions" style="width: 100px; height: 100px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
-                <h2 data-i18n="pb_promotions_title" class="graffiti-3d-metallic">Promociones áctivas</h2>
+                <h2 data-i18n="pb_promotions_title" class="graffiti-3d-metallic">Promociones Activas</h2>
             </div>
             <p data-i18n="pb_promo_p1"></p>
             <p data-i18n="pb_promo_p2"></p>
@@ -331,7 +331,7 @@
                                 </div>
                             </details>
 
-                            <a href="service.htmlid=${s.id}" data-i18n="pb_btn_details" style="display: inline-block; width: 100%; text-align: center; margin-top: 1.5rem; padding: 12px; background: rgba(0, 245, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='0 0 15px rgba(0,245,255,0.3)';" onmouseout="this.style.background='rgba(0, 245, 255, 0.1)'; this.style.boxShadow='none';">Ver Detalle Técnico y Comercial</a>
+                            <a href="service.html?id=${s.id}" data-i18n="pb_btn_details" style="display: inline-block; width: 100%; text-align: center; margin-top: 1.5rem; padding: 12px; background: rgba(0, 245, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='0 0 15px rgba(0,245,255,0.3)';" onmouseout="this.style.background='rgba(0, 245, 255, 0.1)'; this.style.boxShadow='none';">Ver Detalle Técnico y Comercial</a>
                             <a href="proceso_svc_${s.id}_cliente.html" data-i18n="pb_btn_comic_repipe" style="display: inline-block; width: 100%; text-align: center; margin-top: 0.5rem; padding: 12px; background: rgba(255, 140, 0, 0.1); border: 1px solid var(--neon-orange); color: var(--neon-orange); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(255, 140, 0, 0.2)'; this.style.boxShadow='0 0 15px rgba(255,140,0,0.3)';" onmouseout="this.style.background='rgba(255, 140, 0, 0.1)'; this.style.boxShadow='none';">Ver Guía Ilustrada Paso a Paso</a></div>
                     </div>
                 </div>
@@ -346,10 +346,10 @@
 
         function filterByCategory(cat) {
             activeCategory = cat;
-            const buttons = document.querySelectoráll('.pb-filter-btn');
+            const buttons = document.querySelectorAll('.pb-filter-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.getáttribute('onclick').includes(cat)) btn.classList.add('active');
+                if (btn.getAttribute('onclick').includes(cat)) btn.classList.add('active');
             });
             filterServices();
         }
@@ -371,9 +371,9 @@
             renderServices(services);
             
             // Initialize language switching buttons in pricebook
-            document.querySelectoráll('.language-switcher .lang-btn').forEach(btn => {
+            document.querySelectorAll('.language-switcher .lang-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const lang = btn.getáttribute('data-lang');
+                    const lang = btn.getAttribute('data-lang');
                     if(window.setLanguage) {
                         window.setLanguage(lang);
                         renderServices(services); // Re-render to update i18n attributes

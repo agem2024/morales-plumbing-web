@@ -787,7 +787,7 @@ function setCVLang(lang) {
   h('lang1',t.lang1); h('lang1v',t.lang1v); h('lang2',t.lang2); h('lang2v',t.lang2v);
   
   // Buttons active state
-  document.querySelectoráll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
   localStorage.setItem('cv_lang', lang);
 }
 

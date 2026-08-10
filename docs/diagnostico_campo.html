@@ -114,12 +114,12 @@
         let currentLang = localStorage.getItem('mp_lang') || 'en';
 
         function updateTexts() {
-            document.querySelectoráll('[data-es]').forEach(el => {
-                el.innerText = el.getáttribute('data-' + currentLang);
+            document.querySelectorAll('[data-es]').forEach(el => {
+                el.innerText = el.getAttribute('data-' + currentLang);
             });
-            document.querySelectoráll('textarea').forEach(el => {
+            document.querySelectorAll('textarea').forEach(el => {
                 if (el.hasáttribute('data-es-placeholder')) {
-                    el.placeholder = el.getáttribute('data-' + currentLang + '-placeholder');
+                    el.placeholder = el.getAttribute('data-' + currentLang + '-placeholder');
                 }
             });
             
@@ -159,7 +159,7 @@
 
         document.getElementById('camera-upload').addEventListener('change', function(e) {
             const preview = document.getElementById('photo-preview');
-            árray.from(e.target.files).forEach(f => {
+            Array.from(e.target.files).forEach(f => {
                 const reader = new FileReader();
                 reader.onload = function(evt) {
                     const img = document.createElement('img');

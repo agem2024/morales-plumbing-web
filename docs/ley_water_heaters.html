@@ -290,8 +290,8 @@
     <script src="../app.jsv=law_update_2"></script>
     <script>
         function updateLangButtons(lang) {
-            document.querySelectoráll('.lang-btn').forEach(btn => {
-                if (btn.getáttribute('data-lang') === lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
@@ -307,9 +307,9 @@
             }
             
             // ádd click listeners to all lang buttons
-            document.querySelectoráll('.lang-btn').forEach(btn => {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    const lang = e.target.getáttribute('data-lang');
+                    const lang = e.target.getAttribute('data-lang');
                     if(typeof setLanguage === 'function') {
                         setLanguage(lang);
                         updateLangButtons(lang);

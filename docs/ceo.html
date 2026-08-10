@@ -590,7 +590,7 @@ function setCEOLang(lang) {
   h('meta-email', t.meta_email);
 
   // Toggle button active state
-  document.querySelectoráll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
   localStorage.setItem('ceo_lang', lang);
 }
 

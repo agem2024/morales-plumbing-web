@@ -111,11 +111,11 @@
         let currentLang = localStorage.getItem('mp_lang') || 'en';
 
         function updateTexts() {
-            document.querySelectoráll('[data-es]').forEach(el => {
+            document.querySelectorAll('[data-es]').forEach(el => {
                 if (el.tagName === 'OPTION') {
-                    el.innerText = el.getáttribute('data-' + currentLang);
+                    el.innerText = el.getAttribute('data-' + currentLang);
                 } else {
-                    el.innerText = el.getáttribute('data-' + currentLang);
+                    el.innerText = el.getAttribute('data-' + currentLang);
                 }
             });
             document.documentElement.lang = currentLang;
