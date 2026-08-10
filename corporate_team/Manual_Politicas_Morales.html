@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="t-title">Manual de Políticas - Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0A192F;
+            --bg-header: #050d1a;
+            --gold-accent: #D4AF37;
+            --text-light: #e6f1ff;
+            --text-gray: #a8b2d1;
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --border-color: rgba(212, 175, 55, 0.2);
+            --cyan-accent: #00f5ff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(rgba(10, 25, 47, 0.93), rgba(10, 25, 47, 0.93)), url('assets/Gemini_Generated_Image_6ydshm6ydshm6yds.webp') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Inter', sans-serif;
+            
+            color: var(--text-light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+            border-bottom: 4px solid var(--gold-accent);
+            background-color: var(--bg-header);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .back-btn {
+            background: linear-gradient(180deg, #0A192F 0%, #050d1a 100%);
+            border: 1px solid var(--gold-accent, #D4AF37);
+            border-bottom: 4px solid #927318;
+            color: var(--gold-accent, #D4AF37);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 8px 18px;
+            border-radius: 6px;
+            transition: all 0.1s ease;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.7);
+            display: inline-block;
+        }
+        .back-btn:hover {
+            background: linear-gradient(180deg, var(--gold-accent, #D4AF37) 0%, #a88420 100%);
+            color: #0A192F;
+            border-color: var(--gold-accent, #D4AF37);
+            border-bottom-color: #654e10;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(212,175,55,0.3);
+        }
+        .back-btn:active {
+            transform: translateY(3px);
+            border-bottom-width: 1px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+        .back-btn:hover {
+            background: var(--gold-accent);
+            color: #0A192F;
+        }
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 0;
+            background: rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: sticky;
+            top: 78px;
+            z-index: 99;
+            backdrop-filter: blur(10px);
+        }
+        .lang-btn {
+            background: linear-gradient(180deg, #112240 0%, #050d1a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 3px solid rgba(0, 0, 0, 0.6);
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+            transition: all 0.1s ease;
+            position: relative;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+        }
+        .lang-btn:hover {
+            background: linear-gradient(180deg, #172a45 0%, #0A192F 100%);
+            border-color: var(--cyan-accent, #00f5ff);
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(0, 245, 255, 0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        .lang-btn:active {
+            transform: translateY(2px);
+            border-bottom-width: 1px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+        }
+        .lang-btn.active {
+            border-color: var(--cyan-accent, #00f5ff);
+            background: linear-gradient(180deg, rgba(0,245,255,0.15) 0%, rgba(0,245,255,0.05) 100%);
+            color: var(--cyan-accent, #00f5ff);
+            border-bottom-color: var(--cyan-accent, #00f5ff);
+            text-shadow: 0 0 5px rgba(0, 245, 255, 0.5);
+        }
+        .lang-btn:hover {
+            border-color: var(--gold-accent);
+        }
+        .lang-btn.active {
+            border-color: var(--gold-accent);
+            background: rgba(212, 175, 55, 0.12);
+            color: var(--gold-accent);
+            font-weight: bold;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .hero h1 {
+            font-size: 36px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 10px;
+        }
+        .hero h2 {
+            font-size: 18px;
+            color: var(--gold-accent);
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .hero p {
+            color: var(--text-gray);
+            margin-top: 15px;
+            font-size: 15px;
+        }
+        
+        .main-layout {
+            max-width: 1200px;
+            margin: 40px auto 100px auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            padding: 0 20px;
+        }
+        
+        /* Sticky Sidebar Navigation */
+        .sidebar {
+            position: sticky;
+            top: 160px;
+            height: calc(100vh - 200px);
+            overflow-y: auto;
+            padding-right: 10px;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .sidebar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+        .sidebar-menu {
+            list-style: none;
+        }
+        .sidebar-item {
+            margin-bottom: 8px;
+        }
+        .sidebar-link {
+            display: block;
+            padding: 8px 12px;
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: 0.2s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .sidebar-link:hover {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--gold-accent);
+        }
+        .sidebar-link.active {
+            background: rgba(212, 175, 55, 0.08);
+            color: var(--gold-accent);
+            border-left: 3px solid var(--gold-accent);
+            font-weight: 600;
+        }
+        
+        /* Policies Content List */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .policy-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            scroll-margin-top: 160px;
+        }
+        .policy-card h3 {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            padding-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .policy-card p {
+            color: var(--text-gray);
+            font-size: 15px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .policy-card ul {
+            padding-left: 20px;
+            color: var(--text-gray);
+        }
+        .policy-card li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .policy-card li strong {
+            color: white;
+        }
+        .policy-img {
+            width: calc(100% + 70px);
+            max-width: calc(100% + 70px);
+            margin-top: -35px;
+            margin-left: -35px;
+            margin-right: -35px;
+            margin-bottom: 30px;
+            height: 350px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--gold-accent);
+            display: block;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            filter: brightness(0.9) contrast(1.1);
+        }
+        
+        /* Employee Acknowledgment Fields */
+        .signature-section {
+            margin-top: 25px;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .sig-block {
+            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 6px;
+        }
+        .sig-line {
+            border-bottom: 1px solid var(--text-gray);
+            margin: 40px 0 10px 0;
+            height: 1px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: var(--text-gray);
+            font-size: 13px;
+            background: var(--bg-header);
+        }
+        
+        @media(max-width: 850px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+    
+        /* ── 3D AND THEMATIC GLOW STYLES (BY ANTIGRAVITY) ── */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        body {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .policy-card {
+            position: relative;
+            overflow: hidden;
+            background: rgba(10, 25, 47, 0.7) !important;
+            border: 1px solid rgba(212, 175, 55, 0.25) !important;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+            backdrop-filter: blur(14px);
+            transition: all 0.3s ease;
+        }
+        .policy-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -150%;
+            width: 80%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            transition: 0.8s ease-in-out;
+            pointer-events: none;
+        }
+        .policy-card:hover::before {
+            left: 150%;
+        }
+        .policy-card:hover {
+            border-color: var(--gold-accent) !important;
+            box-shadow: 0 15px 40px rgba(212,175,55,0.2), inset 0 1px 0 rgba(255,255,255,0.08) !important;
+            transform: translateY(-2px);
+        }
+
+          /* NEW LANG SWITCH CSS */
+          .lang-switch-container { position: relative; z-index: 9999; }
+          .lang-toggle-btn {
+              background: none; border: 2px solid var(--gold-accent); border-radius: 50%;
+              cursor: pointer; padding: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+              transition: transform 0.3s; position: relative;
+          }
+          .lang-toggle-btn:hover { transform: scale(1.1); box-shadow: 0 6px 15px var(--gold-glow, rgba(212,175,55,0.4)); }
+          .lang-toggle-btn::after {
+              content: "Selector de Idiomas"; position: absolute; bottom: -35px; left: 50%;
+              transform: translateX(-50%); background: rgba(0, 0, 0, 0.8); color: var(--gold-accent);
+              padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;
+              opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s;
+              border: 1px solid var(--gold-accent); pointer-events: none; font-family: 'Inter', sans-serif;
+          }
+          .lang-toggle-btn:hover::after { opacity: 1; visibility: visible; }
+          .lang-dropdown {
+              display: none; position: absolute; top: 60px; left: 0;
+              background: rgba(10, 25, 47, 0.95); border: 1px solid var(--gold-accent);
+              border-radius: 8px; padding: 10px; flex-direction: column; gap: 5px;
+              box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+          }
+          .lang-dropdown.show { display: flex; }
+          .lang-btn {
+              background: linear-gradient(180deg, #112240 0%, #050d1a 100%);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-bottom: 3px solid rgba(0, 0, 0, 0.6);
+              border-radius: 6px; padding: 6px 14px; font-size: 0.9rem;
+              cursor: pointer; color: #fff; font-family: 'Inter', sans-serif;
+              transition: all 0.1s ease;
+          }
+          .lang-btn:hover { border-color: #00f5ff; }
+          .lang-btn.active { color: #00f5ff; border-color: #00f5ff; background: rgba(0,245,255,0.1); }
+
+    </style>
+</head>
+<body>
+    <header style="display: flex; align-items: center; justify-content: space-between; padding: 15px 40px; border-bottom: 2px solid var(--gold-accent); background-color: #050d1a; position: sticky; top: 0; z-index: 100;">
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <div class="lang-switch-container">
+                <button class="lang-toggle-btn" onclick="toggleLangMenu()">
+                    <img src="orion_10_icon_1786135470295.png" onerror="this.src='orion_10_icon_1786135470295.jpg'" alt="Language" style="width: 45px; height: 45px; border-radius: 50%; display: block; object-fit: cover;">
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+                    <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">ZH</button>
+                    <button class="lang-btn" data-lang="tl" onclick="setLang('tl')">TL</button>
+                    <button class="lang-btn" data-lang="vi" onclick="setLang('vi')">VI</button>
+                </div>
+            </div>
+            <img src="logo_transparent.png" alt="Morales Plumbing" height="40" onerror="this.src='morales_logo.jpg'">
+            <span id="t-slogan" data-en='"The Corporate Shield"' data-es='"El Escudo Corporativo"' data-zh='"企业之盾"' data-tl='"Ang Kalasag ng Kumpanya"' data-vi='"Tấm Khiên Doanh Nghiệp"' style="font-family: 'Aladin', cursive; color: var(--cyan-accent, #00f5ff); font-size: 1.6rem; transform: rotate(-3deg); display: inline-block; text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #00f5ff, 5px 5px 5px rgba(0,0,0,0.8); letter-spacing: 2px; margin-left: 15px;">"The Corporate Shield"</span>
+        </div>
+        <a href="Morales_Corporate_Team.html" class="back-btn" id="t-back"><span data-en="BACK TO DIRECTORY" data-zh="返回目录" data-tl="BUMALIK SA DIREKTORYO" data-vi="QUAY LẠI DANH MỤC">VOLVER AL DIRECTORIO</span></a>
+    </header>
+
+    
+
+    <div class="hero">
+        <h1 id="t-h1">MANUAL DE POLÍTICAS Y BUENAS PRÁCTICAS</h1>
+        <h2 id="t-h2">Ética, Lealtad y Comportamiento Organizacional</h2>
+        <p id="t-sub">Vigente para todo el personal de campo, operaciones y administrativo de Morales Plumbing.</p>
+    </div>
+
+    <div class="main-layout">
+        <!-- Sidebar Menu -->
+        <div class="sidebar">
+            <ul class="sidebar-menu" id="sidebar-menu">
+                <!-- Rendered dynamically -->
+            </ul>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content" id="policies-container">
+            <!-- Rendered dynamically -->
+        </div>
+    </div>
+
+    <footer style="display: flex; flex-direction: column; align-items: center; padding: 40px 20px; border-top: 1px solid rgba(212, 175, 55, 0.2); background: #030814; color: #8892b0; margin-top: 60px; gap: 30px; font-size: 14px; text-align: center;">
+    
+    <!-- Top: Digital Channels (With Original Branding) -->
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; width: 100%;">
+        <a href="https://wa.me/16692134422" target="_blank" style="display: flex; align-items: center; gap: 8px; color: #25D366; text-decoration: none; font-weight: bold; background: rgba(37,211,102,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(37,211,102,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(37,211,102,0.2)'" onmouseout="this.style.background='rgba(37,211,102,0.1)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.128.552 4.195 1.6 6.015L.2 23.8l5.908-1.547a11.967 11.967 0 005.923 1.564h.005c6.643 0 12.028-5.385 12.028-12.031C24.062 5.166 18.675 0 12.031 0zm.005 21.848a9.986 9.986 0 01-5.1-1.393l-.366-.217-3.788.993.993-3.69-.239-.38A9.973 9.973 0 012.046 12.03c0-5.518 4.49-10.008 10.01-10.008 5.518 0 10.008 4.49 10.008 10.008 0 5.517-4.49 10.007-10.008 10.007h-.051zm5.495-7.514c-.301-.151-1.785-.88-2.062-.982-.278-.101-.48-.151-.682.151-.202.302-.783.982-.96 1.183-.177.202-.354.227-.656.076-1.503-.755-2.613-1.424-3.568-2.732-.204-.278-.022-.428.128-.578.136-.135.301-.353.453-.529.151-.176.202-.302.302-.503.1-.202.05-.378-.026-.529-.076-.151-.682-1.643-.933-2.25-.245-.591-.496-.511-.682-.52-.176-.009-.378-.009-.58-.009s-.529.076-.807.378c-.278.302-1.06 1.033-1.06 2.518s1.085 2.92 1.236 3.122c.151.202 2.128 3.252 5.155 4.556.72.31 1.282.495 1.722.634.723.23 1.382.197 1.9.12.58-.086 1.785-.729 2.037-1.433.251-.705.251-1.31.176-1.433-.075-.123-.277-.199-.579-.35z"/></svg> WhatsApp
+        </a>
+        <a href="https://t.me/+16692134422" target="_blank" style="display: flex; align-items: center; gap: 8px; color: #0088cc; text-decoration: none; font-weight: bold; background: rgba(0,136,204,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(0,136,204,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(0,136,204,0.2)'" onmouseout="this.style.background='rgba(0,136,204,0.1)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram
+        </a>
+        <a href="mailto:moralesplumbing026@gmail.com" style="display: flex; align-items: center; gap: 8px; color: #EA4335; text-decoration: none; font-weight: bold; background: rgba(234,67,53,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(234,67,53,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(234,67,53,0.2)'" onmouseout="this.style.background='rgba(234,67,53,0.1)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg> Email
+        </a>
+        <a href="sms:+16692134422" style="display: flex; align-items: center; gap: 8px; color: #FABB05; text-decoration: none; font-weight: bold; background: rgba(250,187,5,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(250,187,5,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(250,187,5,0.2)'" onmouseout="this.style.background='rgba(250,187,5,0.1)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.613 4.469 8.653V24l4.085-2.242c1.09.301 2.246.464 3.446.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm3.333 13.333H8.667v-1.111h6.666v1.111zm2.223-3.333H6.444v-1.111h11.112v1.111z"/></svg> SMS
+        </a>
+    </div>
+
+    <!-- Center: Contact Lines -->
+    <div>
+        <p style="margin: 0 0 8px 0; font-size: 15px;"><strong>24/7 Dispatch:</strong> <a href="tel:16692134422" style="color: var(--text-light, #e6f1ff); text-decoration: none; font-weight: 600;">(669) 213-4422</a></p>
+        <p style="margin: 0; opacity: 0.7; font-size: 13px;"><strong>Contingencia:</strong> <a href="tel:16692342444" style="color: inherit; text-decoration: none;">(669) 234-2444</a></p>
+    </div>
+
+    <!-- Bottom: Branding & License -->
+    <div>
+        <h4 style="color: var(--gold-accent, #D4AF37); margin: 0 0 5px 0; font-size: 15px; letter-spacing: 1px; text-transform: uppercase;">Morales Plumbing</h4>
+        <p style="margin: 0; opacity: 0.6; font-size: 12px;">San Jose, CA &bull; Lic. C-36 #1156542</p>
+    </div>
+
+</footer>
+
+    <script>
+        const POLICIES_DATA = {
+            en: {
+                  't-slogan': '"The Corporate Shield"',
+                h1: "POLICIES AND BEST PRACTICES MANUAL",
+                h2: "Ethics, Loyalty, Compliance, Safety, Quality & Organizational Behavior",
+                sub: "Applicable to: Field Personnel, Technicians, Apprentices, Project Managers, Estimators, Dispatchers, Administration, Purchasing, Management and Corporate Personnel.",
+                back: "← BACK TO DIRECTORY",
+                ftr1: "MORALES PLUMBING<br>San Jose, CA | Lic. C-36 #1156542<br>moralesplumbing026@gmail.com | (669) 213-4422",
+                ftr2: "© 2026 Morales Plumbing. Confidential Corporate Document. All rights reserved.",
+                chapters: [
+                    {
+                          image: "manual_cultura.jpg",
+                          title: "1. Behavior & Culture of Excellence",
+                        intro: "At Morales Plumbing, we don't just install pipes. We design, execute, document and guarantee professional solutions. This section establishes the standards of professional behavior expected from every representative.",
+                        bullets: [
+                            "<strong>Professionalism:</strong> Maintain a respectful, polite, and technical attitude at all times with customers, coworkers, vendors, and inspectors. No offensive or abusive language.",
+                            "<strong>Punctuality and Attendance:</strong> Arrive prepared and on time. ORION schedules and dispatch times must be followed strictly. Delays must be reported immediately.",
+                            "<strong>Work Ethic:</strong> Complete assigned work correctly and efficiently. Never intentionally delay or abandon a jobsite without authorization.",
+                            "<strong>Customer Property:</strong> Protect floors, walls, and furniture. Use protective sheets. Report accidental damage immediately and never use or touch personal belongings.",
+                            "<strong>Cleanliness:</strong> Maintain a clean work area during the project, remove debris, and leave the worksite cleaner than it was found.",
+                            "<strong>Continuous Improvement:</strong> Commit to reporting errors, identifying waste or risks, and actively participating in technical training."
+                        ]
+                    },
+                    {
+                          image: "manual_lealtad.jpg",
+                          title: "2. Ethics, Loyalty & Confidentiality",
+                        intro: "Trust is the foundation of our technical plumbing corporation. We protect the relationships between the company, our clients, and our operations.",
+                        bullets: [
+                            "<strong>Professional Loyalty:</strong> Always act in the legitimate best interests of Morales Plumbing. Never compete or steer company leads toward personal operations.",
+                            "<strong>Conflicts of Interest:</strong> Disclose any personal interests that might conflict with the company. Purchasing materials from relative-owned businesses or receiving commissions from vendors requires prior written authorization.",
+                            "<strong>Unauthorized Side Jobs:</strong> Strictly prohibited. Using company leads, vehicles, tools, materials, or ORION database records for personal or private work will result in immediate termination.",
+                            "<strong>Confidential Information:</strong> Customer contacts, pricing metrics, cost structures, ORION Price Book data, passwords, and internal SOPs are strictly confidential.",
+                            "<strong>Post-Employment Obligations:</strong> Confidentiality obligations regarding corporate procedures and software systems continue after employment ends.",
+                            "<strong>Return of Property:</strong> Upon separation, all assigned devices, tools, documents, credentials, keys, and vehicles must be returned immediately."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_7.png",
+                          title: "3. Intellectual Property, ORION and AI",
+                        intro: "Our competitive advantage relies on our proprietary technology systems. This section regulates their ownership, use, and security.",
+                        bullets: [
+                            "<strong>Propiedad de la Empresa:</strong> The ORION system, estimating configurations, multi-agent frameworks, customer databases, prompts, and corporate manuals are exclusive intellectual property.",
+                            "<strong>Artificial Intelligence Ethics:</strong> AI tools are to support professional judgment, not replace it. Entering confidential company data or customer files into public, unauthorized external AIs is strictly prohibited.",
+                            "<strong>ORION Security:</strong> Keep passwords individual and secure. Sharing login credentials, bypassing MFA, or saving corporate codes in public applications is forbidden.",
+                            "<strong>Copyright Compliance:</strong> Respect software licensing and copyrights. Do not distribute or copy proprietary structures without explicit administrative authorization."
+                        ]
+                    },
+                    {
+                          image: "manual_inclusion.jpg",
+                          title: "4. Respect, Inclusion and Gender Behavior",
+                        intro: "Morales Plumbing maintains a professional, merit-based workplace free of discrimination, intimidation, and harassment.",
+                        bullets: [
+                            "<strong>Equal Opportunity:</strong> Hiring, training, and promotions are based strictly on merit, technical capability, and qualifications. Equal treatment for all.",
+                            "<strong>Anti-Harassment:</strong> Zero tolerance for sexual harassment, verbal threats, bullying, intimidation, microaggressions, or offensive jokes.",
+                            "<strong>Colleague & Client Boundaries:</strong> Maintain strictly professional limits in all workplace interactions. Personal issues or internal arguments must never occur in front of clients.",
+                            "<strong>No Retaliation:</strong> No employee who reports a safety violation, harassment, or unethical conduct in good faith shall suffer retaliation.",
+                            "<strong>Reporting Procedure:</strong> Direct concerns to your supervisor, HR Director (Elena Rodriguez), or the designated corporate whistleblower channel."
+                        ]
+                    },
+                    {
+                          image: "manual_seguridad.jpg",
+                          title: "5. OSHA Safety and Field Compliance",
+                        intro: "No production deadline or budget constraint takes priority over life safety. Compliance with state and federal safety guidelines is mandatory.",
+                        bullets: [
+                            "<strong>PPE Mandate:</strong> Wearing safety glasses, gloves, protective footwear, and high-visibility apparel is mandatory on all active worksites. Use fall/respiratory protection when needed.",
+                            "<strong>Job Hazard Assessment:</strong> Before beginning work, identify electrical hazards, gas supply lines, high water pressures, structural issues, or excavation risks.",
+                            "<strong>Lockout/Tagout:</strong> Follow corporate procedures to isolate electrical, gas, or hydraulic energy before performing repairs.",
+                            "<strong>Trenching & Excavations:</strong> Follow California guidelines for wall shielding and utility location services before entering trenches.",
+                            "<strong>Confined Spaces:</strong> Never enter tanks, sewers, or unventilated pits without monitoring air quality, establishing safety watches, and securing entry permits.",
+                            "<strong>Unsafe Conditions & STOP Work:</strong> Any employee has the authority and duty to stop work if conditions are deemed unsafe, escalating immediately to management."
+                        ]
+                    },
+                    {
+                          image: "manual_pqr.jpg",
+                          title: "6. Customer Service and PQR",
+                        intro: "Every client must receive high-end corporate treatment. Our PQR (Petitions, Questions, Complaints) protocol resolves issues efficiently.",
+                        bullets: [
+                            "<strong>First Contact:</strong> Greet clients with the corporate standard: 'Morales Plumbing, this is [Your Name]'. Maintain a clear, professional tone.",
+                            "<strong>Diagnostic Communication:</strong> Explain the problem, cause, recommended solutions, alternatives, costs, and warranties clearly before starting.",
+                            "<strong>PQR Registration:</strong> Document every complaint in ORION. Investigate, assign, resolve, and close the ticket with direct client confirmation.",
+                            "<strong>No Arguments:</strong> Never argue with customers. Maintain professional distance and escalate safety complaints, billing disputes, or threats to management immediately."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_2.png",
+                          title: "7. Quotes, Estimating and Billing",
+                        intro: "Accuracy and financial integrity in estimates are critical to our corporate success and customer trust.",
+                        bullets: [
+                            "<strong>ORION Price Book:</strong> All estimates must be generated through the official digital pricing catalog. Inflating quantities or hiding charges is prohibited.",
+                            "<strong>Repair vs. Replace Options:</strong> Provide the client with clear, honest choices between basic repair and full replacement without pressure.",
+                            "<strong>Authorization:</strong> Document and sign the budget digitally in the ORION system before starting any physical work.",
+                            "<strong>Change Orders:</strong> Any additional scope of work requires documented and signed customer authorization before execution.",
+                            "<strong>Billing Transparency:</strong> Invoices must match the performed labor, materials, and approved changes exactly. Redirecting payments to personal accounts is a crime."
+                        ]
+                    },
+                    {
+                          image: "manual_garantia.jpg",
+                          title: "8. Warranty and Quality Assurance",
+                        intro: "We back our technical plumbing. Each installation is built and tested to meet California's strictest regulations.",
+                        bullets: [
+                            "<strong>Quality Standards:</strong> All work must comply with the California Plumbing Code (CPC), local municipal codes, and manufacturer instructions.",
+                            "<strong>QA Testing:</strong> Perform pressure, flow, and leak tests on all repaired systems before concluding operations.",
+                            "<strong>Mandatory Documentation:</strong> Capture 'Before, During, and After' photographs, serial numbers, and test logs directly in ORION.",
+                            "<strong>Callbacks:</strong> Warranty claims receive Priority 1 scheduling and are resolved without cost if corporate workmanship was deficient."
+                        ]
+                    },
+                    {
+                          image: "manual_cargos.jpg",
+                          title: "9. Roles and Protocols",
+                        intro: "Defining clear boundaries and responsibilities across all corporate levels for flawless operation.",
+                        bullets: [
+                            "<strong>Field Technicians:</strong> Responsible for C-36 execution, code compliance, ORION logs, and onsite safety.",
+                            "<strong>Apprentices:</strong> Must work under direct qualified supervision, complying with safety guides and learning SOPs.",
+                            "<strong>Project Managers (PM):</strong> Coordinate permits, schedule utility coordination, oversee materials, and manage inspectors.",
+                            "<strong>Logistics & Dispatchers:</strong> Coordinate the fleet, handle scheduling, handle incoming customer calls, and log PQRs in ORION.",
+                            "<strong>Purchasing & Inventory:</strong> Audit warehouse stock, coordinate supplier pricing, and manage tool tracking.",
+                            "<strong>HR, Accounting & Management:</strong> Ensure certification validity, process payroll, audit finances, and enforce corporate compliance."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_12.png",
+                          title: "10. Vehicles, Tools and Equipment",
+                        intro: "Company vehicles and assets are specialized corporate tools. Their care and safe operation are individual responsibilities.",
+                        bullets: [
+                            "<strong>Safe Operation:</strong> Only authorized drivers with valid California licenses may operate company trucks. Strict adherence to driving laws. No distracted driving.",
+                            "<strong>Daily Inspections:</strong> Verify fluids, brakes, lights, and inventory before departing. Keep trucks clean and organized.",
+                            "<strong>Tool Assignment:</strong> Specialized tools are tracked via ORION. Employees are responsible for their maintenance and security.",
+                            "<strong>Loss Reporting:</strong> Immediately report lost, stolen, or damaged company tools or vehicle incidents to logistics."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_9.png",
+                          title: "11. Inventory and Material Control",
+                        intro: "Traceability of inventory prevents losses and maintains project profitability.",
+                        bullets: [
+                            "<strong>Stock Tracking:</strong> All materials taken from the warehouse or loaded onto trucks must be checked out in ORION.",
+                            "<strong>Material Returns:</strong> Unused materials must be returned to stock and logged within 24 hours of job completion.",
+                            "<strong>Scrap Control:</strong> Leftover copper, brass, and recyclable metals are company property. They must be collected and delivered to the warehouse for recycling.",
+                            "<strong>Audits:</strong> Warehouse and truck inventories will undergo periodic, unannounced audits."
+                        ]
+                    },
+                    {
+                        image: "assets/images/eng_eco.png",
+                          title: "12. Anti-Fraud and Financial Ethics",
+                        intro: "Morales Plumbing enforces a zero-tolerance policy for financial misconduct or deceit.",
+                        bullets: [
+                            "<strong>Truthful Records:</strong> Falsifying hours worked, inflating material costs, manipulating photographs to show fake defects, or altering invoices is strictly prohibited.",
+                            "<strong>Anti-Corruption:</strong> Employees may not accept cash, gifts, kickbacks, or rebates from suppliers in exchange for purchasing decisions.",
+                            "<strong>Refunds and Credits:</strong> Any customer refund, credit, or discount must receive written approval from administrative management."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_11.png",
+                          title: "13. Data Privacy and Cybersecurity",
+                        intro: "Cybersecurity protocols protect our infrastructure, AI models, and client privacy.",
+                        bullets: [
+                            "<strong>Customer Data:</strong> Never share customer phone numbers, addresses, emails, or financial data with external entities.",
+                            "<strong>Device Security:</strong> Protect company phones and tablets with PIN/biometrics. Enable automatic screen locking. Report lost devices immediately.",
+                            "<strong>Password Protocol:</strong> Never share passwords. Bypassing Multi-Factor Authentication (MFA) or entering corporate logic into public platforms is prohibited."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_6.png",
+                          title: "14. Environmental Policy",
+                        intro: "As C-36 engineering leaders, environmental protection is an integral part of our plumbing practice.",
+                        bullets: [
+                            "<strong>Waste and Disposal:</strong> Properly separate waste. Dispose of chemical compounds, ABS glue containers, and old pipes in compliance with EPA rules.",
+                            "<strong>Spill Prevention:</strong> Use containment trays when handling oils, soldering flux, or chemicals to avoid ground contamination.",
+                            "<strong>Water Conservation:</strong> Promote water-efficient fixtures, dual-flush valves, and explain ecological benefits to customers."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_13.png",
+                          title: "15. Emergency Response",
+                        intro: "Standard protocols for handling immediate hazards to protect life and property.",
+                        bullets: [
+                            "<strong>Immediate Protocol:</strong> Protect Life → Isolate Danger (shut off gas/water) → Notify Dispatch → Respond safely → Document.",
+                            "<strong>Gas Leaks:</strong> Immediately isolate the area, shut off gas valves if safe, evacuate, call 911, and notify management.",
+                            "<strong>Major Flooding:</strong> Immediately locate the main building shut-off valve, close it, and proceed with damage control."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_8.png",
+                          title: "16. Documentation and Records",
+                        intro: "If it is not documented in ORION, it does not exist. Records are critical for liability protection.",
+                        bullets: [
+                            "<strong>Required Logs:</strong> Work orders, estimations, permits, inspections, and client signatures must be stored digitally.",
+                            "<strong>Veracity:</strong> Never modify, backdate, or fabricate inspection results or labor hours.",
+                            "<strong>Retention:</strong> Maintain records in compliance with California CSLB audit requirements."
+                        ]
+                    },
+                    {
+                        image: "assets/images/eng_diseno.png",
+                          title: "17. Training and Certifications",
+                        intro: "Educational investment is the core of our technical expertise.",
+                        bullets: [
+                            "<strong>Mandatory Onboarding:</strong> New hires must undergo orientation covering safety, ORION protocols, and code basics.",
+                            "<strong>Ongoing Training:</strong> Attend technical workshops, OSHA updates, and CPC (California Plumbing Code) training.",
+                            "<strong>Certification Tracking:</strong> Employees must ensure their professional licenses, OSHA cards, and driving records remain valid."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_4.png",
+                          title: "18. Discipline and Corrective Action",
+                        intro: "Ensuring compliance through fair, legal, and progressive corrective actions.",
+                        bullets: [
+                            "<strong>Progressive Discipline:</strong> Minor violations will be handled via coaching, verbal warnings, and written reprimands.",
+                            "<strong>Immediate Termination:</strong> Severe violations such as theft, fraud, workplace violence, harassment, working under the influence, or falsifying safety records result in immediate dismissal."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_10.png",
+                          title: "19. Subcontractors and Vendors",
+                        intro: "Ensuring third parties match the high standards of Morales Plumbing.",
+                        bullets: [
+                            "<strong>Pre-Qualification:</strong> Subcontractors must verify active CSLB licensing, workers' compensation insurance, and safety track records.",
+                            "<strong>Compliance:</strong> Subcontractors must follow all onsite safety, PPE, and conduct guidelines of Morales Plumbing.",
+                            "<strong>Fair Selection:</strong> Vendor selection must be based strictly on quality, price, reliability, and technical compliance."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_14.png",
+                          title: "20. Social Media and Communications",
+                        intro: "Protecting corporate reputation and client privacy on social networks.",
+                        bullets: [
+                            "<strong>Privacy Guard:</strong> Never publish photographs or videos containing customer faces, house numbers, or private details without written approval.",
+                            "<strong>Branding Control:</strong> Only authorized executives may make official public statements on behalf of Morales Plumbing."
+                        ]
+                    },
+                    {
+                        title: "21. Whistleblower and Reporting",
+                        intro: "A safe, confidential channel to report workplace violations or risks.",
+                        bullets: [
+                            "<strong>Whistleblower Safety:</strong> Report safety hazards, fraud, theft, or harassment without fear. Retaliation is strictly forbidden and heavily penalized.",
+                            "<strong>Resolution:</strong> The HR Director conducts independent, documented investigations for all reported violations."
+                        ]
+                    },
+                    {
+                        title: "22. Policy Acknowledgment & Signature",
+                        intro: "Commitment to compliance and execution of company standards.",
+                        bullets: [
+                            "By signing, the employee confirms receiving, reading, and understanding the policies manual, agreeing to comply with all guidelines.",
+                            `<div class="signature-section">
+                                <div class="sig-block">
+                                    <strong>Employee:</strong>
+                                    <div class="sig-line"></div>
+                                    <span>Name & Signature</span>
+                                </div>
+                                <div class="sig-block">
+                                    <strong>Morales Plumbing Representative:</strong>
+                                    <div class="sig-line"></div>
+                                    <span>Authorized Signature</span>
+                                </div>
+                            </div>`
+                        ]
+                    },
+                    {
+                        title: "23. Corporate Image & Brand Anatomy",
+                        intro: "Our brand represents the integration of C-36 engineering with artificial intelligence. This section regulates the guidelines, visual elements, and assets of Morales Plumbing's corporate identity.",
+                        bullets: [
+                            "<strong>Brand Concept:</strong> The Morales Plumbing logo merges traditional plumbing icons with technological intelligence, showing a 3D metallic shield, gear, wrench, and an AI-integrated water droplet.",
+                            "<strong>Visual Anatomy:</strong> A copper-colored outer gear and wrench represent mechanical plumbing; the blue metallic inner shield represents robust structure; and the transparent water droplet houses the 'AI' processor.",
+                            "<strong>Official Logos:</strong> Use the transparent logo (<code>logo_transparent.png</code>) on dark website headers. Use the frontal logo with text (<code>logo uso espanol final servicos FRONTAL.png</code>) for stationery, business cards, and print materials.",
+                            "<strong>Brand Audio-Visuals:</strong> We have produced official corporate jingles (promotional songs) to represent the spirit of Morales Plumbing in marketing campaigns. Play them below.",
+                            `<strong>Corporate Identity Media & Jingles:</strong>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 15px; margin-bottom: 20px;">
+                                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center;">
+                                    <h4 style="color: var(--gold-accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 1px;">OFFICIAL JINGLE (ENGLISH)</h4>
+                                    <video controls style="width: 100%; border-radius: 4px; background: #000; max-height: 160px;">
+                                        <source src="morales_jingle_en.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center;">
+                                    <h4 style="color: var(--gold-accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 1px;">OFFICIAL JINGLE (SPANISH)</h4>
+                                    <video controls style="width: 100%; border-radius: 4px; background: #000; max-height: 160px;">
+                                        <source src="morales_jingle_es.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>`,
+                            "<strong>Anatomy Graphic:</strong> Refer to <code>anatomia marca espanol.png</code> (below) for detailed proportions, typography alignment, and paleta of colors.",
+                            "<strong>Field Uniform Guidelines:</strong> For on-site and technical inspections, the official field uniform must be worn as shown by the CEO in the field (<code>assets/cv_photo.png</code>).",
+                            `<div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+                                <img src="assets/cv_photo.png" alt="Field Uniform Representation" style="max-width: 250px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            </div>`,
+                            `<div style="text-align: center; margin-top: 20px;">
+                                <img src="anatomia marca espanol.png" alt="Brand Anatomy" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            </div>`
+                        ]
+                    }
+                ]
+            },
+            es: {
+                  't-slogan': '"El Escudo Corporativo"',
+                h1: "MANUAL DE POLÍTICAS Y BUENAS PRÁCTICAS",
+                h2: "Ética, Lealtad, Cumplimiento, Seguridad, Calidad y Comportamiento Organizacional",
+                sub: "Vigente para: Personal de campo, técnicos, aprendices, gerentes de proyecto, estimadores, despachadores, compras, administración y gerencia.",
+                back: "← VOLVER AL DIRECTORIO",
+                ftr1: "MORALES PLUMBING<br>San Jose, CA | Lic. C-36 #1156542<br>moralesplumbing026@gmail.com | (669) 213-4422",
+                ftr2: "© 2026 Morales Plumbing. Documento Confidencial Corporativo. Todos los derechos reservados.",
+                chapters: [
+                    {
+                          image: "manual_cultura.jpg",
+                          title: "1. Comportamiento y Cultura de Excelencia",
+                        intro: "En Morales Plumbing, no solo instalamos tuberías. Diseñamos, ejecutamos, documentamos y garantizamos soluciones profesionales. Esta sección establece las normas de conducta esperadas por parte de cada representante.",
+                        bullets: [
+                            "<strong>Profesionalismo:</strong> Mantener una actitud respetuosa, cortés y técnica en todo momento con clientes, compañeros, proveedores e inspectores. Queda prohibido el lenguaje ofensivo o abusivo.",
+                            "<strong>Puntualidad y Asistencia:</strong> Llegar preparado y a tiempo. Los horarios y despachos de ORION deben seguirse estrictamente. Los retrasos deben reportarse de inmediato.",
+                            "<strong>Ética de Trabajo:</strong> Completar el trabajo asignado de manera correcta y eficiente. Nunca demorar intencionalmente o abandonar una obra sin autorización.",
+                            "<strong>Propiedad del Cliente:</strong> Proteger pisos, paredes y muebles usando lonas de protección. Reportar cualquier daño accidental y nunca tocar pertenencias personales.",
+                            "<strong>Limpieza:</strong> Mantener el área limpia durante el proyecto, retirar los desperdicios y dejar la zona más limpia de como se encontró.",
+                            "<strong>Mejora Continua:</strong> Compromiso de reportar errores, identificar desperdicios o riesgos, y participar activamente en capacitaciones técnicas."
+                        ]
+                    },
+                    {
+                          image: "manual_lealtad.jpg",
+                          title: "2. Ética, Lealtad y Confidencialidad",
+                        intro: "La confianza es el cimiento de nuestra corporación. Protegemos las relaciones entre la empresa, nuestros clientes y nuestras operaciones.",
+                        bullets: [
+                            "<strong>Lealtad Profesional:</strong> Actuar siempre en beneficio de Morales Plumbing. Se prohíbe competir o desviar oportunidades de la empresa para beneficio personal.",
+                            "<strong>Conflictos de Interés:</strong> Informar sobre intereses personales que choquen con la empresa. Comprar materiales a familiares o recibir comisiones de proveedores requiere autorización escrita.",
+                            "<strong>Side Jobs No Autorizados:</strong> Estrictamente prohibidos. El uso de leads, vehículos, herramientas, materiales o la base de datos de ORION para trabajos privados resultará en despido inmediato.",
+                            "<strong>Confidencialidad:</strong> Los datos de clientes, métricas de precios, estructuras de costos, el ORION Price Book, contraseñas y SOPs internos son estrictamente confidenciales.",
+                            "<strong>Obligaciones Post-Empleo:</strong> Las responsabilidades de confidencialidad sobre software y procesos continúan después de finalizar la relación laboral.",
+                            "<strong>Devolución de Propiedad:</strong> Al separarse de la empresa, se deben devolver de inmediato todos los dispositivos, herramientas, llaves y vehículos asignados."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_7.png",
+                          title: "3. Propiedad Intelectual, ORION e IA",
+                        intro: "Nuestra ventaja competitiva reside en nuestra tecnología propietaria. Esta sección regula su propiedad, uso y seguridad.",
+                        bullets: [
+                            "<strong>Propiedad de la Empresa:</strong> El sistema ORION, las configuraciones de estimación, los frameworks de multi-agentes, bases de datos de clientes, prompts y manuales son propiedad intelectual exclusiva.",
+                            "<strong>Ética en Inteligencia Artificial:</strong> Las herramientas de IA apoyan el juicio profesional, no lo reemplazan. Prohibido ingresar datos confidenciales de la empresa o clientes en sistemas de IA públicos externos.",
+                            "<strong>Seguridad de ORION:</strong> Mantener contraseñas individuales y seguras. Prohibido compartir credenciales, saltarse el MFA o guardar códigos corporativos en aplicaciones públicas.",
+                            "<strong>Derechos de Autor:</strong> Respetar las licencias de software y copyrights. No distribuir ni copiar estructuras de la empresa sin autorización explícita."
+                        ]
+                    },
+                    {
+                          image: "manual_inclusion.jpg",
+                          title: "4. Respeto, Inclusión y Conducta de Género",
+                        intro: "Morales Plumbing mantiene un lugar de trabajo profesional basado en el respeto, el mérito y la igualdad de oportunidades.",
+                        bullets: [
+                            "<strong>Igualdad de Oportunidades:</strong> La contratación, capacitación y ascensos se basan en mérito y capacidad técnica. Trato equitativo para todos sin distinción.",
+                            "<strong>Acoso Cero:</strong> Tolerancia cero al acoso sexual, amenazas verbales, acoso escolar (bullying), intimidación, microaggresiones o chistes ofensivos.",
+                            "<strong>Límites con Clientes y Compañeros:</strong> Mantener límites estrictamente profesionales. Los problemas personales o discusiones internas jamás deben ocurrir frente a los clientes.",
+                            "<strong>Prevención de Represalias:</strong> Ningún empleado que reporte una violación de seguridad, acoso o conducta poco ética de buena fe sufrirá represalias.",
+                            "<strong>Procedimiento de Reporte:</strong> Dirigir inquietudes a su supervisor, a la Directora de RRHH (Elena Rodriguez) o al canal confidencial de denuncias."
+                        ]
+                    },
+                    {
+                          image: "manual_seguridad.jpg",
+                          title: "5. Seguridad OSHA y Cumplimiento de Campo",
+                        intro: "Ninguna fecha límite de producción o restricción de presupuesto tiene prioridad sobre la seguridad de la vida. El cumplimiento de las normas de seguridad estatales y federales es obligatorio.",
+                        bullets: [
+                            "<strong>Mandato de EPP:</strong> El uso de gafas de seguridad, guantes, calzado de protección y ropa de alta visibilidad es obligatorio en todas las obras. Usar protección respiratoria/contra caídas cuando se requiera.",
+                            "<strong>Evaluación de Riesgos (JHA):</strong> Antes de comenzar, identificar riesgos eléctricos, líneas de gas, altas presiones de agua, problemas estructurales o riesgos de excavación.",
+                            "<strong>Bloqueo y Etiquetado (LOTO):</strong> Seguir procedimientos corporativos para aislar energía eléctrica, de gas o hidráulica antes de reparaciones.",
+                            "<strong>Excavaciones y Zanjas:</strong> Cumplir con las pautas de California sobre blindaje de paredes y localización de servicios públicos antes de entrar a zanjas.",
+                            "<strong>Espacios Confinados:</strong> No entrar a tanques, alcantarillas o pozos sin monitorear el aire, tener un vigía de seguridad y asegurar un permiso de entrada.",
+                            "<strong>Condiciones Inseguras y Detención:</strong> Todo empleado tiene la autoridad y el deber de detener el trabajo si las condiciones son inseguras, escalando a la gerencia."
+                        ]
+                    },
+                    {
+                          image: "manual_pqr.jpg",
+                          title: "6. Servicio al Cliente y PQR",
+                        intro: "Cada cliente debe recibir un trato corporativo de primer nivel. Nuestro protocolo de PQR (Peticiones, Quejas, Reclamos) resuelve problemas con alta eficiencia.",
+                        bullets: [
+                            "<strong>Primer Contacto:</strong> Saludar siempre bajo el estándar: 'Morales Plumbing, le habla [Tu Nombre]'. Mantener un tono claro y profesional.",
+                            "<strong>Comunicación de Diagnóstico:</strong> Explicar el problema, causa, solución recomendada, alternativas, costos y garantías con total claridad antes de iniciar.",
+                            "<strong>Registro de PQR:</strong> Documentar cada queja en ORION. Investigar, asignar, resolver y cerrar el ticket con confirmación directa del cliente.",
+                            "<strong>Sin Discusiones:</strong> Jamás discutir con los clientes. Mantener distancia profesional y escalar de inmediato disputas de cobro, reclamos de garantía o amenazas."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_2.png",
+                          title: "7. Ofertas, Presupuestos y Facturación",
+                        intro: "La precisión y honestidad financiera en los presupuestos son fundamentales para nuestro éxito y la confianza del cliente.",
+                        bullets: [
+                            "<strong>ORION Price Book:</strong> Todos los presupuestos deben generarse mediante el catálogo digital de precios oficial. Prohibido inflar cantidades o cargos ocultos.",
+                            "<strong>Opciones de Reparación vs. Reemplazo:</strong> Proveer opciones claras y honestas entre la reparación básica y el reemplazo completo, sin ejercer presiones.",
+                            "<strong>Autorización Digital:</strong> Documentar y firmar el presupuesto digitalmente en el sistema ORION antes de iniciar cualquier labor física.",
+                            "<strong>Órdenes de Cambio:</strong> Cualquier trabajo adicional requiere autorización firmada y documentada por el cliente antes de su ejecución.",
+                            "<strong>Transparencia de Facturación:</strong> Las facturas deben coincidir exactamente con el trabajo realizado, materiales y cambios aprobados. Desviar pagos a cuentas personales es un delito."
+                        ]
+                    },
+                    {
+                          image: "manual_garantia.jpg",
+                          title: "8. Garantías y Control de Calidad",
+                        intro: "Respaldamos nuestra ingeniería en plomería. Cada instalación se prueba para cumplir con las normas de construcción de California.",
+                        bullets: [
+                            "<strong>Estándares de Calidad:</strong> Todo trabajo debe cumplir con el Código de Plomería de California (CPC), códigos locales e instrucciones del fabricante.",
+                            "<strong>Pruebas de Control (QA):</strong> Realizar pruebas de presión, flujo y fugas en sistemas reparados antes de concluir las operaciones.",
+                            "<strong>Documentación Obligatoria:</strong> Capturar fotografías de 'Antes, Durante y Después', números de serie y registros de pruebas directamente en ORION.",
+                            "<strong>Callbacks:</strong> Los reclamos de garantía tienen prioridad de programación Nivel 1 y se resuelven sin costo si la mano de obra corporativa fue deficiente."
+                        ]
+                    },
+                    {
+                          image: "manual_cargos.jpg",
+                          title: "9. Roles y Protocolos Organizacionales",
+                        intro: "Definición de límites y responsabilidades en todos los niveles corporativos para un funcionamiento impecable.",
+                        bullets: [
+                            "<strong>Técnicos de Campo:</strong> Responsables de la ejecución C-36, cumplimiento de códigos, bitácora de ORION y seguridad en obra.",
+                            "<strong>Aprendices:</strong> Trabajar bajo supervisión calificada directa, cumpliendo pautas de seguridad y aprendiendo los SOPs.",
+                            "<strong>Gestores de Proyecto (PM):</strong> Coordinar permisos, gestionar inspecciones municipales, compras de materiales y coordinar inspectores.",
+                            "<strong>Logística y Despacho:</strong> Coordinar flota, gestionar asignaciones, recibir llamadas de clientes y registrar PQRs en el sistema ORION.",
+                            "<strong>Compras e Inventario:</strong> Auditar stock en almacén, coordinar precios con proveedores y gestionar el control de herramientas.",
+                            "<strong>Administración, RRHH y Dirección:</strong> Asegurar vigencia de certificaciones, procesar nómina, auditoría financiera y velar por el cumplimiento corporativo."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_12.png",
+                          title: "10. Vehículos, Herramientas y Equipos",
+                        intro: "Los vehículos y activos de la empresa son herramientas corporativas especializadas. Su cuidado y conducción segura son responsabilidades individuales.",
+                        bullets: [
+                            "<strong>Conducción Segura:</strong> Solo conductores autorizados con licencia válida de California pueden operar los camiones. Apego estricto a las leyes de tránsito. No conducir distraído.",
+                            "<strong>Inspecciones Diarias:</strong> Verificar fluidos, frenos, luces e inventario antes de salir. Mantener el camión limpio y ordenado.",
+                            "<strong>Asignación de Herramientas:</strong> Las herramientas especializadas se registran en ORION. Los empleados son responsables de su custodia y mantenimiento.",
+                            "<strong>Reporte de Pérdidas:</strong> Informar de inmediato sobre herramientas perdidas, robadas o dañadas, así como incidentes con vehículos a la división de logística."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_9.png",
+                          title: "11. Inventario y Control de Materiales",
+                        intro: "La trazabilidad de inventarios previene pérdidas y mantiene la rentabilidad de los proyectos.",
+                        bullets: [
+                            "<strong>Registro de Carga:</strong> Todo material retirado de la bodega o cargado en camiones debe ser registrado en el sistema ORION.",
+                            "<strong>Retorno de Materiales:</strong> Los materiales no utilizados deben devolverse al almacén y registrarse dentro de las 24 horas posteriores al cierre del trabajo.",
+                            "<strong>Control de Chatarra:</strong> El cobre, bronce y metales reciclables sobrantes son propiedad de la empresa. Deben entregarse en el almacén para reciclaje.",
+                            "<strong>Auditorías:</strong> El stock de bodega y camiones estará sujeto a auditorías periódicas y no anunciadas."
+                        ]
+                    },
+                    {
+                        image: "assets/images/eng_eco.png",
+                          title: "12. Anti-Fraude e Integridad Financiera",
+                        intro: "Morales Plumbing mantiene cero tolerancia ante conductas financieras deshonestas o engañosas.",
+                        bullets: [
+                            "<strong>Registros Verídicos:</strong> Queda prohibido alterar horas laboradas, inflar costos de materiales, manipular fotos para simular daños falsos o alterar facturas.",
+                            "<strong>Anti-Corrupción:</strong> Ningún empleado puede aceptar efectivo, regalos o comisiones directas de proveedores a cambio de decisiones de compra.",
+                            "<strong>Reembolsos y Créditos:</strong> Cualquier devolución, crédito o descuento al cliente debe ser aprobado por la gerencia administrativa por escrito."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_11.png",
+                          title: "13. Protección de Información y Ciberseguridad",
+                        intro: "Protocolos de ciberseguridad para proteger nuestra infraestructura, modelos de IA y la privacidad de nuestros clientes.",
+                        bullets: [
+                            "<strong>Datos de Clientes:</strong> Jamás compartir teléfonos, direcciones, correos o datos financieros de clientes con agentes externos.",
+                            "<strong>Seguridad de Dispositivos:</strong> Proteger celulares y tablets corporativos con PIN/biométricos. Bloqueo automático de pantalla. Reportar pérdida del equipo de inmediato.",
+                            "<strong>Protocolo de Contraseñas:</strong> Prohibido compartir claves corporativas, saltarse el MFA o ingresar lógica de la empresa en plataformas públicas."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_6.png",
+                          title: "14. Política Ambiental",
+                        intro: "Como líderes en ingeniería C-36, la protección del medio ambiente es parte integral de nuestra práctica de plomería.",
+                        bullets: [
+                            "<strong>Desechos y Residuos:</strong> Clasificar desperdicios. Desechar compuestos químicos, pegamentos de ABS y tuberías viejas según las normativas de la EPA.",
+                            "<strong>Prevención de Derrames:</strong> Utilizar bandejas de contención al manipular aceites, soldaduras o químicos para evitar contaminación de suelos.",
+                            "<strong>Conservación del Agua:</strong> Promover accesorios de alta eficiencia y válvulas ecológicas, explicando sus beneficios al cliente."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_13.png",
+                          title: "15. Respuesta a Emergencias",
+                        intro: "Protocolos de acción rápida ante riesgos inminentes para proteger la vida y la propiedad.",
+                        bullets: [
+                            "<strong>Protocolo Inmediato:</strong> Proteger vida → Aislar peligro (cerrar agua/gas) → Notificar a despacho → Responder seguro → Documentar.",
+                            "<strong>Fugas de Gas:</strong> Evacuar de inmediato, no accionar interruptores, cerrar válvula principal si es seguro, llamar al 911 y reportar a la gerencia.",
+                            "<strong>Inundación Mayor:</strong> Ubicar de inmediato la llave de paso principal del inmueble, cerrarla y proceder con el control de daños."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_8.png",
+                          title: "16. Documentación y Control de Registros",
+                        intro: "Si no está documentado en ORION, no existe. El registro digital es nuestra protección ante responsabilidades legales.",
+                        bullets: [
+                            "<strong>Registros Mandatorios:</strong> Órdenes de trabajo, cotizaciones, permisos, inspecciones y firmas del cliente deben almacenarse digitalmente.",
+                            "<strong>Veracidad:</strong> Prohibido alterar, antedatar o inventar resultados de pruebas o reportes de inspección.",
+                            "<strong>Retención:</strong> Mantener los expedientes de obra de acuerdo con los tiempos auditables requeridos por el CSLB de California."
+                        ]
+                    },
+                    {
+                        image: "assets/images/eng_diseno.png",
+                          title: "17. Capacitación y Certificaciones",
+                        intro: "La inversión educativa es la base de nuestra excelencia técnica.",
+                        bullets: [
+                            "<strong>Inducción Obligatoria:</strong> Todo nuevo ingreso debe cursar la inducción sobre seguridad, protocolos ORION y códigos básicos.",
+                            "<strong>Capacitación Continua:</strong> Asistir a talleres de seguridad, actualizaciones de OSHA y capacitaciones sobre el código CPC de California.",
+                            "<strong>Control de Licencias:</strong> El personal regulado debe mantener activas sus licencias técnicas, certificaciones de seguridad y registro de conducción."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_4.png",
+                          title: "18. Disciplina y Acciones Correctivas",
+                        intro: "Garantizar el cumplimiento mediante acciones correctivas justas, progresivas y apegadas a la ley.",
+                        bullets: [
+                            "<strong>Disciplina Progresiva:</strong> Las faltas menores se abordarán con coaching, advertencias verbales y amonestaciones escritas consecutivas.",
+                            "<strong>Despido Inmediato:</strong> Faltas críticas como robo, fraude, violencia, acoso severo, laborar bajo el influjo de sustancias o alterar registros de seguridad conllevan rescisión inmediata."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_10.png",
+                          title: "19. Subcontractores y Proveedores",
+                        intro: "Aseguramos que terceros mantengan los altos estándares de Morales Plumbing.",
+                        bullets: [
+                            "<strong>Calificación Previa:</strong> Los subcontratistas deben demostrar licencias CSLB activas, seguros de compensación al trabajador y buen historial de seguridad.",
+                            "<strong>Cumplimiento de Obra:</strong> Deben apegarse estrictamente a las reglas de conducta, uso de EPP y seguridad del sitio fijados por Morales Plumbing.",
+                            "<strong>Relación Ética:</strong> La selección de proveedores se basará puramente en calidad, precio, confiabilidad y cumplimiento técnico."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_14.png",
+                          title: "20. Redes Sociales y Comunicación",
+                        intro: "Regulación de la presencia digital de Morales Plumbing y la privacidad de nuestros clientes.",
+                        bullets: [
+                            "<strong>Privacidad Digital:</strong> Prohibido publicar fotos o videos que muestren rostros de clientes, números de casas o detalles privados sin autorización escrita.",
+                            "<strong>Vocería Autorizada:</strong> Solo los directivos autorizados pueden emitir comunicados oficiales o declaraciones públicas a nombre de Morales Plumbing."
+                        ]
+                    },
+                    {
+                        title: "21. Reporte de Violaciones y Denuncias",
+                        intro: "Canal confidencial y seguro para reportar anomalías o riesgos en la empresa.",
+                        bullets: [
+                            "<strong>Seguridad al Denunciar:</strong> Reportar malas prácticas, fraudes, robos o acoso sin temor. Se prohíben las represalias en Morales Plumbing.",
+                            "<strong>Investigación:</strong> La Dirección de RRHH realizará investigaciones independientes y documentadas sobre cada reporte recibido."
+                        ]
+                    },
+                    {
+                        title: "22. Firma del Empleado y Aceptación",
+                        intro: "Compromiso de cumplimiento y ejecución de los estándares de la compañía.",
+                        bullets: [
+                            "Con su firma, el empleado confirma haber recibido, leído y comprendido el manual de políticas, comprometiéndose a cumplir cada directriz.",
+                            `<div class="signature-section">
+                                <div class="sig-block">
+                                    <strong>Firma del Empleado:</strong>
+                                    <div class="sig-line"></div>
+                                    <span>Nombre y Firma</span>
+                                </div>
+                                <div class="sig-block">
+                                    <strong>Representante Morales Plumbing:</strong>
+                                    <div class="sig-line"></div>
+                                    <span>Firma Autorizada</span>
+                                </div>
+                            </div>`
+                        ]
+                    },
+                    {
+                        title: "23. Imagen Corporativa y Anatomía de Marca",
+                        intro: "Nuestra marca representa la fusión de la ingeniería C-36 con la inteligencia artificial. Esta sección regula las directrices y uso de los activos de identidad visual de Morales Plumbing.",
+                        bullets: [
+                            "<strong>Concepto de Marca:</strong> El logotipo entrelaza íconos de plomería con patrones de circuito y microchips de IA, reflejando nuestro enfoque tecnológico de vanguardia.",
+                            "<strong>Anatomía Visual:</strong> Engranaje de cobre y llave ajustable cromada representan el oficio físico; el escudo azul metálico representa la estructura; la gota de agua alberga el procesador 'AI'.",
+                            "<strong>Uso de Logotipos:</strong> Utilizar el logotipo transparente (<code>logo_transparent.png</code>) en cabeceras web oscuras. El logotipo frontal con texto (<code>logo uso espanol final servicos FRONTAL.png</code>) es para papelería y uniformes.",
+                            "<strong>Identidad Audiovisual:</strong> Hemos producido jingles corporativos oficiales (canciones promocionales) para representar el espíritu de Morales Plumbing en campañas publicitarias.",
+                            `<strong>Videos e Himnos Oficiales:</strong>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 15px; margin-bottom: 20px;">
+                                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center;">
+                                    <h4 style="color: var(--gold-accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 1px;">JINGLE OFICIAL (INGLÉS)</h4>
+                                    <video controls style="width: 100%; border-radius: 4px; background: #000; max-height: 160px;">
+                                        <source src="morales_jingle_en.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center;">
+                                    <h4 style="color: var(--gold-accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 1px;">JINGLE OFICIAL (ESPAÑOL)</h4>
+                                    <video controls style="width: 100%; border-radius: 4px; background: #000; max-height: 160px;">
+                                        <source src="morales_jingle_es.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>`,
+                            "<strong>Gráfico de Anatomía:</strong> Consulte el archivo <code>anatomia marca espanol.png</code> (abajo) para ver detalles de paleta cromática, tipografía y proporciones oficiales.",
+                            "<strong>Lineamientos de Uniforme de Campo:</strong> Para inspecciones técnicas y en terreno, se debe portar el uniforme oficial de campo, tal como lo ejemplifica el CEO en terreno (<code>assets/cv_photo.png</code>).",
+                            `<div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+                                <img src="assets/cv_photo.png" alt="Representación de Uniforme de Campo" style="max-width: 250px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            </div>`,
+                            `<div style="text-align: center; margin-top: 20px;">
+                                <img src="anatomia marca espanol.png" alt="Anatomía de Marca" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            </div>`
+                        ]
+                    }
+                ]
+            },
+            zh: {
+                  't-slogan': '"企业之盾"',
+                h1: "政策与规范手册",
+                h2: "道德、忠诚、合规、安全、质量与组织行为",
+                sub: "适用于：外勤人员、技术员、学徒、项目经理、估算师、调度员、采购、行政和管理团队。",
+                back: "← 返回目录",
+                ftr1: "MORALES PLUMBING<br>圣何塞，加利福尼亚州 | Lic. C-36 #1156542<br>moralesplumbing026@gmail.com | (669) 213-4422",
+                ftr2: "© 2026 Morales Plumbing. 机密公司文件。版权所有。",
+                chapters: [
+                    {
+                          image: "manual_cultura.jpg",
+                          title: "1. 行为规范与卓越文化",
+                        intro: "在 Morales Plumbing，我们不只是安装管道。我们设计、执行、记录并保证专业的解决方案。本节确立了每位代表应遵守的专业行为标准。",
+                        bullets: [
+                            "<strong>专业精神：</strong> 在与客户、同事、供应商和督察员沟通时始终保持尊重、礼貌和专业的技术态度。严禁使用侮辱性语言。",
+                            "<strong>准时与出勤：</strong> 做好准备，准时到达。必须严格遵守 ORION 的日程和调度指令。任何延迟必须立即报告。",
+                            "<strong>职业道德：</strong> 正确且高效地完成分配的工作。严禁故意拖延或未经授权擅自离开施工现场。",
+                            "<strong>客户财产：</strong> 保护好客户的地板、墙壁和家具。使用防护垫。如有损坏立即报告，严禁挪用或触碰客户的私人物品。",
+                            "<strong>清洁卫生：</strong> 在施工期间保持工作区域清洁，及时清除垃圾，尽量让工完场清，比原来更整洁。",
+                            "<strong>持续改进：</strong> 承诺及时报告错误，识别浪费或风险，并积极参加技术培训。"
+                        ]
+                    },
+                    {
+                          image: "manual_lealtad.jpg",
+                          title: "2. 职业道德、忠诚与机密",
+                        intro: "信任是我们技术管道公司的基石。我们严格保护公司、客户和运营之间的关系。",
+                        bullets: [
+                            "<strong>职业忠诚：</strong> 始终为了 Morales Plumbing 的合法利益而行动。严禁利用公司的商业线索获取个人利益或参与竞争。",
+                            "<strong>利益冲突：</strong> 必须披露任何可能与公司利益冲突的个人关系。严禁从亲属拥有的企业采购材料，或在未经书面授权下收取供应商佣金。",
+                            "<strong>严禁私活：</strong> 严格禁止使用公司的线索、车辆、工具、材料或 ORION 数据库信息从事私人工作。违者将立即解雇。",
+                            "<strong>机密信息：</strong> 客户联系信息、定价矩阵、成本结构、ORION Price Book 数据、密码和内部标准作业程序 (SOP) 均属于绝密。",
+                            "<strong>离职义务：</strong> 在劳动关系结束后，员工对公司程序和软件系统的保密义务依然有效。",
+                            "<strong>财产归还：</strong> 离职时，必须立即归还所有公司配发设备、工具、钥匙和车辆。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_7.png",
+                          title: "3. 知识产权、ORION 系统与 AI 应用",
+                        intro: "我们的竞争优势建立在专有的技术系统之上。本节规范其所有权、使用和安全。",
+                        bullets: [
+                            "<strong>公司财产：</strong> ORION 系统、估算配置、多智能体框架、客户数据库、提示词以及公司手册均属于专有知识产权。",
+                            "<strong>人工智能道德：</strong> AI 工具旨在辅助专业判断，而非取代人类责任。严禁将公司机密数据或客户文件输入未经授权的公共外部 AI 中。",
+                            "<strong>系统安全：</strong> 保证个人密码安全。严禁共享登录凭证、绕过 MFA 或在公共应用程序中保存公司敏感代码。"
+                        ]
+                    },
+                    {
+                          image: "manual_inclusion.jpg",
+                          title: "4. 尊重、包容与职场性别行为规范",
+                        intro: "Morales Plumbing 致力于营造一个公平、尊重、无歧视和无骚扰的专业工作环境。",
+                        bullets: [
+                            "<strong>平等机会：</strong> 招聘、培训和晋升完全基于个人能力、技术水平和资质。人人平等。",
+                            "<strong>骚扰零容忍：</strong> 严禁任何形式的性骚扰、语言威胁、职场霸凌、恐吓、微侵犯或侮辱性玩笑。",
+                            "<strong>职场界限：</strong> 在所有工作互动中保持严格的专业界限。严禁在客户面前发生个人争吵或内部辩论。"
+                        ]
+                    },
+                    {
+                          image: "manual_seguridad.jpg",
+                          title: "5. OSHA 安全规范与现场合规",
+                        intro: "任何生产进度或预算限制都不及人身安全重要。必须严格执行州和联邦的安全准则。",
+                        bullets: [
+                            "<strong>个人防护装备 (PPE)：</strong> 在所有活跃工地必须佩戴安全眼镜、手套、保护鞋和高反光衣。必要时使用防坠落和防尘面罩。",
+                            "<strong>现场危害评估 (JHA)：</strong> 在施工前，评估并识别电击危险、燃气管线、高水压、结构问题或塌方风险。",
+                            "<strong>上锁挂牌 (LOTO)：</strong> 进行系统维修前，务必按照流程切断电源、气源或水压等危险能量源。"
+                        ]
+                    },
+                    {
+                          image: "manual_pqr.jpg",
+                          title: "6. 客户服务与 PQR 投诉管理",
+                        intro: "每位客户都应获得高规格的专业服务。我们的 PQR 协议可保证问题得到高效解决。",
+                        bullets: [
+                            "<strong>第一声问候：</strong> 必须使用规范话术：“您好，这里是 Morales Plumbing，我是 [您的名字]”。保持专业、平和的语气。",
+                            "<strong>诊断沟通：</strong> 在施工前，向客户清楚说明问题、原因、建议的解决方案、备选方案、费用以及保修政策。",
+                            "<strong>PQR 记录：</strong> 在 ORION 系统中记录每一起投诉。进行调查、指定责任人、解决并与客户确认签字闭环。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_2.png",
+                          title: "7. 报价、估算与财务结算",
+                        intro: "精确和诚实的报价是我们公司成功的关键，也是客户信任的基石。",
+                        bullets: [
+                            "<strong>ORION 价格手册：</strong> 所有估算必须使用官方的价格手册进行。严禁故意虚报工程量或添加隐形收费。",
+                            "<strong>提供合理选择：</strong> 诚实向客户提供基本维修和整体更换的方案，严禁强推报价或欺骗客户。",
+                            "<strong>数字授权：</strong> 必须在 ORION 系统中完成客户的电子签名确认后，方可进行任何实体施工。",
+                            "<strong>工作变更单 (Change Orders)：</strong> 任何超出原定范围的追加施工，必须获得客户签字授权后方可执行。"
+                        ]
+                    },
+                    {
+                          image: "manual_garantia.jpg",
+                          title: "8. 服务保修与质量控制",
+                        intro: "我们为我们的技术工程负责。每项安装都必须严格遵守加利福尼亚州的建筑规范。",
+                        bullets: [
+                            "<strong>质量标准：</strong> 所有工作必须符合《加利福尼亚管道规范》(CPC)、地方市政条例以及设备制造商的安装说明。",
+                            "<strong>质量测试：</strong> 在完工前，必须对所有维修和新装管道系统进行压力、流量和漏水测试。",
+                            "<strong>系统记录：</strong> 将“施工前、施工中、完工后”的照片、设备序列号和测试记录直接保存到 ORION 平台中。"
+                        ]
+                    },
+                    {
+                          image: "manual_cargos.jpg",
+                          title: "9. 岗位角色与工作协议",
+                        intro: "明确公司各层级的职责边界，确保高水平的无缝运营。",
+                        bullets: [
+                            "<strong>外勤技术员：</strong> 负责 C-36 工程执行、合规、ORION 记录以及工地安全管理。",
+                            "<strong>学徒：</strong> 必须在有资质的技术员直接监督下工作，认真执行安全手册并学习 SOP 流程。",
+                            "<strong>项目经理 (PM)：</strong> 负责协调申请施工许可、市政工程验收、材料采购、人员调配以及 inspector 关系。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_12.png",
+                          title: "10. 车辆、工具与设备管理",
+                        intro: "公司的车辆和设备是专用的生产工具。对其进行日常维护和安全操作是员工的个人责任。",
+                        bullets: [
+                            "<strong>安全行车：</strong> 只有持有有效加州驾照的授权员工才能驾驶公司车辆。严格遵守交通规则，严禁分心驾驶。",
+                            "<strong>每日点检：</strong> 在出车前检查机油、刹车、灯光和工具箱。保持车辆内部整洁。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_9.png",
+                          title: "11. 库存与材料跟踪",
+                        intro: "清晰的库存记录可以避免耗材丢失并提升项目利润率。",
+                        bullets: [
+                            "<strong>出库记录：</strong> 所有从仓库取出或装到 camión 上的材料必须在 ORION 中进行出库记录。",
+                            "<strong>铜废料控制：</strong> 施工剩余的铜管、铜件及可回收金属属于公司资产，必须收集并交回仓库处理。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/eng_eco.png",
+                          title: "12. 反欺诈与财务诚信",
+                        intro: "Morales Plumbing 对任何形式的财务不端或欺诈行为实行零容忍政策。",
+                        bullets: [
+                            "<strong>信息真实：</strong> 严禁虚报工作时长、夸大材料消耗、修图制造假故障或篡改发票内容。",
+                            "<strong>合规采购：</strong> 严禁接受供应商提供的任何回扣、佣金、现金或贵重礼品。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_11.png",
+                          title: "13. 数据隐私与网络安全",
+                        intro: "保护系统安全，防止公司核心业务逻辑和客户数据泄露。",
+                        bullets: [
+                            "<strong>客户隐私保护：</strong> 严禁向外部无关人员或商业机构提供客户的地址、电话、邮件和信用卡信息。",
+                            "<strong>密码规范：</strong> 不得共享个人登录密码。严禁关闭 MFA (多因子认证) 或将公司核心信息保存在不安全的公共设备中。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_6.png",
+                          title: "14. 环境保护政策",
+                        intro: "作为 C-36 管道工程领军企业，环境保护也是我们技术实践中不可或缺的责任。",
+                        bullets: [
+                            "<strong>废弃物处理：</strong> 废弃的化学胶水瓶、废旧管道必须按照 EPA 环保规范分类丢弃，严禁乱扔。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_13.png",
+                          title: "15. 紧急状况应急响应",
+                        intro: "在发生紧急事故时，确保生命安全并最大限度减少财产损失。",
+                        bullets: [
+                            "<strong>快速反应：</strong> 保护生命安全 → 切断危险源（关闭总水阀/总气阀） → 通知调度 → 进行安全处置 → 记录报告。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_8.png",
+                          title: "16. 文档控制与档案管理",
+                        intro: "在 ORION 中没有记录的事情，在法律层面上就是不存在的。电子化档案是防范法律纠纷的重要手段。",
+                        bullets: [
+                            "<strong>合规归档：</strong> 施工图纸、合同、估算表和客户确认字据必须妥善进行电子化归档保存。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/eng_diseno.png",
+                          title: "17. 新人培训与资质管理",
+                        intro: "持续的教育和培训是我们专业水平得以保持的核心。",
+                        bullets: [
+                            "<strong>入职考核：</strong> 新员工必须通过安全常识、ORION 系统使用和管道规范基本功考核后方可上岗。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_4.png",
+                          title: "18. 纪律处分与奖惩条例",
+                        intro: "通过公正、合法的奖惩条例，确保团队步调一致，遵守标准流程。",
+                        bullets: [
+                            "<strong>红线违规：</strong> 偷盗公司或客户财物、挪用公款、殴打同事、职场骚扰、酒驾毒驾或伪造安全记录，将做即时开除处理。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_10.png",
+                          title: "19. 分包商与外部供应商准入",
+                        intro: "我们确保任何代表本公司开展业务的外部第三方都符合同样的安全与质量要求。",
+                        bullets: [
+                            "<strong>资质审核：</strong> 分包商必须提供有效的 C-36 许可证、工伤保险 (Workers Comp) 及商业责任险保单证明。"
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_14.png",
+                          title: "20. 社交媒体与企业形象管理",
+                        intro: "规范员工在互联网平台上的言行，保护客户的隐私和公司的品牌形象。",
+                        bullets: [
+                            "<strong>肖像与隐私：</strong> 未经书面同意，严禁在个人社交媒体上发布包含客户正脸、客户住宅门牌号或敏感结构的照片。"
+                        ]
+                    },
+                    {
+                        title: "21. 举报人保护与违规申诉",
+                        intro: "提供一个安全、受保护的违规行为反馈渠道。",
+                        bullets: [
+                            "<strong>免受报复：</strong> 公司承诺对出于善意目的举报安全隐患、偷盗或职场骚扰的员工提供绝对保护，严禁报复行为。"
+                        ]
+                    },
+                    {
+                        title: "22. 员工确认与签字",
+                        intro: "员工对遵守和执行公司各项管理规范的正式书面承诺。",
+                        bullets: [
+                            "签字即代表员工确认已完整阅读、理解并同意自觉遵守本政策手册的所有管理规定。",
+                            `<div class="signature-section">
+                                <div class="sig-block">
+                                    <strong>员工签字：</strong>
+                                    <div class="sig-line"></div>
+                                    <span>姓名与日期</span>
+                                </div>
+                                <div class="sig-block">
+                                    <strong>授权代表签字：</strong>
+                                    <div class="sig-line"></div>
+                                    <span>姓名与日期</span>
+                                </div>
+                            </div>`
+                        ]
+                    },
+                    {
+                        title: "23. 企业形象与品牌视觉解析",
+                        intro: "我们的品牌展示了 C-36 管道工程与人工智能的结合。本节规范了 Morales Plumbing 企业视觉资产的使用和规范。",
+                        bullets: [
+                            "<strong>品牌理念：</strong> 徽标融合了传统管道符号、电路板图案和 AI 微芯片，展现了我们行业领先的技术实力。",
+                            "<strong>标志解析：</strong> 铜色齿轮和扳手代表着手工工艺；蓝色金属盾牌代表稳固结构；透明水滴中嵌有“AI”处理器。",
+                            "<strong>官方标志使用：</strong> 网站深色导航栏统一使用透明底标志 (<code>logo_transparent.png</code>)。印刷品及卡片使用正面完整版标志 (<code>logo uso espanol final servicos FRONTAL.png</code>)。",
+                            "<strong>视听标识：</strong> 我们制作了官方企业广告歌曲（宣传歌），在营销活动中展示 Morales Plumbing 的品牌精神。",
+                            `<strong>官方视频与广告歌：</strong>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 15px; margin-bottom: 20px;">
+                                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center;">
+                                    <h4 style="color: var(--gold-accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 1px;">官方广告歌 (英文版)</h4>
+                                    <video controls style="width: 100%; border-radius: 4px; background: #000; max-height: 160px;">
+                                        <source src="morales_jingle_en.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center;">
+                                    <h4 style="color: var(--gold-accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 1px;">官方广告歌 (西班牙文版)</h4>
+                                    <video controls style="width: 100%; border-radius: 4px; background: #000; max-height: 160px;">
+                                        <source src="morales_jingle_es.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>`,
+                            "<strong>视觉解析图：</strong> 请参考下方 <code>anatomia marca espanol.png</code> 图表，以获取有关官方配色、字体和比例 of 详细规范。",
+                            "<strong>现场制服规范：</strong> 进行现场和技术检查时，必须穿着官方现场制服，如 CEO 在现场所示 (<code>assets/cv_photo.png</code>)。",
+                            `<div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+                                <img src="assets/cv_photo.png" alt="现场制服规范" style="max-width: 250px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            </div>`,
+                            `<div style="text-align: center; margin-top: 20px;">
+                                <img src="anatomia marca espanol.png" alt="品牌解析" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            </div>`
+                        ]
+                    }
+                ]
+            },
+            tl: {
+                  't-slogan': '"Ang Kalasag ng Kumpanya"',
+                h1: "MANWAL NG MGA PATAKARAN AT MABUTING GAWAIN",
+                h2: "Etika, Katapatan, Pagsunod, Kaligtasan, Kalidad at Gawi sa Organisasyon",
+                sub: "Nalalapat sa: Field personnel, technician, apprentice, project manager, estimator, dispatcher, purchasing, administrasyon, at pamamahala.",
+                back: "← BUMALIK SA DIREKTORYO",
+                ftr1: "MORALES PLUMBING<br>San Jose, CA | Lic. C-36 #1156542<br>moralesplumbing026@gmail.com | (669) 213-4422",
+                ftr2: "© 2026 Morales Plumbing. Lihim na Dokumento ng Korporasyon. Lahat ng karapatan ay rezerbado.",
+                chapters: [
+                    {
+                          image: "manual_cultura.jpg",
+                          title: "1. Gawi at Kultura ng Kahusayan",
+                        intro: "Sa Morales Plumbing, hindi lang kami nagkakabit ng tubo. Nagdidisenyo, nagpapatupad, nagdodokumento at nagtitiyak kami ng mga propesyonal na solusyon.",
+                        bullets: [
+                            "<strong>Propesyonalismo:</strong> Panatilihin ang magalang at teknikal na saloobin sa lahat ng oras sa mga customer at katrabaho. Bawal ang bastos na pananalita.",
+                            "<strong>Puntwalidad:</strong> Dumating nang handa at sa tamang oras. Sundin ang mga iskedyul at dispatch ng ORION.",
+                            "<strong>Etika sa Paggawa:</strong> Tapusin ang nakatalagang trabaho nang tama at mabilis. Huwag kailanman abandunahin ang jobsite nang walang pahintulot."
+                        ]
+                    },
+                    {
+                          image: "manual_lealtad.jpg",
+                          title: "2. Etika, Katapatan at Pagiging Lihim",
+                        intro: "Ang tiwala ang pundasyon ng aming korporasyon ng teknikal na pagtutubero.",
+                        bullets: [
+                            "<strong>Katapatan:</strong> Laging kumilos para sa lehitimong interes ng Morales Plumbing. Bawal mag-side job gamit ang mga kagamitan o leads ng kumpanya.",
+                            "<strong>Lihim na Impormasyon:</strong> Ang mga contact ng customer, cost structures, at ORION Price Book ay mahigpit na lihim."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_7.png",
+                          title: "3. Ari-ariang Intelektwal, ORION at AI",
+                        intro: "Ang ating kalamangan sa kumpetisyon ay nakasalalay sa ating mga pagmamay-ari na sistema ng teknolohiya.",
+                        bullets: [
+                            "<strong>Ari-arian ng Kumpanya:</strong> Ang sistemang ORION, customer database, at Price Book ay pagmamay-ari ng kumpanya.",
+                            "<strong>Uso ng AI:</strong> Bawal maglagay ng sensitibong impormasyon ng kumpanya o customer sa mga pampublikong AI platform."
+                        ]
+                    },
+                    {
+                          image: "manual_inclusion.jpg",
+                          title: "4. Paggalang, Pagkakasama at Gawi sa Kasarian",
+                        intro: "Pinapanatili ng Morales Plumbing ang isang ligtas at propesyonal na kapaligiran sa pagtatrabaho.",
+                        bullets: [
+                            "<strong>Zero Tolerance:</strong> Walang puwang para sa sekswal na panliligalig, bullying, diskriminasyon o pananakot.",
+                            "<strong>Lugar ng Trabaho:</strong> Panatilihing propesyonal ang pakikitungo sa lahat ng kasamahan at kliyente."
+                        ]
+                    },
+                    {
+                          image: "manual_seguridad.jpg",
+                          title: "5. Kaligtasan sa OSHA at Pagsunod sa Field",
+                        intro: "Ang kaligtasan ng buhay ang pinakamahalaga sa lahat. Walang deadline na mas mahalaga kaysa sa kaligtasan.",
+                        bullets: [
+                            "<strong>Kagamitang EPP:</strong> Sapilitan ang pagsuot ng EPP (goggles, gloves, safety shoes, vest) sa lahat ng aktibong gawaan.",
+                            "<strong>Panganib sa Kuryente at Gas:</strong> Kilalanin at ihiwalay ang mga linya ng kuryente o gas bago magsimulang magkumpuni."
+                        ]
+                    },
+                    {
+                          image: "manual_pqr.jpg",
+                          title: "6. Serbisyo sa Customer at PQR",
+                        intro: "Dapat makatanggap ang bawat kliyente ng mataas na uri ng propesyonal na pakikitungo.",
+                        bullets: [
+                            "<strong>Pagsalubong sa Customer:</strong> Batiin ang customer ng: 'Morales Plumbing, ako si [Pangalan]'. Huwag makipag-away sa customer.",
+                            "<strong>Pamamahala ng PQR:</strong> I-document ang bawat reklamo o tanong sa ORION upang mabilis na maaksyunan ng pamamahala."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_2.png",
+                          title: "7. Presyo, Estimasyon at Pagkuha ng Bayad",
+                        intro: "Ang katapatan sa mga presyo at estimates ay susi sa tiwala ng aming mga customer.",
+                        bullets: [
+                            "<strong>ORION Price Book:</strong> Gamitin lamang ang opisyal na catalog ng presyo para sa lahat ng pagtatantya ng gastos.",
+                            "<strong>Pirmana ng Customer:</strong> Bago magsimula ang pisikal na trabaho, dapat ay may pirma ang estimate sa ORION."
+                        ]
+                    },
+                    {
+                          image: "manual_garantia.jpg",
+                          title: "8. Garantiya at Pagtitiyak ng Kalidad",
+                        intro: "Ginagarantiya namin ang aming trabaho alinsunod sa mga code ng konstruksyon ng California.",
+                        bullets: [
+                            "<strong>Pagsunod sa Code:</strong> Sundin ang California Plumbing Code (CPC) at mga tagubilin ng gumawa ng kagamitan.",
+                            "<strong>Mga Larawan:</strong> Kumuha ng mga larawan ng Bago, Habang, at Pagkatapos ng trabaho at i-upload sa ORION."
+                        ]
+                    },
+                    {
+                          image: "manual_cargos.jpg",
+                          title: "9. Mga Tungkulin at Protocol ng Organisasyon",
+                        intro: "Malinaw na pamamahagi ng mga tungkulin para sa maayos na operasyon ng kumpanya.",
+                        bullets: [
+                            "<strong>Technician:</strong> Sila ang gumagawa ng trabaho nang ligtas at sumusunod sa mga code.",
+                            "<strong>Dispatcher:</strong> Tagatanggap ng tawag, nag-aayos ng iskedyul, at naglalagay ng PQR sa ORION."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_12.png",
+                          title: "10. Mga Sasakyan, Kasangkapan at Kagamitan",
+                        intro: "Ang mga sasakyan ng kumpanya ay para lamang sa opisyal na paggamit.",
+                        bullets: [
+                            "<strong>Ligtas na Pagmamaneho:</strong> Sumunod sa batas trapiko ng California. Huwag gumamit ng telepono habang nagmamaneho.",
+                            "<strong>Pangangalaga:</strong> Panatilihing malinis ang sasakyan at i-check ang brake at fluid araw-araw."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_9.png",
+                          title: "11. Kontrol sa Inventaryo at Materyales",
+                        intro: "Maayos na pagsubaybay sa mga materyales upang maiwasan ang pagkalugi.",
+                        bullets: [
+                            "<strong>ORION Registry:</strong> Ang lahat ng kinukuha o isinasauling materyales ay dapat nakarehistro sa ORION."
+                        ]
+                    },
+                    {
+                        image: "assets/images/eng_eco.png",
+                          title: "12. Laban sa Panloloko at Etika sa Pananalapi",
+                        intro: "Mayroong zero tolerance ang Morales Plumbing sa anumang panloloko sa pera.",
+                        bullets: [
+                            "<strong>Bawal ang Pandaraya:</strong> Bawal baguhin ang oras ng trabaho, mag-imbento ng sira, o magpalit ng invoice."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_11.png",
+                          title: "13. Privacy ng Data at Cybersecurity",
+                        intro: "Protektahan ang impormasyon ng kumpanya at customer mula sa hacker.",
+                        bullets: [
+                            "<strong>Privacy ng Customer:</strong> Bawal ibahagi ang address o numero ng telepono ng customer sa labas ng kumpanya."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_6.png",
+                          title: "14. Patakaran sa Kapaligiran",
+                        intro: "Ligtas at responsableng pagtatapon ng basura para sa kalikasan.",
+                        bullets: [
+                            "<strong>Pagtatapon ng Basura:</strong> Itapon ang mga kemikal at lumang tubo ayon sa mga batas ng EPA."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_13.png",
+                          title: "15. Tugon sa mga Emergency",
+                        intro: "Mabilis na pagkilos sa oras ng malaking aberya o panganib.",
+                        bullets: [
+                            "<strong>Tagas ng Gas:</strong> Lumabas agad ng gusali, huwag magbukas ng ilaw, isara ang gas at tumawag sa 911."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_8.png",
+                          title: "16. Dokumentasyon at mga Tala",
+                        intro: "Ang mga nakasulat at naka-save na tala ang ating patunay sa kalidad ng serbisyo.",
+                        bullets: [
+                            "<strong>ORION System:</strong> I-save ang mga invoice, permits, at pirma sa aprubadong digital database."
+                        ]
+                    },
+                    {
+                        image: "assets/images/eng_diseno.png",
+                          title: "17. Pagsasanay at mga Sertipikasyon",
+                        intro: "Patuloy na pag-aaral ng mga patakaran at technical codes.",
+                        bullets: [
+                            "<strong>Orientation:</strong> Lahat ng bagong pasok ay dapat sumailalim sa orientation tungkol sa seguridad at ORION."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_4.png",
+                          title: "18. Disiplina at mga Pagwawasto",
+                        intro: "Makatarungang pagpapatupad ng disiplina para sa kaayusan ng lahat.",
+                        bullets: [
+                            "<strong>Mabilis na Pagkakaalis:</strong> Ang pagnanakaw, pananakit, o pagtatrabaho habang lasing o sabog ay may parusang agarang pagkakatanggal."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_10.png",
+                          title: "19. Mga Subcontractor at Supplier",
+                        intro: "Pagsigurado na ang mga kasosyong negosyo ay sumusunod sa ating pamantayan.",
+                        bullets: [
+                            "<strong>Kwalipikasyon:</strong> Ang mga subcontractor ay dapat may aktibong lisensya at sapat na insurance."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_14.png",
+                          title: "20. Social Media at mga Pahayag",
+                        intro: "Pangangalaga sa imahe ng kumpanya sa internet.",
+                        bullets: [
+                            "<strong>Bawal I-post:</strong> Huwag mag-post ng mga larawan ng bahay o mukha ng customer nang walang pahintulot."
+                        ]
+                    },
+                    {
+                        title: "21. Pag-uulat ng mga Paglabag",
+                        intro: "Ligtas na paraan ng pag-uulat ng anumang maling gawain.",
+                        bullets: [
+                            "<strong>Walang Ganti:</strong> Protektado ang sinumang mag-ulat ng pagnanakaw o harassment sa pamamahala o HR."
+                        ]
+                    },
+                    {
+                        title: "22. Pagkilala at Pirma ng Empleado",
+                        intro: "Pormal na pagtanggap at pagsang-ayon sa mga patakaran ng kumpanya.",
+                        bullets: [
+                            "Sa pamamagitan ng pagpirma, pinatutunayan ng empleado na naintindihan niya ang manwal at sumasang-ayon siyang sumunod dito.",
+                            `<div class="signature-section">
+                                <div class="sig-block">
+                                    <strong>Pirma ng Empleado:</strong>
+                                    <div class="sig-line"></div>
+                                    <span>Pangalan at Pirma</span>
+                                </div>
+                                <div class="sig-block">
+                                    <strong>Kinatawan ng Kumpanya:</strong>
+                                    <div class="sig-line"></div>
+                                    <span>Pangalan at Pirma</span>
+                                </div>
+                            </div>`
+                        ]
+                    },
+                    {
+                        title: "23. Imahe ng Korporasyon at Anatomya ng Tatak",
+                        intro: "Kinakatawan ng aming brand ang pagsasanib ng C-36 engineering at artificial intelligence. Kinokontrol ng seksyong ito ang mga alituntunin ng Morales Plumbing corporate identity.",
+                        bullets: [
+                            "<strong>Konsepto ng Tatak:</strong> Pinagsasama ng logo ang mga tradisyunal na tubo at wrench sa mga high-tech PCB circuits at AI microchips.",
+                            "<strong>Visual na Anatomya:</strong> Ang tanso na engranaje at wrench ay kumakatawan sa pisikal na paggawa; ang asul na metal na kalasag ay para sa istruktura; ang gota ng tubig ay naglalaman ng 'AI' chip.",
+                            "<strong>Opisyal na Logos:</strong> Gamitin ang transparent logo (<code>logo_transparent.png</code>) sa madidilim na header ng website. Ang frontal logo na may text (<code>logo uso espanol final servicos FRONTAL.png</code>) ay para sa mga sulat at uniporme.",
+                            "<strong>Audio-Visual na Identidad:</strong> Mayroon kaming opisyal na mga jingle (mga kanta ng kumpanya) upang kumatawan sa diwa ng Morales Plumbing sa aming mga kampanya.",
+                            `<strong>Mga Opisyal na Video at Jingle:</strong>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 15px; margin-bottom: 20px;">
+                                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center;">
+                                    <h4 style="color: var(--gold-accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 1px;">OPISYAL NA JINGLE (INGLES)</h4>
+                                    <video controls style="width: 100%; border-radius: 4px; background: #000; max-height: 160px;">
+                                        <source src="morales_jingle_en.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center;">
+                                    <h4 style="color: var(--gold-accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 1px;">OPISYAL NA JINGLE (ESPANOL)</h4>
+                                    <video controls style="width: 100%; border-radius: 4px; background: #000; max-height: 160px;">
+                                        <source src="morales_jingle_es.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>`,
+                            "<strong>Larawan ng Anatomya:</strong> Sumangguni sa <code>anatomia marca espanol.png</code> (sa ibaba) para sa opisyal na sukat, kulay, at alignment.",
+                            "<strong>Mga Alituntunin sa Uniform sa Field:</strong> Para sa on-site at teknikal na pag-iinspeksyon, dapat isuot ang opisyal na field uniform tulad ng ipinapakita ng CEO sa field (<code>assets/cv_photo.png</code>).",
+                            `<div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+                                <img src="assets/cv_photo.png" alt="Representasyon ng Field Uniform" style="max-width: 250px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            </div>`,
+                            `<div style="text-align: center; margin-top: 20px;">
+                                <img src="anatomia marca espanol.png" alt="Anatomya ng Tatak" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            </div>`
+                        ]
+                    }
+                ]
+            },
+            vi: {
+                  't-slogan': '"Tấm Khiên Doanh Nghiệp"',
+                h1: "SỔ TAY HƯỚNG DẪN CHÍNH SÁCH VÀ QUY TẮC",
+                h2: "Đạo đức, Lòng trung thành, Tuân thủ, An toàn, Chất lượng & Hành vi Tổ chức",
+                sub: "Áp dụng cho: Nhân viên hiện trường, kỹ thuật viên, học việc, quản lý dự án, người báo giá, điều phối viên, mua hàng, hành chính và ban quản lý.",
+                back: "← QUAY LẠI DANH MỤC",
+                ftr1: "MORALES PLUMBING<br>San Jose, CA | Lic. C-36 #1156542<br>moralesplumbing026@gmail.com | (669) 213-4422",
+                ftr2: "© 2026 Morales Plumbing. Tài liệu Mật Doanh nghiệp. Bảo lưu mọi quyền.",
+                chapters: [
+                    {
+                          image: "manual_cultura.jpg",
+                          title: "1. Hành vi & Văn hóa Xuất sắc",
+                        intro: "Tại Morales Plumbing, chúng tôi không chỉ lắp đặt đường ống. Chúng tôi thiết kế, thực hiện, ghi chép và đảm bảo các giải pháp chuyên nghiệp.",
+                        bullets: [
+                            "<strong>Sự chuyên nghiệp:</strong> Luôn duy trì thái độ tôn trọng, lịch sự và kỹ thuật với khách hàng và đồng nghiệp. Nghiêm cấm ngôn từ thô tục.",
+                            "<strong>Đúng giờ:</strong> Đến chuẩn bị sẵn sàng và đúng giờ. Phải tuân thủ nghiêm ngặt lịch trình và sự điều phối của ORION.",
+                            "<strong>Đạo đức làm việc:</strong> Hoàn thành công việc được giao đúng đắn và hiệu quả. Không bao giờ tự ý rời bỏ công trình khi chưa được phép."
+                        ]
+                    },
+                    {
+                          image: "manual_lealtad.jpg",
+                          title: "2. Đạo đức, Lòng trung thành và Bảo mật",
+                        intro: "Niềm tin là nền tảng của tập đoàn kỹ thuật đường ống của chúng tôi.",
+                        bullets: [
+                            "<strong>Lòng trung thành:</strong> Luôn hành động vì lợi ích hợp pháp của Morales Plumbing. Nghiêm cấm sử dụng thiết bị hoặc thông tin của công ty cho việc riêng.",
+                            "<strong>Thông tin bảo mật:</strong> Thông tin khách hàng, bảng giá và ORION Price Book là thông tin tuyệt mật."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_7.png",
+                          title: "3. Sở hữu Trí tuệ, Hệ thống ORION và AI",
+                        intro: "Lợi thế cạnh tranh của chúng tôi dựa trên các hệ thống công nghệ thuộc sở hữu của chúng tôi.",
+                        bullets: [
+                            "<strong>Tài sản Công ty:</strong> Hệ thống ORION, cơ sở dữ liệu khách hàng và Price Book là tài sản sở hữu trí tuệ của công ty.",
+                            "<strong>Quy tắc sử dụng AI:</strong> Không đưa thông tin mật của công ty hoặc khách hàng vào các nền tảng AI công cộng."
+                        ]
+                    },
+                    {
+                          image: "manual_inclusion.jpg",
+                          title: "4. Tôn trọng, Hòa nhập và Quy tắc Giới tính",
+                        intro: "Morales Plumbing duy trì một môi trường làm việc chuyên nghiệp và bình đẳng.",
+                        bullets: [
+                            "<strong>Không quấy rối:</strong> Không chấp nhận mọi hành vi quấy rối tình dục, đe dọa, bắt nạt hay phân biệt đối xử.",
+                            "<strong>Giới hạn chuyên nghiệp:</strong> Duy trì ranh giới chuyên nghiệp trong mọi mối quan hệ công việc với đồng nghiệp và khách hàng."
+                        ]
+                    },
+                    {
+                          image: "manual_seguridad.jpg",
+                          title: "5. An toàn OSHA và Tuân thủ Hiện trường",
+                        intro: "An toàn tính mạng là trên hết. Không có tiến độ công việc nào quan trọng hơn sự an toàn.",
+                        bullets: [
+                            "<strong>Thiết bị PPE:</strong> Bắt buộc đeo kính bảo hộ, găng tay, giày bảo hộ, áo phản quang tại mọi công trình đang hoạt động.",
+                            "<strong>Nguồn điện và Gas:</strong> Xác định và ngắt các nguồn điện hoặc gas trước khi thực hiện sửa chữa."
+                        ]
+                    },
+                    {
+                          image: "manual_pqr.jpg",
+                          title: "6. Dịch vụ Khách hàng và PQR",
+                        intro: "Mọi khách hàng phải được tiếp đón và phục vụ một cách chuyên nghiệp nhất.",
+                        bullets: [
+                            "<strong>Lời chào:</strong> Chào khách hàng theo chuẩn: 'Morales Plumbing, tôi là [Tên]'. Không tranh cãi với khách hàng.",
+                            "<strong>Quản lý PQR:</strong> Ghi chép mọi khiếu nại hoặc câu hỏi vào hệ thống ORION để quản lý xử lý kịp thời."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_2.png",
+                          title: "7. Báo giá, Ước tính và Thanh toán",
+                        intro: "Sự trung thực và chính xác trong báo giá là chìa khóa tạo nên niềm tin của khách hàng.",
+                        bullets: [
+                            "<strong>ORION Price Book:</strong> Chỉ sử dụng bảng giá chính thức để báo giá cho khách hàng. Không tự ý tăng giá.",
+                            "<strong>Phê duyệt của Khách hàng:</strong> Trước khi thực hiện sửa chữa, phải có chữ ký xác nhận báo giá trên ORION."
+                        ]
+                    },
+                    {
+                          image: "manual_garantia.jpg",
+                          title: "8. Bảo hành và Đảm bảo Chất lượng",
+                        intro: "Chúng tôi đảm bảo công việc của mình tuân thủ các mã xây dựng của California.",
+                        bullets: [
+                            "<strong>Tuân thủ Mã:</strong> Tuân thủ Bộ luật Đường ống California (CPC) và hướng dẫn của nhà sản xuất thiết bị.",
+                            "<strong>Hình ảnh minh chứng:</strong> Chụp ảnh Trước, Trong, và Sau khi thi công để tải lên hệ thống ORION."
+                        ]
+                    },
+                    {
+                          image: "manual_cargos.jpg",
+                          title: "9. Vai trò và Quy trình Tổ chức",
+                        intro: "Phân chia rõ ràng trách nhiệm của từng bộ phận để hoạt động trơn tru.",
+                        bullets: [
+                            "<strong>Kỹ thuật viên:</strong> Thực hiện công việc an toàn, đúng mã kỹ thuật và ghi chép đầy đủ.",
+                            "<strong>Điều phối viên:</strong> Tiếp nhận cuộc gọi, lên lịch hẹn và nhập PQR vào ORION."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_12.png",
+                          title: "10. Xe cộ, Công cụ và Thiết bị",
+                        intro: "Xe cộ của công ty chỉ được sử dụng cho mục đích công việc chính thức.",
+                        bullets: [
+                            "<strong>Lái xe an toàn:</strong> Tuân thủ luật giao thông California. Không dùng điện thoại khi đang lái xe.",
+                            "<strong>Kiểm tra hàng ngày:</strong> Giữ xe sạch sẽ và kiểm tra phanh, dầu máy mỗi ngày trước khi đi."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_9.png",
+                          title: "11. Kiểm soát Kho bãi và Vật tư",
+                        intro: "Kiểm soát chặt chẽ vật tư để tránh thất thoát hao hụt.",
+                        bullets: [
+                            "<strong>ORION Registry:</strong> Mọi vật tư lấy ra hay trả lại kho phải được quét mã ghi nhận trong ORION."
+                        ]
+                    },
+                    {
+                        image: "assets/images/eng_eco.png",
+                          title: "12. Phòng chống Gian lận và Đạo đức Tài chính",
+                        intro: "Morales Plumbing không khoan nhượng với bất kỳ hành vi gian lận tài chính nào.",
+                        bullets: [
+                            "<strong>Không gian lận:</strong> Nghiêm cấm khai gian giờ làm, kê khống vật tư, hay sửa đổi hóa đơn."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_11.png",
+                          title: "13. Bảo mật Thông tin và An ninh mạng",
+                        intro: "Bảo vệ hệ thống và dữ liệu khách hàng khỏi sự tấn công của hacker.",
+                        bullets: [
+                            "<strong>Quyền riêng tư của Khách hàng:</strong> Không chia sẻ địa chỉ hoặc số điện thoại khách hàng ra bên ngoài."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_6.png",
+                          title: "14. Chính sách Môi trường",
+                        intro: "Xử lý rác thải an toàn, bảo vệ môi trường xung quanh.",
+                        bullets: [
+                            "<strong>Xử lý chất thải:</strong> Thải bỏ hóa chất và đường ống cũ theo đúng quy định của EPA."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_13.png",
+                          title: "15. Ứng phó khẩn cấp",
+                        intro: "Hành động nhanh chóng khi xảy ra sự cố lớn hoặc nguy hiểm.",
+                        bullets: [
+                            "<strong>Rò rỉ Gas:</strong> Sơ tán ngay lập tức, không bật thiết bị điện, khóa van gas chính và gọi 911."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_8.png",
+                          title: "16. Ghi chép và Lưu trữ hồ sơ",
+                        intro: "Hồ sơ lưu trữ đầy đủ là bằng chứng cho chất lượng dịch vụ chuyên nghiệp.",
+                        bullets: [
+                            "<strong>Hệ thống ORION:</strong> Lưu trữ hóa đơn, giấy phép, và chữ ký phê duyệt trên cơ sở dữ liệu số của công ty."
+                        ]
+                    },
+                    {
+                        image: "assets/images/eng_diseno.png",
+                          title: "17. Đào tạo và Chứng chỉ kỹ thuật",
+                        intro: "Không ngừng nâng cao kiến thức quy chuẩn và kỹ thuật.",
+                        bullets: [
+                            "<strong>Đào tạo nhập môn:</strong> Tất cả nhân viên mới bắt buộc phải trải qua khóa đào tạo an toàn và sử dụng ORION."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_4.png",
+                          title: "18. Kỷ luật và Các biện pháp xử lý",
+                        intro: "Áp dụng kỷ luật công bằng, giữ vững quy chuẩn hoạt động.",
+                        bullets: [
+                            "<strong>Sa thải lập tức:</strong> Các hành vi trộm cắp, bạo lực, quấy rối nghiêm trọng hoặc làm việc khi say xỉn sẽ bị sa thải ngay lập tức."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_10.png",
+                          title: "19. Nhà thầu phụ và Nhà cung cấp",
+                        intro: "Đảm bảo các đối tác làm việc với Morales Plumbing tuân thủ cùng quy chuẩn an toàn.",
+                        bullets: [
+                            "<strong>Yêu cầu:</strong> Nhà thầu phụ phải có giấy phép hoạt động và các bảo hiểm bắt buộc còn hiệu lực."
+                        ]
+                    },
+                    {
+                        image: "assets/images/service_14.png",
+                          title: "20. Mạng xã hội và Truyền thông",
+                        intro: "Quy định phát ngôn trực tuyến bảo vệ hình ảnh thương hiệu Morales Plumbing.",
+                        bullets: [
+                            "<strong>Quyền riêng tư:</strong> Không đăng ảnh công trình có mặt khách hàng hoặc số nhà của khách hàng lên trang cá nhân."
+                        ]
+                    },
+                    {
+                        title: "21. Tố giác hành vi sai phạm",
+                        intro: "Kênh phản ánh thông tin an toàn, bảo mật và không sợ bị trừng phạt.",
+                        bullets: [
+                            "<strong>Không trừng phạt:</strong> Công ty bảo vệ tuyệt đối nhân viên tố cáo các hành vi trộm cắp hoặc quấy rối trong công việc."
+                        ]
+                    },
+                    {
+                        title: "22. Xác nhận và Ký tên của Nhân viên",
+                        intro: "Cam kết bằng văn bản chính thức tuân thủ các chính sách của công ty.",
+                        bullets: [
+                            "Ký tên xác nhận nhân viên đã đọc, hiểu và đồng ý tuân thủ tất cả các điều khoản trong sổ tay chính sách này.",
+                            `<div class="signature-section">
+                                <div class="sig-block">
+                                    <strong>Chữ ký của Nhân viên:</strong>
+                                    <div class="sig-line"></div>
+                                    <span>Họ tên & Chữ ký</span>
+                                </div>
+                                <div class="sig-block">
+                                    <strong>Đại diện Morales Plumbing:</strong>
+                                    <div class="sig-line"></div>
+                                    <span>Chữ ký Ủy quyền</span>
+                                </div>
+                            </div>`
+                        ]
+                    },
+                    {
+                        title: "23. Hình ảnh Doanh nghiệp & Chi tiết Thương hiệu",
+                        intro: "Thương hiệu của chúng tôi thể hiện sự kết hợp giữa kỹ thuật C-36 và trí tuệ nhân tạo. Phần này quy định các hướng dẫn sử dụng tài sản nhận diện của Morales Plumbing.",
+                        bullets: [
+                            "<strong>Ý tưởng Thương hiệu:</strong> Logo kết hợp các biểu tượng ống nước truyền thống với bảng mạch công nghệ và vi chip AI, phản ánh kỹ thuật tiên tiến.",
+                            "<strong>Chi tiết Thiết kế:</strong> Bánh răng đồng và mỏ lết tượng trưng cho công việc thủ công kỹ thuật; tấm khiên kim loại xanh biểu thị sự vững chắc; giọt nước trong suốt chứa bộ vi xử lý 'AI'.",
+                            "<strong>Sử dụng Logo:</strong> Sử dụng logo trong suốt (<code>logo_transparent.png</code>) trên thanh điều hướng tối màu của web. Sử dụng logo dạng thẳng có chữ (<code>logo uso espanol final servicos FRONTAL.png</code>) cho in ấn và bảng hiệu.",
+                            "<strong>Nhận diện Âm thanh & Nhạc hiệu:</strong> Chúng tôi đã sản xuất các bài hát quảng cáo (jingle) chính thức để đại diện cho thương hiệu Morales Plumbing trong các chiến dịch tiếp thị.",
+                            `<strong>Video & Nhạc hiệu Chính thức:</strong>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 15px; margin-bottom: 20px;">
+                                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center;">
+                                    <h4 style="color: var(--gold-accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 1px;">NHẠC HIỆU CHÍNH THỨC (TIẾNG ANH)</h4>
+                                    <video controls style="width: 100%; border-radius: 4px; background: #000; max-height: 160px;">
+                                        <source src="morales_jingle_en.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center;">
+                                    <h4 style="color: var(--gold-accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 1px;">NHẠC HIỆU CHÍNH THỨC (TIẾNG TÂY BAN NHA)</h4>
+                                    <video controls style="width: 100%; border-radius: 4px; background: #000; max-height: 160px;">
+                                        <source src="morales_jingle_es.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>`,
+                            "<strong>Bản vẽ Thiết kế:</strong> Tham khảo hình ảnh <code>anatomia marca espanol.png</code> dưới đây để biết chi tiết về màu sắc, tỷ lệ và font chữ chính thức.",
+                            "<strong>Hướng dẫn Đồng phục Hiện trường:</strong> Đối với việc kiểm tra kỹ thuật và tại công trình, phải mặc đồng phục hiện trường chính thức như CEO đã mặc tại thực địa (<code>assets/cv_photo.png</code>).",
+                            `<div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+                                <img src="assets/cv_photo.png" alt="Hướng dẫn Đồng phục Hiện trường" style="max-width: 250px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            </div>`,
+                            `<div style="text-align: center; margin-top: 20px;">
+                                <img src="anatomia marca espanol.png" alt="Chi tiết Thương hiệu" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            </div>`
+                        ]
+                    }
+                ]
+            }
+        };
+
+        
+        function toggleLangMenu() {
+            const dropdown = document.getElementById('langDropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('show');
+            }
+        }
+        window.addEventListener('click', function(e) {
+            const container = document.querySelector('.lang-switch-container');
+            if (container && !container.contains(e.target)) {
+                const dropdown = document.getElementById('langDropdown');
+                if (dropdown) dropdown.classList.remove('show');
+            }
+        });
+
+        function setLang(lang) {
+            localStorage.setItem('morales_lang', lang);
+            const dd = document.getElementById('langDropdown'); if(dd) dd.classList.remove('show');
+            
+            // Set active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            const data = POLICIES_DATA[lang] || POLICIES_DATA.es;
+
+            // Set main headers
+            document.getElementById('t-title').innerHTML = `${data.h1} - Morales Plumbing`;
+            document.getElementById('t-h1').innerHTML = data.h1;
+            document.getElementById('t-h2').innerHTML = data.h2;
+            document.getElementById('t-sub').innerHTML = data.sub;
+            document.getElementById('t-back').innerHTML = data.back;
+            
+            
+
+            // Render Sidebar Menu
+            const sidebarMenu = document.getElementById('sidebar-menu');
+            sidebarMenu.innerHTML = data.chapters.map((ch, idx) => `
+                <li class="sidebar-item">
+                    <a href="#ch-${idx + 1}" class="sidebar-link" title="${ch.title}" onclick="setActiveLink(this)">
+                        ${ch.title}
+                    </a>
+                </li>
+            `).join('');
+
+            // Render Policies Content
+            const container = document.getElementById('policies-container');
+            container.innerHTML = data.chapters.map((ch, idx) => `
+                <div class="policy-card" id="ch-${idx + 1}">
+                    ${ch.image ? `<img src="${ch.image}" alt="${ch.title}" class="policy-img" onerror="this.style.display='none'">` : ''}
+                    <h3>${ch.title}</h3>
+                    <p>${ch.intro}</p>
+                    <ul>
+                        ${ch.bullets.map(b => `<li>${b}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
+            
+            // Update active sidebar state after rendering
+            const activeLink = document.querySelector(`.sidebar-link[href="${window.location.hash}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            } else {
+                const firstLink = document.querySelector('.sidebar-link');
+                if (firstLink) firstLink.classList.add('active');
+            }
+        }
+
+        function setActiveLink(link) {
+            document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        }
+
+        // Highlight sidebar items on scroll
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.policy-card');
+            let currentId = "";
+            cards.forEach(card => {
+                const cardTop = card.offsetTop;
+                if (window.scrollY >= cardTop - 200) {
+                    currentId = card.getAttribute('id');
+                }
+            });
+
+            if (currentId) {
+                document.querySelectorAll('.sidebar-link').forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setLang(localStorage.getItem('morales_lang') || 'en');
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const el = document.getElementById(window.location.hash.substring(1));
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 150);
+            }
+        });
+    </script>
+</body>
+</html>

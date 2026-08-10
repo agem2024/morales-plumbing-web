@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+
+        function toggleLangMenu() {
+            const dropdown = document.getElementById('langDropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('show');
+            }
+        }
+        window.addEventListener('click', function(e) {
+            const container = document.querySelector('.lang-switch-container');
+            if (container && !container.contains(e.target)) {
+                const dropdown = document.getElementById('langDropdown');
+                if (dropdown) dropdown.classList.remove('show');
+            }
+        });
+
+        window.location.replace("Manual_Politicas_Morales.html#ch-6");
+    </script>
+</head>
+<body>
+    <p>Redirecting to the unified policies manual... If you are not redirected, <a href="Manual_Politicas_Morales.html#ch-6">click here</a>.</p>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike Rossi - Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-gradient: #0A192F; --gold-accent: #D4AF37; --text-light: #e6f1ff; --card-bg: rgba(255, 255, 255, 0.03); }
+        body {
+            background: linear-gradient(rgba(10, 25, 47, 0.93), rgba(10, 25, 47, 0.93)), url('assets/Gemini_Generated_Image_6ydshm6ydshm6yds.webp') no-repeat center center fixed;
+            background-size: cover; font-family: 'Inter', sans-serif; margin: 0;  color: var(--text-light); line-height: 1.6; }
+        header { display: flex; align-items: center; justify-content: space-between; padding: 15px 40px; border-bottom: 2px solid var(--gold-accent); background-color: #050d1a; position: sticky; top: 0; z-index: 100; }
+        .back-btn {
+            background: linear-gradient(180deg, #0A192F 0%, #050d1a 100%);
+            border: 1px solid var(--gold-accent, #D4AF37);
+            border-bottom: 4px solid #927318;
+            color: var(--gold-accent, #D4AF37);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 8px 18px;
+            border-radius: 6px;
+            transition: all 0.1s ease;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.7);
+            display: inline-block;
+        }
+        .back-btn:hover {
+            background: linear-gradient(180deg, var(--gold-accent, #D4AF37) 0%, #a88420 100%);
+            color: #0A192F;
+            border-color: var(--gold-accent, #D4AF37);
+            border-bottom-color: #654e10;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(212,175,55,0.3);
+        }
+        .back-btn:active {
+            transform: translateY(3px);
+            border-bottom-width: 1px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+        .back-btn:hover { background: var(--gold-accent); color: #0A192F; }
+        .hero { display: flex; align-items: center; padding: 60px 20px; max-width: 1000px; margin: 0 auto; gap: 40px; }
+        .hero img { width: 220px; height: 220px; border-radius: 50%; border: 4px solid var(--gold-accent); box-shadow: 0 0 30px rgba(212,175,55,0.2); object-fit: cover; }
+        .hero-text h1 { font-size: 42px; margin: 0; color: white; text-transform: uppercase; }
+        .hero-text h2 { font-size: 20px; color: var(--gold-accent); margin: 5px 0 15px 0; text-transform: uppercase; }
+        .hero-text p { font-size: 15px; color: #8892b0; margin-bottom: 5px; }
+        .container { max-width: 1000px; margin: 0 auto 100px auto; padding: 0 20px; }
+        .section-title { font-size: 22px; color: var(--gold-accent); border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 10px; margin-top: 40px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .cv-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 25px; margin-bottom: 20px; }
+        .job-title { font-size: 18px; color: white; font-weight: 700; margin: 0 0 5px 0; text-transform: uppercase; }
+        .job-meta { font-size: 14px; color: var(--gold-accent); margin: 0 0 15px 0; font-weight: 600;}
+        .job-meta span { color: #8892b0; font-weight: 400; margin-left: 10px; }
+        ul { margin: 0; padding-left: 20px; }
+        li { margin-bottom: 8px; color: #a8b2d1; }
+        .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .skill-category h4 { color: white; margin-bottom: 10px; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; }
+        .skill-list { list-style: none; padding: 0; }
+        .skill-list li { background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); padding: 5px 10px; border-radius: 4px; display: inline-block; margin: 0 5px 5px 0; font-size: 13px; color: var(--gold-accent); text-transform: uppercase; }
+        footer { text-align: center; padding: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: #8892b0; font-size: 14px; }
+    
+        /* ── 3D AND THEMATIC GLOW STYLES (BY ANTIGRAVITY) ── */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        body {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+          /* NEW LANG SWITCH CSS */
+          .lang-switch-container { position: relative; z-index: 9999; }
+          .lang-toggle-btn {
+              background: none; border: 2px solid var(--gold-accent); border-radius: 50%;
+              cursor: pointer; padding: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+              transition: transform 0.3s; position: relative;
+          }
+          .lang-toggle-btn:hover { transform: scale(1.1); box-shadow: 0 6px 15px var(--gold-glow, rgba(212,175,55,0.4)); }
+          .lang-toggle-btn::after {
+              content: "Selector de Idiomas"; position: absolute; bottom: -35px; left: 50%;
+              transform: translateX(-50%); background: rgba(0, 0, 0, 0.8); color: var(--gold-accent);
+              padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;
+              opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s;
+              border: 1px solid var(--gold-accent); pointer-events: none; font-family: 'Inter', sans-serif;
+          }
+          .lang-toggle-btn:hover::after { opacity: 1; visibility: visible; }
+          .lang-dropdown {
+              display: none; position: absolute; top: 60px; left: 0;
+              background: rgba(10, 25, 47, 0.95); border: 1px solid var(--gold-accent);
+              border-radius: 8px; padding: 10px; flex-direction: column; gap: 5px;
+              box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+          }
+          .lang-dropdown.show { display: flex; }
+          .lang-btn {
+              background: linear-gradient(180deg, #112240 0%, #050d1a 100%);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-bottom: 3px solid rgba(0, 0, 0, 0.6);
+              border-radius: 6px; padding: 6px 14px; font-size: 0.9rem;
+              cursor: pointer; color: #fff; font-family: 'Inter', sans-serif;
+              transition: all 0.1s ease;
+          }
+          .lang-btn:hover { border-color: #00f5ff; }
+          .lang-btn.active { color: #00f5ff; border-color: #00f5ff; background: rgba(0,245,255,0.1); }
+
+    </style>
+</head>
+<body>
+    <header style="display: flex; align-items: center; justify-content: space-between; padding: 15px 40px; border-bottom: 2px solid var(--gold-accent); background-color: #050d1a; position: sticky; top: 0; z-index: 100;">
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <div class="lang-switch-container">
+                <button class="lang-toggle-btn" onclick="toggleLangMenu()">
+                    <img src="orion_10_icon_1786135470295.png" onerror="this.src='orion_10_icon_1786135470295.jpg'" alt="Language" style="width: 45px; height: 45px; border-radius: 50%; display: block; object-fit: cover;">
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+                    <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">ZH</button>
+                    <button class="lang-btn" data-lang="tl" onclick="setLang('tl')">TL</button>
+                    <button class="lang-btn" data-lang="vi" onclick="setLang('vi')">VI</button>
+                </div>
+            </div>
+            <img src="logo_transparent.png" alt="Morales Plumbing" height="40" onerror="this.src='morales_logo.jpg'">
+            <span id="t-slogan" data-en='"Precision on the Ground"' data-es='"Precisión en el Terreno"' data-zh='"地面上的精确"' data-tl='"Katumpakan sa Lupa"' data-vi='"Độ Chính Xác Trên Thực Địa"' style="font-family: 'Aladin', cursive; color: var(--cyan-accent, #00f5ff); font-size: 1.6rem; transform: rotate(-3deg); display: inline-block; text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #00f5ff, 5px 5px 5px rgba(0,0,0,0.8); letter-spacing: 2px; margin-left: 15px;">"Precision on the Ground"</span>
+        </div>
+        <a href="Morales_Corporate_Team.html" class="back-btn" id="t-back"><span data-en="BACK TO DIRECTORY" data-zh="返回目录" data-tl="BUMALIK SA DIREKTORYO" data-vi="QUAY LẠI DANH MỤC">VOLVER AL DIRECTORIO</span></a>
+    </header>
+
+    
+
+
+    <div class="hero">
+        <img src="tech1_profile.jpg" alt="Mike Rossi">
+        <div class="hero-text">
+            <h1>Michael 'Mike' Rossi</h1>
+            <h2 id="t-h2" data-en="Senior Technician" data-zh="高级技术员" data-tl="Senior Technician" data-vi="Kỹ thuật viên Cao cấp">Senior Technician</h2>
+            <p><strong>San Jose, CA</strong> | m.rossi@moralesplumbing.com</p>
+            <p><strong>Idiomas:</strong> English (Native)</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3 class="section-title"><span data-en="PROFESSIONAL PROFILE" data-zh="专业简介" data-tl="PROPESYUNAL NA PROFILE" data-vi="HỒ SƠ CHUYÊN MÔN">PERFIL PROFESIONAL</span></h3>
+        <p style="color: #a8b2d1;">Plomero certificado (Journeyman) con 18 años de experiencia directa en entornos comerciales de alta presión. Conocido como el "Resolucionador" dentro de Morales Plumbing, Mike se especializa en arquitecturas complejas de repiping, sistemas ProPress de cobre y reparaciones de drenaje pesado en emergencias.</p>
+        <div class="action-showcase" style="display: flex; align-items: center; gap: 40px; margin: 50px 0; background: var(--card-bg, rgba(255,255,255,0.03)); padding: 30px; border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 15px 35px rgba(0,0,0,0.4); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); cursor: default;" onmouseover="this.style.transform='translateY(-8px) scale(1.01)'; this.style.boxShadow='0 25px 50px rgba(212, 175, 55, 0.15)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.4)';">
+            <div style="flex: 1; overflow: hidden; border-radius: 12px; border: 3px solid var(--gold-accent, #D4AF37); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);">
+                <img src="assets/images/eng_cobre.png" alt="Sistemas de Cobre y ProPress" style="width: 100%; height: 260px; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+            </div>
+            <div style="flex: 1.2;">
+                <h3 style="color: var(--cyan-accent, #00f5ff); font-size: 24px; text-transform: uppercase; margin-top: 0; margin-bottom: 15px; border-bottom: 1px solid rgba(0, 245, 255, 0.3); padding-bottom: 8px; font-weight: 800;"><span data-en="Copper & ProPress Systems" data-zh="铜管和 ProPress 系统" data-tl="Copper & ProPress Systems" data-vi="Hệ thống Đồng & ProPress">Sistemas de Cobre y ProPress</span></h3>
+                <p style="color: #e6f1ff; font-size: 16px; line-height: 1.7; margin-bottom: 25px; opacity: 0.9;"><span data-en="Technical installation of Type L and K copper pipes using solderless ProPress technology, guaranteeing lifetime hermetic connections under the strictest California commercial plumbing code standards." data-zh="使用无焊 ProPress 技术进行 L 型和 K 型铜管的技术安装，确保在最严格的加州商业管道规范标准下实现终身气密连接。" data-tl="Teknikal na pag-install ng Type L at K copper pipes gamit ang solderless ProPress technology, tinitiyak ang panghabambuhay na koneksyon sa ilalim ng pinakamahigpit na pamantayan ng commercial plumbing code ng California." data-vi="Lắp đặt kỹ thuật ống đồng Loại L và K sử dụng công nghệ ProPress không hàn, đảm bảo kết nối kín trọn đời theo tiêu chuẩn mã hệ thống ống nước thương mại nghiêm ngặt nhất của California.">Instalación técnica de tuberías de cobre tipo L y K utilizando tecnología ProPress sin soldadura, garantizando conexiones herméticas de por vida bajo los estándares más estrictos del código de plomería comercial de California.</span></p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <span style="background: rgba(212,175,55,0.15); border: 1px solid var(--gold-accent, #D4AF37); padding: 6px 12px; border-radius: 6px; color: var(--gold-accent, #D4AF37); font-size: 12px; font-weight: bold; letter-spacing: 1px;"><span data-en="CAL OSHA CERTIFIED" data-zh="CAL OSHA 认证" data-tl="SERTIPIKADONG CAL OSHA" data-vi="CHỨNG NHẬN CAL OSHA">CERTIFICADO CAL OSHA</span></span>
+                    <span style="background: rgba(0,245,255,0.15); border: 1px solid var(--cyan-accent, #00f5ff); padding: 6px 12px; border-radius: 6px; color: var(--cyan-accent, #00f5ff); font-size: 12px; font-weight: bold; letter-spacing: 1px;"><span data-en="ORION TECH ENABLED" data-zh="ORION 技术支持" data-tl="SUPORTADO NG ORION TECH" data-vi="HỖ TRỢ CÔNG NGHỆ ORION">TECNOLOGÍA ORION</span></span>
+                </div>
+            </div>
+        </div>
+
+
+        <h3 class="section-title"><span data-en="SCOPE OF ROLE" data-zh="职责范围" data-tl="SAKLAW NG TUNGKULIN" data-vi="PHẠM VI CÔNG VIỆC">ALCANCE DEL CARGO</span></h3>
+        <p style="color: #a8b2d1;">Líder técnico en terreno para instalaciones de nivel 3 (alta complejidad). Responsable de ejecutar la mano de obra bajo estricto cumplimiento del código UPC, supervisar a los aprendices asignados a su vehículo y garantizar cero fallas en las pruebas de presión antes de abandonar el sitio.</p>
+
+        <h3 class="section-title"><span data-en="CORE ACTIVITIES" data-zh="核心活动" data-tl="MGA PANGUNAHING GAWAIN" data-vi="HOẠT ĐỘNG CHÍNH"><span data-en="CORE ACTIVITIES" data-zh="核心活动" data-tl="MGA PANGUNAHING GAWAIN" data-vi="HOẠT ĐỘNG CHÍNH">ACTIVIDADES BÁSICAS</span></span></h3>
+        <ul>
+            <li>Instalación y soldadura de tuberías de cobre de gran diámetro para infraestructura comercial.</li>
+            <li>Detección de fugas en losas (Slab Leaks) utilizando equipo sónico avanzado.</li>
+            <li>Elaboración de presupuestos in-situ utilizando el catálogo ORION Price Book.</li>
+            <li>Mentoría directa en el sitio de trabajo para aprendices de 1er y 2do año.</li>
+        </ul>
+
+        <h3 class="section-title"><span data-en="PHYSICAL REQUIREMENTS" data-zh="身体要求" data-tl="MGA PISIKAL NA KINAKAILANGAN" data-vi="YÊU CẦU THỂ CHẤT"><span data-en="PHYSICAL REQUIREMENTS" data-zh="身体要求" data-tl="MGA PISIKAL NA KINAKAILANGAN" data-vi="YÊU CẦU THỂ CHẤT">REQUERIMIENTOS FÍSICOS</span></span></h3>
+        <ul>
+            <li>Excelente condición física: Capacidad para levantar y maniobrar equipos de hasta 75 lbs (calentadores de agua, jetters).</li>
+            <li>Trabajo en espacios confinados (túneles subterráneos, áticos) con temperaturas extremas.</li>
+            <li>Resistencia para operar maquinaria vibratoria (martillos neumáticos, taladros de impacto) de forma segura.</li>
+        </ul>
+
+        <h3 class="section-title"><span data-en="DEVELOPMENT POTENTIAL" data-zh="发展潜力" data-tl="POTENSYAL SA PAG-UNLAD" data-vi="TIỀM NĂNG PHÁT TRIỂN">POTENCIAL DE DESARROLLO</span></h3>
+        <p style="color: #a8b2d1;">Oportunidad de transicionar a Field Supervisor o Project Manager Junior al acumular certificaciones avanzadas en diseño de planos isométricos.</p>
+
+        <h3 class="section-title"><span data-en="TECHNICAL SKILLS" data-zh="专业技能" data-tl="MGA TEKNIKAL NA KASANAYAN" data-vi="KỸ NĂNG CHUYÊN MÔN"><span data-en="TECHNICAL SKILLS" data-zh="专业技能" data-tl="MGA TEKNIKAL NA KASANAYAN" data-vi="KỸ NĂNG CHUYÊN MÔN">HABILIDADES TÉCNICAS</span></span></h3>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Core Plumbing</h4>
+                <ul class="skill-list">
+                    <li>Copper ProPress</li><li>PEX-A/B</li><li>Cast Iron & ABS</li><li>Slab Leak Detection</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Equipment</h4>
+                <ul class="skill-list">
+                    <li>Hydro-Jetters</li><li>Sewer Cameras</li><li>Jackhammers</li><li>Trenchless Tech</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="section-title"><span data-en="IN ACTION (THE MORALES TOUCH)" data-zh="行动中（莫拉莱斯风格）" data-tl="SA AKSYON (ANG TATAK MORALES)" data-vi="HÀNH ĐỘNG (PHONG CÁCH MORALES)"><span data-en="IN ACTION (THE MORALES TOUCH)" data-zh="行动中（莫拉莱斯风格）" data-tl="SA AKSYON (ANG TATAK MORALES)" data-vi="HÀNH ĐỘNG (PHONG CÁCH MORALES)">EN ACCIÓN (EL TOQUE MORALES)</span></span></h3>
+        <div style="text-align: center; margin-bottom: 40px;">
+            <img src="tech1_comic.jpg" alt="Mike Rossi en Acción" style="width: 100%; max-width: 800px; border: 4px solid #000; border-radius: 8px; box-shadow: 5px 5px 0px rgba(212,175,55,0.5);">
+        </div>
+    </div>
+    
+        <!-- NAVIGATION STRIP -->
+        <div style="display: flex; justify-content: space-between; max-width: 1000px; margin: 40px auto; padding: 0 20px; flex-wrap: wrap; gap: 15px;">
+            <a href="profile_elena.html" class="back-btn">&laquo; <span data-en="PREVIOUS PROFILE" data-zh="上一个配置" data-tl="NAKARAANG PROFILE" data-vi="HỒ SƠ TRƯỚC">PERFIL ANTERIOR</span></a>
+            <a href="profile_tech2.html" class="back-btn"><span data-en="NEXT PROFILE" data-zh="下一个配置" data-tl="SUSUNOD NA PROFILE" data-vi="HỒ SƠ TIẾP THEO">SIGUIENTE PERFIL</span> &raquo;</a>
+        </div>
+    <footer style="display: flex; flex-direction: column; align-items: center; padding: 40px 20px; border-top: 1px solid rgba(212, 175, 55, 0.2); background: #030814; color: #8892b0; margin-top: 60px; gap: 30px; font-size: 14px; text-align: center;">
+    
+    <!-- Top: Digital Channels (With Original Branding) -->
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; width: 100%;">
+        <a href="https://wa.me/16692134422" target="_blank" style="display: flex; align-items: center; gap: 8px; color: #25D366; text-decoration: none; font-weight: bold; background: rgba(37,211,102,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(37,211,102,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(37,211,102,0.2)'" onmouseout="this.style.background='rgba(37,211,102,0.1)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.128.552 4.195 1.6 6.015L.2 23.8l5.908-1.547a11.967 11.967 0 005.923 1.564h.005c6.643 0 12.028-5.385 12.028-12.031C24.062 5.166 18.675 0 12.031 0zm.005 21.848a9.986 9.986 0 01-5.1-1.393l-.366-.217-3.788.993.993-3.69-.239-.38A9.973 9.973 0 012.046 12.03c0-5.518 4.49-10.008 10.01-10.008 5.518 0 10.008 4.49 10.008 10.008 0 5.517-4.49 10.007-10.008 10.007h-.051zm5.495-7.514c-.301-.151-1.785-.88-2.062-.982-.278-.101-.48-.151-.682.151-.202.302-.783.982-.96 1.183-.177.202-.354.227-.656.076-1.503-.755-2.613-1.424-3.568-2.732-.204-.278-.022-.428.128-.578.136-.135.301-.353.453-.529.151-.176.202-.302.302-.503.1-.202.05-.378-.026-.529-.076-.151-.682-1.643-.933-2.25-.245-.591-.496-.511-.682-.52-.176-.009-.378-.009-.58-.009s-.529.076-.807.378c-.278.302-1.06 1.033-1.06 2.518s1.085 2.92 1.236 3.122c.151.202 2.128 3.252 5.155 4.556.72.31 1.282.495 1.722.634.723.23 1.382.197 1.9.12.58-.086 1.785-.729 2.037-1.433.251-.705.251-1.31.176-1.433-.075-.123-.277-.199-.579-.35z"/></svg> WhatsApp
+        </a>
+        <a href="https://t.me/+16692134422" target="_blank" style="display: flex; align-items: center; gap: 8px; color: #0088cc; text-decoration: none; font-weight: bold; background: rgba(0,136,204,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(0,136,204,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(0,136,204,0.2)'" onmouseout="this.style.background='rgba(0,136,204,0.1)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram
+        </a>
+        <a href="mailto:moralesplumbing026@gmail.com" style="display: flex; align-items: center; gap: 8px; color: #EA4335; text-decoration: none; font-weight: bold; background: rgba(234,67,53,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(234,67,53,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(234,67,53,0.2)'" onmouseout="this.style.background='rgba(234,67,53,0.1)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg> Email
+        </a>
+        <a href="sms:+16692134422" style="display: flex; align-items: center; gap: 8px; color: #FABB05; text-decoration: none; font-weight: bold; background: rgba(250,187,5,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(250,187,5,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(250,187,5,0.2)'" onmouseout="this.style.background='rgba(250,187,5,0.1)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.613 4.469 8.653V24l4.085-2.242c1.09.301 2.246.464 3.446.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm3.333 13.333H8.667v-1.111h6.666v1.111zm2.223-3.333H6.444v-1.111h11.112v1.111z"/></svg> SMS
+        </a>
+    </div>
+
+    <!-- Center: Contact Lines -->
+    <div>
+        <p style="margin: 0 0 8px 0; font-size: 15px;"><strong>24/7 Dispatch:</strong> <a href="tel:16692134422" style="color: var(--text-light, #e6f1ff); text-decoration: none; font-weight: 600;">(669) 213-4422</a></p>
+        <p style="margin: 0; opacity: 0.7; font-size: 13px;"><strong>Contingencia:</strong> <a href="tel:16692342444" style="color: inherit; text-decoration: none;">(669) 234-2444</a></p>
+    </div>
+
+    <!-- Bottom: Branding & License -->
+    <div>
+        <h4 style="color: var(--gold-accent, #D4AF37); margin: 0 0 5px 0; font-size: 15px; letter-spacing: 1px; text-transform: uppercase;">Morales Plumbing</h4>
+        <p style="margin: 0; opacity: 0.6; font-size: 12px;">San Jose, CA &bull; Lic. C-36 #1156542</p>
+    </div>
+
+</footer>
+
+    <script>
+        
+        function toggleLangMenu() {
+            const dropdown = document.getElementById('langDropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('show');
+            }
+        }
+        window.addEventListener('click', function(e) {
+            const container = document.querySelector('.lang-switch-container');
+            if (container && !container.contains(e.target)) {
+                const dropdown = document.getElementById('langDropdown');
+                if (dropdown) dropdown.classList.remove('show');
+            }
+        });
+
+        function setLang(lang) {
+            localStorage.setItem('morales_lang', lang);
+            const dd = document.getElementById('langDropdown'); if(dd) dd.classList.remove('show');
+            
+            // Update active button styles
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.style.background = 'rgba(255,255,255,0.05)';
+                btn.style.color = '#fff';
+                btn.style.borderColor = 'rgba(255,255,255,0.15)';
+            });
+            const activeBtn = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
+            if(activeBtn) {
+                activeBtn.style.background = 'rgba(0,245,255,0.12)';
+                activeBtn.style.color = '#00f5ff';
+                activeBtn.style.borderColor = '#00f5ff';
+            }
+
+            // Translate all elements with translation data- attributes
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if (!el.hasAttribute('data-es')) {
+                    el.setAttribute('data-es', el.innerHTML.trim());
+                }
+                if (lang === 'es') {
+                    el.innerHTML = el.getAttribute('data-es');
+                } else {
+                    const trans = el.getAttribute('data-' + lang);
+                    if (trans) el.innerHTML = trans;
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => { setLang(localStorage.getItem('morales_lang') || 'en'); });
+    </script>
+
+</body>
+</html>
