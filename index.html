@@ -544,7 +544,7 @@
                         <h3 data-i18n="service_copper_title">Renovaciones en Cobre</h3>
                         <p data-i18n="service_copper_desc">Instalaciones de cobre de alta precisión.</p>
                         <div class="eco-actions">
-                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                            <a href="docs/eng_cobre.html" class="btn-eco-link" data-i18n="eng_btn_details">Ver Detalles &#8594;</a>
                         </div>
                     </div>
                 </div>
@@ -558,7 +558,7 @@
                         <h3 data-i18n="service_septic_title">Sistemas Sépticos</h3>
                         <p data-i18n="service_septic_desc">Sistemas avanzados de tratamiento in-situ.</p>
                         <div class="eco-actions">
-                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                            <a href="docs/eng_septico.html" class="btn-eco-link" data-i18n="eng_btn_details">Ver Detalles &#8594;</a>
                         </div>
                     </div>
                 </div>
@@ -572,7 +572,7 @@
                         <h3 data-i18n="service_water_title">Recolección de Aguas</h3>
                         <p data-i18n="service_water_desc">Captura y reutilización hídrica estratégica.</p>
                         <div class="eco-actions">
-                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                            <a href="docs/eng_eco.html" class="btn-eco-link" data-i18n="eng_btn_details">Ver Detalles &#8594;</a>
                         </div>
                     </div>
                 </div>
@@ -586,7 +586,7 @@
                         <h3 data-i18n="service_expansion_title">Ampliaciones</h3>
                         <p data-i18n="service_expansion_desc">Expansión estratégica de redes hidráulicas.</p>
                         <div class="eco-actions">
-                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                            <a href="docs/eng_diseno.html" class="btn-eco-link" data-i18n="eng_btn_details">Ver Detalles &#8594;</a>
                         </div>
                     </div>
                 </div>
@@ -600,7 +600,7 @@
                         <h3 data-i18n="service_construction_title">Obra Nueva</h3>
                         <p data-i18n="service_construction_desc">Plomería Técnica integral para nuevos edificios.</p>
                         <div class="eco-actions">
-                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                            <a href="docs/eng_b2b.html" class="btn-eco-link" data-i18n="eng_btn_details">Ver Detalles &#8594;</a>
                         </div>
                     </div>
                 </div>
@@ -614,7 +614,7 @@
                         <h3 data-i18n="service_repair_title">Reparación Smart</h3>
                         <p data-i18n="service_repair_desc">Diagnóstico avanzado y reparación Técnica.</p>
                         <div class="eco-actions">
-                            <a href="#multimedia" class="btn-eco-link" data-i18n="btn_listen">Escuchar Podcast</a>
+                            <a href="docs/eng_termografia.html" class="btn-eco-link" data-i18n="eng_btn_details">Ver Detalles &#8594;</a>
                         </div>
                     </div>
                 </div>
@@ -1105,12 +1105,101 @@
                     <p class="location">San Jose, CA · Morales Plumbing</p>
                 </div>
                     </div>
-                    <div class="terminal-links">
-                        <a href="docs/cv.html" target="_blank" class="t-link" data-i18n="cv_link">&gt; VER HOJA DE VIDA (PROFESIONAL)</a>
-                        <a href="docs/ceo.html" target="_blank" class="t-link" data-i18n="ceo_link">&gt; PERFIL EJECUTIVO DEL CEO</a>
-                        <a href="mailto:moralesplumbing026@gmail.com" class="t-link">&gt; EMAIL: moralesplumbing026@gmail.com</a> | <a href="https://t.me/nekon" target="_blank" style="color: inherit; font-weight: bold;">Telegram: @nekon</a>
-                        <a href="tel:+1-669-213-4422" class="t-link">&gt; TEL: (669) 213-4422</a>
-                        <a href="https://www.youtube.com/@moralesplumbing" target="_blank" class="t-link" style="color: #ff0000;">&gt; YOUTUBE: ¡Suscríbete a Morales Plumbing!</a>
+                    <style>
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+.contact-card {
+    background: rgba(0,0,0,0.6);
+    border: 1px solid var(--neon-cyan);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 245, 255, 0.4);
+    background: rgba(0, 245, 255, 0.1);
+}
+.contact-card-yt {
+    border-color: #ff0000;
+}
+.contact-card-yt:hover {
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    background: rgba(255, 0, 0, 0.1);
+}
+.contact-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.contact-card h4 {
+    margin: 0 0 10px 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: var(--neon-cyan);
+}
+.contact-card.contact-card-yt h4 {
+    color: #ff0000;
+}
+.contact-card p {
+    color: #ccc;
+    font-size: 0.85rem;
+    margin: 0;
+    flex-grow: 1;
+    line-height: 1.4;
+}
+</style>
+                    <div class="contact-cards-grid">
+                        <a href="docs/cv.html" target="_blank" style="text-decoration: none;">
+                            <div class="contact-card">
+                                <img src="assets/cv_photo.webp" alt="Professional Resume" loading="lazy">
+                                <h4 data-i18n="cv_link">HOJA DE VIDA</h4>
+                                <p data-i18n="cv_desc">Acceso a mi historial profesional, certificaciones y experiencia.</p>
+                            </div>
+                        </a>
+                        
+                        <a href="docs/ceo.html" target="_blank" style="text-decoration: none;">
+                            <div class="contact-card">
+                                <img src="assets/ceo_official.webp" alt="CEO Profile" loading="lazy">
+                                <h4 data-i18n="ceo_link">PERFIL EJECUTIVO</h4>
+                                <p data-i18n="ceo_desc">Visión, liderazgo y estrategia ejecutiva de Morales Plumbing.</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:moralesplumbing026@gmail.com" style="text-decoration: none;">
+                            <div class="contact-card">
+                                <img src="assets/admin_ops.webp" alt="Email" loading="lazy">
+                                <h4>EMAIL / TELEGRAM</h4>
+                                <p>moralesplumbing026@gmail.com <br> <span style="color:#00f5ff;">@nekon</span></p>
+                            </div>
+                        </a>
+
+                        <a href="tel:+1-669-213-4422" style="text-decoration: none;">
+                            <div class="contact-card">
+                                <img src="assets/icon_phone.webp" alt="Phone" loading="lazy">
+                                <h4>LLAMADA DIRECTA</h4>
+                                <p>(669) 213-4422 <br> Servicio 24/7</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.youtube.com/@moralesplumbing" target="_blank" style="text-decoration: none;">
+                            <div class="contact-card contact-card-yt">
+                                <img src="assets/app_redes.webp" alt="YouTube" loading="lazy">
+                                <h4>YOUTUBE</h4>
+                                <p>¡Suscríbete a Morales Plumbing para guías visuales y tips!</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
