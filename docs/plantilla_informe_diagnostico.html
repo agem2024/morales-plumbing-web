@@ -52,7 +52,7 @@
         </button>
         <div id="globalLangMenu" style="display: none; position: absolute; right: 0; top: 45px; background: rgba(3, 7, 18, 0.98); border: 1px solid #D4AF37; border-radius: 8px; flex-direction: column; min-width: 140px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.9); z-index: 1000000;">
             <button onclick="if(typeof setLanguage === 'function') setLanguage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Espa�ol</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Español</button>
             <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - ??</button>
             <button onclick="if(typeof setLanguage === 'function') setLanguage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
             <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Ti?ng Vi?t</button>
@@ -75,30 +75,30 @@
         <ul class="sidebar-menu">
             <li><a href="#" class="active" data-es="Generador de Informes" data-en="Report Generator">Generador de Informes</a></li>
             <li><a href="#" data-es="Historial de Proyectos" data-en="Project History">Historial de Proyectos</a></li>
-            <li><a href="#" data-es="�justes de Plantillas" data-en="Template Settings">�justes de Plantillas</a></li>
+            <li><a href="#" data-es="ájustes de Plantillas" data-en="Template Settings">ájustes de Plantillas</a></li>
         </ul>
     </aside>
 
     <main class="main-content">
-        <button class="lang-toggle" onclick="toggleLang()">🌐 EN / ES</button>
+        <button class="lang-toggle" onclick="toggleLang()">ð EN / ES</button>
 
-        <h1 data-es="Centro de Documentaci�n Pericial" data-en="Forensic Documentation Center">Centro de Documentaci�n Pericial</h1>
-        <p class="subtitle" data-es="Herramienta corporativa para la generaci�n de dict�menes t�cnicos y diagn�sticos de campo." data-en="Corporate tool for generating technical reports and field diagnostics.">Herramienta corporativa para la generaci�n de dict�menes t�cnicos y diagn�sticos de campo.</p>
+        <h1 data-es="Centro de Documentación Pericial" data-en="Forensic Documentation Center">Centro de Documentación Pericial</h1>
+        <p class="subtitle" data-es="Herramienta corporativa para la generación de dictámenes técnicos y diagnósticos de campo." data-en="Corporate tool for generating technical reports and field diagnostics.">Herramienta corporativa para la generación de dictámenes técnicos y diagnósticos de campo.</p>
 
         <div class="card">
             <div class="form-group">
-                <label for="report-audience" data-es="�udiencia del Documento" data-en="Document �udience">�udiencia del Documento</label>
+                <label for="report-audience" data-es="áudiencia del Documento" data-en="Document áudience">áudiencia del Documento</label>
                 <select id="report-audience">
-                    <option value="insurance" data-es="�seguradora / �justador (Seguros Comerciales)" data-en="Insurance / �djuster (Commercial)">�seguradora / �justador (Seguros Comerciales)</option>
+                    <option value="insurance" data-es="áseguradora / ájustador (Seguros Comerciales)" data-en="Insurance / ádjuster (Commercial)">áseguradora / ájustador (Seguros Comerciales)</option>
                     <option value="city" data-es="Ciudad de Santa Clara (Building Dept.)" data-en="City of Santa Clara (Building Dept.)">Ciudad de Santa Clara (Building Dept.)</option>
-                    <option value="both" data-es="Reporte Unificado (�seguradora y Ciudad)" data-en="Unified Report (Insurance & City)">Reporte Unificado (�seguradora y Ciudad)</option>
+                    <option value="both" data-es="Reporte Unificado (áseguradora y Ciudad)" data-en="Unified Report (Insurance & City)">Reporte Unificado (áseguradora y Ciudad)</option>
                     <option value="internal" data-es="Solo Cliente (Uso Privado)" data-en="Client Only (Private Use)">Solo Cliente (Uso Privado)</option>
                 </select>
             </div>
 
             <div class="btn-grid">
-                <a href="diagnostico_campo.html" class="btn btn-outline" onclick="saveData()" data-es="Formulario de Diagn�stico (Campo)" data-en="Field Diagnostic Form">
-                    Formulario de Diagn�stico (Campo)
+                <a href="diagnostico_campo.html" class="btn btn-outline" onclick="saveData()" data-es="Formulario de Diagnóstico (Campo)" data-en="Field Diagnostic Form">
+                    Formulario de Diagnóstico (Campo)
                 </a>
                 <a href="informe_forense.html" class="btn btn-primary" onclick="saveData()" data-es="Generar Informe Forense Oficial" data-en="Generate Official Forensic Report">
                     Generar Informe Forense Oficial
@@ -153,7 +153,7 @@
     </footer>
 
 
-<script src="../app.js"></script>
+<script src="../app_v9.js"></script>
 </body>
 </html>
 
