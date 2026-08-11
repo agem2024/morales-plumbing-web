@@ -29,3 +29,6 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
 - **NUNCA uses expresiones regulares masivas ni scripts globales para reemplazar caracteres corruptos** a menos que extraigas unicamente el bloque seguro desde la memoria. 
 - Usar scripts en archivos que ya estaban corruptos destruira las traducciones asiaticas y generara **errores de sintaxis fatales** (como renombrar variables JS `isActive` a `isctive`, o `msg` a `m\u00e1sg`), lo que rompera el enrutamiento de la pagina entera.
 - Si ves corrupciones, **siempre recupera el archivo de un commit funcional de git** (`git checkout <commit> -- archivo`) en lugar de intentar arreglarlo con un script global ciego.
+## Soluciones Recientes
+- Reparación global de enlaces internos en app.js para toda la web.
+- Corrección de acentos y caracteres especiales en pricebook.html.
