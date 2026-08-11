@@ -9768,8 +9768,48 @@ function bookAppointmentFromUI() {
         }
     }
     
-    addAppointmentToLocal(serviceId, date, time, tier);
-    switchPortalTab('dashboard');
+    // Disable button to prevent double submission
+    const btn = document.querySelector('#portal-schedule-form button[type="submit"]');
+    let oldBtnText = "AGENDAR AHORA / BOOK NOW";
+    if (btn) {
+        oldBtnText = btn.innerText;
+        btn.innerText = "Procesando... / Processing...";
+        btn.disabled = true;
+    }
+
+    const serviceName = getServiceTitleById(serviceId);
+    const profile = loadClientProfile();
+    const apptData = {
+        _subject: "NUEVA CITA AGENDADA - ORION BOOKING",
+        Nombre: profile.name || "Cliente Portal",
+        Telefono: profile.phone || "No registrado",
+        Servicio: serviceName,
+        Nivel: tier,
+        Fecha: date,
+        Hora: time
+    };
+
+    // Invisible FormSubmit via AJAX
+    fetch("https://formsubmit.co/ajax/moralesplumbing026@gmail.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(apptData)
+    }).then(() => {
+        addAppointmentToLocal(serviceId, date, time, tier);
+        switchPortalTab('dashboard');
+    }).catch((err) => {
+        console.warn("Error enviando correo de cita:", err);
+        addAppointmentToLocal(serviceId, date, time, tier);
+        switchPortalTab('dashboard');
+    }).finally(() => {
+        if (btn) {
+            btn.innerText = oldBtnText;
+            btn.disabled = false;
+        }
+    });
 }
 
 function getMembershipTier() {
@@ -10007,10 +10047,47 @@ function submitPQRFromUI() {
         alert("Por favor escribe la descripcin de tu requerimiento.");
         return;
     }
-    
-    addPQRToLocal(type, desc);
-    document.getElementById('pqr-desc-input').value = "";
-    switchPortalTab('dashboard');
+
+    const btn = document.querySelector('#portal-pqr-form button[type="submit"]');
+    let oldBtnText = "ENVIAR PQR";
+    if (btn) {
+        oldBtnText = btn.innerText;
+        btn.innerText = "Enviando... / Sending...";
+        btn.disabled = true;
+    }
+
+    const profile = loadClientProfile();
+    const pqrData = {
+        _subject: "NUEVO REQUERIMIENTO PQR - ORION",
+        Nombre: profile.name || "Cliente Portal",
+        Telefono: profile.phone || "No registrado",
+        Tipo: type,
+        Descripcion: desc
+    };
+
+    fetch("https://formsubmit.co/ajax/moralesplumbing026@gmail.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(pqrData)
+    }).then(() => {
+        addPQRToLocal(type, desc);
+        document.getElementById('pqr-desc-input').value = "";
+        switchPortalTab('dashboard');
+        showPortalNotification("PQR enviado con xito");
+    }).catch(err => {
+        console.warn("Error enviando PQR:", err);
+        addPQRToLocal(type, desc);
+        document.getElementById('pqr-desc-input').value = "";
+        switchPortalTab('dashboard');
+    }).finally(() => {
+        if (btn) {
+            btn.innerText = oldBtnText;
+            btn.disabled = false;
+        }
+    });
 }
 
 function submitClientFeedback() {

@@ -32,3 +32,8 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
 ## Soluciones Recientes
 - Reparación global de enlaces internos en app.js para toda la web.
 - Corrección de acentos y caracteres especiales en pricebook.html.
+
+## Arquitectura Web (REGLA ESTRICTA)
+- **HOSTING:** El sitio est alojado 100% en GitHub Pages. 
+- **PROHIBIDO:** Usar Netlify o cualquier funcin backend (Server-Side Javascript, Node.js).
+- **FORMULARIOS:** Cualquier formulario (contacto, agendado) DEBE procesarse en el Frontend de manera invisible (AJAX) usando servicios como FormSubmit.
