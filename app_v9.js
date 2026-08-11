@@ -9200,7 +9200,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name: document.getElementById('pc-name').value,
             phone: document.getElementById('pc-phone').value,
             email: document.getElementById('pc-email').value,
-            message: document.getElementById('pc-message').value
+            message: document.getElementById('pc-message').value,
+            _captcha: 'false'
         };
 
         try {
@@ -9786,7 +9787,8 @@ function bookAppointmentFromUI() {
         Servicio: serviceName,
         Nivel: tier,
         Fecha: date,
-        Hora: time
+        Hora: time,
+        _captcha: 'false'
     };
 
     // Invisible FormSubmit via AJAX
@@ -10062,7 +10064,8 @@ function submitPQRFromUI() {
         Nombre: profile.name || "Cliente Portal",
         Telefono: profile.phone || "No registrado",
         Tipo: type,
-        Descripcion: desc
+        Descripcion: desc,
+        _captcha: 'false'
     };
 
     fetch("https://formsubmit.co/ajax/moralesplumbing026@gmail.com", {
