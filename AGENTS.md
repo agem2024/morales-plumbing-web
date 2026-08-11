@@ -40,6 +40,12 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
   - Se repararon errores de sintaxis en JavaScript causados por reemplazos masivos previos defectuosos (ej. de `setLanGuage` a `setLanguage`).
   - Se actualizó el enlace del script de traducciones de `app.js` (archivo eliminado) al correcto `app_v9.js`, permitiendo volver a renderizar toda la data y precios.
 
+- Reparación del sistema de envío de formularios por AJAX (Contacto, Citas, PQR):
+  - Se añadió el parámetro `_captcha: "false"` en `app_v9.js` para evitar que `formsubmit.co` bloquee silenciosamente las peticiones AJAX exigiendo una página de verificación humana que el usuario nunca podía ver.
+- Mejora en la experiencia de usuario (UX) para el agendado de citas:
+  - Se eliminó la instrucción que abría forzosamente la aplicación de WhatsApp al solicitar una cita.
+  - En su lugar, el bot de IA ahora genera dinámicamente tres botones (WhatsApp, SMS, Correo Electrónico) para que el cliente elija el método de comunicación de su preferencia.
+
 ## Arquitectura Web (REGLA ESTRICTA)
 - **HOSTING:** El sitio está alojado 100% en GitHub Pages. 
 - **PROHIBIDO:** Usar Netlify o cualquier función backend (Server-Side Javascript, Node.js).
