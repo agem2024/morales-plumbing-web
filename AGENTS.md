@@ -35,6 +35,11 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
 - Corrección del menú móvil en Android: Se actualizó `style.css` (pointer-events) para evitar bloqueos en los formularios, y se excluyó a `.dropdown-toggle` en `index.html` para evitar el cierre prematuro del menú desplegable.
 - Corrección de ruta de video (assets) y agregado de enlace de retorno al inicio en el logo de `corporate_team/Morales_Corporate_Team.html`.
 
+- Reparación quirúrgica de caracteres corruptos (mojibake) y error de sintaxis en diagrama de Mermaid en `docs/ley_water_heaters.html`.
+- Solución a la desaparición de datos y tarjetas en `pricebook.html`:
+  - Se repararon errores de sintaxis en JavaScript causados por reemplazos masivos previos defectuosos (ej. de `setLanGuage` a `setLanguage`).
+  - Se actualizó el enlace del script de traducciones de `app.js` (archivo eliminado) al correcto `app_v9.js`, permitiendo volver a renderizar toda la data y precios.
+
 ## Arquitectura Web (REGLA ESTRICTA)
 - **HOSTING:** El sitio está alojado 100% en GitHub Pages. 
 - **PROHIBIDO:** Usar Netlify o cualquier función backend (Server-Side Javascript, Node.js).
