@@ -2064,7 +2064,7 @@
         document.body.style.overflow = isOpen ? 'hidden' : '';
     }
     // Close menu when a nav link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(link => {
         link.addEventListener('click', () => {
             const nav = document.querySelector('.nav-links');
             if (nav.classList.contains('nav-open')) toggleMobileMenu();
