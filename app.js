@@ -8632,7 +8632,7 @@ function navigate(sectionId, pushState = true) {
         target.classList.add('active');
         
         // Update nav links active state
-        document.querySelectorAll('a[href^='#']').forEach(link => {
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
         });
         
@@ -9246,7 +9246,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage(savedLang);
 
     // Link Nav - Fix: only prevent default for internal hash links
-    document.querySelectorAll('a[href^='#']').forEach(link => {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
             if (href.startsWith('#')) {
