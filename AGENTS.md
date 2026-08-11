@@ -30,10 +30,12 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
 - Usar scripts en archivos que ya estaban corruptos destruira las traducciones asiaticas y generara **errores de sintaxis fatales** (como renombrar variables JS `isActive` a `isctive`, o `msg` a `m\u00e1sg`), lo que rompera el enrutamiento de la pagina entera.
 - Si ves corrupciones, **siempre recupera el archivo de un commit funcional de git** (`git checkout <commit> -- archivo`) en lugar de intentar arreglarlo con un script global ciego.
 ## Soluciones Recientes
-- Reparaci髇 global de enlaces internos en app.js para toda la web.
-- Correcci髇 de acentos y caracteres especiales en pricebook.html.
+- Reparaci贸n global de enlaces internos en app.js para toda la web.
+- Correcci贸n de acentos y caracteres especiales en pricebook.html.
+- Correcci贸n del men煤 m贸vil en Android: Se actualiz贸 `style.css` (pointer-events) para evitar bloqueos en los formularios, y se excluy贸 a `.dropdown-toggle` en `index.html` para evitar el cierre prematuro del men煤 desplegable.
+- Correcci贸n de ruta de video (assets) y agregado de enlace de retorno al inicio en el logo de `corporate_team/Morales_Corporate_Team.html`.
 
 ## Arquitectura Web (REGLA ESTRICTA)
-- **HOSTING:** El sitio est alojado 100% en GitHub Pages. 
-- **PROHIBIDO:** Usar Netlify o cualquier funcin backend (Server-Side Javascript, Node.js).
+- **HOSTING:** El sitio est谩 alojado 100% en GitHub Pages. 
+- **PROHIBIDO:** Usar Netlify o cualquier funci贸n backend (Server-Side Javascript, Node.js).
 - **FORMULARIOS:** Cualquier formulario (contacto, agendado) DEBE procesarse en el Frontend de manera invisible (AJAX) usando servicios como FormSubmit.
