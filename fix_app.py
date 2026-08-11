@@ -1,42 +1,39 @@
 import re
+import codecs
 
-with open('app_clean.js', 'r', encoding='utf-16') as f:
-    clean = f.read()
+with codecs.open('old_app.js', 'r', 'utf-8') as f:
+    old_text = f.read()
+with codecs.open('app.js', 'r', 'utf-8') as f:
+    new_text = f.read()
 
-fallback_block = """
-// Global Fallback to Ensure Translations Run
-document.addEventListener('DOMContentLoaded', () => {
-    if (typeof updateTranslations === 'function') {
-        setTimeout(updateTranslations, 500);
-    }
-});
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    if (typeof updateTranslations === 'function') {
-        setTimeout(updateTranslations, 500);
-    }
+# find the zh, tl, vi blocks in old_app and new_app and replace them!
+for lang in ['zh', 'tl', 'vi']:
+    pattern = r'"' + lang + r'":\s*\{.*?\n    \},'
+    old_match = re.search(pattern, old_text, re.DOTALL)
+    new_match = re.search(pattern, new_text, re.DOTALL)
+    if old_match and new_match:
+        new_text = new_text.replace(new_match.group(0), old_match.group(0))
+        print(f"Restored {lang} translations")
+
+# For Spanish, we can fix the typos in the new text
+es_fixes = {
+    'artesana': 'artesanía', 'mtodos': 'métodos', 'Afiliacin': 'Afiliación',
+    'presin': 'presión', 'daos': 'daños', 'tuberas': 'tuberías',
+    'electrodomsticos': 'electrodomésticos', 'catastrficas': 'catastróficas',
+    'ao': 'año', 'aos': 'años', 'ms': 'más', 'energticamente': 'energéticamente',
+    'estoxidando': 'está oxidando', 'energa': 'energía', 'S,': 'Sí,',
+    'Podra': 'Podría', 'inmersin': 'inmersión', 'vlvula': 'válvula',
+    'Misin': 'Misión', 'Tcnica': 'Técnica', 'tcnica': 'técnica', 'Diseo': 'Diseño'
 }
-"""
+for bad, good in es_fixes.items():
+    new_text = re.sub(r'\b' + bad + r'\b', good, new_text)
+    bad_cap = bad[0].upper() + bad[1:]
+    good_cap = good[0].upper() + good[1:]
+    new_text = re.sub(r'\b' + bad_cap + r'\b', good_cap, new_text)
 
-new_keys_en = """        "lbl_tecnico": "Tech on Way",
-        "qs_tab_plumbing": "Plumbing",
-        "qs_tab_water_heaters": "Water Heaters",
-        "qs_tab_drain_cleaning": "Drain Cleaning",
-        "qs_tab_more": "More...",
-        "qs_btn_call": "Call Now",
-"""
-new_keys_es = """        "lbl_tecnico": "Técnico en Camino",
-        "qs_tab_plumbing": "Plomería",
-        "qs_tab_water_heaters": "Calentadores",
-        "qs_tab_drain_cleaning": "Limpieza de Drenajes",
-        "qs_tab_more": "Más...",
-        "qs_btn_call": "Llamar Ahora",
-"""
+new_text = new_text.replace('artesana C-36', 'artesanía C-36')
 
-clean = re.sub(r'("en": \{.*?\n)(    \},)', r'\g<1>' + new_keys_en + r'\g<2>', clean, flags=re.DOTALL)
-clean = re.sub(r'("es": \{.*?\n)(    \},)', r'\g<1>' + new_keys_es + r'\g<2>', clean, flags=re.DOTALL)
+with codecs.open('app.js', 'w', 'utf-8') as f:
+    f.write(new_text)
 
-clean += fallback_block
-
-with open('app.js', 'w', encoding='utf-16') as f:
-    f.write(clean)
-print('Successfully fixed app.js')
+print('Done replacing.')
