@@ -305,7 +305,7 @@
                             <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;" data-i18n="qs_plumb_t3">Inspeccion de Plomeria</h3>
                             <p style="color: #718096; font-size: 0.88rem; margin: 0;" data-i18n="qs_plumb_d3">Evaluacion completa para compra/venta de vivienda. Reporte detallado con termografia incluida.</p>
                         </div>
-                        <a href="docs/eng_inspect.html" onclick=\"openClientPortal(); switchPortalTab('schedule'); return false;\" style="background: transparent; color: #D4AF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4AF37; transition: all 0.3s;" onmouseover="this.style.background='rgba(212,175,55,0.1)'" onmouseout="this.style.background='transparent'" data-i18n="qs_btn_insp">Solicitar Inspeccion</a>
+                        <a href="docs/eng_inspect.html" onclick="openClientPortal(); switchPortalTab('schedule'); return false;" style="background: transparent; color: #D4AF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4AF37; transition: all 0.3s;" onmouseover="this.style.background='rgba(212,175,55,0.1)'" onmouseout="this.style.background='transparent'" data-i18n="qs_btn_insp">Solicitar Inspeccion</a>
                     </div>
                 </div>
 
@@ -1095,127 +1095,44 @@
             </div>
         </section>
 
-        <!-- CONTACT / TERMINAL -->
-        <section id="contact" class="page-section">
-            <div class="terminal-container glass">
-                <div class="terminal-header">
-                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                    <span class="title" data-i18n="terminal_title">MORALES_CONTACT_V1.0</span>
+        <!-- CONTACT / VIDEO + BUTTONS -->
+        <section id="contact" class="page-section" style="padding: 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; flex-wrap: wrap; background: #030814; color: #8892b0; border: 1px solid rgba(212, 175, 55, 0.2); overflow: hidden; border-radius: 12px; max-width: 1200px; margin: 0 auto; width: 100%; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+                <!-- Left: Video -->
+                <div style="flex: 1 1 400px; min-height: 400px; position: relative;">
+                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
+                        <source src="assets/urgente_llamada.mp4" type="video/mp4">
+                    </video>
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to right, transparent, #030814);"></div>
                 </div>
-                <div class="terminal-body">
-                    <div class="contact-profile">
-                        <img src="assets/contact_card.webp" alt="Alex Espinosa" class="profile-pic" loading="lazy">
-                <div class="profile-details">
-                    <div class="name neon-name">ALEX G. ESPINOSA</div>
-                    <div class="role" data-i18n="profile_role">Chief technical Officer & Founder</div>
-                    <p class="location">San Jose, CA · Morales Plumbing</p>
-                </div>
-                    </div>
-                    <style>
-.contact-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 25px;
-}
-.contact-card {
-    background: rgba(0,0,0,0.6);
-    border: 1px solid var(--neon-cyan);
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 245, 255, 0.4);
-    background: rgba(0, 245, 255, 0.1);
-}
-.contact-card-yt {
-    border-color: #ff0000;
-}
-.contact-card-yt:hover {
-    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
-    background: rgba(255, 0, 0, 0.1);
-}
-.contact-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-.contact-card h4 {
-    margin: 0 0 10px 0;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
-    color: var(--neon-cyan);
-}
-.contact-card.contact-card-yt h4 {
-    color: #ff0000;
-}
-.contact-card p {
-    color: #ccc;
-    font-size: 0.85rem;
-    margin: 0;
-    flex-grow: 1;
-    line-height: 1.4;
-}
-</style>
-                    <div class="contact-cards-grid">
-                        <a href="docs/cv.html" target="_blank" style="text-decoration: none;">
-                            <div class="contact-card">
-                                <img src="assets/cv_photo.webp" alt="Professional Resume" loading="lazy">
-                                <h4 data-i18n="cv_link">HOJA DE VIDA</h4>
-                                <p data-i18n="cv_desc">Acceso a mi historial profesional, certificaciones y experiencia.</p>
-                            </div>
+                
+                <!-- Right: Contact Links -->
+                <div style="flex: 1 1 400px; padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 20px;">
+                    <h2 style="color: #D4AF37; margin: 0 0 10px 0; font-family: 'Orbitron', sans-serif;">CONTACTO INMEDIATO</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                        <a href="https://wa.me/16692134422" target="_blank" style="display: flex; align-items: center; gap: 8px; color: #25D366; text-decoration: none; font-weight: bold; background: rgba(37,211,102,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(37,211,102,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(37,211,102,0.2)'" onmouseout="this.style.background='rgba(37,211,102,0.1)'">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.128.552 4.195 1.6 6.015L.2 23.8l5.908-1.547a11.967 11.967 0 005.923 1.564h.005c6.643 0 12.028-5.385 12.028-12.031C24.062 5.166 18.675 0 12.031 0zm.005 21.848a9.986 9.986 0 01-5.1-1.393l-.366-.217-3.788.993.993-3.69-.239-.38A9.973 9.973 0 012.046 12.03c0-5.518 4.49-10.008 10.01-10.008 5.518 0 10.008 4.49 10.008 10.008 0 5.517-4.49 10.007-10.008 10.007h-.051zm5.495-7.514c-.301-.151-1.785-.88-2.062-.982-.278-.101-.48-.151-.682.151-.202.302-.783.982-.96 1.183-.177.202-.354.227-.656.076-1.503-.755-2.613-1.424-3.568-2.732-.204-.278-.022-.428.128-.578.136-.135.301-.353.453-.529.151-.176.202-.302.302-.503.1-.202.05-.378-.026-.529-.076-.151-.682-1.643-.933-2.25-.245-.591-.496-.511-.682-.52-.176-.009-.378-.009-.58-.009s-.529.076-.807.378c-.278.302-1.06 1.033-1.06 2.518s1.085 2.92 1.236 3.122c.151.202 2.128 3.252 5.155 4.556.72.31 1.282.495 1.722.634.723.23 1.382.197 1.9.12.58-.086 1.785-.729 2.037-1.433.251-.705.251-1.31.176-1.433-.075-.123-.277-.199-.579-.35z"/></svg> WhatsApp
                         </a>
-                        
-                        <a href="docs/ceo.html" target="_blank" style="text-decoration: none;">
-                            <div class="contact-card">
-                                <img src="assets/ceo_official.webp" alt="CEO Profile" loading="lazy">
-                                <h4 data-i18n="ceo_link">PERFIL EJECUTIVO</h4>
-                                <p data-i18n="ceo_desc">Visión, liderazgo y estrategia ejecutiva de Morales Plumbing.</p>
-                            </div>
+                        <a href="https://t.me/+16692134422" target="_blank" style="display: flex; align-items: center; gap: 8px; color: #0088cc; text-decoration: none; font-weight: bold; background: rgba(0,136,204,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(0,136,204,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(0,136,204,0.2)'" onmouseout="this.style.background='rgba(0,136,204,0.1)'">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram
                         </a>
-
-                        <a href="mailto:moralesplumbing026@gmail.com" style="text-decoration: none;">
-                            <div class="contact-card">
-                                <img src="assets/admin_ops.webp" alt="Email" loading="lazy">
-                                <h4>EMAIL / TELEGRAM</h4>
-                                <p>moralesplumbing026@gmail.com <br> <span style="color:#00f5ff;">@nekon</span></p>
-                            </div>
+                        <a href="mailto:moralesplumbing026@gmail.com" style="display: flex; align-items: center; gap: 8px; color: #EA4335; text-decoration: none; font-weight: bold; background: rgba(234,67,53,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(234,67,53,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(234,67,53,0.2)'" onmouseout="this.style.background='rgba(234,67,53,0.1)'">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg> Email
                         </a>
-
-                        <a href="tel:+1-669-213-4422" style="text-decoration: none;">
-                            <div class="contact-card">
-                                <img src="assets/icon_phone.webp" alt="Phone" loading="lazy">
-                                <h4>LLAMADA DIRECTA</h4>
-                                <p>(669) 213-4422 <br> Servicio 24/7</p>
-                            </div>
-                        </a>
-
-                        <a href="https://www.youtube.com/@moralesplumbing" target="_blank" style="text-decoration: none;">
-                            <div class="contact-card contact-card-yt">
-                                <img src="assets/app_redes.webp" alt="YouTube" loading="lazy">
-                                <h4>YOUTUBE</h4>
-                                <p>¡Suscríbete a Morales Plumbing para guías visuales y tips!</p>
-                            </div>
-                        </a>
-                    
-                        <a href="corporate_team/Morales_Corporate_Team.html" target="_blank" style="text-decoration: none;">
-                            <div class="contact-card">
-                                <img src="assets/corporate_team_card.jpg" alt="Corporate Team" loading="lazy">
-                                <h4 data-i18n="team_card_title">CORPORATE TEAM DIRECTORY</h4>
-                                <p data-i18n="team_card_desc">Plumbing Engineers & Tech Specialists</p>
-                            </div>
+                        <a href="sms:+16692134422" style="display: flex; align-items: center; gap: 8px; color: #FABB05; text-decoration: none; font-weight: bold; background: rgba(250,187,5,0.1); padding: 8px 18px; border-radius: 40px; border: 1px solid rgba(250,187,5,0.2); transition: 0.3s;" onmouseover="this.style.background='rgba(250,187,5,0.2)'" onmouseout="this.style.background='rgba(250,187,5,0.1)'">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.613 4.469 8.653V24l4.085-2.242c1.09.301 2.246.464 3.446.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm3.333 13.333H8.667v-1.111h6.666v1.111zm2.223-3.333H6.444v-1.111h11.112v1.111z"/></svg> SMS
                         </a>
                     </div>
 
+                    <div style="margin-top: 10px;">
+                        <p style="margin: 0 0 8px 0; font-size: 16px;"><strong style="color: #D4AF37;">24/7 Dispatch:</strong> <a href="tel:16692134422" style="color: #e6f1ff; text-decoration: none; font-weight: bold;">(669) 213-4422</a></p>
+                        <p style="margin: 0; opacity: 0.8; font-size: 14px;"><strong style="color: #D4AF37;">Contingencia:</strong> <a href="tel:16692342444" style="color: inherit; text-decoration: none;">(669) 234-2444</a></p>
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <h4 style="color: #D4AF37; margin: 0 0 5px 0; font-size: 16px; text-transform: uppercase;">Morales Plumbing</h4>
+                        <p style="margin: 0; opacity: 0.6; font-size: 13px;">San Jose, CA &bull; Lic. C-36 #1156542</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2042,8 +1959,8 @@
     </style>
 
     <!-- Config (API keys — local only) -->
-    <script src="config.js?v=6.0.2" defer></script>
-    <script src="app.js?v=8.0" defer></script>
+    <script src="config.js?v=6.0.3" defer></script>
+    <script src="app.js?v=8.4" defer></script>
     <script>
     // ── Mobile hamburger menu ──
     function toggleMobileMenu() {
@@ -2056,11 +1973,13 @@
         overlay.classList.toggle('visible', isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : '';
     }
-    // Close menu when a nav link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            const nav = document.querySelector('.nav-links');
-            if (nav.classList.contains('nav-open')) toggleMobileMenu();
+    // Close menu when a nav link is clicked (safe: waits for DOM)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                var nav = document.querySelector('.nav-links');
+                if (nav && nav.classList.contains('nav-open')) toggleMobileMenu();
+            });
         });
     });
 
