@@ -10627,17 +10627,32 @@ function submitBooking() {
     }
 
     // -- SECURE BACKEND SUBMISSION ----------------------------
-    const waMessage = `Hola Morales Plumbing!%0ANueva Cita Reservada por Bot Joe:%0A*Nombre:* ${d.name}%0A*Tel:* ${d.phone}%0A*Dir:* ${d.address}%0A*Servicio:* ${d.service}%0A*Fecha:* ${d.date}%0A*Hora:* ${d.time}%0A*Notas:* ${d.notes}`;
-    window.open('https://wa.me/16692134422?text=' + waMessage, '_blank');
+    const waMessage = `Hola Morales Plumbing!%0ANueva Cita Reservada:%0A*Nombre:* ${d.name}%0A*Tel:* ${d.phone}%0A*Dir:* ${d.address}%0A*Servicio:* ${d.service}%0A*Fecha:* ${d.date}%0A*Hora:* ${d.time}%0A*Notas:* ${d.notes}`;
+    const emailSubject = encodeURIComponent("Nueva Cita Reservada");
+    const emailBody = encodeURIComponent(`Hola Morales Plumbing,
 
-    // Joe confirmation message
+Nueva Cita Reservada:
+Nombre: ${d.name}
+Tel: ${d.phone}
+Dir: ${d.address}
+Servicio: ${d.service}
+Fecha: ${d.date}
+Hora: ${d.time}
+Notas: ${d.notes}`);
+    
+    const waLink = `https://wa.me/16692134422?text=${waMessage}`;
+    const smsLink = `sms:+16692134422?body=${waMessage}`;
+    const emailLink = `mailto:moralesplumbing026@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
+    const contactBtns = `<div style="display:flex; flex-direction:column; gap:10px; margin-top:15px; margin-bottom:10px;">
+        <a href="${waLink}" target="_blank" style="background:rgba(37,211,102,0.2); color:#25D366; border: 1px solid #25D366; padding:10px; text-align:center; border-radius:5px; text-decoration:none; font-weight:bold;">📱 Enviar por WhatsApp</a>
+        <a href="${smsLink}" style="background:rgba(0,122,255,0.2); color:#007AFF; border: 1px solid #007AFF; padding:10px; text-align:center; border-radius:5px; text-decoration:none; font-weight:bold;">💬 Enviar por SMS</a>
+        <a href="${emailLink}" target="_blank" style="background:rgba(212,175,55,0.2); color:#D4AF37; border: 1px solid #D4AF37; padding:10px; text-align:center; border-radius:5px; text-decoration:none; font-weight:bold;">📧 Enviar por Correo (Email)</a>
+    </div>`;
+
     const confirmMsg = lang === 'es'
-        ? `? Cita enviada exitosamente! 
-        
-Nos comunicaremos contigo al ${d.phone} para confirmar. Tu informacin est protegida bajo estndares CCPA. Gracias, ${d.name}! `
-        : `? Appointment submitted successfully!
-
-We will contact you at ${d.phone} to confirm. Your information is protected under CCPA standards. Thank you, ${d.name}! `;
+        ? `✅ ¡Datos recopilados exitosamente! <br><br>Por favor, **selecciona tu aplicación preferida** para enviarnos la solicitud y confirmar tu cita:<br>` + contactBtns
+        : `✅ Data collected successfully! <br><br>Please **select your preferred app** to send us the request and confirm your appointment:<br>` + contactBtns;
 
     addMessage(confirmMsg, 'bot');
 
