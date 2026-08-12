@@ -51,6 +51,13 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
   - Se eliminó un icono flotante duplicado que mostraba un globo de notificación rojo, dejando un solo botón limpio con el video en la esquina inferior derecha.
   - Se rediseñó el pie de página (footer) eliminando la redundancia de bloques de información, organizándolo en una nueva disposición limpia con el video de "urgencia" a la izquierda y los datos de contacto y redes sociales unificados a la derecha.
   - Sincronización y protección de entorno local para evitar pérdida de archivos locales no rastreados durante conflictos en el control de versiones (Git).
+- Refinamiento de la Sección Principal (Hero):
+  - Actualización tipográfica usando la fuente "Aladin" y ajustes de tamaño (+20%) con diseño adaptativo (`clamp()`) para mejorar la legibilidad en pantallas móviles y de escritorio.
+  - Implementación de imágenes de fondo (`plan_better.webp`, `service_tankless.webp` y el cuadro estático del video `Grok_Clip_013.webp`) con superposiciones translúcidas (gradientes oscuros) en los tres botones principales de acción ("Eco Water Heater Systems", "Explorar Ecosistema" y "Agenda Rápido").
+
+- Corrección de bugs en Interfaz de Citas:
+  - Se corrigió un error de sintaxis y caracteres corruptos (mojibake) en los textos enviados automáticamente al chatbot (`app_v9.js`) que provocaba que la frase `"我想preabout管道服务预约。"` y `"puedo agendar"` se guardaran erróneamente en el perfil local del usuario (`localStorage`), sobrescribiendo su nombre y teléfono en el formulario de citas.
+  - Se renombró el botón de "Agenda rápido con Joe" a únicamente "Agenda rápido", desvinculándolo del motor de traducciones para prevenir que el texto sea sobrescrito incorrectamente.
 ## Arquitectura Web (REGLA ESTRICTA)
 - **HOSTING:** El sitio está alojado 100% en GitHub Pages. 
 - **PROHIBIDO:** Usar Netlify o cualquier función backend (Server-Side Javascript, Node.js).
