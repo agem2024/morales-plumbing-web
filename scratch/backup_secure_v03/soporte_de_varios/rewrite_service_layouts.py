@@ -1,0 +1,124 @@
+import os
+import re
+
+pages = [
+    { 'name': 'eng_wh.html', 'key': 'wh', 'code': 'ENG-CENT-006', 'icon': 'service_wh.png', 'comic': 'wh_comic.png' },
+    { 'name': 'eng_valves.html', 'key': 'valves', 'code': 'ENG-CENT-007', 'icon': 'service_valves.png', 'comic': 'valves_comic.png' },
+    { 'name': 'eng_inspect.html', 'key': 'inspect', 'code': 'ENG-CENT-008', 'icon': 'service_inspect.png', 'comic': 'inspect_comic.png' },
+    { 'name': 'eng_training.html', 'key': 'training', 'code': 'ENG-CENT-009', 'icon': 'service_training.png', 'comic': 'training_comic.png' },
+    { 'name': 'eng_b2b.html', 'key': 'b2b', 'code': 'ENG-CENT-010', 'icon': 'service_b2b.png', 'comic': 'b2b_comic.png' }
+]
+
+base_style = """
+        .service-detail-container { max-width: 1100px; margin: 120px auto 50px auto; padding: 40px; background: rgba(10, 15, 30, 0.65); border: 1px solid rgba(0, 245, 255, 0.2); border-radius: 24px; backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1); }
+        .service-header { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; flex-wrap: wrap; }
+        .service-title { font-size: 2.5em; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; text-shadow: 0 0 20px rgba(0, 245, 255, 0.4); margin: 0; }
+        .service-code { font-family: monospace; background: rgba(0, 245, 255, 0.1); color: var(--neon-cyan); padding: 5px 12px; border-radius: 6px; font-size: 0.9em; letter-spacing: 1px; border: 1px solid rgba(0, 245, 255, 0.3); }
+        .service-content-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start; }
+        .service-image { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); border: 1px solid rgba(0, 245, 255, 0.3); object-fit: cover; }
+        .service-text-block { color: #d0d0d0; font-size: 1.1em; line-height: 1.8; }
+        .service-text-block p { margin-bottom: 20px; }
+        .tech-spec-header { color: var(--neon-cyan); font-size: 1.5em; margin-top: 30px; margin-bottom: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .tier-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .tier-list li { background: rgba(0,0,0,0.3); border-left: 4px solid var(--neon-cyan); padding: 20px; border-radius: 0 8px 8px 0; font-size: 1em; color: #fff;}
+        .back-btn { display: inline-block; padding: 12px 30px; background: transparent; color: var(--neon-cyan); border: 1px solid var(--neon-cyan); border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+        .back-btn:hover { background: rgba(0, 245, 255, 0.1); box-shadow: 0 0 15px rgba(0, 245, 255, 0.3); transform: translateY(-2px); }
+        @media (max-width: 900px) { .service-content-grid { grid-template-columns: 1fr; } }
+"""
+
+html_template = """<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialidad C-36 - Morales Plumbing</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../universe.css">
+    <style>
+{style}
+    </style>
+</head>
+<body>
+    <canvas id="universe-canvas" data-universe-mode="pulse"></canvas>
+    <div class="universe-overlay u-variant-service-detail"></div>
+    <script src="../universe.js"></script>
+
+    <header>
+        <nav class="nav-container">
+            <div class="logo-container" onclick="window.location.href='../index.html';">
+                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" class="nav-logo">
+                <div class="brand-info">
+                    <span class="brand-name">MORALES PLUMBING</span>
+                    <span class="brand-tag">ORION Portal</span>
+                </div>
+            </div>
+            
+            <div class="lang-selector">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="zh">ZH</button>
+                <button class="lang-btn" data-lang="tl">TL</button>
+                <button class="lang-btn" data-lang="vi">VI</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="service-detail-container animate-in">
+        <div class="service-header">
+            <h1 class="service-title" data-i18n="eng_{key}_title"></h1>
+            <span class="service-code">{code}</span>
+        </div>
+
+        <div class="service-content-grid">
+            <div class="service-image-wrapper">
+                <img src="../assets/{icon}" alt="Service Icon" class="service-image">
+            </div>
+            
+            <div class="service-text-block">
+                <p data-i18n="eng_{key}_p1"></p>
+                <p data-i18n="eng_{key}_p2"></p>
+            </div>
+        </div>
+        
+        <div class="comic-section" style="margin-top: 60px;">
+            <h2 class="tech-spec-header" data-i18n="eng_{key}_comic_title">Metodología (Storyboard)</h2>
+            <img src="../assets/{comic}" alt="Methodology Comic" style="width: 100%; border-radius: 12px; border: 2px solid var(--neon-cyan); box-shadow: 0 0 20px rgba(0,245,255,0.3);">
+        </div>
+        
+        <div class="technical-details-section" style="margin-top: 60px;">
+            <h2 class="tech-spec-header" data-i18n="eng_tech_details">Detalles Técnicos</h2>
+            <ul class="tier-list">
+                <li><span data-i18n="eng_{key}_li1"></span></li>
+                <li><span data-i18n="eng_{key}_li2"></span></li>
+                <li><span data-i18n="eng_{key}_li3"></span></li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="../index.html#services" class="back-btn" data-i18n="eng_back">← Volver a Servicios Centrales</a>
+        </div>
+    </div>
+
+    <script src="../app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof setLanguage === 'function') {
+                setLanguage(localStorage.getItem('morales_lang') || 'es');
+            }
+        });
+    </script>
+</body>
+</html>
+"""
+
+for p in pages:
+    content = html_template.format(
+        style=base_style,
+        key=p['key'],
+        code=p['code'],
+        icon=p['icon'],
+        comic=p['comic']
+    )
+    with open('docs/' + p['name'], 'w', encoding='utf-8') as f:
+        f.write(content)
+    print('Rewrote layout for ' + p['name'])
