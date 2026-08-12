@@ -10624,8 +10624,23 @@ function submitBooking() {
     }
 
     // -- SECURE BACKEND SUBMISSION ----------------------------
-    const waMessage = `Hola Morales Plumbing!%0ANueva Cita Reservada por Bot Joe:%0A*Nombre:* ${d.name}%0A*Tel:* ${d.phone}%0A*Dir:* ${d.address}%0A*Servicio:* ${d.service}%0A*Fecha:* ${d.date}%0A*Hora:* ${d.time}%0A*Notas:* ${d.notes}`;
-    window.open('https://wa.me/16692134422?text=' + waMessage, '_blank');
+    const backendData = {
+        name: d.name,
+        phone: d.phone,
+        email: "",
+        address: d.address,
+        diagnosis: `Servicio: ${d.service}. Notas: ${d.notes}`,
+        is_emergency: false,
+        scheduled_time: `${d.date} ${d.time}`
+    };
+
+    fetch('https://orion-cloud-1.onrender.com/api/web-appointment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(backendData)
+    }).then(res => res.json())
+      .then(res => console.log('Appointment sent to Orion Cloud:', res))
+      .catch(err => console.error('Error sending appointment to Orion Cloud:', err));
 
     // Joe confirmation message
     const confirmMsg = lang === 'es'
