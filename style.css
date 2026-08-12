@@ -777,12 +777,12 @@ nav {
 
 .hero-badge {
     display: inline-block;
-    padding: 0.6rem 1.5rem;
+    padding: 0.5rem 1.3rem;
     background: rgba(0, 229, 255, 0.08);
     border: 1px solid #00ff99;
     border-radius: 50px;
     font-family: 'Aladin', cursive;
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-size: 0.68rem;
     color: #00ff99;
     margin-bottom: 1.6rem;
     letter-spacing: 2px;
@@ -857,7 +857,7 @@ nav {
 
 .hero-desc {
     font-family: 'Aladin', cursive;
-    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+    font-size: clamp(0.88rem, 2vw, 1.1rem);
     color: #00ff99;
     text-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
     font-weight: normal;
@@ -877,7 +877,7 @@ nav {
 
 .stat {
     font-family: 'Aladin', cursive;
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-size: 0.72rem;
     color: #bbf8d8;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -888,7 +888,7 @@ nav {
     color: #00ff99;
     font-weight: normal;
     display: block;
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-size: clamp(1.32rem, 3.3vw, 1.87rem);
     margin-bottom: 4px;
     text-shadow: 0 0 15px rgba(0, 255, 153, 0.8);
 }
