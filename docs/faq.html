@@ -1,380 +1,1003 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q&Ã¡ Technical Hub | Morales Plumbing</title>
-    <meta name="description" content="Technical Ã¡nswer Hub and Ecological Consulting by Morales Plumbing. CSLB C-36 and UPC Uniform Plumbing Code compliance.">
-    <link href="https://fonts.googleapis.com/css2family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Black+Ops+One&display=swap" rel="stylesheet">
+    <title>100 Preguntas | Q&A Technical Hub | Morales Plumbing</title>
+    <meta name="description" content="100 preguntas frecuentes sobre plomería técnica C-36, calentadores de agua, eco-plomería y tecnología ORION. Morales Plumbing, San Jose, CA.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Black+Ops+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../universe.css">
     <style>
-        :root {
-            --cyan: #00f5ff;
-            --orange: #ff8c00;
-            --dark: #030712;
-            --card: rgba(8, 14, 36, 0.45);
-            --border: #000000;
-            --text: #d9e8f0;
-            --dim: rgba(217,232,240,0.6);
-        }
-
-        body {
-            background-color: var(--dark);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-            position: relative;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('../assets/Q&Ã¡%20%20Technical%20Hub.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.15;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* â”€â”€ NÃ¡V BÃ¡R â”€â”€ */
-        .faq-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: .8rem 2rem;
-            background: rgba(3, 7, 18, 0.9);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 3px solid #000000; /* Cartoon border */
-            box-shadow: 0 4px 0px rgba(0, 0, 0, 0.15);
-        }
-        .faq-nav a {
-            color: var(--orange);
-            text-decoration: none;
-            font-family: 'Orbitron', monospace;
-            font-size: .85rem;
-            font-weight: 700;
-            letter-spacing: .1em;
-            transition: all .2s ease;
-        }
-        .faq-nav a:hover {
-            color: var(--cyan);
-            text-shadow: 0 0 8px var(--cyan);
-        }
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-        }
-        .lang-btn {
-            background: none;
-            border: 2px solid #000000; /* Thick outline */
-            border-radius: 50px;
-            padding: .3rem .55rem;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all .2s ease;
-            line-height: 1;
-            box-shadow: 2px 2px 0px #000000; /* Cartoon shadow */
-        }
-        .lang-btn:hover {
-            border-color: var(--cyan);
-            transform: scale(1.1) translateY(-2px);
-            box-shadow: 3px 3px 0px #000000;
-        }
-        .lang-btn.active {
-            border-color: var(--cyan);
-            background: rgba(0, 245, 255, 0.15);
-        }
-
-        /* â”€â”€ HERO SECTION â”€â”€ */
-        .faq-hero {
-            padding: 150px 20px 50px;
-            text-align: center;
-            background: radial-gradient(circle at center, rgba(0, 245, 255, 0.08) 0%, transparent 70%);
-        }
-
-        .faq-hero .graffiti-3d-metallic {
-            font-family: 'Black Ops One', cursive !important;
-            text-transform: uppercase;
-            font-weight: 900;
-            display: inline-block;
-            position: relative;
-            background: linear-gradient(to bottom, 
-                #ffffff 0%, 
-                #00f5ff 55%, 
-                #ff8c00 100%
-            ) !important;
-            -webkit-background-clip: text !important;
-            background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-            letter-spacing: 1px !important;
-            filter: 
-                drop-shadow(1.5px 1.5px 0px #000000) 
-                drop-shadow(3px 3px 0px rgba(0, 245, 255, 0.35)) 
-                drop-shadow(0 0 15px rgba(0, 245, 255, 0.45)) !important;
-            transform: skew(-10deg, -2deg);
-            line-height: 1.1;
-        }
-
-        .faq-subtitle {
-            color: rgba(255, 255, 255, 0.75);
-            max-width: 600px;
-            margin: 1.2rem auto 0;
-            font-size: 1.15rem;
-            letter-spacing: 1px;
-            font-weight: 500;
-            font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 10px rgba(0, 245, 255, 0.1);
-        }
-
-        /* â”€â”€ GRID SYSTEM â”€â”€ */
-        .faq-grid {
-            max-width: 1000px;
-            margin: 0 auto 80px;
-            padding: 0 20px;
-            display: grid;
-            gap: 50px;
-        }
-
-        .faq-category {
-            margin-top: 20px;
-        }
-
-        .faq-category h2 {
-            font-family: 'Orbitron', sans-serif;
-            color: #ffffff;
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            border: 3px solid #000000; /* Cartoon border */
-            background: rgba(255, 140, 0, 0.12);
-            display: inline-block;
-            padding: 10px 22px;
-            border-radius: 12px;
-            box-shadow: 5px 5px 0px #000000; /* Comic shadow */
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transform: rotate(-1deg); /* Slight cartoon tilt */
-        }
-
-        /* â”€â”€ CÃ¡RTOON / COMIC STYLED BOXES â”€â”€ */
-        .faq-item {
-            background: var(--card);
-            border: 3.5px solid #000000; /* Thick solid comic outline */
-            border-radius: 18px;
-            padding: 35px;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy cartoon physics */
-            box-shadow: 
-                6px 6px 0px #000000, /* Primary solid black shadow */
-                10px 10px 0px rgba(0, 245, 255, 0.3); /* Offset cian shadow */
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .faq-item:hover {
-            background: rgba(12, 22, 50, 0.58);
-            border-color: var(--cyan); /* Turns electric cian on hover */
-            transform: translate(-6px, -6px); /* Moves diagonally up-left */
-            box-shadow: 
-                12px 12px 0px #000000, 
-                18px 18px 0px var(--orange); /* Dynamic offset orange shadow */
-        }
-
-        .faq-item h3 {
-            color: #ffffff;
-            font-size: 1.25rem;
-            font-weight: 700;
-            line-height: 1.5;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .faq-item h3::before {
-            content: '';
-            background: var(--orange);
-            color: #000000;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 0.95rem;
-            font-weight: 900;
-            border: 2.5px solid #000000; /* Comic outline */
-            box-shadow: 2px 2px 0px #000000; /* Comic shadow */
-            flex-shrink: 0;
-        }
-
-        .faq-item p {
-            color: #e2eff5;
-            line-height: 1.8;
-            font-size: 1.05rem;
-            font-weight: 400;
-        }
-
-        .copyright-tag {
-            text-align: center;
-            padding: 50px 20px;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.85rem;
-            font-family: 'Orbitron', monospace;
-            letter-spacing: 2px;
-            border-top: 3px solid #000000;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        @media(max-width: 640px) {
-            .faq-nav {
-                padding: .8rem 1rem;
-            }
-            .faq-hero {
-                padding: 130px 15px 45px;
-            }
-            .faq-grid {
-                gap: 30px;
-            }
-            .faq-category h2 {
-                font-size: 1.15rem;
-                padding: 8px 16px;
-            }
-            .faq-item {
-                padding: 25px 20px;
-                border-width: 3px;
-                box-shadow: 4px 4px 0px #000000, 7px 7px 0px rgba(0, 245, 255, 0.3);
-            }
-            .faq-item:hover {
-                transform: translate(-4px, -4px);
-                box-shadow: 8px 8px 0px #000000, 12px 12px 0px var(--orange);
-            }
-        }
+        :root { --cyan: #00f5ff; --orange: #ff8c00; --dark: #030712; --card: rgba(8,14,36,0.45); --text: #d9e8f0; }
+        body { background-color: var(--dark); background-image: url('../assets/service_faq_hub_1778369361208.webp'); background-size: cover; background-position: center; background-attachment: fixed; background-blend-mode: overlay; color: var(--text); font-family: 'Inter', sans-serif; min-height: 100vh; }
+        .faq-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: .8rem 2rem; background: rgba(3,7,18,0.95); backdrop-filter: blur(14px); border-bottom: 3px solid #000; box-shadow: 0 2px 20px rgba(0,0,0,0.5); }
+        .faq-nav a { color: var(--orange); text-decoration: none; font-family: 'Orbitron'; font-weight: 700; font-size: 0.85rem; }
+        .nav-right { display: flex; gap: 8px; align-items: center; }
+        .lang-btn { background: transparent; border: 2px solid var(--orange); color: var(--orange); padding: 4px 10px; cursor: pointer; border-radius: 8px; font-weight: bold; font-size: 0.85rem; transition: 0.2s; }
+        .lang-btn:hover, .lang-btn.active { background: var(--orange); color: #000; }
+        .faq-hero { padding: 130px 20px 30px; text-align: center; }
+        .graffiti-title { font-family: 'Black Ops One', cursive; font-size: 3.5rem; text-transform: uppercase; background: linear-gradient(to bottom, #ffffff, #00f5ff, #ff8c00); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(2px 2px 0px #000); margin: 0; }
+        .search-container { max-width: 600px; margin: 20px auto; }
+        .faq-search { width: 100%; padding: 14px 22px; border-radius: 30px; border: 3px solid #000; background: rgba(0,245,255,0.08); color: #fff; font-size: 1rem; outline: none; transition: 0.3s; box-shadow: 4px 4px 0px #000; box-sizing: border-box; }
+        .faq-search:focus { border-color: var(--cyan); box-shadow: 6px 6px 0px var(--cyan); }
+        .faq-counter { text-align: center; margin: 10px 0; color: var(--cyan); font-family: 'Orbitron'; font-size: 0.85rem; letter-spacing: 1px; }
+        .faq-container { max-width: 1000px; margin: 0 auto 100px; padding: 0 20px; }
+        .accordion-item { margin-bottom: 12px; border: 3px solid #000; border-radius: 12px; background: var(--card); box-shadow: 4px 4px 0px #000; overflow: hidden; transition: 0.2s; }
+        .accordion-item:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0px var(--orange); }
+        .accordion-item.hidden { display: none; }
+        .accordion-header { width: 100%; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; background: transparent; border: none; color: #fff; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; font-family: 'Inter'; gap: 10px; }
+        .accordion-header.active { color: var(--cyan); }
+        .accordion-icon { font-size: 1.4rem; color: var(--orange); transition: transform 0.3s; font-weight: 900; flex-shrink: 0; }
+        .accordion-header.active .accordion-icon { transform: rotate(45deg); color: var(--cyan); }
+        .accordion-content { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; background: rgba(0,0,0,0.4); }
+        .accordion-content p { padding: 18px 0; color: #e2eff5; line-height: 1.7; margin: 0; border-top: 1px dashed rgba(255,255,255,0.1); font-size: 1rem; }
+        .no-results { display: none; text-align: center; padding: 40px; color: var(--orange); font-family: 'Orbitron'; font-size: 1.3rem; }
+        .category-badge { display: inline-block; font-size: 0.75rem; font-family: 'Orbitron'; padding: 2px 8px; border-radius: 4px; background: rgba(0,245,255,0.15); border: 1px solid var(--cyan); color: var(--cyan); margin-bottom: 15px; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
     <!-- MORALES PLUMBING OFFICIAL HEADER -->
-    <header style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 4px solid #D4AF37; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: relative; z-index: 1000;">
-        <div style="display: flex; align-items: center;">
-            <a href="../index.html">
-                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 60px; width: auto;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
-            </a>
+<header class="mp-global-header" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 2px solid #D4AF37; padding: 8px 15px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 999999; height: 60px; box-sizing: border-box; width: 100vw; max-width: 100%;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="../index.html" style="display: flex; align-items: center;">
+            <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 38px; width: auto; max-width: 140px; object-fit: contain;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
+        </a>
+    </div>
+    <div style="position: relative; display: flex; align-items: center; gap: 10px;">
+        <div style="text-align: right; color: #fff; display: none;" class="header-contact-info">
+            <h2 style="margin: 0; font-size: 0.9rem; color: #D4AF37; font-weight: bold; line-height: 1;">MORALES PLUMBING</h2>
+            <p style="margin: 2px 0 0; font-size: 0.7rem; color: #aaa; line-height: 1;">Lic. C-36 #1156542</p>
         </div>
-        <div style="text-align: right; color: #fff;">
-            <h2 style="margin: 0; font-size: 1.2rem; color: #D4AF37; font-weight: bold;">MORALES PLUMBING</h2>
-            <p style="margin: 3px 0 0; font-size: 0.9rem;">AI-INTEGRATED SERVICES</p>
-            <p style="margin: 3px 0 0; font-size: 0.8rem; color: #aaa;">Lic. C-36 #1156542 | San Jose, CA</p>
+        <button onclick="document.getElementById('globalLangMenu').classList.toggle('show-lang')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(0,245,255,0.3); cursor: pointer; padding: 4px 8px; outline: none; border-radius: 6px; display: flex; align-items: center; gap: 5px; transition: 0.2s;">
+            <img src="../assets/plan_good_clean.png" alt="Language" style="height: 22px; width: auto; border-radius: 4px; box-shadow: 0 0 5px rgba(0,245,255,0.4);">
+            <span style="color: #00f5ff; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.5px;">LANG</span>
+        </button>
+        <div id="globalLangMenu" style="display: none; position: absolute; right: 0; top: 45px; background: rgba(3, 7, 18, 0.98); border: 1px solid #D4AF37; border-radius: 8px; flex-direction: column; min-width: 140px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.9); z-index: 1000000;">
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Español</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - 中文</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Tiếng Việt</button>
         </div>
-    </header>
+    </div>
+</header>
+<style>
+    body { padding-top: 60px !important; }
+    .show-lang { display: flex !important; }
+    #globalLangMenu button:hover { background: rgba(0, 245, 255, 0.15) !important; color: #00f5ff !important; }
+    @media (min-width: 480px) {
+        .header-contact-info { display: block !important; }
+    }
+</style>
 
-    <!-- UNIVERSE BÃ¡CKGROUND -->
+
+    <!-- UNIVERSE BACKGROUND -->
     <canvas id="universe-canvas" data-universe-mode="matrix-stars"></canvas>
     <div class="universe-overlay u-variant-info"></div>
     <script src="../universe.js"></script>
 
-    <!-- NÃ¡V BÃ¡R -->
-    <nav class="faq-nav">
-        <a href="../index.html">â† HOME</a>
-        <div class="nav-right">
-            <button class="lang-btn" data-lang="en" onclick="setLanguage('en')" title="English">ðŸ‡ºðŸ‡¸</button>
-            <button class="lang-btn" data-lang="es" onclick="setLanguage('es')" title="EspaÃ±ol">ðŸ‡²ðŸ‡½</button>
-            <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')" title="ä¸­æ–‡">ðŸ‡¨ðŸ‡³</button>
-            <button class="lang-btn" data-lang="tl" onclick="setLanguage('tl')" title="Tagalog">ðŸ‡µðŸ‡­</button>
-            <button class="lang-btn" data-lang="vi" onclick="setLanguage('vi')" title="Tiáº¿ng Viá»‡t">ðŸ‡»ðŸ‡³</button>
-        </div>
-    </nav>
+    
 
-    <!-- HERO -->
     <section class="faq-hero">
-        <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-            <img src="../assets/comic_catalog.png" alt="FÃ¡Q Icon" style="width: 100px; height: 100px; filter: drop-shadow(0 0 15px var(--cyan));">
-            <h1 data-i18n="faq_title" class="graffiti-3d-metallic" style="font-size: 4.5rem; margin-bottom: 0;">Q&Ã¡ | Technical Hub</h1>
+        <h1 class="graffiti-title">Q&amp;A <span style="color:var(--cyan);">100</span></h1>
+        <p style="color:#aaa; margin-top:10px; font-family:'Orbitron'; letter-spacing:1px; font-size:0.9rem;">MORALES PLUMBING · TECHNICAL HUB · C-36 CERTIFIED</p>
+        <div style="margin: 15px 0;">
+            <a href="../index.html#contact" style="display:inline-block; padding:10px 22px; background:rgba(212,175,55,0.15); border:2px solid #D4AF37; color:#D4AF37; font-family:'Orbitron'; text-decoration:none; border-radius:8px; font-weight:bold; margin-right:10px; font-size:0.8rem; transition:0.3s;" onmouseover="this.style.background='#D4AF37'; this.style.color='#000';" onmouseout="this.style.background='rgba(212,175,55,0.15)'; this.style.color='#D4AF37';">&#128222; (669) 213-4422</a>
+            <a href="hazlo_tu_mismo.html" style="display:inline-block; padding:10px 22px; background:rgba(0,245,255,0.1); border:2px solid var(--cyan); color:var(--cyan); font-family:'Orbitron'; text-decoration:none; border-radius:8px; font-weight:bold; font-size:0.8rem; transition:0.3s;" onmouseover="this.style.background='var(--cyan)'; this.style.color='#000';" onmouseout="this.style.background='rgba(0,245,255,0.1)'; this.style.color='var(--cyan)';">DIY HUB &#8594;</a>
         </div>
-        <p class="faq-subtitle" data-i18n="pb_hero_subtitle">Professional Plumbing Services | Bay Ã¡rea, CÃ¡</p>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="faq-search" placeholder="&#128269; Search 100 FAQs..." oninput="filterFaqs()">
+        </div>
+        <div class="faq-counter" id="faqCounter">Showing 100 of 100 questions</div>
     </section>
 
-    <!-- GRID -->
-    <div class="faq-grid">
-        <!-- PLUMBING CÃ¡TEGORY -->
-        <div class="faq-category">
-            <h2 data-i18n="faq_cat_plumbing">Plumbing Systems & Technical Services</h2>
-            
-            <div class="faq-item">
-                <h3 data-i18n="faq_q1">Why use copper instead of PEX for new construction</h3>
-                <p data-i18n="faq_a1">Copper provides superior durability, fire resistance, and prevents bacterial growth. Under California UPC, it remains the gold standard for high-end value.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3 data-i18n="faq_q6">How does Morales Plumbing ensure UPC (Uniform Plumbing Code) compliance</h3>
-                <p data-i18n="faq_a6">Our technicians are CSLB C-36 certified and utilize Ã¡I-assisted code-check protocols to ensure every joint and slope exceeds California's rigorous safety standards.</p>
-            </div>
-        </div>
-
-        <!-- ECO-PLUMBING MIX -->
-        <div class="faq-category">
-            <h2 data-i18n="faq_cat_eco">Eco-Plumbing Mix &amp; Lean Process</h2>
-            
-            <div class="faq-item">
-                <h3 data-i18n="faq_q3">How does Lean Process reduce plumbing costs</h3>
-                <p data-i18n="faq_a3">By eliminating waste in material transport and inventory, we reduce project timelines by 25%, passing the savings to the client without compromising quality.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3 data-i18n="faq_q7">What specific 'Lean' metrics do you track</h3>
-                <p data-i18n="faq_a7">We track Takt Time (production rate), Lead Time (order to completion), and First-Pass Yield (quality rate). This ensures a predictable, zero-waste workflow for large-scale projects.</p>
-            </div>
-        </div>
-
-        <!-- ENVIRONMENTÃ¡L / REGULÃ¡TORY -->
-        <div class="faq-category">
-            <h2 data-i18n="faq_cat_env">Environmental Regulations &amp; 2026 Standards</h2>
-            
-            <div class="faq-item">
-                <h3 data-i18n="faq_q2">What are California's septic regulations for 2026</h3>
-                <p data-i18n="faq_a2">Regulations focus on nitrogen reduction and groundwater protection. Morales Ã¡dvanced Plumbing ensures 100% compliance with local Water Board mandates.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3 data-i18n="faq_q8">How can I future-proof my home infrastructure for upcoming environmental laws</h3>
-                <p data-i18n="faq_a8">By integrating water harvesting and greywater reuse systems today, you avoid future retrofitting mandates and increase your property value by up to 15% through sustainable certification.</p>
-            </div>
-        </div>
+    <div class="faq-container" id="faqContainer">
+        <div class="no-results" id="noResults">&#128269; No results found. Try different keywords.</div>
+        <div class="accordion-item search-item" id="faq-item-1">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#1</span> Why is it important to maintain the correct pressure in the property?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Maintaining the correct pressure prevents pipe damage, protects appliances, and prevents catastrophic leaks or ruptures.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-2">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#2</span> What happens if the water pressure is too high?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It exerts too much force on valves and connections, reducing their useful life and increasing the risk of pipe explosions.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-3">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#3</span> How can I find out what the water pressure is in my house?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Connecting a water pressure gauge to an outside hose bib to get an accurate reading.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-4">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#4</span> What is a pressure reducing valve (PRV)?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It is a device in the main line that reduces the high inlet pressure to a safe level.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-5">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#5</span> Why do I suddenly have low water pressure throughout my house?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It may be due to a faulty PRV, hidden leak or problems in the city main supply.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-6">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#6</span> Why do I only have low water pressure in one faucet?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It is usually caused by a mineral-clogged aerator or a defective cartridge in that faucet.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-7">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#7</span> Does scale affect water pressure?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Yes, calcification inside the pipes reduces the internal diameter, restricting water flow.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-8">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#8</span> How do I improve the water pressure in the shower?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Cleaning the shower head in vinegar to remove scale or checking the reducing valve.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-9">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#9</span> Can a faulty water heater reduce pressure?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Yes, sediment buildup or corroded valves can restrict the flow of hot water.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-10">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#10</span> How often should I check my home's water pressure?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It is recommended to check it at least once a year or if you notice changes in the flow.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-11">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#11</span> How long does a traditional water heater last?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Lasts on average between 8 and 12 years, depending on maintenance and water hardness.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-12">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#12</span> What are the advantages of a tankless heater?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>They provide unlimited hot water, are more energy efficient and last up to 20 years.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-13">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#13</span> Why does hot water come out with a rusty color?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It indicates that the inside of the tank is rusting and needs to be replaced soon.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-14">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#14</span> What is the anode rod and why is it important?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It is a sacrificial rod that attracts corrosive minerals to protect the metal tank.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-15">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#15</span> Why is my heater making popping or crackling noises?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>The noises are caused by sediment at the bottom of the tank that boils as the water heats up.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-16">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#16</span> What temperature should I set my water heater to?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It is recommended to set it at 120°F (49°C) to prevent burns and save energy.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-17">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#17</span> Does the water heater need to be drained every year?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Yes, draining the tank annually removes sediment and prolongs the life of the equipment.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-18">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#18</span> Why do I run out of hot water so quickly?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It could be a broken dip tube, excess sediment, or faulty elements.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-19">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#19</span> What maintenance does a tankless heater require?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Requires annual descaling with white vinegar to clean the heat exchangers.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-20">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#20</span> Is it normal for the pressure relief (T&P) valve to leak?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>No, it means that the internal pressure is too high or that the valve is defective.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-21">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#21</span> How do I know if I have a hidden water leak?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>If the bill increases, you hear water running or the meter spins when everything is turned off.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-22">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#22</span> What are PEX pipes?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It is flexible plastic resistant to freezing, economical and quick to install.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-23">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#23</span> Is copper or PEX better?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Copper lasts 50+ years and is antimicrobial. PEX is flexible and economical. Both are excellent options.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-24">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#24</span> What causes pinhole leaks in copper?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Hard water, high water velocity, or chloramines in the municipal supply.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-25">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#25</span> What is 'water hammer' and how is it solved?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It is a noisy impact when closing a tap, solved by installing water hammer dampers.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-26">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#26</span> Should I replace my galvanized steel pipes?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Yes, they rust internally causing leaks, dirty water and low pressure.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-27">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#27</span> What is repipe?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It is to replace the entire old water distribution system with type L copper or PEX.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-28">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#28</span> How do I protect pipes from freezing?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Insulating exposed pipes and leaving a slight drip on freezing nights.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-29">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#29</span> Why does water smell like rotten eggs?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Sulfur bacteria in heater or dry drains (waterless P-traps).</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-30">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#30</span> Where is the main shutoff valve?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It is usually near the meter on the street or where the main pipe enters the house.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-31">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#31</span> Why do my drains smell bad?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It occurs if the water in the 'P' trap has evaporated, allowing gases to enter.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-32">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#32</span> What causes sewer roots?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Roots penetrate old pipes through small cracks looking for water and nutrients.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-33">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#33</span> How to prevent drain blockages?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Do not pour grease or wet wipes, and use hair strainers.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-34">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#34</span> Is it safe to use drain cleaning chemicals?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>No, they generate intense heat that corrodes and damages old plastic and metal pipes.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-35">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#35</span> What is a camera inspection?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It is using fiber optics to diagnose underground problems without having to dig.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-36">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#36</span> What does 'trenchless' repair mean?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It is replacing the underground sewer line without digging a trench across the entire yard.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-37">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#37</span> Why does the toilet bubble when using the shower?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Indicates a serious venting or blockage problem in the main line.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-38">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#38</span> What is a backwater valve?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Prevents city wastewater from flowing back into the house in floods.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-39">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#39</span> How often should I do hydro-jetting?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Every 1 to 3 years to completely clean grease and roots from the pipe walls.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-40">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#40</span> Difference between snake and hydro-jetting?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>The snake pierces the obstruction, hydro-jetting washes the pipe under pressure, leaving it like new.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-41">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#41</span> Why does the toilet constantly run?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>This is usually a worn flapper that doesn't seal properly or a faulty fill valve.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-42">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#42</span> How much water is wasted by a leaky toilet?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>You can waste up to 200 gallons a day, dramatically increasing your bill.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-43">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#43</span> Why does the toilet get clogged so often?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>By old, low-flow toilets, or throwing away wet wipes and excess paper.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-44">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#44</span> Do flushable wipes clog toilets?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Yes, they do not disintegrate like paper and cause serious blockages in the system.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-45">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#45</span> Moisture around the base of the toilet?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>The wax ring underneath has failed and needs replacement to avoid rotting the floor.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-46">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#46</span> How do I fix a leaky shower?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Changing the internal cartridge or worn rubber seals behind the handle.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-47">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#47</span> Why is there little pressure in the shower and not in the sink?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>The shower head usually has a mineral-locked restrictor.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-48">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#48</span> What is the overflow hole in the sink for?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Prevents overflows if you forget to close the faucet with the cap on and helps drainage.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-49">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#49</span> What if something valuable falls down the sink?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Turn off the water, unscrew the 'P' trap under the sink and retrieve it there.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-50">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#50</span> How long does a toilet last?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>The porcelain decades, but the internal components should be replaced every 5 to 7 years.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-51">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#51</span> Why is my garbage disposal humming and not spinning?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It's stuck. Use an Allen wrench on the bottom to manually turn it and unlock it.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-52">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#52</span> What NOT to put in the disposal?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Fat, oil, bones, celery, potato peelings, pasta or rice.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-53">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#53</span> How to eliminate bad odors from the disposal?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Grind ice cubes and citrus peels with cold water to clean it.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-54">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#54</span> Should you use hot or cold water with the disposal?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Always cold, so that the fats solidify and can be crushed without sticking.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-55">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#55</span> Low pressure in kitchen faucet?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Unscrew the aerator at the tip and clean out any mineral deposits.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-56">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#56</span> Stagnant water in the dishwasher?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Dirty filter or the drain hose to the disposal is blocked.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-57">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#57</span> Faucet that drips when closed?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>You need to change the ceramic cartridge or worn internal gaskets.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-58">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#58</span> What is the 'Air Gap' next to the faucet?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Prevents dirty water from draining back into the dishwasher.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-59">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#59</span> What to do if the pipe breaks under the sink?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Immediately close the shut-off valves below, or the main valve in the house.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-60">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#60</span> Does double sink return water on the other side?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Obstruction in the main pipe below the 'T' joint. A snake is required.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-61">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#61</span> What is hard water?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Water with high levels of calcium and magnesium, which causes scale and damages plumbing.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-62">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#62</span> When do I need a water softener?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>If you have white spots, dry skin and your heater is quickly damaged by scale.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-63">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#63</span> Difference between softener and filter?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>The softener removes calcium (uses salt). The filter removes chlorine, chemicals and bad taste (uses carbon).</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-64">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#64</span> What is Reverse Osmosis (RO)?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Filters at a molecular level, eliminating 99% of contaminants to have very pure drinking water.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-65">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#65</span> How often to change water filters?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Carbon every 6 months, RO membranes every 2-3 years depending on use.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-66">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#66</span> Do salt-free conditioners work?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>They prevent scale build-up in pipes, but do not physically remove calcium from the water.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-67">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#67</span> Does tap water come out white or milky?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>They are harmless micro-air bubbles. If it is rinsed from the bottom up, it is not dangerous.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-68">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#68</span> What are chloramines?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Municipal disinfectants that corrode old pipes and require special filters to remove them.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-69">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#69</span> Does chlorine damage PEX pipes?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>In high temperatures yes. A whole house filter extends the life of the PEX system.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-70">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#70</span> Is it safe to drink tap water?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Generally yes, but old pipes can add metals. A kitchen filter is highly recommended.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-71">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#71</span> What tools to have at home?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Plunger, Teflon tape, adjustable wrench and small pipe wrench.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-72">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#72</span> Why know where the stop valve is?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>To shut off water in emergencies and prevent thousands of dollars in flood damage.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-73">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#73</span> What to do before a long vacation?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Turn off the main water valve and put the heater in 'Vacation' mode.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-74">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#74</span> What is a grease trap?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Traps grease before reaching the sewer; Mandatory in commercial kitchens.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-75">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#75</span> How to detect silent leak in toilet?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Put dye in the tank; If it appears in the cup without flushing within 15 minutes, there is a leak.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-76">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#76</span> Is it necessary to clean roof gutters?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Yes, they prevent overflows that damage foundations and French drain lines.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-77">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#77</span> Should I check washing machine hoses?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Yes, changing rubber hoses with braided steel every 5 years prevents severe flooding.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-78">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#78</span> How to prevent the outdoor hose from freezing?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Disconnect it in winter or install frost-free valves that do not retain water.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-79">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#79</span> What is a thermal regulating valve?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Mix water to deliver a constant temperature, avoiding burns in the shower.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-80">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#80</span> Sump pump maintenance?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Clean debris annually and pour water to verify that it activates itself.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-81">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#81</span> What is a plumbing emergency?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Gas leaks, active pipe breaks, or sewer blockage returning sewage.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-82">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#82</span> What to do if a pipe breaks?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>1. Close the main valve. 2. Turn off nearby electricity. 3. Call the plumber.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-83">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#83</span> Do you smell gas?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Evacuate, do not turn on lights or cell phones and call PG&E or emergencies (911).</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-84">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#84</span> Is water returned per shower when using a washing machine?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Total blockage in the main sewer line. Hydro-jetting is urgently needed.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-85">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#85</span> What to do if the heater floods?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Close the tank's cold water valve and cut off the gas or electricity supply to the equipment.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-86">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#86</span> Does insurance cover burst pipes?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It usually covers unforeseen water damage to the structure, but not the repair of the pipe itself.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-87">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#87</span> How to mitigate water damage fast?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Use towels, open windows, turn on fans, and move wooden furniture and electronic equipment.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-88">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#88</span> Does epoxy putty work?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Yes, but only as a temporary patch. The vibration or pressure will eventually break it again.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-89">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#89</span> Repair gas line myself?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Extremely dangerous and illegal in California without a CSLB license.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-90">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#90</span> Is blocking my problem or the city's?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>If the plug is within your property boundaries, you are responsible for the repair.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-91">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#91</span> What is Smart Plumbing?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Wi-Fi valves (like Flo by Moen) that monitor the water and shut off the line by itself if they detect a leak.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-92">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#92</span> Difference between Copper Type L and M?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Type L is thick for commercial underground uses. Type M is slim, for light indoor uses.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-93">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#93</span> Why did they ban lead solder?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Lead is toxic and contaminates drinking water causing serious neurological damage.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-94">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#94</span> What is the ProPress system?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Crimps copper fittings hydraulically, without flames or welding, creating a secure and immediate seal.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-95">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#95</span> What is a recirculating pump?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Instantly delivers hot water to showers without having to run the water waiting for it to heat up.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-96">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#96</span> Can I use rain for the toilet?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Yes, using networks of purple pipes and gray catchment, following strict ecological codes.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-97">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#97</span> Why is my new toilet low on water?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>State water-saving standards mandate low-flow, high-efficiency models (1.28 GPM).</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-98">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#98</span> What is a Hybrid heater (Heat Pump)?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>It uses room temperature to heat the water, being up to 3 times more efficient than a normal electric one.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-99">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#99</span> What ecological benefits does Morales Plumbing have?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Precise calculations to reduce material costs, metal recycling and implementation of ultra-low consumption systems.</p>
+    </div>
+</div>
+<div class="accordion-item search-item" id="faq-item-100">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span><span style="color:var(--orange);">#100</span> Why Morales Plumbing?</span>
+        <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content">
+        <p>Because we fuse certified C-36 craftsmanship with Lean methods for seamless installations and zero waste.</p>
+    </div>
+</div>
     </div>
 
     <!-- FOOTER -->
-    <div class="copyright-tag">
-        Â© 2026 MORÃ¡LES PLUMBING â€¢ Ã¡LL RIGHTS RESERVED â€¢ CSLB C-36 #1156542 â€¢ Licensed Plumber
-    </div>
-
-    <script src="../app.js"></script>
-    <script>
-        // Sync language from localStorage on load
-        window.addEventListener('load', () => {
-            const savedLang = localStorage.getItem('morales_lang') || 'en';
-            if (typeof setLanguage === 'function') {
-                setLanguage(savedLang);
-            }
-        });
-    </script>
-
-    <!-- MORALES PLUMBING OFFICIAL FOOTER -->
     <footer style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-top: 4px solid #D4AF37; padding: 30px 20px; text-align: center; font-family: 'Inter', sans-serif; color: #fff; margin-top: 50px;">
         <div style="max-width: 800px; margin: 0 auto;">
             <h3 style="color: #D4AF37; margin-bottom: 15px; font-weight: bold;">MORALES PLUMBING</h3>
@@ -383,12 +1006,584 @@
                 <a href="tel:+16692134422" style="color: #00f5ff; text-decoration: none;">(669) 213-4422</a> | 
                 <a href="mailto:moralesplumbing026@gmail.com" style="color: #00f5ff; text-decoration: none;">moralesplumbing026@gmail.com</a>
             </p>
-            <p style="margin: 20px 0 0; font-size: 0.8rem; color: #888;">
-                &copy; 2026 Morales Plumbing. Todos los derechos reservados.
-            </p>
+            <p style="margin: 20px 0 0; font-size: 0.8rem; color: #888;">&copy; 2026 Morales Plumbing. All Rights Reserved. CSLB C-36 #1156542</p>
         </div>
     </footer>
 
+    <script>
+    const FAQ_DATA = {
+  'en': {
+  1: { q: 'Why is it important to maintain the correct pressure in the property?', a: 'Maintaining the correct pressure prevents pipe damage, protects appliances, and prevents catastrophic leaks or ruptures.' },
+  2: { q: 'What happens if the water pressure is too high?', a: 'It exerts too much force on valves and connections, reducing their useful life and increasing the risk of pipe explosions.' },
+  3: { q: 'How can I find out what the water pressure is in my house?', a: 'Connecting a water pressure gauge to an outside hose bib to get an accurate reading.' },
+  4: { q: 'What is a pressure reducing valve (PRV)?', a: 'It is a device in the main line that reduces the high inlet pressure to a safe level.' },
+  5: { q: 'Why do I suddenly have low water pressure throughout my house?', a: 'It may be due to a faulty PRV, hidden leak or problems in the city main supply.' },
+  6: { q: 'Why do I only have low water pressure in one faucet?', a: 'It is usually caused by a mineral-clogged aerator or a defective cartridge in that faucet.' },
+  7: { q: 'Does scale affect water pressure?', a: 'Yes, calcification inside the pipes reduces the internal diameter, restricting water flow.' },
+  8: { q: 'How do I improve the water pressure in the shower?', a: 'Cleaning the shower head in vinegar to remove scale or checking the reducing valve.' },
+  9: { q: 'Can a faulty water heater reduce pressure?', a: 'Yes, sediment buildup or corroded valves can restrict the flow of hot water.' },
+  10: { q: 'How often should I check my home\'s water pressure?', a: 'It is recommended to check it at least once a year or if you notice changes in the flow.' },
+  11: { q: 'How long does a traditional water heater last?', a: 'Lasts on average between 8 and 12 years, depending on maintenance and water hardness.' },
+  12: { q: 'What are the advantages of a tankless heater?', a: 'They provide unlimited hot water, are more energy efficient and last up to 20 years.' },
+  13: { q: 'Why does hot water come out with a rusty color?', a: 'It indicates that the inside of the tank is rusting and needs to be replaced soon.' },
+  14: { q: 'What is the anode rod and why is it important?', a: 'It is a sacrificial rod that attracts corrosive minerals to protect the metal tank.' },
+  15: { q: 'Why is my heater making popping or crackling noises?', a: 'The noises are caused by sediment at the bottom of the tank that boils as the water heats up.' },
+  16: { q: 'What temperature should I set my water heater to?', a: 'It is recommended to set it at 120°F (49°C) to prevent burns and save energy.' },
+  17: { q: 'Does the water heater need to be drained every year?', a: 'Yes, draining the tank annually removes sediment and prolongs the life of the equipment.' },
+  18: { q: 'Why do I run out of hot water so quickly?', a: 'It could be a broken dip tube, excess sediment, or faulty elements.' },
+  19: { q: 'What maintenance does a tankless heater require?', a: 'Requires annual descaling with white vinegar to clean the heat exchangers.' },
+  20: { q: 'Is it normal for the pressure relief (T&P) valve to leak?', a: 'No, it means that the internal pressure is too high or that the valve is defective.' },
+  21: { q: 'How do I know if I have a hidden water leak?', a: 'If the bill increases, you hear water running or the meter spins when everything is turned off.' },
+  22: { q: 'What are PEX pipes?', a: 'It is flexible plastic resistant to freezing, economical and quick to install.' },
+  23: { q: 'Is copper or PEX better?', a: 'Copper lasts 50+ years and is antimicrobial. PEX is flexible and economical. Both are excellent options.' },
+  24: { q: 'What causes pinhole leaks in copper?', a: 'Hard water, high water velocity, or chloramines in the municipal supply.' },
+  25: { q: 'What is \'water hammer\' and how is it solved?', a: 'It is a noisy impact when closing a tap, solved by installing water hammer dampers.' },
+  26: { q: 'Should I replace my galvanized steel pipes?', a: 'Yes, they rust internally causing leaks, dirty water and low pressure.' },
+  27: { q: 'What is repipe?', a: 'It is to replace the entire old water distribution system with type L copper or PEX.' },
+  28: { q: 'How do I protect pipes from freezing?', a: 'Insulating exposed pipes and leaving a slight drip on freezing nights.' },
+  29: { q: 'Why does water smell like rotten eggs?', a: 'Sulfur bacteria in heater or dry drains (waterless P-traps).' },
+  30: { q: 'Where is the main shutoff valve?', a: 'It is usually near the meter on the street or where the main pipe enters the house.' },
+  31: { q: 'Why do my drains smell bad?', a: 'It occurs if the water in the \'P\' trap has evaporated, allowing gases to enter.' },
+  32: { q: 'What causes sewer roots?', a: 'Roots penetrate old pipes through small cracks looking for water and nutrients.' },
+  33: { q: 'How to prevent drain blockages?', a: 'Do not pour grease or wet wipes, and use hair strainers.' },
+  34: { q: 'Is it safe to use drain cleaning chemicals?', a: 'No, they generate intense heat that corrodes and damages old plastic and metal pipes.' },
+  35: { q: 'What is a camera inspection?', a: 'It is using fiber optics to diagnose underground problems without having to dig.' },
+  36: { q: 'What does \'trenchless\' repair mean?', a: 'It is replacing the underground sewer line without digging a trench across the entire yard.' },
+  37: { q: 'Why does the toilet bubble when using the shower?', a: 'Indicates a serious venting or blockage problem in the main line.' },
+  38: { q: 'What is a backwater valve?', a: 'Prevents city wastewater from flowing back into the house in floods.' },
+  39: { q: 'How often should I do hydro-jetting?', a: 'Every 1 to 3 years to completely clean grease and roots from the pipe walls.' },
+  40: { q: 'Difference between snake and hydro-jetting?', a: 'The snake pierces the obstruction, hydro-jetting washes the pipe under pressure, leaving it like new.' },
+  41: { q: 'Why does the toilet constantly run?', a: 'This is usually a worn flapper that doesn\'t seal properly or a faulty fill valve.' },
+  42: { q: 'How much water is wasted by a leaky toilet?', a: 'You can waste up to 200 gallons a day, dramatically increasing your bill.' },
+  43: { q: 'Why does the toilet get clogged so often?', a: 'By old, low-flow toilets, or throwing away wet wipes and excess paper.' },
+  44: { q: 'Do flushable wipes clog toilets?', a: 'Yes, they do not disintegrate like paper and cause serious blockages in the system.' },
+  45: { q: 'Moisture around the base of the toilet?', a: 'The wax ring underneath has failed and needs replacement to avoid rotting the floor.' },
+  46: { q: 'How do I fix a leaky shower?', a: 'Changing the internal cartridge or worn rubber seals behind the handle.' },
+  47: { q: 'Why is there little pressure in the shower and not in the sink?', a: 'The shower head usually has a mineral-locked restrictor.' },
+  48: { q: 'What is the overflow hole in the sink for?', a: 'Prevents overflows if you forget to close the faucet with the cap on and helps drainage.' },
+  49: { q: 'What if something valuable falls down the sink?', a: 'Turn off the water, unscrew the \'P\' trap under the sink and retrieve it there.' },
+  50: { q: 'How long does a toilet last?', a: 'The porcelain decades, but the internal components should be replaced every 5 to 7 years.' },
+  51: { q: 'Why is my garbage disposal humming and not spinning?', a: 'It\'s stuck. Use an Allen wrench on the bottom to manually turn it and unlock it.' },
+  52: { q: 'What NOT to put in the disposal?', a: 'Fat, oil, bones, celery, potato peelings, pasta or rice.' },
+  53: { q: 'How to eliminate bad odors from the disposal?', a: 'Grind ice cubes and citrus peels with cold water to clean it.' },
+  54: { q: 'Should you use hot or cold water with the disposal?', a: 'Always cold, so that the fats solidify and can be crushed without sticking.' },
+  55: { q: 'Low pressure in kitchen faucet?', a: 'Unscrew the aerator at the tip and clean out any mineral deposits.' },
+  56: { q: 'Stagnant water in the dishwasher?', a: 'Dirty filter or the drain hose to the disposal is blocked.' },
+  57: { q: 'Faucet that drips when closed?', a: 'You need to change the ceramic cartridge or worn internal gaskets.' },
+  58: { q: 'What is the \'Air Gap\' next to the faucet?', a: 'Prevents dirty water from draining back into the dishwasher.' },
+  59: { q: 'What to do if the pipe breaks under the sink?', a: 'Immediately close the shut-off valves below, or the main valve in the house.' },
+  60: { q: 'Does double sink return water on the other side?', a: 'Obstruction in the main pipe below the \'T\' joint. A snake is required.' },
+  61: { q: 'What is hard water?', a: 'Water with high levels of calcium and magnesium, which causes scale and damages plumbing.' },
+  62: { q: 'When do I need a water softener?', a: 'If you have white spots, dry skin and your heater is quickly damaged by scale.' },
+  63: { q: 'Difference between softener and filter?', a: 'The softener removes calcium (uses salt). The filter removes chlorine, chemicals and bad taste (uses carbon).' },
+  64: { q: 'What is Reverse Osmosis (RO)?', a: 'Filters at a molecular level, eliminating 99% of contaminants to have very pure drinking water.' },
+  65: { q: 'How often to change water filters?', a: 'Carbon every 6 months, RO membranes every 2-3 years depending on use.' },
+  66: { q: 'Do salt-free conditioners work?', a: 'They prevent scale build-up in pipes, but do not physically remove calcium from the water.' },
+  67: { q: 'Does tap water come out white or milky?', a: 'They are harmless micro-air bubbles. If it is rinsed from the bottom up, it is not dangerous.' },
+  68: { q: 'What are chloramines?', a: 'Municipal disinfectants that corrode old pipes and require special filters to remove them.' },
+  69: { q: 'Does chlorine damage PEX pipes?', a: 'In high temperatures yes. A whole house filter extends the life of the PEX system.' },
+  70: { q: 'Is it safe to drink tap water?', a: 'Generally yes, but old pipes can add metals. A kitchen filter is highly recommended.' },
+  71: { q: 'What tools to have at home?', a: 'Plunger, Teflon tape, adjustable wrench and small pipe wrench.' },
+  72: { q: 'Why know where the stop valve is?', a: 'To shut off water in emergencies and prevent thousands of dollars in flood damage.' },
+  73: { q: 'What to do before a long vacation?', a: 'Turn off the main water valve and put the heater in \'Vacation\' mode.' },
+  74: { q: 'What is a grease trap?', a: 'Traps grease before reaching the sewer; Mandatory in commercial kitchens.' },
+  75: { q: 'How to detect silent leak in toilet?', a: 'Put dye in the tank; If it appears in the cup without flushing within 15 minutes, there is a leak.' },
+  76: { q: 'Is it necessary to clean roof gutters?', a: 'Yes, they prevent overflows that damage foundations and French drain lines.' },
+  77: { q: 'Should I check washing machine hoses?', a: 'Yes, changing rubber hoses with braided steel every 5 years prevents severe flooding.' },
+  78: { q: 'How to prevent the outdoor hose from freezing?', a: 'Disconnect it in winter or install frost-free valves that do not retain water.' },
+  79: { q: 'What is a thermal regulating valve?', a: 'Mix water to deliver a constant temperature, avoiding burns in the shower.' },
+  80: { q: 'Sump pump maintenance?', a: 'Clean debris annually and pour water to verify that it activates itself.' },
+  81: { q: 'What is a plumbing emergency?', a: 'Gas leaks, active pipe breaks, or sewer blockage returning sewage.' },
+  82: { q: 'What to do if a pipe breaks?', a: '1. Close the main valve. 2. Turn off nearby electricity. 3. Call the plumber.' },
+  83: { q: 'Do you smell gas?', a: 'Evacuate, do not turn on lights or cell phones and call PG&E or emergencies (911).' },
+  84: { q: 'Is water returned per shower when using a washing machine?', a: 'Total blockage in the main sewer line. Hydro-jetting is urgently needed.' },
+  85: { q: 'What to do if the heater floods?', a: 'Close the tank\'s cold water valve and cut off the gas or electricity supply to the equipment.' },
+  86: { q: 'Does insurance cover burst pipes?', a: 'It usually covers unforeseen water damage to the structure, but not the repair of the pipe itself.' },
+  87: { q: 'How to mitigate water damage fast?', a: 'Use towels, open windows, turn on fans, and move wooden furniture and electronic equipment.' },
+  88: { q: 'Does epoxy putty work?', a: 'Yes, but only as a temporary patch. The vibration or pressure will eventually break it again.' },
+  89: { q: 'Repair gas line myself?', a: 'Extremely dangerous and illegal in California without a CSLB license.' },
+  90: { q: 'Is blocking my problem or the city\'s?', a: 'If the plug is within your property boundaries, you are responsible for the repair.' },
+  91: { q: 'What is Smart Plumbing?', a: 'Wi-Fi valves (like Flo by Moen) that monitor the water and shut off the line by itself if they detect a leak.' },
+  92: { q: 'Difference between Copper Type L and M?', a: 'Type L is thick for commercial underground uses. Type M is slim, for light indoor uses.' },
+  93: { q: 'Why did they ban lead solder?', a: 'Lead is toxic and contaminates drinking water causing serious neurological damage.' },
+  94: { q: 'What is the ProPress system?', a: 'Crimps copper fittings hydraulically, without flames or welding, creating a secure and immediate seal.' },
+  95: { q: 'What is a recirculating pump?', a: 'Instantly delivers hot water to showers without having to run the water waiting for it to heat up.' },
+  96: { q: 'Can I use rain for the toilet?', a: 'Yes, using networks of purple pipes and gray catchment, following strict ecological codes.' },
+  97: { q: 'Why is my new toilet low on water?', a: 'State water-saving standards mandate low-flow, high-efficiency models (1.28 GPM).' },
+  98: { q: 'What is a Hybrid heater (Heat Pump)?', a: 'It uses room temperature to heat the water, being up to 3 times more efficient than a normal electric one.' },
+  99: { q: 'What ecological benefits does Morales Plumbing have?', a: 'Precise calculations to reduce material costs, metal recycling and implementation of ultra-low consumption systems.' },
+  100: { q: 'Why Morales Plumbing?', a: 'Because we fuse certified C-36 craftsmanship with Lean methods for seamless installations and zero waste.' }
+  },
+  'es': {
+  1: { q: '¿Por qué es importante mantener la presión correcta en la propiedad?', a: 'Mantener la presión correcta previene daos en las tuberas, protege los electrodomsticos y evita fugas o rupturas catastrficas.' },
+  2: { q: '¿Quépasa si la presión del agua es muy alta?', a: 'Ejerce demasiada fuerza sobre válvulas y conexiones, reduciendo su vida til y aumentando el riesgo de explosiones de tuberas.' },
+  3: { q: 'Cmo puedo saber cul es la presión del agua en mi casa?', a: 'Conectando un manmetro de agua en una llave de manguera exterior para obtener una lectura precisa.' },
+  4: { q: '¿Quées una vlvula reductora de presión (PRV)?', a: 'Es un dispositivo en la lnea principal que reduce la alta presión de entrada a un nivel seguro.' },
+  5: { q: '¿Por qué de repente tengo baja presión de agua en toda la casa?', a: 'Puede deberse a una PRV defectuosa, fuga oculta o problems en el suministro principal de la ciudad.' },
+  6: { q: '¿Por qué solo tengo baja presión de agua en un grifo?', a: 'Suele ser causado por un aireador obstruido con minerales o un cartucho defectuoso en esa llave.' },
+  7: { q: 'El sarro afecta la presión del agua?', a: 'S, la calcificacin dentro de las tuberas reduce el dimetro interno, restringiendo el flujo de agua.' },
+  8: { q: 'Cmo mejoro la presión del agua en la ducha?', a: 'Limpiando el cabezal de la ducha en vinagre para remover sarro o revisando la vlvula reductora.' },
+  9: { q: 'Un calentador de agua defectuoso puede reducir la presión?', a: 'S, la acumulacin de sedimentos o válvulas corrodas pueden restringir el flujo de agua caliente.' },
+  10: { q: 'Cada cunto debo revisar la presión de agua de mi casa?', a: 'Se recomienda revisarla al menos una vez al ao o si notas cambios en el flujo.' },
+  11: { q: 'Cunto tiempo dura un calentador de agua tradicional?', a: 'Dura en promedio entre 8 y 12 aos, dependiendo del mantenimiento y la dureza del agua.' },
+  12: { q: 'Cules son las ventajas de un calentador sin tanque (tankless)?', a: 'Proporcionan agua caliente ilimitada, son más eficientes energticamente y duran hasta 20 aos.' },
+  13: { q: '¿Por qué el agua caliente sale con coloracin oxidada?', a: 'Indica que el interior del tanque se estoxidando y necesita ser reemplazado pronto.' },
+  14: { q: '¿Quées la varilla de nodo y por ques importante?', a: 'Es una varilla de sacrificio que atrae minerales corrosivos para proteger el tanque metlico.' },
+  15: { q: '¿Por qué mi calentador hace ruidos de explosin o crujidos?', a: 'Los ruidos son causados por sedimentos en el fondo del tanque que hierven al calentarse el agua.' },
+  16: { q: 'A qutemperatura debo configurar mi calentador de agua?', a: 'Se recomienda configurarlo a 120°F (49°C) para prevenir quemaduras y ahorrar energa.' },
+  17: { q: 'Es necesario drenar el calentador de agua cada ao?', a: 'S, drenar el tanque anualmente elimina sedimentos y prolonga la vida del equipo.' },
+  18: { q: '¿Por qué me quedo sin agua caliente tan rápidas?', a: 'Podra ser un tubo de inmersin roto, exceso de sedimentos o elementos defectuosos.' },
+  19: { q: '¿Quémantenimiento requiere un calentador tankless?', a: 'Requiere descalcificacin anual con vinagre blanco para limpiar los intercambiadores de calor.' },
+  20: { q: 'Es normal que la vlvula de alivio de presión (T&P) gotee?', a: 'No, significa que la presión interna es muy alta o que la vlvula estdefectuosa.' },
+  21: { q: 'Cmo puedo saber si tengo una fuga oculta de agua?', a: 'Si la factura aumenta, escuchas agua correr o el medidor gira cuando todo estcerrado.' },
+  22: { q: '¿Quéson las tuberas de PEX?', a: 'Es plstico flexible resistente a congelacin, econmico y rápidas de instalar.' },
+  23: { q: 'Es mejor el cobre o el PEX?', a: 'El cobre dura 50+ aos y es antimicrobiano. PEX es flexible y econmico. Ambos son excelentes opciones.' },
+  24: { q: '¿Quécausa fugas de agujero de alfiler en el cobre?', a: 'El agua dura, alta velocidad del agua, o cloraminas en el suministro municipal.' },
+  25: { q: '¿Quées el \'golpe de ariete\' y cmo se soluciona?', a: 'Es un impacto ruidoso al cerrar un grifo, solucionado instalando amortiguadores de golpe de ariete.' },
+  26: { q: 'Debo reemplazar mis tuberas de acero galvanizado?', a: 'S, se oxidan internamente causando fugas, agua sucia y baja presión.' },
+  27: { q: '¿Quées el repipe (re-tubera)?', a: 'Es reemplazar todo el sistema de distribucin de agua antiguo por cobre tipo L o PEX.' },
+  28: { q: 'Cmo protejo tuberas de la congelacin?', a: 'Aislando tuberas expuestas y dejando un ligero goteo en noches heladas.' },
+  29: { q: '¿Por qué el agua huele a huevo podrido?', a: 'Bacterias sulfurosas en el calentador o drenajes secos (trampas P sin agua).' },
+  30: { q: 'Dnde estla vlvula de cierre principal?', a: 'Suele estar cerca del medidor en la calle o donde entra la tubera principal a la casa.' },
+  31: { q: '¿Por qué mis drenajes huelen mal?', a: 'Ocurre si el agua en la trampa \'P\' se ha evaporado, permitiendo el ingreso de gases.' },
+  32: { q: '¿Quécausa races en la alcantarilla?', a: 'Las races penetran tuberas viejas por pequeas grietas buscando agua y nutrientes.' },
+  33: { q: 'Cmo prevenir obstrucciones en el drenaje?', a: 'No verter grasa ni toallitas hmedas, y usar coladores para el cabello.' },
+  34: { q: 'Es seguro usar qumicos limpia-drenajes?', a: 'No, generan calor intenso que corroe y daa tuberas plsticas y de metal viejo.' },
+  35: { q: '¿Quées una inspeccin con cmara?', a: 'Es usar fibra ptica para diagnosticar problems subterrneos sin necesidad de excavar.' },
+  36: { q: '¿Quésignifica reparacin \'trenchless\' (sin zanja)?', a: 'Es reemplazar la lnea de alcantarillado subterrnea sin excavar una zanja en todo el patio.' },
+  37: { q: '¿Por qué burbujea el inodoro al usar la ducha?', a: 'Indica un problema grave de ventilacin o bloqueo en la lnea principal.' },
+  38: { q: '¿Quées un backwater valve?', a: 'Evita que las aguas residuales de la ciudad se devuelvan hacia la casa en inundaciones.' },
+  39: { q: 'Cada cunto debo hacer hydro-jetting?', a: 'Cada 1 a 3 aos para limpiar completamente la grasa y races de las paredes de la tubera.' },
+  40: { q: 'Diferencia entre snake (culebra) e hydro-jetting?', a: 'La culebra perfora la obstruccin, el hydro-jetting lava la tubera a presión dejndola como nueva.' },
+  41: { q: '¿Por qué el inodoro corre constantemente?', a: 'Suele ser un flapper desgastado que no sella bien o una vlvula de llenado defectuosa.' },
+  42: { q: 'Cunta agua se desperdicia por un inodoro con fuga?', a: 'Puede desperdiciar hasta 200 galones diarios, incrementando dramticamente la factura.' },
+  43: { q: '¿Por qué el inodoro se tapa tan a menudo?', a: 'Por inodoros antiguos de bajo flujo, o arrojar toallitas hmedas y exceso de papel.' },
+  44: { q: 'Las toallitas \'flushable\' tapan inodoros?', a: 'S, no se desintegran como el papel y causan bloqueos graves en el sistema.' },
+  45: { q: 'Humedad alrededor de la base del inodoro?', a: 'El anillo de cera debajo ha fallado y necesita reemplazo para evitar pudrir el piso.' },
+  46: { q: 'Cmo arreglo una ducha que gotea?', a: 'Cambiando el cartucho interno o los sellos de goma desgastados detrs de la manija.' },
+  47: { q: '¿Por qué hay poca presión en la ducha y no en el lavamanos?', a: 'El cabezal de la ducha suele tener un restrictor bloqueado por minerales.' },
+  48: { q: 'Para qusirve el agujero de rebose en el lavamanos?', a: 'Previene desbordes si olvidas cerrar la llave con el tapn puesto y ayuda al drenaje.' },
+  49: { q: 'Si se cae algo de valor por el lavamanos?', a: 'Apaga el agua, desenrosca la trampa \'P\' debajo del lavamanos y recupralo ah.' },
+  50: { q: 'Cunto tiempo dura un inodoro?', a: 'La porcelana dcadas, pero los componentes internos deben reemplazarse cada 5 a 7 aos.' },
+  51: { q: '¿Por qué el triturador de basura zumba y no gira?', a: 'Estatascado. Usa una llave Allen en la parte inferior para girarlo manualmente y destrabarlo.' },
+  52: { q: '¿QuéNO poner en el triturador?', a: 'Grasa, aceite, huesos, apio, cscaras de papa, pasta o arroz.' },
+  53: { q: 'Cmo eliminar malos olores del triturador?', a: 'Muele cubitos de hielo y cscaras de ctricos con agua fra para limpiarlo.' },
+  54: { q: 'Usar agua fra o caliente con el triturador?', a: 'Siempre fra, para que las grasas se solidifiquen y puedan ser trituradas sin pegarse.' },
+  55: { q: 'Baja presión en grifo de cocina?', a: 'Desatornilla el aireador en la punta y limpia los sedimentos minerales.' },
+  56: { q: 'Agua estancada en el lavavajillas?', a: 'Filtro sucio o la manguera de drenaje hacia el triturador estbloqueada.' },
+  57: { q: 'Grifo que gotea cuando estcerrado?', a: 'Necesita un cambio del cartucho cermico o empaques internos desgastados.' },
+  58: { q: '¿Quées el \'Air Gap\' al lado del grifo?', a: 'Evita que agua sucia del drenaje retroceda hacia el lavavajillas.' },
+  59: { q: '¿Quéhacer si se rompe la tubera debajo del fregadero?', a: 'Cierra inmediatamente las válvulas de paso debajo, o la vlvula principal de la casa.' },
+  60: { q: 'Fregadero doble devuelve agua por el otro lado?', a: 'Obstruccin en la tubera principal debajo de la unin en \'T\'. Se requiere una culebra.' },
+  61: { q: '¿Quées el agua dura?', a: 'Agua con alto nivel de calcio y magnesio, que causa sarro y daa la plomería.' },
+  62: { q: 'Cundo necesito un ablandador de agua?', a: 'Si tienes manchas blancas, piel reseca y tu calentador se daa rpidamente por sarro.' },
+  63: { q: 'Diferencia entre ablandador y filtro?', a: 'El ablandador quita calcio (usa sal). El filtro remueve cloro, qumicos y mal sabor (usa carbono).' },
+  64: { q: '¿Quées la ósmosis Inversa (RO)?', a: 'Filtra a nivel molecular, eliminando 99% de contaminantes para tener agua potable pursima.' },
+  65: { q: 'Con qufrecuencia cambiar filtros de agua?', a: 'De carbn cada 6 meses, membranas RO cada 2-3 aos segn el uso.' },
+  66: { q: 'Acondicionadores sin sal funcionan?', a: 'Previenen la incrustacin del sarro en tuberas, pero no quitan el calcio fsicamente del agua.' },
+  67: { q: 'Agua del grifo sale blanca o lechosa?', a: 'Son micro-burbujas de aire inocuas. Si se aclara de abajo hacia arriba, no es peligroso.' },
+  68: { q: '¿Quéson cloraminas?', a: 'Desinfectantes municipales que corroen tuberas viejas y requieren filtros especiales para eliminarlas.' },
+  69: { q: 'El cloro daa tuberas PEX?', a: 'En altas temperaturas s. Un filtro para toda la casa prolonga la vida til del sistema PEX.' },
+  70: { q: 'Es seguro beber agua del grifo?', a: 'Generalmente s, pero tuberas viejas pueden agregar metales. Un filtro de cocina es altamente recomendado.' },
+  71: { q: '¿Quéherramientas tener en casa?', a: 'Destapacaos (plunger), cinta de tefln, llave ajustable y llave de tubo pequea.' },
+  72: { q: '¿Por qué saber dnde estla vlvula de paso?', a: 'Para cortar el agua en emergencias y prevenir miles de dlares en daos por inundacin.' },
+  73: { q: '¿Quéhacer antes de vacaciones largas?', a: 'Cierra la vlvula de agua principal y pon el calentador en modo \'Vacaciones\'.' },
+  74: { q: '¿Quées una trampa de grasa?', a: 'Atrapa grasas antes de llegar al alcantarillado; obligatoria en cocinas comerciales.' },
+  75: { q: 'Cmo detectar fuga silenciosa en inodoro?', a: 'Pon colorante en el tanque; si aparece en la taza sin descargar en 15 minutos, hay fuga.' },
+  76: { q: 'Es necesario limpiar canaletas del techo?', a: 'S, previenen desbordes que daan los cimientos y lneas de drenaje francesas.' },
+  77: { q: 'Debo revisar mangueras de la lavadora?', a: 'S, cambiar mangueras de goma por acero trenzado cada 5 aos evita inundaciones severas.' },
+  78: { q: 'Cmo evitar que se congele la manguera exterior?', a: 'Desconctala en invierno o instala válvulas frost-free que no retienen agua.' },
+  79: { q: '¿Quées una vlvula reguladora trmica?', a: 'Mezcla agua para entregar una temperatura constante, evitando quemaduras en la ducha.' },
+  80: { q: 'Mantenimiento de bomba sumidero (sump pump)?', a: 'Limpiar escombros anualmente y verter agua para verificar que se active sola.' },
+  81: { q: '¿Quées una emergencia de plomería?', a: 'Fugas de gas, rotura de tuberas activas, u obstruccin de alcantarillado devolviendo aguas negras.' },
+  82: { q: '¿Quéhacer si se rompe una tubera?', a: '1. Cierra la vlvula principal. 2. Corta electricidad cercana. 3. Llama al plomero.' },
+  83: { q: 'Hueles a gas?', a: 'Evacua, no enciendas luces ni celulares y llama a PG&E o emergencias (911).' },
+  84: { q: 'Agua se devuelve por ducha al usar lavadora?', a: 'Obstruccin total en la lnea principal de alcantarillado. Urge un hydro-jetting.' },
+  85: { q: '¿Quéhacer si el calentador se inunda?', a: 'Cierra vlvula de agua fra del tanque y corta suministro de gas o electricidad del equipo.' },
+  86: { q: 'El seguro cubre rotura de tuberas?', a: 'Suele cubrir daos imprevistos por agua a la estructura, pero no la reparacin de la tubera misma.' },
+  87: { q: 'Cmo mitigar dao por agua rápidas?', a: 'Usa toallas, abre ventanas, enciende ventiladores y mueve muebles de madera y equipos electrnicos.' },
+  88: { q: 'Masilla epxica funciona?', a: 'S, pero solo como parche temporal. La vibracin o presión eventualmente la romperde nuevo.' },
+  89: { q: 'Reparar lnea de gas yo mismo?', a: 'Extremadamente peligroso e ilegal en California sin licencia CSLB.' },
+  90: { q: 'Bloqueo es mi problema o de la ciudad?', a: 'Si el tapn estdentro de los lmites de tu propiedad, eres responsable de la reparacin.' },
+  91: { q: '¿Quées Plomera Inteligente (Smart Plumbing)?', a: 'Vlvulas Wi-Fi (como Flo by Moen) que monitorean el agua y cierran la lnea sola si detectan fuga.' },
+  92: { q: 'Diferencia Cobre Tipo L y M?', a: 'El Tipo L es grueso para usos subterrneos comerciales. El Tipo M es delgado, para usos ligeros interiores.' },
+  93: { q: '¿Por qué prohibieron soldadura de plomo?', a: 'El plomo es txico y contamina el agua potable causando graves daos neurolgicos.' },
+  94: { q: '¿Quées el sistema ProPress?', a: 'Prensa accesorios de cobre hidrulicamente, sin llamas ni soldadura, creando un sello seguro e inmediato.' },
+  95: { q: '¿Quées una bomba recirculadora?', a: 'Entrega agua caliente al instante a las duchas sin tener que dejar correr el agua esperando que caliente.' },
+  96: { q: 'Puedo usar lluvia para el inodoro?', a: 'S, usando redes de tuberas moradas y captacin de grises, siguiendo estrictos cdigos ecolgicos.' },
+  97: { q: '¿Por qué mi inodoro nuevo tiene poca agua?', a: 'Estándares estatales para ahorrar agua obligan a modelos de alta eficiencia de bajo flujo (1.28 GPM).' },
+  98: { q: '¿Quées un calentador Hbrido (Heat Pump)?', a: 'Usa temperatura ambiente para calentar el agua, siendo hasta 3 veces más eficiente que uno elctrico normal.' },
+  99: { q: '¿Québeneficios ecolgicos tiene Morales Plumbing?', a: 'Clculos precisos para reducir gasto material, reciclaje de metales e implementacin de sistemas de ultra-bajo consumo.' },
+  100: { q: '¿Por qué Morales Plumbing?', a: 'Porque fusionamos artesana C-36 certificada con mtodos Lean para instalaciones perfectas y cero desperdicios.' }
+  },
+  'zh': {
+  1: { q: '为什么保持房屋内的正确压力很重要？', a: '保持正确的压力可以防止管道损坏、保护设备并防止灾难性泄漏或破裂。' },
+  2: { q: '如果水压过高会怎样？', a: '它会对阀门和连接件施加过大的力，从而缩短其使用寿命并增加管道爆炸的风险。' },
+  3: { q: '我怎样才能知道我家的水压是多少？', a: '将水压表连接到外部软管龙头以获得准确的读数。' },
+  4: { q: '什么是减压阀（PRV）？', a: '它是主管路中的一个装置，可将高入口压力降低到安全水平。' },
+  5: { q: '为什么我家里的水压突然变低？', a: '这可能是由于减压阀故障、隐藏泄漏或城市主电源出现问题造成的。' },
+  6: { q: '为什么我只有一个水龙头的水压低？', a: '这通常是由矿物质堵塞的起泡器或水龙头中的滤芯有缺陷引起的。' },
+  7: { q: '水垢会影响水压吗？', a: '是的，管道内部的钙化会减小内径，限制水流。' },
+  8: { q: '如何提高淋浴时的水压？', a: '用醋清洁淋浴喷头以清除水垢或检查减压阀。' },
+  9: { q: '有故障的热水器会降低压力吗？', a: '是的，沉积物堆积或阀门腐蚀会限制热水的流动。' },
+  10: { q: '我应该多久检查一次家中的水压？', a: '建议至少每年检查一次，或者如果您注意到流量发生变化。' },
+  11: { q: '传统热水器的使用寿命有多长？', a: '平均使用寿命为 8 至 12 年，具体取决于维护情况和水硬度。' },
+  12: { q: '无水箱加热器有哪些优点？', a: '它们提供无限量的热水，更加节能，使用寿命长达 20 年。' },
+  13: { q: '为什么热水出来时呈铁锈色？', a: '这表明水箱内部已经生锈，需要尽快更换。' },
+  14: { q: '什么是阳极棒？为什么它很重要？', a: '它是一种吸引腐蚀性矿物质以保护金属罐的牺牲棒。' },
+  15: { q: '为什么我的加热器会发出爆裂声或噼啪声？', a: '这些噪音是由水箱底部的沉积物随着水加热而沸腾引起的。' },
+  16: { q: '我应该将热水器设置为多少温度？', a: '建议将温度设置为 120°F (49°C)，以防止灼伤并节省能源。' },
+  17: { q: '热水器每年需要排水吗？', a: '是的，每年排空水箱可以去除沉积物并延长设备的使用寿命。' },
+  18: { q: '为什么我的热水这么快就用完了？', a: '可能是汲取管破损、沉积物过多或元件有故障。' },
+  19: { q: '无水箱加热器需要哪些维护？', a: '需要每年用白醋除垢以清洁热交换器。' },
+  20: { q: '泄压 (T&P) 阀泄漏是否正常？', a: '否，这意味着内部压力过高或阀门有故障。' },
+  21: { q: '我如何知道我是否存在隐藏漏水？', a: '如果账单增加，当所有设备都关闭时，您会听到流水声或水表旋转声。' },
+  22: { q: '什么是PEX管？', a: '它是一种耐冷冻的柔性塑料，经济且安装快捷。' },
+  23: { q: '铜好还是PEX好？', a: '铜的使用寿命超过 50 年，并且具有抗菌作用。 PEX 灵活且经济。两者都是很好的选择。' },
+  24: { q: '铜管出现针孔泄漏的原因是什么？', a: '市政供水中存在硬水、高水流或氯胺。' },
+  25: { q: '什么是水锤”以及如何解决？', a: '这是关闭水龙头时产生的噪音冲击，可以通过安装水锤阻尼器来解决。' },
+  26: { q: '我应该更换镀锌钢管吗？', a: '是的，它们内部生锈，导致泄漏、脏水和低压。' },
+  27: { q: '什么是重新管道？', a: '是将整个旧的配水系统更换为L型铜或PEX。' },
+  28: { q: '如何防止管道结冰？', a: '对裸露的管道进行保温，并在寒冷的夜晚留下轻微的滴水。' },
+  29: { q: '为什么水有臭鸡蛋味？', a: '加热器或干排水道（无水 P 型疏水阀）中的硫细菌。' },
+  30: { q: '主截止阀在哪里？', a: '它通常位于街道上的仪表附近或主管道进入房屋的地方。' },
+  31: { q: '为什么我的下水道有臭味？', a: '如果P”阱中的水蒸发，导致气体进入，就会发生这种情况。' },
+  32: { q: '下水道根部形成的原因是什么？', a: '根部通过小裂缝穿透旧管道寻找水和养分。' },
+  33: { q: '如何预防下水道堵塞？', a: '请勿倒入油脂或湿纸巾，并使用头发过滤器。' },
+  34: { q: '使用排水沟清洁化学品安全吗？', a: '不，它们会产生强烈的热量，腐蚀和损坏旧的塑料和金属管道。' },
+  35: { q: '什么是相机检查？', a: '它使用光纤来诊断地下问题，而无需挖掘。' },
+  36: { q: '非开挖”修复是什么意思？', a: '它正在更换地下下水道管线，而无需在整个院子里挖沟渠。' },
+  37: { q: '为什么洗澡时马桶会冒泡？', a: '表明主管路中存在严重的通风或堵塞问题。' },
+  38: { q: '什么是回水阀？', a: '防止城市废水在洪水中流回房屋。' },
+  39: { q: '我应该多久进行一次水力喷射？', a: '每 1 至 3 年彻底清除管壁上的油脂和根部。' },
+  40: { q: '蛇形和水力喷射之间的区别？', a: '蛇刺穿障碍物，水力喷射在压力下冲洗管道，使其焕然一新。' },
+  41: { q: '为什么马桶总是流水？', a: '这通常是挡板磨损、密封不正确或填充阀有故障。' },
+  42: { q: '马桶漏水浪费了多少水？', a: '您每天可能会浪费多达 200 加仑的水，从而大大增加您的账单。' },
+  43: { q: '为什么马桶经常堵塞？', a: '使用旧的低流量厕所，或扔掉湿巾和多余的纸张。' },
+  44: { q: '冲水湿巾会堵塞厕所吗？', a: '是的，它们不会像纸一样分解并导致系统严重堵塞。' },
+  45: { q: '马桶底部周围有湿气吗？', a: '下面的蜡环已经失效，需要更换，以避免腐烂地板。' },
+  46: { q: '如何修复漏水的淋浴间？', a: '更换内部滤芯或手柄后面磨损的橡胶密封件。' },
+  47: { q: '为什么淋浴间的水压很小，而水槽的水压却很小？', a: '淋浴头通常有一个矿物锁定限流器。' },
+  48: { q: '水槽上的溢水孔是做什么用的？', a: '如果您忘记关闭带有盖子的水龙头，可以防止溢出，并有助于排水。' },
+  49: { q: '如果有贵重物品掉进水槽怎么办？', a: '关闭水源，拧下水槽下方的P”存水弯并将其取出。' },
+  50: { q: '一个厕所能用多久？', a: '瓷器可以使用数十年，但内部组件每5至7年应更换一次。' },
+  51: { q: '为什么我的垃圾处理器发出嗡嗡声而不旋转？', a: '它被卡住了。使用底部的内六角扳手手动转动并解锁。' },
+  52: { q: '什么东西不能扔进垃圾箱？', a: '脂肪、油、骨头、芹菜、土豆皮、面食或大米。' },
+  53: { q: '如何消除垃圾处理过程中的异味？', a: '将冰块和柑橘皮用冷水磨碎，清洗干净。' },
+  54: { q: '垃圾处理时应该使用热水还是冷水？', a: '总是冷的，这样脂肪就会凝固，可以压碎而不粘连。' },
+  55: { q: '厨房水龙头水压低怎么办？', a: '拧开顶端的曝气器并清除所有矿物质沉积物。' },
+  56: { q: '洗碗机里有积水？', a: '过滤器脏了或通往处理装置的排水软管被堵塞。' },
+  57: { q: '水龙头关闭后会滴水吗？', a: '您需要更换陶瓷滤芯或磨损的内部垫圈。' },
+  58: { q: '水龙头旁边的气隙”是什么？', a: '防止脏水流回洗碗机。' },
+  59: { q: '如果水槽下面的水管破裂了怎么办？', a: '立即关闭下面的截止阀或房屋内的主阀。' },
+  60: { q: '双水槽另一边回水吗？', a: 'T”形接头下方的主管道出现堵塞。需要一条蛇。' },
+  61: { q: '什么是硬水？', a: '钙和镁含量高的水会导致水垢并损坏管道。' },
+  62: { q: '我什么时候需要软水器？', a: '如果您有白斑、皮肤干燥，您的加热器很快就会被水垢损坏。' },
+  63: { q: '软化器和过滤器的区别？', a: '软化剂去除钙（使用盐）。过滤器去除氯、化学物质和异味（使用碳）。' },
+  64: { q: '什么是反渗透（RO）？', a: '在分子水平上过滤，消除 99% 的污染物，获得非常纯净的饮用水。' },
+  65: { q: '多久更换一次水过滤器？', a: '碳每 6 个月一次，反渗透膜每 2-3 年一次，具体取决于使用情况。' },
+  66: { q: '无盐空调有用吗？', a: '它们可以防止管道中结垢，但不会从水中物理去除钙。' },
+  67: { q: '自来水出来是白色的还是乳白色的？', a: '它们是无害的微气泡。如果从下往上冲洗，就没有危险。' },
+  68: { q: '什么是氯胺？', a: '市政消毒剂会腐蚀旧管道，需要特殊的过滤器才能将其去除。' },
+  69: { q: '氯会损坏 PEX 管道吗？', a: '在高温下是的。全屋过滤器可延长 PEX 系统的使用寿命。' },
+  70: { q: '饮用自来水安全吗？', a: '一般来说是的，但是旧管道可以添加金属。强烈建议使用厨房过滤器。' },
+  71: { q: '家里该备哪些工具？', a: '柱塞、聚四氟乙烯胶带、活动扳手和小管钳。' },
+  72: { q: '为什么要知道截止阀在哪里？', a: '在紧急情况下切断供水并防止造成数千美元的洪水损失。' },
+  73: { q: '长假前该做什么？', a: '关闭主水阀并将加热器置于假期”模式。' },
+  74: { q: '什么是隔油池？', a: '在到达下水道之前捕获油脂；商业厨房强制要求。' },
+  75: { q: '如何检测马桶无声漏水？', a: '将染料放入槽中；如果15分钟内未冲洗而出现在杯子中，则存在泄漏。' },
+  76: { q: '屋顶排水沟有必要清理吗？', a: '是的，它们可以防止溢流损坏地基和法国排水管道。' },
+  77: { q: '我应该检查洗衣机软管吗？', a: '是的，每 5 年更换一次带编织钢的橡胶软管可以防止严重的洪水。' },
+  78: { q: '如何防止室外软管结冰？', a: '冬季将其断开或安装不积水的无霜阀门。' },
+  79: { q: '什么是热力调节阀？', a: '混合水以提供恒定的温度，避免淋浴时被烫伤。' },
+  80: { q: '污水泵的维护保养？', a: '每年清理碎片并倒水以验证其是否能够自行激活。' },
+  81: { q: '什么是管道紧急情况？', a: '煤气泄漏、管道破裂或下水道堵塞返回污水。' },
+  82: { q: '如果管道破裂怎么办？', a: '1. 关闭主阀。 2. 关闭附近的电源。 3. 致电水管工。' },
+  83: { q: '你闻到煤气味吗？', a: '疏散，不要打开灯或手机，并拨打 PG&E 或紧急电话 (911)。' },
+  84: { q: '使用洗衣机时每次淋浴都会回水吗？', a: '主下水道完全堵塞。迫切需要水力喷射。' },
+  85: { q: '热水器进水了怎么办？', a: '关闭水箱冷水阀门，切断设备的燃气或电力供应。' },
+  86: { q: '水管爆裂保险是否承保？', a: '它通常涵盖对结构的不可预见的水损坏，但不涵盖管道本身的修复。' },
+  87: { q: '如何快速缓解水灾？', a: '使用毛巾、打开窗户、打开风扇、移动木制家具和电子设备。' },
+  88: { q: '环氧腻子有用吗？', a: '是的，但只是作为临时补丁。振动或压力最终会再次使其破裂。' },
+  89: { q: '自己修理煤气管道吗？', a: '如果没有 CSLB 许可证，在加州极其危险且非法。' },
+  90: { q: '堵是我的问题还是城市的问题？', a: '如果插头位于您的财产范围内，则您负责维修。' },
+  91: { q: '什么是智能水暖？', a: 'Wi-Fi 阀门（如 Moen 的 Flo）可监控水流并在检测到泄漏时自行关闭管线。' },
+  92: { q: '铜L型和M型的区别？', a: 'L 型较厚，适合商业地下用途。 M 型纤薄，适合轻型室内使用。' },
+  93: { q: '为什么他们禁止含铅焊料？', a: '铅有毒，会污染饮用水，造成严重的神经损伤。' },
+  94: { q: '什么是 ProPress 系统？', a: '通过液压方式压接铜配件，无需火焰或焊接，从而形成安全、即时的密封。' },
+  95: { q: '什么是循环泵？', a: '立即向淋浴提供热水，无需等待水加热。' },
+  96: { q: '可以用雨水上厕所吗？', a: '是的，使用紫色管道和灰色集水区网络，遵循严格的生态规范。' },
+  97: { q: '为什么我的新马桶水位低？', a: '国家节水标准要求采用低流量、高效率的型号 (1.28 GPM)。' },
+  98: { q: '什么是混合加热器（热泵）？', a: '它利用室温来加热水，效率比普通电热水器高 3 倍。' },
+  99: { q: 'Morales Plumbing 有哪些生态效益？', a: '精确计算以降低材料成本、金属回收和超低消耗系统的实施。' },
+  100: { q: '为什么选择莫拉莱斯管道？', a: '因为我们将经过认证的 C-36 工艺与精益方法融合在一起，实现无缝安装和零浪费。' }
+  },
+  'tl': {
+  1: { q: 'Bakit mahalagang mapanatili ang tamang presyon sa ari-arian?', a: 'Ang pagpapanatili ng tamang presyon ay pumipigil sa pagkasira ng tubo, pinoprotektahan ang mga appliances, at pinipigilan ang mga sakuna na pagtagas o pagkasira.' },
+  2: { q: 'Ano ang mangyayari kung ang presyon ng tubig ay masyadong mataas?', a: 'Nagdudulot ito ng labis na puwersa sa mga balbula at koneksyon, na binabawasan ang kanilang kapaki-pakinabang na buhay at pinatataas ang panganib ng mga pagsabog ng tubo.' },
+  3: { q: 'Paano ko malalaman kung ano ang presyon ng tubig sa aking bahay?', a: 'Pagkonekta ng water pressure gauge sa labas ng hose bib para makakuha ng tumpak na pagbabasa.' },
+  4: { q: 'Ano ang pressure reducing valve (PRV)?', a: 'Ito ay isang aparato sa pangunahing linya na binabawasan ang mataas na presyon ng pumapasok sa isang ligtas na antas.' },
+  5: { q: 'Bakit ako biglang nagkaroon ng mababang presyon ng tubig sa buong bahay ko?', a: 'Maaaring ito ay dahil sa isang maling PRV, nakatagong pagtagas o mga problema sa pangunahing supply ng lungsod.' },
+  6: { q: 'Bakit mababa lang ang pressure ng tubig sa isang gripo?', a: 'Ito ay kadalasang sanhi ng isang mineral-blocked aerator o isang may sira na cartridge sa gripo na iyon.' },
+  7: { q: 'Nakakaapekto ba ang sukat sa presyon ng tubig?', a: 'Oo, ang calcification sa loob ng mga tubo ay binabawasan ang panloob na diameter, na naghihigpit sa daloy ng tubig.' },
+  8: { q: 'Paano ko mapapabuti ang presyon ng tubig sa shower?', a: 'Nililinis ang shower head sa suka upang alisin ang sukat o suriin ang pagbabawas ng balbula.' },
+  9: { q: 'Mababawasan ba ng maling pampainit ng tubig ang presyon?', a: 'Oo, ang sediment buildup o corroded valves ay maaaring maghigpit sa daloy ng mainit na tubig.' },
+  10: { q: 'Gaano kadalas ko dapat suriin ang presyon ng tubig ng aking tahanan?', a: 'Inirerekomenda na suriin ito nang hindi bababa sa isang beses sa isang taon o kung napansin mo ang mga pagbabago sa daloy.' },
+  11: { q: 'Gaano katagal ang isang tradisyonal na pampainit ng tubig?', a: 'Tumatagal sa average sa pagitan ng 8 at 12 taon, depende sa pagpapanatili at tigas ng tubig.' },
+  12: { q: 'Ano ang mga pakinabang ng isang tankless heater?', a: 'Nagbibigay sila ng walang limitasyong mainit na tubig, mas mahusay sa enerhiya at tumatagal ng hanggang 20 taon.' },
+  13: { q: 'Bakit lumalabas ang mainit na tubig na may kulay na kalawang?', a: 'Ito ay nagpapahiwatig na ang loob ng tangke ay kinakalawang at kailangang palitan sa lalong madaling panahon.' },
+  14: { q: 'Ano ang anode rod at bakit ito mahalaga?', a: 'Ito ay isang sakripisyong baras na umaakit ng mga kinakaing unti-unting mineral upang protektahan ang tangke ng metal.' },
+  15: { q: 'Bakit ang aking heater ay gumagawa ng mga popping o pagkaluskos na ingay?', a: 'Ang mga ingay ay sanhi ng sediment sa ilalim ng tangke na kumukulo habang umiinit ang tubig.' },
+  16: { q: 'Sa anong temperatura ko dapat itakda ang aking pampainit ng tubig?', a: 'Inirerekomenda na itakda ito sa 120°F (49°C) upang maiwasan ang pagkasunog at makatipid ng enerhiya.' },
+  17: { q: 'Kailangan bang i-drain ang pampainit ng tubig bawat taon?', a: 'Oo, ang pag-draining ng tangke taun-taon ay nag-aalis ng sediment at nagpapahaba ng buhay ng kagamitan.' },
+  18: { q: 'Bakit ang bilis kong maubusan ng mainit na tubig?', a: 'Maaaring ito ay isang sirang dip tube, labis na sediment, o mga sira na elemento.' },
+  19: { q: 'Anong maintenance ang kailangan ng tankless heater?', a: 'Nangangailangan ng taunang descaling na may puting suka upang linisin ang mga heat exchanger.' },
+  20: { q: 'Normal ba na tumulo ang pressure relief (T&P) valve?', a: 'Hindi, nangangahulugan ito na ang panloob na presyon ay masyadong mataas o ang balbula ay may depekto.' },
+  21: { q: 'Paano ko malalaman kung mayroon akong nakatagong pagtagas ng tubig?', a: 'Kung tumaas ang singil, maririnig mong umaagos ang tubig o umiikot ang metro kapag naka-off ang lahat.' },
+  22: { q: 'Ano ang PEX pipes?', a: 'Ito ay nababaluktot na plastik na lumalaban sa pagyeyelo, matipid at mabilis na i-install.' },
+  23: { q: 'Mas maganda ba ang tanso o PEX?', a: 'Ang tanso ay tumatagal ng 50+ taon at antimicrobial. Ang PEX ay flexible at matipid. Parehong mahusay na mga pagpipilian.' },
+  24: { q: 'Ano ang nagiging sanhi ng pagtagas ng pinhole sa tanso?', a: 'Matigas na tubig, mataas na tulin ng tubig, o mga chloramines sa supply ng munisipyo.' },
+  25: { q: 'Ano ang \'water hammer\' at paano ito nalulutas?', a: 'Ito ay isang maingay na epekto kapag isinasara ang isang gripo, na nalutas sa pamamagitan ng pag-install ng mga water hammer damper.' },
+  26: { q: 'Dapat ko bang palitan ang aking mga galvanized steel pipe?', a: 'Oo, kinakalawang ang mga ito sa loob na nagiging sanhi ng pagtagas, maruming tubig at mababang presyon.' },
+  27: { q: 'Ano ang repepe?', a: 'Ito ay upang palitan ang buong lumang sistema ng pamamahagi ng tubig na may uri ng L na tanso o PEX.' },
+  28: { q: 'Paano ko mapoprotektahan ang mga tubo mula sa pagyeyelo?', a: 'Ini-insulate ang mga nakalantad na tubo at nag-iiwan ng bahagyang pagtulo sa mga nagyeyelong gabi.' },
+  29: { q: 'Bakit amoy bulok na itlog ang tubig?', a: 'Sulfur bacteria sa heater o dry drains (waterless P-traps).' },
+  30: { q: 'Nasaan ang pangunahing shutoff valve?', a: 'Karaniwan itong malapit sa metro sa kalye o kung saan pumapasok ang pangunahing tubo sa bahay.' },
+  31: { q: 'Bakit mabaho ang aking drains?', a: 'Ito ay nangyayari kung ang tubig sa bitag na \'P\' ay sumingaw, na nagpapahintulot sa mga gas na pumasok.' },
+  32: { q: 'Ano ang sanhi ng mga ugat ng alkantarilya?', a: 'Ang mga ugat ay tumagos sa mga lumang tubo sa pamamagitan ng maliliit na bitak na naghahanap ng tubig at sustansya.' },
+  33: { q: 'Paano maiwasan ang pagbara ng kanal?', a: 'Huwag magbuhos ng grasa o wet wipes, at gumamit ng mga hair strainer.' },
+  34: { q: 'Ligtas bang gumamit ng mga kemikal sa paglilinis ng drain?', a: 'Hindi, nagdudulot sila ng matinding init na nakakasira at nakakasira ng mga lumang plastik at metal na tubo.' },
+  35: { q: 'Ano ang inspeksyon ng camera?', a: 'Gumagamit ito ng fiber optics upang masuri ang mga problema sa ilalim ng lupa nang hindi kinakailangang maghukay.' },
+  36: { q: 'Ano ang ibig sabihin ng \'trenchless\' repair?', a: 'Pinapalitan nito ang underground sewer line nang hindi naghuhukay ng trench sa buong bakuran.' },
+  37: { q: 'Bakit bumubula ang banyo kapag gumagamit ng shower?', a: 'Nagsasaad ng malubhang problema sa pag-vent o pagbara sa pangunahing linya.' },
+  38: { q: 'Ano ang backwater valve?', a: 'Pinipigilan ang pag-agos ng basura ng lungsod pabalik sa bahay sa mga baha.' },
+  39: { q: 'Gaano kadalas ko dapat gawin ang hydro-jetting?', a: 'Tuwing 1 hanggang 3 taon upang ganap na linisin ang grasa at mga ugat mula sa mga dingding ng tubo.' },
+  40: { q: 'Pagkakaiba sa pagitan ng ahas at hydro-jetting?', a: 'Tinusok ng ahas ang sagabal, hinuhugasan ng hydro-jetting ang tubo sa ilalim ng presyon, iniiwan itong parang bago.' },
+  41: { q: 'Bakit patuloy na tumatakbo ang palikuran?', a: 'Ito ay kadalasang isang pagod na flapper na hindi nakatatak nang maayos o may sira na balbula sa pagpuno.' },
+  42: { q: 'Gaano karaming tubig ang nasasayang ng isang tumutulo na palikuran?', a: 'Maaari kang mag-aksaya ng hanggang 200 galon sa isang araw, na tumataas nang husto sa iyong singil.' },
+  43: { q: 'Bakit ba madalas ang palikuran?', a: 'Sa pamamagitan ng luma, mababang daloy ng mga banyo, o pagtatapon ng mga basang punasan at labis na papel.' },
+  44: { q: 'Nakabara ba ang mga flushable wipe sa mga palikuran?', a: 'Oo, hindi sila nagkakawatak-watak na parang papel at nagiging sanhi ng mga seryosong pagbara sa sistema.' },
+  45: { q: 'Halumigmig sa paligid ng base ng banyo?', a: 'Nabigo ang wax ring sa ilalim at kailangan ng palitan para maiwasang mabulok ang sahig.' },
+  46: { q: 'Paano ko aayusin ang tumutulo na shower?', a: 'Ang pagpapalit ng panloob na kartutso o pagod na mga seal ng goma sa likod ng hawakan.' },
+  47: { q: 'Bakit may maliit na presyon sa shower at hindi sa lababo?', a: 'Ang shower head ay karaniwang may mineral-locked restrictor.' },
+  48: { q: 'Para saan ang overflow hole sa lababo?', a: 'Pinipigilan ang pag-apaw kung nakalimutan mong isara ang gripo nang may takip at tumutulong sa pagpapatuyo.' },
+  49: { q: 'Paano kung may nahulog na mahalagang bagay sa lababo?', a: 'Patayin ang tubig, tanggalin ang takip ng \'P\' sa ilalim ng lababo at kunin ito doon.' },
+  50: { q: 'Gaano katagal ang palikuran?', a: 'Ang porselana ay mga dekada, ngunit ang mga panloob na bahagi ay dapat palitan tuwing 5 hanggang 7 taon.' },
+  51: { q: 'Bakit umuugong at hindi umiikot ang aking pagtatapon ng basura?', a: 'Natigil ito. Gumamit ng Allen wrench sa ibaba upang manu-manong iikot ito at i-unlock.' },
+  52: { q: 'Ano ang HINDI dapat ilagay sa pagtatapon?', a: 'Taba, mantika, buto, kintsay, balat ng patatas, pasta o kanin.' },
+  53: { q: 'Paano maalis ang masamang amoy mula sa pagtatapon?', a: 'Gilingin ang mga ice cube at citrus peels na may malamig na tubig upang linisin ito.' },
+  54: { q: 'Dapat ka bang gumamit ng mainit o malamig na tubig na may itinatapon?', a: 'Palaging malamig, upang ang mga taba ay tumigas at maaaring durugin nang hindi dumidikit.' },
+  55: { q: 'Mababang presyon sa gripo sa kusina?', a: 'Alisin ang aerator sa dulo at linisin ang anumang deposito ng mineral.' },
+  56: { q: 'Walang tubig sa makinang panghugas?', a: 'Ang maruming filter o ang drain hose sa pagtatapon ay nakaharang.' },
+  57: { q: 'Faucet na tumutulo kapag nakasara?', a: 'Kailangan mong baguhin ang ceramic cartridge o pagod na panloob na gasket.' },
+  58: { q: 'Ano ang \'Air Gap\' sa tabi ng gripo?', a: 'Pinipigilan ang maruming tubig na umagos pabalik sa dishwasher.' },
+  59: { q: 'Ano ang gagawin kung masira ang tubo sa ilalim ng lababo?', a: 'Isara kaagad ang mga shut-off valve sa ibaba, o ang pangunahing balbula sa bahay.' },
+  60: { q: 'Ang double sink ba ay nagbabalik ng tubig sa kabilang panig?', a: 'Pagbara sa pangunahing tubo sa ibaba ng \'T\' joint. Kailangan ng ahas.' },
+  61: { q: 'Ano ang matigas na tubig?', a: 'Tubig na may mataas na antas ng calcium at magnesium, na nagiging sanhi ng sukat at pagkasira ng pagtutubero.' },
+  62: { q: 'Kailan ko kailangan ng water softener?', a: 'Kung mayroon kang mga puting batik, tuyong balat at ang iyong pampainit ay mabilis na nasira ayon sa sukat.' },
+  63: { q: 'Pagkakaiba sa pagitan ng softener at filter?', a: 'Ang softener ay nag-aalis ng calcium (gumagamit ng asin). Tinatanggal ng filter ang chlorine, mga kemikal at masamang lasa (gumagamit ng carbon).' },
+  64: { q: 'Ano ang Reverse Osmosis (RO)?', a: 'Mga filter sa antas ng molekular, inaalis ang 99% ng mga kontaminant upang magkaroon ng napakadalisay na inuming tubig.' },
+  65: { q: 'Gaano kadalas magpalit ng mga filter ng tubig?', a: 'Carbon tuwing 6 na buwan, RO membranes tuwing 2-3 taon depende sa paggamit.' },
+  66: { q: 'Gumagana ba ang mga conditioner na walang asin?', a: 'Pinipigilan nila ang paglaki ng mga sukat sa mga tubo, ngunit hindi pisikal na inaalis ang calcium sa tubig.' },
+  67: { q: 'Puti ba o gatas ang lumalabas na tubig sa gripo?', a: 'Ang mga ito ay hindi nakakapinsalang micro-air bubble. Kung ito ay banlawan mula sa ibaba pataas, ito ay hindi mapanganib.' },
+  68: { q: 'Ano ang chloramine?', a: 'Mga munisipal na disinfectant na sumisira sa mga lumang tubo at nangangailangan ng mga espesyal na filter para maalis ang mga ito.' },
+  69: { q: 'Nakakasira ba ang chlorine sa mga tubo ng PEX?', a: 'Sa mataas na temperatura oo. Ang isang buong filter ng bahay ay nagpapahaba ng buhay ng sistema ng PEX.' },
+  70: { q: 'Ligtas bang uminom ng tubig mula sa gripo?', a: 'Sa pangkalahatan oo, ngunit ang mga lumang tubo ay maaaring magdagdag ng mga metal. Ang isang filter sa kusina ay lubos na inirerekomenda.' },
+  71: { q: 'Anong mga tool ang mayroon sa bahay?', a: 'Plunger, Teflon tape, adjustable wrench at maliit na pipe wrench.' },
+  72: { q: 'Bakit alam kung nasaan ang stop valve?', a: 'Upang patayin ang tubig sa mga emerhensiya at maiwasan ang libu-libong dolyar na pinsala sa baha.' },
+  73: { q: 'Ano ang dapat gawin bago ang mahabang bakasyon?', a: 'I-off ang main water valve at ilagay ang heater sa \'Vacation\' mode.' },
+  74: { q: 'Ano ang isang grease trap?', a: 'Traps grasa bago maabot ang imburnal; Sapilitan sa mga komersyal na kusina.' },
+  75: { q: 'Paano matukoy ang tahimik na pagtagas sa banyo?', a: 'Maglagay ng tina sa tangke; Kung ito ay lilitaw sa tasa nang hindi namumula sa loob ng 15 minuto, mayroong pagtagas.' },
+  76: { q: 'Kailangan bang linisin ang mga gutter sa bubong?', a: 'Oo, pinipigilan nila ang mga pag-apaw na sumisira sa mga pundasyon at French drain lines.' },
+  77: { q: 'Dapat ko bang suriin ang mga hose ng washing machine?', a: 'Oo, ang pagpapalit ng mga goma na hose na may tinirintas na bakal kada 5 taon ay pumipigil sa matinding pagbaha.' },
+  78: { q: 'Paano maiiwasan ang panlabas na hose mula sa pagyeyelo?', a: 'Idiskonekta ito sa taglamig o mag-install ng mga frost-free valve na hindi nagpapanatili ng tubig.' },
+  79: { q: 'Ano ang isang thermal regulating valve?', a: 'Paghaluin ang tubig upang makapaghatid ng pare-parehong temperatura, maiwasan ang mga paso sa shower.' },
+  80: { q: 'Pagpapanatili ng sump pump?', a: 'Linisin ang mga labi taun-taon at ibuhos ang tubig upang ma-verify na ito ay nag-activate mismo.' },
+  81: { q: 'Ano ang emergency sa pagtutubero?', a: 'Mga pagtagas ng gas, mga aktibong pagkasira ng tubo, o pagbara ng imburnal na nagbabalik ng dumi sa alkantarilya.' },
+  82: { q: 'Ano ang gagawin kung masira ang tubo?', a: '1. Isara ang pangunahing balbula. 2. Patayin ang kalapit na kuryente. 3. Tawagan ang tubero.' },
+  83: { q: 'Amoy gas ka ba?', a: 'Lumikas, huwag magbukas ng mga ilaw o cell phone at tumawag sa PG&E o mga emergency (911).' },
+  84: { q: 'Ibinabalik ba ang tubig kada shower kapag gumagamit ng washing machine?', a: 'Kabuuang pagbara sa pangunahing linya ng alkantarilya. Ang hydro-jetting ay agarang kailangan.' },
+  85: { q: 'Ano ang gagawin kung bumaha ang heater?', a: 'Isara ang balbula ng malamig na tubig ng tangke at putulin ang suplay ng gas o kuryente sa kagamitan.' },
+  86: { q: 'Sinasaklaw ba ng insurance ang mga burst pipe?', a: 'Karaniwang sinasaklaw nito ang hindi inaasahang pagkasira ng tubig sa istraktura, ngunit hindi ang pag-aayos ng tubo mismo.' },
+  87: { q: 'Paano mabilis na mabawasan ang pinsala sa tubig?', a: 'Gumamit ng mga tuwalya, buksan ang mga bintana, buksan ang bentilador, at ilipat ang mga kasangkapang gawa sa kahoy at mga elektronikong kagamitan.' },
+  88: { q: 'Gumagana ba ang epoxy putty?', a: 'Oo, ngunit bilang isang pansamantalang patch lamang. Ang panginginig ng boses o presyon ay tuluyang masira ito muli.' },
+  89: { q: 'Ayusin ang linya ng gas sa aking sarili?', a: 'Lubhang mapanganib at ilegal sa California nang walang lisensya ng CSLB.' },
+  90: { q: 'Ang pagharang ba sa aking problema o sa lungsod?', a: 'Kung ang plug ay nasa loob ng iyong mga hangganan ng ari-arian, ikaw ang may pananagutan para sa pagkumpuni.' },
+  91: { q: 'Ano ang Smart Plumbing?', a: 'Mga balbula ng Wi-Fi (tulad ng Flo ni Moen) na sumusubaybay sa tubig at nagsasara ng linya nang mag-isa kung may nakita silang pagtagas.' },
+  92: { q: 'Pagkakaiba sa pagitan ng Copper Type L at M?', a: 'Ang Type L ay makapal para sa komersyal na paggamit sa ilalim ng lupa. Ang Type M ay slim, para sa magaan na gamit sa loob.' },
+  93: { q: 'Bakit nila ipinagbawal ang lead solder?', a: 'Ang tingga ay nakakalason at nakakahawa sa inuming tubig na nagdudulot ng malubhang pinsala sa neurological.' },
+  94: { q: 'Ano ang sistema ng ProPress?', a: 'Kinurot ang mga kabit na tanso nang haydroliko, nang walang apoy o hinang, na lumilikha ng isang secure at agarang selyo.' },
+  95: { q: 'Ano ang isang recirculating pump?', a: 'Agad na naghahatid ng mainit na tubig sa mga shower nang hindi kinakailangang patakbuhin ang tubig habang hinihintay itong uminit.' },
+  96: { q: 'Maaari ko bang gamitin ang ulan para sa banyo?', a: 'Oo, gamit ang mga network ng purple pipe at gray catchment, na sumusunod sa mahigpit na ecological code.' },
+  97: { q: 'Bakit ubos na ang tubig sa bago kong palikuran?', a: 'Ang mga pamantayan sa pagtitipid ng tubig ng estado ay nag-uutos ng mababang daloy, mataas na kahusayan na mga modelo (1.28 GPM).' },
+  98: { q: 'Ano ang Hybrid heater (Heat Pump)?', a: 'Gumagamit ito ng temperatura ng silid upang magpainit ng tubig, na hanggang sa 3 beses na mas mahusay kaysa sa isang normal na electric.' },
+  99: { q: 'Anong mga benepisyo sa ekolohiya ang mayroon ang Morales Plumbing?', a: 'Mga tumpak na kalkulasyon upang mabawasan ang mga gastos sa materyal, pag-recycle ng metal at pagpapatupad ng mga ultra-low consumption system.' },
+  100: { q: 'Bakit Morales Plumbing?', a: 'Dahil pinagsama namin ang sertipikadong C-36 craftsmanship sa mga Lean na pamamaraan para sa mga seamless na installation at zero waste.' }
+  },
+  'vi': {
+  1: { q: 'Tại sao điều quan trọng là duy trì p suất chnh xc trong tài sản?', a: 'Duy trì p suất chnh xc sẽ ngăn ngừa hư hỏng đường ống, bảo vệ cc thiết bị và ngăn ngừa rò rỉ hoặc vỡ thảm khốc.' },
+  2: { q: 'Điều gì xảy ra nếu p lực nước qucao?', a: 'Ntc động qunhiều lực lên van và cc mối nối, làm giảm tuổi thọ sử dụng của chng và tăng nguy cơ nổ đường ống.' },
+  3: { q: 'Làm thế nào tôi cthể biết được p lực nước trong nhà mình là bao nhiêu?', a: 'Kết nối đồng hồ đo p suất nước với yếm ống bên ngoài để ckết quả chnh xc.' },
+  4: { q: 'Van giảm p (PRV) là gì?', a: 'Là thiết bị nằm trong đường dây chnh ctc dụng giảm p suất cao đầu vào xuống mức an toàn.' },
+  5: { q: 'Tại sao đột nhiên p lực nước trong nhà tôi thấp?', a: 'Đcthể là do PRV bị lỗi, rò rỉ ẩn hoặc cvấn đề trong nguồn cung cấp chnh của thành phố.' },
+  6: { q: 'Tại sao tôi chỉ thấy p lực nước thấp ở một vòi?', a: 'Nguyên nhân thường là do thiết bị sục khbị tắc khong chất hoặc hộp mực trong vòi đbị lỗi.' },
+  7: { q: 'Cân cảnh hưởng đến p lực nước không?', a: 'C, hiện tượng vôi ha bên trong đường ống làm giảm đường knh trong, hạn chế dòng nước.' },
+  8: { q: 'Làm cch nào để cải thiện p lực nước khi tắm?', a: 'Làm sạch đầu vòi hoa sen bằng giấm để loại bỏ cặn hoặc kiểm tra van giảm p.' },
+  9: { q: 'My nước nng bị lỗi cthể giảm p suất không?', a: 'C, sự tch tụ trầm tch hoặc van bị ăn mòn cthể hạn chế dòng nước nng.' },
+  10: { q: 'Tôi nên kiểm tra p lực nước trong nhà bao lâu một lần?', a: 'Nên kiểm tra t nhất mỗi năm một lần hoặc nếu bạn nhận thấy những thay đổi trong quy trình.' },
+  11: { q: 'My nước nng truyền thống ctuổi thọ bao lâu?', a: 'Ko dài trung bình từ 8 đến 12 năm, tùy thuộc vào mức độ bảo trì và độ cứng của nước.' },
+  12: { q: 'Ưu điểm của my sưởi không bình chứa là gì?', a: 'Chng cung cấp nước nng không giới hạn, tiết kiệm năng lượng hơn và ctuổi thọ lên đến 20 năm.' },
+  13: { q: 'Tại sao nước nng chảy ra cmàu rỉ st?', a: 'Ncho thấy bên trong bình đang bị rỉ st và cần được thay thế sớm.' },
+  14: { q: 'Thanh anode là gì và tại sao nquan trọng?', a: 'Nlà một thanh hiến tế thu ht cc khong chất ăn mòn để bảo vệ bể kim loại.' },
+  15: { q: 'Tại sao my sưởi của tôi pht ra tiếng kêu rắc rắc hoặc tanh tch?', a: 'Tiếng ồn là do cặn lắng ở đy bể sôi lên khi nước nng lên.' },
+  16: { q: 'Tôi nên đặt my nước nng ở nhiệt độ nào?', a: 'Nên đặt ở nhiệt độ 120°F (49°C) để trnh bị bỏng và tiết kiệm năng lượng.' },
+  17: { q: 'My nước nng ccần phải xả nước hàng năm không?', a: 'C, việc xả nước bể hàng năm sẽ loại bỏ cặn và ko dài tuổi thọ của thiết bị.' },
+  18: { q: 'Tại sao tôi hết nước nng nhanh như vậy?', a: 'Ncthể là ống nhng bị hỏng, cặn dư thừa hoặc cc bộ phận bị lỗi.' },
+  19: { q: 'My sưởi không bình chứa cần bảo trì những gì?', a: 'Cần tẩy cặn hàng năm bằng giấm trắng để làm sạch bộ trao đổi nhiệt.' },
+  20: { q: 'Van giảm p (T&P) bị rò rỉ cbình thường không?', a: 'Không, điều đcnghĩa là p suất bên trong qucao hoặc van bị lỗi.' },
+  21: { q: 'Làm thế nào để biết liệu tôi cbị rò rỉ nước ẩn hay không?', a: 'Nếu ha đơn tăng, bạn sẽ nghe thấy tiếng nước chảy hoặc đồng hồ quay khi mọi thứ đều tắt.' },
+  22: { q: 'Ống PEX là gì?', a: 'Nlà nhựa dẻo ckhả năng chống đng băng, tiết kiệm và lắp đặt nhanh chng.' },
+  23: { q: 'Đồng hay PEX tốt hơn?', a: 'Đồng tồn tại hơn 50 năm và ctnh khng khuẩn. PEX rất linh hoạt và tiết kiệm. Cả hai đều là những lựa chọn tuyệt vời.' },
+  24: { q: 'Nguyên nhân gây rò rỉ lỗ kim trong đồng?', a: 'Nước cứng, vận tốc nước cao hoặc cloramin trong nguồn cung cấp của thành phố.' },
+  25: { q: '\'Ba nước\' là gì và cch giải quyết như thế nào?', a: 'Hiện tượng ồn khi đng vòi được giải quyết bằng cch lắp giảm chấn ba nước.' },
+  26: { q: 'Tôi cnên thay thế ống thp mạ kẽm của mình không?', a: 'C, chng bị rỉ st bên trong gây rò rỉ, nước bẩn và p suất thấp.' },
+  27: { q: 'Repipe là gì?', a: 'Đlà thay thế toàn bộ hệ thống phân phối nước cũ bằng đồng loại L hoặc PEX.' },
+  28: { q: 'Làm thế nào để bảo vệ đường ống khỏi bị đng băng?', a: 'Cch nhiệt cc đường ống hở và để lại một cht nhỏ giọt vào những đêm lạnh gi.' },
+  29: { q: 'Vì sao nước cmùi trứng thối?', a: 'Vi khuẩn lưu huỳnh trong hệ thống thot nước nng hoặc khô (bẫy chữ P không dùng nước).' },
+  30: { q: 'Van ngắt chnh ở đâu?', a: 'Nthường ở gần đồng hồ trên đường hoặc nơi đường ống chnh dẫn vào nhà.' },
+  31: { q: 'Tại sao cống của tôi cmùi hôi?', a: 'Nxảy ra nếu nước trong bẫy \'P\' bay hơi, tạo điều kiện cho khxâm nhập.' },
+  32: { q: 'Nguyên nhân gây ra rễ cống?', a: 'Rễ xuyên qua cc đường ống cũ qua cc vết nứt nhỏ để tìm nước và chất dinh dưỡng.' },
+  33: { q: 'Làm thế nào để ngăn ngừa tắc nghẽn cống?', a: 'Không đổ dầu mỡ hoặc khăn ướt và sử dụng dụng cụ lọc tc.' },
+  34: { q: 'Sử dụng ha chất thông cống can toàn không?', a: 'Không, chng tạo ra nhiệt độ cao làm ăn mòn và làm hỏng cc ống nhựa và kim loại cũ.' },
+  35: { q: 'Kiểm tra camera là gì?', a: 'Nsử dụng sợi quang để chẩn đon cc vấn đề dưới lòng đất mà không cần phải đào.' },
+  36: { q: 'Sửa chữa \'không rãnh\' nghĩa là gì?', a: 'Đlà thay thế đường cống ngầm mà không đào rãnh ngang toàn bộ sân.' },
+  37: { q: 'Tại sao bồn cầu lại nổi bong bng khi tắm?', a: 'Cho biết cvấn đề nghiêm trọng về thông gihoặc tắc nghẽn trong đường ống chnh.' },
+  38: { q: 'Van nước ngược là gì?', a: 'Ngăn chặn nước thải thành phố chảy ngược vào nhà khi lũ lụt.' },
+  39: { q: 'Tôi nên thực hiện phun thủy lực bao lâu một lần?', a: 'Định kỳ 1 đến 3 năm phải làm sạch hoàn toàn dầu mỡ và rễ bm trên thành ống.' },
+  40: { q: 'Sự khc biệt giữa rắn và phun nước?', a: 'Con rắn chọc thủng vật cản, phun thủy lực rửa đường ống dưới p lực, khiến đường ống trở nên như mới.' },
+  41: { q: 'Tại sao nhà vệ sinh liên tục chạy?', a: 'Đây thường là một ci nắp bị mòn, không bịt kn đng cch hoặc van nạp bị lỗi.' },
+  42: { q: 'Lãng phbao nhiêu nước khi bồn cầu bị rò rỉ?', a: 'Bạn cthể lãng phtới 200 gallon mỗi ngày, làm tăng đng kể ha đơn của bạn.' },
+  43: { q: 'Vì sao bồn cầu thường xuyên bị tắc?', a: 'Bằng những bồn cầu cũ, t dòng chảy, hoặc vứt bỏ khăn ướt và giấy thừa.' },
+  44: { q: 'Khăn lau cthể xả được clàm tắc bồn cầu không?', a: 'C, chng không phân hủy như giấy và gây tắc nghẽn nghiêm trọng trong hệ thống.' },
+  45: { q: 'Độ ẩm xung quanh chân bồn cầu?', a: 'Vòng sp bên dưới đã hỏng và cần thay thế để trnh làm sàn bị mục nt.' },
+  46: { q: 'Làm thế nào để khắc phục vòi hoa sen bị rò rỉ?', a: 'Thay hộp mực bên trong hoặc gioăng cao su bị mòn pha sau tay cầm.' },
+  47: { q: 'Tại sao ct p lực khi tắm mà không cp suất trong bồn rửa?', a: 'Đầu vòi hoa sen thường cbộ hạn chế kha khong.' },
+  48: { q: 'Lỗ tràn trong bồn rửa để làm gì?', a: 'Ngăn chặn nước tràn nếu bạn quên đng vòi và gip thot nước.' },
+  49: { q: 'Điều gì sẽ xảy ra nếu thứ gì đcgitrị rơi xuống bồn rửa?', a: 'Tắt nước, tho bẫy \'P\' dưới bồn rửa và lấy nở đ.' },
+  50: { q: 'Nhà vệ sinh ctuổi thọ bao lâu?', a: 'Đồ sứ hàng chục năm nhưng linh kiện bên trong nên được thay thế sau mỗi 5 đến 7 năm.' },
+  51: { q: 'Tại sao thùng rc của tôi kêu vo vo và không quay?', a: 'Nbị kẹt. Sử dụng cờ lê Allen ở pha dưới để xoay và mở kha theo cch thủ công.' },
+  52: { q: 'Những gì KHÔNG nên bỏ vào thùng rc?', a: 'Chất bo, dầu, xương, cần tây, vỏ khoai tây, mì ống hoặc gạo.' },
+  53: { q: 'Làm thế nào để loại bỏ mùi hôi từ việc xử lý?', a: 'Nghiền đviên và vỏ cam quýt bằng nước lạnh để làm sạch.' },
+  54: { q: 'Nên sử dụng nước nng hay nước lạnh khi xử lý?', a: 'Luôn để nguội để mỡ đông đặc lại và cthể nghiền nt mà không bị dnh.' },
+  55: { q: 'Vòi bếp p suất thấp?', a: 'Tho thiết bị sục khở đầu và làm sạch cặn khong.' },
+  56: { q: 'Nước đọng trong my rửa chn?', a: 'Bộ lọc bẩn hoặc ống thot nước bị tắc.' },
+  57: { q: 'Vòi chảy nhỏ giọt khi đng?', a: 'Bạn cần thay hộp gốm hoặc miếng đệm bên trong bị mòn.' },
+  58: { q: '\'Khoảng trống không kh\' bên cạnh vòi là gì?', a: 'Ngăn chặn nước bẩn chảy ngược vào my rửa bt.' },
+  59: { q: 'Phải làm gì nếu đường ống bị vỡ dưới bồn rửa?', a: 'Đng ngay cc van ngắt bên dưới hoặc van chnh trong nhà.' },
+  60: { q: 'Bồn rửa đôi chồi nước ở pha bên kia không?', a: 'Tắc nghẽn trong đường ống chnh bên dưới khớp chữ \'T\'. Cần cmột con rắn.' },
+  61: { q: 'Nước cứng là gì?', a: 'Nước chàm lượng canxi và magie cao gây đng cặn và làm hỏng hệ thống ống nước.' },
+  62: { q: 'Khi nào tôi cần làm mềm nước?', a: 'Nếu bạn cđốm trắng, da khô và my sưởi của bạn nhanh chng bị hư hỏng do cặn.' },
+  63: { q: 'Sự khc biệt giữa chất làm mềm và bộ lọc?', a: 'Chất làm mềm loại bỏ canxi (sử dụng muối). Bộ lọc loại bỏ clo, ha chất và mùi vị khchịu (sử dụng carbon).' },
+  64: { q: 'Thẩm thấu ngược (RO) là gì?', a: 'Lọc ở cấp độ phân tử, loại bỏ 99% chất gây ô nhiễm để cnước uống rất tinh khiết.' },
+  65: { q: 'Bao lâu thì phải thay bộ lọc nước?', a: 'Carbon 6 thng/lần, màng RO 2-3 năm/lần tùy theo mục đch sử dụng.' },
+  66: { q: 'Dầu xả không chứa muối chiệu quả không?', a: 'Chng ngăn chặn sự tch tụ cặn trong đường ống nhưng không loại bỏ canxi khỏi nước một cch vật lý.' },
+  67: { q: 'Nước my cmàu trắng đục hoặc trắng đục?', a: 'Chng là những bong bng khsiêu nhỏ vô hại. Nếu rửa từ dưới lên thì không nguy hiểm.' },
+  68: { q: 'Cloramin là gì?', a: 'Chất khử trùng thành phố ăn mòn đường ống cũ và cần cbộ lọc đặc biệt để loại bỏ chng.' },
+  69: { q: 'Clo clàm hỏng ống PEX không?', a: 'Ở nhiệt độ cao thì c. Bộ lọc toàn bộ ngôi nhà gip ko dài tuổi thọ của hệ thống PEX.' },
+  70: { q: 'Uống nước my can toàn không?', a: 'Ni chung là c, nhưng đường ống cũ cthể thêm kim loại vào. Một bộ lọc nhà bếp rất được khuyến khch.' },
+  71: { q: 'Ở nhà cần cnhững dụng cụ gì?', a: 'Pt tông, băng Teflon, cờ lê điều chỉnh và cờ lê ống nhỏ.' },
+  72: { q: 'Tại sao biết van chặn ở đâu?', a: 'Để tắt nước trong trường hợp khẩn cấp và ngăn chặn thiệt hại do lũ lụt hàng ngàn đô la.' },
+  73: { q: 'Làm gì trước kỳ nghỉ dài?', a: 'Tắt van nước chnh và đặt my sưởi ở chế độ \'Nghỉ php\'.' },
+  74: { q: 'Bẫy mỡ là gì?', a: 'Bẫy dầu mỡ trước khi lọt vào cống; Bắt buộc trong bếp ăn thương mại.' },
+  75: { q: 'Làm thế nào để pht hiện rò rỉ im lặng trong nhà vệ sinh?', a: 'Cho thuốc nhuộm vào bể; Nếu nxuất hiện trong cốc mà không xả trong vòng 15 pht thì cnghĩa là crò rỉ.' },
+  76: { q: 'Ccần thiết phải làm sạch mng xối trên mi nhà không?', a: 'C, chng ngăn nước tràn làm hư hỏng nền mng và đường thot nước của Php.' },
+  77: { q: 'Cnên kiểm tra ống mềm my giặt?', a: 'C, thay ống cao su bằng thp bện 5 năm một lần sẽ ngăn ngừa lũ lụt nghiêm trọng.' },
+  78: { q: 'Làm thế nào để ngăn chặn vòi ngoài trời bị đng băng?', a: 'Ngắt kết nối vào mùa đông hoặc lắp cc van không đng băng không giữ nước.' },
+  79: { q: 'Van điều chỉnh nhiệt là gì?', a: 'Trộn nước để mang lại nhiệt độ ổn định, trnh bị bỏng khi tắm.' },
+  80: { q: 'Bảo trì my bơm bể phốt?', a: 'Làm sạch cc mảnh vụn hàng năm và đổ nước để xc minh rằng ntự kch hoạt.' },
+  81: { q: 'Trường hợp khẩn cấp về hệ thống ống nước là gì?', a: 'Rò rỉ gas, vỡ đường ống đang hoạt động hoặc tắc nghẽn cống thot nước thải.' },
+  82: { q: 'Phải làm gì nếu đường ống bị vỡ?', a: '1. Đng van chnh. 2. Tắt nguồn điện gần đ. 3. Gọi thợ sửa ống nước.' },
+  83: { q: 'Bạn cngửi thấy mùi gas không?', a: 'Sơ tn, không bật đèn hoặc điện thoại di động và gọi PG&E hoặc trường hợp khẩn cấp (911).' },
+  84: { q: 'Nước cđược trả lại mỗi lần tắm khi sử dụng my giặt không?', a: 'Tắc nghẽn toàn bộ đường cống chnh. Việc phun thủy lực là rất cần thiết.' },
+  85: { q: 'Phải làm gì nếu my sưởi bị ngập nước?', a: 'Đng van nước lạnh của bình chứa và cắt nguồn cung cấp gas hoặc điện cho thiết bị.' },
+  86: { q: 'Bảo hiểm cchi trả cho việc vỡ ống không?', a: 'Nthường bao gồm những hư hỏng không lường trước được do nước gây ra cho kết cấu, nhưng không bao gồm việc sửa chữa đường ống.' },
+  87: { q: 'Làm thế nào để giảm thiểu thiệt hại do nước nhanh chng?', a: 'Dùng khăn tắm, mở cửa sổ, bật quạt, di chuyển đồ đạc bằng gỗ và thiết bị điện tử.' },
+  88: { q: 'Bột trt epoxy choạt động không?', a: 'C, nhưng chỉ là bản vtạm thời. Sự rung động hoặc p lực cuối cùng sẽ phvỡ nmột lần nữa.' },
+  89: { q: 'Tự sửa chữa đường ống dẫn kh?', a: 'Cực kỳ nguy hiểm và bất hợp php ở California nếu không cgiấy php CSLB.' },
+  90: { q: 'Đang chặn vấn đề của tôi hoặc của thành phố?', a: 'Nếu phch cắm nằm trong phạm vi ranh giới nhà của bạn, bạn phải chịu trch nhiệm sửa chữa.' },
+  91: { q: 'Hệ thống nước thông minh là gì?', a: 'Cc van Wi-Fi (như Flo by Moen) theo dõi nước và tự ngắt đường dây nếu pht hiện rò rỉ.' },
+  92: { q: 'Sự khc biệt giữa loại đồng L và M?', a: 'Loại L dày dùng cho mục đch thương mại dưới lòng đất. Loại M mỏng, sử dụng nhẹ nhàng trong nhà.' },
+  93: { q: 'Tại sao họ cấm hàn chì?', a: 'Chì là chất độc và làm ô nhiễm nước uống, gây tổn thương thần kinh nghiêm trọng.' },
+  94: { q: 'Hệ thống ProPress là gì?', a: 'Uốn cc phụ kiện đồng bằng thủy lực, không cần ngọn lửa hoặc hàn, tạo ra sự bịt kn an toàn và ngay lập tức.' },
+  95: { q: 'My bơm tuần hoàn là gì?', a: 'Cung cấp nước nng ngay lập tức cho vòi sen mà không cần phải mở nước chờ nước nng lên.' },
+  96: { q: 'Tôi cthể sử dụng mưa cho nhà vệ sinh không?', a: 'C, sử dụng mạng lưới đường ống màu tm và lưu vực màu xm, tuân theo cc quy tắc sinh thi nghiêm ngặt.' },
+  97: { q: 'Tại sao nhà vệ sinh mới của tôi lại t nước?', a: 'Cc tiêu chuẩn tiết kiệm nước của tiểu bang bắt buộc phải sử dụng cc mô hình dòng chảy thấp, hiệu suất cao (1,28 GPM).' },
+  98: { q: 'My sưởi lai (Heat Pump) là gì?', a: 'Nsử dụng nhiệt độ phòng để làm nng nước, hiệu quả gấp 3 lần so với my chạy điện thông thường.' },
+  99: { q: 'Hệ thống nước Morales cnhững lợi ch sinh thi nào?', a: 'Tnh ton chnh xc để giảm chi phvật liệu, ti chế kim loại và triển khai cc hệ thống tiêu thụ cực thấp.' },
+  100: { q: 'Tại sao hệ thống nước Morales?', a: 'Bởi vì chng tôi kết hợp tay nghề kho lo của C-36 đã được chứng nhận với cc phương php Lean để lắp đặt liền mạch và không lãng ph.' }
+  }
+};
+
+    let currentLang = localStorage.getItem('morales_lang') || 'en';
+
+    function switchLang(lang) {
+        currentLang = lang;
+        localStorage.setItem('morales_lang', lang);
+
+        // Update nav buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        // Update all accordion items
+        const data = FAQ_DATA[lang] || FAQ_DATA['en'];
+        for (let i = 1; i <= 100; i++) {
+            const item = document.getElementById('faq-item-' + i);
+            if (!item || !data[i]) continue;
+            const header = item.querySelector('.accordion-header span:first-child');
+            const numSpan = header.querySelector('span');
+            const textNode = data[i].q;
+            header.innerHTML = `<span style="color:var(--orange);">#${i}</span> ${textNode}`;
+            item.querySelector('.accordion-content p').textContent = data[i].a;
+        }
+
+        // Re-run filter to update visible counter
+        filterFaqs();
+    }
+
+    function toggleAccordion(btn) {
+        btn.classList.toggle('active');
+        const content = btn.nextElementSibling;
+        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+            content.style.maxHeight = '0px';
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }
+    }
+
+    function filterFaqs() {
+        const query = document.getElementById('searchInput').value.toLowerCase().trim();
+        const items = document.querySelectorAll('.accordion-item.search-item');
+        let visible = 0;
+
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (!query || text.includes(query)) {
+                item.classList.remove('hidden');
+                visible++;
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+        document.getElementById('faqCounter').textContent = `Showing ${visible} of 100 questions`;
+    }
+
+    // Init language on load
+    document.addEventListener('DOMContentLoaded', () => {
+        switchLang(currentLang);
+    });
+    </script>
 </body>
 </html>
-

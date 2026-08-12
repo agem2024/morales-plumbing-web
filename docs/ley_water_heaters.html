@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Normativas y Leyes (2027) - Calentadores de Ã¡gua | Morales Plumbing</title>
+    <title>Normativas y Leyes (2027) - Calentadores de agua | Morales Plumbing</title>
     <!-- CSS and Fonts matching Orion aesthetic -->
     <link href="https://fonts.googleapis.com/css2family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
@@ -92,7 +92,7 @@
             margin-bottom: 10px;
         }
         .law-section ul li::before {
-            content: 'â–¹';
+            content: 'â¹';
             position: absolute;
             left: 0;
             color: var(--neon-cyan);
@@ -157,142 +157,142 @@
 <body class="dark-theme">
 
     <!-- MORALES PLUMBING OFFICIAL HEADER -->
-    <header style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 4px solid #D4AF37; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: relative; z-index: 1000;">
-        <div style="display: flex; align-items: center;">
-            <a href="../index.html">
-                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 60px; width: auto;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
-            </a>
+<header class="mp-global-header" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 2px solid #D4AF37; padding: 8px 15px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 999999; height: 60px; box-sizing: border-box; width: 100vw; max-width: 100%;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="../index.html" style="display: flex; align-items: center;">
+            <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 38px; width: auto; max-width: 140px; object-fit: contain;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
+        </a>
+    </div>
+    <div style="position: relative; display: flex; align-items: center; gap: 10px;">
+        <div style="text-align: right; color: #fff; display: none;" class="header-contact-info">
+            <h2 style="margin: 0; font-size: 0.9rem; color: #D4AF37; font-weight: bold; line-height: 1;">MORALES PLUMBING</h2>
+            <p style="margin: 2px 0 0; font-size: 0.7rem; color: #aaa; line-height: 1;">Lic. C-36 #1156542</p>
         </div>
-        <div style="text-align: right; color: #fff;">
-            <h2 style="margin: 0; font-size: 1.2rem; color: #D4AF37; font-weight: bold;">MORALES PLUMBING</h2>
-            <p style="margin: 3px 0 0; font-size: 0.9rem;">AI-INTEGRATED SERVICES</p>
-            <p style="margin: 3px 0 0; font-size: 0.8rem; color: #aaa;">Lic. C-36 #1156542 | San Jose, CA</p>
+        <button onclick="document.getElementById('globalLangMenu').classList.toggle('show-lang')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(0,245,255,0.3); cursor: pointer; padding: 4px 8px; outline: none; border-radius: 6px; display: flex; align-items: center; gap: 5px; transition: 0.2s;">
+            <img src="../assets/plan_good_clean.png" alt="Language" style="height: 22px; width: auto; border-radius: 4px; box-shadow: 0 0 5px rgba(0,245,255,0.4);">
+            <span style="color: #00f5ff; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.5px;">LANG</span>
+        </button>
+        <div id="globalLangMenu" style="display: none; position: absolute; right: 0; top: 45px; background: rgba(3, 7, 18, 0.98); border: 1px solid #D4AF37; border-radius: 8px; flex-direction: column; min-width: 140px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.9); z-index: 1000000;">
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Español</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - ??</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Ti?ng Vi?t</button>
         </div>
-    </header>
+    </div>
+</header>
+<style>
+    body { padding-top: 60px !important; }
+    .show-lang { display: flex !important; }
+    #globalLangMenu button:hover { background: rgba(0, 245, 255, 0.15) !important; color: #00f5ff !important; }
+    @media (min-width: 480px) {
+        .header-contact-info { display: block !important; }
+    }
+</style>
+
 
 
     <div class="cyber-bg-container">
         <div class="cyber-grid"></div>
     </div>
 
-    <!-- Header -->
-    <header role="banner" style="background: rgba(0,0,0,0.95); border-bottom: 1px solid rgba(0, 245, 255, 0.3); position: fixed; top: 0; width: 100%; height: 70px; z-index: 100;">
-        <nav role="navigation" style="display:flex; align-items:center; justify-content: space-between; padding: 0 20px; height: 100%;">
-            <div class="logo-container" onclick="window.location.href='../index.html'" style="cursor:pointer; display:flex; align-items:center;">
-                <img src="../assets/logo_portada.webp" style="width: 45px; margin-right:15px; filter: drop-shadow(0 0 5px var(--neon-cyan));">
-                <div class="brand-info">
-                    <span class="brand-name" style="font-size: 1.1rem; margin-bottom: 0;">MORÃ¡LES PLUMBING</span>
-                    <span class="brand-tag" style="font-size: 0.8rem; color: var(--neon-orange);">LEGÃ¡L & COMPLIÃ¡NCE</span>
-                </div>
-            </div>
-            
-            <!-- Language Selector for this subpage -->
-            <div class="lang-selector" style="display: flex; gap: 0.5rem; margin-right: 20px;">
-                <button class="lang-btn" onclick="setLanguage('en')" data-lang="en">EN</button>
-                <button class="lang-btn" onclick="setLanguage('es')" data-lang="es">ES</button>
-                <button class="lang-btn" onclick="setLanguage('zh')" data-lang="zh">ZH</button>
-                <button class="lang-btn" onclick="setLanguage('tl')" data-lang="tl">TL</button>
-                <button class="lang-btn" onclick="setLanguage('vi')" data-lang="vi">VI</button>
-            </div>
-
-            <a href="promocion_water_heaters.html" class="btn-outline" style="border-color: var(--neon-cyan); color: var(--neon-cyan); padding: 8px 20px; font-family: 'Orbitron'; font-size: 0.9rem;">&lt; Volver</a>
-        </nav>
-    </header>
+    
 
     <main class="law-container" style="padding-top: 100px;">
         
         <div class="law-header">
-            <h1 data-i18n="law_title">Regulaciones BÃ¡Ã¡QMD & CÃ³digo de InstalaciÃ³n</h1>
-            <p data-i18n="law_subtitle">La guÃ­a definitiva sobre el mandato 2027 de cero emisiones (Zero-NOx) para el Ãrea de la BahÃ­a, los nuevos tipos de calentadores y los estrictos requisitos de instalaciÃ³n de CSLB y el TÃ­tulo 24 de California.</p>
+            <h1 data-i18n="law_title">Regulaciones BAAQMD & Código de Instalación</h1>
+            <p data-i18n="law_subtitle">La guía definitiva sobre el mandato 2027 de cero emisiones (Zero-NOx) para el Área de la Bahía, los nuevos tipos de calentadores y los estrictos requisitos de instalación de CSLB y el Título 24 de California.</p>
         </div>
 
         <section class="law-section">
             <div class="law-section-content">
-                <h2 class="cyan" data-i18n="law_sec1_title">1. El Mandato de BÃ¡Ã¡QMD 2027 (RegulaciÃ³n 9, Regla 6)</h2>
-                <p data-i18n="law_sec1_p1">El Distrito de GestiÃ³n de la Calidad del Ã¡ire del Ãrea de la BahÃ­a (BÃ¡Ã¡QMD) ha emitido una enmienda histÃ³rica para reducir la contaminaciÃ³n por Ã³xidos de nitrÃ³geno (NOx).</p>
-                <p data-i18n="law_sec1_p2"><strong>Â¿QuÃ© significa esto</strong> Ã¡ partir del 1 de enero de 2027, serÃ¡ ilegal vender o instalar nuevos calentadores de agua residenciales de gas natural que emitan NOx. Esto significa la eliminaciÃ³n gradual completa de los calentadores tradicionales a gas en el Ãrea de la BahÃ­a.</p>
+                <h2 class="cyan" data-i18n="law_sec1_title">1. El Mandato de BAAQMD 2027 (Regulación 9, Regla 6)</h2>
+                <p data-i18n="law_sec1_p1">El Distrito de Gestión de la Calidad del Aire del Área de la Bahía (BAAQMD) ha emitido una enmienda histórica para reducir la contaminación por óxidos de nitrógeno (NOx).</p>
+                <p data-i18n="law_sec1_p2"><strong>¿Qué significa esto</strong> a partir del 1 de enero de 2027, será ilegal vender o instalar nuevos calentadores de agua residenciales de gas natural que emitan NOx. Esto significa la eliminación gradual completa de los calentadores tradicionales a gas en el Área de la Bahía.</p>
                 <ul>
-                    <li data-i18n="law_sec1_li1"><strong>Impacto Inmediato:</strong> Los reemplazos de emergencia despuÃ©s de 2027 requerirÃ¡n exclusivamente equipos elÃ©ctricos de cero emisiones.</li>
-                    <li data-i18n="law_sec1_li2"><strong>TransiciÃ³n:</strong> Se insta a los propietarios a migrar a calentadores de bomba de calor (Heat Pump) antes del colapso de inventario de 2027.</li>
+                    <li data-i18n="law_sec1_li1"><strong>Impacto Inmediato:</strong> Los reemplazos de emergencia después de 2027 requerirán exclusivamente equipos eléctricos de cero emisiones.</li>
+                    <li data-i18n="law_sec1_li2"><strong>Transición:</strong> Se insta a los propietarios a migrar a calentadores de bomba de calor (Heat Pump) antes del colapso de inventario de 2027.</li>
                 </ul>
             </div>
             <div class="law-section-image">
                 <div class="mermaid">
-                pie title Impacto en Inventario de Calentadores (ProyecciÃ³n 2027)
+                pie title Impacto en Inventario de Calentadores (Proyección 2027)
                 "Gas Natural (Ilegal)" : 0
                 "Bomba de Calor (Requerido)" : 75
-                "ElÃ©ctrico EstÃ¡ndar" : 20
-                "ElÃ©ctrico Sin Tanque" : 5
+                "Eléctrico Estándar" : 20
+                "Eléctrico Sin Tanque" : 5
                 </div>
             </div>
         </section>
 
         <section class="law-section reverse">
             <div class="law-section-content">
-                <h2 class="lime" data-i18n="law_sec2_title">2. Tipos de Calentadores de Ã¡gua (TransiciÃ³n a ElÃ©ctrico)</h2>
-                <p data-i18n="law_sec2_p1">Comprender las tecnologÃ­as aprobadas para la transiciÃ³n energÃ©tica de California es vital para cumplir con el TÃ­tulo 24 (Title 24).</p>
+                <h2 class="lime" data-i18n="law_sec2_title">2. Tipos de Calentadores de agua (Transición a Eléctrico)</h2>
+                <p data-i18n="law_sec2_p1">Comprender las tecnologías aprobadas para la transición energética de California es vital para cumplir con el Título 24 (Title 24).</p>
                 <ul>
-                    <li data-i18n="law_sec2_li1"><strong>Bomba de Calor HÃ­brida (Heat Pump):</strong> Extrae calor del aire ambiental para calentar el agua, logrando eficiencias superiores al 300%. Es la opciÃ³n #1 requerida por el estado y califica para los mÃ¡ximos reembolsos (Rebates).</li>
-                    <li data-i18n="law_sec2_li2"><strong>ElÃ©ctricos de Tanque EstÃ¡ndar:</strong> Utilizan resistencias tÃ©rmicas, menos eficientes y generalmente penalizados bajo cÃ¡lculos estrictos del TÃ­tulo 24, pero permitidos.</li>
-                    <li data-i18n="law_sec2_li3"><strong>ElÃ©ctricos Tankless (Sin Tanque):</strong> Calientan el agua al instante. Ã¡unque no emiten NOx, requieren un amperaje masivo (a menudo paneles elÃ©ctricos de mÃ¡s de 200Ã¡) y rara vez son viables sin actualizaciones elÃ©ctricas costosas.</li>
+                    <li data-i18n="law_sec2_li1"><strong>Bomba de Calor Híbrida (Heat Pump):</strong> Extrae calor del aire ambiental para calentar el agua, logrando eficiencias superiores al 300%. Es la opción #1 requerida por el estado y califica para los máximos reembolsos (Rebates).</li>
+                    <li data-i18n="law_sec2_li2"><strong>Eléctricos de Tanque Estándar:</strong> Utilizan resistencias térmicas, menos eficientes y generalmente penalizados bajo cálculos estrictos del Título 24, pero permitidos.</li>
+                    <li data-i18n="law_sec2_li3"><strong>Eléctricos Tankless (Sin Tanque):</strong> Calientan el agua al instante. Aunque no emiten NOx, requieren un amperaje masivo (a menudo paneles eléctricos de más de 200A) y rara vez son viables sin actualizaciones eléctricas costosas.</li>
                 </ul>
             </div>
             <div class="law-section-image" style="overflow:hidden;">
                 <div class="mermaid">
                 graph TD
-                    Ã¡[Ã¡ire Caliente Ã¡mbiental] -->|Evaporador| B(Refrigerante Gas)
-                    B -->|Compresor| C{Refrigerante Caliente}
-                    C -->|Condensador| D[Tanque de Ã¡gua]
-                    D --> E((Ã¡gua Caliente 300% Eficiencia))
-                    C -->|VÃ¡lvula de ExpansiÃ³n| F(Refrigerante FrÃ­o)
-                    F --> Ã¡
+                    A["Aire Caliente Ambiental"] -->|Evaporador| B("Refrigerante Gas")
+                    B -->|Compresor| C{"Refrigerante Caliente"}
+                    C -->|Condensador| D["Tanque de agua"]
+                    D --> E(("Agua Caliente 300% Eficiencia"))
+                    C -->|Válvula de Expansión| F("Refrigerante Frío")
+                    F --> A
                 </div>
             </div>
         </section>
 
         <section class="law-section">
             <div class="law-section-content">
-                <h2 class="orange" data-i18n="law_sec3_title">3. Especificaciones del CÃ³digo (CSLB y Title 24)</h2>
-                <p data-i18n="law_sec3_p1">Instalar un calentador no es solo conectar agua. Morales Plumbing garantiza el cumplimiento estricto del CÃ³digo Uniforme de PlomerÃ­a (UPC) de California:</p>
+                <h2 class="orange" data-i18n="law_sec3_title">3. Especificaciones del Código (CSLB y Title 24)</h2>
+                <p data-i18n="law_sec3_p1">Instalar un calentador no es solo conectar agua. Morales Plumbing garantiza el cumplimiento estricto del Código Uniforme de Plomería (UPC) de California:</p>
                 <ul>
-                    <li data-i18n="law_sec3_li1"><strong>SujeciÃ³n SÃ­smica (Earthquake Straps):</strong> Ley de California requiere correas dobles en el tercio superior e inferior, ancladas directamente a montantes de pared para evitar el vuelco durante terremotos.</li>
-                    <li data-i18n="law_sec3_li2"><strong>Tanque de ExpansiÃ³n TÃ©rmica:</strong> Obligatorio en sistemas de plomerÃ­a "cerrados" para absorber el exceso de presiÃ³n, protegiendo las tuberÃ­as del hogar y evitando explosiones de vÃ¡lvulas.</li>
-                    <li data-i18n="law_sec3_li3"><strong>Bandeja de Drenaje (Drain Pan):</strong> Requerida si el calentador estÃ¡ en una plataforma interior, en Ã¡tico o espacio donde una fuga cause daÃ±os a la estructura. La bandeja debe tener tuberÃ­a que drene al exterior.</li>
-                    <li data-i18n="law_sec3_li4"><strong>VÃ¡lvula T&P (Temperature & Pressure Relief):</strong> CrÃ­tica para la seguridad, su lÃ­nea de descarga debe llevar el agua caliente a un desagÃ¼e seguro, tÃ­picamente al exterior.</li>
+                    <li data-i18n="law_sec3_li1"><strong>Sujeción Sísmica (Earthquake Straps):</strong> Ley de California requiere correas dobles en el tercio superior e inferior, ancladas directamente a montantes de pared para evitar el vuelco durante terremotos.</li>
+                    <li data-i18n="law_sec3_li2"><strong>Tanque de Expansión Térmica:</strong> Obligatorio en sistemas de plomería "cerrados" para absorber el exceso de presión, protegiendo las tuberías del hogar y evitando explosiones de válvulas.</li>
+                    <li data-i18n="law_sec3_li3"><strong>Bandeja de Drenaje (Drain Pan):</strong> Requerida si el calentador está en una plataforma interior, en ático o espacio donde una fuga cause daños a la estructura. La bandeja debe tener tubería que drene al exterior.</li>
+                    <li data-i18n="law_sec3_li4"><strong>Válvula T&P (Temperature & Pressure Relief):</strong> Crítica para la seguridad, su línea de descarga debe llevar el agua caliente a un desagüe seguro, típicamente al exterior.</li>
                 </ul>
             </div>
             <div class="law-section-image">
                 <div class="mermaid">
                 flowchart TB
-                    subgraph InstalaciÃ³n Cumplimiento CSLB
-                        Ã¡[Tanque de ExpansiÃ³n TÃ©rmica] --> B(LÃ­nea de Ã¡gua FrÃ­a)
-                        B --> C{Calentador Heat Pump}
-                        S1[Soporte SÃ­smico Superior] -.-> C
-                        S2[Soporte SÃ­smico Inferior] -.-> C
-                        C --> D(VÃ¡lvula T&P)
-                        D --> E[LÃ­nea de Descarga al Exterior]
-                        C --> F((Bandeja de Drenaje))
-                        F --> G[TuberÃ­a de Drenaje al Exterior]
+                    subgraph "Instalación Cumplimiento CSLB"
+                        A["Tanque de Expansión Térmica"] --> B("Línea de agua Fría")
+                        B --> C{"Calentador Heat Pump"}
+                        S1["Soporte Sísmico Superior"] -.-> C
+                        S2["Soporte Sísmico Inferior"] -.-> C
+                        C --> D("Válvula T&P")
+                        D --> E["Línea de Descarga al Exterior"]
+                        C --> F(("Bandeja de Drenaje"))
+                        F --> G["Tubería de Drenaje al Exterior"]
                     end
                 </div>
             </div>
         </section>
 
         <div style="text-align: center; margin-top: 4rem;">
-            <a href="promocion_water_heaters.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 40px;" data-i18n="law_btn_back">Ver Paquetes de InstalaciÃ³n Certificados</a>
+            <a href="promocion_water_heaters.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 40px;" data-i18n="law_btn_back">Ver Paquetes de Instalación Certificados</a>
         </div>
     </main>
 
+
     <footer class="cyber-footer" style="margin-top: 4rem;">
-        <p>Â© MORÃ¡LES PLUMBING 2026 | LICENSE C-36 #1156542</p>
+        <p>Â© MORALES PLUMBING 2026 | LICENSE C-36 #1156542</p>
     </footer>
 
     <!-- Multilingual Support -->
     <script src="../app.jsv=law_update_2"></script>
     <script>
         function updateLangButtons(lang) {
-            document.querySelectorÃ¡ll('.lang-btn').forEach(btn => {
-                if (btn.getÃ¡ttribute('data-lang') === lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
@@ -307,10 +307,10 @@
                 updateLangButtons(savedLang);
             }
             
-            // Ã¡dd click listeners to all lang buttons
-            document.querySelectorÃ¡ll('.lang-btn').forEach(btn => {
+            // ádd click listeners to all lang buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    const lang = e.target.getÃ¡ttribute('data-lang');
+                    const lang = e.target.getAttribute('data-lang');
                     if(typeof setLanguage === 'function') {
                         setLanguage(lang);
                         updateLangButtons(lang);

@@ -158,14 +158,3 @@ PASO 7: Cliente escribe el cÃ³digo â†’ verifyBookingCode()
 1. **Desplegar Reglas:** `firebase deploy --only firestore:rules` (Ver `deploy_firebase.md`).
 2. **Subir Cambios:** Hacer commit y push a GitHub para que GitHub Pages se actualice.
 3. **Restringir API Key:** En Google Cloud Console, limitar la key a `morales-plumbing.com`.
-
-
-## ?? Mantenimiento de Bots (Telegram & Orion Cloud)
-
-### Solución de Inactividad (Render Cold Starts)
-El backend del sistema (Orion Cloud) está alojado en Render. Para evitar que el servidor se duerma tras 15 minutos de inactividad, se configuró exitosamente **UptimeRobot**. El sistema hace un ping automático cada 5 minutos a la URL https://orion-cloud-1.onrender.com. Esto reemplaza al sistema de GitHub Actions (keep_awake.yml) que demostró ser inestable por los retrasos de la plataforma.
-
-### Configuración de Telegram Webhook
-El bot de Telegram asociado al número 6692134422 fue reconectado a la URL de producción correcta. Inicialmente, el script set_webhook.py apuntaba a una URL inactiva. Se ejecutó un parche en vivo para forzar el Webhook a:
-https://orion-cloud-1.onrender.com/webhook/8851834588:AAGBVYYM0pK5EtNgdb-CIWmvKZIOvawi_Lk`n
-**Estado actual:** Operativo, despierto 24/7 y respondiendo mensajes al instante.

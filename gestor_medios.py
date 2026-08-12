@@ -1,87 +1,93 @@
 import os
 import glob
-from PIL import Image
 import json
 import shutil
+from PIL import Image
 
-MAX_FILES = 15
-DIRECTORIES = [
-    r"C:\Users\alexp\Documentos_Locales_Backup\Morales plumbing\V.01 web\vo3.0\assets\publicidad",
-    r"C:\Users\alexp\Documentos_Locales_Backup\Morales plumbing\V.01 web\vo3.0\assets\comics"
-]
-LANGUAGES = ['es', 'en', 'zh', 'vi', 'tl']
+# Configuración
+LIMIT_IMAGES = 15
+DIRS = {
+    'comics': {
+        'active': 'assets/comics',
+        'archive': 'assets/archivo/comics'
+    },
+    'publicidad': {
+        'active': 'assets/publicidad',
+        'archive': 'assets/archivo/publicidad'
+    }
+}
 
-def process_directory(base_dir):
-    all_data = []
+def get_language(filename):
+    name = filename.lower()
+    if '_en' in name or 'english' in name:
+        return 'en'
+    return 'es' # Default a español para todo lo demás
+
+def process_directory(category):
+    active_dir = DIRS[category]['active']
+    archive_dir = DIRS[category]['archive']
     
-    # Process each language folder
-    for lang in LANGUAGES:
-        lang_dir = os.path.join(base_dir, lang)
-        if not os.path.exists(lang_dir):
-            continue
-            
-        # Get all images in this language folder
-        files = glob.glob(os.path.join(lang_dir, '*'))
-        image_files = [f for f in files if f.lower().endswith(('.png', '.jpg', '.jpeg', '.webp'))]
-        
-        # Sort by creation time (oldest first, or newest first?)
-        # Let's sort by modification time, newest first
-        image_files.sort(key=os.path.getmtime, reverse=True)
-        
-        # Enforce max files per language folder
-        if len(image_files) > MAX_FILES:
-            archive_dir = os.path.join(base_dir, 'archivo', lang)
-            os.makedirs(archive_dir, exist_ok=True)
-            
-            # Move overflow files to archive
-            for old_file in image_files[MAX_FILES:]:
-                shutil.move(old_file, os.path.join(archive_dir, os.path.basename(old_file)))
-                print(f"Archived {os.path.basename(old_file)} from {lang} to prevent overflow.")
-            
-            # Keep only the max files in our list
-            image_files = image_files[:MAX_FILES]
-
-        # Convert to WebP and add to data
-        for img_path in image_files:
-            filename = os.path.basename(img_path)
-            
-            # If not webp, convert it
-            if not filename.lower().endswith('.webp'):
-                new_path = os.path.splitext(img_path)[0] + '.webp'
-                try:
-                    with Image.open(img_path) as im:
-                        im.save(new_path, 'webp')
-                    os.remove(img_path) # Remove original
-                    img_path = new_path
-                    filename = os.path.basename(new_path)
-                    print(f"Converted {filename} to WebP.")
-                except Exception as e:
-                    print(f"Failed to convert {filename}: {e}")
-            
-            # The path needs to be relative to the HTML file in docs/
-            # If html is in docs/, and image is in assets/comics/es/img.webp
-            # the web path is ../assets/comics/es/img.webp
-            dir_name = os.path.basename(base_dir) # 'comics' or 'publicidad'
-            web_path = f"../assets/{dir_name}/{lang}/{filename}"
-            
-            all_data.append({
-                "filename": filename,
-                "path": web_path,
-                "lang": lang
-            })
-            
-    # Output to data.js for local CORS-free loading
-    var_name = "comicsData" if "comics" in base_dir else "publicidadData"
-    js_content = f"const {var_name} = {json.dumps(all_data, indent=4)};\n"
+    print(f"Procesando {active_dir}...")
     
-    js_file = os.path.join(base_dir, "data.js")
-    with open(js_file, 'w', encoding='utf-8') as f:
-        f.write(js_content)
-    print(f"Generated {js_file} with {len(all_data)} items.")
+    # 1. Convertir imagenes nuevas a WebP
+    raw_files = []
+    for ext in ['*.png', '*.jpg', '*.jpeg']:
+        raw_files.extend(glob.glob(os.path.join(active_dir, ext)))
+        
+    for raw_file in raw_files:
+        filename = os.path.basename(raw_file)
+        webp_filename = os.path.splitext(filename)[0] + '.webp'
+        webp_path = os.path.join(active_dir, webp_filename)
+        
+        try:
+            print(f"Convirtiendo {filename} a WebP...")
+            img = Image.open(raw_file)
+            img.save(webp_path, 'webp', quality=80)
+            os.remove(raw_file) # Eliminar el original pesado
+        except Exception as e:
+            print(f"Error procesando {raw_file}: {e}")
+            
+    # 2. Obtener la lista actual de WebP
+    webp_files = glob.glob(os.path.join(active_dir, '*.webp'))
+    
+    # Ordenar por fecha de creacion/modificacion (mas viejo primero)
+    webp_files.sort(key=lambda x: os.path.getmtime(x))
+    
+    # 3. Archivar exceso
+    if len(webp_files) > LIMIT_IMAGES:
+        excess = len(webp_files) - LIMIT_IMAGES
+        print(f"Límite excedido por {excess} archivos. Archivando los más antiguos...")
+        for i in range(excess):
+            file_to_archive = webp_files[i]
+            filename = os.path.basename(file_to_archive)
+            dest = os.path.join(archive_dir, filename)
+            print(f"Archivando {filename}")
+            shutil.move(file_to_archive, dest)
+            
+    # 4. Generar data.json con los que quedaron
+    # Volvemos a listar y esta vez ordenamos más nuevo primero
+    current_files = glob.glob(os.path.join(active_dir, '*.webp'))
+    current_files.sort(key=lambda x: os.path.getmtime(x), reverse=True)
+    
+    data = []
+    for f in current_files:
+        filename = os.path.basename(f)
+        lang = get_language(filename)
+        data.append({
+            'filename': filename,
+            'path': f"../{active_dir}/{filename}",
+            'lang': lang
+        })
+        
+    # Guardar json en la carpeta
+    json_path = os.path.join(active_dir, 'data.json')
+    with open(json_path, 'w', encoding='utf-8') as jf:
+        json.dump(data, jf, indent=4, ensure_ascii=False)
+        
+    print(f"¡{category.capitalize()} procesado exitosamente! {len(data)} items activos.")
+    print("-" * 40)
 
-if __name__ == "__main__":
-    for d in DIRECTORIES:
-        if os.path.exists(d):
-            process_directory(d)
-        else:
-            print(f"Directory not found: {d}")
+if __name__ == '__main__':
+    for cat in DIRS.keys():
+        process_directory(cat)
+    print("Gestión de medios finalizada. Ya puedes actualizar la página web.")

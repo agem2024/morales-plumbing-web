@@ -1,7 +1,16 @@
-﻿with open("index.html", "r", encoding="utf-8") as f:
-    content = f.read()
+﻿import os
+import glob
 import re
-match = re.search(r'<div class="podcast-list">.*?</div>\s*</div>\s*<!-- Morales Plumbing \(EP\) Series -->', content, re.DOTALL)
-if match:
-    # Just print the first 1000 characters to see the structure
-    print(match.group(0)[:1500])
+
+html_files = glob.glob('*.html') + glob.glob('docs/*.html')
+
+for filepath in html_files:
+    with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+        content = f.read()
+    
+    heads = len(re.findall(r'<head\b', content, re.IGNORECASE))
+    headers = len(re.findall(r'<header\b', content, re.IGNORECASE))
+    scripts = len(re.findall(r'<script.*app\.js', content, re.IGNORECASE))
+    
+    if heads > 1 or headers > 1 or scripts == 0:
+        print(f"{filepath}: heads={heads}, headers={headers}, app.js_scripts={scripts}")

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,20 +29,41 @@
 <body>
 
     <!-- MORALES PLUMBING OFFICIAL HEADER -->
-    <header style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 4px solid #D4AF37; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: relative; z-index: 1000;">
-        <div style="display: flex; align-items: center;">
-            <a href="../index.html">
-                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 60px; width: auto;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
-            </a>
+<header class="mp-global-header" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 2px solid #D4AF37; padding: 8px 15px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 999999; height: 60px; box-sizing: border-box; width: 100vw; max-width: 100%;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="../index.html" style="display: flex; align-items: center;">
+            <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 38px; width: auto; max-width: 140px; object-fit: contain;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
+        </a>
+    </div>
+    <div style="position: relative; display: flex; align-items: center; gap: 10px;">
+        <div style="text-align: right; color: #fff; display: none;" class="header-contact-info">
+            <h2 style="margin: 0; font-size: 0.9rem; color: #D4AF37; font-weight: bold; line-height: 1;">MORALES PLUMBING</h2>
+            <p style="margin: 2px 0 0; font-size: 0.7rem; color: #aaa; line-height: 1;">Lic. C-36 #1156542</p>
         </div>
-        <div style="text-align: right; color: #fff;">
-            <h2 style="margin: 0; font-size: 1.2rem; color: #D4AF37; font-weight: bold;">MORALES PLUMBING</h2>
-            <p style="margin: 3px 0 0; font-size: 0.9rem;">AI-INTEGRATED SERVICES</p>
-            <p style="margin: 3px 0 0; font-size: 0.8rem; color: #aaa;">Lic. C-36 #1156542 | San Jose, CA</p>
+        <button onclick="document.getElementById('globalLangMenu').classList.toggle('show-lang')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(0,245,255,0.3); cursor: pointer; padding: 4px 8px; outline: none; border-radius: 6px; display: flex; align-items: center; gap: 5px; transition: 0.2s;">
+            <img src="../assets/plan_good_clean.png" alt="Language" style="height: 22px; width: auto; border-radius: 4px; box-shadow: 0 0 5px rgba(0,245,255,0.4);">
+            <span style="color: #00f5ff; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.5px;">LANG</span>
+        </button>
+        <div id="globalLangMenu" style="display: none; position: absolute; right: 0; top: 45px; background: rgba(3, 7, 18, 0.98); border: 1px solid #D4AF37; border-radius: 8px; flex-direction: column; min-width: 140px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.9); z-index: 1000000;">
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Español</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - ??</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Ti?ng Vi?t</button>
         </div>
-    </header>
+    </div>
+</header>
+<style>
+    body { padding-top: 60px !important; }
+    .show-lang { display: flex !important; }
+    #globalLangMenu button:hover { background: rgba(0, 245, 255, 0.15) !important; color: #00f5ff !important; }
+    @media (min-width: 480px) {
+        .header-contact-info { display: block !important; }
+    }
+</style>
 
-    <!-- UNIVERSE BÃ¡CKGROUND -->
+
+    <!-- UNIVERSE BáCKGROUND -->
     <canvas id="universe-canvas" data-universe-mode="nebula"></canvas>
     <div class="universe-overlay u-variant-service"></div>
     <script src="../universe.js"></script>
@@ -52,16 +73,7 @@
     <div class="layer layer-2"></div>
     <div class="layer layer-3"></div>
 
-    <header>
-        <div class="logo">ORION <span style="font-weight: 300;">TECH</span></div>
-        <div class="lang-switch">
-            <button onclick="setLanguage('en')">EN</button>
-            <button onclick="setLanguage('es')">ES</button>
-            <button onclick="setLanguage('zh')">ä¸­æ–‡</button>
-            <button onclick="setLanguage('tl')">TL</button>
-            <button onclick="setLanguage('vi')">VI</button>
-        </div>
-    </header>
+    
 
     <div class="service-detail-container animate-in">
         <div class="service-header">
@@ -85,31 +97,31 @@
                     <li class="tier-best" id="dyn-best" data-i18n="svc_1_best"></li>
                 </ul>
 
-                <a href="pricebook.html" class="back-btn" data-i18n="nav_back">â† Back to Catalog</a>
+                <a href="pricebook.html" class="back-btn" data-i18n="nav_back">â Back to Catalog</a>
             </div>
         </div>
     </div>
     
-    <script src="../app.js"></script>
+    <script src="../app_v9.js"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         let sid = urlParams.get('id') || 1;
         
         const codes = {
-            1: "OR-DIÃ¡G-001", 2: "OR-REP-002", 3: "OR-FIL-003", 4: "OR-IOT-004", 5: "OR-CÃ¡M-005",
-            6: "OR-SWR-006", 7: "OR-HTR-007", 8: "OR-PRV-008", 9: "OR-EMG-009", 10: "OR-CÃ¡D-010",
+            1: "OR-DIáG-001", 2: "OR-REP-002", 3: "OR-FIL-003", 4: "OR-IOT-004", 5: "OR-CAM-005",
+            6: "OR-SWR-006", 7: "OR-HTR-007", 8: "OR-PRV-008", 9: "OR-EMG-009", 10: "OR-CAD-010",
             11: "OR-TNK-011", 12: "OR-BFL-012", 13: "OR-FIX-013", 14: "OR-CHM-014", 15: "OR-JET-015"
         };
         
         document.getElementById('dyn-code').innerText = codes[sid] || "OR-XXX";
         document.getElementById('dyn-img').src = "../assets/images/service_" + sid + ".png";
         
-        document.getElementById('dyn-title').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_title');
-        document.getElementById('dyn-p1').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_p1');
-        document.getElementById('dyn-p2').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_p2');
-        document.getElementById('dyn-good').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_good');
-        document.getElementById('dyn-better').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_better');
-        document.getElementById('dyn-best').setÃ¡ttribute('data-i18n', 'svc_' + sid + '_best');
+        document.getElementById('dyn-title').setáttribute('data-i18n', 'svc_' + sid + '_title');
+        document.getElementById('dyn-p1').setáttribute('data-i18n', 'svc_' + sid + '_p1');
+        document.getElementById('dyn-p2').setáttribute('data-i18n', 'svc_' + sid + '_p2');
+        document.getElementById('dyn-good').setáttribute('data-i18n', 'svc_' + sid + '_good');
+        document.getElementById('dyn-better').setáttribute('data-i18n', 'svc_' + sid + '_better');
+        document.getElementById('dyn-best').setáttribute('data-i18n', 'svc_' + sid + '_best');
         
         if (typeof setLanguage === 'function') {
             setLanguage(localStorage.getItem('morales_lang') || 'en');

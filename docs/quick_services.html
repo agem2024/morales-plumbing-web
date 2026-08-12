@@ -37,7 +37,7 @@
                             <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;" data-i18n="qs_plumb_t3">Inspeccion de Plomeria</h3>
                             <p style="color: #718096; font-size: 0.88rem; margin: 0;" data-i18n="qs_plumb_d3">Evaluacion completa para compra/venta de vivienda. Reporte detallado con termografia incluida.</p>
                         </div>
-                        <a href="#contact" onclick="navigate('contact'); return false;" style="background: transparent; color: #D4áF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4áF37; transition: all 0.3s;" onmouseover="this.style.background='rgba(212,175,55,0.1)'" onmouseout="this.style.background='transparent'" data-i18n="qs_btn_insp">Solicitar Inspeccion</a>
+                        <a href="#contact" onclick=\"if(typeof openClientPortal === 'function'){openClientPortal(); switchPortalTab('schedule');} else {window.location.href='../index.html?portal=schedule';} return false;\" style="background: transparent; color: #D4áF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4áF37; transition: all 0.3s;" onmouseover="this.style.background='rgba(212,175,55,0.1)'" onmouseout="this.style.background='transparent'" data-i18n="qs_btn_insp">Solicitar Inspeccion</a>
                     </div>
                 </div>
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -128,20 +128,41 @@
 <body>
 
     <!-- MORALES PLUMBING OFFICIAL HEADER -->
-    <header style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 4px solid #D4AF37; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: relative; z-index: 1000;">
-        <div style="display: flex; align-items: center;">
-            <a href="../index.html">
-                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 60px; width: auto;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
-            </a>
+<header class="mp-global-header" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 2px solid #D4AF37; padding: 8px 15px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 999999; height: 60px; box-sizing: border-box; width: 100vw; max-width: 100%;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="../index.html" style="display: flex; align-items: center;">
+            <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 38px; width: auto; max-width: 140px; object-fit: contain;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
+        </a>
+    </div>
+    <div style="position: relative; display: flex; align-items: center; gap: 10px;">
+        <div style="text-align: right; color: #fff; display: none;" class="header-contact-info">
+            <h2 style="margin: 0; font-size: 0.9rem; color: #D4AF37; font-weight: bold; line-height: 1;">MORALES PLUMBING</h2>
+            <p style="margin: 2px 0 0; font-size: 0.7rem; color: #aaa; line-height: 1;">Lic. C-36 #1156542</p>
         </div>
-        <div style="text-align: right; color: #fff;">
-            <h2 style="margin: 0; font-size: 1.2rem; color: #D4AF37; font-weight: bold;">MORALES PLUMBING</h2>
-            <p style="margin: 3px 0 0; font-size: 0.9rem;">AI-INTEGRATED SERVICES</p>
-            <p style="margin: 3px 0 0; font-size: 0.8rem; color: #aaa;">Lic. C-36 #1156542 | San Jose, CA</p>
+        <button onclick="document.getElementById('globalLangMenu').classList.toggle('show-lang')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(0,245,255,0.3); cursor: pointer; padding: 4px 8px; outline: none; border-radius: 6px; display: flex; align-items: center; gap: 5px; transition: 0.2s;">
+            <img src="../assets/plan_good_clean.png" alt="Language" style="height: 22px; width: auto; border-radius: 4px; box-shadow: 0 0 5px rgba(0,245,255,0.4);">
+            <span style="color: #00f5ff; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.5px;">LANG</span>
+        </button>
+        <div id="globalLangMenu" style="display: none; position: absolute; right: 0; top: 45px; background: rgba(3, 7, 18, 0.98); border: 1px solid #D4AF37; border-radius: 8px; flex-direction: column; min-width: 140px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.9); z-index: 1000000;">
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Español</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - ??</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Ti?ng Vi?t</button>
         </div>
-    </header>
+    </div>
+</header>
+<style>
+    body { padding-top: 60px !important; }
+    .show-lang { display: flex !important; }
+    #globalLangMenu button:hover { background: rgba(0, 245, 255, 0.15) !important; color: #00f5ff !important; }
+    @media (min-width: 480px) {
+        .header-contact-info { display: block !important; }
+    }
+</style>
 
-    <!-- UNIVERSE BÃ¡CKGROUND -->
+
+    <!-- UNIVERSE BáCKGROUND -->
     <canvas id="universe-canvas" data-universe-mode="matrix-stars"></canvas>
     <div class="universe-overlay u-variant-info"></div>
     <script src="../universe.js"></script>
@@ -150,18 +171,12 @@
     <nav class="subpage-nav">
         <div class="nav-group">
             <a href="../index.html" class="back-link">
-                <span>&#8592;</span> <span data-i18n="back_home">VOLVER Ã¡L INICIO</span>
+                <span>&#8592;</span> <span data-i18n="back_home">VOLVER áL INICIO</span>
             </a>
-            <a href="#" class="nav-link" data-i18n="nav_framework">ESTRÃ¡TEGIÃ¡</a>
+            <a href="#" class="nav-link" data-i18n="nav_framework">ESTRáTEGIá</a>
             <a href="pricebook.html" class="nav-link" data-i18n="nav_pricebook">PRICE BOOK</a>
         </div>
-        <div class="language-switcher">
-            <button class="lang-btn" data-lang="en">ðŸ‡ºðŸ‡¸</button>
-            <button class="lang-btn" data-lang="es">ðŸ‡²ðŸ‡½</button>
-            <button class="lang-btn" data-lang="zh">ðŸ‡¨ðŸ‡³</button>
-            <button class="lang-btn" data-lang="tl">ðŸ‡µðŸ‡­</button>
-            <button class="lang-btn" data-lang="vi">ðŸ‡»ðŸ‡³</button>
-        </div>
+        
     </nav>
 
     <div class="legal-container">
@@ -171,35 +186,35 @@
         </div>
 
         <h2 data-i18n="sec1_title">Intellectual Property & Proprietary Technology</h2>
-        <p data-i18n="sec1_legal_p1">Todo el contenido presente en esta plataforma, incluyendo pero no limitÃ¡ndose a videos corporativos, imÃ¡genes 3D generadas, cÃ³digo fuente, y la estructuraciÃ³n base de datos del ORION Price Book v6.0 PRO, estÃ¡ estrictamente protegido por las leyes de propiedad intelectual y derechos de autor vigentes en los Estados Unidos y el Estado de California.</p>
+        <p data-i18n="sec1_legal_p1">Todo el contenido presente en esta plataforma, incluyendo pero no limitándose a videos corporativos, imágenes 3D generadas, código fuente, y la estructuración base de datos del ORION Price Book v6.0 PRO, está estrictamente protegido por las leyes de propiedad intelectual y derechos de autor vigentes en los Estados Unidos y el Estado de California.</p>
         <ul>
-            <li data-i18n="sec1_legal_li1">Morales Plumbing retiene los derechos exclusivos sobre su marca registrada, metodologÃ­as de PlomerÃ­a TÃ©cnica, cartera de clientes y portafolio de servicios tÃ©cnicos.</li>
-            <li data-i18n="sec1_legal_li2">NeKon Ã¡I aGent Consulting retiene la co-autorÃ­a y derechos sobre la infraestructura de Inteligencia Ã¡rtificial ('Joe Ã¡I'), los modelos de red neuronal para el sitio web, los sistemas de diagnÃ³stico por visiÃ³n computacional, y la tecnologÃ­a subyacente de automatizaciÃ³n del sistema ORION.</li>
+            <li data-i18n="sec1_legal_li1">Morales Plumbing retiene los derechos exclusivos sobre su marca registrada, metodologías de Plomería Técnica, cartera de clientes y portafolio de servicios técnicos.</li>
+            <li data-i18n="sec1_legal_li2">NeKon áI aGent Consulting retiene la co-autoría y derechos sobre la infraestructura de Inteligencia ártificial ('Joe áI'), los modelos de red neuronal para el sitio web, los sistemas de diagnóstico por visión computacional, y la tecnología subyacente de automatización del sistema ORION.</li>
         </ul>
-        <p data-i18n="sec1_legal_p2">Queda estrictamente prohibida la reproducciÃ³n, copia, 'scraping', distribuciÃ³n o uso comercial no autorizado de cualquier material multimedia alojado en este ecosistema digital.</p>
+        <p data-i18n="sec1_legal_p2">Queda estrictamente prohibida la reproducción, copia, 'scraping', distribución o uso comercial no autorizado de cualquier material multimedia alojado en este ecosistema digital.</p>
 
         <h2 data-i18n="sec2_legal_title">2. Ciberseguridad y Privacidad de Datos</h2>
         <p data-i18n="sec2_legal_p1">Garantizar la seguridad de nuestros clientes comerciales (B2B) y residenciales (B2C) es una prioridad absoluta. Todos nuestros sistemas operan bajo estrictos protocolos de seguridad de grado industrial:</p>
         <ul>
-            <li data-i18n="sec2_legal_li1">DetecciÃ³n TÃ©rmica e Infrarroja: La recolecciÃ³n de datos estructurales mediante cÃ¡maras tÃ©rmicas de alta resoluciÃ³n y sensores de precisiÃ³n se realiza exclusivamente con fines de diagnÃ³stico fÃ­sico no invasivo.</li>
-            <li data-i18n="sec2_legal_li2">Contratos Inteligentes y Pagos: Toda la facturaciÃ³n y contratos generados estÃ¡n protegidos con encriptaciÃ³n de extremo a extremo (E2EE).</li>
-            <li data-i18n="sec2_legal_li3">Interacciones con Joe Ã¡I: Las consultas a Joe son analizadas anÃ³nimamente para mejorar el motor predictivo, respetando la privacidad del usuario.</li>
+            <li data-i18n="sec2_legal_li1">Detección Térmica e Infrarroja: La recolección de datos estructurales mediante cámaras térmicas de alta resolución y sensores de precisión se realiza exclusivamente con fines de diagnóstico físico no invasivo.</li>
+            <li data-i18n="sec2_legal_li2">Contratos Inteligentes y Pagos: Toda la facturación y contratos generados están protegidos con encriptación de extremo a extremo (E2EE).</li>
+            <li data-i18n="sec2_legal_li3">Interacciones con Joe áI: Las consultas a Joe son analizadas anónimamente para mejorar el motor predictivo, respetando la privacidad del usuario.</li>
         </ul>
 
-        <h2 data-i18n="sec3_legal_title">3. TÃ©rminos de Referencia (SLÃ¡)</h2>
-        <p data-i18n="sec3_legal_p1">La prestaciÃ³n de servicios fÃ­sicos y ejecuciÃ³n de PlomerÃ­a TÃ©cnica estÃ¡n regidas por el Marco EstratÃ©gico ORION y el Libro de Precios. Ã¡l interactuar con la plataforma:</p>
+        <h2 data-i18n="sec3_legal_title">3. Términos de Referencia (SLá)</h2>
+        <p data-i18n="sec3_legal_p1">La prestación de servicios físicos y ejecución de Plomería Técnica están regidas por el Marco Estratégico ORION y el Libro de Precios. ál interactuar con la plataforma:</p>
         <ul>
-            <li data-i18n="sec3_legal_li1">Los clientes aceptan los niveles de servicio Good/Better/Best y los tÃ©rminos alinhados con los estÃ¡ndares de la Ciudad de San JosÃ©.</li>
-            <li data-i18n="sec3_legal_li2">Las garantÃ­as de mano de obra y piezas se adhieren rigurosamente a la Licencia CSLB Clase C-36 y los cÃ³digos UPC/CPC.</li>
-            <li data-i18n="sec3_legal_li3">CondiciÃ³n de DiagnÃ³stico Digital: Los informes generados por IÃ¡ son preliminares. Se requiere validaciÃ³n en sitio por un tÃ©cnico calificado para la autorizaciÃ³n final.</li>
+            <li data-i18n="sec3_legal_li1">Los clientes aceptan los niveles de servicio Good/Better/Best y los términos alinhados con los estándares de la Ciudad de San José.</li>
+            <li data-i18n="sec3_legal_li2">Las garantías de mano de obra y piezas se adhieren rigurosamente a la Licencia CSLB Clase C-36 y los códigos UPC/CPC.</li>
+            <li data-i18n="sec3_legal_li3">Condición de Diagnóstico Digital: Los informes generados por Iá son preliminares. Se requiere validación en sitio por un técnico calificado para la autorización final.</li>
         </ul>
     </div>
 
     <!-- Global Footer -->
     <footer class="site-footer">
         <div class="footer-security">
-            <span><span class="security-dot">â—</span> <span data-i18n="footer_e2ee">Secure &amp; Privacy-First</span></span>
-            <span><span class="security-dot">â—</span> <span data-i18n="footer_cyber">Ã¡I-Powered Platform</span></span>
+            <span><span class="security-dot">â</span> <span data-i18n="footer_e2ee">Secure &amp; Privacy-First</span></span>
+            <span><span class="security-dot">â</span> <span data-i18n="footer_cyber">áI-Powered Platform</span></span>
         </div>
 
         <div class="footer-contact-grid">
@@ -222,17 +237,17 @@
         </div>
 
         <nav class="footer-nav">
-            <a href="../index.html" data-i18n="back_home">VOLVER Ã¡L INICIO</a>
-            <a href="#" data-i18n="nav_framework">ESTRÃ¡TEGIÃ¡</a>
+            <a href="../index.html" data-i18n="back_home">VOLVER áL INICIO</a>
+            <a href="#" data-i18n="nav_framework">ESTRáTEGIá</a>
             <a href="pricebook.html" data-i18n="nav_pricebook">PRICE BOOK</a>
         </nav>
 
         <div class="footer-copyright-branded">
-            <span class="year">â’¸ 2026</span> <span data-i18n="footer_rights_branded">MORÃ¡LES PLUMBING Â· Ã¡lex G. Espinosa Â· Ã¡ll Rights Reserved</span>
+            <span class="year">â¸ 2026</span> <span data-i18n="footer_rights_branded">MORALES PLUMBING Â· álex G. Espinosa Â· áll Rights Reserved</span>
         </div>
     </footer>
 
-    <script src="../app.js"></script>
+    <script src="../app_v9.js"></script>
 </body>
 </html>
 

@@ -14,3 +14,4 @@ When performing small tasks or reviews:
 - **ALWAYS** use surgical, line-by-line edits (e.g. `replace_file_content` or `multi_replace_file_content` with exact chunks). 
 - **NEVER** replace massive blocks of HTML or CSS without verifying that you are not destroying existing functionality. 
 - If you touch `index.html` or `app.js`, verify that navigation (`navigate()`), multi-language (`setLanguage()`), and existing modals are not broken.
+- **NAVIGATION LINKS**: To intercept internal hash links in JS, ALWAYS use a global selector like `document.querySelectorAll('a[href^="#"]')` rather than scoped selectors like `.nav-links a`. This ensures that footer links, floating buttons, and inline text links that point to internal sections (e.g., `#about`, `#diy`) are properly intercepted and trigger `navigate(href.substring(1))` instead of breaking the SPA logic.

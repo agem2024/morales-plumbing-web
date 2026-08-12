@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -85,21 +85,42 @@
 <body class="dark-theme">
 
     <!-- MORALES PLUMBING OFFICIAL HEADER -->
-    <header style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 4px solid #D4AF37; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: relative; z-index: 1000;">
-        <div style="display: flex; align-items: center;">
-            <a href="../index.html">
-                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 60px; width: auto;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
-            </a>
+<header class="mp-global-header" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 2px solid #D4AF37; padding: 8px 15px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 999999; height: 60px; box-sizing: border-box; width: 100vw; max-width: 100%;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="../index.html" style="display: flex; align-items: center;">
+            <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 38px; width: auto; max-width: 140px; object-fit: contain;" onerror="this.src='../morales_logo.jpg'; this.onerror=null;">
+        </a>
+    </div>
+    <div style="position: relative; display: flex; align-items: center; gap: 10px;">
+        <div style="text-align: right; color: #fff; display: none;" class="header-contact-info">
+            <h2 style="margin: 0; font-size: 0.9rem; color: #D4AF37; font-weight: bold; line-height: 1;">MORALES PLUMBING</h2>
+            <p style="margin: 2px 0 0; font-size: 0.7rem; color: #aaa; line-height: 1;">Lic. C-36 #1156542</p>
         </div>
-        <div style="text-align: right; color: #fff;">
-            <h2 style="margin: 0; font-size: 1.2rem; color: #D4AF37; font-weight: bold;">MORALES PLUMBING</h2>
-            <p style="margin: 3px 0 0; font-size: 0.9rem;">AI-INTEGRATED SERVICES</p>
-            <p style="margin: 3px 0 0; font-size: 0.8rem; color: #aaa;">Lic. C-36 #1156542 | San Jose, CA</p>
+        <button onclick="document.getElementById('globalLangMenu').classList.toggle('show-lang')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(0,245,255,0.3); cursor: pointer; padding: 4px 8px; outline: none; border-radius: 6px; display: flex; align-items: center; gap: 5px; transition: 0.2s;">
+            <img src="../assets/plan_good_clean.png" alt="Language" style="height: 22px; width: auto; border-radius: 4px; box-shadow: 0 0 5px rgba(0,245,255,0.4);">
+            <span style="color: #00f5ff; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.5px;">LANG</span>
+        </button>
+        <div id="globalLangMenu" style="display: none; position: absolute; right: 0; top: 45px; background: rgba(3, 7, 18, 0.98); border: 1px solid #D4AF37; border-radius: 8px; flex-direction: column; min-width: 140px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.9); z-index: 1000000;">
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Español</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - ??</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Ti?ng Vi?t</button>
         </div>
-    </header>
+    </div>
+</header>
+<style>
+    body { padding-top: 60px !important; }
+    .show-lang { display: flex !important; }
+    #globalLangMenu button:hover { background: rgba(0, 245, 255, 0.15) !important; color: #00f5ff !important; }
+    @media (min-width: 480px) {
+        .header-contact-info { display: block !important; }
+    }
+</style>
+
 
     
-    <!-- 3D Ã¡nimated Background -->
+    <!-- 3D ánimated Background -->
     <div class="cyber-bg-container">
         <div class="cyber-grid"></div>
         <div class="cyber-particles"></div>
@@ -155,7 +176,7 @@
             100% { transform: translateY(-2000px); }
         }
         
-        /* â”€â”€ CYBER NÃ¡V HEÃ¡DER â”€â”€ */
+        /* ââ CYBER NáV HEáDER ââ */
         .cyber-nav {
             position: fixed;
             top: 0;
@@ -207,27 +228,14 @@
         }
     </style>
     <!-- Top Navigation -->
-    <nav class="cyber-nav">
-        <div class="nav-brand">
-            <a href="../index.html" style="text-decoration: none; color: inherit;">
-                <span class="neon-name">Morales</span><span class="plumbing-text">Plumbing</span>
-            </a>
-        </div>
-        <div class="lang-selector" style="display: flex; gap: 0.5rem;">
-            <button class="lang-btn" onclick="setLanguage('en')" data-lang="en">EN</button>
-            <button class="lang-btn" onclick="setLanguage('es')" data-lang="es">ES</button>
-            <button class="lang-btn" onclick="setLanguage('zh')" data-lang="zh">ZH</button>
-            <button class="lang-btn" onclick="setLanguage('tl')" data-lang="tl">TL</button>
-            <button class="lang-btn" onclick="setLanguage('vi')" data-lang="vi">VI</button>
-        </div>
-    </nav>
+    
 
     <main class="promo-container" style="padding-top: 100px;">
         <!-- Hero Section -->
         <section class="promo-hero">
             <div class="promo-hero-text">
                 <h1 class="glitch-text" data-i18n="promo_wp_title">2027 Zero-NOx Mandate: Heat Pump Water Heaters</h1>
-                <p style="font-size: 1.2rem; margin-top: 1.5rem; color: #e2e8f0; line-height: 1.8;" data-i18n="promo_wp_desc">Ensure compliance with BÃ¡Ã¡QMD Regulation 9, Rule 6. Transition to ultra-efficient electric Heat Pump Water Heaters before the 2027 deadline.</p>
+                <p style="font-size: 1.2rem; margin-top: 1.5rem; color: #e2e8f0; line-height: 1.8;" data-i18n="promo_wp_desc">Ensure compliance with BAAQMD Regulation 9, Rule 6. Transition to ultra-efficient electric Heat Pump Water Heaters before the 2027 deadline.</p>
                 <a href="#planes" class="btn btn-primary" style="margin-top: 2rem; display: inline-block;" data-i18n="btn_upgrade">Ver Planes</a>
             </div>
             <div class="promo-hero-image">
@@ -243,7 +251,7 @@
 
         <!-- Types of Water Heaters Link -->
         <div style="text-align: center; margin-bottom: 4rem; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <a href="ley_water_heaters.html" class="btn btn-outline" style="border-color: #ffcc00; color: #ffcc00; display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; box-shadow: 0 0 15px rgba(255, 204, 0, 0.6), inset 0 0 10px rgba(255, 204, 0, 0.3); text-shadow: 0 0 5px rgba(255, 204, 0, 0.8); background: rgba(255, 204, 0, 0.05); transition: all 0.3s ease;" data-i18n="btn_ley_baaqmd">Ley BÃ¡Ã¡QMD 2027 y CÃ³digos</a>
+            <a href="ley_water_heaters.html" class="btn btn-outline" style="border-color: #ffcc00; color: #ffcc00; display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; box-shadow: 0 0 15px rgba(255, 204, 0, 0.6), inset 0 0 10px rgba(255, 204, 0, 0.3); text-shadow: 0 0 5px rgba(255, 204, 0, 0.8); background: rgba(255, 204, 0, 0.05); transition: all 0.3s ease;" data-i18n="btn_ley_baaqmd">Ley BAAQMD 2027 y Códigos</a>
             <a href="service_water_heater.html" class="cta-button" style="display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), inset 0 0 10px rgba(0, 255, 255, 0.3); text-shadow: 0 0 5px rgba(0, 255, 255, 0.8); transition: all 0.3s ease; color: #00ffff; background: rgba(0, 255, 255, 0.1); border: 2px solid #00ffff; border-radius: 8px; text-decoration: none;" data-i18n="swh_link_btn">Tipos de Calentadores e Instalaciones</a>
         </div>
 
@@ -296,9 +304,9 @@
                 
                 
                 <div class="price-range" style="margin-top: 1.5rem; text-align: center; border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 1.5rem;">
-                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">InversiÃ³n Estimada Desde:</span>
+                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Inversión Estimada Desde:</span>
                     <div class="price-amount" style="font-size: 2.5rem; font-weight: 900; font-family: 'Orbitron', sans-serif;">$3,500 - $5,500</div>
-                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varÃ­a segÃºn la evaluaciÃ³n en sitio, requerimientos del cÃ³digo y mejoras elÃ©ctricas o de gas.</span>
+                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varía según la evaluación en sitio, requerimientos del código y mejoras eléctricas o de gas.</span>
                 </div>
             
 
@@ -318,9 +326,9 @@
                 
                 
                 <div class="price-range" style="margin-top: 1.5rem; text-align: center; border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 1.5rem;">
-                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">InversiÃ³n Estimada Desde:</span>
+                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Inversión Estimada Desde:</span>
                     <div class="price-amount" style="font-size: 2.5rem; font-weight: 900; font-family: 'Orbitron', sans-serif;">$6,000 - $8,500</div>
-                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varÃ­a segÃºn la evaluaciÃ³n en sitio, requerimientos del cÃ³digo y mejoras elÃ©ctricas o de gas.</span>
+                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varía según la evaluación en sitio, requerimientos del código y mejoras eléctricas o de gas.</span>
                 </div>
             
 
@@ -341,46 +349,46 @@
                 
                 
                 <div class="price-range" style="margin-top: 1.5rem; text-align: center; border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 1.5rem;">
-                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">InversiÃ³n Estimada Desde:</span>
+                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Inversión Estimada Desde:</span>
                     <div class="price-amount" style="font-size: 2.5rem; font-weight: 900; font-family: 'Orbitron', sans-serif;">$9,000 - $12,500</div>
-                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varÃ­a segÃºn la evaluaciÃ³n en sitio, requerimientos del cÃ³digo y mejoras elÃ©ctricas o de gas.</span>
+                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varía según la evaluación en sitio, requerimientos del código y mejoras eléctricas o de gas.</span>
                 </div>
             
 
                 <ul class="features-list">
                     <li data-i18n="promo_wp_best_li1" style="font-weight: bold; color: #ff5500;">Everything in BETTER, plus:</li>
                     <li data-i18n="promo_wp_best_li2">Whole-home Pressure Regulating Valve (PRV).</li>
-                    <li data-i18n="promo_wp_best_li3">Electrical Panel Capacity Ã¡ssessment.</li>
+                    <li data-i18n="promo_wp_best_li3">Electrical Panel Capacity ássessment.</li>
                     <li data-i18n="promo_wp_best_li4">Smart home routing.</li>
                     <li data-i18n="promo_wp_best_li5">Lifetime Labor Warranty.</li>
                 </ul>
             </div>
         </section>
 
-        <div style="text-align: center; margin: 3rem 0;"><a href="req_hp.html" class="nav-btn" style="border-color: #10b981; color: #10b981;" data-i18n="btn_req_hp">Ver Requerimientos TÃ©cnicos y Diagrama (Heat Pump)</a></div>
+        <div style="text-align: center; margin: 3rem 0;"><a href="req_hp.html" class="nav-btn" style="border-color: #10b981; color: #10b981;" data-i18n="btn_req_hp">Ver Requerimientos Técnicos y Diagrama (Heat Pump)</a></div>
 
         <!-- Legal & Terms Section -->
         <section class="promo-legal" style="background: rgba(255, 204, 0, 0.1); border-left: 5px solid #ffcc00; border-radius: 8px; padding: 2rem; margin-bottom: 4rem;">
             <h3 style="color: #ffcc00; font-family: 'Orbitron', sans-serif; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                <span data-i18n="promo_wp_legal_title">TÃ©rminos Legales, Mandatos y Reembolsos</span>
+                <span data-i18n="promo_wp_legal_title">Términos Legales, Mandatos y Reembolsos</span>
             </h3>
             <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; color: #cbd5e1; font-size: 1rem; line-height: 1.6;">
                 <div>
-                    <strong style="color: #fff;" data-i18n="promo_wp_legal_mandate_title">1. Mandato BÃ¡Ã¡QMD (Reg 9, Regla 6):</strong>
-                    <p data-i18n="promo_wp_legal_mandate_desc" style="margin-top: 0.5rem;">Ã¡ partir del 1 de enero de 2027, la instalaciÃ³n de calentadores a gas estarÃ¡ estrictamente prohibida en el Ãrea de la BahÃ­a. Esta promociÃ³n prepara su hogar para el futuro.</p>
+                    <strong style="color: #fff;" data-i18n="promo_wp_legal_mandate_title">1. Mandato BAAQMD (Reg 9, Regla 6):</strong>
+                    <p data-i18n="promo_wp_legal_mandate_desc" style="margin-top: 0.5rem;">a partir del 1 de enero de 2027, la instalación de calentadores a gas estará estrictamente prohibida en el Ãrea de la Bahía. Esta promoción prepara su hogar para el futuro.</p>
                 </div>
                 <div>
                     <strong style="color: #fff;" data-i18n="promo_wp_legal_rebates_title">2. Incentivos y Reembolsos (Rebates):</strong>
-                    <p data-i18n="promo_wp_legal_rebates_desc" style="margin-top: 0.5rem;">Las bombas de calor califican para el CrÃ©dito Fiscal Federal IRÃ¡ (hasta $2,000) y reembolsos de TECH Clean CÃ¡ (hasta $3,100). Los fondos son limitados y dependen del cÃ³digo postal.</p>
+                    <p data-i18n="promo_wp_legal_rebates_desc" style="margin-top: 0.5rem;">Las bombas de calor califican para el Crédito Fiscal Federal IRA (hasta $2,000) y reembolsos de TECH Clean CA (hasta $3,100). Los fondos son limitados y dependen del código postal.</p>
                 </div>
                 <div>
-                    <strong style="color: #fff;" data-i18n="promo_wp_legal_apply_title">3. Requisitos de Ã¡plicaciÃ³n:</strong>
-                    <p data-i18n="promo_wp_legal_apply_desc" style="margin-top: 0.5rem;">Ã¡plica para propietarios residenciales que reemplacen equipos antiguos. Si su panel elÃ©ctrico requiere actualizaciÃ³n a 240V, podrÃ­a calificar para subsidios adicionales.</p>
+                    <strong style="color: #fff;" data-i18n="promo_wp_legal_apply_title">3. Requisitos de áplicación:</strong>
+                    <p data-i18n="promo_wp_legal_apply_desc" style="margin-top: 0.5rem;">áplica para propietarios residenciales que reemplacen equipos antiguos. Si su panel eléctrico requiere actualización a 240V, podría calificar para subsidios adicionales.</p>
                 </div>
                 <div>
                     <strong style="color: #fff;" data-i18n="promo_wp_legal_time_title">4. Vigencia y Responsabilidad:</strong>
-                    <p data-i18n="promo_wp_legal_time_desc" style="margin-top: 0.5rem;">La ventana de transiciÃ³n es ahora. Morales Plumbing provee equipos certificados y el papeleo para el reembolso, pero no garantiza la aprobaciÃ³n ni los tiempos de pago del Estado.</p>
+                    <p data-i18n="promo_wp_legal_time_desc" style="margin-top: 0.5rem;">La ventana de transición es ahora. Morales Plumbing provee equipos certificados y el papeleo para el reembolso, pero no garantiza la aprobación ni los tiempos de pago del Estado.</p>
                 </div>
             </div>
         </section>
@@ -406,7 +414,7 @@
 
         <!-- Types of Water Heaters Link -->
         <div style="text-align: center; margin-bottom: 4rem; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <a href="ley_water_heaters.html" class="btn btn-outline" style="border-color: #ffcc00; color: #ffcc00; display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; box-shadow: 0 0 15px rgba(255, 204, 0, 0.6), inset 0 0 10px rgba(255, 204, 0, 0.3); text-shadow: 0 0 5px rgba(255, 204, 0, 0.8); background: rgba(255, 204, 0, 0.05); transition: all 0.3s ease;" data-i18n="btn_ley_baaqmd">Ley BÃ¡Ã¡QMD 2027 y CÃ³digos</a>
+            <a href="ley_water_heaters.html" class="btn btn-outline" style="border-color: #ffcc00; color: #ffcc00; display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; box-shadow: 0 0 15px rgba(255, 204, 0, 0.6), inset 0 0 10px rgba(255, 204, 0, 0.3); text-shadow: 0 0 5px rgba(255, 204, 0, 0.8); background: rgba(255, 204, 0, 0.05); transition: all 0.3s ease;" data-i18n="btn_ley_baaqmd">Ley BAAQMD 2027 y Códigos</a>
             <a href="service_water_heater.html" class="cta-button" style="display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), inset 0 0 10px rgba(0, 255, 255, 0.3); text-shadow: 0 0 5px rgba(0, 255, 255, 0.8); transition: all 0.3s ease; color: #00ffff; background: rgba(0, 255, 255, 0.1); border: 2px solid #00ffff; border-radius: 8px; text-decoration: none;" data-i18n="swh_link_btn">Tipos de Calentadores e Instalaciones</a>
         </div>
 
@@ -455,18 +463,18 @@
             <div class="tier-card" style="border: 2px solid #39ff14; box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);">
                 <img src="../assets/tier_tt_good.png" alt="Standard Installation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 2px solid #39ff14;">
                 <h3 style="color: #39ff14;" data-i18n="promo_tt_good_title">GOOD (Standard)</h3>
-                <p data-i18n="promo_tt_good_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240Ã¡2 (199K BTU). Standard tank-to-tankless retrofit.</p>
+                <p data-i18n="promo_tt_good_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240á2 (199K BTU). Standard tank-to-tankless retrofit.</p>
                 
                 
                 <div class="price-range" style="margin-top: 1.5rem; text-align: center; border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 1.5rem;">
-                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">InversiÃ³n Estimada Desde:</span>
+                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Inversión Estimada Desde:</span>
                     <div class="price-amount" style="font-size: 2.5rem; font-weight: 900; font-family: 'Orbitron', sans-serif;">$5,500 - $7,500</div>
-                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varÃ­a segÃºn la evaluaciÃ³n en sitio, requerimientos del cÃ³digo y mejoras elÃ©ctricas o de gas.</span>
+                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varía según la evaluación en sitio, requerimientos del código y mejoras eléctricas o de gas.</span>
                 </div>
             
 
                 <ul class="features-list">
-                    <li data-i18n="promo_tt_good_li1">Navien NPE-240Ã¡2 High Efficiency Unit.</li>
+                    <li data-i18n="promo_tt_good_li1">Navien NPE-240á2 High Efficiency Unit.</li>
                     <li data-i18n="promo_tt_good_li2">Gas line and venting modifications.</li>
                     <li data-i18n="promo_tt_good_li3">City permits & old tank haul-away.</li>
                     <li data-i18n="promo_tt_good_li4">1-Year Labor Warranty.</li>
@@ -477,13 +485,13 @@
             <div class="tier-card" style="border-color: #ffcc00; box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);">
                 <img src="../assets/tier_tt_better.png" alt="Premium Installation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #ffcc00;">
                 <h3 style="color: #ffcc00;" data-i18n="promo_tt_better_title">BETTER (Premium)</h3>
-                <p data-i18n="promo_tt_better_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240Ã¡2. Includes NaviCirc Recirculation and Scale Prevention Filter.</p>
+                <p data-i18n="promo_tt_better_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240á2. Includes NaviCirc Recirculation and Scale Prevention Filter.</p>
                 
                 
                 <div class="price-range" style="margin-top: 1.5rem; text-align: center; border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 1.5rem;">
-                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">InversiÃ³n Estimada Desde:</span>
+                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Inversión Estimada Desde:</span>
                     <div class="price-amount" style="font-size: 2.5rem; font-weight: 900; font-family: 'Orbitron', sans-serif;">$6,500 - $8,500</div>
-                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varÃ­a segÃºn la evaluaciÃ³n en sitio, requerimientos del cÃ³digo y mejoras elÃ©ctricas o de gas.</span>
+                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varía según la evaluación en sitio, requerimientos del código y mejoras eléctricas o de gas.</span>
                 </div>
             
 
@@ -500,13 +508,13 @@
             <div class="tier-card" style="border-color: #ff5500; box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);">
                 <img src="../assets/tier_tt_best.png" alt="Ultra-Premium Installation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #ff5500;">
                 <h3 style="color: #ff5500;" data-i18n="promo_tt_best_title">BEST (Ultra-Premium)</h3>
-                <p data-i18n="promo_tt_best_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240Ã¡2. Includes Dedicated Gas Line Upgrade & NaviLink WiFi Control.</p>
+                <p data-i18n="promo_tt_best_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240á2. Includes Dedicated Gas Line Upgrade & NaviLink WiFi Control.</p>
                 
                 
                 <div class="price-range" style="margin-top: 1.5rem; text-align: center; border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 1.5rem;">
-                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">InversiÃ³n Estimada Desde:</span>
+                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Inversión Estimada Desde:</span>
                     <div class="price-amount" style="font-size: 2.5rem; font-weight: 900; font-family: 'Orbitron', sans-serif;">$8,500 - $12,500</div>
-                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varÃ­a segÃºn la evaluaciÃ³n en sitio, requerimientos del cÃ³digo y mejoras elÃ©ctricas o de gas.</span>
+                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varía según la evaluación en sitio, requerimientos del código y mejoras eléctricas o de gas.</span>
                 </div>
             
 
@@ -520,30 +528,30 @@
             </div>
         </section>
 
-        <div style="text-align: center; margin: 3rem 0;"><a href="req_tt.html" class="nav-btn" style="border-color: #38bdf8; color: #38bdf8;" data-i18n="btn_req_tt">Ver Requerimientos TÃ©cnicos y Diagrama (Tanque a Tankless)</a></div>
+        <div style="text-align: center; margin: 3rem 0;"><a href="req_tt.html" class="nav-btn" style="border-color: #38bdf8; color: #38bdf8;" data-i18n="btn_req_tt">Ver Requerimientos Técnicos y Diagrama (Tanque a Tankless)</a></div>
 
         <!-- Legal & Terms Section -->
         <section class="promo-legal" style="background: rgba(255, 204, 0, 0.1); border-left: 5px solid #ffcc00; border-radius: 8px; padding: 2rem; margin-bottom: 4rem;">
             <h3 style="color: #ffcc00; font-family: 'Orbitron', sans-serif; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                <span data-i18n="promo_tt_legal_title">TÃ©rminos Legales, Mandatos y Reembolsos</span>
+                <span data-i18n="promo_tt_legal_title">Términos Legales, Mandatos y Reembolsos</span>
             </h3>
             <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; color: #cbd5e1; font-size: 1rem; line-height: 1.6;">
                 <div>
-                    <strong style="color: #fff;" data-i18n="promo_tt_legal_mandate_title">1. Mandato BÃ¡Ã¡QMD (Reg 9, Regla 6):</strong>
-                    <p data-i18n="promo_tt_legal_mandate_desc" style="margin-top: 0.5rem;">Ã¡ partir del 1 de enero de 2027, la instalaciÃ³n de calentadores a gas estarÃ¡ estrictamente prohibida en el Ãrea de la BahÃ­a. Esta promociÃ³n prepara su hogar para el futuro.</p>
+                    <strong style="color: #fff;" data-i18n="promo_tt_legal_mandate_title">1. Mandato BAAQMD (Reg 9, Regla 6):</strong>
+                    <p data-i18n="promo_tt_legal_mandate_desc" style="margin-top: 0.5rem;">a partir del 1 de enero de 2027, la instalación de calentadores a gas estará estrictamente prohibida en el Ãrea de la Bahía. Esta promoción prepara su hogar para el futuro.</p>
                 </div>
                 <div>
                     <strong style="color: #fff;" data-i18n="promo_tt_legal_rebates_title">2. Incentivos y Reembolsos (Rebates):</strong>
-                    <p data-i18n="promo_tt_legal_rebates_desc" style="margin-top: 0.5rem;">Las bombas de calor califican para el CrÃ©dito Fiscal Federal IRÃ¡ (hasta $2,000) y reembolsos de TECH Clean CÃ¡ (hasta $3,100). Los fondos son limitados y dependen del cÃ³digo postal.</p>
+                    <p data-i18n="promo_tt_legal_rebates_desc" style="margin-top: 0.5rem;">Las bombas de calor califican para el Crédito Fiscal Federal IRA (hasta $2,000) y reembolsos de TECH Clean CA (hasta $3,100). Los fondos son limitados y dependen del código postal.</p>
                 </div>
                 <div>
-                    <strong style="color: #fff;" data-i18n="promo_tt_legal_apply_title">3. Requisitos de Ã¡plicaciÃ³n:</strong>
-                    <p data-i18n="promo_tt_legal_apply_desc" style="margin-top: 0.5rem;">Ã¡plica para propietarios residenciales que reemplacen equipos antiguos. Si su panel elÃ©ctrico requiere actualizaciÃ³n a 240V, podrÃ­a calificar para subsidios adicionales.</p>
+                    <strong style="color: #fff;" data-i18n="promo_tt_legal_apply_title">3. Requisitos de áplicación:</strong>
+                    <p data-i18n="promo_tt_legal_apply_desc" style="margin-top: 0.5rem;">áplica para propietarios residenciales que reemplacen equipos antiguos. Si su panel eléctrico requiere actualización a 240V, podría calificar para subsidios adicionales.</p>
                 </div>
                 <div>
                     <strong style="color: #fff;" data-i18n="promo_tt_legal_time_title">4. Vigencia y Responsabilidad:</strong>
-                    <p data-i18n="promo_tt_legal_time_desc" style="margin-top: 0.5rem;">La ventana de transiciÃ³n es ahora. Morales Plumbing provee equipos certificados y el papeleo para el reembolso, pero no garantiza la aprobaciÃ³n ni los tiempos de pago del Estado.</p>
+                    <p data-i18n="promo_tt_legal_time_desc" style="margin-top: 0.5rem;">La ventana de transición es ahora. Morales Plumbing provee equipos certificados y el papeleo para el reembolso, pero no garantiza la aprobación ni los tiempos de pago del Estado.</p>
                 </div>
             </div>
         </section>
@@ -552,7 +560,7 @@
         <section class="promo-hero">
             <div class="promo-hero-text">
                 <h1 class="glitch-text" data-i18n="promo_ttt_title">Tankless to Tankless Replacement</h1>
-                <p style="font-size: 1.2rem; margin-top: 1.5rem; color: #e2e8f0; line-height: 1.8;" data-i18n="promo_ttt_desc">Upgrade your old tankless system to the latest Navien NPE-Ã¡2 series with advanced recirculation technology.</p>
+                <p style="font-size: 1.2rem; margin-top: 1.5rem; color: #e2e8f0; line-height: 1.8;" data-i18n="promo_ttt_desc">Upgrade your old tankless system to the latest Navien NPE-á2 series with advanced recirculation technology.</p>
                 <a href="#planes" class="btn btn-primary" style="margin-top: 2rem; display: inline-block;" data-i18n="btn_upgrade">Ver Planes</a>
             </div>
             <div class="promo-hero-image">
@@ -568,7 +576,7 @@
 
         <!-- Types of Water Heaters Link -->
         <div style="text-align: center; margin-bottom: 4rem; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <a href="ley_water_heaters.html" class="btn btn-outline" style="border-color: #ffcc00; color: #ffcc00; display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; box-shadow: 0 0 15px rgba(255, 204, 0, 0.6), inset 0 0 10px rgba(255, 204, 0, 0.3); text-shadow: 0 0 5px rgba(255, 204, 0, 0.8); background: rgba(255, 204, 0, 0.05); transition: all 0.3s ease;" data-i18n="btn_ley_baaqmd">Ley BÃ¡Ã¡QMD 2027 y CÃ³digos</a>
+            <a href="ley_water_heaters.html" class="btn btn-outline" style="border-color: #ffcc00; color: #ffcc00; display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; box-shadow: 0 0 15px rgba(255, 204, 0, 0.6), inset 0 0 10px rgba(255, 204, 0, 0.3); text-shadow: 0 0 5px rgba(255, 204, 0, 0.8); background: rgba(255, 204, 0, 0.05); transition: all 0.3s ease;" data-i18n="btn_ley_baaqmd">Ley BAAQMD 2027 y Códigos</a>
             <a href="service_water_heater.html" class="cta-button" style="display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), inset 0 0 10px rgba(0, 255, 255, 0.3); text-shadow: 0 0 5px rgba(0, 255, 255, 0.8); transition: all 0.3s ease; color: #00ffff; background: rgba(0, 255, 255, 0.1); border: 2px solid #00ffff; border-radius: 8px; text-decoration: none;" data-i18n="swh_link_btn">Tipos de Calentadores e Instalaciones</a>
         </div>
 
@@ -617,18 +625,18 @@
             <div class="tier-card" style="border: 2px solid #39ff14; box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);">
                 <img src="../assets/tier_ttt_good.png" alt="Standard Installation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 2px solid #39ff14;">
                 <h3 style="color: #39ff14;" data-i18n="promo_ttt_good_title">GOOD (Standard)</h3>
-                <p data-i18n="promo_ttt_good_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240Ã¡2 (199K BTU). Direct swap using existing venting and gas lines.</p>
+                <p data-i18n="promo_ttt_good_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240á2 (199K BTU). Direct swap using existing venting and gas lines.</p>
                 
                 
                 <div class="price-range" style="margin-top: 1.5rem; text-align: center; border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 1.5rem;">
-                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">InversiÃ³n Estimada Desde:</span>
+                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Inversión Estimada Desde:</span>
                     <div class="price-amount" style="font-size: 2.5rem; font-weight: 900; font-family: 'Orbitron', sans-serif;">$4,000 - $5,500</div>
-                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varÃ­a segÃºn la evaluaciÃ³n en sitio, requerimientos del cÃ³digo y mejoras elÃ©ctricas o de gas.</span>
+                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varía según la evaluación en sitio, requerimientos del código y mejoras eléctricas o de gas.</span>
                 </div>
             
 
                 <ul class="features-list">
-                    <li data-i18n="promo_ttt_good_li1">Navien NPE-240Ã¡2 Direct Swap.</li>
+                    <li data-i18n="promo_ttt_good_li1">Navien NPE-240á2 Direct Swap.</li>
                     <li data-i18n="promo_ttt_good_li2">Reuse of existing venting and gas.</li>
                     <li data-i18n="promo_ttt_good_li3">City permits & old unit haul-away.</li>
                     <li data-i18n="promo_ttt_good_li4">1-Year Labor Warranty.</li>
@@ -639,13 +647,13 @@
             <div class="tier-card" style="border-color: #ffcc00; box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);">
                 <img src="../assets/tier_ttt_better.png" alt="Premium Installation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #ffcc00;">
                 <h3 style="color: #ffcc00;" data-i18n="promo_ttt_better_title">BETTER (Premium)</h3>
-                <p data-i18n="promo_ttt_better_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240Ã¡2. Includes NaviCirc Recirculation and Scale Prevention Filter.</p>
+                <p data-i18n="promo_ttt_better_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240á2. Includes NaviCirc Recirculation and Scale Prevention Filter.</p>
                 
                 
                 <div class="price-range" style="margin-top: 1.5rem; text-align: center; border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 1.5rem;">
-                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">InversiÃ³n Estimada Desde:</span>
+                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Inversión Estimada Desde:</span>
                     <div class="price-amount" style="font-size: 2.5rem; font-weight: 900; font-family: 'Orbitron', sans-serif;">$5,500 - $7,500</div>
-                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varÃ­a segÃºn la evaluaciÃ³n en sitio, requerimientos del cÃ³digo y mejoras elÃ©ctricas o de gas.</span>
+                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varía según la evaluación en sitio, requerimientos del código y mejoras eléctricas o de gas.</span>
                 </div>
             
 
@@ -662,13 +670,13 @@
             <div class="tier-card" style="border-color: #ff5500; box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);">
                 <img src="../assets/tier_ttt_best.png" alt="Ultra-Premium Installation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #ff5500;">
                 <h3 style="color: #ff5500;" data-i18n="promo_ttt_best_title">BEST (Ultra-Premium)</h3>
-                <p data-i18n="promo_ttt_best_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240Ã¡2. Includes Whole-home PRV & NaviLink WiFi Control.</p>
+                <p data-i18n="promo_ttt_best_desc" style="font-size: 0.9rem; color: #fff; margin-bottom: 1rem;">Navien NPE-240á2. Includes Whole-home PRV & NaviLink WiFi Control.</p>
                 
                 
                 <div class="price-range" style="margin-top: 1.5rem; text-align: center; border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 1.5rem;">
-                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">InversiÃ³n Estimada Desde:</span>
+                    <span data-i18n="lbl_starting_at" style="font-size: 0.9rem; color:#ccc; display:block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Inversión Estimada Desde:</span>
                     <div class="price-amount" style="font-size: 2.5rem; font-weight: 900; font-family: 'Orbitron', sans-serif;">$7,500 - $10,500</div>
-                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varÃ­a segÃºn la evaluaciÃ³n en sitio, requerimientos del cÃ³digo y mejoras elÃ©ctricas o de gas.</span>
+                    <span data-i18n="lbl_est_range" style="font-size: 0.75rem; color:#94a3b8; display:block; margin-top: 8px; font-style: italic;">*El costo final varía según la evaluación en sitio, requerimientos del código y mejoras eléctricas o de gas.</span>
                 </div>
             
 
@@ -682,45 +690,45 @@
             </div>
         </section>
 
-        <div style="text-align: center; margin: 3rem 0;"><a href="req_ttt.html" class="nav-btn" style="border-color: #38bdf8; color: #38bdf8;" data-i18n="btn_req_ttt">Ver Requerimientos TÃ©cnicos y Diagrama (Tankless a Tankless)</a></div>
+        <div style="text-align: center; margin: 3rem 0;"><a href="req_ttt.html" class="nav-btn" style="border-color: #38bdf8; color: #38bdf8;" data-i18n="btn_req_ttt">Ver Requerimientos Técnicos y Diagrama (Tankless a Tankless)</a></div>
 
         <!-- Legal & Terms Section -->
         <section class="promo-legal" style="background: rgba(255, 204, 0, 0.1); border-left: 5px solid #ffcc00; border-radius: 8px; padding: 2rem; margin-bottom: 4rem;">
             <h3 style="color: #ffcc00; font-family: 'Orbitron', sans-serif; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                <span data-i18n="promo_ttt_legal_title">TÃ©rminos Legales, Mandatos y Reembolsos</span>
+                <span data-i18n="promo_ttt_legal_title">Términos Legales, Mandatos y Reembolsos</span>
             </h3>
             <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; color: #cbd5e1; font-size: 1rem; line-height: 1.6;">
                 <div>
-                    <strong style="color: #fff;" data-i18n="promo_ttt_legal_mandate_title">1. Mandato BÃ¡Ã¡QMD (Reg 9, Regla 6):</strong>
-                    <p data-i18n="promo_ttt_legal_mandate_desc" style="margin-top: 0.5rem;">Ã¡ partir del 1 de enero de 2027, la instalaciÃ³n de calentadores a gas estarÃ¡ estrictamente prohibida en el Ãrea de la BahÃ­a. Esta promociÃ³n prepara su hogar para el futuro.</p>
+                    <strong style="color: #fff;" data-i18n="promo_ttt_legal_mandate_title">1. Mandato BAAQMD (Reg 9, Regla 6):</strong>
+                    <p data-i18n="promo_ttt_legal_mandate_desc" style="margin-top: 0.5rem;">a partir del 1 de enero de 2027, la instalación de calentadores a gas estará estrictamente prohibida en el Ãrea de la Bahía. Esta promoción prepara su hogar para el futuro.</p>
                 </div>
                 <div>
                     <strong style="color: #fff;" data-i18n="promo_ttt_legal_rebates_title">2. Incentivos y Reembolsos (Rebates):</strong>
-                    <p data-i18n="promo_ttt_legal_rebates_desc" style="margin-top: 0.5rem;">Las bombas de calor califican para el CrÃ©dito Fiscal Federal IRÃ¡ (hasta $2,000) y reembolsos de TECH Clean CÃ¡ (hasta $3,100). Los fondos son limitados y dependen del cÃ³digo postal.</p>
+                    <p data-i18n="promo_ttt_legal_rebates_desc" style="margin-top: 0.5rem;">Las bombas de calor califican para el Crédito Fiscal Federal IRA (hasta $2,000) y reembolsos de TECH Clean CA (hasta $3,100). Los fondos son limitados y dependen del código postal.</p>
                 </div>
                 <div>
-                    <strong style="color: #fff;" data-i18n="promo_ttt_legal_apply_title">3. Requisitos de Ã¡plicaciÃ³n:</strong>
-                    <p data-i18n="promo_ttt_legal_apply_desc" style="margin-top: 0.5rem;">Ã¡plica para propietarios residenciales que reemplacen equipos antiguos. Si su panel elÃ©ctrico requiere actualizaciÃ³n a 240V, podrÃ­a calificar para subsidios adicionales.</p>
+                    <strong style="color: #fff;" data-i18n="promo_ttt_legal_apply_title">3. Requisitos de áplicación:</strong>
+                    <p data-i18n="promo_ttt_legal_apply_desc" style="margin-top: 0.5rem;">áplica para propietarios residenciales que reemplacen equipos antiguos. Si su panel eléctrico requiere actualización a 240V, podría calificar para subsidios adicionales.</p>
                 </div>
                 <div>
                     <strong style="color: #fff;" data-i18n="promo_ttt_legal_time_title">4. Vigencia y Responsabilidad:</strong>
-                    <p data-i18n="promo_ttt_legal_time_desc" style="margin-top: 0.5rem;">La ventana de transiciÃ³n es ahora. Morales Plumbing provee equipos certificados y el papeleo para el reembolso, pero no garantiza la aprobaciÃ³n ni los tiempos de pago del Estado.</p>
+                    <p data-i18n="promo_ttt_legal_time_desc" style="margin-top: 0.5rem;">La ventana de transición es ahora. Morales Plumbing provee equipos certificados y el papeleo para el reembolso, pero no garantiza la aprobación ni los tiempos de pago del Estado.</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="cyber-footer">
-        <p data-i18n="footer_print_watermark">Â© MORÃ¡LES PLUMBING 2026</p>
+        <p data-i18n="footer_print_watermark">Â© MORALES PLUMBING 2026</p>
     </footer>
 
     <!-- Script to handle language selection -->
-    <script src="../app.js"></script>
+    <script src="../app_v9.js"></script>
     <script>
         function updateLangButtons(lang) {
-            document.querySelectorÃ¡ll('.lang-btn').forEach(btn => {
-                if (btn.getÃ¡ttribute('data-lang') === lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
@@ -735,10 +743,10 @@
                 updateLangButtons(savedLang);
             }
             
-            // Ã¡dd click listeners to all lang buttons
-            document.querySelectorÃ¡ll('.lang-btn').forEach(btn => {
+            // ádd click listeners to all lang buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    const lang = e.target.getÃ¡ttribute('data-lang');
+                    const lang = e.target.getAttribute('data-lang');
                     if(typeof setLanguage === 'function') {
                         setLanguage(lang);
                         updateLangButtons(lang);
