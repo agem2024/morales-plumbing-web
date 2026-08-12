@@ -782,7 +782,7 @@ nav {
     border: 1px solid #00ff99;
     border-radius: 50px;
     font-family: 'Aladin', cursive;
-    font-size: 0.68rem;
+    font-size: 0.82rem;
     color: #00ff99;
     margin-bottom: 1.6rem;
     letter-spacing: 2px;
@@ -857,7 +857,7 @@ nav {
 
 .hero-desc {
     font-family: 'Aladin', cursive;
-    font-size: clamp(0.88rem, 2vw, 1.1rem);
+    font-size: clamp(1.05rem, 2.4vw, 1.32rem);
     color: #00ff99;
     text-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
     font-weight: normal;
@@ -877,7 +877,7 @@ nav {
 
 .stat {
     font-family: 'Aladin', cursive;
-    font-size: 0.72rem;
+    font-size: 0.86rem;
     color: #bbf8d8;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -888,7 +888,7 @@ nav {
     color: #00ff99;
     font-weight: normal;
     display: block;
-    font-size: clamp(1.32rem, 3.3vw, 1.87rem);
+    font-size: clamp(1.58rem, 3.96vw, 2.24rem);
     margin-bottom: 4px;
     text-shadow: 0 0 15px rgba(0, 255, 153, 0.8);
 }
