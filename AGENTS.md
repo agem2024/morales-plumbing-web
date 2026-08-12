@@ -46,6 +46,11 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
   - Se eliminó la instrucción que abría forzosamente la aplicación de WhatsApp al solicitar una cita.
   - En su lugar, el bot de IA ahora genera dinámicamente tres botones (WhatsApp, SMS, Correo Electrónico) para que el cliente elija el método de comunicación de su preferencia.
 
+- Actualización de Interfaz y Asistente Virtual (Sofia Lin):
+  - Se reemplazó el avatar estático de "Joe" por el video animado `susa.mp4` para representar a la nueva asistente "Sofia Lin" en los botones flotantes de la web.
+  - Se eliminó un icono flotante duplicado que mostraba un globo de notificación rojo, dejando un solo botón limpio con el video en la esquina inferior derecha.
+  - Se rediseñó el pie de página (footer) eliminando la redundancia de bloques de información, organizándolo en una nueva disposición limpia con el video de "urgencia" a la izquierda y los datos de contacto y redes sociales unificados a la derecha.
+  - Sincronización y protección de entorno local para evitar pérdida de archivos locales no rastreados durante conflictos en el control de versiones (Git).
 ## Arquitectura Web (REGLA ESTRICTA)
 - **HOSTING:** El sitio está alojado 100% en GitHub Pages. 
 - **PROHIBIDO:** Usar Netlify o cualquier función backend (Server-Side Javascript, Node.js).
