@@ -8709,8 +8709,8 @@ function openBooking() {
     const lang = localStorage.getItem('morales_lang') || 'en';
     const bookingMessages = {
         'en': 'I want to schedule a plumbing service appointment.',
-        'es': '¿Quéiero agendar una cita de servicio de plomería.',
-        'zh': '我想preabout管道服务预约。',
+        'es': 'Quiero agendar una cita de servicio de plomería.',
+        'zh': '我想预约管道服务。',
         'tl': 'Gusto kong mag-schedule ng appointment para sa plumbing service.',
         'vi': 'Toi muon dat lich hen dich vu sua ong nuoc.'
     };
