@@ -239,14 +239,13 @@
             </div>
 <section id="v02-trust-bar" style="padding: 2rem 1.5rem; background: linear-gradient(135deg, rgba(10,25,47,0.95) 0%, rgba(17,34,64,0.95) 100%); border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2); position: relative; z-index: 5;">
             <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 1.5rem; font-family: 'Inter', sans-serif;">
-                <div style="text-align: center;">
-                    <div data-i18n="stats_years_num" style="font-size: 2.2rem; font-weight: 800; color: #D4AF37; font-family: 'Orbitron', sans-serif; line-height: 1;">15+</div>
-                    <div data-i18n="stats_years_text" style="font-size: 0.8rem; color: #a0aec0; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;">Años de Experiencia</div>
+                <div class="trust-item">
+                    <h3 style="color: var(--neon-cyan); font-size: 2.5em; margin-bottom: 5px; font-family: 'Orbitron', sans-serif;">15+</h3>
+                    <p style="color: #a0aec0; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;" data-i18n="trust_years">Años de Experiencia</p>
                 </div>
-                <div style="width: 1px; height: 50px; background: rgba(212,175,55,0.25);"></div>
-                <div style="text-align: center;">
-                    <div data-i18n="stats_projects_num" style="font-size: 2.2rem; font-weight: 800; color: #D4AF37; font-family: 'Orbitron', sans-serif; line-height: 1;">500+</div>
-                    <div data-i18n="stats_projects_text" style="font-size: 0.8rem; color: #a0aec0; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;">Proyectos Completados</div>
+                <div class="trust-item">
+                    <h3 style="color: var(--neon-lime); font-size: 2.5em; margin-bottom: 5px; font-family: 'Orbitron', sans-serif;">500+</h3>
+                    <p style="color: #a0aec0; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;" data-i18n="trust_projects">Proyectos Completados</p>
                 </div>
                 <div style="width: 1px; height: 50px; background: rgba(212,175,55,0.25);"></div>
                 <div style="text-align: center;">
@@ -1273,6 +1272,10 @@
             <div class="booking-field-group">
                 <label class="booking-label" data-i18n="booking_name"><span class="pico-icon pico-person"></span> Nombre Completo</label>
                 <input type="text" id="bk-name" class="booking-input" placeholder="Tu nombre completo..." oninput="syncBookingField('name', this.value)">
+            </div>
+            <div class="booking-field-group">
+                <label class="booking-label" data-i18n="booking_email"><span class="pico-icon pico-email"></span> Correo Electrónico</label>
+                <input type="email" id="bk-email" class="booking-input" placeholder="Tu email..." oninput="syncBookingField('email', this.value)">
             </div>
             <div class="booking-field-group">
                 <label class="booking-label" data-i18n="booking_phone"><span class="pico-icon pico-pipe_phone"></span> Teléfono</label>

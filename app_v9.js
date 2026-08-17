@@ -8709,8 +8709,8 @@ function openBooking() {
     const lang = localStorage.getItem('morales_lang') || 'en';
     const bookingMessages = {
         'en': 'I want to schedule a plumbing service appointment.',
-        'es': 'Quiero agendar una cita de servicio de plomería.',
-        'zh': '我想预约管道服务。',
+        'es': '¿Quéiero agendar una cita de servicio de plomería.',
+        'zh': '我想preabout管道服务预约。',
         'tl': 'Gusto kong mag-schedule ng appointment para sa plumbing service.',
         'vi': 'Toi muon dat lich hen dich vu sua ong nuoc.'
     };
@@ -10387,25 +10387,25 @@ const BOOKING_FIELDS = ['name', 'email', 'phone', 'address', 'service', 'date', 
 // Booking conversation state machine
 let bookingState = {
     active: false,
-    step: 0,  // 0=idle, 1=name, 2=phone, 3=address, 4=service, 5=date, 6=time, 7=notes, 8=confirm
+    step: 0,  // 0=idle, 1=name, 2=email, 3=phone, 4=address, 5=service, 6=date, 7=time, 8=notes, 9=confirm
     lang: 'es'
 };
 
 const BOOKING_STEPS = {
     es: [
         null, // 0 = idle
-        `Perfecto! Voy a ayudarte a agendar tu cita. 
+        `¡Perfecto! Voy a ayudarte a agendar tu cita. 
 
-Cul es tu **nombre completo**?`,
+¿Cuál es tu **nombre completo**?`,
         '🔹 Excelente. ¿Cuál es tu **correo electrónico** para enviarte la confirmación?',
-        '? Anotado. Cul es tu **nmero de telfono** de contacto?',
-        '? Perfecto. Cul es la **direccin donde necesitas el servicio**?',
-        '? Entendido. Qu**tipo de servicio** necesitas? (Ej: Water heater, deteccin de fugas, repipe, drain cleaning...)',
-        '? Excelente. Cul es tu **fecha preferida** para la visita? (Ej: Martes 15 de julio, esta semana, lo antes posible...)',
-        '? Anotado. Tienes preferencia de **horario**? (Ej: Maana 9am-12pm, tarde 2pm-5pm...)',
-        `? Casi listo. Tienes algn **detalle adicional** que debamos saber? (Urgencia, acceso, tipo de problema especfico...)
+        '✅ Anotado. ¿Cuál es tu **número de teléfono** de contacto?',
+        '📍 Perfecto. ¿Cuál es la **dirección donde necesitas el servicio**?',
+        '🔧 Entendido. ¿Qué **tipo de servicio** necesitas? (Ej: Water heater, detección de fugas, repipe, drain cleaning...)',
+        '📅 Excelente. ¿Cuál es tu **fecha preferida** para la visita? (Ej: Martes 15 de julio, esta semana, lo antes posible...)',
+        '⏰ Anotado. ¿Tienes preferencia de **horario**? (Ej: Mañana 9am-12pm, tarde 2pm-5pm...)',
+        `📝 Casi listo. ¿Tienes algún **detalle adicional** que debamos saber? (Urgencia, acceso, tipo de problema específico...)
 
-O escribe "listo" si no hay nada ms.`,
+O escribe "listo" si no hay nada más.`,
         null // 9 = confirm (handled by button)
     ],
     en: [
@@ -10414,12 +10414,12 @@ O escribe "listo" si no hay nada ms.`,
 
 What is your **full name**?`,
         '🔹 Excellent. What is your **email address** so we can send the confirmation?',
-        '? Got it. What is your **contact phone number**?',
-        '? Great. What is the **service address**?',
-        '? Understood. What **type of service** do you need? (e.g., Water heater, leak detection, repipe, drain cleaning...)',
-        '? Excellent. What is your **preferred date** for the visit? (e.g., Tuesday July 15, this week, as soon as possible...)',
-        '? Noted. Do you have a preferred **time**? (e.g., Morning 9am-12pm, afternoon 2pm-5pm...)',
-        `? Almost done. Any **additional details** we should know? (Urgency, access, specific problem...)
+        '✅ Got it. What is your **contact phone number**?',
+        '📍 Great. What is the **service address**?',
+        '🔧 Understood. What **type of service** do you need? (e.g., Water heater, leak detection, repipe, drain cleaning...)',
+        '📅 Excellent. What is your **preferred date** for the visit? (e.g., Tuesday July 15, this week, as soon as possible...)',
+        '⏰ Noted. Do you have a preferred **time**? (e.g., Morning 9am-12pm, afternoon 2pm-5pm...)',
+        `📝 Almost done. Any **additional details** we should know? (Urgency, access, specific problem...)
 
 Or type "done" if nothing else.`,
         null
@@ -10576,29 +10576,29 @@ function handleBookingState(userText) {
 function buildBookingSummary(lang) {
     const d = bookingData;
     if (lang === 'es') {
-        return ` **Resumen de tu cita:**
- Nombre: ${d.name || ''}
- Email: ${d.email || ''}
- Teléfono: ${d.phone || ''}
- Dirección: ${d.address || ''}
- Servicio: ${d.service || ''}
- Fecha: ${d.date || ''}
- Hora: ${d.time || ''}
- Notas: ${d.notes || ''}
+        return `📋 **Resumen de tu cita:**
+ 👤 Nombre: ${d.name || ''}
+ 📧 Email: ${d.email || ''}
+ 📞 Teléfono: ${d.phone || ''}
+ 📍 Dirección: ${d.address || ''}
+ 🔧 Servicio: ${d.service || ''}
+ 📅 Fecha: ${d.date || ''}
+ ⏰ Hora: ${d.time || ''}
+ 📝 Notas: ${d.notes || ''}
 
 ¿Todo se ve correcto? Haz clic en **✅ Confirmar Cita** en el formulario para enviar. Al confirmar, aceptas nuestros Términos de Servicio y la Política de Privacidad (Cumplimiento CCPA de California).`;
     }
     return `📋 **Appointment Summary:**
- Name: ${d.name || ''}
- Email: ${d.email || ''}
- Phone: ${d.phone || ''}
- Address: ${d.address || ''}
- Service: ${d.service || ''}
- Date: ${d.date || ''}
- Time: ${d.time || ''}
- Notes: ${d.notes || ''}
+ 👤 Name: ${d.name || ''}
+ 📧 Email: ${d.email || ''}
+ 📞 Phone: ${d.phone || ''}
+ 📍 Address: ${d.address || ''}
+ 🔧 Service: ${d.service || ''}
+ 📅 Date: ${d.date || ''}
+ ⏰ Time: ${d.time || ''}
+ 📝 Notes: ${d.notes || ''}
 
-Does everything look correct? Click **? Confirm Appointment** in the form to submit. By confirming, you agree to our Terms of Service and Privacy Policy (California CCPA Compliant).`;
+Does everything look correct? Click **✅ Confirm Appointment** in the form to submit. By confirming, you agree to our Terms of Service and Privacy Policy (California CCPA Compliant).`;
 }
 
 // --- SUBMIT: send confirmation to admin + user ---------------
