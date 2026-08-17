@@ -239,13 +239,14 @@
             </div>
 <section id="v02-trust-bar" style="padding: 2rem 1.5rem; background: linear-gradient(135deg, rgba(10,25,47,0.95) 0%, rgba(17,34,64,0.95) 100%); border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2); position: relative; z-index: 5;">
             <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 1.5rem; font-family: 'Inter', sans-serif;">
-                <div class="trust-item">
-                    <h3 style="color: var(--neon-cyan); font-size: 2.5em; margin-bottom: 5px; font-family: 'Orbitron', sans-serif;">15+</h3>
-                    <p style="color: #a0aec0; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;" data-i18n="trust_years">Años de Experiencia</p>
+                <div style="text-align: center;">
+                    <div data-i18n="stats_years_num" style="font-size: 2.2rem; font-weight: 800; color: #D4AF37; font-family: 'Orbitron', sans-serif; line-height: 1;">15+</div>
+                    <div data-i18n="stats_years_text" style="font-size: 0.8rem; color: #a0aec0; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;">Años de Experiencia</div>
                 </div>
-                <div class="trust-item">
-                    <h3 style="color: var(--neon-lime); font-size: 2.5em; margin-bottom: 5px; font-family: 'Orbitron', sans-serif;">500+</h3>
-                    <p style="color: #a0aec0; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;" data-i18n="trust_projects">Proyectos Completados</p>
+                <div style="width: 1px; height: 50px; background: rgba(212,175,55,0.25);"></div>
+                <div style="text-align: center;">
+                    <div data-i18n="stats_projects_num" style="font-size: 2.2rem; font-weight: 800; color: #D4AF37; font-family: 'Orbitron', sans-serif; line-height: 1;">500+</div>
+                    <div data-i18n="stats_projects_text" style="font-size: 0.8rem; color: #a0aec0; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;">Proyectos Completados</div>
                 </div>
                 <div style="width: 1px; height: 50px; background: rgba(212,175,55,0.25);"></div>
                 <div style="text-align: center;">
@@ -287,8 +288,8 @@
                 <div id="v02-panel-plumbing" class="v02-tab-panel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div>
-                            <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;" data-i18n="qs_plumb_t1">Reparacion de Tuberias</h3>
-                            <p style="color: #718096; font-size: 0.88rem; margin: 0;" data-i18n="qs_plumb_d1">Diagnostico y reparacion profesional de tuberías rotas, obstruidas o filtradas en cualquier parte del hogar.</p>
+                            <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;" data-i18n="qs_plumb_t1">Reparación de Tuberías</h3>
+                            <p style="color: #718096; font-size: 0.88rem; margin: 0;" data-i18n="qs_plumb_d1">Diagnóstico y reparación profesional de tuberías rotas, obstruidas o filtradas en cualquier parte del hogar.</p>
                         </div>
                         <a href="docs/eng_cobre.html" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; transition: all 0.3s;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'" data-i18n="qs_btn_call">Ver Detalles</a>
                     </div>
@@ -301,10 +302,10 @@
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div>
-                            <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;" data-i18n="qs_plumb_t3">Inspeccion de Plomeria</h3>
-                            <p style="color: #718096; font-size: 0.88rem; margin: 0;" data-i18n="qs_plumb_d3">Evaluacion completa para compra/venta de vivienda. Reporte detallado con termografia incluida.</p>
+                            <h3 style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;" data-i18n="qs_plumb_t3">Inspección de Plomería</h3>
+                            <p style="color: #718096; font-size: 0.88rem; margin: 0;" data-i18n="qs_plumb_d3">Evaluación completa para compra/venta de vivienda. Reporte detallado con termografía incluida.</p>
                         </div>
-                        <a href="docs/eng_inspect.html" onclick=\"openClientPortal(); switchPortalTab('schedule'); return false;\" style="background: transparent; color: #D4AF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4AF37; transition: all 0.3s;" onmouseover="this.style.background='rgba(212,175,55,0.1)'" onmouseout="this.style.background='transparent'" data-i18n="qs_btn_insp">Solicitar Inspeccion</a>
+                        <a href="docs/eng_inspect.html" onclick=\"openClientPortal(); switchPortalTab('schedule'); return false;\" style="background: transparent; color: #D4AF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4AF37; transition: all 0.3s;" onmouseover="this.style.background='rgba(212,175,55,0.1)'" onmouseout="this.style.background='transparent'" data-i18n="qs_btn_insp">Solicitar Inspección</a>
                     </div>
                 </div>
 
@@ -312,33 +313,33 @@
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div>
                             <h3 data-i18n="qs_bath_t1" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Remodelación de Baños</h3>
-                            <p data-i18n="qs_bath_d1" style="color: #718096; font-size: 0.88rem; margin: 0;">Diseño e instalación completa de banos. Tina, ducha, lavabo, inodoro y plomería nueva.</p>
+                            <p data-i18n="qs_bath_d1" style="color: #718096; font-size: 0.88rem; margin: 0;">Diseño e instalación completa de baños. Tina, ducha, lavabo, inodoro y plomería nueva.</p>
                         </div>
                         <a data-i18n="qs_btn_view" href="docs/service.html" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Ver Detalles</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div>
                             <h3 data-i18n="qs_bath_t2" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Drenajes y Desagüe</h3>
-                            <p data-i18n="qs_bath_d2" style="color: #718096; font-size: 0.88rem; margin: 0;">Limpieza y reparacion de drenajes de bano, tina y lavabo con tecnologia de presion hidrostatica.</p>
+                            <p data-i18n="qs_bath_d2" style="color: #718096; font-size: 0.88rem; margin: 0;">Limpieza y reparación de drenajes de baño, tina y lavabo con tecnología de presión hidrostática.</p>
                         </div>
                         <a href="docs/service.html" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Ver Detalles</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
                         <div>
-                            <h3 data-i18n="qs_bath_t3" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Valvulas y Griferia</h3>
-                            <p data-i18n="qs_bath_d3" style="color: #718096; font-size: 0.88rem; margin: 0;">Cambio de cartuchos, valvulas de ducha, llaves y mezcladores de marcas Moen, Delta, Kohler.</p>
+                            <h3 data-i18n="qs_bath_t3" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Válvulas y Grifería</h3>
+                            <p data-i18n="qs_bath_d3" style="color: #718096; font-size: 0.88rem; margin: 0;">Cambio de cartuchos, válvulas de ducha, llaves y mezcladores de marcas Moen, Delta, Kohler.</p>
                         </div>
-                        <a data-i18n="qs_btn_schedule" href="docs/service.html" style="background: transparent; color: #D4AF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4AF37;" onmouseover="this.style.background='rgba(212,175,55,0.1)'" onmouseout="this.style.background='transparent'">Agendar Revision</a>
+                        <a data-i18n="qs_btn_schedule" href="docs/service.html" style="background: transparent; color: #D4AF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4AF37;" onmouseover="this.style.background='rgba(212,175,55,0.1)'" onmouseout="this.style.background='transparent'">Agendar Revisión</a>
                     </div>
                 </div>
 
                 <div id="v02-panel-heaters" class="v02-tab-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div><h3 data-i18n="qs_heat_t1" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Tankless Water Heaters</h3><p data-i18n="qs_heat_d1" style="color: #718096; font-size: 0.88rem; margin: 0;">Instalacion y reemplazo de calentadores Navien, Rinnai y Bradford White. Ahorro de hasta 30% en energia.</p></div>
+                        <div><h3 data-i18n="qs_heat_t1" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Tankless Water Heaters</h3><p data-i18n="qs_heat_d1" style="color: #718096; font-size: 0.88rem; margin: 0;">Instalación y reemplazo de calentadores Navien, Rinnai y Bradford White. Ahorro de hasta 30% en energía.</p></div>
                         <a data-i18n="qs_btn_view" href="docs/water_heaters.html" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Ver Detalles</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div><h3 data-i18n="qs_heat_t2" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Mantenimiento Preventivo</h3><p data-i18n="qs_heat_d2" style="color: #718096; font-size: 0.88rem; margin: 0;">Flush anual, revision de anodo y ajuste de temperatura para alargar la vida util del equipo.</p></div>
+                        <div><h3 data-i18n="qs_heat_t2" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Mantenimiento Preventivo</h3><p data-i18n="qs_heat_d2" style="color: #718096; font-size: 0.88rem; margin: 0;">Flush anual, revisión de ánodo y ajuste de temperatura para alargar la vida útil del equipo.</p></div>
                         <a href="docs/service_water_heater.html" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Ver Detalles</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
@@ -349,52 +350,52 @@
 
                 <div id="v02-panel-leaks" class="v02-tab-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div><h3 data-i18n="qs_leak_t1" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Detección por Termografia</h3><p data-i18n="qs_leak_d1" style="color: #718096; font-size: 0.88rem; margin: 0;">Camaras termicas de alta resolucion para detectar fugas ocultas sin romper paredes. No invasivo.</p></div>
-                        <a data-i18n="qs_btn_ai" href="docs/eng_termografia.html" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Ver Tecnologia AI</a>
+                        <div><h3 data-i18n="qs_leak_t1" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Detección por Termografía</h3><p data-i18n="qs_leak_d1" style="color: #718096; font-size: 0.88rem; margin: 0;">Cámaras térmicas de alta resolución para detectar fugas ocultas sin romper paredes. No invasivo.</p></div>
+                        <a data-i18n="qs_btn_ai" href="docs/eng_termografia.html" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Ver Tecnología AI</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div><h3 data-i18n="qs_leak_t2" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Fugas en Slab</h3><p data-i18n="qs_leak_d2" style="color: #718096; font-size: 0.88rem; margin: 0;">Especialistas en deteccion y reparacion de fugas bajo la losa de concreto. Cobertura de seguro aplicable.</p></div>
+                        <div><h3 data-i18n="qs_leak_t2" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Fugas en Slab</h3><p data-i18n="qs_leak_d2" style="color: #718096; font-size: 0.88rem; margin: 0;">Especialistas en detección y reparación de fugas bajo la losa de concreto. Cobertura de seguro aplicable.</p></div>
                         <a data-i18n="qs_btn_urg" href="docs/informe_forense.html" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">Ver Detalles</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div><h3 data-i18n="qs_leak_t3" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">AI Leak Prediction</h3><p data-i18n="qs_leak_d3" style="color: #718096; font-size: 0.88rem; margin: 0;">Sistema predictivo con sensores IoT que alerta fugas antes de que ocurran. Instalacion disponible.</p></div>
-                        <a data-i18n="qs_btn_more" href="docs/inteligencia_artificial.html" style="background: transparent; color: #D4AF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4AF37;">Mas Informacion</a>
+                        <div><h3 data-i18n="qs_leak_t3" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">AI Leak Prediction</h3><p data-i18n="qs_leak_d3" style="color: #718096; font-size: 0.88rem; margin: 0;">Sistema predictivo con sensores IoT que alerta fugas antes de que ocurran. Instalación disponible.</p></div>
+                        <a data-i18n="qs_btn_more" href="docs/inteligencia_artificial.html" style="background: transparent; color: #D4AF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4AF37;">Más Información</a>
                     </div>
                 </div>
 
                 <div id="v02-panel-repipe" class="v02-tab-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div><h3 data-i18n="qs_rep_t1" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Re-Pipe Completo</h3><p data-i18n="qs_rep_d1" style="color: #718096; font-size: 0.88rem; margin: 0;">Reemplazo total de tuberías galvanizadas o de cobre corroidas. Trabajo garantizado con permiso CSLB.</p></div>
+                        <div><h3 data-i18n="qs_rep_t1" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Re-Pipe Completo</h3><p data-i18n="qs_rep_d1" style="color: #718096; font-size: 0.88rem; margin: 0;">Reemplazo total de tuberias galvanizadas o de cobre corroídas. Trabajo garantizado con permiso CSLB.</p></div>
                         <a data-i18n="qs_btn_view" href="docs/eng_cobre.html" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Ver Detalles</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div><h3 data-i18n="qs_rep_t2" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">PEX Piping</h3><p data-i18n="qs_rep_d2" style="color: #718096; font-size: 0.88rem; margin: 0;">Instalacion de tuberías PEX de ultima generacion. Flexible, resistente a la corrosion y de bajo costo.</p></div>
+                        <div><h3 data-i18n="qs_rep_t2" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">PEX Piping</h3><p data-i18n="qs_rep_d2" style="color: #718096; font-size: 0.88rem; margin: 0;">Instalación de tuberías PEX de última generación. Flexible, resistente a la corrosión y de bajo costo.</p></div>
                         <a data-i18n="qs_btn_call_now" href="docs/eng_cobre.html" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">Ver Detalles</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div><h3 data-i18n="qs_rep_t3" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Nueva Construccion</h3><p data-i18n="qs_rep_d3" style="color: #718096; font-size: 0.88rem; margin: 0;">Plomería integral para proyectos residenciales y comerciales desde cero. Coordinamos permisos.</p></div>
+                        <div><h3 data-i18n="qs_rep_t3" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Nueva Construcción</h3><p data-i18n="qs_rep_d3" style="color: #718096; font-size: 0.88rem; margin: 0;">Plomería integral para proyectos residenciales y comerciales desde cero. Coordinamos permisos.</p></div>
                         <a data-i18n="qs_btn_proj" href="docs/eng_b2b.html" style="background: transparent; color: #D4AF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4AF37;">Consultar Proyecto</a>
                     </div>
                 </div>
 
                 <div id="v02-panel-ai" class="v02-tab-panel" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div><h3 data-i18n="qs_ai_t1" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Joe AI - Diagnostico Gratis</h3><p data-i18n="qs_ai_d1" style="color: #718096; font-size: 0.88rem; margin: 0;">Describe tu problema a nuestro asistente Joe. Obtien diagnostico preliminar, materiales y presupuesto estimado al instante.</p></div>
+                        <div><h3 data-i18n="qs_ai_t1" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Joe AI - Diagnóstico Gratis</h3><p data-i18n="qs_ai_d1" style="color: #718096; font-size: 0.88rem; margin: 0;">Describe tu problema a nuestro asistente Joe. Obtén diagnóstico preliminar, materiales y presupuesto estimado al instante.</p></div>
                         <a data-i18n="qs_btn_joe" href="docs/hazlo_tu_mismo.html?issue=custom" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">Iniciar con Joe AI</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div><h3 data-i18n="qs_ai_t2" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">EP Estimator Pro</h3><p data-i18n="qs_ai_d2" style="color: #718096; font-size: 0.88rem; margin: 0;">Presupuesto inteligente en segundos con materiales, mano de obra y margenes optimizados por IA.</p></div>
+                        <div><h3 data-i18n="qs_ai_t2" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">EP Estimator Pro</h3><p data-i18n="qs_ai_d2" style="color: #718096; font-size: 0.88rem; margin: 0;">Presupuesto inteligente en segundos con materiales, mano de obra y márgenes optimizados por IA.</p></div>
                         <a data-i18n="qs_btn_est" href="https://ai.studio/apps/1a58c64e-2463-40ad-b1a5-9b7291ed3995" target="_blank" style="background: #D4AF37; color: #0A192F; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center;">Abrir Estimator</a>
                     </div>
                     <div style="background: rgba(10,25,47,0.8); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div><h3 data-i18n="qs_ai_t3" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Termografia con IA</h3><p data-i18n="qs_ai_d3" style="color: #718096; font-size: 0.88rem; margin: 0;">Analisis de imagenes termicas asistido por inteligencia artificial para detectar problemas invisibles al ojo humano.</p></div>
-                        <a data-i18n="qs_btn_tech" href="docs/eng_termografia.html" style="background: transparent; color: #D4AF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4AF37;">Ver Tecnologia</a>
+                        <div><h3 data-i18n="qs_ai_t3" style="color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem;">Termografía con IA</h3><p data-i18n="qs_ai_d3" style="color: #718096; font-size: 0.88rem; margin: 0;">Análisis de imágenes térmicas asistido por inteligencia artificial para detectar problemas invisibles al ojo humano.</p></div>
+                        <a data-i18n="qs_btn_tech" href="docs/eng_termografia.html" style="background: transparent; color: #D4AF37; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; text-align: center; border: 1px solid #D4AF37;">Ver Tecnología</a>
                     </div>
                 </div>
 
                 <!-- Bottom CTA -->
                 <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px;">
-                    <p data-i18n="qs_cta_desc" style="color: #a0aec0; font-size: 0.9rem; margin: 0 0 1rem;">No encuentra su servicio? Llamenos y resolvemos cualquier necesidad de plomería en San Jose, CA.</p>
+                    <p data-i18n="qs_cta_desc" style="color: #a0aec0; font-size: 0.9rem; margin: 0 0 1rem;">No encuentra su servicio? Llámenos y resolvemos cualquier necesidad de plomería en San Jose, CA.</p>
                     <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
                         <a href="tel:+16692134422" style="background: #D4AF37; color: #0A192F; padding: 12px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#c9a227'" onmouseout="this.style.background='#D4AF37'">Llamar: (669) 213-4422</a>
                         <a data-i18n="qs_cta_email" href="mailto:moralesplumbing026@gmail.com" style="background: transparent; color: #D4AF37; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1px solid #D4AF37;">Email: moralesplumbing026@gmail.com</a>
@@ -967,7 +968,7 @@
                 <div class="lang-es">
                     <video src="assets/videos/morales_plumbing__innovacion.mp4" controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 15px; border: 1px solid rgba(0,245,255,0.3); margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"></video>
                     <div style="margin-top: 20px;">
-                        <img src="assets/images/innovacion_en_plomería_con_ia.webp" style="max-width: 400px; width: 100%; border-radius: 10px; border: 2px solid #D4AF37; background-color: #ffffff; padding: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.8);" alt="Innovación IA">
+                        <img src="assets/images/innovacion_en_plomeria_con_ia.webp" style="max-width: 400px; width: 100%; border-radius: 10px; border: 2px solid #D4AF37; background-color: #ffffff; padding: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.8);" alt="Innovación IA">
                     </div>
                 </div>
             </div>
@@ -1272,10 +1273,6 @@
             <div class="booking-field-group">
                 <label class="booking-label" data-i18n="booking_name"><span class="pico-icon pico-person"></span> Nombre Completo</label>
                 <input type="text" id="bk-name" class="booking-input" placeholder="Tu nombre completo..." oninput="syncBookingField('name', this.value)">
-            </div>
-            <div class="booking-field-group">
-                <label class="booking-label" data-i18n="booking_email"><span class="pico-icon pico-email"></span> Correo Electrónico</label>
-                <input type="email" id="bk-email" class="booking-input" placeholder="Tu email..." oninput="syncBookingField('email', this.value)">
             </div>
             <div class="booking-field-group">
                 <label class="booking-label" data-i18n="booking_phone"><span class="pico-icon pico-pipe_phone"></span> Teléfono</label>
