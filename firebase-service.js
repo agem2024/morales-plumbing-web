@@ -43,7 +43,7 @@ async function signInUser() {
                 _currentUser = user;
                 resolve(user);
             } else {
-                const result = await _auth.signInAnonymously();
+                try { const result = await _auth.signInAnonymously();   } catch (e) { console.warn('[Firebase] signInAnonymously failed:', e.message); resolve(null); }
                 _currentUser = result.user;
                 resolve(result.user);
             }
