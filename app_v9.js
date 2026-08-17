@@ -10381,8 +10381,8 @@ function processJoeActions(responseText) {
 // ---------------------------------------------------------------
 const ADMIN_EMAIL = 'moralesplumbing026@gmail.com';
 
-let bookingData = { name: '', phone: '', address: '', service: '', date: '', time: '', notes: '' };
-const BOOKING_FIELDS = ['name', 'phone', 'address', 'service', 'date', 'time'];
+let bookingData = { name: '', email: '', phone: '', address: '', service: '', date: '', time: '', notes: '' };
+const BOOKING_FIELDS = ['name', 'email', 'phone', 'address', 'service', 'date', 'time'];
 
 // Booking conversation state machine
 let bookingState = {
@@ -10397,6 +10397,7 @@ const BOOKING_STEPS = {
         `Perfecto! Voy a ayudarte a agendar tu cita. 
 
 Cul es tu **nombre completo**?`,
+        '🔹 Excelente. ¿Cuál es tu **correo electrónico** para enviarte la confirmación?',
         '? Anotado. Cul es tu **nmero de telfono** de contacto?',
         '? Perfecto. Cul es la **direccin donde necesitas el servicio**?',
         '? Entendido. Qu**tipo de servicio** necesitas? (Ej: Water heater, deteccin de fugas, repipe, drain cleaning...)',
@@ -10405,13 +10406,14 @@ Cul es tu **nombre completo**?`,
         `? Casi listo. Tienes algn **detalle adicional** que debamos saber? (Urgencia, acceso, tipo de problema especfico...)
 
 O escribe "listo" si no hay nada ms.`,
-        null // 8 = confirm (handled by button)
+        null // 9 = confirm (handled by button)
     ],
     en: [
         null,
         `Perfect! Let me help you schedule your appointment. 
 
 What is your **full name**?`,
+        '🔹 Excellent. What is your **email address** so we can send the confirmation?',
         '? Got it. What is your **contact phone number**?',
         '? Great. What is the **service address**?',
         '? Understood. What **type of service** do you need? (e.g., Water heater, leak detection, repipe, drain cleaning...)',
@@ -10424,7 +10426,7 @@ Or type "done" if nothing else.`,
     ]
 };
 
-const BOOKING_FIELD_KEYS = [null, 'name', 'phone', 'address', 'service', 'date', 'time', 'notes'];
+const BOOKING_FIELD_KEYS = [null, 'name', 'email', 'phone', 'address', 'service', 'date', 'time', 'notes'];
 
 // Called when user manually edits a form field  syncs bookingData without interrupting Joe
 function syncBookingField(fieldId, value) {
@@ -10576,22 +10578,24 @@ function buildBookingSummary(lang) {
     if (lang === 'es') {
         return ` **Resumen de tu cita:**
  Nombre: ${d.name || ''}
- Telfono: ${d.phone || ''}
- Direccin: ${d.address || ''}
+ Email: ${d.email || ''}
+ Teléfono: ${d.phone || ''}
+ Dirección: ${d.address || ''}
  Servicio: ${d.service || ''}
  Fecha: ${d.date || ''}
-? Hora: ${d.time || ''}
+ Hora: ${d.time || ''}
  Notas: ${d.notes || ''}
 
-Todo se ve correcto? Haz clic en **? Confirmar Cita** en el formulario para enviar. Al confirmar, aceptas nuestros Trminos de Servicio y la Poltica de Privacidad (Cumplimiento CCPA de California).`;
+¿Todo se ve correcto? Haz clic en **✅ Confirmar Cita** en el formulario para enviar. Al confirmar, aceptas nuestros Términos de Servicio y la Política de Privacidad (Cumplimiento CCPA de California).`;
     }
-    return ` **Appointment Summary:**
+    return `📋 **Appointment Summary:**
  Name: ${d.name || ''}
+ Email: ${d.email || ''}
  Phone: ${d.phone || ''}
  Address: ${d.address || ''}
  Service: ${d.service || ''}
  Date: ${d.date || ''}
-? Time: ${d.time || ''}
+ Time: ${d.time || ''}
  Notes: ${d.notes || ''}
 
 Does everything look correct? Click **? Confirm Appointment** in the form to submit. By confirming, you agree to our Terms of Service and Privacy Policy (California CCPA Compliant).`;
@@ -10627,32 +10631,41 @@ function submitBooking() {
     }
 
     // -- SECURE BACKEND SUBMISSION ----------------------------
-    const waMessage = `Hola Morales Plumbing!%0ANueva Cita Reservada:%0A*Nombre:* ${d.name}%0A*Tel:* ${d.phone}%0A*Dir:* ${d.address}%0A*Servicio:* ${d.service}%0A*Fecha:* ${d.date}%0A*Hora:* ${d.time}%0A*Notas:* ${d.notes}`;
-    const emailSubject = encodeURIComponent("Nueva Cita Reservada");
-    const emailBody = encodeURIComponent(`Hola Morales Plumbing,
-
-Nueva Cita Reservada:
-Nombre: ${d.name}
-Tel: ${d.phone}
-Dir: ${d.address}
-Servicio: ${d.service}
-Fecha: ${d.date}
-Hora: ${d.time}
-Notas: ${d.notes}`);
-    
+    const confCode = "MP-" + Math.floor(1000 + Math.random() * 9000);
+    const waMessage = `Hola Morales Plumbing!%0ANueva Cita Reservada:%0A*Código:* ${confCode}%0A*Nombre:* ${d.name}%0A*Tel:* ${d.phone}%0A*Email:* ${d.email}%0A*Dir:* ${d.address}%0A*Servicio:* ${d.service}%0A*Fecha:* ${d.date}%0A*Hora:* ${d.time}%0A*Notas:* ${d.notes}`;
     const waLink = `https://wa.me/16692134422?text=${waMessage}`;
-    const smsLink = `sms:+16692134422?body=${waMessage}`;
-    const emailLink = `mailto:moralesplumbing026@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
+    // AUTOMATIC EMAIL PING VIA FORMSUBMIT
+    fetch("https://formsubmit.co/ajax/moralesplumbing026@gmail.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: d.name,
+            email: d.email || "no-email@morales-plumbing.com",
+            phone: d.phone,
+            address: d.address,
+            service: d.service,
+            date: d.date,
+            time: d.time,
+            notes: d.notes,
+            confirmationCode: confCode,
+            _subject: "🚨 NUEVA CITA RESERVADA: " + confCode,
+            _autoresponse: "Gracias por agendar con Morales Plumbing. Hemos recibido tu solicitud de cita. Tu código de confirmación es " + confCode + ". Un técnico te contactará pronto."
+        })
+    }).then(res => res.json())
+      .then(data => console.log("Email auto-sent via FormSubmit", data))
+      .catch(err => console.error("Error sending email", err));
 
     const contactBtns = `<div style="display:flex; flex-direction:column; gap:10px; margin-top:15px; margin-bottom:10px;">
-        <a href="${waLink}" target="_blank" style="background:rgba(37,211,102,0.2); color:#25D366; border: 1px solid #25D366; padding:10px; text-align:center; border-radius:5px; text-decoration:none; font-weight:bold;">📱 Enviar por WhatsApp</a>
-        <a href="${smsLink}" style="background:rgba(0,122,255,0.2); color:#007AFF; border: 1px solid #007AFF; padding:10px; text-align:center; border-radius:5px; text-decoration:none; font-weight:bold;">💬 Enviar por SMS</a>
-        <a href="${emailLink}" target="_blank" style="background:rgba(212,175,55,0.2); color:#D4AF37; border: 1px solid #D4AF37; padding:10px; text-align:center; border-radius:5px; text-decoration:none; font-weight:bold;">📧 Enviar por Correo (Email)</a>
+        <a href="${waLink}" target="_blank" style="background:rgba(37,211,102,0.2); color:#25D366; border: 1px solid #25D366; padding:10px; text-align:center; border-radius:5px; text-decoration:none; font-weight:bold;">💬 Hablar por WhatsApp (Opcional)</a>
     </div>`;
 
     const confirmMsg = lang === 'es'
-        ? `✅ ¡Datos recopilados exitosamente! <br><br>Por favor, **selecciona tu aplicación preferida** para enviarnos la solicitud y confirmar tu cita:<br>` + contactBtns
-        : `✅ Data collected successfully! <br><br>Please **select your preferred app** to send us the request and confirm your appointment:<br>` + contactBtns;
+        ? `✅ **¡Cita generada con éxito!** <br><br>Tu código de confirmación es: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>Hemos notificado al técnico automáticamente por correo electrónico. Si necesitas algo urgente o enviar fotos, contáctanos por WhatsApp:<br>` + contactBtns
+        : `✅ **Appointment successfully generated!** <br><br>Your confirmation code is: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>The technician has been automatically notified via email. If you need anything urgent or want to send photos, contact us via WhatsApp:<br>` + contactBtns;
 
     addMessage(confirmMsg, 'bot');
 
