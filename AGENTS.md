@@ -62,3 +62,13 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
 - **HOSTING:** El sitio está alojado 100% en GitHub Pages. 
 - **PROHIBIDO:** Usar Netlify o cualquier función backend (Server-Side Javascript, Node.js).
 - **FORMULARIOS:** Cualquier formulario (contacto, agendado) DEBE procesarse en el Frontend de manera invisible (AJAX) usando servicios como FormSubmit.
+
+
+## UPDATE AUGUST 2026 - ENCODING AND EMAIL SYSTEM FIXES
+
+**CRITICAL FIX REGARDING ENCODING:**
+DO NOT use PowerShell Get-Content/Set-Content or '> / >>' redirections to modify index.html or any UI file. These tools in Windows default to ANSI or Windows-1252 and will DESTROY the Spanish accents (mojibake). To edit text, either use proper IDE tools, or write a NodeJS script using pure s.readFileSync(..., 'utf8') with unicode escapes (e.g. \u00f3 for ó) to apply patches.
+All missing accents in the Quick Services tabs (Plomería General, Baños y Remodelación, etc.) have been completely FIXED via a pure JS patch. The user is extremely frustrated by AI claiming to fix it and failing due to encoding corruption. ALWAYS verify via a Node script output, not PowerShell output.
+
+**EMAIL NOTIFICATION SYSTEM:**
+Integrated FormSubmit to app_v9.js. The system now sends an automated email when a booking is created, and generates a 4-digit verification code (e.g., MP-1234) shown to the user on the UI and sent to the administration email.
