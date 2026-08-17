@@ -57,15 +57,15 @@
             <p style="margin: 2px 0 0; font-size: 0.7rem; color: #aaa; line-height: 1;">Lic. C-36 #1156542</p>
         </div>
         <button onclick="document.getElementById('globalLangMenu').classList.toggle('show-lang')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(0,245,255,0.3); cursor: pointer; padding: 4px 8px; outline: none; border-radius: 6px; display: flex; align-items: center; gap: 5px; transition: 0.2s;">
-            <img src="../assets/plan_good_clean.png" alt="LanGuíage" style="height: 22px; width: auto; border-radius: 4px; box-shadow: 0 0 5px rgba(0,245,255,0.4);">
+            <img src="../assets/plan_good_clean.png" alt="Language" style="height: 22px; width: auto; border-radius: 4px; box-shadow: 0 0 5px rgba(0,245,255,0.4);">
             <span style="color: #00f5ff; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.5px;">LANG</span>
         </button>
         <div id="globalLangMenu" style="display: none; position: absolute; right: 0; top: 45px; background: rgba(3, 7, 18, 0.98); border: 1px solid #D4AF37; border-radius: 8px; flex-direction: column; min-width: 140px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.9); z-index: 1000000;">
-            <button onclick="if(typeof setLanGuíage === 'function') setLanGuíage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
-            <button onclick="if(typeof setLanGuíage === 'function') setLanGuíage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Espa�ol</button>
-            <button onclick="if(typeof setLanGuíage === 'function') setLanGuíage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - ??</button>
-            <button onclick="if(typeof setLanGuíage === 'function') setLanGuíage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
-            <button onclick="if(typeof setLanGuíage === 'function') setLanGuíage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Ti?ng Vi?t</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Espa�ol</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - ??</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Ti?ng Vi?t</button>
         </div>
     </div>
 </header>
@@ -238,24 +238,24 @@
         </p>
     </footer>
 
-    <script src="../app.js"></script>
+    <script src="../app_v9.js"></script>
     <script>
         const services = [
-    { id: 1, code: "OR-DI�G-001", nameKey: "pb_svc_1_name", userDescKey: "pb_svc_1_user", techDescKey: "pb_svc_1_tech", category: "Diagnostic", image: "../assets/icon_plumber_ai.png" },
+    { id: 1, code: "OR-DIAG-001", nameKey: "pb_svc_1_name", userDescKey: "pb_svc_1_user", techDescKey: "pb_svc_1_tech", category: "Diagnostic", image: "../assets/icon_plumber_ai.png" },
     { id: 2, code: "OR-ENG-002", nameKey: "pb_svc_2_name", userDescKey: "pb_svc_2_user", techDescKey: "pb_svc_2_tech", category: "Engineering", image: "../assets/comic_copper.png" },
     { id: 3, code: "OR-ECO-003", nameKey: "pb_svc_3_name", userDescKey: "pb_svc_3_user", techDescKey: "pb_svc_3_tech", category: "Eco", image: "../assets/comic_treatment.png" },
-    { id: 4, code: "OR-S�FE-004", nameKey: "pb_svc_4_name", userDescKey: "pb_svc_4_user", techDescKey: "pb_svc_4_tech", category: "Safety", image: "../assets/icon_plumber_sat.png" },
-    { id: 5, code: "OR-DI�G-005", nameKey: "pb_svc_5_name", userDescKey: "pb_svc_5_user", techDescKey: "pb_svc_5_tech", category: "Diagnostic", image: "../assets/comic_septic.png" },
+    { id: 4, code: "OR-SAFE-004", nameKey: "pb_svc_4_name", userDescKey: "pb_svc_4_user", techDescKey: "pb_svc_4_tech", category: "Safety", image: "../assets/icon_plumber_sat.png" },
+    { id: 5, code: "OR-DIAG-005", nameKey: "pb_svc_5_name", userDescKey: "pb_svc_5_user", techDescKey: "pb_svc_5_tech", category: "Diagnostic", image: "../assets/comic_septic.png" },
     { id: 6, code: "OR-ENG-006", nameKey: "pb_svc_6_name", userDescKey: "pb_svc_6_user", techDescKey: "pb_svc_6_tech", category: "Engineering", image: "../assets/comic_construction.png" },
     { id: 7, code: "OR-ECO-007", nameKey: "pb_svc_7_name", userDescKey: "pb_svc_7_user", techDescKey: "pb_svc_7_tech", category: "Eco", image: "../assets/comic_heaters.png" },
-    { id: 8, code: "OR-S�FE-008", nameKey: "pb_svc_8_name", userDescKey: "pb_svc_8_user", techDescKey: "pb_svc_8_tech", category: "Safety", image: "../assets/comic_expansion.png" },
-    { id: 9, code: "OR-DI�G-009", nameKey: "pb_svc_9_name", userDescKey: "pb_svc_9_user", techDescKey: "pb_svc_9_tech", category: "Diagnostic", image: "../assets/icon_plumber_biz.png" },
+    { id: 8, code: "OR-SAFE-008", nameKey: "pb_svc_8_name", userDescKey: "pb_svc_8_user", techDescKey: "pb_svc_8_tech", category: "Safety", image: "../assets/comic_expansion.png" },
+    { id: 9, code: "OR-DIAG-009", nameKey: "pb_svc_9_name", userDescKey: "pb_svc_9_user", techDescKey: "pb_svc_9_tech", category: "Diagnostic", image: "../assets/icon_plumber_biz.png" },
     { id: 10, code: "OR-ENG-010", nameKey: "pb_svc_10_name", userDescKey: "pb_svc_10_user", techDescKey: "pb_svc_10_tech", category: "Engineering", image: "../assets/icon_plumber_eco.png" },
     { id: 11, code: "OR-ECO-011", nameKey: "pb_svc_11_name", userDescKey: "pb_svc_11_user", techDescKey: "pb_svc_11_tech", category: "Eco", image: "../assets/service_tankless.png" },
-    { id: 12, code: "OR-S�FE-012", nameKey: "pb_svc_12_name", userDescKey: "pb_svc_12_user", techDescKey: "pb_svc_12_tech", category: "Safety", image: "../assets/comic_shield.png" },
+    { id: 12, code: "OR-SAFE-012", nameKey: "pb_svc_12_name", userDescKey: "pb_svc_12_user", techDescKey: "pb_svc_12_tech", category: "Safety", image: "../assets/comic_shield.png" },
     { id: 13, code: "OR-ENG-013", nameKey: "pb_svc_13_name", userDescKey: "pb_svc_13_user", techDescKey: "pb_svc_13_tech", category: "Engineering", image: "../assets/comic_tiers.png" },
     { id: 14, code: "OR-ECO-014", nameKey: "pb_svc_14_name", userDescKey: "pb_svc_14_user", techDescKey: "pb_svc_14_tech", category: "Eco", image: "../assets/comic_harvest.png" },
-    { id: 15, code: "OR-S�FE-015", nameKey: "pb_svc_15_name", userDescKey: "pb_svc_15_user", techDescKey: "pb_svc_15_tech", category: "Safety", image: "../assets/comic_terms.png" }
+    { id: 15, code: "OR-SAFE-015", nameKey: "pb_svc_15_name", userDescKey: "pb_svc_15_user", techDescKey: "pb_svc_15_tech", category: "Safety", image: "../assets/comic_terms.png" }
 ].map(s => {
     if (typeof PB_SERVICE_PRICES !== 'undefined' && PB_SERVICE_PRICES['svc_' + s.id]) {
         const formatP = p => typeof p === 'string' && p.includes('-') ? '$' + p.split('-').map(x=>x.trim()).join(' - $') : '$' + p.toLocaleString();
@@ -338,9 +338,9 @@
             `).join('');
             
             // Re-apply translations to dynamic content
-            if(window.setLanGuíage) {
+            if(window.setLanguage) {
                 const currentLang = localStorage.getItem('morales_lang') || 'en';
-                window.setLanGuíage(currentLang);
+                window.setLanguage(currentLang);
             }
         }
 
@@ -370,12 +370,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderServices(services);
             
-            // Initialize lanGuíage switching buttons in pricebook
-            document.querySelectorAll('.lanGuíage-switcher .lang-btn').forEach(btn => {
+            // Initialize language switching buttons in pricebook
+            document.querySelectorAll('.language-switcher .lang-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const lang = btn.getAttribute('data-lang');
-                    if(window.setLanGuíage) {
-                        window.setLanGuíage(lang);
+                    if(window.setLanguage) {
+                        window.setLanguage(lang);
                         renderServices(services); // Re-render to update i18n attributes
                     }
                 });

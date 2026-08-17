@@ -30,10 +30,35 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
 - Usar scripts en archivos que ya estaban corruptos destruira las traducciones asiaticas y generara **errores de sintaxis fatales** (como renombrar variables JS `isActive` a `isctive`, o `msg` a `m\u00e1sg`), lo que rompera el enrutamiento de la pagina entera.
 - Si ves corrupciones, **siempre recupera el archivo de un commit funcional de git** (`git checkout <commit> -- archivo`) en lugar de intentar arreglarlo con un script global ciego.
 ## Soluciones Recientes
-- Reparaci�n global de enlaces internos en app.js para toda la web.
-- Correcci�n de acentos y caracteres especiales en pricebook.html.
+- Reparación global de enlaces internos en app.js para toda la web.
+- Corrección de acentos y caracteres especiales en pricebook.html.
+- Corrección del menú móvil en Android: Se actualizó `style.css` (pointer-events) para evitar bloqueos en los formularios, y se excluyó a `.dropdown-toggle` en `index.html` para evitar el cierre prematuro del menú desplegable.
+- Corrección de ruta de video (assets) y agregado de enlace de retorno al inicio en el logo de `corporate_team/Morales_Corporate_Team.html`.
 
+- Reparación quirúrgica de caracteres corruptos (mojibake) y error de sintaxis en diagrama de Mermaid en `docs/ley_water_heaters.html`.
+- Solución a la desaparición de datos y tarjetas en `pricebook.html`:
+  - Se repararon errores de sintaxis en JavaScript causados por reemplazos masivos previos defectuosos (ej. de `setLanGuage` a `setLanguage`).
+  - Se actualizó el enlace del script de traducciones de `app.js` (archivo eliminado) al correcto `app_v9.js`, permitiendo volver a renderizar toda la data y precios.
+
+- Reparación del sistema de envío de formularios por AJAX (Contacto, Citas, PQR):
+  - Se añadió el parámetro `_captcha: "false"` en `app_v9.js` para evitar que `formsubmit.co` bloquee silenciosamente las peticiones AJAX exigiendo una página de verificación humana que el usuario nunca podía ver.
+- Mejora en la experiencia de usuario (UX) para el agendado de citas:
+  - Se eliminó la instrucción que abría forzosamente la aplicación de WhatsApp al solicitar una cita.
+  - En su lugar, el bot de IA ahora genera dinámicamente tres botones (WhatsApp, SMS, Correo Electrónico) para que el cliente elija el método de comunicación de su preferencia.
+
+- Actualización de Interfaz y Asistente Virtual (Sofia Lin):
+  - Se reemplazó el avatar estático de "Joe" por el video animado `susa.mp4` para representar a la nueva asistente "Sofia Lin" en los botones flotantes de la web.
+  - Se eliminó un icono flotante duplicado que mostraba un globo de notificación rojo, dejando un solo botón limpio con el video en la esquina inferior derecha.
+  - Se rediseñó el pie de página (footer) eliminando la redundancia de bloques de información, organizándolo en una nueva disposición limpia con el video de "urgencia" a la izquierda y los datos de contacto y redes sociales unificados a la derecha.
+  - Sincronización y protección de entorno local para evitar pérdida de archivos locales no rastreados durante conflictos en el control de versiones (Git).
+- Refinamiento de la Sección Principal (Hero):
+  - Actualización tipográfica usando la fuente "Aladin" y ajustes de tamaño (+20%) con diseño adaptativo (`clamp()`) para mejorar la legibilidad en pantallas móviles y de escritorio.
+  - Implementación de imágenes de fondo (`plan_better.webp`, `service_tankless.webp` y el cuadro estático del video `Grok_Clip_013.webp`) con superposiciones translúcidas (gradientes oscuros) en los tres botones principales de acción ("Eco Water Heater Systems", "Explorar Ecosistema" y "Agenda Rápido").
+
+- Corrección de bugs en Interfaz de Citas:
+  - Se corrigió un error de sintaxis y caracteres corruptos (mojibake) en los textos enviados automáticamente al chatbot (`app_v9.js`) que provocaba que la frase `"我想preabout管道服务预约。"` y `"puedo agendar"` se guardaran erróneamente en el perfil local del usuario (`localStorage`), sobrescribiendo su nombre y teléfono en el formulario de citas.
+  - Se renombró el botón de "Agenda rápido con Joe" a únicamente "Agenda rápido", desvinculándolo del motor de traducciones para prevenir que el texto sea sobrescrito incorrectamente.
 ## Arquitectura Web (REGLA ESTRICTA)
-- **HOSTING:** El sitio est alojado 100% en GitHub Pages. 
-- **PROHIBIDO:** Usar Netlify o cualquier funcin backend (Server-Side Javascript, Node.js).
+- **HOSTING:** El sitio está alojado 100% en GitHub Pages. 
+- **PROHIBIDO:** Usar Netlify o cualquier función backend (Server-Side Javascript, Node.js).
 - **FORMULARIOS:** Cualquier formulario (contacto, agendado) DEBE procesarse en el Frontend de manera invisible (AJAX) usando servicios como FormSubmit.
