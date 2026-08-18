@@ -2237,6 +2237,11 @@
     // Attempt autoplay on load
     window.addEventListener('DOMContentLoaded', () => {
         if (jingleAudio) {
+            const currentLang = localStorage.getItem('lang') || 'en';
+            if (jingleSource) {
+                jingleSource.src = currentLang === 'en' ? 'assets/media/morales_jingle_en.mp4' : 'assets/media/morales_jingle_es.mp4';
+                jingleAudio.load();
+            }
             jingleAudio.play().then(() => {
                 jingleIsPlaying = true;
                 updateJingleUI(true);
