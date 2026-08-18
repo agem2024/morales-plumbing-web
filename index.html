@@ -2125,6 +2125,27 @@
                 "nav_desc_media": "Audio/Visual Content"
             });
             if(translations.es) Object.assign(translations.es, {
+                  "qs_tab_plumbing": "Plomería General",
+                  "qs_tab_bathroom": "Baños y Remodelación",
+                  "qs_tab_heaters": "Calentadores",
+                  "qs_tab_leaks": "Detección Fugas",
+                  "qs_tab_repipe": "Re-Tubería",
+                  "qs_tab_ai": "Diagnóstico IA",
+                  "qs_plumb_t1": "Reparación de Tuberías",
+                  "qs_plumb_d1": "Diagnóstico y reparación profesional de tuberías rotas, obstruidas o con fugas en su hogar.",
+                  "qs_btn_call": "Ver Detalles",
+                  "qs_plumb_t2": "Emergencias 24/7",
+                  "qs_plumb_d2": "Inundaciones, tuberías rotas o pérdida de agua. Respondemos en San José sin costo de evaluación.",
+                  "qs_btn_emerg": "Ver Servicios",
+                  "qs_plumb_t3": "Inspección de Plomería",
+                  "qs_plumb_d3": "Evaluación para compra/venta de casa. Reporte detallado con termografía incluida.",
+                  "qs_btn_insp": "Solicitar Inspección",
+                  "qs_bath_t1": "Remodelación de Baños",
+                  "qs_bath_d1": "Diseño e instalación completa. Tina, ducha, lavabo, inodoro y plomería nueva.",
+                  "qs_btn_view": "Ver Detalles",
+                  "qs_bath_t2": "Drenajes y Alcantarillado",
+                  "qs_bath_d2": "Destape y reparación de drenajes de baño, tina y lavabos mediante presión hidrostática.",
+
                 "nav_desc_diy": "Diagnóstico AR",
                 "nav_desc_faq": "Base de Conocimiento",
                 "nav_desc_media": "Contenido Audiovisual"
@@ -2239,7 +2260,7 @@
         if (jingleAudio) {
             const currentLang = localStorage.getItem('lang') || 'en';
             if (jingleSource) {
-                jingleSource.src = currentLang === 'en' ? 'assets/media/morales_jingle_en.mp4' : 'assets/media/morales_jingle_es.mp4';
+                jingleAudio.src = currentLang === 'en' ? 'assets/media/morales_jingle_en.mp4' : 'assets/media/morales_jingle_es.mp4';
                 jingleAudio.load();
             }
             jingleAudio.play().then(() => {
@@ -2265,10 +2286,10 @@
                 const time = jingleAudio.currentTime;
                 
                 if (lang === 'en') {
-                    jingleSource.src = 'assets/media/morales_jingle_en.mp4';
+                    jingleAudio.src = 'assets/media/morales_jingle_en.mp4';
                 } else {
                     // Default to ES for anything else
-                    jingleSource.src = 'assets/media/morales_jingle_es.mp4';
+                    jingleAudio.src = 'assets/media/morales_jingle_es.mp4';
                 }
                 
                 jingleAudio.load();
