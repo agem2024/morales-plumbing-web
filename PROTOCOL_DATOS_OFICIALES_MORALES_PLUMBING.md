@@ -28,3 +28,12 @@
 1. ❌ **PROHIBIDO COLOCAR `www.moralesplumbing.com`:** Ese dominio no está registrado/activo. Queda estrictamente prohibido insertarlo en cualquier HTML, PDF, Markdown o respuesta.
 2. ❌ **PROHIBIDO INVENTAR DATOS:** Jamás usar teléfonos ficticios (como 555-xxx), licencias inventadas (#XXXXX), ni dominios de prueba.
 3. ❌ **PROHIBIDO ALTERAR O CONSULTAR OTRAS LICENCIAS:** La licencia CSLB es única y legal: **Lic. C-36 #1156542**.
+
+### 🚨 NUEVAS REGLAS DE CODIFICACIÓN Y TRADUCCIÓN (Agosto 2026)
+1. **CODIFICACIÓN ESTRICTA UTF-8**: Todos los archivos HTML, JS, JSON, y MD deben guardarse siempre en UTF-8. Queda estrictamente prohibido usar latin-1 o windows-1252 que rompen los acentos y las 'ñ'.
+2. **ORTOGRAFÍA Y TILDES OBLIGATORIAS**:
+   - NUNCA usar 'Aos' -> usar SIEMPRE **'Años'**.
+   - NUNCA usar 'Qu', 'Que' -> usar SIEMPRE **'Qué'** cuando sea pregunta.
+   - NUNCA usar 'cotizacin' -> usar SIEMPRE **'cotización'**.
+   - Revisar siempre: **Plomería**, **Baños**, **Reparación**, **Diagnóstico**, **Detección**.
+3. **NO SCRIPTS MASIVOS A CIEGAS**: Jamás ejecutar scripts que sobrescriban todos los archivos de traducción del proyecto sin hacer un test de codificación (encoding) primero. Todo cambio debe preservar las etiquetas HTML y acentos del español perfectamente.

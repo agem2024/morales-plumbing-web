@@ -1,77 +1,78 @@
-const fs = require('fs');
-let content = fs.readFileSync('app.js', 'utf8');
-
-const keysToAdd = {
-    'en': {
-        'stats_years_num': '15+',
-        'stats_years_text': 'Years of Experience',
-        'stats_projects_num': '500+',
-        'stats_projects_text': 'Completed Projects',
-        'stats_hours_num': '24/7',
-        'stats_hours_text': 'Emergencies',
-        'stats_lic_num': 'C-36',
-        'stats_lic_text': 'CSLB Lic. #1156542',
-        'qs_title': 'What service do you need?',
-        'qs_desc': 'Select your need and request an instant quote.'
-    },
-    'es': {
-        'stats_years_num': '15+',
-        'stats_years_text': 'A�os de Experiencia',
-        'stats_projects_num': '500+',
-        'stats_projects_text': 'Proyectos Completados',
-        'stats_hours_num': '24/7',
-        'stats_hours_text': 'Emergencias',
-        'stats_lic_num': 'C-36',
-        'stats_lic_text': 'CSLB Lic. #1156542',
-        'qs_title': '�Qu� servicio necesitas?',
-        'qs_desc': 'Selecciona tu necesidad y solicita cotizaci�n al instante.'
-    },
-    'zh': {
-        'stats_years_num': '15+',
-        'stats_years_text': '????',
-        'stats_projects_num': '500+',
-        'stats_projects_text': '?????',
-        'stats_hours_num': '24/7',
-        'stats_hours_text': '????',
-        'stats_lic_num': 'C-36',
-        'stats_lic_text': 'CSLB ??? #1156542',
-        'qs_title': '????????',
-        'qs_desc': '??????????????'
-    },
-    'tl': {
-        'stats_years_num': '15+',
-        'stats_years_text': 'Taon ng Karanasan',
-        'stats_projects_num': '500+',
-        'stats_projects_text': 'Natapos na mga Proyekto',
-        'stats_hours_num': '24/7',
-        'stats_hours_text': 'Mga Emergency',
-        'stats_lic_num': 'C-36',
-        'stats_lic_text': 'CSLB Lic. #1156542',
-        'qs_title': 'Anong serbisyo ang kailangan mo?',
-        'qs_desc': 'Piliin ang iyong pangangailangan at humiling ng agarang quote.'
-    },
-    'vi': {
-        'stats_years_num': '15+',
-        'stats_years_text': 'Nam Kinh nghi?m',
-        'stats_projects_num': '500+',
-        'stats_projects_text': 'D? �n d� Ho�n th�nh',
-        'stats_hours_num': '24/7',
-        'stats_hours_text': 'Tru?ng h?p kh?n c?p',
-        'stats_lic_num': 'C-36',
-        'stats_lic_text': 'Gi?y ph�p CSLB #1156542',
-        'qs_title': 'B?n c?n d?ch v? g�?',
-        'qs_desc': 'Ch?n nhu c?u c?a b?n v� y�u c?u b�o gi� ngay l?p t?c.'
-    }
-};
-
-for (const lang in keysToAdd) {
-    let strToAdd = '';
-    for (const key in keysToAdd[lang]) {
-        strToAdd +=         "": "",\n;
-    }
-    const regex = new RegExp(("": \\{\\n));
-    content = content.replace(regex, $1);
-}
-
-fs.writeFileSync('app.js', content, 'utf8');
-console.log('Translations added successfully.');
+ócóoónósótó ófósó ó=ó óróeóqóuóióróeó(ó'ófósó'ó)ó;óó
+ólóeótó ócóoónótóeónótó ó=ó ófósó.óróeóaódóFóiólóeóSóyónócó(ó'óaópópó.ójósó'ó,ó ó'óuótófó8ó'ó)ó;óó
+óó
+ócóoónósótó ókóeóyósóTóoóAódódó ó=ó ó{óó
+ó ó ó ó ó'óeónó'ó:ó ó{óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óyóeóaórósó_ónóuómó'ó:ó ó'ó1ó5ó+ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óyóeóaórósó_ótóeóxótó'ó:ó ó'óYóeóaórósó óoófó óEóxópóeóróióeónócóeó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ópóróoójóeócótósó_ónóuómó'ó:ó ó'ó5ó0ó0ó+ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ópóróoójóeócótósó_ótóeóxótó'ó:ó ó'óCóoómópólóeótóeódó óPóróoójóeócótósó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óhóoóuórósó_ónóuómó'ó:ó ó'ó2ó4ó/ó7ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óhóoóuórósó_ótóeóxótó'ó:ó ó'óEómóeórógóeónócóióeósó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ólóiócó_ónóuómó'ó:ó ó'óCó-ó3ó6ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ólóiócó_ótóeóxótó'ó:ó ó'óCóSóLóBó óLóiócó.ó ó#ó1ó1ó5ó6ó5ó4ó2ó'ó,óó
+ó ó ó ó ó ó ó ó ó'óqósó_ótóiótólóeó'ó:ó ó'óWóhóaótó ósóeóróvóiócóeó ódóoó óyóoóuó ónóeóeódó?ó'ó,óó
+ó ó ó ó ó ó ó ó ó'óqósó_ódóeósócó'ó:ó ó'óSóeólóeócótó óyóoóuóró ónóeóeódó óaónódó óróeóqóuóeósótó óaónó óiónósótóaónótó óqóuóoótóeó.ó'óó
+ó ó ó ó ó}ó,óó
+ó ó ó ó ó'óeósó'ó:ó ó{óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óyóeóaórósó_ónóuómó'ó:ó ó'ó1ó5ó+ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óyóeóaórósó_ótóeóxótó'ó:ó ó'óAóñóoósó ódóeó óEóxópóeóróióeónócóióaó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ópóróoójóeócótósó_ónóuómó'ó:ó ó'ó5ó0ó0ó+ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ópóróoójóeócótósó_ótóeóxótó'ó:ó ó'óPóróoóyóeócótóoósó óCóoómópólóeótóaódóoósó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óhóoóuórósó_ónóuómó'ó:ó ó'ó2ó4ó/ó7ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óhóoóuórósó_ótóeóxótó'ó:ó ó'óEómóeórógóeónócóióaósó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ólóiócó_ónóuómó'ó:ó ó'óCó-ó3ó6ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ólóiócó_ótóeóxótó'ó:ó ó'óCóSóLóBó óLóiócó.ó ó#ó1ó1ó5ó6ó5ó4ó2ó'ó,óó
+ó ó ó ó ó ó ó ó ó'óqósó_ótóiótólóeó'ó:ó ó'ó¿óQóuóéó ósóeóróvóiócóióoó ónóeócóeósóiótóaósó?ó'ó,óó
+ó ó ó ó ó ó ó ó ó'óqósó_ódóeósócó'ó:ó ó'óSóeólóeócócóióoónóaó ótóuó ónóeócóeósóiódóaódó óyó ósóoólóiócóiótóaó ócóoótóiózóaócóióóónó óaóló óiónósótóaónótóeó.ó'óó
+ó ó ó ó ó}ó,óó
+ó ó ó ó ó'ózóhó'ó:ó ó{óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óyóeóaórósó_ónóuómó'ó:ó ó'ó1ó5ó+ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óyóeóaórósó_ótóeóxótó'ó:ó ó'ó?ó?ó?ó?ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ópóróoójóeócótósó_ónóuómó'ó:ó ó'ó5ó0ó0ó+ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ópóróoójóeócótósó_ótóeóxótó'ó:ó ó'ó?ó?ó?ó?ó?ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óhóoóuórósó_ónóuómó'ó:ó ó'ó2ó4ó/ó7ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óhóoóuórósó_ótóeóxótó'ó:ó ó'ó?ó?ó?ó?ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ólóiócó_ónóuómó'ó:ó ó'óCó-ó3ó6ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ólóiócó_ótóeóxótó'ó:ó ó'óCóSóLóBó ó?ó?ó?ó ó#ó1ó1ó5ó6ó5ó4ó2ó'ó,óó
+ó ó ó ó ó ó ó ó ó'óqósó_ótóiótólóeó'ó:ó ó'ó?ó?ó?ó?ó?ó?ó?ó?ó'ó,óó
+ó ó ó ó ó ó ó ó ó'óqósó_ódóeósócó'ó:ó ó'ó?ó?ó?ó?ó?ó?ó?ó?ó?ó?ó?ó?ó?ó?ó'óó
+ó ó ó ó ó}ó,óó
+ó ó ó ó ó'ótóló'ó:ó ó{óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óyóeóaórósó_ónóuómó'ó:ó ó'ó1ó5ó+ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óyóeóaórósó_ótóeóxótó'ó:ó ó'óTóaóoónó ónógó óKóaóróaónóaósóaónó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ópóróoójóeócótósó_ónóuómó'ó:ó ó'ó5ó0ó0ó+ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ópóróoójóeócótósó_ótóeóxótó'ó:ó ó'óNóaótóaópóoósó ónóaó ómógóaó óPóróoóyóeókótóoó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óhóoóuórósó_ónóuómó'ó:ó ó'ó2ó4ó/ó7ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óhóoóuórósó_ótóeóxótó'ó:ó ó'óMógóaó óEómóeórógóeónócóyó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ólóiócó_ónóuómó'ó:ó ó'óCó-ó3ó6ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ólóiócó_ótóeóxótó'ó:ó ó'óCóSóLóBó óLóiócó.ó ó#ó1ó1ó5ó6ó5ó4ó2ó'ó,óó
+ó ó ó ó ó ó ó ó ó'óqósó_ótóiótólóeó'ó:ó ó'óAónóoónógó ósóeóróbóiósóyóoó óaónógó ókóaóiólóaónógóaónó ómóoó?ó'ó,óó
+ó ó ó ó ó ó ó ó ó'óqósó_ódóeósócó'ó:ó ó'óPóiólóióiónó óaónógó óióyóoónógó ópóaónógóaónógóaóiólóaónógóaónó óaótó óhóuómóiólóiónógó ónógó óaógóaóróaónógó óqóuóoótóeó.ó'óó
+ó ó ó ó ó}ó,óó
+ó ó ó ó ó'óvóió'ó:ó ó{óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óyóeóaórósó_ónóuómó'ó:ó ó'ó1ó5ó+ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óyóeóaórósó_ótóeóxótó'ó:ó ó'óNóaómó óKóiónóhó ónógóhóió?ómó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ópóróoójóeócótósó_ónóuómó'ó:ó ó'ó5ó0ó0ó+ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ópóróoójóeócótósó_ótóeóxótó'ó:ó ó'óDó?ó óáónó ódóãó óHóoóàónó ótóhóàónóhó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óhóoóuórósó_ónóuómó'ó:ó ó'ó2ó4ó/ó7ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_óhóoóuórósó_ótóeóxótó'ó:ó ó'óTóróuó?ónógó óhó?ópó ókóhó?ónó ócó?ópó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ólóiócó_ónóuómó'ó:ó ó'óCó-ó3ó6ó'ó,óó
+ó ó ó ó ó ó ó ó ó'ósótóaótósó_ólóiócó_ótóeóxótó'ó:ó ó'óGóió?óyó ópóhóéópó óCóSóLóBó ó#ó1ó1ó5ó6ó5ó4ó2ó'ó,óó
+ó ó ó ó ó ó ó ó ó'óqósó_ótóiótólóeó'ó:ó ó'óBó?ónó ócó?ónó ódó?ócóhó óvó?ó ógóìó?ó'ó,óó
+ó ó ó ó ó ó ó ó ó'óqósó_ódóeósócó'ó:ó ó'óCóhó?ónó ónóhóuó ócó?óuó ócó?óaó óbó?ónó óvóàó óyóêóuó ócó?óuó óbóáóoó ógóióáó ónógóaóyó óló?ópó ótó?ócó.ó'óó
+ó ó ó ó ó}óó
+ó}ó;óó
+óó
+ófóoóró ó(ócóoónósótó ólóaónógó óiónó ókóeóyósóTóoóAódódó)ó ó{óó
+ó ó ó ó ólóeótó ósótóróTóoóAódódó ó=ó ó'ó'ó;óó
+ó ó ó ó ófóoóró ó(ócóoónósótó ókóeóyó óiónó ókóeóyósóTóoóAódódó[ólóaónógó]ó)ó ó{óó
+ó ó ó ó ó ó ó ó ósótóróTóoóAódódó ó+ó=ó ó ó ó ó ó ó ó ó ó"ó"ó:ó ó"ó"ó,ó\ónó;óó
+ó ó ó ó ó}óó
+ó ó ó ó ócóoónósótó óróeógóeóxó ó=ó ónóeówó óRóeógóEóxópó(ó(ó"ó"ó:ó ó\ó\ó{ó\ó\ónó)ó)ó;óó
+ó ó ó ó ócóoónótóeónótó ó=ó ócóoónótóeónótó.óróeópólóaócóeó(óróeógóeóxó,ó ó$ó1ó)ó;óó
+ó}óó
+óó
+ófósó.ówóróiótóeóFóiólóeóSóyónócó(ó'óaópópó.ójósó'ó,ó ócóoónótóeónótó,ó ó'óuótófó8ó'ó)ó;óó
+ócóoónósóoólóeó.ólóoógó(ó'óTóróaónósólóaótóióoónósó óaódódóeódó ósóuócócóeósósófóuólólóyó.ó'ó)ó;óó
+ó
