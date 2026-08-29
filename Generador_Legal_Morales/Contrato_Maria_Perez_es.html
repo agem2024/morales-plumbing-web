@@ -3,333 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contrato Maestro de Servicios de Plomería — Morales Plumbing</title>
+    <title>Acuerdo Legal de Servicio & Contrato - MORALES PLUMBING</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #0A192F;
-            --gold: #D4AF37;
-            --text: #1E293B;
-            --border: #CBD5E1;
-            --bg-light: #F8FAFC;
-        }
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #0A192F;
             margin: 0;
-            padding: 30px;
-            color: var(--text);
-            background: #EAEEF3;
+            padding: 30px 20px;
             line-height: 1.6;
-            font-size: 14px;
         }
-        .contract-paper {
-            max-width: 900px;
+        .contract-wrapper {
+            max-width: 860px;
             margin: 0 auto;
             background: #FFFFFF;
-            padding: 40px 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            border-top: 6px solid var(--gold);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(10, 25, 47, 0.08);
+            overflow: hidden;
         }
-        .header {
+        .header-official {
+            background: linear-gradient(135deg, #0A192F 0%, #112240 100%);
+            border-bottom: 4px solid #D4AF37;
+            padding: 25px 35px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 20px;
-            margin-bottom: 25px;
+            color: #FFFFFF;
         }
-        .header-logo {
+        .header-left {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        .header-logo img {
-            height: 60px;
-            width: auto;
+        .header-left img {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            border: 2px solid #D4AF37;
+            object-fit: cover;
         }
-        .header-title h1 {
+        .header-brand h1 {
             margin: 0;
+            font-size: 1.4rem;
             font-family: 'Orbitron', sans-serif;
-            font-size: 20px;
-            color: var(--primary);
+            letter-spacing: 1px;
+            color: #FFFFFF;
+        }
+        .header-brand span {
+            color: #D4AF37;
+            font-size: 0.75rem;
+            font-weight: 700;
             letter-spacing: 1px;
         }
-        .header-title p {
-            margin: 3px 0 0;
-            font-size: 12px;
-            color: #64748B;
-            font-weight: 600;
-        }
-        .header-info {
+        .header-right {
             text-align: right;
-            font-size: 12px;
-            color: var(--text);
-            line-height: 1.4;
+            font-size: 0.82rem;
+            color: #E2E8F0;
         }
-        .header-info strong {
-            color: var(--primary);
+        .header-right strong {
+            color: #D4AF37;
         }
-        .badge-type {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--gold);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 5px;
+        .body-content {
+            padding: 35px;
         }
-        .section-title {
-            color: var(--primary);
+        .doc-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 14px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 5px;
-            margin: 25px 0 12px;
+            font-size: 1.3rem;
+            color: #0A192F;
+            margin-top: 0;
+            margin-bottom: 5px;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 10px;
+        }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            background: #F1F5F9;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        .meta-item strong {
+            display: block;
+            color: #64748B;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+        .meta-item span {
+            color: #0A192F;
+            font-weight: 700;
+        }
+        .section {
+            margin: 25px 0;
+        }
+        .section h3 {
+            color: #0A192F;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            border-left: 4px solid #D4AF37;
+            padding-left: 10px;
+        }
+        .price-box {
+            background: #F8FAFC;
+            border: 2px dashed #D4AF37;
+            border-radius: 8px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 15px;
-        }
-        .info-box {
-            background: var(--bg-light);
-            border: 1px solid var(--border);
-            padding: 12px 16px;
-            border-radius: 6px;
-        }
-        .info-box label {
-            font-size: 11px;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: #64748B;
-            display: block;
-            margin-bottom: 4px;
-        }
-        .info-box span {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        .table-custom {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 13px;
-        }
-        .table-custom th {
-            background: var(--primary);
-            color: #FFFFFF;
-            padding: 10px 12px;
-            text-align: left;
-            font-weight: 600;
-        }
-        .table-custom td {
-            padding: 10px 12px;
-            border-bottom: 1px solid var(--border);
-        }
-        .legal-notice-box {
-            background: #FFFBEB;
-            border: 1px solid #FCD34D;
-            border-left: 4px solid #F59E0B;
-            padding: 14px 18px;
-            border-radius: 6px;
             margin: 20px 0;
-            font-size: 12px;
-            color: #92400E;
-            line-height: 1.5;
         }
-        .legal-notice-box strong {
-            color: #78350F;
-            display: block;
-            margin-bottom: 4px;
-            font-size: 13px;
+        .price-amount {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #059669;
+            font-family: 'Orbitron', sans-serif;
         }
-        .signature-grid {
+        .terms-box {
+            background: #FAFAFA;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 18px 20px;
+            font-size: 0.85rem;
+            color: #334155;
+            line-height: 1.65;
+        }
+        .signatures {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px solid #E2E8F0;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
         }
         .sig-box {
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
         }
         .sig-line {
-            border-bottom: 1px solid #000000;
+            border-bottom: 1.5px solid #0A192F;
             height: 45px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
-        .sig-label {
-            font-size: 12px;
+        .sig-box p {
+            margin: 0;
+            font-size: 0.82rem;
+            color: #64748B;
+            font-weight: 600;
+        }
+        .share-actions {
+            background: #0A192F;
+            padding: 20px 35px;
+            text-align: center;
+            border-top: 1px solid #E2E8F0;
+        }
+        .share-actions p {
+            color: #D4AF37;
+            font-size: 0.85rem;
             font-weight: 700;
-            color: var(--primary);
+            margin: 0 0 12px;
         }
+        .share-btns {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .share-btns a, .share-btns button {
+            padding: 8px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.15s;
+        }
+        .share-btns a:hover, .share-btns button:hover {
+            transform: translateY(-2px);
+        }
+        .btn-wa { background: #25D366; }
+        .btn-tg { background: #0088CC; }
+        .btn-sms { background: #475569; }
+        .btn-email { background: #D4AF37; color: #0A192F !important; }
+        .btn-print { background: #0284C7; }
+
         @media print {
             body { background: #FFFFFF; padding: 0; }
-            .contract-paper { box-shadow: none; border-top: none; padding: 20px; }
-            .no-print { display: none; }
+            .contract-wrapper { border: none; box-shadow: none; max-width: 100%; }
+            .share-actions { display: none !important; }
         }
     </style>
-    <!-- morales_theme_sync: Sync Theme & Language from Main Portal -->
-    <script>
-        (function() {
-            try {
-                var theme = localStorage.getItem('morales_a11y_theme') || 'dark';
-                if (theme === 'light') document.documentElement.dataset.theme = 'light';
-                else delete document.documentElement.dataset.theme;
-            } catch(e) {}
-        })();
-    </script>
 </head>
 <body>
-    <div class="contract-paper">
-        <!-- HEADER -->
-        <div class="header">
-            <div class="header-logo">
-                <img src="../assets/logo_portada.png" alt="Morales Plumbing" onerror="this.src='../assets/logo_portada.png';">
-                <div class="header-title">
+    <div class="contract-wrapper">
+        <div class="header-official">
+            <div class="header-left">
+                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" onerror="this.src='../assets/logo_portada.png';">
+                <div class="header-brand">
                     <h1>MORALES PLUMBING</h1>
-                    <p>AI-INTEGRATED SERVICES — LIC. C-36 #1156542</p>
-                    <span class="badge-type" id="contract-badge-type">Acuerdo de Servicios Residenciales</span>
+                    <span>AI-INTEGRATED SERVICES</span>
                 </div>
             </div>
-            <div class="header-info">
-                <strong>Morales Plumbing</strong><br>
-                San Jose, CA | (669) 213-4422<br>
-                moralesplumbing026@gmail.com<br>
+            <div class="header-right">
+                <strong>Lic. C-36 #1156542 | San Jose, CA</strong><br>
+                (669) 213-4422 | moralesplumbing026@gmail.com<br>
                 www.morales-plumbing.com
             </div>
         </div>
 
-        <!-- METADATOS -->
-        <div class="grid-3">
-            <div class="info-box">
-                <label>Número de Contrato / Orden</label>
-                <span>MP-2026-0842-CA</span>
+        <div class="body-content">
+            <h2 class="doc-title">Acuerdo Legal de Servicio & Contrato</h2>
+            
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <strong>Cliente:</strong>
+                    <span>Maria Perez</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Fecha de Aceptación:</strong>
+                    <span>29 de August de 2026</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Contract Type / Tipo:</strong>
+                    <span>RESIDENTIAL</span>
+                </div>
+                <div class="meta-item">
+                    <strong>CSLB License:</strong>
+                    <span>C-36 #1156542</span>
+                </div>
             </div>
-            <div class="info-box">
-                <label>Fecha de Emisión</label>
-                <span>29 de Agosto de 2026</span>
+
+            <div class="section">
+                <h3>Descripción y Alcance del Trabajo:</h3>
+                <p style="margin: 0; color: #1E293B;">Reemplazo de Calentador Tankless</p>
             </div>
-            <div class="info-box">
-                <label>Fecha Estimada de Inicio / Fin</label>
-                <span>Inicio: Inmediato | Fin: 1 Día Hábil</span>
+
+            <div class="price-box">
+                <div>
+                    <span style="font-weight: 700; color: #0A192F; font-size: 1rem;">Precio Total Acordado:</span>
+                    <p style="margin: 3px 0 0; font-size: 0.78rem; color: #64748B;">Includes all labor, certified fittings, cleanup & CSLB warranty.</p>
+                </div>
+                <div class="price-amount">$4850 USD</div>
+            </div>
+
+            <div class="section">
+                <h3>Términos Legales & Cláusulas CSLB:</h3>
+                <div class="terms-box">
+                    
+            <strong>1. Licencia y Fianza:</strong> Todos los trabajos son ejecutados bajo la Licencia CSLB C-36 #1156542.<br>
+            <strong>2. Pago y Depósito (BPC § 7159):</strong> El depósito inicial no superará el 10% del precio total o $1,000 (el que sea menor). Saldo pagadero al finalizar satisfactoriamente.<br>
+            <strong>3. Derecho de Cancelación de 3 Días (Civil Code § 1689.5):</strong> Usted tiene el derecho legal de cancelar este contrato dentro de tres (3) días hábiles posteriores a la firma.<br>
+            <strong>4. Garantía:</strong> Garantía de 1 año en mano de obra y garantía oficial del fabricante en equipos y materiales.<br>
+            <strong>5. Aviso de Gravamen Mecánico (Mechanics Lien Warning):</strong> Quienes suministren mano de obra o materiales no pagados tienen derecho a registrar un gravamen contra su propiedad según el Código Civil de California.
+            
+                </div>
+            </div>
+
+            <div class="signatures">
+                <div class="sig-box">
+                    <div class="sig-line"></div>
+                    <p>Firma del Propietario / Cliente:</p>
+                </div>
+                <div class="sig-box">
+                    <div class="sig-line"></div>
+                    <p>Morales Plumbing Authorized Rep. (Lic. C-36 #1156542)</p>
+                </div>
             </div>
         </div>
 
-        <!-- CLIENTE -->
-        <div class="section-title">01. Datos del Cliente &amp; Ubicación del Inmueble</div>
-        <div class="grid-2">
-            <div class="info-box">
-                <label>Nombre del Cliente / Razón Social</label>
-                <span>Maria Perez</span>
-            </div>
-            <div class="info-box">
-                <label>Teléfono &amp; Correo Electrónico</label>
-                <span>(669) 213-4422 | maria.perez@ejemplo.com</span>
-            </div>
-            <div class="info-box" style="grid-column: 1 / -1;">
-                <label>Dirección del Inmueble (Lugar de Trabajo)</label>
-                <span>San Jose, Santa Clara County, CA</span>
-            </div>
-        </div>
-
-        <!-- ALCANCE DEL TRABAJO -->
-        <div class="section-title">02. Alcance del Trabajo &amp; Especificaciones Técnicas</div>
-        <div class="info-box">
-            <label>Descripción Detallada de Materiales y Mano de Obra (California BPC § 7159)</label>
-            <p style="margin: 5px 0 0; font-size: 13px; color: #334155;">
-                Suministro e instalación completa de calentador de agua de alta eficiencia conforme al Código de Plomería de California (CPC) y Title 24. Incluye desconexión y retiro ecológico del equipo existente, instalación de válvulas de alivio T&P con descarga rígida, conectores dieléctricos de cobre, línea de gas con trampa de sedimentos, bandeja de goteo con sensor de fuga y verificación de presión hidrostática a 60 PSI.
-            </p>
-        </div>
-
-        <!-- DESGLOSE ECONÓMICO -->
-        <div class="section-title">03. Desglose Económico &amp; Estructura de Pagos</div>
-        <table class="table-custom">
-            <thead>
-                <tr>
-                    <th>Concepto / Partida</th>
-                    <th>Tipo</th>
-                    <th>Garantía</th>
-                    <th style="text-align: right;">Total Estimado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Instalación de Calentador de Agua + Materiales Certificados</strong></td>
-                    <td>Equipo & Mano de Obra</td>
-                    <td>6 Años Fabricante / 1 Año Mano de Obra</td>
-                    <td style="text-align: right; font-weight: 700; color: #16A34A;">$3,450.00</td>
-                </tr>
-                <tr>
-                    <td><strong>Inspección Termográfica Infrarroja FLIR</strong></td>
-                    <td>Diagnóstico AI</td>
-                    <td>Certificado Digital</td>
-                    <td style="text-align: right; color: #0284C7;">INCLUIDO</td>
-                </tr>
-                <tr style="background: #F1F5F9; font-weight: 700;">
-                    <td colspan="3" style="text-align: right; color: var(--primary);">TOTAL DEL CONTRATO:</td>
-                    <td style="text-align: right; font-size: 15px; color: #16A34A;">$3,450.00</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- CLÁUSULAS LEGALES OBLIGATORIAS DE CALIFORNIA -->
-        <div class="section-title">04. Cláusulas Estatales y Federales Obligatorias</div>
-
-        <!-- 1. Depósito CSLB -->
-        <div class="legal-notice-box">
-            <strong>AVISO DE DEPÓSITO DE CALIFORNIA (CSLB BPC § 7159):</strong>
-            La ley del Estado de California prohíbe exigir o aceptar un pago inicial o depósito que exceda de <strong>$1,000 o el 10% del precio total del contrato</strong>, lo que sea menor, a menos que el contratista haya presentado una fianza de cumplimiento formal.
-        </div>
-
-        <!-- 2. Mechanics Lien Warning -->
-        <div class="legal-notice-box" style="background: #FEF2F2; border-color: #FECACA; border-left-color: #DC2626; color: #991B1B;">
-            <strong style="color: #7F1D1D;">AVISO SOBRE GRAVAMEN DE MECÁNICOS (CALIFORNIA CIVIL CODE § 8400-8448):</strong>
-            Cualquier contratista, subcontratista, proveedor de materiales o trabajador que suministre mano de obra o materiales para la mejora de su propiedad y a quien no se le pague tiene el derecho legal de registrar un gravamen de mecánicos (<em>Mechanics Lien</em>) contra su propiedad. El gravamen se convierte en un reclamo legal sobre su inmueble y podría dar lugar a una demanda de ejecución hipotecaria forzada para saldar la deuda.
-        </div>
-
-        <!-- 3. Three-Day Right of Rescission -->
-        <div class="legal-notice-box" style="background: #EFF6FF; border-color: #BFDBFE; border-left-color: #2563EB; color: #1E40AF;">
-            <strong style="color: #1E3A8A;">DERECHO DE CANCELACIÓN EN 3 DÍAS (THREE-DAY RIGHT TO CANCEL - BPC § 7159.10 / FTC 16 CFR § 429):</strong>
-            Usted, el comprador, tiene el derecho incondicional de cancelar este contrato hasta la medianoche del <strong>tercer día hábil</strong> posterior a la firma del mismo. Para cancelar, entregue o envíe por correo una notificación escrita firmada a: <em>Morales Plumbing, San Jose, CA (moralesplumbing026@gmail.com)</em> antes de dicho plazo.
-        </div>
-
-        <!-- TÉRMINOS DE PAGO Y MORA -->
-        <div class="section-title">05. Términos de Pago, Mora y Garantía</div>
-        <ul style="font-size: 12px; color: #475569; padding-left: 20px;">
-            <li><strong>Términos de Pago:</strong> El saldo total vence al finalizar la instalación de conformidad (<em>Due Upon Completion</em>). En cuentas comerciales aprobadas aplica <em>Net 15 / Net 30</em>.</li>
-            <li><strong>Interés por Mora:</strong> Las facturas no liquidadas en la fecha de vencimiento devengarán un interés del <strong>1.5% mensual (18% anual)</strong> conforme al máximo legal de California.</li>
-            <li><strong>Cheques Devueltos (NSF):</strong> Se aplicará un recargo de <strong>$35.00</strong> por cheques o transferencias rechazadas por fondos insuficientes (<em>Cal. Civil Code § 1719</em>).</li>
-            <li><strong>Certificación EPA Lead-Free:</strong> Todos los accesorios y soldaduras cumplen con la <em>Safe Drinking Water Act</em> (contenido de plomo ponderado &le; 0.25%).</li>
-        </ul>
-
-        <!-- FIRMAS -->
-        <div class="signature-grid">
-            <div class="sig-box">
-                <div class="sig-line"></div>
-                <div class="sig-label">Firma del Cliente (Propietario / Representante Autorizado)</div>
-                <div style="font-size: 11px; color: #64748B; margin-top: 3px;">Fecha: ________________________</div>
-            </div>
-            <div class="sig-box">
-                <div class="sig-line"></div>
-                <div class="sig-label">Morales Plumbing (Representante Autorizado Lic. C-36)</div>
-                <div style="font-size: 11px; color: #64748B; margin-top: 3px;">Alex G. Espinosa — Lic. C-36 #1156542</div>
+        <div class="share-actions">
+            <p>Compartir y Descargar este Contrato:</p>
+            <div class="share-btns">
+                <a href="https://wa.me/?text=Estimado/a%20Maria%20Perez%2C%20aqu%C3%AD%20tiene%20su%20contrato%20formal%20de%20Morales%20Plumbing%20%28Lic.%20C-36%20%231156542%20%7C%20San%20Jose%2C%20CA%29%20por%20%27Reemplazo%20de%20Calentador%20Tankless%27%20por%20un%20total%20de%20%244850.%20Revise%20y%20firme%20el%20documento%20adjunto." class="btn-wa" target="_blank">WhatsApp</a>
+                <a href="https://t.me/share/url?url=https://www.morales-plumbing.com&text=Estimado/a%20Maria%20Perez%2C%20aqu%C3%AD%20tiene%20su%20contrato%20formal%20de%20Morales%20Plumbing%20%28Lic.%20C-36%20%231156542%20%7C%20San%20Jose%2C%20CA%29%20por%20%27Reemplazo%20de%20Calentador%20Tankless%27%20por%20un%20total%20de%20%244850.%20Revise%20y%20firme%20el%20documento%20adjunto." class="btn-tg" target="_blank">Telegram</a>
+                <a href="sms:?&body=Estimado/a%20Maria%20Perez%2C%20aqu%C3%AD%20tiene%20su%20contrato%20formal%20de%20Morales%20Plumbing%20%28Lic.%20C-36%20%231156542%20%7C%20San%20Jose%2C%20CA%29%20por%20%27Reemplazo%20de%20Calentador%20Tankless%27%20por%20un%20total%20de%20%244850.%20Revise%20y%20firme%20el%20documento%20adjunto." class="btn-sms">SMS</a>
+                <a href="mailto:?subject=Morales%20Plumbing%20Service%20Agreement&body=Estimado/a%20Maria%20Perez%2C%20aqu%C3%AD%20tiene%20su%20contrato%20formal%20de%20Morales%20Plumbing%20%28Lic.%20C-36%20%231156542%20%7C%20San%20Jose%2C%20CA%29%20por%20%27Reemplazo%20de%20Calentador%20Tankless%27%20por%20un%20total%20de%20%244850.%20Revise%20y%20firme%20el%20documento%20adjunto." class="btn-email">Email</a>
+                <button onclick="window.print()" class="btn-print">Imprimir / PDF</button>
             </div>
         </div>
     </div>
