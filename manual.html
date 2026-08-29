@@ -554,6 +554,26 @@
             opacity: 1;
         }
     </style>
+
+    <!-- morales_theme_sync: Sync Theme & Language from Main Portal -->
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('morales_a11y_theme') || 'dark';
+                if (theme === 'light') document.documentElement.dataset.theme = 'light';
+                else delete document.documentElement.dataset.theme;
+                var motion = localStorage.getItem('morales_a11y_motion');
+                if (motion === 'reduced') document.documentElement.dataset.motion = 'reduced';
+                var cb = localStorage.getItem('morales_a11y_colorblind');
+                if (cb && cb !== 'none') document.documentElement.dataset.colorblind = cb;
+                var fs = localStorage.getItem('morales_a11y_fontsize');
+                if (fs && fs !== 'normal') document.documentElement.dataset.fontSize = fs;
+                var lang = localStorage.getItem('morales_language') || localStorage.getItem('mp_language') || 'es';
+                if (typeof setLanguage === 'function') setLanguage(lang);
+                else if (typeof switchLang === 'function') switchLang(lang);
+            } catch(e) {}
+        })();
+    </script>
 </head>
 <body>
 

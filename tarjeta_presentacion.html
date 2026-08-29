@@ -7,7 +7,7 @@
     
     <!-- Open Graph / Link Previews for WhatsApp/iMessage -->
     <meta property="og:title" content="Morales Plumbing | Un Plomero En Tu Bolsillo" />
-    <meta property="og:description" content="Lic. C-36 #1156542 | San Jose, CA. Tarjeta digital de contacto, línea directa 24 hrs y presupuesto." />
+    <meta property="og:description" content="Lic. C-36 #1156542 | San Jose, CA. Tarjeta digital de contacto, lï¿½nea directa 24 hrs y presupuesto." />
     <meta property="og:image" content="https://morales-plumbing.com/assets/og_image.jpg" />
     <meta property="og:url" content="https://morales-plumbing.com/tarjeta_presentacion.html" />
     <meta property="og:type" content="website" />
@@ -379,6 +379,26 @@
             }
         }
     </style>
+
+    <!-- morales_theme_sync: Sync Theme & Language from Main Portal -->
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('morales_a11y_theme') || 'dark';
+                if (theme === 'light') document.documentElement.dataset.theme = 'light';
+                else delete document.documentElement.dataset.theme;
+                var motion = localStorage.getItem('morales_a11y_motion');
+                if (motion === 'reduced') document.documentElement.dataset.motion = 'reduced';
+                var cb = localStorage.getItem('morales_a11y_colorblind');
+                if (cb && cb !== 'none') document.documentElement.dataset.colorblind = cb;
+                var fs = localStorage.getItem('morales_a11y_fontsize');
+                if (fs && fs !== 'normal') document.documentElement.dataset.fontSize = fs;
+                var lang = localStorage.getItem('morales_language') || localStorage.getItem('mp_language') || 'es';
+                if (typeof setLanguage === 'function') setLanguage(lang);
+                else if (typeof switchLang === 'function') switchLang(lang);
+            } catch(e) {}
+        })();
+    </script>
 </head>
 <body>
 
@@ -394,11 +414,11 @@
     <div class="top-controls">
         <a href="index.html" class="btn-back"><img src="assets/logo_portada.png" alt="Morales Plumbing" style="width: 24px; height: 24px; object-fit: contain;"> <span id="t_back">INICIO</span></a>
         <div class="lang-switcher">
-            <button class="lang-btn active" onclick="setLang('es', this)">ES</button>
-            <button class="lang-btn" onclick="setLang('en', this)">EN</button>
-            <button class="lang-btn" onclick="setLang('zh', this)">ZH</button>
-            <button class="lang-btn" onclick="setLang('tl', this)">TL</button>
-            <button class="lang-btn" onclick="setLang('vi', this)">VI</button>
+            
+            
+            
+            
+            
         </div>
     </div>
 
@@ -470,7 +490,7 @@
                 <div class="info-icon" style="color: #FF0000;"><i class="fab fa-youtube"></i></div>
                 <div class="info-text">
                     @MoralesPlumbing
-                    <span class="info-subtext" id="t_yt_joined">Se unió el 22 jun 2026</span>
+                    <span class="info-subtext" id="t_yt_joined">Se uniï¿½ el 22 jun 2026</span>
                 </div>
             </a>
         </div>
@@ -502,8 +522,8 @@
                 back: "INICIO",
                 call: "LLAMAR AHORA",
                 email: "ENVIAR CORREO",
-                yt_joined: "Se unió el 22 jun 2026",
-                phone_sub: "Línea Directa / 24 hrs",
+                yt_joined: "Se uniï¿½ el 22 jun 2026",
+                phone_sub: "Lï¿½nea Directa / 24 hrs",
                 loc_sub: "Servicio en Bay Area",
                 scan: "ESCANEA PARA COMPARTIR"
             },
@@ -538,14 +558,14 @@
                 scan: "I-SCAN UPANG IBAHAGI"
             },
             vi: {
-                slogan: "Th? S?a ?ng Nu?c Trong Túi B?n",
+                slogan: "Th? S?a ?ng Nu?c Trong Tï¿½i B?n",
                 back: "TRANG CH?",
                 call: "G?I NGAY",
                 email: "G?I EMAIL",
                 yt_joined: "Tham gia 22 thg 6, 2026",
-                phone_sub: "Ðu?ng Dây Nóng / 24 gi?",
+                phone_sub: "ï¿½u?ng Dï¿½y Nï¿½ng / 24 gi?",
                 loc_sub: "Ph?c V? Khu V?c V?nh",
-                scan: "QUÉT Ð? CHIA S?"
+                scan: "QUï¿½T ï¿½? CHIA S?"
             }
         };
 

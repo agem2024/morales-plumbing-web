@@ -4913,6 +4913,44 @@ iframe, object, embed, .promo-hero-image img {
     box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
 }
 
+/* 1.10 Subpages & Engineering Hubs in Light Mode */
+:root[data-theme="light"] .container,
+:root[data-theme="light"] .top-section,
+:root[data-theme="light"] .corporate-desc,
+:root[data-theme="light"] .directory-section,
+:root[data-theme="light"] .team-card,
+:root[data-theme="light"] .profile-card,
+:root[data-theme="light"] .profile-container,
+:root[data-theme="light"] .profile-details,
+:root[data-theme="light"] .bio-card,
+:root[data-theme="light"] .cert-card,
+:root[data-theme="light"] .policy-container,
+:root[data-theme="light"] .policy-section,
+:root[data-theme="light"] .policy-card,
+:root[data-theme="light"] .faq-container,
+:root[data-theme="light"] .faq-search,
+:root[data-theme="light"] .search-container,
+:root[data-theme="light"] .eng-guide-container,
+:root[data-theme="light"] .flow-step,
+:root[data-theme="light"] .manual-container,
+:root[data-theme="light"] .manual-section,
+:root[data-theme="light"] .table-card {
+    background: #ffffff !important;
+    color: #1e293b !important;
+    border-color: #e2e8f0 !important;
+}
+:root[data-theme="light"] .corporate-desc {
+    background: #ffffff !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
+    color: #1e293b !important;
+}
+:root[data-theme="light"] .header-info h2 {
+    color: #D4AF37 !important;
+}
+:root[data-theme="light"] .header-info p {
+    color: #ffffff !important;
+}
+
 /* 2. Anti-Epilepsy & Photosensitive Safe Mode (WCAG 2.3.1) */
 html[data-motion="reduced"] *,
 html[data-motion="reduced"] *::before,

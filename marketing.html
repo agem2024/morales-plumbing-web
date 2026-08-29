@@ -156,6 +156,26 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);height
 }
 body{top:0!important}.skiptranslate{display:none!important}.goog-te-banner-frame{display:none!important}#goog-gt-tt{display:none!important}
 </style>
+
+    <!-- morales_theme_sync: Sync Theme & Language from Main Portal -->
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('morales_a11y_theme') || 'dark';
+                if (theme === 'light') document.documentElement.dataset.theme = 'light';
+                else delete document.documentElement.dataset.theme;
+                var motion = localStorage.getItem('morales_a11y_motion');
+                if (motion === 'reduced') document.documentElement.dataset.motion = 'reduced';
+                var cb = localStorage.getItem('morales_a11y_colorblind');
+                if (cb && cb !== 'none') document.documentElement.dataset.colorblind = cb;
+                var fs = localStorage.getItem('morales_a11y_fontsize');
+                if (fs && fs !== 'normal') document.documentElement.dataset.fontSize = fs;
+                var lang = localStorage.getItem('morales_language') || localStorage.getItem('mp_language') || 'es';
+                if (typeof setLanguage === 'function') setLanguage(lang);
+                else if (typeof switchLang === 'function') switchLang(lang);
+            } catch(e) {}
+        })();
+    </script>
 </head>
 <body>
 
@@ -172,14 +192,14 @@ body{top:0!important}.skiptranslate{display:none!important}.goog-te-banner-frame
     <button class="tb-btn" onclick="redo()" title="Ctrl+Y"><i class="fa-solid fa-rotate-right"></i></button>
     <div class="sep"></div>
     <div style="font-family:'Orbitron',sans-serif;font-size:0.62rem;color:var(--cyan);letter-spacing:1px;margin-right:4px">IDIOMAS BAHÍA:</div>
-    <button class="lang-btn tb-btn active" data-lang="es" onclick="setLanguage('es')">ES</button>
-    <button class="lang-btn tb-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
-    <button class="lang-btn tb-btn" data-lang="hi" onclick="setLanguage('hi')">HI</button>
-    <button class="lang-btn tb-btn" data-lang="te" onclick="setLanguage('te')">TE</button>
-    <button class="lang-btn tb-btn" data-lang="ta" onclick="setLanguage('ta')">TA</button>
-    <button class="lang-btn tb-btn" data-lang="pa" onclick="setLanguage('pa')">PA</button>
-    <button class="lang-btn tb-btn" data-lang="vi" onclick="setLanguage('vi')">VI</button>
-    <button class="lang-btn tb-btn" data-lang="zh" onclick="setLanguage('zh')">ZH</button>
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="tb-spacer"></div>
     <a href="https://notebook.google.com/notebook/da1efad2-3236-435f-8854-406c848a4d20" target="_blank" class="tb-export" style="background:#4f46e5; text-decoration:none; display:flex; align-items:center; gap:6px; font-size:0.75rem;"><i class="fa-solid fa-book-bookmark"></i> NOTEBOOKLM</a>
     <div id="status-indicator" style="color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:0.7rem;font-weight:700;margin-right:15px;"><i class="fa-solid fa-circle-check"></i> PAQUETE LISTO</div>

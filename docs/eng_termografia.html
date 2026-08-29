@@ -25,6 +25,26 @@
         @media (max-width: 900px) { .service-content-grid { grid-template-columns: 1fr; } }
 
     </style>
+
+    <!-- morales_theme_sync: Sync Theme & Language from Main Portal -->
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('morales_a11y_theme') || 'dark';
+                if (theme === 'light') document.documentElement.dataset.theme = 'light';
+                else delete document.documentElement.dataset.theme;
+                var motion = localStorage.getItem('morales_a11y_motion');
+                if (motion === 'reduced') document.documentElement.dataset.motion = 'reduced';
+                var cb = localStorage.getItem('morales_a11y_colorblind');
+                if (cb && cb !== 'none') document.documentElement.dataset.colorblind = cb;
+                var fs = localStorage.getItem('morales_a11y_fontsize');
+                if (fs && fs !== 'normal') document.documentElement.dataset.fontSize = fs;
+                var lang = localStorage.getItem('morales_language') || localStorage.getItem('mp_language') || 'es';
+                if (typeof setLanguage === 'function') setLanguage(lang);
+                else if (typeof switchLang === 'function') switchLang(lang);
+            } catch(e) {}
+        })();
+    </script>
 </head>
 <body>
 <!-- MORALES PLUMBING OFFICIAL HEADER -->
@@ -39,18 +59,8 @@
             <h2 style="margin: 0; font-size: 0.9rem; color: #D4AF37; font-weight: bold; line-height: 1;">MORALES PLUMBING</h2>
             <p style="margin: 2px 0 0; font-size: 0.7rem; color: #aaa; line-height: 1;">Lic. C-36 #1156542</p>
         </div>
-        <button onclick="document.getElementById('globalLangMenu').classList.toggle('show-lang')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(0,245,255,0.3); cursor: pointer; padding: 4px 8px; outline: none; border-radius: 6px; display: flex; align-items: center; gap: 5px; transition: 0.2s;">
-            <img src="../assets/plan_good_clean.png" alt="Language" style="height: 22px; width: auto; border-radius: 4px; box-shadow: 0 0 5px rgba(0,245,255,0.4);">
-            <span style="color: #00f5ff; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.5px;">LANG</span>
-        </button>
-        <div id="globalLangMenu" style="display: none; position: absolute; right: 0; top: 45px; background: rgba(3, 7, 18, 0.98); border: 1px solid #D4AF37; border-radius: 8px; flex-direction: column; min-width: 140px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.9); z-index: 1000000;">
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Español</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - 中文</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Tiếng Việt</button>
+        
         </div>
-    </div>
 </header>
 <style>
     body { padding-top: 60px !important; }

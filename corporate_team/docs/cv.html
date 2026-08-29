@@ -217,6 +217,26 @@
             animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 </style>
+
+    <!-- morales_theme_sync: Sync Theme & Language from Main Portal -->
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('morales_a11y_theme') || 'dark';
+                if (theme === 'light') document.documentElement.dataset.theme = 'light';
+                else delete document.documentElement.dataset.theme;
+                var motion = localStorage.getItem('morales_a11y_motion');
+                if (motion === 'reduced') document.documentElement.dataset.motion = 'reduced';
+                var cb = localStorage.getItem('morales_a11y_colorblind');
+                if (cb && cb !== 'none') document.documentElement.dataset.colorblind = cb;
+                var fs = localStorage.getItem('morales_a11y_fontsize');
+                if (fs && fs !== 'normal') document.documentElement.dataset.fontSize = fs;
+                var lang = localStorage.getItem('morales_language') || localStorage.getItem('mp_language') || 'es';
+                if (typeof setLanguage === 'function') setLanguage(lang);
+                else if (typeof switchLang === 'function') switchLang(lang);
+            } catch(e) {}
+        })();
+    </script>
 </head>
 <body>
     <canvas id="universe-canvas" data-universe-mode="nebula"></canvas>
@@ -227,11 +247,11 @@
     <nav class="cv-nav">
         <a href="../index.html"> HOME</a>
         <div class="nav-right">
-            <button class="lang-btn" data-lang="en" onclick="setCVLang('en')" title="English">🇺🇸</button>
-            <button class="lang-btn" data-lang="es" onclick="setCVLang('es')" title="Español">🇪🇸</button>
-            <button class="lang-btn" data-lang="zh" onclick="setCVLang('zh')" title="中文">🇨🇳</button>
-            <button class="lang-btn" data-lang="tl" onclick="setCVLang('tl')" title="Tagalog">🇵🇭</button>
-            <button class="lang-btn" data-lang="vi" onclick="setCVLang('vi')" title="Tiếng Việt">🇻🇳</button>
+            
+            
+            
+            
+            
             <button class="print-btn" onclick="window.print()"> PDF</button>
         </div>
     </nav>
