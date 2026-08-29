@@ -164,20 +164,13 @@
                 <span class="ham-line"></span>
             </button>
             <div class="logo-container" onclick="navigate('home')" role="button" aria-label="Ir al inicio" tabindex="0">
-                <video autoplay muted loop class="nav-logo" playsinline>
-                    <source src="assets/morales_logo_video.mp4" type="video/mp4">
-                </video>
+                <img src="assets/logo_portada.png" alt="Morales Plumbing" class="nav-logo" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid #D4AF37;" onerror="this.src='morales_logo.jpg';">
                 <div class="brand-info">
                     <span class="brand-name">MORALES PLUMBING</span>
                     <span class="brand-tag">AI-INTEGRATED SERVICES</span>
                     <span class="brand-name" style="font-size: 0.75rem; margin-top: 2px; line-height: 1;">C-36 #1156542</span>
                 </div>
             </div>
-
-            <!-- Eye video — between brand and nav links -->
-            <video autoplay muted loop class="nav-eye-video" id="eye-trigger" playsinline onclick="toggleCompanyCard()">
-                <source src="assets/bg_eye.mp4" type="video/mp4">
-            </video>
 
             <ul class="nav-links">
                 <li><a href="#home" class="active" data-i18n="nav_nexus" onclick="navigate('home'); return false;">Nexus</a></li>

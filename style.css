@@ -4692,15 +4692,27 @@ iframe, object, embed, .promo-hero-image img {
     background-image: none !important;
     color: #1E293B !important;
 }
-:root[data-theme="light"] #space-background,
+:root[data-theme="light"] #space-background {
+    display: block !important;
+    opacity: 0.15 !important;
+    filter: contrast(1.05);
+    pointer-events: none !important;
+}
 :root[data-theme="light"] #warp-canvas,
 :root[data-theme="light"] .stars,
 :root[data-theme="light"] .twinkling,
 :root[data-theme="light"] .nebula,
-:root[data-theme="light"] .space-bg {
+:root[data-theme="light"] .space-bg,
+:root[data-theme="light"] #bg-video,
+:root[data-theme="light"] #logo-video {
     display: none !important;
     opacity: 0 !important;
     pointer-events: none !important;
+}
+:root[data-theme="light"] .hero-container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 /* 1.2 Official Morales Corporate Header (RULE: Always deep navy #0A192F & gold #D4AF37) */
@@ -4802,7 +4814,6 @@ iframe, object, embed, .promo-hero-image img {
 }
 
 /* 1.5 Cards, Panels, Containers & Glassmorphism */
-:root[data-theme="light"] .hero-container,
 :root[data-theme="light"] .glass,
 :root[data-theme="light"] .card,
 :root[data-theme="light"] .eco-card,
