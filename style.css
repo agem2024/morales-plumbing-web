@@ -232,19 +232,24 @@ nav {
     gap: 1.5rem;
 }
 
-/* Eye video embedded in navbar */
 .nav-eye-video {
-    height: 52px;
-    width: auto;
-    aspect-ratio: auto;
-    border-radius: 8px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
     object-fit: cover;
-    opacity: 0.78;
+    opacity: 0.95;
     filter: saturate(1.8) contrast(1.2) hue-rotate(10deg);
-    border: 1px solid rgba(0,229,255,0.35);
-    box-shadow: 0 0 14px rgba(0,229,255,0.3);
+    border: 2px solid #D4AF37;
+    box-shadow: 0 0 15px rgba(212,175,55,0.4);
     flex-shrink: 0;
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-eye-video:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #D4AF37;
 }
 
 @media (max-width: 768px) {
@@ -1582,11 +1587,13 @@ nav {
     box-shadow: 0 0 45px rgba(0,229,255,0.7), 0 0 0 3px rgba(0,229,255,0.5);
 }
 
-.joe-trigger img {
+.joe-trigger img,
+.joe-trigger video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    display: block;
 }
 
 .joe-window {
@@ -4101,7 +4108,7 @@ footer {
 }
 
 /* Idle animation for both small avatar and floating trigger */
-.joe-trigger img, .joe-avatar-small {
+.joe-trigger img, .joe-trigger video, .joe-avatar-small {
     animation: joeBreatheIdle 4s infinite ease-in-out;
 }
 

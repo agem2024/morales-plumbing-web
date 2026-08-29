@@ -8835,6 +8835,14 @@ function openBooking() {
 }
 
 
+let cachedVoices = [];
+if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    cachedVoices = window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = () => {
+        cachedVoices = window.speechSynthesis.getVoices();
+    };
+}
+
 function speakJoe(text) {
     if (window.isJoeMuted) return;
 
@@ -8856,19 +8864,30 @@ function speakJoe(text) {
         };
         const targetLang = langMap[curLang] || 'es-US';
         msg.lang = targetLang;
-        msg.pitch = 1.08; // Tono femenino cálido y empático
-        msg.rate = 1.02;  // Cadencia humana natural
+        msg.pitch = 1.15; // Tono femenino claro y agradable
+        msg.rate = 1.0;   // Cadencia natural
 
-        // Seleccionar la mejor voz femenina natural disponible en el dispositivo
-        const voices = window.speechSynthesis.getVoices();
+        // Seleccionar estrictamente voz femenina
+        const voices = (cachedVoices && cachedVoices.length > 0) ? cachedVoices : window.speechSynthesis.getVoices();
         if (voices && voices.length > 0) {
-            const femaleVoice = voices.find(v => 
-                (v.lang.startsWith(targetLang.slice(0, 2)) || v.lang === targetLang) &&
-                (/female|woman|sabina|paulina|monica|paloma|helena|lucia|victoria|samantha|zira|karen|swara|heera|kalpana|natural|neural|online/i.test(v.name))
-            ) || voices.find(v => v.lang.startsWith(targetLang.slice(0, 2)));
+            const isMale = (v) => /david|raul|mark|george|guy|stefan|pablo|jorge|manuel|carlos|diego|enrique/i.test(v.name);
+            const isFemale = (v) => /sabina|paulina|monica|paloma|helena|lucia|victoria|samantha|zira|karen|swara|heera|kalpana|natural|neural|online|female|woman|chiti|mia|eva|sofia/i.test(v.name);
 
-            if (femaleVoice) {
-                msg.voice = femaleVoice;
+            // 1. Mejor coincidencia: Idioma objetivo + Nombre femenino
+            let chosenVoice = voices.find(v => (v.lang.startsWith(targetLang.slice(0, 2)) || v.lang === targetLang) && isFemale(v) && !isMale(v));
+            
+            // 2. Coincidencia secundaria: Mismo idioma sin ser voz masculina
+            if (!chosenVoice) {
+                chosenVoice = voices.find(v => (v.lang.startsWith(targetLang.slice(0, 2)) || v.lang === targetLang) && !isMale(v));
+            }
+
+            // 3. Fallback general: Cualquier voz femenina disponible
+            if (!chosenVoice) {
+                chosenVoice = voices.find(v => isFemale(v) && !isMale(v));
+            }
+
+            if (chosenVoice) {
+                msg.voice = chosenVoice;
             }
         }
 
@@ -9551,7 +9570,7 @@ function playPodcast(button) {
         item.classList.remove('playing-active');
     });
     document.querySelectorAll('.pod-play-btn .play-icon').forEach(icon => {
-        icon.innerText = '?';
+        icon.innerText = '▶';
     });
 
     // 3. Setup new audio instance
@@ -9639,12 +9658,12 @@ function updatePlayerState(isPlaying) {
     const playPauseBtn = document.getElementById('player-btn-play-pause');
     if (playPauseBtn) {
         const symbol = playPauseBtn.querySelector('.play-symbol');
-        if (symbol) symbol.innerText = isPlaying ? '?' : '?';
+        if (symbol) symbol.innerText = isPlaying ? '⏸' : '▶';
     }
 
     if (currentPlayBtn) {
         const icon = currentPlayBtn.querySelector('.play-icon');
-        if (icon) icon.innerText = isPlaying ? '?' : '?';
+        if (icon) icon.innerText = isPlaying ? '⏸' : '▶';
     }
 }
 

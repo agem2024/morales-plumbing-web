@@ -1280,7 +1280,9 @@
         <div class="joe-window glass">
             <div class="joe-header">
                 <div class="joe-identity">
-                    <video src="assets/susa.mp4" autoplay loop muted playsinline class="joe-avatar-small" style="object-fit: cover;"></video>
+                    <video src="assets/susa.mp4" autoplay loop muted playsinline poster="assets/admin_ops.png" class="joe-avatar-small" style="object-fit: cover;">
+                        <img src="assets/admin_ops.png" alt="Karla AI" class="joe-avatar-small">
+                    </video>
                     <div class="joe-status">
                         <span class="pulse"></span>
                         <span data-i18n="joe_status">KARLA · ASISTENTE TÉCNICA VIRTUAL</span>
@@ -1299,7 +1301,9 @@
         </div>
         <!-- Karla floating trigger — avatar icon -->
         <div class="joe-trigger" onclick="toggleJoe()" data-i18n-title="joe_trigger_title" title="Habla con Karla · Asistente Virtual Morales Plumbing">
-            <video src="assets/susa.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></video>
+            <video src="assets/susa.mp4" autoplay loop muted playsinline poster="assets/admin_ops.png" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;">
+                <img src="assets/admin_ops.png" alt="Karla AI" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+            </video>
         </div>
     </div>
 
@@ -2491,12 +2495,23 @@
 
     function toggleJingle() {
         if (!jingleAudio) return;
+        const curLang = localStorage.getItem('morales_lang') || 'es';
+        const targetSrc = curLang === 'en' ? 'assets/media/morales_jingle_en.mp4' : 'assets/media/morales_jingle_es.mp4';
+        if (!jingleAudio.src || !jingleAudio.src.includes(targetSrc)) {
+            jingleAudio.src = targetSrc;
+            jingleAudio.load();
+        }
         if (jingleAudio.paused) {
             jingleAudio.play().then(() => {
                 jingleIsPlaying = true;
                 updateJingleUI(true);
             }).catch(e => {
                 console.warn('Jingle play blocked:', e);
+                jingleAudio.load();
+                jingleAudio.play().then(() => {
+                    jingleIsPlaying = true;
+                    updateJingleUI(true);
+                }).catch(err => console.error('Jingle second attempt:', err));
             });
         } else {
             jingleAudio.pause();
@@ -2508,20 +2523,9 @@
     // Attempt autoplay on load
     window.addEventListener('DOMContentLoaded', () => {
         if (jingleAudio) {
-            const currentLang = localStorage.getItem('lang') || 'en';
-            if (jingleSource) {
-                jingleAudio.src = currentLang === 'en' ? 'assets/media/morales_jingle_en.mp4' : 'assets/media/morales_jingle_es.mp4';
-                jingleAudio.load();
-            }
-            jingleAudio.play().then(() => {
-                jingleIsPlaying = true;
-                updateJingleUI(true);
-            }).catch(e => {
-                // Autoplay blocked by browser
-                jingleIsPlaying = false;
-                updateJingleUI(false);
-            });
-            // Lower volume slightly so it's not too loud
+            const currentLang = localStorage.getItem('morales_lang') || 'es';
+            jingleAudio.src = currentLang === 'en' ? 'assets/media/morales_jingle_en.mp4' : 'assets/media/morales_jingle_es.mp4';
+            jingleAudio.load();
             jingleAudio.volume = 0.5;
         }
     });
