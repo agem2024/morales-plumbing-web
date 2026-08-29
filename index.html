@@ -12,7 +12,7 @@
 
     <meta name="msvalidate.01" content="B3D32179CFB4EC1976183741DD332934" />
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0">
     <title>Morales Plumbing | Plomería Inteligente San Jose, CA — AI-Integrated Services</title>
     <meta name="description" content="Morales Plumbing — Líder en plomería inteligente en San Jose, CA. Diagnóstico por termografía, eco-retrofitting, diseño hidráulico e IA integrada. Licencia C-36 #1156542. Llamar: (669) 213-4422.">
     <meta name="keywords" content="plomería San Jose CA, plumber San Jose, Morales Plumbing, Alex Espinosa, eco-retrofitting, heat pump, termografía, CSLB, C-36">
@@ -112,10 +112,21 @@
 </head>
 <body>
 
-
+    <!-- SVG Color Blindness Filters (Protanopia, Deuteranopia, Tritanopia) -->
+    <svg style="position: absolute; height: 0; width: 0; overflow: hidden;" aria-hidden="true">
+        <filter id="protanopia-filter">
+            <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0   0.558, 0.442, 0, 0, 0   0, 0.242, 0.758, 0, 0   0, 0, 0, 1, 0" />
+        </filter>
+        <filter id="deuteranopia-filter">
+            <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0   0.7, 0.3, 0, 0, 0   0, 0.3, 0.7, 0, 0   0, 0, 0, 1, 0" />
+        </filter>
+        <filter id="tritanopia-filter">
+            <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0   0, 0.433, 0.567, 0, 0   0, 0.475, 0.525, 0, 0   0, 0, 0, 1, 0" />
+        </filter>
+    </svg>
 
     <!-- Skip-to-content: Accessibility for keyboard/screen-reader users -->
-    <a href="#home" class="skip-link">Saltar al contenido principal</a>
+    <a href="#home" class="skip-link" data-i18n="skip_to_content">Saltar al contenido principal</a>
 
     <!-- EMERGENCY TOP BAR -->
     <div id="emergency-topbar" class="emergency-topbar">
@@ -198,6 +209,16 @@
                     <span data-i18n="nav_portal_header">Portal</span>
                 </a></li>
             </ul>
+
+            <!-- Accessibility Toolbar (ADA / WCAG 2.1) -->
+            <div class="a11y-quick-bar" role="toolbar" aria-label="Controles de Accesibilidad">
+                <button class="a11y-btn" id="btn-a11y-safe" onclick="toggleEpilepsySafeMode()" aria-label="Modo Seguro Anti-Epilepsia" title="Modo Seguro Anti-Epilepsia (Pausar animaciones)">
+                    <span>🛡️</span><span class="a11y-lbl-text" data-i18n="a11y_safe">Seguro</span>
+                </button>
+                <button class="a11y-btn" id="btn-a11y-theme" onclick="toggleThemeMode()" aria-label="Cambiar Tema Oscuro o Claro" title="Modo Oscuro / Claro">
+                    <span id="a11y-theme-icon">🌓</span>
+                </button>
+            </div>
 
             <div class="lang-dropdown-wrapper">
                 <button class="lang-btn active" id="current-lang-display" style="font-size: 0.75rem; padding: 6px 12px; width: 60px; text-align: center;">EN ▾</button>
@@ -1671,13 +1692,25 @@
                     <span data-i18n="tab_schedule">Agendar Cita</span>
                     <span class="portal-tab-desc" data-i18n="desc_tab_sched">Reservas y Citas</span>
                 </button>
-                <button id="tab-pqr-btn" class="portal-tab-btn" onclick="switchPortalTab('pqr')">
-                    <span data-i18n="tab_pqr">PQR Support</span>
-                    <span class="portal-tab-desc" data-i18n="desc_tab_pqr">Peticiones y Reclamos</span>
+                <button id="tab-auth-btn" class="portal-tab-btn" onclick="switchPortalTab('auth')">
+                    <span data-i18n="tab_auth">Mi Cuenta</span>
+                    <span class="portal-tab-desc" data-i18n="desc_tab_auth">Acceso y Registro</span>
+                </button>
+                <button id="tab-payments-btn" class="portal-tab-btn" onclick="switchPortalTab('payments')">
+                    <span data-i18n="tab_payments">Opciones de Pago</span>
+                    <span class="portal-tab-desc" data-i18n="desc_tab_pay">Stripe & Zelle</span>
                 </button>
                 <button id="tab-profile-btn" class="portal-tab-btn" onclick="switchPortalTab('profile')">
                     <span data-i18n="tab_profile">Membresía &amp; Perfil</span>
                     <span class="portal-tab-desc" data-i18n="desc_tab_prof">Datos y Beneficios</span>
+                </button>
+                <button id="tab-settings-btn" class="portal-tab-btn" onclick="switchPortalTab('settings')">
+                    <span data-i18n="tab_settings">Preferencias</span>
+                    <span class="portal-tab-desc" data-i18n="desc_tab_set">Accesibilidad & Tema</span>
+                </button>
+                <button id="tab-pqr-btn" class="portal-tab-btn" onclick="switchPortalTab('pqr')">
+                    <span data-i18n="tab_pqr">PQR Support</span>
+                    <span class="portal-tab-desc" data-i18n="desc_tab_pqr">Peticiones y Reclamos</span>
                 </button>
                 <button id="tab-policies-btn" class="portal-tab-btn" onclick="switchPortalTab('policies')">
                     <span data-i18n="tab_policies">Políticas</span>
@@ -1982,6 +2015,205 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- AUTH TAB (SIGN IN / SIGN UP) -->
+                <div id="portal-tab-auth" class="portal-tab-content">
+                    <div style="max-width: 620px; margin: 0 auto; background: rgba(0,0,0,0.4); padding: 25px; border-radius: 12px; border: 1px solid rgba(0, 245, 255, 0.2);">
+                        <div class="auth-mode-toggle">
+                            <button type="button" class="auth-toggle-btn active" id="auth-tab-signin-btn" onclick="switchAuthMode('signin')" data-i18n="auth_btn_signin">Iniciar Sesión</button>
+                            <button type="button" class="auth-toggle-btn" id="auth-tab-signup-btn" onclick="switchAuthMode('signup')" data-i18n="auth_btn_signup">Crear Cuenta</button>
+                        </div>
+
+                        <!-- Current User Status Card -->
+                        <div id="auth-user-status-card" style="background: rgba(10,25,47,0.9); border: 1px solid var(--neon-cyan); border-radius: 10px; padding: 18px; margin-bottom: 20px; display: none;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                                <div>
+                                    <h4 style="color: #fff; margin: 0 0 4px; font-family:'Orbitron', sans-serif;" id="auth-current-user-name">Usuario Conectado</h4>
+                                    <p style="color: #a0aec0; font-size: 0.85rem; margin: 0 0 6px;" id="auth-current-user-email">email@ejemplo.com</p>
+                                    <span id="auth-account-type-badge" class="account-type-badge account-type-standard">Cuenta Estándar</span>
+                                </div>
+                                <button type="button" onclick="handleUserSignOut()" class="portal-btn portal-btn-danger" style="font-size: 0.8rem; padding: 8px 16px;" data-i18n="auth_btn_signout">Cerrar Sesión</button>
+                            </div>
+                        </div>
+
+                        <!-- Sign In Form -->
+                        <form id="auth-signin-form" onsubmit="event.preventDefault(); submitUserSignIn();">
+                            <div class="portal-form-group">
+                                <label for="auth-signin-email" data-i18n="auth_lbl_email">Correo Electrónico</label>
+                                <input type="email" id="auth-signin-email" class="portal-form-input" placeholder="correo@ejemplo.com" required>
+                            </div>
+                            <div class="portal-form-group">
+                                <label for="auth-signin-password" data-i18n="auth_lbl_password">Contraseña</label>
+                                <input type="password" id="auth-signin-password" class="portal-form-input" placeholder="••••••••" required>
+                            </div>
+                            <button type="submit" class="portal-btn portal-btn-primary" style="width: 100%; margin-top: 15px;" data-i18n="auth_btn_submit_signin">Ingresar al Portal</button>
+                        </form>
+
+                        <!-- Sign Up Form -->
+                        <form id="auth-signup-form" onsubmit="event.preventDefault(); submitUserSignUp();" style="display: none;">
+                            <div class="portal-form-group">
+                                <label for="auth-signup-name" data-i18n="auth_lbl_fullname">Nombre Completo</label>
+                                <input type="text" id="auth-signup-name" class="portal-form-input" placeholder="Ej. Juan Pérez" required>
+                            </div>
+                            <div class="portal-form-group">
+                                <label for="auth-signup-phone" data-i18n="auth_lbl_phone">Teléfono de Contacto</label>
+                                <input type="tel" id="auth-signup-phone" class="portal-form-input" placeholder="(669) 000-0000" required>
+                            </div>
+                            <div class="portal-form-group">
+                                <label for="auth-signup-email" data-i18n="auth_lbl_email">Correo Electrónico</label>
+                                <input type="email" id="auth-signup-email" class="portal-form-input" placeholder="correo@ejemplo.com" required>
+                            </div>
+                            <div class="portal-form-group">
+                                <label for="auth-signup-password" data-i18n="auth_lbl_password">Contraseña</label>
+                                <input type="password" id="auth-signup-password" class="portal-form-input" placeholder="Mínimo 6 caracteres" minlength="6" required>
+                            </div>
+                            <div class="portal-form-group">
+                                <label for="auth-account-type-select" data-i18n="auth_lbl_account_type">Tipo de Cuenta</label>
+                                <select id="auth-account-type-select" class="portal-form-select">
+                                    <option value="standard" data-i18n="auth_opt_standard">Cuenta Estándar (Gratis — Citas, Soporte y DIY)</option>
+                                    <option value="payment" data-i18n="auth_opt_payment">Cuenta de Pagos & Membresías (Descuentos, Facturación y Stripe)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="portal-btn portal-btn-primary" style="width: 100%; margin-top: 15px;" data-i18n="auth_btn_submit_signup">Crear Mi Cuenta</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- PAYMENTS TAB -->
+                <div id="portal-tab-payments" class="portal-tab-content">
+                    <div style="margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 15px;">
+                        <h3 style="font-family:'Orbitron', sans-serif; font-size:1.1rem; color: #D4AF37; margin-bottom:5px;" data-i18n="pay_title">Opciones Oficiales de Pago — Morales Plumbing</h3>
+                        <p style="font-size:0.85rem; color:#a0aec0; margin:0;" data-i18n="pay_subtitle">Pagos 100% seguros y respaldados bajo Licencia CSLB C-36 #1156542.</p>
+                    </div>
+
+                    <div class="payment-methods-grid">
+                        <!-- Stripe Card -->
+                        <div class="payment-card">
+                            <div>
+                                <h4 data-i18n="pay_card_title">💳 Tarjeta de Crédito / Débito (Stripe)</h4>
+                                <p style="font-size:0.85rem; color:#a0aec0; line-height:1.4;" data-i18n="pay_card_desc">Procesamiento seguro encriptado PCI-DSS de Nivel 1 (Visa, MasterCard, Amex, Apple Pay, Google Pay).</p>
+                            </div>
+                            <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 8px;">
+                                <button type="button" id="stripe-pay-btn-standard" onclick="MoralesStripe.checkoutMembership('standard')" class="portal-btn portal-btn-primary" style="font-size: 0.8rem; padding: 10px; width: 100%; text-align: center;">
+                                    <span data-i18n="pay_btn_standard">Pagar Membresía Standard ($19.99/mes)</span>
+                                </button>
+                                <button type="button" id="stripe-pay-btn-premium" onclick="MoralesStripe.checkoutMembership('premium')" class="portal-btn portal-btn-secondary" style="font-size: 0.8rem; padding: 10px; width: 100%; text-align: center; border-color: #D4AF37; color: #D4AF37;">
+                                    <span data-i18n="pay_btn_premium">Pagar Membresía Premium ($49.99/mes)</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Zelle Direct -->
+                        <div class="payment-card">
+                            <div>
+                                <h4 data-i18n="pay_zelle_title">⚡ Zelle (Inmediato sin comisiones)</h4>
+                                <p style="font-size:0.85rem; color:#a0aec0; line-height:1.4;" data-i18n="pay_zelle_desc">Envío directo de banco a banco a la cuenta oficial de Morales Plumbing.</p>
+                                <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 6px; margin: 10px 0; font-family: monospace; font-size: 0.85rem; color: var(--neon-cyan);">
+                                    <div><strong>Email:</strong> moralesplumbing026@gmail.com</div>
+                                    <div><strong>Tel:</strong> (669) 213-4422</div>
+                                    <div><strong>Titular:</strong> Morales Plumbing</div>
+                                </div>
+                            </div>
+                            <a href="mailto:moralesplumbing026@gmail.com?subject=Comprobante%20de%20Pago%20Zelle" class="portal-btn portal-btn-secondary" style="font-size: 0.8rem; padding: 10px; width: 100%; text-align: center; text-decoration: none;" data-i18n="pay_btn_zelle">Reportar Comprobante Zelle</a>
+                        </div>
+
+                        <!-- ACH / Wire -->
+                        <div class="payment-card">
+                            <div>
+                                <h4 data-i18n="pay_ach_title">🏛️ Transferencia Bancaria Directa (ACH)</h4>
+                                <p style="font-size:0.85rem; color:#a0aec0; line-height:1.4;" data-i18n="pay_ach_desc">Ideal para proyectos comerciales, remodelaciones completas y contratos B2B.</p>
+                                <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 6px; margin: 10px 0; font-size: 0.82rem; color: #e2e8f0;">
+                                    <div>Cuenta Comercial: <strong>Morales Plumbing</strong></div>
+                                    <div>San Jose, California</div>
+                                </div>
+                            </div>
+                            <a href="tel:+16692134422" class="portal-btn portal-btn-secondary" style="font-size: 0.8rem; padding: 10px; width: 100%; text-align: center; text-decoration: none;" data-i18n="pay_btn_ach">Solicitar Datos Bancarios</a>
+                        </div>
+
+                        <!-- Cheque y Pago en Sitio -->
+                        <div class="payment-card">
+                            <div>
+                                <h4 data-i18n="pay_check_title">📝 Cheque Comercial &amp; Pago en Sitio</h4>
+                                <p style="font-size:0.85rem; color:#a0aec0; line-height:1.4;" data-i18n="pay_check_desc">Aceptamos cheques comerciales pagaderos a <strong>Morales Plumbing</strong> y pago en sitio con factura oficial.</p>
+                                <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 6px; margin: 10px 0; font-size: 0.82rem; color: var(--neon-lime);">
+                                    <div>Licencia: <strong>CSLB C-36 #1156542</strong></div>
+                                    <div>Factura formal entregada en cada servicio.</div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="closeClientPortal(); openClientPortal(); switchPortalTab('schedule');" class="portal-btn portal-btn-primary" style="font-size: 0.8rem; padding: 10px; width: 100%; text-align: center;" data-i18n="pay_btn_schedule_inspect">Agendar Inspección en Sitio</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SETTINGS TAB -->
+                <div id="portal-tab-settings" class="portal-tab-content">
+                    <div style="margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 15px;">
+                        <h3 style="font-family:'Orbitron', sans-serif; font-size:1.1rem; color:var(--neon-cyan); margin-bottom:5px;" data-i18n="set_title">Editor Parcial de Vista &amp; Accesibilidad</h3>
+                        <p style="font-size:0.85rem; color:#a0aec0; margin:0;" data-i18n="set_subtitle">Personaliza tu experiencia visual, idioma y preferencias de navegación de acuerdo a tus necesidades.</p>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                        <!-- Language Selector -->
+                        <div class="glass" style="padding: 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                            <h4 style="color: var(--neon-cyan); font-family:'Orbitron'; font-size: 0.95rem; margin-bottom: 10px;" data-i18n="set_lang_title">🌐 Selector de Idioma</h4>
+                            <p style="font-size: 0.8rem; color: #a0aec0; margin-bottom: 12px;" data-i18n="set_lang_desc">Cambia el idioma de todo el sitio web, reportes y asistente Karla al instante.</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('en')" style="font-size: 0.78rem; padding: 8px;">🇺🇸 English</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('es')" style="font-size: 0.78rem; padding: 8px;">🇲🇽 Español</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('hi')" style="font-size: 0.78rem; padding: 8px;">🇮🇳 हिन्दी (Hindi)</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('zh')" style="font-size: 0.78rem; padding: 8px;">🇨🇳 中文 (Chinese)</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('tl')" style="font-size: 0.78rem; padding: 8px;">🇵🇭 Tagalog</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('vi')" style="font-size: 0.78rem; padding: 8px;">🇻🇳 Tiếng Việt</button>
+                            </div>
+                        </div>
+
+                        <!-- Dark / Light Theme Mode -->
+                        <div class="glass" style="padding: 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                            <h4 style="color: #D4AF37; font-family:'Orbitron'; font-size: 0.95rem; margin-bottom: 10px;" data-i18n="set_theme_title">🌓 Modo Visual (Tema)</h4>
+                            <p style="font-size: 0.8rem; color: #a0aec0; margin-bottom: 12px;" data-i18n="set_theme_desc">Elige entre la vista oscura corporativa o la vista clara de alto contraste.</p>
+                            <div style="display: flex; gap: 10px;">
+                                <button type="button" id="btn-theme-dark" class="portal-btn portal-btn-primary" onclick="setAppTheme('dark')" style="flex: 1; font-size: 0.8rem; padding: 10px;" data-i18n="set_theme_dark">🌙 Modo Oscuro</button>
+                                <button type="button" id="btn-theme-light" class="portal-btn portal-btn-secondary" onclick="setAppTheme('light')" style="flex: 1; font-size: 0.8rem; padding: 10px;" data-i18n="set_theme_light">☀️ Modo Claro</button>
+                            </div>
+                        </div>
+
+                        <!-- Anti-Epilepsy Safe Mode -->
+                        <div class="glass" style="padding: 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                            <h4 style="color: var(--neon-lime); font-family:'Orbitron'; font-size: 0.95rem; margin-bottom: 10px;" data-i18n="set_motion_title">🛡️ Modo Seguro Anti-Epilepsia</h4>
+                            <p style="font-size: 0.8rem; color: #a0aec0; margin-bottom: 12px;" data-i18n="set_motion_desc">Pausa de inmediato las animaciones parpadeantes, destellos de neón y partículas en movimiento (WCAG 2.3.1).</p>
+                            <div style="display: flex; gap: 10px;">
+                                <button type="button" id="btn-motion-off" class="portal-btn portal-btn-secondary" onclick="setEpilepsySafeMode(false)" style="flex: 1; font-size: 0.8rem; padding: 8px;" data-i18n="set_motion_normal">Animaciones Normales</button>
+                                <button type="button" id="btn-motion-on" class="portal-btn portal-btn-primary" onclick="setEpilepsySafeMode(true)" style="flex: 1; font-size: 0.8rem; padding: 8px; background: #15803d; border-color: #15803d;" data-i18n="set_motion_active">🛡️ Modo Seguro Activo</button>
+                            </div>
+                        </div>
+
+                        <!-- Color Blindness Filter -->
+                        <div class="glass" style="padding: 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                            <h4 style="color: var(--neon-orange); font-family:'Orbitron'; font-size: 0.95rem; margin-bottom: 10px;" data-i18n="set_colorblind_title">👁️ Filtros para Daltonismo</h4>
+                            <p style="font-size: 0.8rem; color: #a0aec0; margin-bottom: 12px;" data-i18n="set_colorblind_desc">Ajusta los tonos y contrastes para facilitar la visibilidad (WCAG 1.4.1).</p>
+                            <select id="colorblind-filter-select" class="portal-form-select" onchange="setColorBlindFilter(this.value)">
+                                <option value="none" data-i18n="cb_none">Visión Estándar (Sin filtro)</option>
+                                <option value="protanopia" data-i18n="cb_protanopia">Protanopia (Deficiencia al rojo)</option>
+                                <option value="deuteranopia" data-i18n="cb_deuteranopia">Deuteranopia (Deficiencia al verde)</option>
+                                <option value="tritanopia" data-i18n="cb_tritanopia">Tritanopia (Deficiencia al azul)</option>
+                                <option value="monochrome" data-i18n="cb_monochrome">Monocromático (Escala de grises)</option>
+                                <option value="high-contrast" data-i18n="cb_high_contrast">Alto Contraste Reforzado</option>
+                            </select>
+                        </div>
+
+                        <!-- Font Scale -->
+                        <div class="glass" style="padding: 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                            <h4 style="color: #fff; font-family:'Orbitron'; font-size: 0.95rem; margin-bottom: 10px;" data-i18n="set_font_title">🔤 Tamaño de Tipografía</h4>
+                            <p style="font-size: 0.8rem; color: #a0aec0; margin-bottom: 12px;" data-i18n="set_font_desc">Ajusta el tamaño del texto para lectura cómoda (ADA Title III).</p>
+                            <div style="display: flex; gap: 8px;">
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setFontSize('small')" style="flex: 1; font-size: 0.75rem; padding: 6px;">A- Pequeña</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setFontSize('normal')" style="flex: 1; font-size: 0.8rem; padding: 6px;">A Normal</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setFontSize('large')" style="flex: 1; font-size: 0.9rem; padding: 6px;">A+ Grande</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setFontSize('xlarge')" style="flex: 1; font-size: 1rem; padding: 6px;">A++ Extra</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div class="portal-footer">
@@ -2035,6 +2267,7 @@
     <!-- Config (API keys — local only) -->
     <script src="config.js?v=6.0.2" defer></script>
     <script src="app_v9.js" defer></script>
+    <script src="stripe-service.js" defer></script>
     <script>
     // ── Mobile hamburger menu ──
     function toggleMobileMenu() {

@@ -349,12 +349,29 @@
     }
 
     // ── DISPATCH ────────────────────────────────────────────
-    switch (MODE) {
-        case 'warp':         initWarp();        break;
-        case 'nebula':       initNebula();      break;
-        case 'matrix-stars': initMatrixStars(); break;
-        case 'pulse':        initPulse();       break;
-        case 'galaxy-spin':  initGalaxySpin();  break;
-        default:             initWarp();
+    function startUniverse() {
+        if (document.documentElement.dataset.motion === 'reduced') {
+            if (ctx && W && H) ctx.clearRect(0, 0, W, H);
+            return;
+        }
+        switch (MODE) {
+            case 'warp':         initWarp();        break;
+            case 'nebula':       initNebula();      break;
+            case 'matrix-stars': initMatrixStars(); break;
+            case 'pulse':        initPulse();       break;
+            case 'galaxy-spin':  initGalaxySpin();  break;
+            default:             initWarp();
+        }
     }
+
+    window.addEventListener('a11y-motion-changed', function(e) {
+        if (e.detail && e.detail.reduced) {
+            if (raf) cancelAnimationFrame(raf);
+            if (ctx && W && H) ctx.clearRect(0, 0, W, H);
+        } else {
+            startUniverse();
+        }
+    });
+
+    startUniverse();
 })();

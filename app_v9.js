@@ -11332,3 +11332,245 @@ if(typeof translations !== 'undefined' && translations['vi']) {
     "ai_s5_p3": "Chào mừng đến với Morales Plumbing."
 });
 }
+
+// ============================================================
+// MORALES PLUMBING — ACCESSIBILITY & PORTAL EXTENSION SUITE (ADA / WCAG 2.1)
+// ============================================================
+
+// 1. Accessibility: Anti-Epilepsy & Reduced Motion
+function toggleEpilepsySafeMode() {
+    const isReduced = document.documentElement.dataset.motion === 'reduced';
+    setEpilepsySafeMode(!isReduced);
+}
+
+function setEpilepsySafeMode(enabled) {
+    if (enabled) {
+        document.documentElement.dataset.motion = 'reduced';
+        localStorage.setItem('morales_a11y_motion', 'reduced');
+        const btn = document.getElementById('btn-a11y-safe');
+        if (btn) btn.classList.add('active');
+        const btnOn = document.getElementById('btn-motion-on');
+        if (btnOn) { btnOn.className = 'portal-btn portal-btn-primary'; }
+        const btnOff = document.getElementById('btn-motion-off');
+        if (btnOff) { btnOff.className = 'portal-btn portal-btn-secondary'; }
+        
+        document.querySelectorAll('video').forEach(v => {
+            try { v.pause(); } catch(e) {}
+        });
+        
+        window.dispatchEvent(new CustomEvent('a11y-motion-changed', { detail: { reduced: true } }));
+        showPortalNotification('🛡️ Modo Seguro Anti-Epilepsia Activo');
+    } else {
+        delete document.documentElement.dataset.motion;
+        localStorage.setItem('morales_a11y_motion', 'normal');
+        const btn = document.getElementById('btn-a11y-safe');
+        if (btn) btn.classList.remove('active');
+        const btnOn = document.getElementById('btn-motion-on');
+        if (btnOn) { btnOn.className = 'portal-btn portal-btn-secondary'; }
+        const btnOff = document.getElementById('btn-motion-off');
+        if (btnOff) { btnOff.className = 'portal-btn portal-btn-primary'; }
+
+        document.querySelectorAll('video[autoplay]').forEach(v => {
+            try { v.play(); } catch(e) {}
+        });
+
+        window.dispatchEvent(new CustomEvent('a11y-motion-changed', { detail: { reduced: false } }));
+        showPortalNotification('Animaciones visuales reactivadas');
+    }
+}
+
+// 2. Accessibility: Color Blindness Filters
+function setColorBlindFilter(filterName) {
+    if (!filterName || filterName === 'none') {
+        delete document.documentElement.dataset.colorblind;
+        localStorage.setItem('morales_a11y_colorblind', 'none');
+    } else {
+        document.documentElement.dataset.colorblind = filterName;
+        localStorage.setItem('morales_a11y_colorblind', filterName);
+    }
+    const select = document.getElementById('colorblind-filter-select');
+    if (select) select.value = filterName || 'none';
+}
+
+// 3. Accessibility: Theme Switching (Dark / Light Mode)
+function toggleThemeMode() {
+    const current = document.documentElement.dataset.theme || 'dark';
+    const next = current === 'light' ? 'dark' : 'light';
+    setAppTheme(next);
+}
+
+function setAppTheme(theme) {
+    if (theme === 'light') {
+        document.documentElement.dataset.theme = 'light';
+        localStorage.setItem('morales_a11y_theme', 'light');
+        const icon = document.getElementById('a11y-theme-icon');
+        if (icon) icon.innerText = '☀️';
+        const btnLight = document.getElementById('btn-theme-light');
+        if (btnLight) btnLight.className = 'portal-btn portal-btn-primary';
+        const btnDark = document.getElementById('btn-theme-dark');
+        if (btnDark) btnDark.className = 'portal-btn portal-btn-secondary';
+    } else {
+        document.documentElement.dataset.theme = 'dark';
+        localStorage.setItem('morales_a11y_theme', 'dark');
+        const icon = document.getElementById('a11y-theme-icon');
+        if (icon) icon.innerText = '🌙';
+        const btnDark = document.getElementById('btn-theme-dark');
+        if (btnDark) btnDark.className = 'portal-btn portal-btn-primary';
+        const btnLight = document.getElementById('btn-theme-light');
+        if (btnLight) btnLight.className = 'portal-btn portal-btn-secondary';
+    }
+}
+
+// 4. Accessibility: Font Size Scaler
+function setFontSize(size) {
+    if (!size || size === 'normal') {
+        delete document.documentElement.dataset.fontSize;
+        localStorage.setItem('morales_a11y_fontsize', 'normal');
+    } else {
+        document.documentElement.dataset.fontSize = size;
+        localStorage.setItem('morales_a11y_fontsize', size);
+    }
+}
+
+// 5. Auth Module: Sign In / Sign Up
+function switchAuthMode(mode) {
+    const signinBtn = document.getElementById('auth-tab-signin-btn');
+    const signupBtn = document.getElementById('auth-tab-signup-btn');
+    const signinForm = document.getElementById('auth-signin-form');
+    const signupForm = document.getElementById('auth-signup-form');
+
+    if (mode === 'signup') {
+        if (signinBtn) signinBtn.classList.remove('active');
+        if (signupBtn) signupBtn.classList.add('active');
+        if (signinForm) signinForm.style.display = 'none';
+        if (signupForm) signupForm.style.display = 'block';
+    } else {
+        if (signupBtn) signupBtn.classList.remove('active');
+        if (signinBtn) signinBtn.classList.add('active');
+        if (signupForm) signupForm.style.display = 'none';
+        if (signinForm) signinForm.style.display = 'block';
+    }
+}
+
+function submitUserSignIn() {
+    const email = document.getElementById('auth-signin-email').value.trim();
+    const password = document.getElementById('auth-signin-password').value.trim();
+
+    if (!email || !password) {
+        alert('Por favor completa tu correo y contraseña.');
+        return;
+    }
+
+    let profile = loadClientProfile();
+    profile.email = email;
+    profile.isLoggedIn = true;
+    if (!profile.name) profile.name = email.split('@')[0];
+    if (!profile.accountType) profile.accountType = 'standard';
+    localStorage.setItem('morales_client_profile', JSON.stringify(profile));
+
+    updateAuthUI();
+    showPortalNotification('¡Sesión iniciada con éxito!');
+    
+    if (profile.accountType === 'payment') {
+        switchPortalTab('payments');
+    } else {
+        switchPortalTab('dashboard');
+    }
+}
+
+function submitUserSignUp() {
+    const name = document.getElementById('auth-signup-name').value.trim();
+    const phone = document.getElementById('auth-signup-phone').value.trim();
+    const email = document.getElementById('auth-signup-email').value.trim();
+    const password = document.getElementById('auth-signup-password').value.trim();
+    const accountType = document.getElementById('auth-account-type-select').value;
+
+    if (!name || !phone || !email || !password) {
+        alert('Por favor completa todos los campos.');
+        return;
+    }
+
+    const profile = {
+        name,
+        phone,
+        email,
+        accountType: accountType || 'standard',
+        membership: accountType === 'payment' ? 'standard' : 'free',
+        isLoggedIn: true,
+        createdAt: new Date().toISOString()
+    };
+
+    localStorage.setItem('morales_client_profile', JSON.stringify(profile));
+    
+    if (window.MoralesFirebase && typeof window.MoralesFirebase.saveProfile === 'function') {
+        window.MoralesFirebase.saveProfile(profile);
+    }
+
+    updateAuthUI();
+    updatePortalUI();
+    showPortalNotification('¡Cuenta creada con éxito!');
+
+    if (accountType === 'payment') {
+        switchPortalTab('payments');
+    } else {
+        switchPortalTab('dashboard');
+    }
+}
+
+function handleUserSignOut() {
+    const profile = loadClientProfile();
+    profile.isLoggedIn = false;
+    localStorage.setItem('morales_client_profile', JSON.stringify(profile));
+    updateAuthUI();
+    showPortalNotification('Has cerrado sesión.');
+}
+
+function updateAuthUI() {
+    const profile = loadClientProfile();
+    const card = document.getElementById('auth-user-status-card');
+    const signinForm = document.getElementById('auth-signin-form');
+    const signupForm = document.getElementById('auth-signup-form');
+    const userName = document.getElementById('auth-current-user-name');
+    const userEmail = document.getElementById('auth-current-user-email');
+    const badge = document.getElementById('auth-account-type-badge');
+
+    if (profile && profile.isLoggedIn && profile.email) {
+        if (card) card.style.display = 'block';
+        if (signinForm) signinForm.style.display = 'none';
+        if (signupForm) signupForm.style.display = 'none';
+        if (userName) userName.innerText = profile.name || 'Usuario Morales Plumbing';
+        if (userEmail) userEmail.innerText = profile.email;
+        if (badge) {
+            if (profile.accountType === 'payment') {
+                badge.innerText = 'Cuenta de Pagos & Membresías';
+                badge.className = 'account-type-badge account-type-payment';
+            } else {
+                badge.innerText = 'Cuenta Estándar';
+                badge.className = 'account-type-badge account-type-standard';
+            }
+        }
+    } else {
+        if (card) card.style.display = 'none';
+        switchAuthMode('signin');
+    }
+}
+
+// 6. Auto-Init Accessibility & Auth Preferences on DOM Ready
+document.addEventListener('DOMContentLoaded', () => {
+    const savedMotion = localStorage.getItem('morales_a11y_motion');
+    if (savedMotion === 'reduced') {
+        setEpilepsySafeMode(true);
+    }
+    const savedTheme = localStorage.getItem('morales_a11y_theme') || 'dark';
+    setAppTheme(savedTheme);
+
+    const savedCB = localStorage.getItem('morales_a11y_colorblind');
+    if (savedCB && savedCB !== 'none') {
+        setColorBlindFilter(savedCB);
+    }
+    const savedFont = localStorage.getItem('morales_a11y_fontsize');
+    if (savedFont) {
+        setFontSize(savedFont);
+    }
+    updateAuthUI();
+});
