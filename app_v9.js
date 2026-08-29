@@ -10835,11 +10835,99 @@ window.acceptCCPA = function() {
 };
 
 window.isJoeMuted = false;
+window.isKarlaRecording = false;
+window.karlaRecognition = null;
+
 window.toggleJoeMic = function() {
-  window.isJoeMuted = !window.isJoeMuted;
-  const btn = document.getElementById('joe-mic-btn');
-  if (btn) btn.innerHTML = window.isJoeMuted ? '??' : '??';
-  if (window.isJoeMuted && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+    }
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+        alert('Tu navegador no soporta reconocimiento de voz nativo. Por favor escribe tu mensaje.');
+        return;
+    }
+
+    const micBtn = document.getElementById('joe-mic-btn');
+    const input = document.getElementById('joe-query');
+
+    if (window.isKarlaRecording && window.karlaRecognition) {
+        window.karlaRecognition.stop();
+        window.isKarlaRecording = false;
+        if (micBtn) {
+            micBtn.innerHTML = '🎙️';
+            micBtn.style.background = '';
+        }
+        return;
+    }
+
+    // Activar cancelación de eco y supresión de ruido ambiental por hardware en el micrófono
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({
+            audio: {
+                echoCancellation: true,
+                noiseSuppression: true,
+                autoGainControl: true
+            }
+        }).then(stream => {
+            stream.getTracks().forEach(t => t.stop());
+        }).catch(err => console.debug('Audio constraints notice:', err));
+    }
+
+    window.karlaRecognition = new SpeechRecognition();
+    const curLang = localStorage.getItem('morales_lang') || 'es';
+    const langMap = { 'en': 'en-US', 'es': 'es-US', 'zh': 'zh-CN', 'tl': 'tl-PH', 'vi': 'vi-VN' };
+    window.karlaRecognition.lang = langMap[curLang] || 'es-US';
+    window.karlaRecognition.continuous = false;
+    window.karlaRecognition.interimResults = false;
+    window.karlaRecognition.maxAlternatives = 1;
+
+    window.karlaRecognition.onstart = function() {
+        window.isKarlaRecording = true;
+        if (micBtn) {
+            micBtn.innerHTML = '🔴';
+            micBtn.style.background = 'rgba(239, 68, 68, 0.25)';
+        }
+        if (input) input.placeholder = 'Escuchando tu voz claramente...';
+    };
+
+    window.karlaRecognition.onresult = function(event) {
+        if (event.results && event.results.length > 0) {
+            const transcript = event.results[0][0].transcript.trim();
+            if (transcript && input) {
+                input.value = transcript;
+                setTimeout(() => {
+                    sendToJoe();
+                }, 300);
+            }
+        }
+    };
+
+    window.karlaRecognition.onerror = function(event) {
+        console.debug('Speech recognition event:', event.error);
+        window.isKarlaRecording = false;
+        if (micBtn) {
+            micBtn.innerHTML = '🎙️';
+            micBtn.style.background = '';
+        }
+        if (input) input.placeholder = 'Pregúntale a Karla sobre servicios, precios o citas...';
+    };
+
+    window.karlaRecognition.onend = function() {
+        window.isKarlaRecording = false;
+        if (micBtn) {
+            micBtn.innerHTML = '🎙️';
+            micBtn.style.background = '';
+        }
+        if (input) input.placeholder = 'Pregúntale a Karla sobre servicios, precios o citas...';
+    };
+
+    try {
+        window.karlaRecognition.start();
+    } catch (e) {
+        console.warn('Recognition start error:', e.message);
+    }
 };
 
 // Tab switching for V02 Quick Services
