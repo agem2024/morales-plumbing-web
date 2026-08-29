@@ -4665,87 +4665,143 @@ iframe, object, embed, .promo-hero-image img {
 
 /* 1. Theme Variables: Executive Light Mode (WCAG AAA & ADA Title III) */
 :root[data-theme="light"] {
-    --bg-dark:      #f8fafc;
-    --dark-bg:      #edf2f7;
-    --text:         #0f172a;
+    --bg-dark:      #F8FAFC;
+    --dark-bg:      #F8FAFC;
+    --bg-gradient:  #F8FAFC;
+    --text:         #1E293B;
+    --text-light:   #1E293B;
+    --text-main:    #0A192F;
     --text-muted:   #475569;
-    --glass-bg:     #ffffff;
-    --glass-border: rgba(15, 23, 42, 0.12);
-    --primary:      #b45309;
-    --secondary:    #15803d;
-    --accent:       #0284c7;
-    --neon-cyan:    #0284c7;
-    --neon-purple:  #7e22ce;
-    --neon-orange:  #c2410c;
-    --neon-lime:    #15803d;
-    --card:         #ffffff;
-    --card-bg:      #ffffff;
+    --glass-bg:     #FFFFFF;
+    --glass-border: #E2E8F0;
+    --primary:      #0A192F;
+    --secondary:    #16A34A;
+    --accent:       #0284C7;
+    --neon-cyan:    #0284C7;
+    --neon-purple:  #7C3AED;
+    --neon-orange:  #EA580C;
+    --neon-lime:    #16A34A;
+    --card:         #FFFFFF;
+    --card-bg:      #FFFFFF;
+    --border-color: #E2E8F0;
 }
 
-/* 1.1 Body & Page Background */
+/* 1.1 Body, Page & Canvas Overhaul */
 :root[data-theme="light"] body {
-    background-color: #f8fafc !important;
+    background-color: #F8FAFC !important;
     background-image: none !important;
-    color: #0f172a !important;
+    color: #1E293B !important;
 }
 :root[data-theme="light"] #space-background,
-:root[data-theme="light"] #warp-canvas {
-    opacity: 0.03 !important;
+:root[data-theme="light"] #warp-canvas,
+:root[data-theme="light"] .stars,
+:root[data-theme="light"] .twinkling,
+:root[data-theme="light"] .nebula,
+:root[data-theme="light"] .space-bg {
+    display: none !important;
+    opacity: 0 !important;
     pointer-events: none !important;
 }
 
-/* 1.2 Official Morales Corporate Header (Rule: Never white, always deep corporate navy & gold) */
+/* 1.2 Official Morales Corporate Header (RULE: Always deep navy #0A192F & gold #D4AF37) */
 :root[data-theme="light"] header,
-:root[data-theme="light"] .mp-global-header {
+:root[data-theme="light"] .header-official,
+:root[data-theme="light"] .mp-global-header,
+:root[data-theme="light"] .navbar {
     background: linear-gradient(135deg, #0A192F 0%, #112240 100%) !important;
     border-bottom: 4px solid #D4AF37 !important;
     box-shadow: 0 4px 20px rgba(10, 25, 47, 0.15) !important;
 }
+:root[data-theme="light"] header *,
+:root[data-theme="light"] .header-official *,
+:root[data-theme="light"] .mp-global-header * {
+    text-shadow: none !important;
+}
 :root[data-theme="light"] .nav-links li a {
-    color: #ffffff !important;
+    color: #FFFFFF !important;
 }
 :root[data-theme="light"] .nav-links li a:hover,
 :root[data-theme="light"] .nav-links li a.active {
     color: #D4AF37 !important;
 }
-:root[data-theme="light"] .brand-name {
-    color: #ffffff !important;
+:root[data-theme="light"] .brand-name,
+:root[data-theme="light"] .header-official-brand h1 {
+    color: #FFFFFF !important;
 }
-:root[data-theme="light"] .brand-tag {
+:root[data-theme="light"] .brand-tag,
+:root[data-theme="light"] .header-official-brand span {
+    color: #D4AF37 !important;
+}
+:root[data-theme="light"] .header-info h2 {
+    color: #D4AF37 !important;
+}
+:root[data-theme="light"] .header-info p,
+:root[data-theme="light"] .header-info .lic,
+:root[data-theme="light"] .header-official-right {
+    color: #FFFFFF !important;
+}
+:root[data-theme="light"] .header-official-right a {
     color: #D4AF37 !important;
 }
 
-/* 1.3 Typography & Headings in Light Mode */
-:root[data-theme="light"] h1,
-:root[data-theme="light"] h2,
-:root[data-theme="light"] h3,
-:root[data-theme="light"] h4,
+/* 1.3 Universal Typography & Headings in Light Mode */
+:root[data-theme="light"] h1:not(.brand-name):not(.portal-header h2):not(.header-info h2):not(.header-official-brand h1),
+:root[data-theme="light"] h2:not(.brand-name):not(.portal-header h2):not(.header-info h2):not(.header-official-brand h1),
+:root[data-theme="light"] h3:not(.brand-name):not(.portal-header h2):not(.header-info h2):not(.header-official-brand h1),
+:root[data-theme="light"] h4:not(.brand-name):not(.portal-header h2):not(.header-info h2):not(.header-official-brand h1),
 :root[data-theme="light"] h5,
 :root[data-theme="light"] h6 {
     color: #0A192F !important;
     text-shadow: none !important;
+    -webkit-text-fill-color: #0A192F !important;
 }
-:root[data-theme="light"] p,
-:root[data-theme="light"] span:not(.a11y-btn *):not(.lang-btn *):not(.emergency-call *):not(.brand-name *):not(.brand-tag *):not(.nav-links *),
+:root[data-theme="light"] p:not(.brand-tag):not(.header-info p):not(.header-info .lic):not(.header-official-brand span),
 :root[data-theme="light"] li,
-:root[data-theme="light"] label {
-    color: #1e293b;
+:root[data-theme="light"] label,
+:root[data-theme="light"] td,
+:root[data-theme="light"] th:not(.table-custom th):not(.table-legal th),
+:root[data-theme="light"] span:not(.a11y-btn *):not(.lang-btn *):not(.emergency-call *):not(.brand-name *):not(.brand-tag *):not(.nav-links *):not(.portal-btn-primary *):not(.header-info *):not(.header-official-right *):not(.badge-type) {
+    color: #1E293B !important;
     text-shadow: none !important;
 }
 :root[data-theme="light"] .text-muted,
 :root[data-theme="light"] .desc,
-:root[data-theme="light"] .portal-tab-desc {
+:root[data-theme="light"] .portal-tab-desc,
+:root[data-theme="light"] small,
+:root[data-theme="light"] [style*="color: #718096"],
+:root[data-theme="light"] [style*="color: #a0aec0"],
+:root[data-theme="light"] [style*="color:#718096"],
+:root[data-theme="light"] [style*="color:#a0aec0"] {
     color: #475569 !important;
 }
-:root[data-theme="light"] .graffiti-title,
-:root[data-theme="light"] .hero-title {
-    background: linear-gradient(135deg, #0A192F 0%, #0284c7 60%, #D4AF37 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)) !important;
+
+/* 1.4 Neutralize Dark Inline Backgrounds & White Inline Texts */
+:root[data-theme="light"] [style*="color: #fff"]:not(header *):not(.header-official *):not(.portal-btn-primary *):not(.btn-primary *):not(.emergency-call *):not(.portal-header *):not(.badge-type),
+:root[data-theme="light"] [style*="color:#fff"]:not(header *):not(.header-official *):not(.portal-btn-primary *):not(.btn-primary *):not(.emergency-call *):not(.portal-header *):not(.badge-type),
+:root[data-theme="light"] [style*="color: white"]:not(header *):not(.header-official *):not(.portal-btn-primary *):not(.btn-primary *):not(.emergency-call *):not(.portal-header *):not(.badge-type),
+:root[data-theme="light"] [style*="color: #ffffff"]:not(header *):not(.header-official *):not(.portal-btn-primary *):not(.btn-primary *):not(.emergency-call *):not(.portal-header *):not(.badge-type),
+:root[data-theme="light"] [style*="color: #e2e8f0"]:not(header *):not(.header-official *):not(.portal-btn-primary *):not(.btn-primary *):not(.emergency-call *):not(.portal-header *):not(.badge-type),
+:root[data-theme="light"] [style*="color: var(--neon"]:not(header *):not(.header-official *):not(.portal-btn-primary *):not(.btn-primary *):not(.emergency-call *):not(.portal-header *):not(.badge-type) {
+    color: #1E293B !important;
 }
 
-/* 1.4 Cards, Panels, Containers & Glassmorphism */
+:root[data-theme="light"] [style*="background: rgba(10,25,47"]:not(header):not(.header-official),
+:root[data-theme="light"] [style*="background: rgba(10, 25, 47"]:not(header):not(.header-official),
+:root[data-theme="light"] [style*="background: rgba(15, 23, 42"]:not(header):not(.header-official),
+:root[data-theme="light"] [style*="background: rgba(15,23,42"]:not(header):not(.header-official),
+:root[data-theme="light"] [style*="background: rgba(0,0,0"]:not(header):not(.header-official),
+:root[data-theme="light"] [style*="background: rgba(0, 0, 0"]:not(header):not(.header-official),
+:root[data-theme="light"] [style*="background: #030712"]:not(header):not(.header-official),
+:root[data-theme="light"] [style*="background: #0A192F"]:not(header):not(.header-official),
+:root[data-theme="light"] [style*="background-color: rgba(10,25,47"]:not(header):not(.header-official),
+:root[data-theme="light"] [style*="background-color: #030712"]:not(header):not(.header-official) {
+    background: #FFFFFF !important;
+    color: #1E293B !important;
+    border-color: #E2E8F0 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+}
+
+/* 1.5 Cards, Panels, Containers & Glassmorphism */
 :root[data-theme="light"] .hero-container,
 :root[data-theme="light"] .glass,
 :root[data-theme="light"] .card,
@@ -4761,159 +4817,7 @@ iframe, object, embed, .promo-hero-image img {
 :root[data-theme="light"] .stat-card,
 :root[data-theme="light"] .badge-item,
 :root[data-theme="light"] .accordion-item,
-:root[data-theme="light"] .service-modal-box {
-    background: #ffffff !important;
-    color: #1e293b !important;
-    border: 1px solid #e2e8f0 !important;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04) !important;
-}
-:root[data-theme="light"] .service-card:hover,
-:root[data-theme="light"] .payment-card:hover,
-:root[data-theme="light"] .eco-card:hover {
-    border-color: #D4AF37 !important;
-    box-shadow: 0 15px 30px -5px rgba(212, 175, 55, 0.2) !important;
-    transform: translateY(-3px);
-}
-
-/* 1.5 Client Portal & Modals in Light Mode */
-:root[data-theme="light"] .portal-box {
-    background: #ffffff !important;
-    border: 1px solid #cbd5e1 !important;
-    box-shadow: 0 25px 50px -12px rgba(10, 25, 47, 0.25) !important;
-}
-:root[data-theme="light"] .portal-header {
-    background: linear-gradient(135deg, #0A192F 0%, #112240 100%) !important;
-    border-bottom: 3px solid #D4AF37 !important;
-}
-:root[data-theme="light"] .portal-header h2 {
-    color: #ffffff !important;
-}
-:root[data-theme="light"] .portal-header-left {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border-color: rgba(212, 175, 55, 0.3) !important;
-}
-:root[data-theme="light"] .portal-tabs {
-    background: #f1f5f9 !important;
-    border-bottom: 1px solid #e2e8f0 !important;
-}
-:root[data-theme="light"] .portal-tab-btn {
-    background: transparent !important;
-    color: #475569 !important;
-}
-:root[data-theme="light"] .portal-tab-btn.active {
-    background: #ffffff !important;
-    color: #0A192F !important;
-    border-bottom: 3px solid #0284c7 !important;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
-}
-:root[data-theme="light"] .portal-body {
-    background: #f8fafc !important;
-}
-:root[data-theme="light"] .portal-tab-content {
-    background: transparent !important;
-    color: #1e293b !important;
-    box-shadow: none !important;
-}
-
-/* 1.6 Form Inputs & Interactive Controls */
-:root[data-theme="light"] .portal-form-input,
-:root[data-theme="light"] .portal-form-select,
-:root[data-theme="light"] .portal-form-textarea,
-:root[data-theme="light"] input[type="text"],
-:root[data-theme="light"] input[type="email"],
-:root[data-theme="light"] input[type="tel"],
-:root[data-theme="light"] input[type="password"],
-:root[data-theme="light"] select,
-:root[data-theme="light"] textarea {
-    background: #ffffff !important;
-    color: #0f172a !important;
-    border: 1px solid #cbd5e1 !important;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-}
-:root[data-theme="light"] input:focus,
-:root[data-theme="light"] select:focus,
-:root[data-theme="light"] textarea:focus {
-    border-color: #0284c7 !important;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15) !important;
-}
-
-/* 1.7 Buttons & CTAs */
-:root[data-theme="light"] .portal-btn-primary,
-:root[data-theme="light"] .btn-primary,
-:root[data-theme="light"] .cta-button {
-    background: linear-gradient(135deg, #0A192F 0%, #112240 100%) !important;
-    color: #ffffff !important;
-    border: 1px solid #D4AF37 !important;
-    box-shadow: 0 4px 12px rgba(10, 25, 47, 0.15) !important;
-}
-:root[data-theme="light"] .portal-btn-primary:hover,
-:root[data-theme="light"] .btn-primary:hover,
-:root[data-theme="light"] .cta-button:hover {
-    background: #D4AF37 !important;
-    color: #0A192F !important;
-    border-color: #D4AF37 !important;
-}
-:root[data-theme="light"] .portal-btn-secondary {
-    background: #ffffff !important;
-    color: #0A192F !important;
-    border: 1px solid #cbd5e1 !important;
-}
-:root[data-theme="light"] .portal-btn-secondary:hover {
-    background: #f1f5f9 !important;
-    border-color: #0A192F !important;
-}
-
-/* 1.8 Persistent Audio Player & Karla AI Assistant */
-:root[data-theme="light"] .persistent-audio-player {
-    background: #ffffff !important;
-    border-top: 2px solid #D4AF37 !important;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.08) !important;
-}
-:root[data-theme="light"] .player-title-info h5 {
-    color: #0A192F !important;
-}
-:root[data-theme="light"] .player-ctrl-btn {
-    background: #f1f5f9 !important;
-    color: #0A192F !important;
-    border: 1px solid #e2e8f0 !important;
-}
-:root[data-theme="light"] .joe-chat-window,
-:root[data-theme="light"] #joe-modal {
-    background: #ffffff !important;
-    border: 1px solid #cbd5e1 !important;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
-}
-:root[data-theme="light"] .joe-chat-header {
-    background: linear-gradient(135deg, #0A192F 0%, #112240 100%) !important;
-    border-bottom: 2px solid #D4AF37 !important;
-    color: #ffffff !important;
-}
-:root[data-theme="light"] .joe-msg.bot {
-    background: #f1f5f9 !important;
-    color: #0f172a !important;
-    border: 1px solid #e2e8f0 !important;
-}
-:root[data-theme="light"] .joe-msg.user {
-    background: #0A192F !important;
-    color: #ffffff !important;
-}
-
-/* 1.9 Images, Comics, Videos & Badges Protection (Zero Distortion) */
-:root[data-theme="light"] img,
-:root[data-theme="light"] video,
-:root[data-theme="light"] canvas,
-:root[data-theme="light"] svg {
-    filter: none !important;
-    opacity: 1 !important;
-}
-:root[data-theme="light"] .comic-img,
-:root[data-theme="light"] .comic-strip-container img {
-    border-color: #cbd5e1 !important;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
-}
-
-/* 1.10 Subpages & Engineering Hubs in Light Mode */
+:root[data-theme="light"] .service-modal-box,
 :root[data-theme="light"] .container,
 :root[data-theme="light"] .top-section,
 :root[data-theme="light"] .corporate-desc,
@@ -4934,21 +4838,156 @@ iframe, object, embed, .promo-hero-image img {
 :root[data-theme="light"] .flow-step,
 :root[data-theme="light"] .manual-container,
 :root[data-theme="light"] .manual-section,
-:root[data-theme="light"] .table-card {
-    background: #ffffff !important;
-    color: #1e293b !important;
-    border-color: #e2e8f0 !important;
+:root[data-theme="light"] .table-card,
+:root[data-theme="light"] .v02-tab-panel > div,
+:root[data-theme="light"] .legal-container {
+    background: #FFFFFF !important;
+    color: #1E293B !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04) !important;
 }
-:root[data-theme="light"] .corporate-desc {
-    background: #ffffff !important;
-    border: 1px solid rgba(212, 175, 55, 0.4) !important;
-    color: #1e293b !important;
+
+:root[data-theme="light"] .service-card:hover,
+:root[data-theme="light"] .payment-card:hover,
+:root[data-theme="light"] .eco-card:hover,
+:root[data-theme="light"] .team-card:hover {
+    border-color: #D4AF37 !important;
+    box-shadow: 0 15px 30px -5px rgba(212, 175, 55, 0.2) !important;
+    transform: translateY(-3px);
 }
-:root[data-theme="light"] .header-info h2 {
-    color: #D4AF37 !important;
+
+/* 1.6 Client Portal & Modals in Light Mode */
+:root[data-theme="light"] .portal-box {
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    box-shadow: 0 25px 50px -12px rgba(10, 25, 47, 0.25) !important;
 }
-:root[data-theme="light"] .header-info p {
-    color: #ffffff !important;
+:root[data-theme="light"] .portal-header {
+    background: linear-gradient(135deg, #0A192F 0%, #112240 100%) !important;
+    border-bottom: 3px solid #D4AF37 !important;
+}
+:root[data-theme="light"] .portal-header h2 {
+    color: #FFFFFF !important;
+}
+:root[data-theme="light"] .portal-header-left {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(212, 175, 55, 0.3) !important;
+}
+:root[data-theme="light"] .portal-tabs {
+    background: #F1F5F9 !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+}
+:root[data-theme="light"] .portal-tab-btn {
+    background: transparent !important;
+    color: #475569 !important;
+}
+:root[data-theme="light"] .portal-tab-btn.active {
+    background: #FFFFFF !important;
+    color: #0A192F !important;
+    border-bottom: 3px solid #0284C7 !important;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+}
+:root[data-theme="light"] .portal-body {
+    background: #F8FAFC !important;
+}
+:root[data-theme="light"] .portal-tab-content {
+    background: transparent !important;
+    color: #1E293B !important;
+    box-shadow: none !important;
+}
+
+/* 1.7 Form Inputs & Interactive Controls */
+:root[data-theme="light"] .portal-form-input,
+:root[data-theme="light"] .portal-form-select,
+:root[data-theme="light"] .portal-form-textarea,
+:root[data-theme="light"] input[type="text"],
+:root[data-theme="light"] input[type="email"],
+:root[data-theme="light"] input[type="tel"],
+:root[data-theme="light"] input[type="password"],
+:root[data-theme="light"] select,
+:root[data-theme="light"] textarea {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    border: 1px solid #CBD5E1 !important;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+:root[data-theme="light"] input:focus,
+:root[data-theme="light"] select:focus,
+:root[data-theme="light"] textarea:focus {
+    border-color: #0284C7 !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* 1.8 Buttons & CTAs */
+:root[data-theme="light"] .portal-btn-primary,
+:root[data-theme="light"] .btn-primary,
+:root[data-theme="light"] .cta-button,
+:root[data-theme="light"] [style*="background: #D4AF37"],
+:root[data-theme="light"] [style*="background: #d4af37"],
+:root[data-theme="light"] [style*="background:#D4AF37"],
+:root[data-theme="light"] [style*="background:#d4af37"] {
+    background: #D4AF37 !important;
+    color: #0A192F !important;
+    font-weight: 700 !important;
+    border: 1px solid #D4AF37 !important;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25) !important;
+}
+:root[data-theme="light"] .portal-btn-secondary {
+    background: #FFFFFF !important;
+    color: #0A192F !important;
+    border: 1px solid #CBD5E1 !important;
+}
+:root[data-theme="light"] .portal-btn-secondary:hover {
+    background: #F1F5F9 !important;
+    border-color: #0A192F !important;
+}
+
+/* 1.9 Persistent Audio Player & Karla AI Assistant */
+:root[data-theme="light"] .persistent-audio-player {
+    background: #FFFFFF !important;
+    border-top: 2px solid #D4AF37 !important;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08) !important;
+}
+:root[data-theme="light"] .player-title-info h5 {
+    color: #0A192F !important;
+}
+:root[data-theme="light"] .player-ctrl-btn {
+    background: #F1F5F9 !important;
+    color: #0A192F !important;
+    border: 1px solid #E2E8F0 !important;
+}
+:root[data-theme="light"] .joe-chat-window,
+:root[data-theme="light"] #joe-modal {
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+:root[data-theme="light"] .joe-chat-header {
+    background: linear-gradient(135deg, #0A192F 0%, #112240 100%) !important;
+    border-bottom: 2px solid #D4AF37 !important;
+    color: #FFFFFF !important;
+}
+:root[data-theme="light"] .joe-msg.bot {
+    background: #F1F5F9 !important;
+    color: #0F172A !important;
+    border: 1px solid #E2E8F0 !important;
+}
+:root[data-theme="light"] .joe-msg.user {
+    background: #0A192F !important;
+    color: #FFFFFF !important;
+}
+
+/* 1.10 Images, Comics, Videos & Media Protection (Zero Distortion) */
+:root[data-theme="light"] img,
+:root[data-theme="light"] video,
+:root[data-theme="light"] svg,
+:root[data-theme="light"] .comic-img,
+:root[data-theme="light"] .comic-strip-container img,
+:root[data-theme="light"] .tech-avatar {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 /* 2. Anti-Epilepsy & Photosensitive Safe Mode (WCAG 2.3.1) */
