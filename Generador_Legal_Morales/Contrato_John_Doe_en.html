@@ -1,55 +1,190 @@
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Service Agreement / Estimate - Morales Plumbing</title>
-        <style>
-            body {
-                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-                margin: 40px;
-                color: #0A192F;
-            }
-            .header {
-                text-align: center;
-                border-bottom: 4px solid #D4AF37;
-                padding-bottom: 20px;
-                margin-bottom: 30px;
-            }
-            .header h1 {
-                margin: 0;
-                font-size: 28px;
-                color: #0A192F;
-            }
-            .header p {
-                margin: 5px 0;
-                color: #666;
-            }
-            .section {
-                margin-bottom: 25px;
-            }
-            .section h3 {
-                color: #D4AF37;
-                border-bottom: 1px solid #eee;
-                padding-bottom: 5px;
-            }
-            .price {
-                font-size: 24px;
-                font-weight: bold;
-                color: #27ae60;
-            }
-            .footer {
-                margin-top: 50px;
-                display: flex;
-                justify-content: space-between;
-            }
-            .signature-line {
-                width: 250px;
-                border-bottom: 1px solid #000;
-                margin-bottom: 5px;
-            }
-        </style>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Plumbing Service Contract — Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A192F;
+            --gold: #D4AF37;
+            --text: #1E293B;
+            --border: #CBD5E1;
+            --bg-light: #F8FAFC;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 30px;
+            color: var(--text);
+            background: #EAEEF3;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        .contract-paper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 40px 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border-top: 6px solid var(--gold);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .header-logo img {
+            height: 60px;
+            width: auto;
+        }
+        .header-title h1 {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        .header-title p {
+            margin: 3px 0 0;
+            font-size: 12px;
+            color: #64748B;
+            font-weight: 600;
+        }
+        .header-info {
+            text-align: right;
+            font-size: 12px;
+            color: var(--text);
+            line-height: 1.4;
+        }
+        .header-info strong {
+            color: var(--primary);
+        }
+        .badge-type {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--gold);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 5px;
+        }
+        .section-title {
+            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
+            margin: 25px 0 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }
+        .info-box {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            border-radius: 6px;
+        }
+        .info-box label {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #64748B;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .info-box span {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .table-custom {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        .table-custom th {
+            background: var(--primary);
+            color: #FFFFFF;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .table-custom td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .legal-notice-box {
+            background: #FFFBEB;
+            border: 1px solid #FCD34D;
+            border-left: 4px solid #F59E0B;
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-size: 12px;
+            color: #92400E;
+            line-height: 1.5;
+        }
+        .legal-notice-box strong {
+            color: #78350F;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+        .sig-box {
+            text-align: center;
+        }
+        .sig-line {
+            border-bottom: 1px solid #000000;
+            height: 45px;
+            margin-bottom: 8px;
+        }
+        .sig-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        @media print {
+            body { background: #FFFFFF; padding: 0; }
+            .contract-paper { box-shadow: none; border-top: none; padding: 20px; }
+            .no-print { display: none; }
+        }
+    </style>
     <!-- morales_theme_sync: Sync Theme & Language from Main Portal -->
     <script>
         (function() {
@@ -57,60 +192,146 @@
                 var theme = localStorage.getItem('morales_a11y_theme') || 'dark';
                 if (theme === 'light') document.documentElement.dataset.theme = 'light';
                 else delete document.documentElement.dataset.theme;
-                var motion = localStorage.getItem('morales_a11y_motion');
-                if (motion === 'reduced') document.documentElement.dataset.motion = 'reduced';
-                var cb = localStorage.getItem('morales_a11y_colorblind');
-                if (cb && cb !== 'none') document.documentElement.dataset.colorblind = cb;
-                var fs = localStorage.getItem('morales_a11y_fontsize');
-                if (fs && fs !== 'normal') document.documentElement.dataset.fontSize = fs;
-                var lang = localStorage.getItem('morales_language') || localStorage.getItem('mp_language') || 'es';
-                if (typeof setLanguage === 'function') setLanguage(lang);
-                else if (typeof switchLang === 'function') switchLang(lang);
             } catch(e) {}
         })();
     </script>
 </head>
-    <body>
+<body>
+    <div class="contract-paper">
+        <!-- HEADER -->
         <div class="header">
-            <h1>MORALES PLUMBING</h1>
-            <p>Lic. C-36 #1156542 | San Jose, CA</p>
-            <p>(669) 213-4422 | moralesplumbing026@gmail.com | www.morales-plumbing.com</p>
-        </div>
-
-        <div style="text-align: right; margin-bottom: 20px;">
-            <strong>Date:</strong> August 07, 2026
-        </div>
-
-        <div class="section">
-            <h3>Client:</h3>
-            <p>John Doe</p>
-        </div>
-
-        <div class="section">
-            <h3>Service Description:</h3>
-            <p>Water heater installation</p>
-        </div>
-
-        <div class="section">
-            <h3>Total Price:</h3>
-            <p class="price"></p>
-        </div>
-
-        <div class="section">
-            <h3>Terms & Conditions:</h3>
-            <p>Payment is due upon completion of work. All work is guaranteed for 30 days unless otherwise specified.</p>
-        </div>
-
-        <div class="footer">
-            <div>
-                <div class="signature-line"></div>
-                <p>Client Signature:</p>
+            <div class="header-logo">
+                <img src="../assets/logo_portada.png" alt="Morales Plumbing" onerror="this.src='../morales_logo.jpg';">
+                <div class="header-title">
+                    <h1>MORALES PLUMBING</h1>
+                    <p>AI-INTEGRATED SERVICES — LIC. C-36 #1156542</p>
+                    <span class="badge-type" id="contract-badge-type">Residential Service Agreement</span>
+                </div>
             </div>
-            <div>
-                <div class="signature-line"></div>
-                <p>Morales Plumbing Rep.</p>
+            <div class="header-info">
+                <strong>Morales Plumbing</strong><br>
+                San Jose, CA | (669) 213-4422<br>
+                moralesplumbing026@gmail.com<br>
+                www.morales-plumbing.com
             </div>
         </div>
-    </body>
-    </html>
-    
+
+        <!-- METADATA -->
+        <div class="grid-3">
+            <div class="info-box">
+                <label>Contract / Order #</label>
+                <span>MP-2026-0842-EN</span>
+            </div>
+            <div class="info-box">
+                <label>Date Issued</label>
+                <span>August 29, 2026</span>
+            </div>
+            <div class="info-box">
+                <label>Estimated Start / Completion</label>
+                <span>Start: Immediate | End: 1 Business Day</span>
+            </div>
+        </div>
+
+        <!-- CLIENT -->
+        <div class="section-title">01. Client Information &amp; Job Site</div>
+        <div class="grid-2">
+            <div class="info-box">
+                <label>Client Name / Entity</label>
+                <span>John Doe</span>
+            </div>
+            <div class="info-box">
+                <label>Phone &amp; Email Address</label>
+                <span>(669) 213-4422 | john.doe@example.com</span>
+            </div>
+            <div class="info-box" style="grid-column: 1 / -1;">
+                <label>Job Site Address</label>
+                <span>San Jose, Santa Clara County, CA</span>
+            </div>
+        </div>
+
+        <!-- SCOPE OF WORK -->
+        <div class="section-title">02. Scope of Work &amp; Technical Specifications</div>
+        <div class="info-box">
+            <label>Detailed Labor &amp; Materials Description (California BPC § 7159)</label>
+            <p style="margin: 5px 0 0; font-size: 13px; color: #334155;">
+                Complete supply and installation of high-efficiency water heating equipment in compliance with California Plumbing Code (CPC) and Title 24 standards. Includes safe eco-disconnection and haul-away of existing unit, hard-piped T&P relief valve line, dielectric copper unions, sediment-trap gas line, drip pan with auto-shutoff leak sensor, and hydrostatic pressure testing at 60 PSI.
+            </p>
+        </div>
+
+        <!-- PRICING & BREAKDOWN -->
+        <div class="section-title">03. Financial Breakdown &amp; Payment Schedule</div>
+        <table class="table-custom">
+            <thead>
+                <tr>
+                    <th>Line Item / Description</th>
+                    <th>Type</th>
+                    <th>Warranty</th>
+                    <th style="text-align: right;">Total Estimated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Water Heater Installation + Certified Materials</strong></td>
+                    <td>Equipment & Labor</td>
+                    <td>6-Yr Manufacturer / 1-Yr Labor</td>
+                    <td style="text-align: right; font-weight: 700; color: #16A34A;">$3,450.00</td>
+                </tr>
+                <tr>
+                    <td><strong>FLIR Thermal Imaging & Pressure Audit</strong></td>
+                    <td>AI Diagnostic</td>
+                    <td>Digital Certificate</td>
+                    <td style="text-align: right; color: #0284C7;">INCLUDED</td>
+                </tr>
+                <tr style="background: #F1F5F9; font-weight: 700;">
+                    <td colspan="3" style="text-align: right; color: var(--primary);">TOTAL CONTRACT AMOUNT:</td>
+                    <td style="text-align: right; font-size: 15px; color: #16A34A;">$3,450.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- CALIFORNIA MANDATORY DISCLOSURES -->
+        <div class="section-title">04. California &amp; Federal Mandatory Disclosures</div>
+
+        <!-- 1. CSLB Deposit -->
+        <div class="legal-notice-box">
+            <strong>CALIFORNIA DOWN PAYMENT LAW (CSLB BPC § 7159):</strong>
+            California law strictly prohibits contractors from requesting or receiving a down payment that exceeds <strong>$1,000 or 10% of the total contract price</strong>, whichever is less, unless the contractor has submitted a formal blanket performance bond.
+        </div>
+
+        <!-- 2. Mechanics Lien Warning -->
+        <div class="legal-notice-box" style="background: #FEF2F2; border-color: #FECACA; border-left-color: #DC2626; color: #991B1B;">
+            <strong style="color: #7F1D1D;">MECHANICS LIEN WARNING (CALIFORNIA CIVIL CODE § 8400-8448):</strong>
+            Anyone who helps improve your property, but who is not paid, may record what is called a mechanics lien on your property. A mechanics lien is a claim, like a mortgage or home equity loan, made against your property and recorded with the county recorder. If the contractor or subcontractor is not paid, the lienholder may initiate a lawsuit to foreclose the lien and sell your property.
+        </div>
+
+        <!-- 3. Three-Day Right of Rescission -->
+        <div class="legal-notice-box" style="background: #EFF6FF; border-color: #BFDBFE; border-left-color: #2563EB; color: #1E40AF;">
+            <strong style="color: #1E3A8A;">THREE-DAY RIGHT TO CANCEL (BPC § 7159.10 / FTC 16 CFR § 429):</strong>
+            You, the buyer, have the right to cancel this transaction without penalty until midnight of the <strong>third business day</strong> after the date of this agreement. To cancel, deliver or mail a signed written notice to: <em>Morales Plumbing, San Jose, CA (moralesplumbing026@gmail.com)</em>.
+        </div>
+
+        <!-- TERMS & CONDITIONS -->
+        <div class="section-title">05. Payment Terms, Late Fees &amp; Warranties</div>
+        <ul style="font-size: 12px; color: #475569; padding-left: 20px;">
+            <li><strong>Payment Terms:</strong> Balance is due in full upon satisfactory completion (<em>Due Upon Completion</em>). Approved commercial accounts receive <em>Net 15 / Net 30</em> terms.</li>
+            <li><strong>Late Fee / Finance Charges:</strong> Invoices unpaid by due date accrue a monthly finance charge of <strong>1.5% (18% per annum)</strong>, or the maximum allowable rate under California law.</li>
+            <li><strong>Returned Payments (NSF):</strong> A <strong>$35.00</strong> administrative fee applies to any returned check or reversed ACH transfer (<em>Cal. Civil Code § 1719</em>).</li>
+            <li><strong>EPA Lead-Free Compliance:</strong> All fittings and solder comply with the federal <em>Safe Drinking Water Act</em> (weighted lead content &le; 0.25%).</li>
+        </ul>
+
+        <!-- SIGNATURES -->
+        <div class="signature-grid">
+            <div class="sig-box">
+                <div class="sig-line"></div>
+                <div class="sig-label">Client Signature (Property Owner / Authorized Agent)</div>
+                <div style="font-size: 11px; color: #64748B; margin-top: 3px;">Date: ________________________</div>
+            </div>
+            <div class="sig-box">
+                <div class="sig-line"></div>
+                <div class="sig-label">Morales Plumbing (Authorized C-36 Licensee)</div>
+                <div style="font-size: 11px; color: #64748B; margin-top: 3px;">Alex G. Espinosa — Lic. C-36 #1156542</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
