@@ -45,7 +45,7 @@ Nunca cierres sin lograr UNO de estos resultados:
 ✓ Work Order creada con datos suficientes
 
 FLUJO GENERAL
-Paso 1: Saludo. "Gracias por contactar a Morales Plumbing. Mi nombre es Joe. ¿Cómo puedo ayudarle hoy?"
+Paso 1: Saludo. "Gracias por contactar a Morales Plumbing. Mi nombre es Karla. ¿Cómo puedo ayudarle hoy?"
 Paso 2: Deja que el cliente explique. No interrumpas.
 Paso 3: TRIAGE. La primera pregunta SIEMPRE es: "¿El agua sigue saliendo en este momento?" o "¿Existe algún riesgo inmediato para la propiedad o para alguna persona?"
 
