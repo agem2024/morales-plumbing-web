@@ -137,8 +137,8 @@
         <div class="layer layer-3"></div>
     </div>
 
-    <!-- Warp Speed Canvas — full screen, z-index 3 -->
-    <canvas id="warp-canvas"></canvas>
+    <!-- Warp Speed Canvas — full screen, z-index 3 (Sutil y no invasivo) -->
+    <canvas id="warp-canvas" style="opacity: 0.22; pointer-events: none;"></canvas>
 
     <!-- Background layers (Space/Water ripple) handled above -->
 
@@ -204,6 +204,7 @@
                 <div class="lang-dropdown-content">
                     <button class="lang-btn active" onclick="setLanguage('en'); document.getElementById('current-lang-display').innerText='EN ▾';" data-lang="en">EN - English</button>
                     <button class="lang-btn" onclick="setLanguage('es'); document.getElementById('current-lang-display').innerText='ES ▾';" data-lang="es">ES - Español</button>
+                    <button class="lang-btn" onclick="setLanguage('hi'); document.getElementById('current-lang-display').innerText='HI ▾';" data-lang="hi">HI - हिन्दी</button>
                     <button class="lang-btn" onclick="setLanguage('zh'); document.getElementById('current-lang-display').innerText='ZH ▾';" data-lang="zh">ZH - 中文</button>
                     <button class="lang-btn" onclick="setLanguage('tl'); document.getElementById('current-lang-display').innerText='TL ▾';" data-lang="tl">TL - Tagalog</button>
                     <button class="lang-btn" onclick="setLanguage('vi'); document.getElementById('current-lang-display').innerText='VI ▾';" data-lang="vi">VI - Tiếng Việt</button>

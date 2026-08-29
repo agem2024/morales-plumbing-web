@@ -8556,13 +8556,75 @@ const translations = {
         "promo_ttt_better_comic_2": "2. Lắp đặt bộ lọc nước chống cặn để bảo vệ bộ trao đổi nhiệt kp mới.",
         "promo_ttt_best_comic_1": "3. Lắp đặt van điều p (PRV) hạng nặng để điều chỉnh p suất nước toàn bộ ngôi nhà.",
         "promo_ttt_best_comic_4": "4. Hệ thống Navien Cao cấp đã trực tuyến với điều khiển WiFi Thông minh và sự an tâm trọn đời.",
-        "btn_ley_baaqmd": "Luật & ¿Quéy tắc BAAQMD 2027",
+        "btn_ley_baaqmd": "Luật & Quy tắc BAAQMD 2027",
         "btn_req_hp": "Xem Yêu cầu Kỹ thuật & Sơ đồ (Bơm Nhiệt)",
         "btn_req_tt": "Xem Yêu cầu Kỹ thuật & Sơ đồ (Bình chứa sang Không bình chứa)",
         "btn_req_ttt": "Xem Yêu cầu Kỹ thuật & Sơ đồ (Không bình chứa sang Không bình chứa)",
+    },
+    "hi": {
+        "stats_years_num": "15+",
+        "stats_years_text": "वर्षों का अनुभव",
+        "stats_projects_num": "500+",
+        "stats_projects_text": "पूर्ण परियोजनाएं",
+        "stats_hours_num": "24/7",
+        "stats_hours_text": "आपातकालीन सेवाएं",
+        "stats_lic_num": "C-36",
+        "stats_lic_text": "CSLB लाइसेंस #1156542",
+        "qs_title": "आपको किस प्लंबिंग सेवा की आवश्यकता है?",
+        "qs_desc": "अपनी आवश्यकता चुनें और तत्काल तकनीकी निरीक्षण का अनुरोध करें।",
+        "contact_sec_title": "संपर्क करें",
+        "contact_sec_desc": "क्या आपको आपातकालीन सहायता या परामर्श चाहिए? हमें सीधे कॉल करें या संदेश भेजें।",
+        "contact_form_title": "संदेश भेजें",
+        "contact_form_name": "पूरा नाम",
+        "contact_form_phone": "फ़ोन नंबर",
+        "contact_form_email": "ईमेल",
+        "contact_form_msg": "संदेश विवरण",
+        "contact_form_submit": "संदेश भेजें",
+        "nav_nexus": "मुख्य पृष्ठ",
+        "nav_orion": "इकोसिस्टम",
+        "nav_services": "सेवाएं",
+        "nav_about": "मिशन",
+        "nav_terminal": "संपर्क",
+        "nav_portal_header": "पोर्टल",
+        "nav_desc_diy": "एआर डायग्नोस्टिक्स",
+        "nav_desc_faq": "ज्ञानकोश एवं प्रश्नोत्तर",
+        "nav_desc_media": "ऑडियो एवं वीडियो",
+        "diy_hub_title": "फिक्स-इट हब",
+        "faq_title": "प्रश्नोत्तर एवं तकनीकी हब",
+        "nav_multimedia": "पॉडकास्ट",
+        "joe_status": "कार्ला · वर्चुअल तकनीकी समन्वयक",
+        "joe_intro": "नमस्ते! मैं कार्ला हूँ, मोरालेस प्लंबिंग की वर्चुअल तकनीकी समन्वयक। आज मैं आपकी प्लंबिंग सेवा या निरीक्षण में कैसे सहायता कर सकती हूँ?",
+        "joe_placeholder": "प्लंबिंग सेवाओं या अपॉइंटमेंट के बारे में पूछें...",
+        "joe_send": "भेजें",
+        "booking_panel_title": "अपॉइंटमेंट फॉर्म",
+        "booking_status_filling": "कार्ला विवरण दर्ज कर रही हैं...",
+        "booking_name": "पूरा नाम",
+        "booking_phone": "फ़ोन नंबर",
+        "booking_address": "सेवा का पता",
+        "booking_service": "सेवा का प्रकार",
+        "booking_date": "पसंदीदा तिथि",
+        "booking_time": "पसंदीदा समय",
+        "booking_notes": "अतिरिक्त विवरण",
+        "booking_submit": "अपॉइंटमेंट की पुष्टि करें",
+        "booking_fields_complete": "फ़ील्ड पूर्ण",
+        "booking_disclaimer": "आपको ईमेल द्वारा तत्काल पुष्टि प्राप्त होगी।",
+        "qs_tab_plumbing": "सामान्य प्लंबिंग",
+        "qs_tab_bathroom": "बाथरूम नवीनीकरण",
+        "qs_tab_heaters": "वॉटर हीटर",
+        "qs_tab_leaks": "रिसाव का पता लगाना",
+        "qs_tab_repipe": "पाइपलाइन नवीनीकरण",
+        "qs_tab_ai": "थर्मल डायग्नोस्टिक्स",
+        "qs_plumb_t1": "पाइपलाइन मरम्मत",
+        "qs_plumb_d1": "आपके घर में टूटी या लीक पाइपलाइनों का पेशेवर डायग्नोस्टिक्स और मरम्मत।",
+        "qs_plumb_t2": "24/7 आपातकालीन सेवा",
+        "qs_plumb_d2": "सिलिकॉन वैली और सैन जोस में बिना किसी मूल्यांकन शुल्क के 24/7 सहायता।",
+        "qs_plumb_t3": "प्लंबिंग निरीक्षण",
+        "qs_plumb_d3": "थर्मल कैमरों के साथ व्यापक निरीक्षण और विस्तृत रिपोर्ट।",
+        "qs_btn_call": "विवरण देखें",
+        "qs_btn_emerg": "आपातकालीन सेवाएं",
+        "qs_btn_insp": "निरीक्षण का अनुरोध करें"
     }
 };
-
 
 function setLanguage(lang) {
     if (!translations[lang]) lang = 'en';
@@ -8752,6 +8814,7 @@ function speakJoe(text) {
         const langMap = {
             'en': 'en-US',
             'es': 'es-US',
+            'hi': 'hi-IN',
             'zh': 'zh-CN',
             'tl': 'tl-PH',
             'vi': 'vi-VN'
@@ -8766,7 +8829,7 @@ function speakJoe(text) {
         if (voices && voices.length > 0) {
             const femaleVoice = voices.find(v => 
                 (v.lang.startsWith(targetLang.slice(0, 2)) || v.lang === targetLang) &&
-                (/female|woman|sabina|paulina|monica|paloma|helena|lucia|victoria|samantha|zira|karen|natural|neural|online/i.test(v.name))
+                (/female|woman|sabina|paulina|monica|paloma|helena|lucia|victoria|samantha|zira|karen|swara|heera|kalpana|natural|neural|online/i.test(v.name))
             ) || voices.find(v => v.lang.startsWith(targetLang.slice(0, 2)));
 
             if (femaleVoice) {
@@ -8938,7 +9001,30 @@ async function sendToJoe() {
     }
 
     removeTypingIndicator(typingId);
-    addMessage(reply, 'bot');
+
+    // 1. REGLA ESTRICTA: Eliminar todos los emojis de la respuesta de Karla
+    if (reply) {
+        reply = reply.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E6}-\u{1F1FF}]/gu, '').trim();
+    }
+
+    // 2. Navegación guiada sutil (no invasiva)
+    const lowerText = text.toLowerCase();
+    let navLinks = '';
+    if (lowerText.includes('calentador') || lowerText.includes('tankless') || lowerText.includes('water heater') || lowerText.includes('navien')) {
+        navLinks = '<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/calentadores-de-agua.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">Ver Modelos y Especificaciones de Calentadores &rarr;</a></div>';
+    } else if (lowerText.includes('fuga') || lowerText.includes('leak') || lowerText.includes('termo') || lowerText.includes('humedad')) {
+        navLinks = '<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/deteccion-de-fugas-ai.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">Ver Diagnóstico por Termografía &rarr;</a></div>';
+    } else if (lowerText.includes('diy') || lowerText.includes('arreglar') || lowerText.includes('mismo') || lowerText.includes('fix')) {
+        navLinks = '<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/hazlo_tu_mismo.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">Ver Guías Técnicas Paso a Paso &rarr;</a></div>';
+    } else if (lowerText.includes('precio') || lowerText.includes('price') || lowerText.includes('costo') || lowerText.includes('tarif')) {
+        navLinks = '<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/pricebook.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">Ver Demo de Pricebook (EP Plumbing Pro para Contratistas) &rarr;</a></div>';
+    } else if (lowerText.includes('cita') || lowerText.includes('agendar') || lowerText.includes('book') || lowerText.includes('inspeccion')) {
+        navLinks = '<div style="margin-top: 8px; font-size: 0.85rem;"><button onclick="openBookingPanel()" style="background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.82rem;">Abrir Formulario de Cita &rarr;</button></div>';
+    }
+
+    const displayReply = reply + navLinks;
+
+    addMessage(displayReply, 'bot');
     speakJoe(reply);
     joeHistory.push({ role: 'assistant', content: reply });
     
@@ -8947,7 +9033,7 @@ async function sendToJoe() {
         localStorage.setItem('morales_joe_history', JSON.stringify(joeHistory));
     } catch(e) {}
 
-    // Process any JSON action tags embedded in Joe's response
+    // Process any JSON action tags embedded in Karla's response
     if (typeof processJoeActions === 'function') {
         processJoeActions(reply);
     }
@@ -8955,7 +9041,7 @@ async function sendToJoe() {
 
 async function callGemini(apiKey) {
     const model   = (typeof GEMINI_MODEL !== 'undefined') ? GEMINI_MODEL : 'gemini-1.5-flash';
-    let sysPrompt = (typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Joe, asistente IA de Morales Plumbing, experto en plomera.';
+    let sysPrompt = (typeof KARLA_SYSTEM_PROMPT !== 'undefined') ? KARLA_SYSTEM_PROMPT : ((typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Karla, la Coordinadora Técnica Virtual de Morales Plumbing. Profesional, empática, femenina, sin emojis y sin dar precios directos.');
     sysPrompt += getJoeDynamicContext();
     if (typeof BOOKING_SYSTEM_ADDITION !== 'undefined') sysPrompt += BOOKING_SYSTEM_ADDITION;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
@@ -8963,7 +9049,7 @@ async function callGemini(apiKey) {
     // Build Gemini contents array (system + history)
     const contents = [
         { role: 'user', parts: [{ text: sysPrompt }] },
-        { role: 'model', parts: [{ text: 'Entendido! Soy Joe, el asistente IA de Morales Plumbing. En qu te ayudo?' }] },
+        { role: 'model', parts: [{ text: 'Entendido. Soy Karla, coordinadora técnica de Morales Plumbing. ¿En qué le puedo asistir hoy?' }] },
         ...joeHistory.map(m => ({
             role: m.role === 'user' ? 'user' : 'model',
             parts: [{ text: m.content }]
@@ -10877,7 +10963,7 @@ window.toggleJoeMic = function() {
 
     window.karlaRecognition = new SpeechRecognition();
     const curLang = localStorage.getItem('morales_lang') || 'es';
-    const langMap = { 'en': 'en-US', 'es': 'es-US', 'zh': 'zh-CN', 'tl': 'tl-PH', 'vi': 'vi-VN' };
+    const langMap = { 'en': 'en-US', 'es': 'es-US', 'hi': 'hi-IN', 'zh': 'zh-CN', 'tl': 'tl-PH', 'vi': 'vi-VN' };
     window.karlaRecognition.lang = langMap[curLang] || 'es-US';
     window.karlaRecognition.continuous = false;
     window.karlaRecognition.interimResults = false;
