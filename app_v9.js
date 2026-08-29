@@ -9766,6 +9766,15 @@ const PB_SERVICE_PRICES = {
     "svc_15": { "good": "350 - 650", "better": "850 - 1,500", "best": "1,800 - 3,500" }
 };
 
+function getNumericPrice(val) {
+    if (typeof val === 'number') return val;
+    if (typeof val === 'string') {
+        const cleaned = val.replace(/,/g, '').match(/\d+(\.\d+)?/);
+        return cleaned ? parseFloat(cleaned[0]) : 0;
+    }
+    return 0;
+}
+
 function openClientPortal() {
     const modal = document.getElementById('mp-portal-modal');
     if (modal) {
@@ -9901,7 +9910,8 @@ function addAppointmentToLocal(serviceId, date, time, tier = "good", notes = "")
     const serviceName = getServiceTitleById(serviceId);
     
     const activeTier = typeof getMembershipTier === 'function' ? getMembershipTier() : "free";
-    const basePrice = PB_SERVICE_PRICES[serviceId]?.[tier] || 0;
+    const rawPrice = PB_SERVICE_PRICES[serviceId]?.[tier] || 0;
+    const basePrice = getNumericPrice(rawPrice);
     let finalPrice = basePrice;
     
     if (activeTier === "free") {
@@ -10095,7 +10105,8 @@ function updatePricePreview() {
     
     if (!serviceId || !tier) return;
     
-    const basePrice = PB_SERVICE_PRICES[serviceId]?.[tier] || 0;
+    const rawPrice = PB_SERVICE_PRICES[serviceId]?.[tier] || 0;
+    const basePrice = getNumericPrice(rawPrice);
     const activeTier = getMembershipTier();
     const appts = loadAppointments();
     
@@ -10128,7 +10139,9 @@ function updatePricePreview() {
     
     const discountValue = basePrice * discountRate;
     
-    if (listPriceEl) listPriceEl.textContent = "$" + basePrice.toFixed(2);
+    if (listPriceEl) {
+        listPriceEl.textContent = typeof rawPrice === 'string' && rawPrice.includes('-') ? "$" + rawPrice : "$" + basePrice.toFixed(2);
+    }
     if (tierEl) {
         let badgeText = activeTier.toUpperCase();
         if (translations[curLang] && translations[curLang][`lbl_membership_badge_${activeTier}`]) {
@@ -10342,16 +10355,18 @@ function updatePortalUI() {
             const labelPending = curLang === 'es' ? 'Pendiente' : (curLang === 'zh' ? '??' : (curLang === 'tl' ? 'Nakabinbin' : (curLang === 'vi' ? 'ang ch? x? l' : 'Pending')));
 
             appts.forEach(a => {
-                const listPrice = PB_SERVICE_PRICES[a.serviceId]?.[a.tier] || 0;
+                const rawList = PB_SERVICE_PRICES[a.serviceId]?.[a.tier] || 0;
+                const listPrice = getNumericPrice(rawList);
+                const priceNum = typeof a.price === 'number' ? a.price : getNumericPrice(a.price);
                 let costText = "";
                 if (a.price === undefined) {
                     costText = `<span style="color:var(--neon-orange);">${labelPending}</span>`;
-                } else if (a.price === 0) {
+                } else if (priceNum === 0) {
                     costText = `<span style="text-decoration:line-through; color:var(--text-muted); margin-right:5px;">$${listPrice.toFixed(2)}</span> <span style="color:var(--neon-lime); font-weight:bold;">${labelFreeTrial} (${labelFree})</span>`;
-                } else if (a.price < listPrice) {
-                    costText = `<span style="text-decoration:line-through; color:var(--text-muted); margin-right:5px;">$${listPrice.toFixed(2)}</span> <span style="color:var(--neon-cyan); font-weight:bold;">$${a.price.toFixed(2)}</span>`;
+                } else if (priceNum < listPrice) {
+                    costText = `<span style="text-decoration:line-through; color:var(--text-muted); margin-right:5px;">$${listPrice.toFixed(2)}</span> <span style="color:var(--neon-cyan); font-weight:bold;">$${priceNum.toFixed(2)}</span>`;
                 } else {
-                    costText = `<span style="color:#fff;">$${a.price.toFixed(2)}</span>`;
+                    costText = `<span style="color:#fff;">$${priceNum.toFixed(2)}</span>`;
                 }
 
                 html += `
