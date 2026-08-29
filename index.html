@@ -2153,17 +2153,17 @@
                     </div>
 
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                        <!-- Language Selector -->
-                        <div class="glass" style="padding: 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-                            <h4 style="color: var(--neon-cyan); font-family:'Orbitron'; font-size: 0.95rem; margin-bottom: 10px;" data-i18n="set_lang_title">🌐 Selector de Idioma</h4>
-                            <p style="font-size: 0.8rem; color: #a0aec0; margin-bottom: 12px;" data-i18n="set_lang_desc">Cambia el idioma de todo el sitio web, reportes y asistente Karla al instante.</p>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('en')" style="font-size: 0.78rem; padding: 8px;">🇺🇸 English</button>
-                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('es')" style="font-size: 0.78rem; padding: 8px;">🇲🇽 Español</button>
-                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('hi')" style="font-size: 0.78rem; padding: 8px;">🇮🇳 हिन्दी (Hindi)</button>
-                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('zh')" style="font-size: 0.78rem; padding: 8px;">🇨🇳 中文 (Chinese)</button>
-                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('tl')" style="font-size: 0.78rem; padding: 8px;">🇵🇭 Tagalog</button>
-                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('vi')" style="font-size: 0.78rem; padding: 8px;">🇻🇳 Tiếng Việt</button>
+                        <!-- Language Selector (Centered) -->
+                        <div class="glass" style="padding: 20px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); text-align: center; grid-column: 1 / -1;">
+                            <h4 style="color: var(--neon-cyan); font-family:'Orbitron'; font-size: 1rem; margin-bottom: 8px; text-align: center;" data-i18n="set_lang_title">🌐 Selector de Idioma</h4>
+                            <p style="font-size: 0.85rem; color: #a0aec0; margin-bottom: 15px; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;" data-i18n="set_lang_desc">Cambia el idioma de todo el sitio web, reportes y asistente Karla al instante.</p>
+                            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 0 auto; max-width: 600px;">
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('en')" style="min-width: 150px; font-size: 0.85rem; padding: 10px 16px; text-align: center;">🇺🇸 English</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('es')" style="min-width: 150px; font-size: 0.85rem; padding: 10px 16px; text-align: center;">🇲🇽 Español</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('hi')" style="min-width: 150px; font-size: 0.85rem; padding: 10px 16px; text-align: center;">🇮🇳 हिन्दी (Hindi)</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('zh')" style="min-width: 150px; font-size: 0.85rem; padding: 10px 16px; text-align: center;">🇨🇳 中文 (Chinese)</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('tl')" style="min-width: 150px; font-size: 0.85rem; padding: 10px 16px; text-align: center;">🇵🇭 Tagalog</button>
+                                <button type="button" class="portal-btn portal-btn-secondary" onclick="setLanguage('vi')" style="min-width: 150px; font-size: 0.85rem; padding: 10px 16px; text-align: center;">🇻🇳 Tiếng Việt</button>
                             </div>
                         </div>
 
