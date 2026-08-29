@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Maestro Oficial — Bot de Telegram & IA | Morales Plumbing</title>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0B132B;
+            --bg-card: #112240;
+            --bg-card-hover: #172A45;
+            --gold: #D4AF37;
+            --gold-hover: #F3E5AB;
+            --text-primary: #FFFFFF;
+            --text-secondary: #94A3B8;
+            --border-color: rgba(212, 175, 55, 0.25);
+            --success: #10B981;
+            --danger: #EF4444;
+            --accent-blue: #38BDF8;
+            --purple: #A855F7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* ═══════════ HEADER OFICIAL MORALES PLUMBING ═══════════ */
+        header {
+            background: linear-gradient(135deg, #0A192F 0%, #112240 100%);
+            border-bottom: 4px solid var(--gold);
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .brand-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+            object-fit: cover;
+            background: #000;
+        }
+
+        .brand-text h1 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #FFFFFF;
+        }
+
+        .brand-text p {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .header-contact {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .header-contact strong {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .header-contact .badge-lic {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        /* ═══════════ CONTENEDOR PRINCIPAL ═══════════ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 36px 20px;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(180deg, rgba(17, 34, 64, 0.8) 0%, rgba(11, 19, 43, 0.9) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 36px;
+            text-align: center;
+            margin-bottom: 36px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #FFFFFF;
+        }
+
+        .hero h2 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 850px;
+            margin: 0 auto 24px;
+        }
+
+        .bot-badge-group {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .bot-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0088cc22;
+            border: 1px solid #0088cc;
+            color: #38BDF8;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .bot-badge.gold {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ═══════════ SECCIÓN DE DESTACADOS (VOCES Y MODOS) ═══════════ */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .featured-grid { grid-template-columns: 1fr; }
+        }
+
+        .featured-box {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 26px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-box.voices {
+            border-color: var(--accent-blue);
+        }
+
+        .featured-box.personas {
+            border-color: var(--purple);
+        }
+
+        .featured-box h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .featured-box.voices h3 { color: var(--accent-blue); }
+        .featured-box.personas h3 { color: var(--purple); }
+
+        .featured-box p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .voice-pill {
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid var(--accent-blue);
+            color: #FFF;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .voice-pill:hover {
+            background: var(--accent-blue);
+            color: #0A192F;
+        }
+
+        .mode-pill {
+            background: rgba(168, 85, 247, 0.12);
+            border: 1px solid var(--purple);
+            color: #FFF;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .mode-pill:hover {
+            background: var(--purple);
+            color: #0A192F;
+        }
+
+        /* ═══════════ BUSCADOR Y FILTROS ═══════════ */
+        .search-section {
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-bar-wrap {
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 16px 20px 16px 48px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            color: #FFF;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .search-bar:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 8px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--gold);
+            color: #0A192F;
+            border-color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* ═══════════ GRID DE COMANDOS ═══════════ */
+        .commands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        .command-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s;
+            position: relative;
+        }
+
+        .command-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            background: var(--bg-card-hover);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .cmd-tag {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            font-family: monospace;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--gold);
+        }
+
+        .cat-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .cmd-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+
+        .cmd-example {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--gold);
+            padding: 10px 14px;
+            border-radius: 0 6px 6px 0;
+            font-family: monospace;
+            font-size: 13px;
+            color: #E2E8F0;
+            margin-bottom: 16px;
+            word-break: break-all;
+        }
+
+        .btn-copy {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+            align-self: flex-end;
+        }
+
+        .btn-copy:hover {
+            background: var(--gold);
+            color: #0A192F;
+        }
+
+        /* ═══════════ GUÍA DE LENGUAJE NATURAL ═══════════ */
+        .nl-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(17, 34, 64, 0.8) 100%);
+            border: 2px solid var(--success);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 48px;
+        }
+
+        .nl-box h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--success);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nl-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .nl-card {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .nl-card h4 {
+            color: #FFF;
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nl-card p {
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        /* ═══════════ SECCIÓN TROUBLESHOOTING ═══════════ */
+        .section-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 22px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 48px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 18px 22px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 15px;
+            color: #FFF;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .faq-answer {
+            padding: 0 22px 18px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: block;
+        }
+
+        /* ═══════════ FOOTER OFICIAL ═══════════ */
+        footer {
+            background: #0A192F;
+            border-top: 2px solid var(--border-color);
+            padding: 28px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: var(--gold);
+        }
+
+        /* Toast */
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gold);
+            color: #0A192F;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 14px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+        }
+
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════ CABECERA OFICIAL MORALES PLUMBING ═══════════ -->
+    <header>
+        <div class="header-brand">
+            <img src="logo_portada.png" alt="Morales Plumbing" class="brand-logo" onerror="this.style.display='none'">
+            <div class="brand-text">
+                <h1>MORALES PLUMBING</h1>
+                <p>AI-Integrated Services • Master Bot Manual</p>
+            </div>
+        </div>
+        <div class="header-contact">
+            <div>📞 <strong>(669) 213-4422</strong> | ✉️ moralesplumbing026@gmail.com</div>
+            <div class="badge-lic">CSLB Lic. C-36 #1156542 | San Jose, CA</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero -->
+        <div class="hero">
+            <h2>Manual Maestro de Control para <span>@MPplumbing_bot</span></h2>
+            <p>Guía exhaustiva con todas las capacidades del bot: Selección de Voces Neuronales HD, Acentos, Personalidades (Modos), Lenguaje Natural, Despacho Hidráulico, Cotizaciones y Tareas.</p>
+            <div class="bot-badge-group">
+                <div class="bot-badge">🤖 Bot: <strong>@MPplumbing_bot</strong></div>
+                <div class="bot-badge gold">🛡️ CSLB Lic. C-36 #1156542</div>
+                <div class="bot-badge">⚡ Cloud 24/7 en Render</div>
+            </div>
+        </div>
+
+        <!-- Cajas Destacadas: Voces Neuronales y Personalidades -->
+        <div class="featured-grid">
+            <!-- Box: Voces Neuronales HD -->
+            <div class="featured-box voices">
+                <h3>🎙️ Selección de Voces Neuronales HD y Acentos</h3>
+                <p>Cambia el timbre y acento de la voz del bot para que hable con entonación humana natural (sin sonido robótico):</p>
+                <div class="pill-list">
+                    <span class="voice-pill" onclick="copyText('/voz alonso')">👨 /voz alonso (Latino USA)</span>
+                    <span class="voice-pill" onclick="copyText('/voz dalia')">👩 /voz dalia (Mexicana Ejecutiva)</span>
+                    <span class="voice-pill" onclick="copyText('/voz jorge')">👨 /voz jorge (Técnico Master)</span>
+                    <span class="voice-pill" onclick="copyText('/voz paloma')">👩 /voz paloma (Bilingüe Cálida)</span>
+                    <span class="voice-pill" onclick="copyText('/voz gonzalo')">👨 /voz gonzalo (Colombiano)</span>
+                    <span class="voice-pill" onclick="copyText('/voz guy')">🇺🇸 /voz guy (Inglés Silicon Valley)</span>
+                    <span class="voice-pill" onclick="copyText('/voz aria')">🇺🇸 /voz aria (Inglés Profesional)</span>
+                </div>
+                <button class="btn-copy" onclick="copyText('/voces')">📋 Ver Todas: /voces</button>
+            </div>
+
+            <!-- Box: Sistema de Personalidades (Modos) -->
+            <div class="featured-box personas">
+                <h3>🎭 Personalidades y Roles (Modos de IA)</h3>
+                <p>Cambia el rol con el que el bot te responde y atiende a clientes:</p>
+                <div class="pill-list">
+                    <span class="mode-pill" onclick="copyText('/mode morales_director')">🏢 /mode morales_director (Ventas & Plomería Pro)</span>
+                    <span class="mode-pill" onclick="copyText('/mode orion')">🧠 /mode orion (Arquitecto de Sistemas)</span>
+                    <span class="mode-pill" onclick="copyText('/mode jhon')">⚡ /mode jhon (Manager Holístico / DALL-E)</span>
+                    <span class="mode-pill" onclick="copyText('/mode sofia')">👩 /mode sofia (Despachadora de Emergencias)</span>
+                </div>
+                <button class="btn-copy" onclick="copyText('/menu')">📋 Ver Menú de Modos: /menu</button>
+            </div>
+        </div>
+
+        <!-- Guía de Lenguaje Natural Humano -->
+        <div class="nl-box">
+            <h3>🗣️ Instrucciones en Lenguaje Natural Humano (Micrófono o Texto)</h3>
+            <p>No necesitas escribir comandos con barra (<code>/</code>). Simplemente presiona el botón del micrófono en Telegram o escribe lo que necesitas como si hablaras con un colega:</p>
+            <div class="nl-grid">
+                <div class="nl-card">
+                    <h4>🎙️ Por Nota de Voz</h4>
+                    <p>"Explícame en un audio qué exige la norma Title 24 para calentadores de agua en San José y cuánto se ahorra en PG&E."</p>
+                </div>
+                <div class="nl-card">
+                    <h4>📝 Guardar Tareas</h4>
+                    <p>"Guárdame una tarea para llamar al inspector de Santa Clara mañana a las 9 AM por el permiso de gas."</p>
+                </div>
+                <div class="nl-card">
+                    <h4>🌐 Traducción Técnica</h4>
+                    <p>"Tradúceme al inglés que debemos reemplazar la válvula de presión PRV y el tanque de expansión de 2 galones."</p>
+                </div>
+                <div class="nl-card">
+                    <h4>💰 Consultas de Tarifas</h4>
+                    <p>"Cuál es la tarifa por hora de mano de obra y la tarifa de diagnóstico según el Price Book?"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buscador y Filtros -->
+        <div class="search-section">
+            <div class="search-bar-wrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" class="search-bar" placeholder="Buscar comando o función (ej: /voz, /mode, /mp, tarea, audio, precio, qr)..." onkeyup="filterCommands()">
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" onclick="setCategory('all', this)">Todos los Comandos</button>
+                <button class="filter-btn" onclick="setCategory('voice', this)">🎙️ Voces & Acentos</button>
+                <button class="filter-btn" onclick="setCategory('modes', this)">🎭 Personalidades</button>
+                <button class="filter-btn" onclick="setCategory('business', this)">🏢 Morales Plumbing</button>
+                <button class="filter-btn" onclick="setCategory('tasks', this)">🚀 Tareas & Agenda</button>
+                <button class="filter-btn" onclick="setCategory('web', this)">🔍 Búsqueda & AI Tools</button>
+                <button class="filter-btn" onclick="setCategory('media', this)">📹 Multimedia & QR</button>
+            </div>
+        </div>
+
+        <!-- Grid de Comandos -->
+        <div class="commands-grid" id="commandsGrid">
+
+            <!-- Card: /voz -->
+            <div class="command-card" data-category="voice" data-keywords="voz voces acento alonso dalia jorge paloma guy aria tts">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/voz &lt;nombre&gt;</span>
+                        <span class="cat-tag">Voces & Acentos</span>
+                    </div>
+                    <div class="cmd-desc">Selecciona la <strong>Voz Neuronal HD</strong> con la que el bot generará audios (Alonso, Dalia, Jorge, Paloma, Gonzalo, Guy, Aria).</div>
+                    <div class="cmd-example">/voz alonso</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/voz alonso')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /voces -->
+            <div class="command-card" data-category="voice" data-keywords="voces lista catalogo acentos">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/voces</span>
+                        <span class="cat-tag">Voces & Acentos</span>
+                    </div>
+                    <div class="cmd-desc">Despliega el catálogo completo de voces humanas con sus descripciones de género, región y estilo.</div>
+                    <div class="cmd-example">/voces</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/voces')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /mode -->
+            <div class="command-card" data-category="modes" data-keywords="mode personalidad persona orion jhon morales director sofia">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/mode &lt;nombre&gt;</span>
+                        <span class="cat-tag">Personalidades</span>
+                    </div>
+                    <div class="cmd-desc">Cambia la personalidad activa de la IA: <code>morales_director</code> (Ventas/Plomero Master), <code>orion</code> (Tech), <code>jhon</code> (Manager/DALL-E).</div>
+                    <div class="cmd-example">/mode morales_director</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/mode morales_director')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /menu -->
+            <div class="command-card" data-category="modes" data-keywords="menu modos lista personalidades">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/menu</span>
+                        <span class="cat-tag">Personalidades</span>
+                    </div>
+                    <div class="cmd-desc">Muestra la lista de todos los modos de personalidad disponibles para interactuar.</div>
+                    <div class="cmd-example">/menu</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/menu')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /mp -->
+            <div class="command-card" data-category="business" data-keywords="mp tarjeta digital lic c36 telefono contacto">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/mp</span>
+                        <span class="cat-tag">Morales Plumbing</span>
+                    </div>
+                    <div class="cmd-desc">Envía la <strong>Tarjeta Digital Oficial</strong> de Morales Plumbing con licencia C-36 #1156542, teléfono y web para reenviar a clientes.</div>
+                    <div class="cmd-example">/mp</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/mp')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /pb -->
+            <div class="command-card" data-category="business" data-keywords="pb price book precios tarifas">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/pb</span>
+                        <span class="cat-tag">Morales Plumbing</span>
+                    </div>
+                    <div class="cmd-desc">Abre el enlace directo al <strong>Price Book digital</strong> y lista de tarifas estandarizadas de Morales Plumbing.</div>
+                    <div class="cmd-example">/pb</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/pb')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /cv -->
+            <div class="command-card" data-category="business" data-keywords="cv hoja de vida resume ingeniero master plumber">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/cv</span>
+                        <span class="cat-tag">Morales Plumbing</span>
+                    </div>
+                    <div class="cmd-desc">Genera el enlace al <strong>CV Profesional ATS</strong> de Alex Espinosa (Ingeniero Ambiental & Master Plumber).</div>
+                    <div class="cmd-example">/cv</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/cv')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /say -->
+            <div class="command-card" data-category="voice" data-keywords="say voz audio texto voz hablar tts">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/say &lt;texto&gt;</span>
+                        <span class="cat-tag">Voces & Acentos</span>
+                    </div>
+                    <div class="cmd-desc">Convierte cualquier texto en una <strong>nota de voz humana</strong> lista para reenviar por WhatsApp o Telegram.</div>
+                    <div class="cmd-example">/say Estimado cliente, el técnico de Morales Plumbing va en camino.</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/say Estimado cliente, el técnico de Morales Plumbing va en camino.')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /orvoz -->
+            <div class="command-card" data-category="voice" data-keywords="orvoz inteligencia artificial audio pregunta respuesta">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/orvoz &lt;pregunta&gt;</span>
+                        <span class="cat-tag">Voces & Acentos</span>
+                    </div>
+                    <div class="cmd-desc">La IA procesa tu pregunta y te responde con un <strong>texto explicativo + una nota de voz</strong> generada automáticamente.</div>
+                    <div class="cmd-example">/orvoz Cuáles son los requisitos de ventilación para calentadores de gas según el CPC?</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/orvoz Explica la normativa Title 24 para bombas de calor')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /ag -->
+            <div class="command-card" data-category="tasks" data-keywords="ag tarea recordatorio antigravity pendiente">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/ag &lt;tarea&gt;</span>
+                        <span class="cat-tag">Tareas</span>
+                    </div>
+                    <div class="cmd-desc">Registra una <strong>nueva tarea o recordatorio</strong> en la base de datos de Antigravity desde tu celular.</div>
+                    <div class="cmd-example">/ag Comprar válvula de alivio 3/4 y manifold Viega en Ferguson</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/ag Comprar válvula de alivio 3/4 en Ferguson')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /tareas -->
+            <div class="command-card" data-category="tasks" data-keywords="tareas lista pendientes ver">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/tareas</span>
+                        <span class="cat-tag">Tareas</span>
+                    </div>
+                    <div class="cmd-desc">Muestra la lista de todas las tareas pendientes guardadas en el sistema.</div>
+                    <div class="cmd-example">/tareas</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/tareas')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /cal -->
+            <div class="command-card" data-category="tasks" data-keywords="cal citas agenda calendario manana">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/cal</span>
+                        <span class="cat-tag">Tareas</span>
+                    </div>
+                    <div class="cmd-desc">Genera el reporte de <strong>citas y agenda de plomería</strong> para el día siguiente.</div>
+                    <div class="cmd-example">/cal</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/cal')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /buscar -->
+            <div class="command-card" data-category="web" data-keywords="buscar google search informacion">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/buscar &lt;consulta&gt;</span>
+                        <span class="cat-tag">Búsqueda</span>
+                    </div>
+                    <div class="cmd-desc">Realiza una búsqueda directa en Google y te devuelve un resumen con enlaces útiles.</div>
+                    <div class="cmd-example">/buscar BayREN heat pump water heater rebates 2026 San Jose</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/buscar BayREN heat pump rebates San Jose 2026')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /scrape -->
+            <div class="command-card" data-category="web" data-keywords="scrape leer url web extraer">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/scrape &lt;url&gt;</span>
+                        <span class="cat-tag">Búsqueda</span>
+                    </div>
+                    <div class="cmd-desc">Lee el contenido de cualquier página web o normativa y te entrega el texto limpio.</div>
+                    <div class="cmd-example">/scrape https://www.morales-plumbing.com</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/scrape https://www.morales-plumbing.com')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /qr -->
+            <div class="command-card" data-category="media" data-keywords="qr codigo generar enlace imagen">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/qr &lt;texto/url&gt;</span>
+                        <span class="cat-tag">Multimedia</span>
+                    </div>
+                    <div class="cmd-desc">Genera una imagen con código QR en alta definición para mostrar o descargar.</div>
+                    <div class="cmd-example">/qr https://www.morales-plumbing.com</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/qr https://www.morales-plumbing.com')">📋 Copiar Comando</button>
+            </div>
+
+            <!-- Card: /manual -->
+            <div class="command-card" data-category="business" data-keywords="manual ayuda help guia comandos">
+                <div>
+                    <div class="card-header">
+                        <span class="cmd-tag">/manual</span>
+                        <span class="cat-tag">Morales Plumbing</span>
+                    </div>
+                    <div class="cmd-desc">Despliega el menú rápido de comandos y el enlace a este manual visual interactivo.</div>
+                    <div class="cmd-example">/manual</div>
+                </div>
+                <button class="btn-copy" onclick="copyText('/manual')">📋 Copiar Comando</button>
+            </div>
+
+        </div>
+
+        <!-- Sección de Troubleshooting -->
+        <h3 class="section-title">Guía de Solución de Problemas y Diagnóstico</h3>
+        <div class="faq-accordion">
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Cómo elijo la voz más natural para los audios de mis clientes?</div>
+                <div class="faq-answer">
+                    Usa el comando <code>/voz alonso</code> para una voz masculina latina profesional y natural, o <code>/voz dalia</code> para una voz femenina ejecutiva cálida. Si hablas con un cliente en inglés de Silicon Valley, cambia a <code>/voz guy</code>.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">🎭 ¿Cómo cambio la forma de hablar de la IA?</div>
+                <div class="faq-answer">
+                    Usa <code>/mode morales_director</code> para que responda como Master Plumber y Director de Ventas de Morales Plumbing. O pídeselo en lenguaje natural: <em>"Habla como un ingeniero experto en dimensionamiento hidráulico"</em>.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">🔒 ¿Por qué el bot solo me responde a mí?</div>
+                <div class="faq-answer">
+                    El bot cuenta con filtro de seguridad biométrico/ID (ID: <code>5989183300</code>). Cualquier persona externa que intente usar el bot recibirá un mensaje de "Acceso no autorizado", protegiendo los datos y herramientas de Morales Plumbing.
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════ SECCIÓN MAESTRA: ORION MARKETING STUDIO & VIDEO/INFOGRAFÍA HUB ═══════════ -->
+        <section id="orion-studio-guide" style="margin-top: 50px; background: var(--bg-card); border: 2px solid var(--gold); border-radius: 20px; padding: 36px; box-shadow: 0 15px 35px rgba(0,0,0,0.6);">
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(212,175,55,0.3); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 15px;">
+                <div>
+                    <span style="background: rgba(212,175,55,0.2); color: var(--gold); padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">
+                        🎨 SUITE DE CREACIÓN MULTIMEDIA 24/7
+                    </span>
+                    <h2 style="font-size: 26px; font-weight: 800; color: #FFFFFF; margin-top: 10px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fa-solid fa-palette" style="color: var(--gold);"></i> Guía Completa de ORION Marketing Studio
+                    </h2>
+                    <p style="color: var(--text-secondary); font-size: 14px; margin-top: 6px;">
+                        Documentación técnica celda por celda, botón por botón y especificaciones de exportación para Reels, YouTube e Infografías.
+                    </p>
+                </div>
+                <div>
+                    <a href="https://morales-plumbing-web.web.app" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(90deg, var(--gold), #F59E0B); color: #0A192F; font-weight: 800; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-size: 14px; box-shadow: 0 4px 15px rgba(212,175,55,0.4); transition: transform 0.2s;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> ABRIR APP WEB EN VIVO
+                    </a>
+                </div>
+            </div>
+
+            <!-- 1. DESCRIPCIÓN GENERAL -->
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 20px; margin-bottom: 30px;">
+                <h3 style="color: var(--accent-blue); font-size: 18px; font-weight: 700; margin-bottom: 8px;">
+                    <i class="fa-solid fa-circle-info"></i> 1. Descripción General del Motor Publicitario
+                </h3>
+                <p style="color: #E2E8F0; font-size: 14px; line-height: 1.6;">
+                    <strong>ORION Marketing Studio</strong> es la plataforma gráfica y multimedia de <strong>Morales Plumbing</strong> diseñada para crear, traducir, renderizar y distribuir campañas comerciales en 8 idiomas (Inglés, Español, Hindi, Telugu, Tamil, Punjabi, Vietnamita y Mandarín). Integra inteligencia artificial para escaneo de tendencias, cálculo de reembolsos estatales en California, renderizado visual con Canvas HTML5 y exportación a formatos digitales listos para redes sociales.
+                </p>
+            </div>
+
+            <!-- 2. DESGLOSE BOTÓN POR BOTÓN: TOP BAR -->
+            <div style="margin-bottom: 35px;">
+                <h3 style="color: var(--gold); font-size: 18px; font-weight: 800; margin-bottom: 16px; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 8px;">
+                    <i class="fa-solid fa-bars-progress"></i> 2. Barra Superior (Top Bar) — Controles Globales y Exportación
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    
+                    <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px;">
+                        <div style="color: var(--accent-blue); font-weight: 700; font-size: 14px; margin-bottom: 6px;">
+                            📐 Selector de Formatos de Lienzo
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.5;">
+                            Permite cambiar la resolución del diseño en tiempo real:
+                            <br>• <strong>Social (1080×1080):</strong> Posts de Instagram / Facebook.
+                            <br>• <strong>Story / Reel (1080×1920):</strong> Vertical para Reels, TikTok, Shorts.
+                            <br>• <strong>Banner (1920×1080):</strong> Horizontal HD para YouTube y web.
+                            <br>• <strong>Flyer (1080×1669):</strong> Volante vertical imprimible.
+                            <br>• <strong>Infographic (1080×2500):</strong> Infografía larga de datos.
+                            <br>• <strong>Business Card (1080×617):</strong> Tarjeta digital.
+                        </p>
+                    </div>
+
+                    <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px;">
+                        <div style="color: var(--purple); font-weight: 700; font-size: 14px; margin-bottom: 6px;">
+                            🎭 Selector de Temas Visuales (20 Estilos)
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.5;">
+                            Aplica paletas cromáticas cinemáticas automáticas:
+                            <br>• <strong>Premium / Gold:</strong> Fondo azul oscuro y oro #D4AF37.
+                            <br>• <strong>Neon / Cyberpunk:</strong> Cian brillante y magenta.
+                            <br>• <strong>Dark Fade / Vignette:</strong> Sombreado de contraste para texto.
+                            <br>• <strong>Ocean, Sunset, Synthwave, Matrix, Cinema, Toxic.</strong>
+                        </p>
+                    </div>
+
+                    <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px;">
+                        <div style="color: var(--success); font-weight: 700; font-size: 14px; margin-bottom: 6px;">
+                            💾 Botón "EXPORTAR" (Descarga Inmediata)
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.5;">
+                            Procesa el lienzo activo mediante <code>html2canvas</code> y <code>jspdf</code>:
+                            <br>• <strong>PNG en Alta Definición:</strong> Sin pérdida de calidad para imprenta o redes.
+                            <br>• <strong>JPG Comprimido:</strong> Optimizado para envío rápido por WhatsApp/SMS.
+                            <br>• <strong>PDF Vectorial:</strong> Para propuestas y documentación formal.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 3. DESGLOSE DEL PANEL DERECHO (7 PESTAÑAS) -->
+            <div style="margin-bottom: 35px;">
+                <h3 style="color: var(--gold); font-size: 18px; font-weight: 800; margin-bottom: 16px; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 8px;">
+                    <i class="fa-solid fa-table-cells-large"></i> 3. Panel de Control de 7 Pestañas (Right Panel)
+                </h3>
+                
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    
+                    <!-- TAB 1 -->
+                    <div style="background: var(--bg-main); border-left: 4px solid #8B5CF6; border-radius: 8px; padding: 16px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <strong style="color: #A78BFA; font-size: 15px;">📡 Pestaña 1: RADAR VIRAL</strong>
+                            <span style="background: rgba(139,92,246,0.2); color: #C4B5FD; padding: 2px 8px; border-radius: 4px; font-size: 11px;">Escáner de Redes</span>
+                        </div>
+                        <p style="color: #CBD5E1; font-size: 13px; margin-bottom: 6px;">
+                            • <strong>Botón "ESCANEAR TODO INTERNET HOY":</strong> Rastrea en tiempo real temas virales de plomería en TikTok, YouTube Shorts, Instagram, Reddit r/Plumbing y Google Trends California.
+                            <br>• <strong>Función de las Celdas de Tendencia:</strong> Muestran el gancho viral detectado, las vistas promedio y un botón de 1 clic para convertir esa tendencia en una campaña propia.
+                        </p>
+                    </div>
+
+                    <!-- TAB 2 -->
+                    <div style="background: var(--bg-main); border-left: 4px solid #10B981; border-radius: 8px; padding: 16px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <strong style="color: #34D399; font-size: 15px;">📜 Pestaña 2: LEYES & REEMBOLSOS (CALIFORNIA)</strong>
+                            <span style="background: rgba(16,185,129,0.2); color: #6EE7B7; padding: 2px 8px; border-radius: 4px; font-size: 11px;">Cumplimiento & Subsidios</span>
+                        </div>
+                        <p style="color: #CBD5E1; font-size: 13px;">
+                            • <strong>Tarjeta Title 24:</strong> Campaña preconfigurada para el mandato de transición de calentadores de gas a bombas de calor (HPWH).
+                            <br>• <strong>Tarjeta BayREN & TECH Clean:</strong> Generador de anuncios para aprovechar los reembolsos estatales de hasta $4,000 USD.
+                            <br>• <strong>Tarjeta Código CPC (Válvula T&P y Sísmica):</strong> Anuncios de seguridad obligatoria para proteger el hogar ante sismos.
+                        </p>
+                    </div>
+
+                    <!-- TAB 3 -->
+                    <div style="background: var(--bg-main); border-left: 4px solid var(--accent-blue); border-radius: 8px; padding: 16px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <strong style="color: var(--accent-blue); font-size: 15px;">⚡ Pestaña 3: NUEVO TRABAJO (AI PROMPT)</strong>
+                            <span style="background: rgba(56,189,248,0.2); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-size: 11px;">Generador Libre</span>
+                        </div>
+                        <p style="color: #CBD5E1; font-size: 13px;">
+                            • <strong>Caja de Texto de Prompt:</strong> Permite escribir cualquier trabajo real o cotización (ej: <em>"Instalación de válvula Moen en Rose Garden con 12% OFF"</em>).
+                            <br>• <strong>Botón de Generación:</strong> Activa el motor de inteligencia artificial para redactar guiones, copys y estructurar el diseño.
+                        </p>
+                    </div>
+
+                    <!-- TAB 4 -->
+                    <div style="background: var(--bg-main); border-left: 4px solid #F59E0B; border-radius: 8px; padding: 16px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <strong style="color: #FBBF24; font-size: 15px;">🧠 Pestaña 4: MASTER BRAIN (NOTEBOOKLM BASE)</strong>
+                            <span style="background: rgba(245,158,11,0.2); color: #FDE68A; padding: 2px 8px; border-radius: 4px; font-size: 11px;">Base de Conocimiento</span>
+                        </div>
+                        <p style="color: #CBD5E1; font-size: 13px;">
+                            • <strong>Enlace Directo al Cuaderno Google NotebookLM:</strong> Abre el cuaderno maestro <code>morales-plumbing-master-brain</code>.
+                            <br>• <strong>Chips de Consulta Rápida:</strong> Botones de 1 clic para consultar ganchos Navien, fallas de válvulas T&P, repiping de cobre Tipo L y normativas CSLB C-36.
+                            <br>• <strong>Botón "CREAR CAMPAÑA CON ESTA IDEA":</strong> Toma la respuesta del cerebro y crea el arte gráfico automáticamente.
+                        </p>
+                    </div>
+
+                    <!-- TAB 5 -->
+                    <div style="background: var(--bg-main); border-left: 4px solid var(--gold); border-radius: 8px; padding: 16px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <strong style="color: var(--gold); font-size: 15px;">📦 Pestaña 5: ENTREGABLES (DASHBOARD MULTIMEDIA)</strong>
+                            <span style="background: rgba(212,175,55,0.2); color: var(--gold); padding: 2px 8px; border-radius: 4px; font-size: 11px;">8 Idiomas</span>
+                        </div>
+                        <p style="color: #CBD5E1; font-size: 13px; line-height: 1.5;">
+                            • <strong>8 Reproductores de Reels MP4:</strong> Videos verticales en Inglés, Español, Hindi, Telugu, Tamil, Punjabi, Vietnamita y Mandarín.
+                            <br>• <strong>8 Reproductores de Audio MP3:</strong> Locución nativa en cada idioma para pauta radial o mensajes de voz.
+                            <br>• <strong>Reproductor de Podcast a 2 Voces:</strong> Diálogo educativo conversacional (Alonso & Dalia).
+                            <br>• <strong>Visor de Infografía HD:</strong> Muestra la imagen publicitaria con botón para ver en resolución 4K.
+                        </p>
+                    </div>
+
+                    <!-- TAB 6 -->
+                    <div style="background: var(--bg-main); border-left: 4px solid #38BDF8; border-radius: 8px; padding: 16px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <strong style="color: #7DD3FC; font-size: 15px;">📋 Pestaña 6: SOCIAL COPY</strong>
+                            <span style="background: rgba(56,189,248,0.2); color: #BAE6FD; padding: 2px 8px; border-radius: 4px; font-size: 11px;">Textos Listos</span>
+                        </div>
+                        <p style="color: #CBD5E1; font-size: 13px;">
+                            • <strong>Botones "Copiar al Portapapeles":</strong> Textos con ganchos, emojis y llamadas a la acción adaptados para Nextdoor, Facebook, Instagram Reels, SMS/WhatsApp y correos electrónicos.
+                        </p>
+                    </div>
+
+                    <!-- TAB 7 -->
+                    <div style="background: var(--bg-main); border-left: 4px solid #EC4899; border-radius: 8px; padding: 16px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <strong style="color: #F472B6; font-size: 15px;">🚀 Pestaña 7: PUBLICADOR AUTOMÁTICO</strong>
+                            <span style="background: rgba(236,72,153,0.2); color: #FBCFE8; padding: 2px 8px; border-radius: 4px; font-size: 11px;">Publicación Comercial</span>
+                        </div>
+                        <p style="color: #CBD5E1; font-size: 13px;">
+                            • <strong>Conexión con Perfiles Comerciales:</strong> Interfaz para despachar los contenidos directamente a las páginas de redes sociales mediante automatización con Comet Browser.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 4. GUÍA TÉCNICA DE VIDEOS: REELS VS YOUTUBE -->
+            <div style="background: rgba(0,0,0,0.4); border: 2px solid var(--border-color); border-radius: 14px; padding: 24px;">
+                <h3 style="color: #FFFFFF; font-size: 18px; font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-brands fa-youtube" style="color: #EF4444;"></i> 4. Especificaciones Técnicas: Videos para YouTube (16:9) vs Reels (9:16)
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    
+                    <div style="background: var(--bg-main); border: 1px solid rgba(239,68,68,0.3); border-radius: 10px; padding: 18px;">
+                        <h4 style="color: #F87171; font-size: 15px; margin-bottom: 10px;">
+                            📺 Videos para YouTube (Formato Panorámico 16:9)
+                        </h4>
+                        <ul style="color: #CBD5E1; font-size: 13px; line-height: 1.6; padding-left: 18px;">
+                            <li><strong>Resolución:</strong> 1920×1080 Full HD (Horizontal).</li>
+                            <li><strong>Duración:</strong> Formato largo (de 3 a 15+ minutos).</li>
+                            <li><strong>Estructura Multi-Imagen:</strong> Alterna entre 4 y 10 imágenes técnicas (el problema inicial $\rightarrow$ diagnóstico con cámara $\rightarrow$ tuberías de cobre/válvula $\rightarrow$ resultado final).</li>
+                            <li><strong>Transiciones:</strong> Fundido cruzado cada 6 a 8 segundos al ritmo de la explicación técnica.</li>
+                            <li><strong>Elementos en Pantalla:</strong> Títulos grandes superiores, membrete corporativo inferior y número telefónico permanente <code>(669) 213-4422</code>.</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: var(--bg-main); border: 1px solid rgba(56,189,248,0.3); border-radius: 10px; padding: 18px;">
+                        <h4 style="color: var(--accent-blue); font-size: 15px; margin-bottom: 10px;">
+                            📱 Videos Reels / Shorts / TikTok (Formato Vertical 9:16)
+                        </h4>
+                        <ul style="color: #CBD5E1; font-size: 13px; line-height: 1.6; padding-left: 18px;">
+                            <li><strong>Resolución:</strong> 1080×1920 Full HD (Vertical).</li>
+                            <li><strong>Duración:</strong> Formato corto y dinámico (de 30 a 60 segundos).</li>
+                            <li><strong>Estructura de Retención:</strong> Gancho visual en los primeros 3 segundos, explicación rápida del peligro/ahorro y oferta de temporada.</li>
+                            <li><strong>Elementos en Pantalla:</strong> Badge dorado de descuento (ej: <code>12% OFF</code>), logo superior, subtítulos dinámicos y licencia <code>CSLB Lic. C-36 #1156542</code>.</li>
+                            <li><strong>Canales de Destino:</strong> Instagram Reels, Facebook Reels, YouTube Shorts y Estados de WhatsApp.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer Oficial -->
+    <footer>
+        <p>© 2026 <strong>MORALES PLUMBING</strong> — AI-Integrated Services | Lic. C-36 #1156542 | San Jose, CA</p>
+        <p style="margin-top: 6px; font-size: 12px;">Desarrollado para la suite operativa de Alex G. Espinosa • San José & Santa Clara, California</p>
+    </footer>
+
+    <div id="toast">✅ ¡Copiado al portapapeles!</div>
+    <script>
+        let currentCategory = 'all';
+
+        function setCategory(cat, btn) {
+            currentCategory = cat;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterCommands();
+        }
+
+        function filterCommands() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.command-card');
+
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-category');
+                const keywords = card.getAttribute('data-keywords').toLowerCase();
+                const text = card.innerText.toLowerCase();
+
+                const matchesCat = (currentCategory === 'all' || cat === currentCategory);
+                const matchesQuery = (query === '' || keywords.includes(query) || text.includes(query));
+
+                if (matchesCat && matchesQuery) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(`✅ Copiado: ${text}`);
+            }).catch(() => {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showToast(`✅ Copiado: ${text}`);
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,2393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Morales Plumbing — Multilingual Content Engine</title>
+<meta name="description" content="Autonomous Marketing & Approval Dashboard for Morales Plumbing">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;700&family=Montserrat:wght@700;900&family=Teko:wght@500;700&family=Bebas+Neue&family=Permanent+Marker&family=Sedgwick+Ave&family=Caveat:wght@700&family=Playfair+Display:ital,wght@0,700;1,700&family=Bungee+Shade&family=Bangers&family=Anton&family=Righteous&family=Black+Ops+One&family=Creepster&family=Cinzel:wght@700&family=Bungee+Inline&family=Russo+One&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>:root{--bg:#0a0e14;--panel:rgba(12,18,28,.92);--border:rgba(0,229,255,.18);--cyan:#00e5ff;--cyan2:#73efff;--copper:#d97743;--pink:#f43f5e;--txt:#f0f4f8;--muted:#6b7f95;--dark2:#111820}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);height:100vh;overflow:hidden;display:grid;grid-template-rows:44px 1fr 28px;grid-template-columns:52px 1fr 340px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:rgba(0,0,0,.3)}::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px}
+
+/* TOP BAR */
+.topbar{grid-column:1/-1;background:var(--panel);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 12px;gap:8px;z-index:50}
+.topbar .logo{font-family:'Orbitron',sans-serif;font-size:.8rem;font-weight:800;background:linear-gradient(90deg,var(--txt),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-right:12px;white-space:nowrap}
+.topbar .sep{width:1px;height:24px;background:var(--border);margin:0 4px}
+.tb-btn{background:0;border:1px solid transparent;color:var(--muted);padding:4px 10px;border-radius:4px;cursor:pointer;font-size:.75rem;font-family:'Inter',sans-serif;transition:.2s;display:flex;align-items:center;gap:5px}
+.tb-btn:hover{color:var(--cyan);border-color:var(--border)}
+.tb-btn.active{color:var(--cyan);background:rgba(0,229,255,.08);border-color:var(--cyan)}
+.tb-sel{background:rgba(0,0,0,.4);border:1px solid var(--border);color:var(--txt);padding:4px 8px;border-radius:4px;font-size:.72rem;font-family:'Inter',sans-serif;cursor:pointer}
+.tb-sel option{background:#0a0e14;color:#fff}
+.tb-spacer{flex:1}
+.tb-export{background:linear-gradient(90deg,var(--cyan),#2563eb);color:#fff;border:0;padding:5px 14px;border-radius:4px;font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;cursor:pointer;letter-spacing:1px;transition:.2s}
+.tb-export:hover{box-shadow:0 0 15px rgba(0,229,255,.4);transform:translateY(-1px)}
+
+/* LEFT TOOL RAIL */
+.toolrail{background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:8px 0;gap:2px;z-index:40}
+.tr-btn{width:40px;height:40px;display:flex;justify-content:center;align-items:center;border:none;background:0;color:var(--muted);border-radius:6px;cursor:pointer;font-size:1rem;transition:.2s;position:relative}
+.tr-btn:hover{color:var(--cyan);background:rgba(0,229,255,.06)}
+.tr-btn.active{color:var(--cyan);background:rgba(0,229,255,.12);box-shadow:inset 2px 0 0 var(--cyan)}
+.tr-btn .tip{display:none;position:absolute;left:48px;background:var(--dark2);color:var(--txt);padding:4px 8px;border-radius:4px;font-size:.68rem;white-space:nowrap;border:1px solid var(--border);z-index:99}
+.tr-btn:hover .tip{display:block}
+.tr-sep{width:28px;height:1px;background:var(--border);margin:6px 0}
+
+/* WORKSPACE */
+.workspace{position:relative;background:var(--bg);background-image:linear-gradient(rgba(0,229,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.02) 1px,transparent 1px);background-size:40px 40px;display:flex;justify-content:center;align-items:center;overflow:auto}
+
+/* RIGHT PANEL */
+.rpanel{background:var(--panel);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.rp-tabs{display:flex;border-bottom:1px solid var(--border);flex-shrink:0}
+.rp-tab{flex:1;padding:10px 4px;text-align:center;font-size:.65rem;font-family:'Orbitron',sans-serif;letter-spacing:1px;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:.2s;background:0;border-top:0;border-left:0;border-right:0}
+.rp-tab:hover{color:var(--cyan)}
+.rp-tab.active{color:var(--cyan);border-bottom-color:var(--cyan);background:rgba(0,229,255,.04)}
+.rp-body{flex:1;overflow-y:auto;padding:12px}
+.rp-section{display:none}
+.rp-section.active{display:block}
+
+/* PANEL COMPONENTS */
+.pnl-group{margin-bottom:14px;background:rgba(0,0,0,.3);border:1px solid rgba(0,229,255,.1);border-radius:6px;overflow:hidden}
+.pnl-head{padding:10px 12px;font-family:'Orbitron',sans-serif;font-size:.65rem;color:var(--cyan);letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:8px;background:linear-gradient(90deg,rgba(0,229,255,.04),transparent);user-select:none}
+.pnl-head i{font-size:.85rem;width:18px;text-align:center}
+.pnl-head::after{content:'\f078';font-family:'Font Awesome 6 Free';font-weight:900;margin-left:auto;font-size:.65rem;color:var(--muted);transition:.2s}
+.pnl-group.open .pnl-head::after{transform:rotate(180deg)}
+.pnl-content{padding:10px 12px;display:none}
+.pnl-group.open .pnl-content{display:block}
+.pnl-row{margin-bottom:10px}
+.pnl-row:last-child{margin-bottom:0}
+.pnl-lbl{display:block;font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px}
+.pnl-select{width:100%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:7px 10px;color:#fff;font-size:.78rem;font-family:'Inter',sans-serif;cursor:pointer;appearance:none;outline:0;transition:.2s}
+.pnl-select:focus{border-color:var(--cyan);box-shadow:0 0 8px rgba(0,229,255,.15)}
+.pnl-select option{background:#0a0e14}
+.pnl-input{width:100%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:7px 10px;color:#fff;font-size:.78rem;font-family:'Inter',sans-serif;outline:0;transition:.2s}
+.pnl-input:focus{border-color:var(--copper);box-shadow:0 0 8px rgba(217,119,67,.15)}
+.pnl-flex{display:flex;gap:8px;align-items:center}
+.pnl-color{width:28px;height:28px;border:2px solid rgba(255,255,255,.15);border-radius:4px;cursor:pointer;background:0;padding:0;overflow:hidden}
+.pnl-color input[type=color]{width:36px;height:36px;border:0;cursor:pointer;transform:translate(-4px,-4px)}
+.pnl-range{flex:1;accent-color:var(--cyan);cursor:pointer}
+.pnl-range-val{font-size:.7rem;color:var(--cyan);min-width:28px;text-align:right;font-family:'Orbitron',sans-serif}
+.pnl-btn{width:100%;padding:8px;background:linear-gradient(90deg,var(--cyan),var(--copper));border:0;border-radius:4px;color:#050a0f;font-family:'Orbitron',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:1px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:6px}
+.pnl-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,229,255,.3)}
+.pnl-btn-sm{padding:5px 10px;font-size:.65rem;width:auto;background:rgba(0,229,255,.1);color:var(--cyan);border:1px solid var(--border)}
+.pnl-btn-danger{background:rgba(244,63,94,.15);color:var(--pink);border:1px solid rgba(244,63,94,.3)}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(45px,1fr));gap:6px;max-height:200px;overflow-y:auto;padding:2px}
+.gallery-item{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;cursor:pointer;border:2px solid transparent;opacity:.7;transition:.2s}
+.gallery-item:hover,.gallery-item.active{opacity:1;border-color:var(--cyan);box-shadow:0 0 8px rgba(0,229,255,.3);transform:scale(1.04)}
+.gallery-category{margin-bottom:8px;border:1px solid rgba(217,119,67,.15);border-radius:4px;overflow:hidden}
+.gallery-category summary{padding:8px 10px;font-family:'Orbitron',sans-serif;font-size:.62rem;color:var(--cyan);letter-spacing:1px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;background:linear-gradient(90deg,rgba(217,119,67,.06),transparent)}
+.gallery-category summary::after{content:'\f0d7';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--copper);transition:.2s}
+.gallery-category[open] summary::after{transform:rotate(180deg)}
+.gallery-category summary::-webkit-details-marker{display:none}
+
+/* FILTERS ROW */
+.fx-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.fx-btn{padding:8px 6px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);border-radius:4px;color:var(--muted);font-size:.68rem;cursor:pointer;transition:.2s;display:flex;flex-direction:column;align-items:center;gap:4px}
+.fx-btn i{font-size:1rem}
+.fx-btn:hover,.fx-btn.active{color:var(--copper);border-color:var(--copper);background:rgba(217,119,67,.08);box-shadow:0 0 10px rgba(217,119,67,.15)}
+
+/* CANVAS */
+.render-canvas{background:#fff;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.8);transition:width .4s,height .4s;overflow:hidden;display:flex;flex-direction:column}
+.canvas-card{width:1080px;height:617px;transform:scale(0.45);transform-origin:center}
+.canvas-flyer{width:1080px;height:1669px;transform:scale(0.32);transform-origin:top center}
+.canvas-social{width:1080px;height:1080px;transform:scale(0.45);transform-origin:center}
+.canvas-story{width:1080px;height:1920px;transform:scale(0.28);transform-origin:top center}
+.canvas-banner{width:1920px;height:1080px;transform:scale(0.35);transform-origin:center}
+.canvas-a4{width:1080px;height:1527px;transform:scale(0.35);transform-origin:top center}
+.canvas-infographic{width:1080px;height:2500px;transform:scale(0.23);transform-origin:top center}
+.layer-bg{position:absolute;top:0;left:0;right:0;bottom:0;background-size:cover;background-position:center;z-index:1;transition:filter .3s}
+.layer-overlay{position:absolute;top:0;left:0;right:0;bottom:0;z-index:2}
+.layer-content{position:relative;z-index:3;width:100%;height:100%;display:flex;flex-direction:column}
+
+/* THEMES */
+.render-canvas.theme-premium .layer-overlay{background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.3) 50%,rgba(0,0,0,.1))}
+.render-canvas.theme-neon .layer-overlay{background:linear-gradient(135deg,rgba(5,10,20,.95),rgba(5,10,20,.6))}
+.render-canvas.theme-dark-fade .layer-overlay{background:linear-gradient(to top,rgba(0,0,0,1) 0%,rgba(0,0,0,0.6) 40%,transparent 100%)}
+.render-canvas.theme-light-fade .layer-overlay{background:linear-gradient(to top,rgba(255,255,255,1) 0%,rgba(255,255,255,0.7) 40%,rgba(255,255,255,0.2) 100%)}
+.render-canvas.theme-vignette .layer-overlay{background:radial-gradient(circle at center,transparent 40%,rgba(0,0,0,0.9) 100%)}
+.render-canvas.theme-ocean .layer-overlay{background:linear-gradient(135deg,rgba(0,15,40,.9),rgba(0,50,100,.6))}
+.render-canvas.theme-sunset .layer-overlay{background:linear-gradient(to top,rgba(40,10,50,.9),rgba(200,60,20,.5))}
+.render-canvas.theme-synthwave .layer-overlay{background:linear-gradient(to bottom,rgba(20,0,40,.8),rgba(255,0,128,.5))}
+.render-canvas.theme-matrix .layer-overlay{background:linear-gradient(135deg,rgba(0,20,0,.9),rgba(0,255,0,.2))}
+.render-canvas.theme-gold .layer-overlay{background:linear-gradient(to top,rgba(20,15,5,.95),rgba(255,200,50,.3))}
+.render-canvas.theme-blood .layer-overlay{background:linear-gradient(to top,rgba(30,0,0,.95),rgba(200,0,0,.4))}
+.render-canvas.theme-holographic .layer-overlay{background:linear-gradient(135deg,rgba(0,255,255,.4),rgba(255,0,255,.4))}
+.render-canvas.theme-sepia .layer-overlay{background:linear-gradient(to top,rgba(60,40,20,.9),rgba(150,100,50,.4))}
+.render-canvas.theme-royal .layer-overlay{background:linear-gradient(to bottom right,rgba(40,0,60,.9),rgba(100,0,150,.5))}
+.render-canvas.theme-ice .layer-overlay{background:linear-gradient(to bottom,rgba(200,240,255,.8),rgba(0,100,200,.4))}
+.render-canvas.theme-inferno .layer-overlay{background:linear-gradient(to top,rgba(0,0,0,.9),rgba(255,50,0,.6))}
+.render-canvas.theme-abyss .layer-overlay{background:linear-gradient(to top,rgba(0,0,0,1) 0%,rgba(0,0,0,0.9) 60%,transparent 100%)}
+.render-canvas.theme-duotone-redblue .layer-overlay{background:linear-gradient(135deg,rgba(255,0,0,.6),rgba(0,0,255,.6))}
+.render-canvas.theme-cinema .layer-overlay{background:linear-gradient(to bottom,rgba(0,0,0,1) 0%,transparent 15%,transparent 85%,rgba(0,0,0,1) 100%)}
+.render-canvas.theme-toxic .layer-overlay{background:linear-gradient(to top,rgba(20,30,0,.9),rgba(150,255,0,.4))}
+
+/* FX */
+@keyframes cyber-glitch{0%{clip-path:inset(10% 0 80% 0);transform:translate(-2px,2px)}20%{clip-path:inset(80% 0 10% 0);transform:translate(2px,-2px)}40%{clip-path:inset(40% 0 40% 0);transform:translate(-2px,-2px)}60%{clip-path:inset(20% 0 60% 0);transform:translate(2px,2px)}100%{clip-path:inset(50% 0 50% 0);transform:translate(0)}}
+.fx-glitch{animation:cyber-glitch 2s infinite linear alternate-reverse}
+.fx-scanlines::after{content:" ";display:block;position:absolute;inset:0;background:linear-gradient(rgba(18,16,16,0) 50%,rgba(0,0,0,.25) 50%),linear-gradient(90deg,rgba(255,0,0,.06),rgba(0,255,0,.02),rgba(0,0,255,.06));z-index:2;background-size:100% 2px,3px 100%;pointer-events:none}
+.fx-vhs{filter:contrast(1.2) brightness(.9) saturate(1.5) hue-rotate(5deg)}
+.fx-cyberpunk{filter:contrast(1.3) saturate(1.8) hue-rotate(-15deg)}
+.fx-neon-glow{filter:drop-shadow(0 0 10px rgba(0,229,255,.5)) drop-shadow(0 0 20px rgba(217,119,67,.3))}
+.fx-vintage{filter:sepia(.4) contrast(1.1) brightness(.9) saturate(.8)}
+.fx-bw{filter:grayscale(100%) contrast(1.2)}
+
+/* STATUS BAR */
+.statusbar{grid-column:1/-1;background:var(--panel);border-top:1px solid var(--border);display:flex;align-items:center;padding:0 12px;font-size:.65rem;color:var(--muted);gap:12px}
+.statusbar .sz{color:var(--cyan);font-family:'Orbitron',sans-serif}
+
+/* AI PROMPT */
+.ai-box{background:linear-gradient(135deg,rgba(0,229,255,.04),rgba(217,119,67,.04));border:1px solid rgba(0,229,255,.15);border-radius:6px;padding:10px;margin-bottom:10px}
+.ai-box textarea{width:100%;background:0;border:0;color:#fff;resize:none;outline:0;font-family:'Inter',sans-serif;font-size:.78rem;height:55px}
+
+/* UPLOAD */
+.upload-btn{display:block;width:100%;padding:8px;background:linear-gradient(90deg,var(--copper),var(--pink));border:0;border-radius:4px;color:#fff;font-family:'Orbitron',sans-serif;font-size:.68rem;font-weight:700;cursor:pointer;text-align:center;letter-spacing:1px;transition:.2s;margin-bottom:8px}
+.upload-btn:hover{box-shadow:0 4px 12px rgba(217,119,67,.4)}
+
+@media print{
+    @page { margin: 0; size: auto; }
+    .topbar,.toolrail,.rpanel,.statusbar,.ai-box,.upload-btn,.fx-grid{display:none!important}
+    body{display:block;background:#fff;}
+    .workspace{background:none;display:block;position:static;overflow:visible;}
+    .render-canvas{box-shadow:none;transform:scale(0.65)!important;transform-origin:top left!important;}
+}
+body{top:0!important}.skiptranslate{display:none!important}.goog-te-banner-frame{display:none!important}#goog-gt-tt{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- ═══ TOP BAR ═══ -->
+<div class="topbar">
+    <div class="logo"><i class="fa-solid fa-bolt" style="margin-right:6px"></i>MORALES CONTENT ENGINE</div>
+    <div class="sep"></div>
+    <select class="tb-sel" id="cfgFormat" onchange="saveState();updateEngine()">
+        <option value="canvas-dashboard">📬 Dashboard de Aprobación</option>
+        <option value="canvas-story">📱 Generador Infografías (30% IA)</option>
+    </select>
+    <div class="sep"></div>
+    <button class="tb-btn" onclick="undo()" title="Ctrl+Z"><i class="fa-solid fa-rotate-left"></i></button>
+    <button class="tb-btn" onclick="redo()" title="Ctrl+Y"><i class="fa-solid fa-rotate-right"></i></button>
+    <div class="sep"></div>
+    <div style="font-family:'Orbitron',sans-serif;font-size:0.62rem;color:var(--cyan);letter-spacing:1px;margin-right:4px">IDIOMAS BAHÍA:</div>
+    <button class="lang-btn tb-btn active" data-lang="es" onclick="setLanguage('es')">ES</button>
+    <button class="lang-btn tb-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+    <button class="lang-btn tb-btn" data-lang="hi" onclick="setLanguage('hi')">HI</button>
+    <button class="lang-btn tb-btn" data-lang="te" onclick="setLanguage('te')">TE</button>
+    <button class="lang-btn tb-btn" data-lang="ta" onclick="setLanguage('ta')">TA</button>
+    <button class="lang-btn tb-btn" data-lang="pa" onclick="setLanguage('pa')">PA</button>
+    <button class="lang-btn tb-btn" data-lang="vi" onclick="setLanguage('vi')">VI</button>
+    <button class="lang-btn tb-btn" data-lang="zh" onclick="setLanguage('zh')">ZH</button>
+    <div class="tb-spacer"></div>
+    <a href="https://notebook.google.com/notebook/da1efad2-3236-435f-8854-406c848a4d20" target="_blank" class="tb-export" style="background:#4f46e5; text-decoration:none; display:flex; align-items:center; gap:6px; font-size:0.75rem;"><i class="fa-solid fa-book-bookmark"></i> NOTEBOOKLM</a>
+    <div id="status-indicator" style="color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:0.7rem;font-weight:700;margin-right:15px;"><i class="fa-solid fa-circle-check"></i> PAQUETE LISTO</div>
+    <button class="tb-export" style="background:#10b981;font-size:0.8rem;padding:6px 20px" onclick="approvePackage()"><i class="fa-solid fa-rocket"></i> APROBAR Y PUBLICAR PAQUETE</button>
+    <button class="tb-export" style="background:#3b82f6;" onclick="document.getElementById('manualModal').style.display='flex'"><i class="fa-solid fa-book"></i> MANUAL</button>
+</div>
+
+<!-- ═══ LEFT TOOL RAIL ═══ -->
+<div class="toolrail">
+    <button class="tr-btn" onclick="switchTab('radar');document.querySelectorAll('.tr-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')"><i class="fa-solid fa-satellite-dish"></i><span class="tip">Radar Viral Total</span></button>
+    <button class="tr-btn" onclick="switchTab('legal');document.querySelectorAll('.tr-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')"><i class="fa-solid fa-scale-balanced"></i><span class="tip">Leyes & Reembolsos CSLB</span></button>
+    <button class="tr-btn" onclick="switchTab('ai');document.querySelectorAll('.tr-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')"><i class="fa-solid fa-robot"></i><span class="tip">Nuevo Trabajo / Crear</span></button>
+    <button class="tr-btn" onclick="switchTab('brain');document.querySelectorAll('.tr-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')"><i class="fa-solid fa-brain"></i><span class="tip">Master Brain / Asistente</span></button>
+    <button class="tr-btn active" onclick="switchTab('inbox');document.querySelectorAll('.tr-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')"><i class="fa-solid fa-inbox"></i><span class="tip">Entregables Multimedia</span></button>
+    <button class="tr-btn" onclick="switchTab('text');document.querySelectorAll('.tr-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')"><i class="fa-solid fa-copy"></i><span class="tip">Social Copy</span></button>
+    <button class="tr-btn" onclick="switchTab('publisher');document.querySelectorAll('.tr-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')"><i class="fa-solid fa-share-nodes"></i><span class="tip">Auto-Publicador</span></button>
+    <div class="tr-sep"></div>
+    <button class="tr-btn" onclick="switchTab('design');document.querySelectorAll('.tr-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')"><i class="fa-solid fa-palette"></i><span class="tip">Diseño Infográfico</span></button>
+</div>
+
+<!-- ═══ WORKSPACE ═══ -->
+<div class="workspace">
+    <div id="artboard" class="render-canvas canvas-social theme-premium">
+        <div id="layerBg" class="layer-bg"></div>
+        <div id="layerOverlay" class="layer-overlay"></div>
+        <div id="layerContent" class="layer-content"></div>
+    </div>
+</div>
+
+<!-- ═══ RIGHT PANEL ═══ -->
+<div class="rpanel">
+    <div class="rp-tabs" style="overflow-x:auto;">
+        <button class="rp-tab" data-tab="radar" onclick="switchTab('radar')">📡 RADAR VIRAL</button>
+        <button class="rp-tab" data-tab="legal" onclick="switchTab('legal')">📜 LEYES & REEMBOLSOS</button>
+        <button class="rp-tab" data-tab="ai" onclick="switchTab('ai')">⚡ NUEVO TRABAJO</button>
+        <button class="rp-tab" data-tab="brain" onclick="switchTab('brain')">🧠 MASTER BRAIN</button>
+        <button class="rp-tab active" data-tab="inbox" onclick="switchTab('inbox')">📦 ENTREGABLES</button>
+        <button class="rp-tab" data-tab="text" onclick="switchTab('text')">📋 SOCIAL COPY</button>
+        <button class="rp-tab" data-tab="publisher" onclick="switchTab('publisher')">🚀 PUBLICADOR</button>
+    </div>
+    <div class="rp-body">
+
+        <!-- ══ RADAR VIRAL TAB (ESCÁNER DE TODO INTERNET) ══ -->
+        <div id="sec-radar" class="rp-section">
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-satellite-dish" style="color:var(--cyan)"></i>RADAR DE TENDENCIAS VIRALES EN VIVO</div>
+                <div class="pnl-content">
+                    <button class="pnl-btn" id="btnScanRadar" onclick="escanearRadarViral()" style="width:100%; padding:10px; font-size:0.85rem; font-family:'Orbitron',sans-serif; background:linear-gradient(90deg, #8b5cf6, #ec4899); color:#fff; font-weight:bold; margin-bottom:12px; cursor:pointer;">
+                        <i class="fa-solid fa-satellite-dish fa-beat"></i> ESCANEAR TODO INTERNET HOY
+                    </button>
+                    
+                    <div style="font-size:0.7rem; color:#9ca3af; margin-bottom:8px;">
+                        Monitoreando: <b>TikTok, YouTube Shorts, Instagram, Reddit r/Plumbing, Google Trends CA</b>
+                    </div>
+
+                    <div id="radarFeedContainer" style="display:flex; flex-direction:column; gap:10px;">
+                        <div style="text-align:center; padding:20px; color:#94a3b8; font-size:0.8rem;">
+                            Haz clic en el botón morado para escanear los videos y problemas más virales de la semana.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ LEYES & REEMBOLSOS TAB (CSLB / CPC / TITLE 24 / BAYREN) ══ -->
+        <div id="sec-legal" class="rp-section">
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-scale-balanced" style="color:var(--cyan)"></i>CAMPAÑAS DE LEYES & REEMBOLSOS (CALIFORNIA)</div>
+                <div class="pnl-content" style="display:flex; flex-direction:column; gap:10px;">
+                    
+                    <!-- CARD 1: GAS A ELECTRICO -->
+                    <div style="background:rgba(0,0,0,0.4); padding:10px; border-radius:6px; border:1px solid rgba(0,229,255,0.3);">
+                        <div style="font-size:0.8rem; color:#f59e0b; font-weight:bold;"><i class="fa-solid fa-bolt"></i> Mandato Title 24: Gas a Eléctrico (HPWH)</div>
+                        <div style="font-size:0.75rem; color:#cbd5e1; margin:4px 0 8px 0; line-height:1.4;">
+                            California exige alta eficiencia en la transición de calentadores de gas a bombas de calor eléctricas.
+                        </div>
+                        <button class="pnl-btn pnl-btn-sm" style="width:100%; font-size:0.72rem; padding:6px; background:#10b981;" onclick="crearCampanaLegal('Mandato de California Title 24 para cambiar calentadores de gas a bombas de calor electricas Heat Pump de alta eficiencia con plomero certificado C-36')">
+                            ⚡ GENERAR CAMPAÑA DE ESTE MANDATO
+                        </button>
+                    </div>
+
+                    <!-- CARD 2: REEMBOLSOS BAYREN -->
+                    <div style="background:rgba(0,0,0,0.4); padding:10px; border-radius:6px; border:1px solid rgba(16,185,129,0.3);">
+                        <div style="font-size:0.8rem; color:#10b981; font-weight:bold;"><i class="fa-solid fa-hand-holding-dollar"></i> Reembolsos BayREN & TECH Clean ($4,000)</div>
+                        <div style="font-size:0.75rem; color:#cbd5e1; margin:4px 0 8px 0; line-height:1.4;">
+                            Fondos estatales disponibles para propietarios del Área de la Bahía que actualicen su calentador o sistema hidráulico.
+                        </div>
+                        <button class="pnl-btn pnl-btn-sm" style="width:100%; font-size:0.72rem; padding:6px; background:#10b981;" onclick="crearCampanaLegal('Aprovecha hasta $4,000 en reembolsos de California y BayREN para instalar tu nuevo calentador Navien o bomba de calor electrica antes de que se agoten los fondos')">
+                            ⚡ GENERAR CAMPAÑA DE REEMBOLSOS
+                        </button>
+                    </div>
+
+                    <!-- CARD 3: CODIGO CPC VALVULA T&P Y SISMICA -->
+                    <div style="background:rgba(0,0,0,0.4); padding:10px; border-radius:6px; border:1px solid rgba(239,68,68,0.3);">
+                        <div style="font-size:0.8rem; color:#ef4444; font-weight:bold;"><i class="fa-solid fa-shield-halved"></i> Código CPC: Válvula T&P y Corte Sísmico</div>
+                        <div style="font-size:0.75rem; color:#cbd5e1; margin:4px 0 8px 0; line-height:1.4;">
+                            El Código de California exige válvulas de alivio T&P y corte automático de gas para evitar explosiones en sismos.
+                        </div>
+                        <button class="pnl-btn pnl-btn-sm" style="width:100%; font-size:0.72rem; padding:6px; background:#10b981;" onclick="crearCampanaLegal('Inspeccion obligatoria bajo el Codigo de Plomeria de California CPC: Valvula T&P y valvula de corte sismico para proteger tu casa y cumplir con la ley')">
+                            ⚡ GENERAR CAMPAÑA DE SEGURIDAD CPC
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ MASTER BRAIN TAB (ASISTENTE TÉCNICO & VIRAL) ══ -->
+        <div id="sec-brain" class="rp-section">
+            
+            <!-- VÍNCULO A GOOGLE NOTEBOOKLM -->
+            <div style="background:linear-gradient(135deg, rgba(79,70,229,0.2), rgba(0,229,255,0.15)); padding:12px; border-radius:8px; border:1px solid rgba(0,229,255,0.3); margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <div style="font-weight:bold; color:var(--cyan); font-size:0.85rem;"><i class="fa-solid fa-brain"></i> Morales Master Brain</div>
+                    <div style="font-size:0.7rem; color:#cbd5e1;">Base de Datos & Cuaderno NotebookLM</div>
+                </div>
+                <a href="https://notebook.google.com/notebook/da1efad2-3236-435f-8854-406c848a4d20" target="_blank" class="pnl-btn pnl-btn-sm" style="text-decoration:none; padding:6px 12px; background:#4f46e5; font-size:0.75rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir en Google</a>
+            </div>
+
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-magnifying-glass" style="color:var(--cyan)"></i>CONSULTAR CONOCIMIENTO & GANCHOS</div>
+                <div class="pnl-content">
+                    <div style="margin-bottom:8px;">
+                        <span class="pnl-lbl" style="color:var(--cyan); font-weight:bold;">Pregunta Técnica o Pide Ganchos Virales:</span>
+                        <div style="display:flex; gap:6px; margin-top:4px;">
+                            <input type="text" id="brainQueryInput" class="pnl-input" style="flex:1;" placeholder="Ej: 3 ganchos para vender Navien en invierno en San Jose">
+                            <button class="pnl-btn pnl-btn-sm" id="btnQueryBrain" onclick="consultarMasterBrain()" style="background:var(--cyan); color:#0a0e14; font-weight:bold; padding:0 14px;"><i class="fa-solid fa-bolt"></i> Consultar</button>
+                        </div>
+                    </div>
+
+                    <!-- CHIPS DE CONSULTA RÁPIDA -->
+                    <div style="margin-bottom:12px;">
+                        <span class="pnl-lbl" style="font-size:0.68rem; color:#9ca3af;">Sugerencias Rápidas (1 Clic):</span>
+                        <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:4px;">
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:4px 8px;" onclick="quickBrainQuery('3 ganchos virales de alto impacto para vender calentadores Navien en invierno')">🔥 Ganchos Navien</button>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:4px 8px;" onclick="quickBrainQuery('Explicacion tecnica sencilla de por que falla la valvula T&P en calentadores de agua')">⚙️ Válvula T&P</button>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:4px 8px;" onclick="quickBrainQuery('Argumentos de venta para reemplazo total de tuberias con cobre Tipo L en Los Gatos')">🔧 Repiping Cobre</button>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:4px 8px;" onclick="quickBrainQuery('Requisitos legales y garantias de la licencia CSLB C-36 en California')">📜 Garantía C-36</button>
+                        </div>
+                    </div>
+
+                    <!-- RESULTADO DEL CEREBRO -->
+                    <div id="brainResultBox" style="display:none; background:rgba(0,0,0,0.5); padding:12px; border-radius:8px; border:1px solid rgba(212,175,55,0.4); margin-top:10px;">
+                        <div style="font-size:0.8rem; color:var(--cyan); font-weight:bold; margin-bottom:6px;"><i class="fa-solid fa-lightbulb"></i> RESPUESTA DEL MASTER BRAIN:</div>
+                        <div id="brainAnswerText" style="font-size:0.82rem; color:#f1f5f9; line-height:1.5; margin-bottom:10px; white-space:pre-wrap;"></div>
+                        
+                        <div id="brainHooksSection" style="margin-bottom:10px;">
+                            <div style="font-size:0.75rem; color:#f59e0b; font-weight:bold; margin-bottom:4px;">🎯 GANCHOS VIRALES SUGERIDOS:</div>
+                            <ul id="brainHooksList" style="margin:0; padding-left:18px; font-size:0.78rem; color:#e2e8f0; line-height:1.4;"></ul>
+                        </div>
+
+                        <button class="pnl-btn" id="btnUseBrainIdea" onclick="usarIdeaDelBrain()" style="width:100%; padding:10px; font-size:0.85rem; font-family:'Orbitron',sans-serif; background:linear-gradient(90deg, #10b981, #00e5ff); color:#0a0e14; font-weight:bold; cursor:pointer;">
+                            <i class="fa-solid fa-bolt"></i> ⚡ CREAR CAMPAÑA CON ESTA IDEA (1 CLIC)
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ INBOX TAB (DASHBOARD MULTIMEDIA) ══ -->
+        <div id="sec-inbox" class="rp-section active">
+            
+            <!-- REELS (VIDEOS CORTOS EN 8 IDIOMAS) -->
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-video"></i>REELS / VIDEOS MP4 (8 IDIOMAS DE LA BAHÍA)</div>
+                <div class="pnl-content">
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
+                        <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; border:1px solid rgba(0,229,255,0.2);">
+                            <div style="font-size:0.75rem; color:var(--cyan); font-weight:bold; margin-bottom:4px;">🇺🇸 REEL INGLÉS</div>
+                            <video id="reel-en" controls style="width:100%; border-radius:4px; max-height:220px; background:#000;"></video>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; border:1px solid rgba(0,229,255,0.2);">
+                            <div style="font-size:0.75rem; color:var(--cyan); font-weight:bold; margin-bottom:4px;">🇲🇽 REEL ESPAÑOL</div>
+                            <video id="reel-es" controls style="width:100%; border-radius:4px; max-height:220px; background:#000;"></video>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; border:1px solid rgba(245,158,11,0.3);">
+                            <div style="font-size:0.75rem; color:#f59e0b; font-weight:bold; margin-bottom:4px;">🇮🇳 REEL HINDI (हिन्दी)</div>
+                            <video id="reel-hi" controls style="width:100%; border-radius:4px; max-height:220px; background:#000;"></video>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; border:1px solid rgba(245,158,11,0.3);">
+                            <div style="font-size:0.75rem; color:#f59e0b; font-weight:bold; margin-bottom:4px;">🇮🇳 REEL TELUGU (తెలుగు)</div>
+                            <video id="reel-te" controls style="width:100%; border-radius:4px; max-height:220px; background:#000;"></video>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; border:1px solid rgba(245,158,11,0.3);">
+                            <div style="font-size:0.75rem; color:#f59e0b; font-weight:bold; margin-bottom:4px;">🇮🇳 REEL TAMIL (தமிழ்)</div>
+                            <video id="reel-ta" controls style="width:100%; border-radius:4px; max-height:220px; background:#000;"></video>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; border:1px solid rgba(245,158,11,0.3);">
+                            <div style="font-size:0.75rem; color:#f59e0b; font-weight:bold; margin-bottom:4px;">🇮🇳 REEL PUNJABI (ਪੰਜਾਬੀ)</div>
+                            <video id="reel-pa" controls style="width:100%; border-radius:4px; max-height:220px; background:#000;"></video>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; border:1px solid rgba(0,229,255,0.2);">
+                            <div style="font-size:0.75rem; color:var(--cyan); font-weight:bold; margin-bottom:4px;">🇻🇳 REEL VIETNAMITA</div>
+                            <video id="reel-vi" controls style="width:100%; border-radius:4px; max-height:220px; background:#000;"></video>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; border:1px solid rgba(0,229,255,0.2);">
+                            <div style="font-size:0.75rem; color:var(--cyan); font-weight:bold; margin-bottom:4px;">🇨🇳 REEL MANDARÍN</div>
+                            <video id="reel-zh" controls style="width:100%; border-radius:4px; max-height:220px; background:#000;"></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AUDIOS TTS (8 IDIOMAS) -->
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-microphone-lines"></i>AUDIOS DE VOZ NATIVA (8 IDIOMAS MP3)</div>
+                <div class="pnl-content">
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <div>
+                            <span style="font-size:0.72rem; color:#9ca3af;">🇺🇸 English Voiceover:</span>
+                            <audio id="audio-en" controls style="width:100%; height:32px; margin-top:2px;"></audio>
+                        </div>
+                        <div>
+                            <span style="font-size:0.72rem; color:#9ca3af;">🇲🇽 Locución en Español:</span>
+                            <audio id="audio-es" controls style="width:100%; height:32px; margin-top:2px;"></audio>
+                        </div>
+                        <div>
+                            <span style="font-size:0.72rem; color:#f59e0b;">🇮🇳 हिन्दी (Hindi Voiceover):</span>
+                            <audio id="audio-hi" controls style="width:100%; height:32px; margin-top:2px;"></audio>
+                        </div>
+                        <div>
+                            <span style="font-size:0.72rem; color:#f59e0b;">🇮🇳 తెలుగు (Telugu Voiceover):</span>
+                            <audio id="audio-te" controls style="width:100%; height:32px; margin-top:2px;"></audio>
+                        </div>
+                        <div>
+                            <span style="font-size:0.72rem; color:#f59e0b;">🇮🇳 தமிழ் (Tamil Voiceover):</span>
+                            <audio id="audio-ta" controls style="width:100%; height:32px; margin-top:2px;"></audio>
+                        </div>
+                        <div>
+                            <span style="font-size:0.72rem; color:#f59e0b;">🇮🇳 ਪੰਜਾਬੀ (Punjabi Voiceover):</span>
+                            <audio id="audio-pa" controls style="width:100%; height:32px; margin-top:2px;"></audio>
+                        </div>
+                        <div>
+                            <span style="font-size:0.72rem; color:#9ca3af;">🇻🇳 Giọng đọc Tiếng Việt:</span>
+                            <audio id="audio-vi" controls style="width:100%; height:32px; margin-top:2px;"></audio>
+                        </div>
+                        <div>
+                            <span style="font-size:0.72rem; color:#9ca3af;">🇨🇳 中文普通话配音:</span>
+                            <audio id="audio-zh" controls style="width:100%; height:32px; margin-top:2px;"></audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PODCAST -->
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-podcast"></i>PODCAST A 2 VOCES (ALEX & JOE)</div>
+                <div class="pnl-content">
+                    <p style="font-size:0.75rem; color:#cbd5e1; margin:0 0 8px 0;">Mini-episodio de audio conversacional explicando el caso técnico y la garantía C-36:</p>
+                    <audio id="podcast-audio" controls style="width:100%; height:36px;"></audio>
+                </div>
+            </div>
+
+            <!-- INFOGRAFÍA EDUCATIVA (30% IA) -->
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-chart-pie"></i>INFOGRAFÍA EDUCATIVA (30% IA)</div>
+                <div class="pnl-content" style="text-align:center;">
+                    <img id="infographic-preview" src="./generated_media/infographic.png" style="max-width:100%; max-height:300px; border-radius:6px; border:1px solid rgba(212,175,55,0.4); margin-bottom:8px;" onerror="this.style.display='none'">
+                    <div>
+                        <a id="infographic-link" href="./generated_media/infographic.png" target="_blank" class="pnl-btn pnl-btn-sm" style="display:inline-block; text-decoration:none; padding:6px 14px;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Infografía en Alta Resolución</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ══ DESIGN TAB ══ -->
+        <div id="sec-design" class="rp-section">
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-swatchbook"></i>IDENTIDAD VISUAL</div>
+                <div class="pnl-content">
+                    <div class="pnl-row"><span class="pnl-lbl">Tema</span>
+                        <select class="pnl-select" id="cfgTheme" onchange="saveState();updateEngine()">
+                            <option value="theme-premium">Corporate Premium</option>
+                            <option value="theme-neon">Cyberpunk Neon</option>
+                            <option value="theme-dark-fade">Dark Fade (Bottom)</option>
+                            <option value="theme-light-fade">Light Wash</option>
+                            <option value="theme-vignette">Vignette (Cinematic)</option>
+                            <option value="theme-ocean">Deep Ocean</option>
+                            <option value="theme-sunset">Sunset Vibes</option>
+                            <option value="theme-synthwave">Retro Synthwave</option>
+                            <option value="theme-matrix">Matrix Green</option>
+                            <option value="theme-gold">Luxury Gold</option>
+                            <option value="theme-blood">Crimson Blood</option>
+                            <option value="theme-holographic">Holographic Iris</option>
+                            <option value="theme-sepia">Vintage Sepia</option>
+                            <option value="theme-royal">Royal Purple</option>
+                            <option value="theme-ice">Arctic Ice</option>
+                            <option value="theme-inferno">Inferno Blaze</option>
+                            <option value="theme-abyss">The Abyss</option>
+                            <option value="theme-duotone-redblue">Duotone Red/Blue</option>
+                            <option value="theme-cinema">Cinematic Bars</option>
+                            <option value="theme-toxic">Toxic Hazard</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-image"></i>FONDO</div>
+                <div class="pnl-content">
+                    <div class="pnl-row"><span class="pnl-lbl">Color Sólido</span>
+                        <div class="pnl-color"><input type="color" id="cfgBgColor" value="#0a0e14" oninput="updateEngine()"></div>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Imagen</span>
+                        <select class="pnl-select" id="cfgImage" onchange="saveState();updateEngine()">
+                            <option value="none">Sin Fondo (Color Sólido)</option>
+                            <option value="prueba.png">Prueba - Diagnóstico Térmico (IA)</option>
+                            <option value="photo_tablet_diag.png">Diagnóstico con Tablet (Morales)</option>
+                            <option value="photo_industrial_leak.png">Reparación Industrial (Morales)</option>
+                            <option value="photo_van_portrait.png">Plomero Profesional en Van (Morales)</option>
+                            <option value="plumber_luxury_gatos_1783810027855.png">Residencial Alta Gama (Los Gatos) - Fotorrealista</option>
+                            <option value="plumber_ind_comm_1783809692218.png">Industrial/Comercial (San José) - Fotorrealista</option>
+                            <option value="plumber_forensic_tech_1783804275872.png">Emergencia Forense (Santa Clara) - Fotorrealista</option>
+                            <option value="comic_diagnostic_cam.png">Inspección Diagnóstica Cómics</option>
+                            <option value="comic_hologram.png">Plomero Holograma Cómics</option>
+                            <option value="comic_fixing_leak.png">Reparación Fuga Neón Cómics</option>
+                            <option value="plumber_comic_drain_1783809684873.png">Héroe Plomero Cómic (Silicon Valley)</option>
+                            <option value="plumber_manga_burst_1783809670466.png">Desastre Tubería Manga (Neo-San José)</option>
+                            <option value="plumber_manga_gas_1783809724812.png">Técnico Gas Manga (Alta Acción)</option>
+                            <option value="pixar_robot_wrench.png">Robot Plomero 3D (Morales)</option>
+                            <option value="pixar_cyber_city.png">Cyber-Ciudad Tuberías 3D (Morales)</option>
+                            <option value="pixar_cute_cam.png">Diagnóstico Pixar 3D (Morales)</option>
+                            <option value="plumber_pixar_heater_1783809677770.png">Mantenimiento Pixar (Residencial)</option>
+                            <option value="plumber_pixar_sink_1783809731999.png">Reparación Fregadero Pixar</option>
+                            <option value="plumber_cyber_leak_1783809663082.png">Detección Fugas Cyberpunk</option>
+                            <option value="plumber_cyber_toilet_1783809717295.png">Emergencia Sanitaria Cyberpunk</option>
+                            <option value="plumber_installing_pipes_1783804246645.png">Instalando Tuberías (Cobre)</option>
+                            <option value="plumber_repairing_heater_1783804260873.png">Reparando Calentador</option>
+                            <option value="plumber_winter_thaw_1783806453987.png">Invierno / Tuberías Congeladas</option>
+                            <option value="plumber_summer_out_1783809709386.png">Emergencia Verano (Exteriores)</option>
+                            <option value="plumber_mothers_day_1783809702499.png">Especial Día de las Madres</option>
+                            <option value="equinox_plumbing_wrap_1783802676326.png">Muestra Camioneta Rotulada</option>
+                            <option value="cool_plumbing_sticker_1783802683163.png">Muestra Sticker de Marca</option>
+                            <option value="alex_heater_pump_1783888277304.png">Instalando Heater Pump (Branded)</option>
+                            <option value="alex_tankless_water_heater_1783888286825.png">Instalando Tankless Water Heater (Branded)</option>
+                            <option value="alex_inodoros_1783888297820.png">Mantenimiento de Inodoros (Branded)</option>
+                        </select>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Desenfoque</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgBgBlur" min="0" max="20" value="0" oninput="rvUp('cfgBgBlur')"><span class="pnl-range-val">0</span></div>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Brillo</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgBgBright" min="20" max="200" value="100" oninput="rvUp('cfgBgBright')"><span class="pnl-range-val">100</span></div>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Opacidad Overlay</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgOverlayOp" min="0" max="100" value="100" oninput="rvUp('cfgOverlayOp')"><span class="pnl-range-val">100</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ TEXT TAB ══ -->
+        <div id="sec-text" class="rp-section">
+            
+            <!-- TARJETAS MULTILINGÜES LISTAS PARA COPIAR -->
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-clipboard-list" style="color:var(--cyan)"></i>TEXTOS PARA REDES (1 CLIC PARA COPIAR)</div>
+                <div class="pnl-content" style="display:flex; flex-direction:column; gap:10px;">
+                    
+                    <!-- ESPAÑOL -->
+                    <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px; border:1px solid rgba(0,229,255,0.2);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <span style="font-size:0.75rem; color:var(--cyan); font-weight:bold;">🇲🇽 ESPAÑOL (WhatsApp / IG / FB):</span>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:3px 8px;" onclick="copyTextToClipboard('copy-card-es')"><i class="fa-solid fa-copy"></i> Copiar</button>
+                        </div>
+                        <p id="copy-card-es" style="font-size:0.8rem; color:#f1f5f9; margin:0; line-height:1.4; white-space:pre-wrap;">Genera primero una campaña para ver los textos aquí.</p>
+                    </div>
+
+                    <!-- INGLÉS -->
+                    <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px; border:1px solid rgba(0,229,255,0.2);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <span style="font-size:0.75rem; color:var(--cyan); font-weight:bold;">🇺🇸 INGLÉS (Google Business / Nextdoor):</span>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:3px 8px;" onclick="copyTextToClipboard('copy-card-en')"><i class="fa-solid fa-copy"></i> Copiar</button>
+                        </div>
+                        <p id="copy-card-en" style="font-size:0.8rem; color:#f1f5f9; margin:0; line-height:1.4; white-space:pre-wrap;">Genera primero una campaña para ver los textos aquí.</p>
+                    </div>
+
+                    <!-- HINDI -->
+                    <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px; border:1px solid rgba(245,158,11,0.3);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <span style="font-size:0.75rem; color:#f59e0b; font-weight:bold;">🇮🇳 HINDI (हिन्दी):</span>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:3px 8px;" onclick="copyTextToClipboard('copy-card-hi')"><i class="fa-solid fa-copy"></i> Copiar</button>
+                        </div>
+                        <p id="copy-card-hi" style="font-size:0.8rem; color:#f1f5f9; margin:0; line-height:1.4; white-space:pre-wrap;">Genera primero una campaña para ver los textos aquí.</p>
+                    </div>
+
+                    <!-- TELUGU -->
+                    <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px; border:1px solid rgba(245,158,11,0.3);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <span style="font-size:0.75rem; color:#f59e0b; font-weight:bold;">🇮🇳 TELUGU (తెలుగు):</span>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:3px 8px;" onclick="copyTextToClipboard('copy-card-te')"><i class="fa-solid fa-copy"></i> Copiar</button>
+                        </div>
+                        <p id="copy-card-te" style="font-size:0.8rem; color:#f1f5f9; margin:0; line-height:1.4; white-space:pre-wrap;">Genera primero una campaña para ver los textos aquí.</p>
+                    </div>
+
+                    <!-- TAMIL -->
+                    <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px; border:1px solid rgba(245,158,11,0.3);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <span style="font-size:0.75rem; color:#f59e0b; font-weight:bold;">🇮🇳 TAMIL (தமிழ்):</span>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:3px 8px;" onclick="copyTextToClipboard('copy-card-ta')"><i class="fa-solid fa-copy"></i> Copiar</button>
+                        </div>
+                        <p id="copy-card-ta" style="font-size:0.8rem; color:#f1f5f9; margin:0; line-height:1.4; white-space:pre-wrap;">Genera primero una campaña para ver los textos aquí.</p>
+                    </div>
+
+                    <!-- PUNJABI -->
+                    <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px; border:1px solid rgba(245,158,11,0.3);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <span style="font-size:0.75rem; color:#f59e0b; font-weight:bold;">🇮🇳 PUNJABI (ਪੰਜਾਬੀ):</span>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:3px 8px;" onclick="copyTextToClipboard('copy-card-pa')"><i class="fa-solid fa-copy"></i> Copiar</button>
+                        </div>
+                        <p id="copy-card-pa" style="font-size:0.8rem; color:#f1f5f9; margin:0; line-height:1.4; white-space:pre-wrap;">Genera primero una campaña para ver los textos aquí.</p>
+                    </div>
+
+                    <!-- VIETNAMITA -->
+                    <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px; border:1px solid rgba(0,229,255,0.2);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <span style="font-size:0.75rem; color:var(--cyan); font-weight:bold;">🇻🇳 VIETNAMITA:</span>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:3px 8px;" onclick="copyTextToClipboard('copy-card-vi')"><i class="fa-solid fa-copy"></i> Copiar</button>
+                        </div>
+                        <p id="copy-card-vi" style="font-size:0.8rem; color:#f1f5f9; margin:0; line-height:1.4; white-space:pre-wrap;">Genera primero una campaña para ver los textos aquí.</p>
+                    </div>
+
+                    <!-- MANDARÍN -->
+                    <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px; border:1px solid rgba(0,229,255,0.2);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <span style="font-size:0.75rem; color:var(--cyan); font-weight:bold;">🇨🇳 MANDARÍN (中文):</span>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:3px 8px;" onclick="copyTextToClipboard('copy-card-zh')"><i class="fa-solid fa-copy"></i> Copiar</button>
+                        </div>
+                        <p id="copy-card-zh" style="font-size:0.8rem; color:#f1f5f9; margin:0; line-height:1.4; white-space:pre-wrap;">Genera primero una campaña para ver los textos aquí.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-pen-nib"></i>EDICIÓN MANUAL DEL LIENZO</div>
+                <div class="pnl-content">
+                    <div class="pnl-row"><span class="pnl-lbl">Titular</span><input class="pnl-input" id="cfgHeadline" value="15% OFF EN INVIERNO" oninput="updateEngine()"></div>
+                    <div class="pnl-row"><span class="pnl-lbl">Subtítulo</span><input class="pnl-input" id="cfgSubhead" value="Evita tuberías reventadas con nuestra tecnología térmica." oninput="updateEngine()"></div>
+                    <div class="pnl-row"><span class="pnl-lbl">Teléfono</span><input class="pnl-input" id="cfgPhone" value="(669) 213-4422" oninput="updateEngine()"></div>
+                    <div class="pnl-row"><button class="pnl-btn pnl-btn-sm" onclick="generarCopyIA()"><i class="fa-solid fa-robot"></i> Auto-Generar IA</button></div>
+                </div>
+            </div>
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-align-left"></i>ALINEACIÓN</div>
+                <div class="pnl-content">
+                    <select class="pnl-select" id="cfgAlign" onchange="updateEngine()">
+                        <option value="center">Centro</option>
+                        <option value="left">Izquierda</option>
+                        <option value="right">Derecha</option>
+                    </select>
+                </div>
+            </div>
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-heading"></i>TITULAR</div>
+                <div class="pnl-content">
+                    <div class="pnl-row"><span class="pnl-lbl">Fuente</span>
+                        <select class="pnl-select" id="cfgHeadlineFont" onchange="updateEngine()">
+                            <option value="'Inter',sans-serif">Inter (Moderna)</option>
+                            <option value="'Orbitron',sans-serif">Orbitron (Cyber)</option>
+                            <option value="'Oswald',sans-serif">Oswald (Industrial)</option>
+                            <option value="'Montserrat',sans-serif">Montserrat (Premium)</option>
+                            <option value="'Teko',sans-serif">Teko (Impacto)</option>
+                            <option value="'Bebas Neue',sans-serif">Bebas Neue (Giant)</option>
+                            <option value="'Anton',sans-serif">Anton (Negrita Extrema)</option>
+                            <option value="'Russo One',sans-serif">Russo One (Sólido)</option>
+                            <option value="'Righteous',cursive">Righteous (Moderno)</option>
+                            <option value="'Permanent Marker',cursive">Permanent Marker (Marcador)</option>
+                            <option value="'Sedgwick Ave',cursive">Sedgwick Ave (Graffiti)</option>
+                            <option value="'Bungee Shade',cursive">Bungee Shade (Estilo 3D)</option>
+                            <option value="'Bungee Inline',cursive">Bungee Inline (Hueco)</option>
+                            <option value="'Bangers',cursive">Bangers (Ofertas/Cómic)</option>
+                            <option value="'Black Ops One',cursive">Black Ops One (Militar)</option>
+                            <option value="'Cinzel',serif">Cinzel (Clásico/Épico)</option>
+                            <option value="'Playfair Display',serif">Playfair Display (Elegante)</option>
+                            <option value="'Special Elite',cursive">Special Elite (Vintage)</option>
+                            <option value="'Creepster',cursive">Creepster (Terror)</option>
+                            <option value="'Caveat',cursive">Caveat (Manual)</option>
+                        </select>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Tamaño</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgHeadlineSize" min="40" max="250" value="100" oninput="rvUp('cfgHeadlineSize')"><span class="pnl-range-val">100</span>
+                        <div class="pnl-color"><input type="color" id="cfgHeadlineColor" value="#0ea5e9" oninput="updateEngine()"></div></div>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Espaciado</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgHeadlineSpacing" min="-5" max="20" value="0" oninput="rvUp('cfgHeadlineSpacing')"><span class="pnl-range-val">0</span></div>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Formato</span>
+                        <select class="pnl-select" id="cfgHeadlineCase" onchange="updateEngine()">
+                            <option value="uppercase">MAYÚSCULAS</option>
+                            <option value="lowercase">minúsculas</option>
+                            <option value="none">Normal</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-paragraph"></i>SUBTÍTULO</div>
+                <div class="pnl-content">
+                    <div class="pnl-row"><span class="pnl-lbl">Fuente</span>
+                        <select class="pnl-select" id="cfgSubheadFont" onchange="updateEngine()">
+                            <option value="'Inter',sans-serif">Inter (Moderna)</option>
+                            <option value="'Orbitron',sans-serif">Orbitron (Cyber)</option>
+                            <option value="'Oswald',sans-serif">Oswald (Industrial)</option>
+                            <option value="'Montserrat',sans-serif">Montserrat (Premium)</option>
+                            <option value="'Teko',sans-serif">Teko (Impacto)</option>
+                            <option value="'Bebas Neue',sans-serif">Bebas Neue (Giant)</option>
+                            <option value="'Anton',sans-serif">Anton (Negrita Extrema)</option>
+                            <option value="'Russo One',sans-serif">Russo One (Sólido)</option>
+                            <option value="'Righteous',cursive">Righteous (Moderno)</option>
+                            <option value="'Permanent Marker',cursive">Permanent Marker (Marcador)</option>
+                            <option value="'Sedgwick Ave',cursive">Sedgwick Ave (Graffiti)</option>
+                            <option value="'Bungee Shade',cursive">Bungee Shade (Estilo 3D)</option>
+                            <option value="'Bungee Inline',cursive">Bungee Inline (Hueco)</option>
+                            <option value="'Bangers',cursive">Bangers (Ofertas/Cómic)</option>
+                            <option value="'Black Ops One',cursive">Black Ops One (Militar)</option>
+                            <option value="'Cinzel',serif">Cinzel (Clásico/Épico)</option>
+                            <option value="'Playfair Display',serif">Playfair Display (Elegante)</option>
+                            <option value="'Special Elite',cursive">Special Elite (Vintage)</option>
+                            <option value="'Creepster',cursive">Creepster (Terror)</option>
+                            <option value="'Caveat',cursive">Caveat (Manual)</option>
+                        </select>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Tamaño</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgSubheadSize" min="30" max="200" value="100" oninput="rvUp('cfgSubheadSize')"><span class="pnl-range-val">100</span>
+                        <div class="pnl-color"><input type="color" id="cfgSubheadColor" value="#ffffff" oninput="updateEngine()"></div></div>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Espaciado</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgSubheadSpacing" min="-5" max="20" value="0" oninput="rvUp('cfgSubheadSpacing')"><span class="pnl-range-val">0</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-phone"></i>FOOTER / TELÉFONO</div>
+                <div class="pnl-content">
+                    <div class="pnl-row"><span class="pnl-lbl">Fuente</span>
+                        <select class="pnl-select" id="cfgFooterFont" onchange="updateEngine()">
+                            <option value="'Inter',sans-serif">Inter (Moderna)</option>
+                            <option value="'Orbitron',sans-serif">Orbitron (Cyber)</option>
+                            <option value="'Oswald',sans-serif">Oswald (Industrial)</option>
+                            <option value="'Montserrat',sans-serif">Montserrat (Premium)</option>
+                            <option value="'Teko',sans-serif">Teko (Impacto)</option>
+                            <option value="'Bebas Neue',sans-serif">Bebas Neue (Giant)</option>
+                            <option value="'Anton',sans-serif">Anton (Negrita Extrema)</option>
+                            <option value="'Russo One',sans-serif">Russo One (Sólido)</option>
+                            <option value="'Righteous',cursive">Righteous (Moderno)</option>
+                            <option value="'Permanent Marker',cursive">Permanent Marker (Marcador)</option>
+                            <option value="'Sedgwick Ave',cursive">Sedgwick Ave (Graffiti)</option>
+                            <option value="'Bungee Shade',cursive">Bungee Shade (Estilo 3D)</option>
+                            <option value="'Bungee Inline',cursive">Bungee Inline (Hueco)</option>
+                            <option value="'Bangers',cursive">Bangers (Ofertas/Cómic)</option>
+                            <option value="'Black Ops One',cursive">Black Ops One (Militar)</option>
+                            <option value="'Cinzel',serif">Cinzel (Clásico/Épico)</option>
+                            <option value="'Playfair Display',serif">Playfair Display (Elegante)</option>
+                            <option value="'Special Elite',cursive">Special Elite (Vintage)</option>
+                            <option value="'Creepster',cursive">Creepster (Terror)</option>
+                            <option value="'Caveat',cursive">Caveat (Manual)</option>
+                        </select>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Tamaño</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgPhoneSize" min="50" max="250" value="100" oninput="rvUp('cfgPhoneSize')"><span class="pnl-range-val">100</span>
+                        <div class="pnl-color"><input type="color" id="cfgPhoneColor" value="#ffffff" oninput="updateEngine()"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pnl-group">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-eye"></i>EFECTOS DE TEXTO</div>
+                <div class="pnl-content">
+                    <div class="pnl-row"><span class="pnl-lbl">Sombra</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgTextShadow" min="0" max="20" value="5" oninput="rvUp('cfgTextShadow')"><span class="pnl-range-val">5</span></div>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Contorno</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgTextStroke" min="0" max="5" value="0" oninput="rvUp('cfgTextStroke')"><span class="pnl-range-val">0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ ASSETS TAB ══ -->
+        <div id="sec-assets" class="rp-section">
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-cloud-arrow-up"></i>GALERÍA DE ASSETS</div>
+                <div class="pnl-content">
+                    <label class="upload-btn"><i class="fa-solid fa-cloud-arrow-up"></i> SUBIR IMAGEN
+                        <input type="file" accept="image/*" style="display:none" onchange="handleImageUpload(event)">
+                    </label>
+                    <div id="assetGallery" style="max-height:350px;overflow-y:auto;padding:4px;background:rgba(0,0,0,.3);border-radius:6px;border:1px solid rgba(0,229,255,.1)">
+                        <div style="margin-bottom: 15px; text-align: center;">
+    <label class="export-btn" style="cursor:pointer; display:inline-block; width:100%; box-sizing:border-box; padding: 10px; font-size:0.9rem; background: linear-gradient(90deg, #d97743, #f43f5e);">
+        <i class="fa-solid fa-cloud-arrow-up"></i> SUBIR IMAGEN PROPIA
+        <input type="file" accept="image/*" style="display:none;" onchange="handleImageUpload(event)">
+    </label>
+</div>
+<details class="gallery-category" open><summary>ASSETS PNG (156)</summary>
+<div class="gallery-grid" style="margin-top:10px;">
+    <img src="./assets/admin_ops.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/admin_ops.png')" title="admin_ops.png">
+    <img src="./assets/app_ep_mockup.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/app_ep_mockup.png')" title="app_ep_mockup.png">
+    <img src="./assets/app_mp.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/app_mp.png')" title="app_mp.png">
+    <img src="./assets/app_redes.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/app_redes.png')" title="app_redes.png">
+    <img src="./assets/app_tratamiento.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/app_tratamiento.png')" title="app_tratamiento.png">
+    <img src="./assets/b2b_comic.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/b2b_comic.png')" title="b2b_comic.png">
+    <img src="./assets/backflow_prevention.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/backflow_prevention.png')" title="backflow_prevention.png">
+    <img src="./assets/bathroom_renovations.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/bathroom_renovations.png')" title="bathroom_renovations.png">
+    <img src="./assets/blocked_drains_repair.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/blocked_drains_repair.png')" title="blocked_drains_repair.png">
+    <img src="./assets/burst_pipe_emergency.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/burst_pipe_emergency.png')" title="burst_pipe_emergency.png">
+    <img src="./assets/casa_aire_fire.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/casa_aire_fire.png')" title="casa_aire_fire.png">
+    <img src="./assets/casa_aire_inspection.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/casa_aire_inspection.png')" title="casa_aire_inspection.png">
+    <img src="./assets/cctv_pipe.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/cctv_pipe.png')" title="cctv_pipe.png">
+    <img src="./assets/ceo_official.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/ceo_official.png')" title="ceo_official.png">
+    <img src="./assets/ceo_photo.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/ceo_photo.png')" title="ceo_photo.png">
+    <img src="./assets/ceo_tech.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/ceo_tech.png')" title="ceo_tech.png">
+    <img src="./assets/cobre_comic.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/cobre_comic.png')" title="cobre_comic.png">
+    <img src="./assets/comic_ai.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_ai.png')" title="comic_ai.png">
+    <img src="./assets/comic_best.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_best.png')" title="comic_best.png">
+    <img src="./assets/comic_best_v2.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_best_v2.png')" title="comic_best_v2.png">
+    <img src="./assets/comic_better.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_better.png')" title="comic_better.png">
+    <img src="./assets/comic_better_v2.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_better_v2.png')" title="comic_better_v2.png">
+    <img src="./assets/comic_catalog.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_catalog.png')" title="comic_catalog.png">
+    <img src="./assets/comic_construction.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_construction.png')" title="comic_construction.png">
+    <img src="./assets/comic_copper.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_copper.png')" title="comic_copper.png">
+    <img src="./assets/comic_eco.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_eco.png')" title="comic_eco.png">
+    <img src="./assets/comic_expansion.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_expansion.png')" title="comic_expansion.png">
+    <img src="./assets/comic_good.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_good.png')" title="comic_good.png">
+    <img src="./assets/comic_good_v2.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_good_v2.png')" title="comic_good_v2.png">
+    <img src="./assets/comic_harvest.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_harvest.png')" title="comic_harvest.png">
+    <img src="./assets/comic_heaters.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_heaters.png')" title="comic_heaters.png">
+    <img src="./assets/comic_sales.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_sales.png')" title="comic_sales.png">
+    <img src="./assets/comic_septic.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_septic.png')" title="comic_septic.png">
+    <img src="./assets/comic_shield.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_shield.png')" title="comic_shield.png">
+    <img src="./assets/comic_terms.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_terms.png')" title="comic_terms.png">
+    <img src="./assets/comic_tiers.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_tiers.png')" title="comic_tiers.png">
+    <img src="./assets/comic_treatment.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_treatment.png')" title="comic_treatment.png">
+    <img src="./assets/comic_ttt_best.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_ttt_best.png')" title="comic_ttt_best.png">
+    <img src="./assets/comic_ttt_better.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_ttt_better.png')" title="comic_ttt_better.png">
+    <img src="./assets/comic_ttt_good.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_ttt_good.png')" title="comic_ttt_good.png">
+    <img src="./assets/comic_tt_best.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_tt_best.png')" title="comic_tt_best.png">
+    <img src="./assets/comic_tt_better.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_tt_better.png')" title="comic_tt_better.png">
+    <img src="./assets/comic_tt_good.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_tt_good.png')" title="comic_tt_good.png">
+    <img src="./assets/comic_warning.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_warning.png')" title="comic_warning.png">
+    <img src="./assets/comic_wrench.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/comic_wrench.png')" title="comic_wrench.png">
+    <img src="./assets/contact_card.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/contact_card.png')" title="contact_card.png">
+    <img src="./assets/cv_photo.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/cv_photo.png')" title="cv_photo.png">
+    <img src="./assets/diagram_hp.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diagram_hp.png')" title="diagram_hp.png">
+    <img src="./assets/diagram_tt.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diagram_tt.png')" title="diagram_tt.png">
+    <img src="./assets/diagram_ttt.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diagram_ttt.png')" title="diagram_ttt.png">
+    <img src="./assets/diseno_comic.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diseno_comic.png')" title="diseno_comic.png">
+    <img src="./assets/disp_step1.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/disp_step1.png')" title="disp_step1.png">
+    <img src="./assets/disp_step2.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/disp_step2.png')" title="disp_step2.png">
+    <img src="./assets/diy_aerator.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_aerator.png')" title="diy_aerator.png">
+    <img src="./assets/diy_anode.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_anode.png')" title="diy_anode.png">
+    <img src="./assets/diy_ar_disposal.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_ar_disposal.png')" title="diy_ar_disposal.png">
+    <img src="./assets/diy_caulk_tub.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_caulk_tub.png')" title="diy_caulk_tub.png">
+    <img src="./assets/diy_dishwasher_filter.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_dishwasher_filter.png')" title="diy_dishwasher_filter.png">
+    <img src="./assets/diy_disposal.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_disposal.png')" title="diy_disposal.png">
+    <img src="./assets/diy_faucet.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_faucet.png')" title="diy_faucet.png">
+    <img src="./assets/diy_frozen_pipes.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_frozen_pipes.png')" title="diy_frozen_pipes.png">
+    <img src="./assets/diy_gfi.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_gfi.png')" title="diy_gfi.png">
+    <img src="./assets/diy_heater.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_heater.png')" title="diy_heater.png">
+    <img src="./assets/diy_house_filter.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_house_filter.png')" title="diy_house_filter.png">
+    <img src="./assets/diy_hvac_filter.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_hvac_filter.png')" title="diy_hvac_filter.png">
+    <img src="./assets/diy_plunger.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_plunger.png')" title="diy_plunger.png">
+    <img src="./assets/diy_shower.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_shower.png')" title="diy_shower.png">
+    <img src="./assets/diy_sink.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_sink.png')" title="diy_sink.png">
+    <img src="./assets/diy_smell.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_smell.png')" title="diy_smell.png">
+    <img src="./assets/diy_toilet.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_toilet.png')" title="diy_toilet.png">
+    <img src="./assets/diy_tub_drain.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_tub_drain.png')" title="diy_tub_drain.png">
+    <img src="./assets/diy_valve.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_valve.png')" title="diy_valve.png">
+    <img src="./assets/diy_washer_hoses.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/diy_washer_hoses.png')" title="diy_washer_hoses.png">
+    <img src="./assets/drain_camera.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/drain_camera.png')" title="drain_camera.png">
+    <img src="./assets/eco_comic.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/eco_comic.png')" title="eco_comic.png">
+    <img src="./assets/gas_plumbing_safety.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/gas_plumbing_safety.png')" title="gas_plumbing_safety.png">
+    <img src="./assets/Gemini_Generated_Image_6ydshm6ydshm6yds.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/Gemini_Generated_Image_6ydshm6ydshm6yds.png')" title="Gemini_Generated_Image_6ydshm6ydshm6yds.png">
+    <img src="./assets/Gemini_Generated_Image_sg5hvhsg5hvhsg5h.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/Gemini_Generated_Image_sg5hvhsg5hvhsg5h.png')" title="Gemini_Generated_Image_sg5hvhsg5hvhsg5h.png">
+    <img src="./assets/heatpump_hero.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/heatpump_hero.png')" title="heatpump_hero.png">
+    <img src="./assets/icon_location.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/icon_location.png')" title="icon_location.png">
+    <img src="./assets/icon_phone.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/icon_phone.png')" title="icon_phone.png">
+    <img src="./assets/icon_plumber_ai.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/icon_plumber_ai.png')" title="icon_plumber_ai.png">
+    <img src="./assets/icon_plumber_biz.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/icon_plumber_biz.png')" title="icon_plumber_biz.png">
+    <img src="./assets/icon_plumber_eco.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/icon_plumber_eco.png')" title="icon_plumber_eco.png">
+    <img src="./assets/icon_plumber_sat.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/icon_plumber_sat.png')" title="icon_plumber_sat.png">
+    <img src="./assets/inspect_comic.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/inspect_comic.png')" title="inspect_comic.png">
+    <img src="./assets/joe_avatar.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/joe_avatar.png')" title="joe_avatar.png">
+    <img src="./assets/leaking_tap_repair.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/leaking_tap_repair.png')" title="leaking_tap_repair.png">
+    <img src="./assets/leak_detection_tech.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/leak_detection_tech.png')" title="leak_detection_tech.png">
+    <img src="./assets/logo_portada - Copy.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/logo_portada - Copy.png')" title="logo_portada - Copy.png">
+    <img src="./assets/logo_portada.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/logo_portada.png')" title="logo_portada.png">
+    <img src="./assets/mp_app_free.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/mp_app_free.png')" title="mp_app_free.png">
+    <img src="./assets/navien_plan_best.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/navien_plan_best.png')" title="navien_plan_best.png">
+    <img src="./assets/navien_plan_better.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/navien_plan_better.png')" title="navien_plan_better.png">
+    <img src="./assets/navien_plan_good.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/navien_plan_good.png')" title="navien_plan_good.png">
+    <img src="./assets/orion_logo.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/orion_logo.png')" title="orion_logo.png">
+    <img src="./assets/pb_svc_1.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_1.png')" title="pb_svc_1.png">
+    <img src="./assets/pb_svc_10.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_10.png')" title="pb_svc_10.png">
+    <img src="./assets/pb_svc_11.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_11.png')" title="pb_svc_11.png">
+    <img src="./assets/pb_svc_12.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_12.png')" title="pb_svc_12.png">
+    <img src="./assets/pb_svc_13.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_13.png')" title="pb_svc_13.png">
+    <img src="./assets/pb_svc_14.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_14.png')" title="pb_svc_14.png">
+    <img src="./assets/pb_svc_15.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_15.png')" title="pb_svc_15.png">
+    <img src="./assets/pb_svc_2.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_2.png')" title="pb_svc_2.png">
+    <img src="./assets/pb_svc_3.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_3.png')" title="pb_svc_3.png">
+    <img src="./assets/pb_svc_4.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_4.png')" title="pb_svc_4.png">
+    <img src="./assets/pb_svc_5.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_5.png')" title="pb_svc_5.png">
+    <img src="./assets/pb_svc_6.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_6.png')" title="pb_svc_6.png">
+    <img src="./assets/pb_svc_7.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_7.png')" title="pb_svc_7.png">
+    <img src="./assets/pb_svc_8.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_8.png')" title="pb_svc_8.png">
+    <img src="./assets/pb_svc_9.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pb_svc_9.png')" title="pb_svc_9.png">
+    <img src="./assets/pipe_relining_tech.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/pipe_relining_tech.png')" title="pipe_relining_tech.png">
+    <img src="./assets/plan_best.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/plan_best.png')" title="plan_best.png">
+    <img src="./assets/plan_better.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/plan_better.png')" title="plan_better.png">
+    <img src="./assets/plan_good.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/plan_good.png')" title="plan_good.png">
+    <img src="./assets/plan_good_clean.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/plan_good_clean.png')" title="plan_good_clean.png">
+    <img src="./assets/Q&A  Technical Hub.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/Q&A  Technical Hub.png')" title="Q&A  Technical Hub.png">
+    <img src="./assets/septico_comic.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/septico_comic.png')" title="septico_comic.png">
+    <img src="./assets/service_b2b.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_b2b.png')" title="service_b2b.png">
+    <img src="./assets/service_copper_plumbing_1778369068107.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_copper_plumbing_1778369068107.png')" title="service_copper_plumbing_1778369068107.png">
+    <img src="./assets/service_expansion_hydraulic_1778369313970.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_expansion_hydraulic_1778369313970.png')" title="service_expansion_hydraulic_1778369313970.png">
+    <img src="./assets/service_faq_hub_1778369361208.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_faq_hub_1778369361208.png')" title="service_faq_hub_1778369361208.png">
+    <img src="./assets/service_gas.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_gas.png')" title="service_gas.png">
+    <img src="./assets/service_hp.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_hp.png')" title="service_hp.png">
+    <img src="./assets/service_inspect.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_inspect.png')" title="service_inspect.png">
+    <img src="./assets/service_new_construction_1778369331147.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_new_construction_1778369331147.png')" title="service_new_construction_1778369331147.png">
+    <img src="./assets/service_septic_system_1778369053481.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_septic_system_1778369053481.png')" title="service_septic_system_1778369053481.png">
+    <img src="./assets/service_smart_repair_1778369346415.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_smart_repair_1778369346415.png')" title="service_smart_repair_1778369346415.png">
+    <img src="./assets/service_tankless.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_tankless.png')" title="service_tankless.png">
+    <img src="./assets/service_training.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_training.png')" title="service_training.png">
+    <img src="./assets/service_valves.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_valves.png')" title="service_valves.png">
+    <img src="./assets/service_water_reuse_1778369083950.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_water_reuse_1778369083950.png')" title="service_water_reuse_1778369083950.png">
+    <img src="./assets/service_wh.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/service_wh.png')" title="service_wh.png">
+    <img src="./assets/stormwater_drains.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/stormwater_drains.png')" title="stormwater_drains.png">
+    <img src="./assets/team_photo.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/team_photo.png')" title="team_photo.png">
+    <img src="./assets/termo_comic.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/termo_comic.png')" title="termo_comic.png">
+    <img src="./assets/tier_ttt_best.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/tier_ttt_best.png')" title="tier_ttt_best.png">
+    <img src="./assets/tier_ttt_better.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/tier_ttt_better.png')" title="tier_ttt_better.png">
+    <img src="./assets/tier_ttt_good.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/tier_ttt_good.png')" title="tier_ttt_good.png">
+    <img src="./assets/tier_tt_best.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/tier_tt_best.png')" title="tier_tt_best.png">
+    <img src="./assets/tier_tt_better.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/tier_tt_better.png')" title="tier_tt_better.png">
+    <img src="./assets/tier_tt_good.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/tier_tt_good.png')" title="tier_tt_good.png">
+    <img src="./assets/training_comic.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/training_comic.png')" title="training_comic.png">
+    <img src="./assets/ttt_comic_1.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/ttt_comic_1.png')" title="ttt_comic_1.png">
+    <img src="./assets/ttt_comic_2.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/ttt_comic_2.png')" title="ttt_comic_2.png">
+    <img src="./assets/ttt_comic_3.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/ttt_comic_3.png')" title="ttt_comic_3.png">
+    <img src="./assets/ttt_comic_4.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/ttt_comic_4.png')" title="ttt_comic_4.png">
+    <img src="./assets/ttt_hero.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/ttt_hero.png')" title="ttt_hero.png">
+    <img src="./assets/tt_comic_1.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/tt_comic_1.png')" title="tt_comic_1.png">
+    <img src="./assets/tt_comic_2.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/tt_comic_2.png')" title="tt_comic_2.png">
+    <img src="./assets/tt_comic_3.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/tt_comic_3.png')" title="tt_comic_3.png">
+    <img src="./assets/tt_comic_4.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/tt_comic_4.png')" title="tt_comic_4.png">
+    <img src="./assets/tt_hero.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/tt_hero.png')" title="tt_hero.png">
+    <img src="./assets/valves_comic.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/valves_comic.png')" title="valves_comic.png">
+    <img src="./assets/wh_comic.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/wh_comic.png')" title="wh_comic.png">
+    <img src="./assets/xray_disposal.png" class="gallery-item" onclick="selectGalleryItem(this, './assets/xray_disposal.png')" title="xray_disposal.png">
+</div></details>
+
+<details class="gallery-category" open><summary>ASSETS JPG (1)</summary>
+<div class="gallery-grid" style="margin-top:10px;">
+    <img src="./assets/logo_portada - Copy.jpg" class="gallery-item" onclick="selectGalleryItem(this, './assets/logo_portada - Copy.jpg')" title="logo_portada - Copy.jpg">
+</div></details>
+<div id="dynamicWebAssets"></div>
+<script>
+    fetch('http://localhost:3000/api/web-assets').then(r=>r.json()).then(images => {
+        if(images && images.length > 0) {
+            const container = document.createElement('details');
+            container.className = 'gallery-category';
+            container.open = false;
+            container.innerHTML = '<summary>WEB ASSETS (' + images.length + ')</summary><div class="gallery-grid" style="margin-top:10px;" id="webAssetsGrid"></div>';
+            document.getElementById('dynamicWebAssets').appendChild(container);
+            
+            const grid = document.getElementById('webAssetsGrid');
+            images.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'gallery-item';
+                img.title = src.split('/').pop();
+                img.onclick = () => selectGalleryItem(img, src);
+                grid.appendChild(img);
+            });
+        }
+    }).catch(err => console.error('Error fetching web assets:', err));
+    
+    // Load background images dynamically
+    fetch('http://localhost:3000/api/bg-assets').then(r=>r.json()).then(images => {
+        if(images && images.length > 0) {
+            const select = document.getElementById('cfgImage');
+            const optGroup = document.createElement('optgroup');
+            optGroup.label = "Fondos de Servicio (Local)";
+            images.forEach(src => {
+                const opt = document.createElement('option');
+                opt.value = src;
+                opt.textContent = src.split('/').pop();
+                optGroup.appendChild(opt);
+            });
+            select.appendChild(optGroup);
+        }
+    }).catch(err => console.error('Error fetching bg assets:', err));
+</script>
+                    </div>
+                </div>
+            </div>
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-arrows-up-down-left-right"></i>POSICIÓN DEL ASSET</div>
+                <div class="pnl-content">
+                    <div class="pnl-row"><span class="pnl-lbl">Tamaño</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgGallerySize" min="10" max="150" value="75" oninput="updateEngine()"><span class="pnl-range-val">75</span></div>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">X</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgGalleryX" min="-100" max="100" value="0" oninput="updateEngine()"></div>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Y</span>
+                        <div class="pnl-flex"><input type="range" class="pnl-range" id="cfgGalleryY" min="-100" max="100" value="0" oninput="updateEngine()"></div>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Nivel Z</span>
+                        <select class="pnl-select" id="cfgGalleryZ" onchange="updateEngine()">
+                            <option value="1">Bajo Texto</option>
+                            <option value="9999">Sobre Texto</option>
+                        </select>
+                    </div>
+                    <div class="pnl-row pnl-flex" style="gap:6px">
+                        <button class="pnl-btn pnl-btn-sm" style="flex:1" onclick="moveLayerUp()"><i class="fa-solid fa-arrow-up"></i> Subir</button>
+                        <button class="pnl-btn pnl-btn-sm" style="flex:1" onclick="moveLayerDown()"><i class="fa-solid fa-arrow-down"></i> Bajar</button>
+                    </div>
+                    <div class="pnl-row pnl-flex" style="gap:6px">
+                        <button class="pnl-btn pnl-btn-sm pnl-btn-danger" style="flex:1" onclick="deleteActiveObject()"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                        <button class="pnl-btn pnl-btn-sm pnl-btn-danger" style="flex:1" onclick="clearGallerySelection()"><i class="fa-solid fa-xmark"></i> Limpiar Todo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ FX TAB ══ -->
+        <div id="sec-fx" class="rp-section">
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-film"></i>EFECTOS ESPECIALES</div>
+                <div class="pnl-content">
+                    <div class="pnl-row"><span class="pnl-lbl">Efecto Global</span>
+                        <select class="pnl-select" id="cfgEffect" onchange="updateEngine()">
+                            <option value="none">Sin Efecto</option>
+                            <option value="fx-glitch">Glitch Holográfico</option>
+                            <option value="fx-scanlines">Scanlines CRT</option>
+                            <option value="fx-vhs">Retro VHS</option>
+                            <option value="fx-cyberpunk">Cyberpunk Neon</option>
+                            <option value="fx-neon-glow">Neon Glow</option>
+                            <option value="fx-vintage">Vintage Sepia</option>
+                            <option value="fx-bw">Blanco y Negro</option>
+                        </select>
+                    </div>
+                    <div class="pnl-row"><span class="pnl-lbl">Filtros Rápidos</span>
+                        <div class="fx-grid">
+                            <button class="fx-btn" onclick="toggleGrid(this)"><i class="fa-solid fa-border-all"></i>Cuadrícula</button>
+                            <button class="fx-btn" onclick="toggleLighting(this)"><i class="fa-solid fa-sun"></i>Iluminar</button>
+                            <button class="fx-btn" onclick="toggleCRT(this)"><i class="fa-solid fa-bolt"></i>Glitch</button>
+                            <button class="fx-btn" style="color:var(--pink);border-color:rgba(244,63,94,.3)" onclick="resetFilters()"><i class="fa-solid fa-rotate-left"></i>Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ AI TAB (CONTROL DE MANDO / NUEVO TRABAJO / CLONAR REEL) ══ -->
+        <div id="sec-ai" class="rp-section">
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-bolt" style="color:var(--cyan)"></i>PANEL DE MANDO | NUEVO TRABAJO</div>
+                <div class="pnl-content">
+                    
+                    <!-- BOTONES DE MEDIOS REALES -->
+                    <div style="display:flex; gap:6px; margin-bottom:12px;">
+                        <label class="pnl-btn pnl-btn-sm" style="flex:1; text-align:center; cursor:pointer; background:linear-gradient(135deg, #0ea5e9, #3b82f6); font-size:0.75rem;">
+                            <i class="fa-solid fa-camera"></i> FOTO REAL
+                            <input type="file" accept="image/*" style="display:none" onchange="handleImageUpload(event)">
+                        </label>
+                        <label class="pnl-btn pnl-btn-sm" style="flex:1; text-align:center; cursor:pointer; background:linear-gradient(135deg, #8b5cf6, #ec4899); font-size:0.75rem;">
+                            <i class="fa-solid fa-video"></i> VIDEO (.MP4)
+                            <input type="file" accept="video/mp4,video/quicktime" style="display:none" onchange="handleVideoUpload(event)">
+                        </label>
+                        <button class="pnl-btn pnl-btn-sm" id="btnVoiceRecord" onclick="toggleVoiceDictation()" style="flex:1; background:#ef4444; font-size:0.75rem;">
+                            <i class="fa-solid fa-microphone"></i> GRABAR VOZ
+                        </button>
+                    </div>
+
+                    <!-- SELECTOR DE CIUDAD Y DEMOGRAFÍA -->
+                    <div class="pnl-row" style="margin-bottom:8px;">
+                        <span class="pnl-lbl" style="color:var(--cyan); font-weight:bold;"><i class="fa-solid fa-location-dot"></i> Ciudad / Sector:</span>
+                        <select class="pnl-select" id="cfgCity">
+                            <option value="San Jose / Silicon Valley">📍 San José (Metropolitano / Emergencias 24/7)</option>
+                            <option value="Sunnyvale & Santa Clara">📍 Sunnyvale & Santa Clara (Tech / Familias India / Navien)</option>
+                            <option value="Los Gatos, Saratoga & Monte Sereno">📍 Los Gatos & Saratoga (Mansiones de Lujo / Cobre Tipo L)</option>
+                            <option value="Fremont & Milpitas">📍 Fremont & Milpitas (Multigeneracional / Alta Demanda)</option>
+                            <option value="Palo Alto, Cupertino & Mountain View">📍 Palo Alto & Cupertino (Eco-Tech / Title 24 Electrificación)</option>
+                        </select>
+                    </div>
+
+                    <!-- SELECTOR MÚLTIPLE DE IDIOMAS -->
+                    <div style="background:rgba(0,0,0,0.3); padding:8px; border-radius:6px; border:1px solid rgba(0,229,255,0.2); margin-bottom:10px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <span class="pnl-lbl" style="color:var(--cyan); font-weight:bold; font-size:0.75rem;"><i class="fa-solid fa-language"></i> Idiomas a Generar:</span>
+                            <label style="font-size:0.7rem; color:#10b981; cursor:pointer; display:flex; align-items:center; gap:4px;">
+                                <input type="checkbox" id="chkLangAll" checked onchange="toggleAllLanguages(this)"> <b>Todos (8)</b>
+                            </label>
+                        </div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px; font-size:0.72rem; color:#e2e8f0;">
+                            <label><input type="checkbox" class="chk-lang" value="en" checked> 🇺🇸 Inglés</label>
+                            <label><input type="checkbox" class="chk-lang" value="es" checked> 🇲🇽 Español</label>
+                            <label><input type="checkbox" class="chk-lang" value="hi" checked> 🇮🇳 Hindi</label>
+                            <label><input type="checkbox" class="chk-lang" value="te" checked> 🇮🇳 Telugu</label>
+                            <label><input type="checkbox" class="chk-lang" value="ta" checked> 🇮🇳 Tamil</label>
+                            <label><input type="checkbox" class="chk-lang" value="pa" checked> 🇮🇳 Punjabi</label>
+                            <label><input type="checkbox" class="chk-lang" value="vi" checked> 🇻🇳 Vietnamita</label>
+                            <label><input type="checkbox" class="chk-lang" value="zh" checked> 🇨🇳 Mandarín</label>
+                        </div>
+                    </div>
+
+                    <!-- CAJA DE TEXTO PRINCIPAL -->
+                    <div style="margin-bottom:8px;">
+                        <span class="pnl-lbl" style="color:var(--cyan); font-weight:bold;">1. Describe el Trabajo o Pega el Enlace/Guion Viral:</span>
+                        <div class="ai-box" style="margin-top:4px;">
+                            <textarea id="aiPrompt" style="min-height:90px; font-size:0.85rem;" placeholder="Ejemplo 1: 'Instalamos un calentador Navien en San Jose para una casa de 4 banos.'&#10;Ejemplo 2: 'Clona este reel viral: 3 errores que destruyen tus tuberías de agua en invierno.'"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- PLANTILLAS RÁPIDAS -->
+                    <div style="margin-bottom:12px;">
+                        <span class="pnl-lbl" style="font-size:0.68rem; color:#9ca3af;">Plantillas Rápidas (1 Clic):</span>
+                        <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:4px;">
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:4px 8px;" onclick="setQuickPrompt('Instalamos un calentador de agua tankless de alta eficiencia Navien en San Jose')">🔥 Tankless Navien</button>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:4px 8px;" onclick="setQuickPrompt('Reparacion urgente de fuga de agua bajo el lavabo en Santa Clara')">💧 Fuga Urgente</button>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:4px 8px;" onclick="setQuickPrompt('Reemplazo completo de tuberias de cobre Tipo L (Repiping) en Los Gatos')">🔧 Repipe Cobre</button>
+                            <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:4px 8px; background:#8b5cf6;" onclick="setQuickPrompt('Clona este video viral: 3 errores graves que cometen los duenos de casa al usar el triturador de basura')">🚀 Clonar Viral</button>
+                        </div>
+                    </div>
+
+                    <!-- ESTILO VISUAL -->
+                    <div class="pnl-row"><span class="pnl-lbl">Estilo Visual (30% IA):</span>
+                        <select class="pnl-select" id="aiStyle">
+                            <option value="photorealistic">Fotorrealista 4K</option>
+                            <option value="industrial">Industrial Dark</option>
+                            <option value="luxury">Luxury / Alta Gama (Los Gatos)</option>
+                            <option value="3d_render">Render 3D (Pixar)</option>
+                            <option value="comic">Cómic / Novela Gráfica</option>
+                            <option value="cyberpunk">Cyberpunk Neon</option>
+                        </select>
+                    </div>
+
+                    <!-- BOTÓN DE ACCIÓN MAESTRO -->
+                    <button class="pnl-btn" id="btnGenerar" onclick="solicitarImagen()" style="margin-top:10px; padding:12px; font-size:0.9rem; font-family:'Orbitron',sans-serif; background:linear-gradient(90deg, #00e5ff, #10b981); color:#0a0e14; font-weight:bold; letter-spacing:1px; box-shadow:0 0 15px rgba(0,229,255,0.4); cursor:pointer;">
+                        <i class="fa-solid fa-bolt"></i> GENERAR PAQUETE MULTIMEDIA COMPLETO
+                    </button>
+                    
+                    <button class="pnl-btn pnl-btn-sm" onclick="limpiarFormularioNuevo()" style="margin-top:8px; width:100%; background:rgba(239,68,68,0.2); border:1px solid rgba(239,68,68,0.4); color:#fca5a5; font-size:0.75rem; padding:6px;">
+                        <i class="fa-solid fa-broom"></i> Limpiar Formulario / Nuevo Trabajo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ AUTO-PUBLICADOR MULTIRED RESILIENTE (FSM & OAUTH) ══ -->
+        <div id="sec-publisher" class="rp-section">
+            
+            <!-- PANEL DE CONEXIÓN REAL & BÓVEDA DE CREDENCIALES (CERO PLACEBOS) -->
+            <div class="pnl-group">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-key" style="color:var(--cyan)"></i>CONEXIÓN REAL A TUS REDES (CREDENCIALES / WEBHOOK)</div>
+                <div class="pnl-content" style="display:flex; flex-direction:column; gap:8px;">
+                    <div style="background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); padding:8px; border-radius:6px; font-size:0.72rem; color:#fca5a5;">
+                        <i class="fa-solid fa-triangle-exclamation"></i> <b>Protocolo Cero Placebos:</b> Para publicar en vivo, ingresa la URL de tu Webhook de n8n o tu Token de Meta. Si no hay credenciales, el sistema no fingirá enlaces falsos y mostrará <code>AUTH_REQUIRED</code>.
+                    </div>
+
+                    <div>
+                        <span class="pnl-lbl" style="color:#10b981; font-size:0.72rem;">🔗 Opción A: Webhook n8n (Recomendada):</span>
+                        <input type="text" id="cfgWebhookUrl" class="pnl-input" style="font-size:0.75rem;" placeholder="https://tu-n8n.com/webhook/morales-content">
+                    </div>
+
+                    <div>
+                        <span class="pnl-lbl" style="color:#3b82f6; font-size:0.72rem;">🔵 Opción B: Meta Facebook Page ID & Token Directo:</span>
+                        <input type="text" id="cfgFbPageId" class="pnl-input" style="font-size:0.75rem; margin-bottom:4px;" placeholder="Facebook Page ID (ej. 104829381...)">
+                        <input type="password" id="cfgFbToken" class="pnl-input" style="font-size:0.75rem;" placeholder="Meta Page Access Token (EAAG...)">
+                    </div>
+
+                    <button class="pnl-btn pnl-btn-sm" onclick="guardarCredencialesReales()" style="background:#10b981; color:#0a0e14; font-weight:bold; padding:6px;">
+                        <i class="fa-solid fa-floppy-disk"></i> GUARDAR CREDENCIALES
+                    </button>
+                </div>
+            </div>
+
+            <!-- PANEL DE APROBACIÓN Y CONFIGURACIÓN DE DESPACHO -->
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-clipboard-check" style="color:var(--cyan)"></i>PANEL DE APROBACIÓN & PROGRAMACIÓN</div>
+                <div class="pnl-content" style="display:flex; flex-direction:column; gap:10px;">
+                    
+                    <!-- SELECCIÓN DE REDES ACTIVAS -->
+                    <div>
+                        <span class="pnl-lbl" style="color:var(--cyan); font-weight:bold; font-size:0.75rem;">1. Selecciona las Redes a Despachar:</span>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:4px; font-size:0.75rem;">
+                            <label style="background:rgba(0,0,0,0.3); padding:6px; border-radius:4px; display:flex; align-items:center; gap:6px;">
+                                <input type="checkbox" class="chk-pub-net" value="YouTube Shorts" checked> <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> YouTube Shorts
+                            </label>
+                            <label style="background:rgba(0,0,0,0.3); padding:6px; border-radius:4px; display:flex; align-items:center; gap:6px;">
+                                <input type="checkbox" class="chk-pub-net" value="Instagram Reels" checked> <i class="fa-brands fa-instagram" style="color:#ec4899;"></i> Instagram Reels
+                            </label>
+                            <label style="background:rgba(0,0,0,0.3); padding:6px; border-radius:4px; display:flex; align-items:center; gap:6px;">
+                                <input type="checkbox" class="chk-pub-net" value="Facebook Reels" checked> <i class="fa-brands fa-facebook" style="color:#3b82f6;"></i> Facebook Reels
+                            </label>
+                            <label style="background:rgba(0,0,0,0.3); padding:6px; border-radius:4px; display:flex; align-items:center; gap:6px;">
+                                <input type="checkbox" class="chk-pub-net" value="Google Business" checked> <i class="fa-brands fa-google" style="color:#10b981;"></i> Google Business
+                            </label>
+                            <label style="background:rgba(0,0,0,0.3); padding:6px; border-radius:4px; display:flex; align-items:center; gap:6px;">
+                                <input type="checkbox" class="chk-pub-net" value="TikTok" checked> <i class="fa-brands fa-tiktok" style="color:var(--cyan);"></i> TikTok
+                            </label>
+                            <label style="background:rgba(0,0,0,0.3); padding:6px; border-radius:4px; display:flex; align-items:center; gap:6px;">
+                                <input type="checkbox" class="chk-pub-net" value="WhatsApp Pro" checked> <i class="fa-brands fa-whatsapp" style="color:#22c55e;"></i> WhatsApp Pro
+                            </label>
+                            <label style="background:rgba(0,0,0,0.3); padding:6px; border-radius:4px; display:flex; align-items:center; gap:6px; grid-column: span 2;">
+                                <input type="checkbox" class="chk-pub-net" value="Nextdoor" checked> <i class="fa-solid fa-house-chimney" style="color:#22c55e;"></i> Nextdoor (Vecindarios Silicon Valley)
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- PRIVACIDAD Y PROGRAMACIÓN -->
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                        <div>
+                            <span class="pnl-lbl" style="font-size:0.72rem;">Visibilidad:</span>
+                            <select class="pnl-select" id="pubPrivacy">
+                                <option value="PUBLIC">🟢 Público Inmediato</option>
+                                <option value="UNLISTED">🟡 Oculto (Unlisted)</option>
+                                <option value="PRIVATE">🔒 Privado (Draft)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span class="pnl-lbl" style="font-size:0.72rem;">Programar Fecha/Hora:</span>
+                            <input type="datetime-local" id="pubScheduleDate" class="pnl-input" style="font-size:0.75rem;">
+                        </div>
+                    </div>
+
+                    <!-- BOTÓN MAESTRO DE APROBACIÓN Y PUBLICACIÓN -->
+                    <button class="pnl-btn" id="btnApproveAndPublish" onclick="aprobarYDespacharCampana()" style="padding:12px; font-size:0.85rem; font-family:'Orbitron',sans-serif; background:linear-gradient(90deg, #10b981, #00e5ff); color:#0a0e14; font-weight:bold; letter-spacing:1px; cursor:pointer;">
+                        <i class="fa-solid fa-rocket"></i> APROBAR & PUBLICAR / PROGRAMAR AHORA
+                    </button>
+                </div>
+            </div>
+
+            <!-- CONSOLA DE AUDITORÍA Y MONITOR DE TRANSCODIFICACIÓN EN VIVO (FSM) -->
+            <div class="pnl-group open">
+                <div class="pnl-head" onclick="toggleGroup(this)"><i class="fa-solid fa-list-check" style="color:var(--cyan)"></i>MONITOR DE ESTADO FSM EN VIVO (JOB TRACKER)</div>
+                <div class="pnl-content">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                        <span style="font-size:0.7rem; color:#9ca3af;">Auditoría con Idempotencia SHA-256</span>
+                        <button class="pnl-btn pnl-btn-sm" style="font-size:0.65rem; padding:3px 8px;" onclick="actualizarMonitorFSM()"><i class="fa-solid fa-rotate"></i> Refrescar</button>
+                    </div>
+
+                    <div id="fsmJobTrackerContainer" style="display:flex; flex-direction:column; gap:8px; max-height:360px; overflow-y:auto;">
+                        <div style="text-align:center; padding:15px; color:#94a3b8; font-size:0.78rem;">
+                            No hay publicaciones activas en la cola. Genera una campaña y presiona <b>APROBAR & PUBLICAR</b>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- ═══ STATUS BAR ═══ -->
+<div class="statusbar">
+    <span><i class="fa-solid fa-vector-square" style="color:var(--cyan);margin-right:4px"></i> <span class="sz" id="statusDims">1080×1080</span></span>
+    <div class="sep" style="width:1px;height:14px;background:var(--border)"></div>
+    <span>Morales Plumbing C-36 #1156542</span>
+    <div style="flex:1"></div>
+    <span style="color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:.6rem">ORION v3.0</span>
+</div>
+
+<script>/* ORION Studio Pro — Engine */
+let canvasObjects = [{id:'logo_obj',src:'./assets/logo_portada.png',x:0,y:-35,size:25,z:100}];
+let textPositions = {
+    social:{hx:'50%',hy:'12%',sx:'50%',sy:'28%',fx:'50%',fy:'85%'},
+    story:{hx:'50%',hy:'15%',sx:'50%',sy:'32%',fx:'50%',fy:'82%'},
+    print:{hx:'50%',hy:'12%',sx:'50%',sy:'28%',fx:'50%',fy:'88%'},
+    card:{hx:'50%',hy:'15%',sx:'50%',sy:'40%',fx:'50%',fy:'78%'},
+    infographic:{hx:'50%',hy:'5%',sx:'50%',sy:'15%',fx:'50%',fy:'92%'}
+};
+let activeObjectId = null;
+let activeDrag = null, textStartX, textStartY, startLeft, startTop;
+let isDragging=false, dragTargetId=null, startX=0, startY=0, initialXPercent=0, initialYPercent=0;
+let activeTab = 'design';
+let undoStack = [], redoStack = [];
+
+/* ---- TAB & LANGUAGE SWITCHING ---- */
+function switchTab(tab){
+    activeTab = tab;
+    document.querySelectorAll('.rp-tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));
+    document.querySelectorAll('.rp-section').forEach(s=>s.classList.toggle('active',s.id==='sec-'+tab));
+}
+
+function setLanguage(lang) {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    if (currentMultilingualData) {
+        const headline = currentMultilingualData.content_context?.service || 'SERVICIO PROFESIONAL';
+        const subhead = currentMultilingualData.social_copy?.[lang] || currentMultilingualData.social_copy?.es || currentMultilingualData.social_copy?.en || '';
+        sv('cfgHeadline', headline.toUpperCase());
+        sv('cfgSubhead', subhead);
+        updateEngine();
+    }
+}
+
+/* ---- PANEL GROUPS ---- */
+function toggleGroup(el){el.closest('.pnl-group').classList.toggle('open')}
+
+/* ---- RANGE VALUE DISPLAY ---- */
+function rvUp(id){const r=document.getElementById(id);const v=r.parentElement.querySelector('.pnl-range-val');if(v)v.textContent=r.value;updateEngine()}
+
+/* ---- SAVE STATE FOR UNDO ---- */
+function saveState(){
+    undoStack.push({
+        h:gv('cfgHeadline'),s:gv('cfgSubhead'),p:gv('cfgPhone'),
+        f:gv('cfgFormat'),t:gv('cfgTheme'),bg:gv('cfgImage'),fx:gv('cfgEffect')
+    });
+    if(undoStack.length>30)undoStack.shift();
+    redoStack=[];
+}
+function gv(id){const e=document.getElementById(id);return e?e.value:''}
+function sv(id,v){const e=document.getElementById(id);if(e)e.value=v}
+function undo(){
+    if(!undoStack.length)return;
+    const st=undoStack.pop();
+    redoStack.push({h:gv('cfgHeadline'),s:gv('cfgSubhead'),p:gv('cfgPhone'),f:gv('cfgFormat'),t:gv('cfgTheme'),bg:gv('cfgImage'),fx:gv('cfgEffect')});
+    sv('cfgHeadline',st.h);sv('cfgSubhead',st.s);sv('cfgPhone',st.p);
+    sv('cfgFormat',st.f);sv('cfgTheme',st.t);sv('cfgImage',st.bg);sv('cfgEffect',st.fx);
+    updateEngine();
+}
+function redo(){
+    if(!redoStack.length)return;
+    const st=redoStack.pop();
+    undoStack.push({h:gv('cfgHeadline'),s:gv('cfgSubhead'),p:gv('cfgPhone'),f:gv('cfgFormat'),t:gv('cfgTheme'),bg:gv('cfgImage'),fx:gv('cfgEffect')});
+    sv('cfgHeadline',st.h);sv('cfgSubhead',st.s);sv('cfgPhone',st.p);
+    sv('cfgFormat',st.f);sv('cfgTheme',st.t);sv('cfgImage',st.bg);sv('cfgEffect',st.fx);
+    updateEngine();
+}
+
+/* ---- MAIN RENDER ENGINE ---- */
+function updateEngine(){
+    const format=gv('cfgFormat'), theme=gv('cfgTheme'), bgImg=gv('cfgImage'), effect=gv('cfgEffect');
+    const headline=gv('cfgHeadline'), subhead=gv('cfgSubhead'), phone=gv('cfgPhone');
+    const align=gv('cfgAlign')||'center';
+    const hFont=gv('cfgHeadlineFont')||"'Inter',sans-serif";
+    const hSize=gv('cfgHeadlineSize')||'100';
+    const hColor=gv('cfgHeadlineColor')||'#0ea5e9';
+    const sFont=gv('cfgSubheadFont')||"'Inter',sans-serif";
+    const sSize=gv('cfgSubheadSize')||'100';
+    const sColor=gv('cfgSubheadColor')||'#ffffff';
+    const sSpacing=gv('cfgSubheadSpacing')||'0';
+    const fFont=gv('cfgFooterFont')||"'Orbitron',sans-serif";
+    const pSize=gv('cfgPhoneSize')||'100';
+    const pColor=gv('cfgPhoneColor')||'#ffffff';
+    const bgBlur=gv('cfgBgBlur')||'0';
+    const bgBright=gv('cfgBgBright')||'100';
+    const overlayOp=gv('cfgOverlayOp')||'100';
+    const textShadow=gv('cfgTextShadow')||'5';
+    const textStroke=gv('cfgTextStroke')||'0';
+    const bgColor=gv('cfgBgColor')||'#0a0e14';
+    const hSpacing=gv('cfgHeadlineSpacing')||'0';
+    const hCase=gv('cfgHeadlineCase')||'uppercase';
+
+    const artboard=document.getElementById('artboard');
+    const layerBg=document.getElementById('layerBg');
+    const layerOv=document.getElementById('layerOverlay');
+    const content=document.getElementById('layerContent');
+
+    artboard.className=`render-canvas ${format} ${theme} ${effect}`;
+    artboard.style.setProperty('--cyan-primary',hColor);
+    artboard.style.setProperty('--copper-accent',hColor);
+
+    layerBg.style.backgroundImage=bgImg!=='none'?`url('${bgImg}')`:'none';
+    layerBg.style.backgroundColor=bgColor;
+    layerBg.style.filter=`blur(${bgBlur}px) brightness(${bgBright}%)`;
+    layerOv.style.opacity=overlayOp/100;
+
+    // Canvas objects
+    let fhtml='';
+    if(activeObjectId){
+        const ao=canvasObjects.find(o=>o.id===activeObjectId);
+        if(ao){
+            const gs=document.getElementById('cfgGallerySize'),gx=document.getElementById('cfgGalleryX'),gy=document.getElementById('cfgGalleryY'),gz=document.getElementById('cfgGalleryZ');
+            if(gs)ao.size=parseFloat(gs.value);if(gx)ao.x=parseFloat(gx.value);if(gy)ao.y=parseFloat(gy.value);if(gz)ao.z=parseInt(gz.value);
+        }
+    }
+    canvasObjects.forEach(obj=>{
+        const sel=obj.id===activeObjectId;
+        const bs=sel?'filter:drop-shadow(0 0 5px #00e5ff);':'';
+        fhtml+='<img src="'+obj.src+'" id="'+obj.id+'" class="canvas-floating-obj" style="position:absolute;top:calc(50% + '+obj.y+'%);left:calc(50% + '+obj.x+'%);transform:translate(-50%,-50%);width:'+obj.size+'%;max-width:100%;max-height:100%;object-fit:contain;z-index:'+obj.z+';pointer-events:auto;cursor:move;'+bs+'" onmousedown="setActiveObject(\''+obj.id+'\')" ontouchstart="setActiveObject(\''+obj.id+'\')" onerror="this.style.display=\'none\'">';
+    });
+
+    let pos;
+    if(format==='canvas-social')pos=textPositions.social;
+    else if(format==='canvas-story')pos=textPositions.story;
+    else if(format==='canvas-infographic')pos=textPositions.infographic;
+    else if(format==='canvas-flyer'||format==='canvas-a4')pos=textPositions.print;
+    else if(format==='canvas-banner')pos=textPositions.social;
+    else pos=textPositions.card;
+
+    const hBase=(format==='canvas-story'||format==='canvas-infographic')?0.09:0.06;
+    const sBase=(format==='canvas-story'||format==='canvas-infographic')?0.035:0.025;
+    const pBase=0.04;
+    const tsh=`0 ${textShadow}px ${parseInt(textShadow)*3}px rgba(0,0,0,0.6)`;
+    const tst=textStroke>0?`-webkit-text-stroke:${textStroke}px rgba(0,0,0,0.5);`:'';
+
+    content.innerHTML=fhtml+`
+        <div id="text-headline" class="draggable-text" style="position:absolute;top:${pos.hy};left:${pos.hx};cursor:move;pointer-events:auto;text-align:${align};z-index:1000;width:max-content;max-width:90%;transform:translate(-50%,-50%);">
+            <h1 style="font-family:${hFont};font-size:${parseInt(hSize)*hBase}rem;color:${hColor};line-height:1.1;margin:0;text-shadow:${tsh};${tst};text-transform:${hCase};letter-spacing:${hSpacing}px;font-weight:900;">
+                ${headline}
+            </h1>
+        </div>
+        <div id="text-subhead" class="draggable-text" style="position:absolute;top:${pos.sy};left:${pos.sx};cursor:move;pointer-events:auto;text-align:${align};max-width:90%;z-index:1000;width:max-content;transform:translate(-50%,-50%);">
+            <p style="font-family:${sFont};font-size:${parseInt(sSize)*sBase}rem;color:${sColor};text-shadow:${tsh};margin:0;font-weight:400;letter-spacing:${sSpacing}px;${tst}">${subhead}</p>
+        </div>
+        <div id="text-footer" class="draggable-text" style="position:absolute;top:${pos.fy};left:${pos.fx};cursor:move;pointer-events:auto;z-index:1000;border-top:4px solid ${hColor};display:flex;flex-direction:column;width:max-content;background:rgba(0,0,0,0.4);padding:15px;border-radius:8px;backdrop-filter:blur(5px);transform:translate(-50%,-50%);align-items:${align==='center'?'center':(align==='right'?'flex-end':'flex-start')};text-align:${align};">
+            <div style="font-family:'Orbitron',sans-serif;font-size:${parseInt(pSize)*(pBase/2)}rem;color:${hColor};margin:0;">MORALES PLUMBING</div>
+            <div style="font-size:${parseInt(pSize)*(pBase/2.5)}rem;color:#e2e8f0;margin:5px 0 10px 0;">Lic. C-36 #1156542 | San Jose, CA</div>
+            <div style="font-family:${fFont};font-size:${parseInt(pSize)*pBase}rem;font-weight:bold;color:${pColor};text-shadow:0 5px 10px rgba(0,0,0,0.8);">☎ ${phone}</div>
+        </div>`;
+
+    // Update status bar
+    const sb=document.getElementById('statusDims');
+    if(sb){const dims={
+        'canvas-social':'1080×1080','canvas-story':'1080×1920','canvas-flyer':'1080×1669',
+        'canvas-banner':'1920×1080','canvas-a4':'1080×1527','canvas-card':'1080×617','canvas-infographic':'1080×2500'
+    };sb.textContent=dims[format]||'1080×1080'}
+}
+
+/* ---- DRAG TEXT ---- */
+document.addEventListener('mousedown',e=>{
+    const d=e.target.closest('.draggable-text');
+    if(d){activeDrag=d;textStartX=e.clientX;textStartY=e.clientY;startLeft=d.offsetLeft;startTop=d.offsetTop;document.body.style.userSelect='none'}
+});
+document.addEventListener('mousemove',e=>{
+    if(!activeDrag)return;
+    const ab=document.getElementById('artboard');
+    const sc=ab.getBoundingClientRect().width/ab.offsetWidth;
+    const dx=(e.clientX-textStartX)/sc, dy=(e.clientY-textStartY)/sc;
+    const p=activeDrag.parentElement;
+    activeDrag.style.left=((startLeft+dx)/p.offsetWidth)*100+'%';
+    activeDrag.style.top=((startTop+dy)/p.offsetHeight)*100+'%';
+    activeDrag.style.transform='translate(-50%,-50%)';
+});
+document.addEventListener('mouseup',()=>{
+    if(activeDrag){
+        const fmt=gv('cfgFormat');
+        let sf;
+        if(fmt==='canvas-social')sf='social';
+        else if(fmt==='canvas-story')sf='story';
+        else if(fmt==='canvas-infographic')sf='infographic';
+        else if(fmt==='canvas-flyer'||fmt==='canvas-a4')sf='print';
+        else if(fmt==='canvas-banner')sf='social';
+        else sf='card';
+        
+        const tp=activeDrag.id.replace('text-','');
+        if(tp==='headline'){textPositions[sf].hx=activeDrag.style.left;textPositions[sf].hy=activeDrag.style.top}
+        else if(tp==='subhead'){textPositions[sf].sx=activeDrag.style.left;textPositions[sf].sy=activeDrag.style.top}
+        else if(tp==='footer'){textPositions[sf].fx=activeDrag.style.left;textPositions[sf].fy=activeDrag.style.top}
+        activeDrag=null;document.body.style.userSelect='';
+    }
+});
+
+/* ---- DRAG OBJECTS ---- */
+document.addEventListener('mousedown',e=>{
+    if(e.target.classList.contains('canvas-floating-obj')){
+        isDragging=true;dragTargetId=e.target.id;setActiveObject(dragTargetId);
+        textStartX=e.clientX;textStartY=e.clientY;
+        const obj=canvasObjects.find(o=>o.id===dragTargetId);
+        initialXPercent=obj?obj.x:0;initialYPercent=obj?obj.y:0;e.preventDefault();
+    }
+});
+document.addEventListener('mousemove',e=>{
+    if(!isDragging||!dragTargetId)return;
+    const r=document.getElementById('artboard').getBoundingClientRect();
+    let nx=initialXPercent+((e.clientX-textStartX)/r.width)*100;
+    let ny=initialYPercent+((e.clientY-textStartY)/r.height)*100;
+    nx=Math.max(-100,Math.min(100,nx));ny=Math.max(-100,Math.min(100,ny));
+    const obj=canvasObjects.find(o=>o.id===dragTargetId);
+    if(obj){obj.x=nx;obj.y=ny}
+    const gx=document.getElementById('cfgGalleryX'),gy=document.getElementById('cfgGalleryY');
+    if(gx)gx.value=nx;if(gy)gy.value=ny;
+    const img=document.getElementById(dragTargetId);
+    if(img){img.style.left='calc(50% + '+nx+'%)';img.style.top='calc(50% + '+ny+'%)'}
+});
+document.addEventListener('mouseup',()=>{if(isDragging){isDragging=false;dragTargetId=null}});
+
+/* TOUCH */
+document.addEventListener('touchstart',e=>{
+    if(e.target.classList.contains('canvas-floating-obj')){
+        isDragging=true;dragTargetId=e.target.id;setActiveObject(dragTargetId);
+        startX=e.touches[0].clientX;startY=e.touches[0].clientY;
+        const obj=canvasObjects.find(o=>o.id===dragTargetId);
+        initialXPercent=obj?obj.x:0;initialYPercent=obj?obj.y:0;
+    }
+},{passive:false});
+document.addEventListener('touchmove',e=>{
+    if(!isDragging||!dragTargetId)return;e.preventDefault();
+    const r=document.getElementById('artboard').getBoundingClientRect();
+    let nx=initialXPercent+((e.touches[0].clientX-startX)/r.width)*100;
+    let ny=initialYPercent+((e.touches[0].clientY-startY)/r.height)*100;
+    nx=Math.max(-100,Math.min(100,nx));ny=Math.max(-100,Math.min(100,ny));
+    const obj=canvasObjects.find(o=>o.id===dragTargetId);if(obj){obj.x=nx;obj.y=ny}
+    const img=document.getElementById(dragTargetId);
+    if(img){img.style.left='calc(50% + '+nx+'%)';img.style.top='calc(50% + '+ny+'%)'}
+},{passive:false});
+document.addEventListener('touchend',()=>{if(isDragging){isDragging=false;dragTargetId=null}});
+
+/* WHEEL RESIZE */
+document.addEventListener('wheel',e=>{
+    if(e.target.classList.contains('canvas-floating-obj')){
+        e.preventDefault();setActiveObject(e.target.id);
+        const obj=canvasObjects.find(o=>o.id===e.target.id);
+        if(obj){obj.size+=(e.deltaY<0?5:-5);obj.size=Math.max(10,Math.min(200,obj.size));
+        const gs=document.getElementById('cfgGallerySize');if(gs)gs.value=obj.size;
+        e.target.style.width=obj.size+'%'}
+    }
+},{passive:false});
+
+/* ---- GALLERY / OBJECTS ---- */
+function handleImageUpload(ev){const f=ev.target.files[0];if(!f)return;const r=new FileReader();r.onload=e=>{selectGalleryItem(null,e.target.result)};r.readAsDataURL(f)}
+function selectGalleryItem(el,path){saveState();const o={id:'obj_'+Date.now(),src:path,x:0,y:0,size:50,z:1};canvasObjects.push(o);activeObjectId=o.id;updateEngine()}
+function setActiveObject(id){activeObjectId=id;const o=canvasObjects.find(x=>x.id===id);if(o){const gs=document.getElementById('cfgGallerySize'),gx=document.getElementById('cfgGalleryX'),gy=document.getElementById('cfgGalleryY'),gz=document.getElementById('cfgGalleryZ');if(gs)gs.value=o.size;if(gx)gx.value=o.x;if(gy)gy.value=o.y;if(gz)gz.value=o.z}updateEngine()}
+function moveLayerUp(){if(!activeObjectId)return;const i=canvasObjects.findIndex(o=>o.id===activeObjectId);if(canvasObjects[i].z===1){canvasObjects[i].z=9999;const gz=document.getElementById('cfgGalleryZ');if(gz)gz.value="9999";updateEngine();return}if(i<canvasObjects.length-1){[canvasObjects[i],canvasObjects[i+1]]=[canvasObjects[i+1],canvasObjects[i]];updateEngine()}}
+function moveLayerDown(){if(!activeObjectId)return;const i=canvasObjects.findIndex(o=>o.id===activeObjectId);if(canvasObjects[i].z===9999){canvasObjects[i].z=1;const gz=document.getElementById('cfgGalleryZ');if(gz)gz.value="1";updateEngine();return}if(i>0){[canvasObjects[i-1],canvasObjects[i]]=[canvasObjects[i],canvasObjects[i-1]];updateEngine()}}
+function clearGallerySelection(){canvasObjects=[];activeObjectId=null;updateEngine()}
+function deleteActiveObject(){if(!activeObjectId)return;canvasObjects=canvasObjects.filter(o=>o.id!==activeObjectId);activeObjectId=null;updateEngine()}
+
+/* ---- FX ---- */
+function toggleGrid(btn){btn.classList.toggle('active');const o=document.getElementById('layerOverlay');o.style.backgroundImage=btn.classList.contains('active')?"url('data:image/svg+xml;base64,PHN2ZyB4bWxuczpodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMTUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiIC8+PC9zdmc+')":"none"}
+function toggleLighting(btn){btn.classList.toggle('active');document.getElementById('layerOverlay').style.background=btn.classList.contains('active')?'radial-gradient(circle at center,transparent 0%,rgba(0,0,0,0.8) 100%)':'none'}
+function toggleCRT(btn){btn.classList.toggle('active');const a=document.getElementById('artboard');if(btn.classList.contains('active')){a.style.filter='contrast(1.2) brightness(0.9) sepia(0.2) hue-rotate(-10deg)';a.classList.add('fx-glitch')}else{a.style.filter='none';a.classList.remove('fx-glitch')}}
+function resetFilters(){document.querySelectorAll('.fx-btn').forEach(b=>b.classList.remove('active'));document.getElementById('artboard').style.filter='none';document.getElementById('artboard').classList.remove('fx-glitch');document.getElementById('layerOverlay').style.background='none';document.getElementById('layerOverlay').style.backgroundImage='none';updateEngine()}
+
+/* ---- AI CONTENT ENGINE INTEGRATION ---- */
+let currentMultilingualData = null;
+
+function toggleAllLanguages(masterCheckbox) {
+    const isChecked = masterCheckbox.checked;
+    document.querySelectorAll('.chk-lang').forEach(chk => chk.checked = isChecked);
+}
+
+function getSelectedLanguages() {
+    const selected = [];
+    document.querySelectorAll('.chk-lang:checked').forEach(chk => selected.push(chk.value));
+    return selected.length > 0 ? selected : ['en', 'es', 'hi', 'te', 'vi', 'zh'];
+}
+
+async function escanearRadarViral() {
+    const btn = document.getElementById('btnScanRadar');
+    const container = document.getElementById('radarFeedContainer');
+    if(btn) {
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Escaneando todo internet...';
+        btn.disabled = true;
+    }
+    
+    try {
+        const res = await fetch('/api/trends');
+        const data = await res.json();
+        if(data.success && container) {
+            container.innerHTML = '';
+            
+            // 1. Regulatory Alerts (CSLB / BayREN)
+            if(data.regulatory_alerts) {
+                data.regulatory_alerts.forEach(item => {
+                    const card = document.createElement('div');
+                    card.style.cssText = 'background:rgba(0,0,0,0.5); padding:10px; border-radius:6px; border:1px solid rgba(245,158,11,0.4); display:flex; flex-direction:column; gap:6px;';
+                    card.innerHTML = `
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:0.7rem; color:#f59e0b; font-weight:bold;"><i class="fa-solid fa-scale-balanced"></i> ${item.platform}</span>
+                            <span style="font-size:0.65rem; background:rgba(245,158,11,0.2); color:#f59e0b; padding:2px 6px; border-radius:4px;">${item.views}</span>
+                        </div>
+                        <div style="font-size:0.8rem; color:#fff; font-weight:bold;">${item.title}</div>
+                        <div style="font-size:0.72rem; color:#cbd5e1; font-style:italic;">"${item.hook}"</div>
+                        <button class="pnl-btn pnl-btn-sm" style="background:#10b981; font-size:0.72rem; padding:6px; margin-top:4px;" onclick="clonarTrendDirecto('${item.hook.replace(/'/g, "\\'")}')">
+                            ⚡ CLONAR Y ADAPTAR A MORALES PLUMBING (1 Clic)
+                        </button>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+
+            // 2. Viral Reels (TikTok / YouTube / IG)
+            if(data.viral_reels) {
+                data.viral_reels.forEach(item => {
+                    const card = document.createElement('div');
+                    card.style.cssText = 'background:rgba(0,0,0,0.5); padding:10px; border-radius:6px; border:1px solid rgba(0,229,255,0.3); display:flex; flex-direction:column; gap:6px;';
+                    card.innerHTML = `
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:0.7rem; color:var(--cyan); font-weight:bold;"><i class="fa-solid fa-fire"></i> ${item.platform}</span>
+                            <span style="font-size:0.65rem; background:rgba(0,229,255,0.2); color:var(--cyan); padding:2px 6px; border-radius:4px;">${item.views}</span>
+                        </div>
+                        <div style="font-size:0.8rem; color:#fff; font-weight:bold;">${item.title}</div>
+                        <div style="font-size:0.72rem; color:#cbd5e1; font-style:italic;">"${item.hook}"</div>
+                        <button class="pnl-btn pnl-btn-sm" style="background:linear-gradient(90deg, #8b5cf6, #00e5ff); color:#0a0e14; font-weight:bold; font-size:0.72rem; padding:6px; margin-top:4px;" onclick="clonarTrendDirecto('${item.hook.replace(/'/g, "\\'")}')">
+                            ⚡ CLONAR Y ADAPTAR A MORALES PLUMBING (1 Clic)
+                        </button>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+
+            // 3. Reddit Trends
+            if(data.reddit_trends) {
+                data.reddit_trends.forEach(item => {
+                    const card = document.createElement('div');
+                    card.style.cssText = 'background:rgba(0,0,0,0.5); padding:10px; border-radius:6px; border:1px solid rgba(239,68,68,0.3); display:flex; flex-direction:column; gap:6px;';
+                    card.innerHTML = `
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:0.7rem; color:#f87171; font-weight:bold;"><i class="fa-brands fa-reddit"></i> ${item.platform}</span>
+                            <span style="font-size:0.65rem; background:rgba(239,68,68,0.2); color:#f87171; padding:2px 6px; border-radius:4px;">${item.views}</span>
+                        </div>
+                        <div style="font-size:0.8rem; color:#fff; font-weight:bold;">${item.title}</div>
+                        <button class="pnl-btn pnl-btn-sm" style="background:#10b981; font-size:0.72rem; padding:6px; margin-top:4px;" onclick="clonarTrendDirecto('Pregunta viral de clientes: ${item.title.replace(/'/g, "\\'")}')">
+                            ⚡ RESPONDER CON VIDEO EDUCATIVO (1 Clic)
+                        </button>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+
+        }
+    } catch(err) {
+        console.error("Error escaneando radar:", err);
+        alert("Error al conectar con el Radar Viral.");
+    } finally {
+        if(btn) {
+            btn.innerHTML = '<i class="fa-solid fa-satellite-dish"></i> ESCANEAR TODO INTERNET HOY';
+            btn.disabled = false;
+        }
+    }
+}
+
+function clonarTrendDirecto(hookText) {
+    const aiPrompt = document.getElementById('aiPrompt');
+    if(aiPrompt) aiPrompt.value = hookText;
+    switchTab('ai');
+    solicitarImagen();
+}
+
+function crearCampanaLegal(legalPrompt) {
+    const aiPrompt = document.getElementById('aiPrompt');
+    if(aiPrompt) aiPrompt.value = legalPrompt;
+    switchTab('ai');
+    solicitarImagen();
+}
+
+async function solicitarImagen(){
+    const prompt = document.getElementById('aiPrompt').value;
+    const style = gv('aiStyle');
+    const city = document.getElementById('cfgCity')?.value || 'San Jose / Silicon Valley';
+    const languages = getSelectedLanguages();
+    const btn = document.getElementById('btnGenerar');
+    
+    if(!prompt) return alert('Escribe lo que deseas generar o selecciona una plantilla.');
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> PROCESANDO IA EN PARALELO...';
+    btn.style.background = '#f59e0b';
+    
+    try {
+        const res = await fetch('http://localhost:3000/api/generate-campaign', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt, style, city, languages })
+        });
+        const data = await res.json();
+        if(data.success){
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> PAQUETE GENERADO!';
+            btn.style.background = '#10b981';
+            currentMultilingualData = data;
+            
+            // Cargar textos en el lienzo según el idioma activo
+            const lang = document.querySelector('.lang-btn.active')?.dataset?.lang || 'es';
+            const headline = data.content_context?.service || 'SERVICIO PROFESIONAL';
+            const subhead = data.social_copy?.[lang] || data.social_copy?.es || data.social_copy?.en || data.content_context?.description || '';
+            
+            sv('cfgHeadline', headline.toUpperCase());
+            sv('cfgSubhead', subhead);
+            
+            updateEngine();
+            renderMultilingualDashboard(data);
+        } else {
+            alert(data.error || 'Error al generar campaña');
+            btn.innerHTML = '<i class="fa-solid fa-bolt"></i> GENERAR';
+            btn.style.background = '';
+        }
+    } catch(e) {
+        console.error(e);
+        alert('Error de conexión con el Content Engine.');
+        btn.innerHTML = '<i class="fa-solid fa-bolt"></i> GENERAR';
+        btn.style.background = '';
+    }
+    setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-bolt"></i> GENERAR PAQUETE MULTIMEDIA COMPLETO';
+        btn.style.background = '';
+    }, 5000);
+}
+
+function renderMultilingualDashboard(data) {
+    console.log("[DASHBOARD] Renderizando paquete multilingüe:", data);
+    if(!data) return;
+    
+    // 1. Actualizar indicador de estado en la barra superior
+    const statusEl = document.getElementById('status-indicator');
+    if(statusEl) {
+        statusEl.innerHTML = '<i class="fa-solid fa-circle-check" style="color:#10b981"></i> PAQUETE MULTIMEDIA COMPLETO';
+    }
+
+    // 2. Inyectar Reels / Videos MP4 (8 Idiomas)
+    if(data.media && data.media.reels) {
+        ['en', 'es', 'hi', 'te', 'ta', 'pa', 'vi', 'zh'].forEach(lang => {
+            const rEl = document.getElementById(`reel-${lang}`);
+            if(rEl && data.media.reels[lang]) {
+                rEl.src = data.media.reels[lang];
+            }
+        });
+    }
+
+    // 3. Inyectar Audios TTS MP3 (8 Idiomas)
+    if(data.media && data.media.audios) {
+        ['en', 'es', 'hi', 'te', 'ta', 'pa', 'vi', 'zh'].forEach(lang => {
+            const aEl = document.getElementById(`audio-${lang}`);
+            if(aEl && data.media.audios[lang]) {
+                aEl.src = data.media.audios[lang];
+            }
+        });
+    }
+
+    // 4. Inyectar Podcast
+    if(data.media && data.media.podcast) {
+        const pod = document.getElementById('podcast-audio'); if(pod) pod.src = data.media.podcast;
+    }
+
+    // 5. Inyectar Infografía
+    if(data.media && data.media.infographic) {
+        const infoImg = document.getElementById('infographic-preview'); 
+        if(infoImg) {
+            infoImg.src = data.media.infographic;
+            infoImg.style.display = 'inline-block';
+        }
+        const infoLink = document.getElementById('infographic-link');
+        if(infoLink) infoLink.href = data.media.infographic;
+    }
+
+    // 6. Inyectar Tarjetas de Social Copy (8 Idiomas)
+    if(data.social_copy) {
+        ['en', 'es', 'hi', 'te', 'ta', 'pa', 'vi', 'zh'].forEach(lang => {
+            const cEl = document.getElementById(`copy-card-${lang}`);
+            if(cEl && data.social_copy[lang]) {
+                cEl.innerText = data.social_copy[lang];
+            }
+        });
+    }
+
+    // Cambiar automáticamente a la pestaña de entregables
+    switchTab('inbox');
+}
+
+async function aprobarYDespacharCampana() {
+    if(!currentMultilingualData) {
+        return alert("⚠️ Primero genera un paquete de campaña multimedia en '⚡ NUEVO TRABAJO' para poder aprobarlo.");
+    }
+
+    const btn = document.getElementById('btnApproveAndPublish');
+    const checkedNets = [];
+    document.querySelectorAll('.chk-pub-net:checked').forEach(c => checkedNets.push(c.value));
+    
+    if(checkedNets.length === 0) {
+        return alert("⚠️ Selecciona al menos una red social para publicar.");
+    }
+
+    const privacy = document.getElementById('pubPrivacy')?.value || 'PUBLIC';
+    const scheduledAt = document.getElementById('pubScheduleDate')?.value || null;
+    const selectedLanguages = getSelectedLanguages();
+
+    if(btn) {
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ENCOLANDO Y VALIDANDO IDEMPOTENCIA...';
+        btn.disabled = true;
+    }
+
+    try {
+        const res = await fetch('/api/publisher/approve-and-schedule', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                campaignData: currentMultilingualData,
+                platforms: checkedNets,
+                privacy,
+                scheduledAt,
+                selectedLanguages
+            })
+        });
+
+        const data = await res.json();
+        if(data.success) {
+            alert(`🚀 ¡Campaña aprobada y encolada con éxito!\n\n📋 Total Trabajos FSM Creados: ${data.total_jobs}\n🔑 Idempotencia SHA-256 Verificada.`);
+            actualizarMonitorFSM();
+        } else {
+            alert("Error al encolar publicaciones: " + (data.error || "Desconocido"));
+        }
+    } catch(err) {
+        console.error(err);
+        alert("Error de conexión con el Publisher Engine.");
+    } finally {
+        if(btn) {
+            btn.innerHTML = '<i class="fa-solid fa-rocket"></i> APROBAR & PUBLICAR / PROGRAMAR AHORA';
+            btn.disabled = false;
+        }
+    }
+}
+
+async function actualizarMonitorFSM() {
+    const container = document.getElementById('fsmJobTrackerContainer');
+    if(!container) return;
+
+    try {
+        const res = await fetch('/api/publisher/status');
+        const data = await res.json();
+        if(data.success && data.posts) {
+            if(data.posts.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align:center; padding:15px; color:#94a3b8; font-size:0.78rem;">
+                        No hay publicaciones activas en la cola. Genera una campaña y presiona <b>APROBAR & PUBLICAR</b>.
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = '';
+            data.posts.slice(0, 15).forEach(post => {
+                const card = document.createElement('div');
+                card.style.cssText = 'background:rgba(0,0,0,0.5); padding:10px; border-radius:6px; border:1px solid rgba(0,229,255,0.25); display:flex; flex-direction:column; gap:4px;';
+                
+                const badge = getFSMStateBadge(post.status);
+                const platformIcon = getPlatformIcon(post.platform);
+                const urlLink = post.platform_url ? `<a href="${post.platform_url}" target="_blank" style="color:var(--cyan); font-size:0.72rem; text-decoration:underline;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver en ${post.platform}</a>` : '';
+
+                card.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-family:'Orbitron',sans-serif; font-size:0.75rem; color:#f1f5f9; font-weight:bold;">
+                            ${platformIcon} ${post.platform} [${post.language.toUpperCase()}]
+                        </span>
+                        <span style="font-size:0.68rem; font-family:'Orbitron',sans-serif; padding:2px 6px; border-radius:4px; ${badge.style}">
+                            ${badge.icon} ${post.status}
+                        </span>
+                    </div>
+                    <div style="font-size:0.72rem; color:#cbd5e1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                        <b>ID:</b> <span style="font-family:monospace; color:#38bdf8;">${post.post_id}</span> | <b>Archivo:</b> ${post.video_file}
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:2px;">
+                        <span style="font-size:0.68rem; color:#9ca3af;">Intento: ${post.attempts}/${post.max_attempts} | ${post.privacy}</span>
+                        ${urlLink}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+    } catch(e) {
+        console.error("Error actualizando monitor FSM:", e);
+    }
+}
+
+function getFSMStateBadge(status) {
+    switch(status) {
+        case 'QUEUED':
+            return { style: 'background:rgba(148,163,184,0.2); color:#94a3b8; border:1px solid #94a3b8;', icon: '⏳' };
+        case 'UPLOADING':
+            return { style: 'background:rgba(245,158,11,0.2); color:#f59e0b; border:1px solid #f59e0b;', icon: '<i class="fa-solid fa-spinner fa-spin"></i>' };
+        case 'UPLOADED':
+            return { style: 'background:rgba(59,130,246,0.2); color:#60a5fa; border:1px solid #60a5fa;', icon: '📦' };
+        case 'PROCESSING':
+            return { style: 'background:rgba(139,92,246,0.2); color:#c084fc; border:1px solid #c084fc;', icon: '<i class="fa-solid fa-gear fa-spin"></i>' };
+        case 'READY':
+            return { style: 'background:rgba(16,185,129,0.2); color:#34d399; border:1px solid #34d399;', icon: '⚡' };
+        case 'PUBLISHED':
+            return { style: 'background:rgba(16,185,129,0.3); color:#10b981; border:1px solid #10b981; font-weight:bold;', icon: '✅' };
+        case 'RETRY_SCHEDULED':
+            return { style: 'background:rgba(239,68,68,0.2); color:#f87171; border:1px solid #f87171;', icon: '🔄' };
+        case 'AUTH_REQUIRED':
+            return { style: 'background:rgba(239,68,68,0.35); color:#fca5a5; border:1px solid #ef4444; font-weight:bold;', icon: '🔑 REVISE TOKEN' };
+        case 'UPLOAD_FAILED':
+        case 'PROCESSING_FAILED':
+            return { style: 'background:rgba(239,68,68,0.3); color:#ef4444; border:1px solid #ef4444;', icon: '❌' };
+        default:
+            return { style: 'background:rgba(148,163,184,0.2); color:#94a3b8;', icon: '•' };
+    }
+}
+
+async function guardarCredencialesReales() {
+    const webhook_url = document.getElementById('cfgWebhookUrl')?.value?.trim();
+    const fb_page_id = document.getElementById('cfgFbPageId')?.value?.trim();
+    const fb_access_token = document.getElementById('cfgFbToken')?.value?.trim();
+
+    try {
+        const res = await fetch('/api/publisher/save-credentials', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ webhook_url, fb_page_id, fb_access_token })
+        });
+        const data = await res.json();
+        if(data.success) {
+            alert("✅ Credenciales guardadas exitosamente en el servidor.");
+        } else {
+            alert("Error al guardar credenciales: " + data.error);
+        }
+    } catch(e) {
+        alert("Error de conexión al guardar credenciales.");
+    }
+}
+
+function getPlatformIcon(platform) {
+    const p = platform.toLowerCase();
+    if(p.includes('youtube')) return '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i>';
+    if(p.includes('instagram')) return '<i class="fa-brands fa-instagram" style="color:#ec4899;"></i>';
+    if(p.includes('facebook')) return '<i class="fa-brands fa-facebook" style="color:#3b82f6;"></i>';
+    if(p.includes('tiktok')) return '<i class="fa-brands fa-tiktok" style="color:var(--cyan);"></i>';
+    if(p.includes('google')) return '<i class="fa-brands fa-google" style="color:#10b981;"></i>';
+    if(p.includes('whatsapp')) return '<i class="fa-brands fa-whatsapp" style="color:#22c55e;"></i>';
+    if(p.includes('nextdoor')) return '<i class="fa-solid fa-house-chimney" style="color:#22c55e;"></i>';
+    return '<i class="fa-solid fa-share-nodes"></i>';
+}
+
+// Iniciar polling automático del monitor FSM
+setInterval(() => {
+    if(activeTab === 'publisher') {
+        actualizarMonitorFSM();
+    }
+}, 3000);
+
+function setQuickPrompt(text) {
+    const p = document.getElementById('aiPrompt');
+    if(p) p.value = text;
+}
+
+function copyTextToClipboard(elementId) {
+    const el = document.getElementById(elementId);
+    if(el && el.innerText) {
+        navigator.clipboard.writeText(el.innerText).then(() => {
+            alert("📋 ¡Copia copiada al portapapeles con éxito!");
+        }).catch(err => {
+            const ta = document.createElement('textarea');
+            ta.value = el.innerText;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            alert("📋 ¡Copia copiada al portapapeles!");
+        });
+    }
+}
+
+let isRecordingVoice = false;
+let recognition = null;
+
+function toggleVoiceDictation() {
+    const btn = document.getElementById('btnVoiceRecord');
+    const promptInput = document.getElementById('aiPrompt');
+    
+    if(!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+        return alert("Tu navegador no soporta dictado de voz nativo. Por favor escribe el trabajo en el cuadro de texto.");
+    }
+    
+    if(!isRecordingVoice) {
+        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+        recognition = new SpeechRec();
+        recognition.lang = 'es-US';
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        
+        recognition.onstart = () => {
+            isRecordingVoice = true;
+            if(btn) {
+                btn.innerHTML = '<i class="fa-solid fa-circle-dot fa-beat"></i> ESCUCHANDO...';
+                btn.style.background = '#f59e0b';
+            }
+        };
+        
+        recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript;
+            if(promptInput) {
+                promptInput.value = (promptInput.value ? promptInput.value + ' ' : '') + transcript;
+            }
+        };
+        
+        recognition.onerror = (event) => {
+            console.error("Speech recognition error:", event.error);
+        };
+        
+        recognition.onend = () => {
+            isRecordingVoice = false;
+            if(btn) {
+                btn.innerHTML = '<i class="fa-solid fa-microphone"></i> GRABAR VOZ';
+                btn.style.background = '#ef4444';
+            }
+        };
+        
+        recognition.start();
+    } else {
+        if(recognition) recognition.stop();
+    }
+}
+
+function handleVideoUpload(ev) {
+    const f = ev.target.files[0];
+    if(!f) return;
+    alert(`🎬 Video seleccionado: ${f.name}\n\nEl video se utilizará como fondo dinámico de los 4 Reels.`);
+    const p = document.getElementById('aiPrompt');
+    if(p && !p.value) {
+        p.value = `Video de trabajo de plomería: ${f.name.replace(/\.[^/.]+$/, "")}`;
+    }
+}
+
+function approvePackage(){
+    if(!currentMultilingualData){
+        return alert("⚠️ No hay ningún paquete de contenido generado para aprobar. Genera primero un paquete en la pestaña IA.");
+    }
+    const service = currentMultilingualData.content_context?.service || 'Servicio de Plomería';
+    const msg = `🚀 ¡PAQUETE APROBADO CON ÉXITO!\n\n` +
+                `📋 Servicio: ${service}\n` +
+                `🌎 Idiomas Aprobados: EN, ES, VI, ZH\n` +
+                `🛡️ Compliance: Lic. C-36 #1156542 | Tel: (669) 213-4422\n\n` +
+                `El paquete está listo para su distribución automática a redes y Google Business.`;
+    alert(msg);
+    console.log("[CONTENT ENGINE] Paquete aprobado:", currentMultilingualData);
+}
+
+let currentBrainData = null;
+
+async function consultarMasterBrain() {
+    const input = document.getElementById('brainQueryInput');
+    const btn = document.getElementById('btnQueryBrain');
+    if(!input || !input.value.trim()) return alert("Por favor escribe una pregunta o tema para consultar al Master Brain.");
+    
+    const query = input.value.trim();
+    if(btn) {
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Analizando...';
+        btn.disabled = true;
+    }
+
+    try {
+        const response = await fetch('/api/query-brain', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: query })
+        });
+        
+        const data = await response.json();
+        if(data.success) {
+            currentBrainData = data;
+            const resBox = document.getElementById('brainResultBox');
+            const ansText = document.getElementById('brainAnswerText');
+            const hooksList = document.getElementById('brainHooksList');
+            
+            if(ansText) ansText.innerText = data.answer || '';
+            if(hooksList) {
+                hooksList.innerHTML = '';
+                (data.suggested_hooks || []).forEach(hook => {
+                    const li = document.createElement('li');
+                    li.style.marginBottom = '6px';
+                    li.innerText = hook;
+                    hooksList.appendChild(li);
+                });
+            }
+            if(resBox) resBox.style.display = 'block';
+        } else {
+            alert("Error al consultar el cerebro: " + (data.error || "Desconocido"));
+        }
+    } catch(err) {
+        console.error("Error consultando master brain:", err);
+        alert("Error de conexión con el servidor Master Brain.");
+    } finally {
+        if(btn) {
+            btn.innerHTML = '<i class="fa-solid fa-bolt"></i> Consultar';
+            btn.disabled = false;
+        }
+    }
+}
+
+function quickBrainQuery(queryText) {
+    const input = document.getElementById('brainQueryInput');
+    if(input) {
+        input.value = queryText;
+        consultarMasterBrain();
+    }
+}
+
+function usarIdeaDelBrain() {
+    if(!currentBrainData || !currentBrainData.campaign_prompt) {
+        return alert("Primero realiza una consulta al Master Brain para obtener una idea.");
+    }
+    const aiPrompt = document.getElementById('aiPrompt');
+    if(aiPrompt) {
+        aiPrompt.value = currentBrainData.campaign_prompt;
+    }
+    switchTab('ai');
+    // Iniciar automáticamente la generación
+    solicitarImagen();
+}
+
+function limpiarFormularioNuevo() {
+    if(!confirm("¿Estás seguro de que deseas limpiar el formulario y comenzar un nuevo trabajo?")) return;
+    const aiPrompt = document.getElementById('aiPrompt'); if(aiPrompt) aiPrompt.value = '';
+    const bInput = document.getElementById('brainQueryInput'); if(bInput) bInput.value = '';
+    const bRes = document.getElementById('brainResultBox'); if(bRes) bRes.style.display = 'none';
+    currentMultilingualData = null;
+    currentBrainData = null;
+    alert("✨ Formulario reiniciado. Listo para un nuevo trabajo o reel.");
+}
+
+function generarCopyIA(){
+    const hs=["15% OFF EN INVIERNO","URGENCIA 24/7","DIAGNÓSTICO TÉRMICO","CERO FUGAS","REPIPE TOTAL","EMERGENCIAS HOY"];
+    const ss=["Evita tuberías reventadas con tecnología térmica.","Reparación garantizada en tiempo récord.","Expertos certificados C-36 a tu servicio.","Protege tu hogar con la mejor tecnología.","Reemplazo completo de tuberías de cobre.","Servicio disponible las 24 horas."];
+    saveState();sv('cfgHeadline',hs[Math.floor(Math.random()*hs.length)]);sv('cfgSubhead',ss[Math.floor(Math.random()*ss.length)]);updateEngine();
+}
+
+/* ---- EXPORT & SHARE ---- */
+async function exportCampaign(){
+    if(typeof html2canvas === 'undefined') return alert("Error: La librería html2canvas no está cargada. Revisa tu conexión a internet.");
+    
+    const ab=document.getElementById('artboard');
+    const fmt=gv('exportType');
+    const ce=ab.className;
+    if(ce.includes('fx-glitch')) ab.classList.remove('fx-glitch');
+    
+    const activeObjEl = document.getElementById(activeObjectId);
+    if(activeObjEl) activeObjEl.style.filter = '';
+    
+    const oldTransform = ab.style.transform;
+    ab.style.transform = 'none'; // Exportar en tamaño real
+    
+    try{
+        const c=await html2canvas(ab,{scale:1,useCORS:true,allowTaint:true,backgroundColor:null});
+        const d=new Date().toISOString().slice(0,10);
+        const fn=`Morales_Plumbing_${d}`;
+        
+        if(fmt==='png'||fmt==='jpg'){
+            const img=c.toDataURL(`image/${fmt==='jpg'?'jpeg':'png'}`,1);
+            const a=document.createElement('a');a.download=`${fn}.${fmt}`;a.href=img;a.click();
+        }
+        else if(fmt==='pdf'){
+            if (!window.jspdf) throw new Error("jsPDF no cargó correctamente.");
+            const{jsPDF}=window.jspdf;
+            const o=c.width>c.height?'l':'p';
+            const p=new jsPDF(o,'px',[c.width,c.height]);
+            p.addImage(c.toDataURL('image/jpeg',1),'JPEG',0,0,c.width,c.height);
+            p.save(`${fn}.pdf`);
+        }
+    }catch(e){
+        console.error(e);
+        if(e.name === 'SecurityError' || (e.message && e.message.includes('Tainted'))) {
+            alert('Error de Seguridad: Para exportar con imágenes locales predefinidas, debes abrir el archivo desde un servidor (Localhost) o usar el botón "SUBIR IMAGEN" para usar imágenes en Base64.');
+        } else {
+            alert('Error al exportar: ' + (e.message || e));
+        }
+    }
+    
+    ab.style.transform = oldTransform;
+    if(activeObjEl) activeObjEl.style.filter = 'drop-shadow(0 0 5px #00e5ff)';
+    if(ce.includes('fx-glitch')) ab.className=ce;
+}
+
+async function shareCampaign(){
+    if(typeof html2canvas === 'undefined') return alert("Error: La librería html2canvas no está cargada. Revisa tu conexión a internet.");
+    
+    const ab=document.getElementById('artboard');
+    const ce=ab.className;
+    if(ce.includes('fx-glitch')) ab.classList.remove('fx-glitch');
+    
+    const activeObjEl = document.getElementById(activeObjectId);
+    if(activeObjEl) activeObjEl.style.filter = '';
+    
+    const oldTransform = ab.style.transform;
+    ab.style.transform = 'none'; // Compartir en tamaño real
+    
+    try{
+        const c=await html2canvas(ab,{scale:1,useCORS:true,allowTaint:true,backgroundColor:null});
+        c.toBlob(async (blob) => {
+            if(!blob) return alert('Error: No se pudo generar la imagen. Intenta con otra resolución.');
+            const f = new File([blob], 'Morales_Campaign.jpg', { type: 'image/jpeg' });
+            if (navigator.canShare && navigator.canShare({ files: [f] })) {
+                try {
+                    await navigator.share({
+                        title: 'Morales Plumbing Campaña',
+                        text: 'Mira esta campaña que acabo de crear en ORION Marketing Studio.',
+                        files: [f]
+                    });
+                } catch(err) {
+                    console.log('Compartir cancelado o falló', err);
+                }
+            } else {
+                alert('Tu dispositivo/navegador no soporta compartir imágenes directamente. Se descargará la imagen para que puedas publicarla.');
+                const a=document.createElement('a');a.download='Morales_Campaign.jpg';a.href=URL.createObjectURL(blob);a.click();
+            }
+        }, 'image/jpeg', 0.9);
+    }catch(e){
+        console.error(e);
+        if(e.name === 'SecurityError' || (e.message && e.message.includes('Tainted'))) {
+            alert('Error de Seguridad: Para compartir con imágenes locales predefinidas, debes abrir el archivo desde un servidor (Localhost) o usar el botón "SUBIR IMAGEN".');
+        } else {
+            alert('Error al preparar imagen: ' + (e.message || e));
+        }
+    }
+    
+    ab.style.transform = oldTransform;
+    if(activeObjEl) activeObjEl.style.filter = 'drop-shadow(0 0 5px #00e5ff)';
+    if(ce.includes('fx-glitch')) ab.className=ce;
+}
+
+/* ---- LANGUAGE ---- */
+function setLanguage(l){
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    const ab = document.querySelector(`.lang-btn[data-lang="${l}"]`);
+    if(ab) ab.classList.add('active');
+    
+    // Si tenemos contenido generado por IA, actualizar el texto en vivo según el idioma seleccionado
+    if(currentMultilingualData && currentMultilingualData.social_copy && currentMultilingualData.social_copy[l]){
+        sv('cfgSubhead', currentMultilingualData.social_copy[l]);
+        updateEngine();
+    }
+    
+    const m = {es:'es', en:'en', zh:'zh-CN', vi:'vi'};
+    const s = document.querySelector('select.goog-te-combo');
+    if(s){
+        s.value = m[l] || l;
+        s.dispatchEvent(new Event('change'));
+    }
+}
+
+/* ---- KEYBOARD ---- */
+document.addEventListener('keydown',e=>{
+    if((e.ctrlKey||e.metaKey)&&e.key==='z'){e.preventDefault();undo()}
+    if((e.ctrlKey||e.metaKey)&&e.key==='y'){e.preventDefault();redo()}
+    if(e.key==='Delete'&&activeObjectId)deleteActiveObject();
+});
+
+/* ---- PRINT HOOKS ---- */
+window.addEventListener('beforeprint', () => {
+    const activeObjEl = document.getElementById(activeObjectId);
+    if(activeObjEl) activeObjEl.style.filter = '';
+    const ab=document.getElementById('artboard');
+    if(ab.className.includes('fx-glitch')) ab.classList.remove('fx-glitch');
+});
+window.addEventListener('afterprint', () => {
+    const activeObjEl = document.getElementById(activeObjectId);
+    if(activeObjEl) activeObjEl.style.filter = 'drop-shadow(0 0 5px #00e5ff)';
+    const ab=document.getElementById('artboard');
+    if(gv('cfgEffect') === 'fx-glitch') ab.classList.add('fx-glitch');
+});
+
+/* ---- INIT ---- */
+window.onload=function(){
+    if (window.location.protocol === 'file:') {
+        setTimeout(() => alert("⚠️ ATENCIÓN: Estás abriendo el archivo directamente.\n\nPor seguridad del navegador, NO podrás exportar ni compartir la campaña. Por favor, cierra esto y haz doble clic en el archivo 'Iniciar_ORION.bat' para abrir la aplicación correctamente."), 500);
+    }
+    document.querySelectorAll('.pnl-group').forEach(g=>g.classList.add('open'));
+    switchTab('design');
+    updateEngine();
+};
+</script>
+
+<div id="google_translate_element" style="display:none"></div>
+<script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,zh-CN,zh-TW,tl,vi',autoDisplay:false},'google_translate_element')}</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- MODAL MANUAL DE USUARIO INTERACTIVO -->
+<div id="manualModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:99999; justify-content:center; align-items:center; padding:20px; font-family:'Inter', sans-serif;">
+    <div style="background:var(--bg-panel); border:1px solid var(--border); border-radius:12px; width:100%; max-width:900px; max-height:85vh; display:flex; flex-direction:column; box-shadow:0 15px 50px rgba(0,0,0,0.6); overflow:hidden;">
+        <!-- Header -->
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:20px 25px; border-bottom:1px solid var(--border); background:linear-gradient(90deg, rgba(16,185,129,0.1) 0%, transparent 100%);">
+            <div>
+                <h2 style="margin:0; font-family:'Orbitron', sans-serif; color:var(--cyan); font-size:1.4rem; display:flex; align-items:center; gap:10px;">
+                    <i class="fa-solid fa-book-open"></i> MANUAL OFICIAL: ORION MARKETING PRO
+                </h2>
+                <p style="margin:5px 0 0 0; font-size:0.85rem; color:#9ca3af;">Guía técnica para la creación y lanzamiento de campañas B2B/B2C</p>
+            </div>
+            <button onclick="document.getElementById('manualModal').style.display='none'" style="background:none; border:none; color:#ef4444; font-size:1.8rem; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <!-- TABS NAV -->
+        <div style="display:flex; border-bottom:1px solid var(--border); background:#1f2937;">
+            <button class="manual-tab active" onclick="switchManualTab('tab-intro')" style="flex:1; padding:15px; background:transparent; border:none; color:white; border-bottom:3px solid var(--cyan); font-weight:600; cursor:pointer;"><i class="fa-solid fa-rocket"></i> ¿QUÉ HACE?</button>
+            <button class="manual-tab" onclick="switchManualTab('tab-step')" style="flex:1; padding:15px; background:transparent; border:none; color:#9ca3af; border-bottom:3px solid transparent; font-weight:600; cursor:pointer;"><i class="fa-solid fa-list-ol"></i> PASO A PASO</button>
+            <button class="manual-tab" onclick="switchManualTab('tab-examples')" style="flex:1; padding:15px; background:transparent; border:none; color:#9ca3af; border-bottom:3px solid transparent; font-weight:600; cursor:pointer;"><i class="fa-solid fa-lightbulb"></i> CASOS DE USO</button>
+            <button class="manual-tab" onclick="switchManualTab('tab-outputs')" style="flex:1; padding:15px; background:transparent; border:none; color:#9ca3af; border-bottom:3px solid transparent; font-weight:600; cursor:pointer;"><i class="fa-solid fa-box-open"></i> ENTREGABLES</button>
+        </div>
+
+        <!-- TABS CONTENT -->
+        <div style="flex:1; overflow-y:auto; padding:25px; color:#d1d5db; line-height:1.7;">
+            
+            <!-- TAB 1: INTRO -->
+            <div id="tab-intro" class="manual-content">
+                <h3 style="color:white; margin-top:0; font-family:'Orbitron',sans-serif;">El Motor de Publicidad de Morales Plumbing</h3>
+                <p><strong>ORION Marketing Studio</strong> es un software de grado empresarial operado localmente que fusiona herramientas de diseño gráfico avanzado con Inteligencia Artificial entrenada específicamente en ventas de plomería para el <strong>Área de la Bahía (Silicon Valley)</strong>.</p>
+                
+                <div style="background:rgba(16,185,129,0.1); border-left:4px solid #10b981; padding:15px; margin:20px 0; border-radius:4px;">
+                    <strong style="color:#10b981;"><i class="fa-solid fa-shield-halved"></i> REQUISITO DEL SISTEMA:</strong> Para que el módulo de "Copywriting" (Redacción de textos persuasivos) funcione, asegúrate de mantener abierta tu consola ejecutando el comando <code>node server.js</code>. Esto enlaza tu computadora local con el cerebro de Inteligencia Artificial (Ollama Local).
+                </div>
+
+                <h4 style="color:var(--cyan);">Características Principales:</h4>
+                <ul style="padding-left:20px;">
+                    <li><strong>IA de Copywriting B2B/B2C:</strong> Analiza tus ideas crudas y escupe titulares magnéticos que psicológicamente incitan a la contratación.</li>
+                    <li><strong>Galería Hiperrealista (Branded):</strong> Incorpora tu logo "Morales Plumbing" y número telefónico incrustados dentro de escenas cinematográficas fotográficas generadas.</li>
+                    <li><strong>Capa de Post-Producción:</strong> Filtros CRT, aberraciones cromáticas y cuadrículas holográficas estilo Cyberpunk/Tecnológico.</li>
+                </ul>
+            </div>
+
+            <!-- TAB 2: PASO A PASO -->
+            <div id="tab-step" class="manual-content" style="display:none;">
+                <h3 style="color:white; margin-top:0; font-family:'Orbitron',sans-serif;">Flujo de Trabajo del Director de Marketing</h3>
+                
+                <div style="display:flex; flex-direction:column; gap:15px;">
+                    <div style="background:#374151; padding:15px; border-radius:8px;">
+                        <strong style="color:var(--cyan); font-size:1.1rem;">PASO 1: Dimensiones y Lienzo</strong>
+                        <p style="margin:5px 0 0 0; font-size:0.9rem;">En la barra superior, elige el formato de salida: <em>Post Instagram (Cuadrado)</em>, <em>Story (Vertical)</em>, <em>Banner</em> o <em>Impresión</em>. El lienzo se adaptará automáticamente.</p>
+                    </div>
+                    
+                    <div style="background:#374151; padding:15px; border-radius:8px;">
+                        <strong style="color:var(--cyan); font-size:1.1rem;">PASO 2: Fondo Fotográfico (Branded)</strong>
+                        <p style="margin:5px 0 0 0; font-size:0.9rem;">En el panel izquierdo (Diseño), elige una foto de la galería IA. Sugerencia: Usa las que dicen <strong>(Branded)</strong> para que la marca Morales Plumbing aparezca impresa en la escena.</p>
+                    </div>
+
+                    <div style="background:#374151; padding:15px; border-radius:8px;">
+                        <strong style="color:var(--cyan); font-size:1.1rem;">PASO 3: Magia de la Inteligencia Artificial</strong>
+                        <p style="margin:5px 0 0 0; font-size:0.9rem;">Abre el panel <strong>IA</strong>. Escribe en lenguaje simple lo que quieres vender (Ej: <em>"Necesito vender reparaciones urgentes para fugas en San José, con 10% off"</em>) y presiona <strong>GENERAR IA</strong>. La IA sobreescribirá el Titular y Subtítulo con un texto altamente vendedor y persuasivo.</p>
+                    </div>
+
+                    <div style="background:#374151; padding:15px; border-radius:8px;">
+                        <strong style="color:var(--cyan); font-size:1.1rem;">PASO 4: Tipografía y Pegatinas (Stickers)</strong>
+                        <p style="margin:5px 0 0 0; font-size:0.9rem;">Haz clic directamente sobre los textos en el lienzo. Usa el panel de "Texto" para probar estilos 3D, Grafitis (Sedgwick Ave) o Tech (Orbitron). Luego, abre "Assets" y arrastra al lienzo logos de "24/7" o "CSLB".</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: EJEMPLOS (CASOS DE USO) -->
+            <div id="tab-examples" class="manual-content" style="display:none;">
+                <h3 style="color:white; margin-top:0; font-family:'Orbitron',sans-serif;">Casos de Uso Empresariales</h3>
+                
+                <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+                    <tr style="background:#111827; border-bottom:1px solid #374151;">
+                        <th style="padding:10px; text-align:left; color:#9ca3af;">Tipo de Campaña</th>
+                        <th style="padding:10px; text-align:left; color:#9ca3af;">Prompt para IA</th>
+                        <th style="padding:10px; text-align:left; color:#9ca3af;">Configuración Sugerida</th>
+                    </tr>
+                    <tr style="border-bottom:1px solid #374151;">
+                        <td style="padding:10px; color:white;"><strong>Emergencia Urgente</strong></td>
+                        <td style="padding:10px; font-size:0.9rem;">"Emergencia 24/7 de plomería, llego en menos de 1 hora. Evita inundaciones."</td>
+                        <td style="padding:10px; font-size:0.9rem;">Color Rojo, Letra de Impacto (Anton), Sticker de "Urgencia". Formato Story para IG/FB.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #374151;">
+                        <td style="padding:10px; color:white;"><strong>B2B Comercial</strong></td>
+                        <td style="padding:10px; font-size:0.9rem;">"Contratos de mantenimiento para negocios y restaurantes. Certificados."</td>
+                        <td style="padding:10px; font-size:0.9rem;">Fondo Inodoros (Branded), Letra Elegante/Corporativa (Montserrat), Sticker "CSLB". Formato Banner.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #374151;">
+                        <td style="padding:10px; color:white;"><strong>High-Tech (Diagnóstico)</strong></td>
+                        <td style="padding:10px; font-size:0.9rem;">"Diagnóstico con cámara forense, no rompemos paredes al azar."</td>
+                        <td style="padding:10px; font-size:0.9rem;">Fondo Cyberpunk/Neón, Letra Tech (Orbitron), Filtro "Escáner Grid". Formato Cuadrado.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- TAB 4: ENTREGABLES -->
+            <div id="tab-outputs" class="manual-content" style="display:none;">
+                <h3 style="color:white; margin-top:0; font-family:'Orbitron',sans-serif;">Formatos y Distribución de Entregables</h3>
+                <p>ORION Studio no solo diseña, sino que exporta con especificaciones de imprenta y redes sociales.</p>
+                
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px;">
+                    <div style="background:rgba(239,68,68,0.1); border:1px solid #ef4444; padding:20px; border-radius:8px;">
+                        <h4 style="margin-top:0; color:#ef4444;"><i class="fa-solid fa-file-pdf"></i> Imprenta Física (PDF)</h4>
+                        <ul style="padding-left:15px; font-size:0.9rem; margin-bottom:0;">
+                            <li>Usa el formato "Póster A4" o "Flyer Impreso".</li>
+                            <li>Selecciona "PDF Imprenta" en la barra superior.</li>
+                            <li>Usa el botón <strong>EXPORTAR</strong>.</li>
+                            <li>Ideal para: Volantes para buzones, cartas comerciales, anuncios físicos.</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background:rgba(59,130,246,0.1); border:1px solid #3b82f6; padding:20px; border-radius:8px;">
+                        <h4 style="margin-top:0; color:#3b82f6;"><i class="fa-solid fa-share-nodes"></i> Distribución Digital</h4>
+                        <ul style="padding-left:15px; font-size:0.9rem; margin-bottom:0;">
+                            <li>Usa formatos "Story" o "Post 1080".</li>
+                            <li>No necesitas exportar, simplemente haz clic en <strong>COMPARTIR</strong>.</li>
+                            <li>Uso: Se enviará directo a los estados de WhatsApp de tus clientes o campañas de Instagram.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<script>
+function switchManualTab(tabId) {
+    // Ocultar todos
+    document.querySelectorAll('.manual-content').forEach(el => el.style.display = 'none');
+    // Quitar active a botones
+    document.querySelectorAll('.manual-tab').forEach(el => {
+        el.style.borderBottom = '3px solid transparent';
+        el.style.color = '#9ca3af';
+    });
+    
+    // Mostrar el seleccionado
+    document.getElementById(tabId).style.display = 'block';
+    
+    // Marcar boton
+    const targetBtn = event.currentTarget;
+    targetBtn.style.borderBottom = '3px solid var(--cyan)';
+    targetBtn.style.color = 'white';
+}
+</script>
+
+</body>
+</html>
