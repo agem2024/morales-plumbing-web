@@ -9,9 +9,17 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
-      "**/*.js",
       "archive/**",
-      "scratch/**"
+      "scratch/**",
+      "corporate_team/**/*.mp4",
+      "corporate_team/**/*.mov",
+      "**/*.py",
+      "**/*.bat",
+      "**/*.sh",
+      "**/*.ps1",
+      "**/*.md",
+      "package.json",
+      "package-lock.json"
     ],
     "rewrites": [
       {
