@@ -8777,6 +8777,33 @@ function speakJoe(text) {
         window.speechSynthesis.speak(msg);
     }
 }
+
+// ── Interrupción Inmediata de Karla: Cancelar locución si el usuario escribe, usa el micro o hace clic ──
+if (typeof window !== 'undefined') {
+    window.interruptKarlaSpeech = function() {
+        if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const input = document.getElementById('joe-query');
+        if (input) {
+            input.addEventListener('input', window.interruptKarlaSpeech);
+            input.addEventListener('keydown', window.interruptKarlaSpeech);
+            input.addEventListener('focus', window.interruptKarlaSpeech);
+        }
+        const mic = document.getElementById('joe-mic-btn');
+        if (mic) {
+            mic.addEventListener('click', window.interruptKarlaSpeech);
+        }
+        const msgs = document.getElementById('joe-messages');
+        if (msgs) {
+            msgs.addEventListener('click', window.interruptKarlaSpeech);
+            msgs.addEventListener('touchstart', window.interruptKarlaSpeech);
+        }
+    });
+}
 // -----------------------------------------------------------
 // ORION CLOUD KEEP-ALIVE  pings Render every 10 min
 // Prevents cold-start delays (Render free tier sleeps after 15min)
