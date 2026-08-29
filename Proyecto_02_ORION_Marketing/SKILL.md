@@ -9,7 +9,7 @@ Usa este Skill cuando el usuario solicite crear una publicación para redes soci
 
 ## Reglas de Marca (NUNCA MODIFICAR)
 1. **Identidad:** MORALES PLUMBING (Lic. C-36 #1156542 | San Jose, CA).
-2. **Contacto:** (669) 213-4422 | moralesplumbing026@gmail.com | www.moralesplumbing.com
+2. **Contacto:** (669) 213-4422 | moralesplumbing026@gmail.com | www.morales-plumbing.com
 3. **Tono:** Amigable, profesional, limpio y cercano.
 4. **RESTRICCIÓN CRÍTICA:** NO usar emojis de ningún tipo (nada de gotitas de agua, llaves inglesas, caritas, ni iconos). Cero elementos gráficos, solo texto puro.
 5. **Oferta Estándar:** Siempre mencionar "Free Estimates" (Estimados Gratis) al final.

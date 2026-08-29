@@ -2,7 +2,7 @@
 
 > [!CAUTION]
 > **REGLA DE ORO DE MORALES PLUMBING (ESTRICTA E INVIOLABLE)**
-> **NUNCA INVENTAR DOMINIOS INEXISTENTES COMO `www.moralesplumbing.com` NI SITIOS FICTICIOS.**
+> **NUNCA INVENTAR DOMINIOS INEXISTENTES COMO `www.morales-plumbing.com` NI SITIOS FICTICIOS.**
 > **UTILIZAR ÚNICA Y EXCLUSIVAMENTE LOS CANALES REALES Y ACTIVOS EN GITHUB Y CONTACTO.**
 
 ---
@@ -25,7 +25,7 @@
 
 ### ⛔ PROHIBICIONES ESTRICTAS PARA AGENTES DE IA
 
-1. ❌ **PROHIBIDO COLOCAR `www.moralesplumbing.com`:** Ese dominio no está registrado/activo. Queda estrictamente prohibido insertarlo en cualquier HTML, PDF, Markdown o respuesta.
+1. ❌ **PROHIBIDO COLOCAR `www.morales-plumbing.com`:** Ese dominio no está registrado/activo. Queda estrictamente prohibido insertarlo en cualquier HTML, PDF, Markdown o respuesta.
 2. ❌ **PROHIBIDO INVENTAR DATOS:** Jamás usar teléfonos ficticios (como 555-xxx), licencias inventadas (#XXXXX), ni dominios de prueba.
 3. ❌ **PROHIBIDO ALTERAR O CONSULTAR OTRAS LICENCIAS:** La licencia CSLB es única y legal: **Lic. C-36 #1156542**.
 
