@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -62,10 +62,11 @@
         </button>
         <div id="globalLangMenu" style="display: none; position: absolute; right: 0; top: 45px; background: rgba(3, 7, 18, 0.98); border: 1px solid #D4AF37; border-radius: 8px; flex-direction: column; min-width: 140px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.9); z-index: 1000000;">
             <button onclick="if(typeof setLanguage === 'function') setLanguage('en'); else if(typeof switchLang === 'function') switchLang('en'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">EN - English</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Espa�ol</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - ??</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('es'); else if(typeof switchLang === 'function') switchLang('es'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ES - Español</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('hi'); else if(typeof switchLang === 'function') switchLang('hi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">HI - हिन्दी</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('zh'); else if(typeof switchLang === 'function') switchLang('zh'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">ZH - 中文</button>
             <button onclick="if(typeof setLanguage === 'function') setLanguage('tl'); else if(typeof switchLang === 'function') switchLang('tl'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 14px;">TL - Tagalog</button>
-            <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Ti?ng Vi?t</button>
+            <button onclick="if(typeof setLanguage === 'function') setLanguage('vi'); else if(typeof switchLang === 'function') switchLang('vi'); document.getElementById('globalLangMenu').classList.remove('show-lang')" style="padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; width: 100%; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">VI - Tiếng Việt</button>
         </div>
     </div>
 </header>
@@ -79,27 +80,27 @@
 </style>
 
 
-    <!-- UNIVERSE B�CKGROUND -->
-    <canvas id="universe-canvas" data-universe-mode="warp"></canvas>
+    <!-- UNIVERSE BACKGROUND -->
+    <canvas id="universe-canvas" data-universe-mode="warp" style="opacity: 0.20; pointer-events: none;"></canvas>
     <div class="universe-overlay u-variant-pricebook"></div>
     <script src="../universe.js"></script>
 
     <div class="pb-bg-overlay"></div>
 
-    <!-- N�VIG�TION & L�NG -->
+    <!-- NAVIGATION & LANG -->
     
 
-    <!-- PORT�D� -->
+    <!-- PORTADA -->
     
 
         <nav class="pb-nav glass">
             <a href="#catalogo" class="pb-nav-btn">
                 <img src="../assets/comic_catalog.png" class="pb-nav-icon" alt="Catalog">
-                <span data-i18n="nav_catalog">Cat�logo</span>
+                <span data-i18n="nav_catalog">Catálogo</span>
             </a>
             <a href="#metodologia" class="pb-nav-btn">
                 <img src="../assets/comic_ai.png" class="pb-nav-icon" alt="Methodology">
-                <span data-i18n="nav_methodology">Metodolog�a</span>
+                <span data-i18n="nav_methodology">Metodología</span>
             </a>
             <a href="#tiers" class="pb-nav-btn">
                 <img src="../assets/comic_tiers.png" class="pb-nav-icon" alt="Tiers">
@@ -115,18 +116,21 @@
             </a>
             <a href="#terminos" class="pb-nav-btn">
                 <img src="../assets/comic_terms.png" class="pb-nav-icon" alt="Terms">
-                <span data-i18n="nav_terms">T�rminos</span>
+                <span data-i18n="nav_terms">Términos</span>
             </a>
             <a href="#garantias" class="pb-nav-btn">
                 <img src="../assets/comic_shield.png" class="pb-nav-icon" alt="Warranties">
-                <span data-i18n="nav_warranties">Garant�as</span>
+                <span data-i18n="nav_warranties">Garantías</span>
             </a>
         </nav>
 
-    <!-- M�IN HERO / PROSE -->
+    <!-- MAIN HERO / PROSE -->
     <section class="pb-hero-section">
         <div class="hero-content">
-            <h1 class="graffiti-3d-metallic" style="font-size: 4.5rem; margin-bottom: 1.5rem;" data-i18n="pb_hero_title">ORION Price Book v6.0 PRO</h1>
+            <h1 class="graffiti-3d-metallic" style="font-size: 4.5rem; margin-bottom: 1.5rem;" data-i18n="pb_hero_title">Price Book PRO</h1>
+            <p style="color: #D4AF37; font-family: 'Inter', sans-serif; font-size: 1.05rem; max-width: 900px; margin: 0 auto 1.5rem; line-height: 1.6; background: rgba(10, 25, 47, 0.7); padding: 15px 25px; border-radius: 8px; border: 1px solid #D4AF37;">
+                <strong>Nota Profesional:</strong> Este Pricebook en línea es un modelo demostrativo de rangos de costo y estructuración de actividades técnicas, diseñado para <strong>contratistas, subcontratistas y plomeros en capacitación</strong> a través de nuestra plataforma <strong>EP Plumbing Pro</strong>. Para clientes finales de Morales Plumbing, la atención y reportes se gestionan exclusivamente mediante <strong>MP Pro</strong> y toda cotización final requiere inspección técnica en sitio.
+            </p>
             <p style="color: var(--neon-cyan); font-family: 'Orbitron', monospace; font-size: 1rem;" data-i18n="pb_hero_details">Industry Standard Edition · 15 Servicios Profesionales · San Jose, CA</p>
             
             <div class="prose-block glass">

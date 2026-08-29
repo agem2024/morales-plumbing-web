@@ -243,10 +243,10 @@
     </header>
 
     <nav class="faq-nav">
-        <a href="../index.html" data-i18n="nav_back"> BACK</a>
-        <div class="nav-right">
+        <a href="../index.html" data-i18n="nav_back"> BACK</a>        <div class="lang-controls">
             <button class="lang-btn" onclick="setLanguage('en')">EN</button>
             <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+            <button class="lang-btn" onclick="setLanguage('hi')">HI</button>
             <button class="lang-btn" onclick="setLanguage('zh')">ZH</button>
             <button class="lang-btn" onclick="setLanguage('tl')">TL</button>
             <button class="lang-btn" onclick="setLanguage('vi')">VI</button>
@@ -294,13 +294,13 @@
             <!-- Tasks will be injected here by JS -->
         </div>
 
-        <!-- JOE AI PANEL -->
+        <!-- KARLA AI PANEL -->
         <div class="joe-ai-panel">
             <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                <img src="../assets/joe_avatar.webp" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--cyan);">
-                <h3 style="margin: 0; color: var(--cyan); font-family: 'Orbitron';" data-i18n="htm_joe_title">Joe AI Assistant</h3>
+                <video src="../assets/susa.mp4" autoplay loop muted playsinline style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #D4AF37; object-fit: cover;"></video>
+                <h3 style="margin: 0; color: #D4AF37; font-family: 'Orbitron';" data-i18n="htm_joe_title">Karla AI</h3>
             </div>
-            <p data-i18n="htm_joe_desc" style="font-size: 0.9rem; color: #ccc;">Select a task to get material calculations, or ask me to navigate.</p>
+            <p data-i18n="htm_joe_desc" style="font-size: 0.9rem; color: #ccc;">Seleccione una tarea para calcular materiales o consulte a nuestra asistente técnica.</p>
             
             <div id="calculatorBox" style="display:none; margin-top: 20px; border-top: 1px dashed var(--cyan); padding-top: 20px;">
                 <h4 style="color: var(--orange); margin-top: 0;" id="calcTitle">Calculator</h4>
