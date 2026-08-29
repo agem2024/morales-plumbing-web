@@ -8743,16 +8743,37 @@ function speakJoe(text) {
 
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
-        const msg = new SpeechSynthesisUtterance(text);
-        const curLang = localStorage.getItem('morales_lang') || 'en';
+        // Limpiar markdown y etiquetas HTML para locución limpia
+        const cleanText = text.replace(/<[^>]*>/g, '').replace(/[*_~`#]/g, '').trim();
+        if (!cleanText) return;
+
+        const msg = new SpeechSynthesisUtterance(cleanText);
+        const curLang = localStorage.getItem('morales_lang') || 'es';
         const langMap = {
             'en': 'en-US',
-            'es': 'es-MX',
+            'es': 'es-US',
             'zh': 'zh-CN',
             'tl': 'tl-PH',
             'vi': 'vi-VN'
         };
-        msg.lang = langMap[curLang] || 'es-MX';
+        const targetLang = langMap[curLang] || 'es-US';
+        msg.lang = targetLang;
+        msg.pitch = 1.08; // Tono femenino cálido y empático
+        msg.rate = 1.02;  // Cadencia humana natural
+
+        // Seleccionar la mejor voz femenina natural disponible en el dispositivo
+        const voices = window.speechSynthesis.getVoices();
+        if (voices && voices.length > 0) {
+            const femaleVoice = voices.find(v => 
+                (v.lang.startsWith(targetLang.slice(0, 2)) || v.lang === targetLang) &&
+                (/female|woman|sabina|paulina|monica|paloma|helena|lucia|victoria|samantha|zira|karen|natural|neural|online/i.test(v.name))
+            ) || voices.find(v => v.lang.startsWith(targetLang.slice(0, 2)));
+
+            if (femaleVoice) {
+                msg.voice = femaleVoice;
+            }
+        }
+
         window.speechSynthesis.speak(msg);
     }
 }
@@ -9215,7 +9236,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(data)
             });
 
-            // 2. Save to Firebase (if available)
+            // 2. Dispatch instant Telegram notification
+            const tgContactMsg = `📨 *NUEVO MENSAJE DE CONTACTO — MORALES PLUMBING WEB*\n\n` +
+                `👤 *Nombre:* ${data.name || 'No especificado'}\n` +
+                `📞 *Teléfono:* ${data.phone || 'No especificado'}\n` +
+                `📧 *Email:* ${data.email || 'No especificado'}\n` +
+                `💬 *Mensaje:* ${data.message || 'Sin mensaje'}\n` +
+                `📅 *Fecha:* ${new Date().toLocaleString('es-US', { timeZone: 'America/Los_Angeles' })}`;
+
+            fetch("https://api.telegram.org/bot8851834588:AAGBVYYM0pK5EtNgdb-CIWmvKZIOvawi_Lk/sendMessage", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chat_id: "5989183300",
+                    text: tgContactMsg,
+                    parse_mode: "Markdown"
+                })
+            }).catch(e => console.warn('TG contact dispatch error:', e.message));
+
+            // 3. Save to Firebase (if available)
             if (window.MoralesFirebase && window.MoralesFirebase.saveContactMessage) {
                 const fbData = {
                     ...data,
@@ -10632,10 +10671,39 @@ function submitBooking() {
 
     // -- SECURE BACKEND SUBMISSION ----------------------------
     const confCode = "MP-" + Math.floor(1000 + Math.random() * 9000);
-    const waMessage = `Hola Morales Plumbing!%0ANueva Cita Reservada:%0A*Código:* ${confCode}%0A*Nombre:* ${d.name}%0A*Tel:* ${d.phone}%0A*Email:* ${d.email}%0A*Dir:* ${d.address}%0A*Servicio:* ${d.service}%0A*Fecha:* ${d.date}%0A*Hora:* ${d.time}%0A*Notas:* ${d.notes}`;
+    const waMessage = `Hola Morales Plumbing!%0ANueva Cita Reservada:%0A*Código:* ${confCode}%0A*Nombre:* ${d.name}%0A*Tel:* ${d.phone}%0A*Email:* ${d.email || 'No provisto'}%0A*Dir:* ${d.address}%0A*Servicio:* ${d.service}%0A*Fecha:* ${d.date}%0A*Hora:* ${d.time}%0A*Notas:* ${d.notes}`;
     const waLink = `https://wa.me/16692134422?text=${waMessage}`;
 
-    // AUTOMATIC EMAIL PING VIA FORMSUBMIT
+    // 1. GOOGLE CALENDAR EVENT LINK (1-CLIC ADD TO CALENDAR)
+    const calDateStr = (d.date ? d.date.replace(/-/g, '') : new Date().toISOString().slice(0,10).replace(/-/g, ''));
+    const calTimeStr = (d.time ? d.time.replace(/:/g, '') + '00' : '090000');
+    const gCalStart = `${calDateStr}T${calTimeStr}`;
+    const gCalEnd = `${calDateStr}T${String(parseInt(calTimeStr.slice(0,2),10) + 1).padStart(2, '0')}${calTimeStr.slice(2)}`;
+    const gCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Cita Técnica: ' + (d.service || 'Plomería') + ' - Morales Plumbing')}&dates=${gCalStart}/${gCalEnd}&details=${encodeURIComponent('Cliente: ' + d.name + '\nTel: ' + d.phone + '\nEmail: ' + (d.email || 'N/A') + '\nDir: ' + d.address + '\nNotas: ' + (d.notes || 'Ninguna') + '\nCódigo: ' + confCode)}&location=${encodeURIComponent(d.address || 'San Jose, CA')}&add=moralesplumbing026@gmail.com`;
+
+    // 2. DISPATCH INSTANT TELEGRAM NOTIFICATION TO ADMIN
+    const tgMsg = `🚨 *NUEVA CITA AGENDADA EN LA WEB — MORALES PLUMBING*\n\n` +
+        `📋 *Código:* \`${confCode}\`\n` +
+        `👤 *Cliente:* ${d.name || 'Sin Nombre'}\n` +
+        `📞 *Teléfono:* [${d.phone || 'Sin Teléfono'}](tel:${d.phone})\n` +
+        `📍 *Dirección:* ${d.address || 'Sin Dirección'}\n` +
+        `🔧 *Servicio:* ${d.service || 'Inspección General'}\n` +
+        `📅 *Fecha:* ${d.date || 'Por coordinar'} | ⏰ *Hora:* ${d.time || 'Por coordinar'}\n` +
+        `📝 *Notas:* ${d.notes || 'Ninguna'}\n\n` +
+        `📅 [Agregar a Google Calendar](${gCalUrl})\n` +
+        `🛡️ *Lic. C-36 #1156542 | San José & Santa Clara, CA*`;
+
+    fetch("https://api.telegram.org/bot8851834588:AAGBVYYM0pK5EtNgdb-CIWmvKZIOvawi_Lk/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: "5989183300",
+            text: tgMsg,
+            parse_mode: "Markdown"
+        })
+    }).catch(e => console.warn('TG booking dispatch error:', e.message));
+
+    // 3. AUTOMATIC EMAIL PING VIA FORMSUBMIT
     fetch("https://formsubmit.co/ajax/moralesplumbing026@gmail.com", {
         method: "POST",
         headers: { 
@@ -10652,6 +10720,7 @@ function submitBooking() {
             time: d.time,
             notes: d.notes,
             confirmationCode: confCode,
+            googleCalendarLink: gCalUrl,
             _subject: "🚨 NUEVA CITA RESERVADA: " + confCode,
             _autoresponse: "Gracias por agendar con Morales Plumbing. Hemos recibido tu solicitud de cita. Tu código de confirmación es " + confCode + ". Un técnico te contactará pronto."
         })
@@ -10660,23 +10729,25 @@ function submitBooking() {
       .catch(err => console.error("Error sending email", err));
 
     const contactBtns = `<div style="display:flex; flex-direction:column; gap:10px; margin-top:15px; margin-bottom:10px;">
+        <a href="${gCalUrl}" target="_blank" style="background:rgba(66,133,244,0.2); color:#4285F4; border: 1px solid #4285F4; padding:10px; text-align:center; border-radius:5px; text-decoration:none; font-weight:bold;">📅 Agregar a mi Google Calendar</a>
         <a href="${waLink}" target="_blank" style="background:rgba(37,211,102,0.2); color:#25D366; border: 1px solid #25D366; padding:10px; text-align:center; border-radius:5px; text-decoration:none; font-weight:bold;">💬 Hablar por WhatsApp (Opcional)</a>
     </div>`;
 
     const confirmMsg = lang === 'es'
-        ? `✅ **¡Cita generada con éxito!** <br><br>Tu código de confirmación es: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>Hemos notificado al técnico automáticamente por correo electrónico. Si necesitas algo urgente o enviar fotos, contáctanos por WhatsApp:<br>` + contactBtns
-        : `✅ **Appointment successfully generated!** <br><br>Your confirmation code is: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>The technician has been automatically notified via email. If you need anything urgent or want to send photos, contact us via WhatsApp:<br>` + contactBtns;
+        ? `✅ **¡Cita generada con éxito!** <br><br>Tu código de confirmación es: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>Hemos notificado al equipo técnico por Telegram y correo. Puedes agendar el recordatorio en tu calendario o contactarnos por WhatsApp:<br>` + contactBtns
+        : `✅ **Appointment successfully generated!** <br><br>Your confirmation code is: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>The technician has been notified via Telegram and email. You can add it to your calendar or contact us via WhatsApp:<br>` + contactBtns;
 
     addMessage(confirmMsg, 'bot');
+    speakJoe(lang === 'es' ? '¡Cita confirmada! Te hemos enviado todos los detalles por correo y mensaje.' : 'Appointment confirmed! We sent you all details via email and message.');
 
     // Update UI
     const statusText = document.getElementById('booking-status-text');
-    if (statusText) statusText.textContent = lang === 'es' ? ' Cita enviada!' : ' Appointment Sent!';
+    if (statusText) statusText.textContent = lang === 'es' ? '✓ Cita enviada!' : '✓ Appointment Sent!';
 
     const btn = document.getElementById('booking-submit-btn');
     if (btn) {
         btn.disabled = true;
-        btn.textContent = lang === 'es' ? '? Cita Enviada' : '? Appointment Sent';
+        btn.textContent = lang === 'es' ? '✓ Cita Enviada' : '✓ Appointment Sent';
     }
 
     // Reset booking state
