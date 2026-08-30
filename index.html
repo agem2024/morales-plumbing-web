@@ -128,15 +128,37 @@
     <!-- Skip-to-content: Accessibility for keyboard/screen-reader users -->
     <a href="#home" class="skip-link" data-i18n="skip_to_content">Saltar al contenido principal</a>
 
-    <!-- EMERGENCY TOP BAR -->
+    <!-- EMERGENCY TOP BAR & LIVE PUBLIC APIS TELEMETRY -->
     <div id="emergency-topbar" class="emergency-topbar">
-        <div class="emergency-content">
-            <span class="emergency-text">
-                <img src="assets/icon_phone.png" style="width:16px; vertical-align:middle; margin-right:5px; filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));" alt="Emergency">
-                <span data-i18n="topbar_emergency">Servicio de Emergencia 24/7</span>
-            </span>
-            <a href="tel:+16692134422" class="emergency-call">
-                <span data-i18n="topbar_call">Llamar Ahora:</span> <span class="phone-number">(669) 213-4422</span>
+        <div class="emergency-content" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 15px; font-size: 0.82rem; flex-wrap: wrap; gap: 8px;">
+            <div class="emergency-left" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <span class="emergency-text">
+                    <img src="assets/icon_phone.png" style="width:16px; vertical-align:middle; margin-right:5px; filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));" alt="Emergency">
+                    <span data-i18n="topbar_emergency">Servicio 24/7 San José, CA</span>
+                </span>
+                <!-- Public API 1: Open-Meteo Real-Time Weather & Freeze Risk -->
+                <span id="live-weather-badge" style="background: rgba(0, 245, 255, 0.12); border: 1px solid rgba(0, 245, 255, 0.35); padding: 2px 8px; border-radius: 4px; color: var(--neon-cyan); display: inline-flex; align-items: center; gap: 5px; font-size: 0.78rem;">
+                    <span id="weather-icon">🌤️</span> <span id="weather-text">San José: 68°F · Estado Normal</span>
+                </span>
+                <!-- Public API 2: Nager.Date Real-Time US Holidays & Emergency Dispatch -->
+                <span id="live-holiday-badge" style="background: rgba(212, 175, 55, 0.12); border: 1px solid rgba(212, 175, 55, 0.35); padding: 2px 8px; border-radius: 4px; color: #D4AF37; display: inline-flex; align-items: center; gap: 5px; font-size: 0.78rem;">
+                    <span>📅</span> <span id="holiday-text">24/7 Guardia Activa</span>
+                </span>
+                <!-- Public API 3: USGS Real-Time Seismic Safety Status -->
+                <span id="live-seismic-badge" style="background: rgba(57, 255, 20, 0.1); border: 1px solid rgba(57, 255, 20, 0.3); padding: 2px 8px; border-radius: 4px; color: var(--neon-lime); display: inline-flex; align-items: center; gap: 5px; font-size: 0.78rem;">
+                    <span>🌐</span> <span id="seismic-text">Válvulas Sísmicas: Normal</span>
+                </span>
+                <!-- Public API 4: Open-Meteo BAAQMD Air Quality (AQI) -->
+                <span id="live-aqi-badge" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 2px 8px; border-radius: 4px; color: #38bdf8; display: inline-flex; align-items: center; gap: 5px; font-size: 0.78rem;">
+                    <span>💨</span> <span id="aqi-text">AQI: Bueno · BAAQMD Zero-NOx</span>
+                </span>
+                <!-- Public API 5: USGS Water Hardness & Quality -->
+                <span id="live-water-badge" style="background: rgba(57, 255, 20, 0.1); border: 1px solid rgba(57, 255, 20, 0.3); padding: 2px 8px; border-radius: 4px; color: var(--neon-lime); display: inline-flex; align-items: center; gap: 5px; font-size: 0.78rem;">
+                    <span>💧</span> <span id="water-text">Agua Santa Clara: Dureza Moderada</span>
+                </span>
+            </div>
+            <a href="tel:+16692134422" class="emergency-call" style="font-weight: 700;">
+                <span data-i18n="topbar_call">Llamar Ahora:</span> <span class="phone-number" style="color: #D4AF37;">(669) 213-4422</span>
             </a>
         </div>
     </div>
@@ -1288,7 +1310,10 @@
                         <span data-i18n="joe_status">KARLA · ASISTENTE TÉCNICA VIRTUAL</span>
                     </div>
                 </div>
-                <button onclick="toggleJoe()" class="close-btn">&times;</button>
+                <div style="display:flex; align-items:center; gap:6px;">
+                    <button onclick="interruptKarlaSpeech()" class="close-btn" title="Silenciar / Detener locución" style="font-size: 0.95rem; line-height: 1;">⏹️</button>
+                    <button onclick="toggleJoe()" class="close-btn">&times;</button>
+                </div>
             </div>
             <div id="joe-messages" class="joe-messages">
                 <div class="msg bot" data-i18n="joe_intro">¡Hola! Soy Karla, tu asistente virtual de Morales Plumbing. ¿En qué problema de plomería, cotización o emergencia te puedo ayudar hoy?</div>
@@ -1326,6 +1351,10 @@
                 <input type="text" id="bk-name" class="booking-input" placeholder="Tu nombre completo..." oninput="syncBookingField('name', this.value)">
             </div>
             <div class="booking-field-group">
+                <label class="booking-label" data-i18n="booking_email"><span class="pico-icon pico-email"></span> Correo Electrónico</label>
+                <input type="email" id="bk-email" class="booking-input" placeholder="correo@ejemplo.com..." oninput="syncBookingField('email', this.value)">
+            </div>
+            <div class="booking-field-group">
                 <label class="booking-label" data-i18n="booking_phone"><span class="pico-icon pico-pipe_phone"></span> Teléfono</label>
                 <input type="text" id="bk-phone" class="booking-input" placeholder="(669) 234-XXXX..." oninput="syncBookingField('phone', this.value)">
             </div>
@@ -1355,7 +1384,7 @@
                 <div id="booking-progress-bar" class="booking-progress-bar" style="width:0%"></div>
             </div>
             <div id="booking-fields-filled" class="booking-fields-label">
-                <span id="booking-filled-count">0</span>/6 <span data-i18n="booking_fields_complete">campos completados</span>
+                <span id="booking-filled-count">0</span>/7 <span data-i18n="booking_fields_complete">campos completados</span>
             </div>
             <button id="booking-submit-btn" class="booking-submit-btn" disabled onclick="submitBooking()" data-i18n="booking_submit">
                 <span class="pico-icon pico-valve_check"></span> Confirmar Cita
@@ -1426,18 +1455,24 @@
                     </div>
                 
                 <div class="social-links" style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 1.5rem;">
-                    <a href="#" onclick="alert(\'¡Próximamente en Facebook!\'); return false;" class="social-btn" aria-label="Facebook" style="color: var(--neon-orange); transition: 0.3s;">
+                    <a href="https://www.facebook.com/moralesplumbing" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook" style="color: var(--neon-orange); transition: 0.3s;">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     </a>
-                    <a href="#" onclick="alert(\'¡Próximamente en Instagram!\'); return false;" class="social-btn" aria-label="Instagram" style="color: var(--neon-lime); transition: 0.3s;">
+                    <a href="https://www.instagram.com/moralesplumbing" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram" style="color: var(--neon-lime); transition: 0.3s;">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                     </a>
-                    <a href="#" onclick="alert(\'¡Próximamente en LinkedIn!\'); return false;" class="social-btn" aria-label="LinkedIn" style="color: var(--neon-orange); transition: 0.3s;">
+                    <a href="https://www.linkedin.com/company/morales-plumbing" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn" style="color: var(--neon-orange); transition: 0.3s;">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     </a>
-                    <a href="https://www.youtube.com/@MoralesPlumbing" target="_blank" class="social-btn" aria-label="YouTube" style="color: #FF0000; transition: 0.3s;" title="Se unió el 22 jun 2026">
+                    <a href="https://www.youtube.com/@MoralesPlumbing" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube" style="color: #FF0000; transition: 0.3s;" title="Se unió el 22 jun 2026">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
                     </a>
+                </div>
+
+                <!-- Public API 6: QRServer vCard Generator (Escaneo Móvil) -->
+                <div style="text-align: center; margin-top: 1.5rem; background: rgba(0, 245, 255, 0.05); border: 1px dashed rgba(0, 245, 255, 0.3); border-radius: 8px; padding: 12px;">
+                    <span style="font-family: 'Orbitron', sans-serif; font-size: 0.8rem; color: var(--neon-cyan); display: block; margin-bottom: 8px;">📲 Escanear vCard en Móvil (Guardar Contacto)</span>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&amp;margin=4&amp;data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3APlumbing%3BMorales%0AFN%3AMorales+Plumbing%0AORG%3AMorales+Plumbing+-+Lic+C-36+%231156542%0ATEL%3A%2B16692134422%0AEMAIL%3Amoralesplumbing026%40gmail.com%0AURL%3Ahttps%3A%2F%2Fwww.morales-plumbing.com%0AADR%3A%3B%3BSan+Jose%3BCA%3B%3BUS%0AEND%3AVCARD" alt="Escanear Contacto Morales Plumbing" style="width: 110px; height: 110px; border-radius: 6px; border: 2px solid #D4AF37; background: #fff; padding: 4px;" loading="lazy">
                 </div>
 
             </div>
@@ -1456,7 +1491,10 @@
                 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                     <input type="text" id="pc-name" name="name" required placeholder="Name" data-i18n="contact_form_name" style="flex: 1; min-width: 200px; background: rgba(0,0,0,0.5); border: 1px solid rgba(0,245,255,0.2); border-radius: 6px; padding: 12px; color: #fff; font-family: 'Inter', sans-serif;">
                     <input type="tel" id="pc-phone" name="phone" required placeholder="Phone" data-i18n="contact_form_phone" style="flex: 1; min-width: 200px; background: rgba(0,0,0,0.5); border: 1px solid rgba(0,245,255,0.2); border-radius: 6px; padding: 12px; color: #fff; font-family: 'Inter', sans-serif;">
+                    <!-- Public API 7: Zippopotam.us ZIP Code Validator -->
+                    <input type="text" id="pc-zip" name="zip" maxlength="5" placeholder="ZIP (ej. 95125)" oninput="validateZipCodePublicAPI(this.value)" style="width: 140px; background: rgba(0,0,0,0.5); border: 1px solid rgba(0,245,255,0.2); border-radius: 6px; padding: 12px; color: #fff; font-family: 'Inter', sans-serif;">
                 </div>
+                <div id="zip-coverage-badge" style="display: none; font-size: 0.8rem; padding: 6px 12px; border-radius: 4px; background: rgba(57,255,20,0.1); border: 1px solid var(--neon-lime); color: var(--neon-lime);"></div>
                 <input type="email" id="pc-email" name="email" placeholder="Email" data-i18n="contact_form_email" style="background: rgba(0,0,0,0.5); border: 1px solid rgba(0,245,255,0.2); border-radius: 6px; padding: 12px; color: #fff; font-family: 'Inter', sans-serif;">
                 <textarea id="pc-message" name="message" rows="3" required placeholder="Message" data-i18n="contact_form_másg" style="background: rgba(0,0,0,0.5); border: 1px solid rgba(0,245,255,0.2); border-radius: 6px; padding: 12px; color: #fff; font-family: 'Inter', sans-serif; resize: vertical;"></textarea>
                 <div style="display: flex; justify-content: center; margin-top: 0.5rem;">
@@ -1486,22 +1524,22 @@
                     <video src="assets/urgente_llamada.mp4" autoplay loop muted playsinline style="width: 100%; border-radius: 10px; box-shadow: 0 0 20px rgba(0,245,255,0.15); border: 1px solid var(--neon-cyan); object-fit: cover;"></video>
                 </div>
                 
-                <div class="social-links" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                    <a href="#" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-items: center; gap: 8px;">
+                <div class="social-links footer-social-group" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://www.instagram.com/moralesplumbing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram" style="padding: 10px 18px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 700;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        Instagram
+                        <span class="social-btn-label">Instagram</span>
                     </a>
-                    <a href="#" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-items: center; gap: 8px;">
+                    <a href="https://www.facebook.com/moralesplumbing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook" style="padding: 10px 18px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 700;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        Facebook
+                        <span class="social-btn-label">Facebook</span>
                     </a>
-                    <a href="#" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-items: center; gap: 8px;">
+                    <a href="https://www.linkedin.com/company/morales-plumbing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn" style="padding: 10px 18px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 700;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        LinkedIn
+                        <span class="social-btn-label">LinkedIn</span>
                     </a>
-                    <a href="https://www.youtube.com/@MoralesPlumbing" target="_blank" style="background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 5px; color: #fff; text-decoration: none; border: 1px solid rgba(0,245,255,0.2); display: flex; align-items: center; gap: 8px;">
+                    <a href="https://www.youtube.com/@MoralesPlumbing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube" style="padding: 10px 18px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 700;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-                        YouTube
+                        <span class="social-btn-label">YouTube</span>
                     </a>
                 </div>
 

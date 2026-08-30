@@ -5239,3 +5239,699 @@ html[data-font-size="xlarge"] { font-size: 20px; }
     }
 }
 
+
+
+/* ==========================================================================
+   HIGH-CONTRAST LIGHT MODE RULES - MORALES PLUMBING OFFICIAL
+   Ensures all modals, booking panels, Karla AI, contact, social links,
+   footer disclaimers and navigation have dark, crisp, readable colors.
+   ========================================================================== */
+
+/* 1. Header, Floating Cards, Contact Links & Article References */
+:root[data-theme="light"] #company-card,
+:root[data-theme="light"] .company-card-modal,
+:root[data-theme="light"] .company-card-body,
+:root[data-theme="light"] .contact-card,
+:root[data-theme="light"] .brand-dropdown-card {
+    background: #FFFFFF !important;
+    border: 2px solid #D4AF37 !important;
+    color: #0A192F !important;
+    box-shadow: 0 10px 25px rgba(10, 25, 47, 0.15) !important;
+}
+
+:root[data-theme="light"] #company-card h3,
+:root[data-theme="light"] #company-card h4,
+:root[data-theme="light"] #company-card p,
+:root[data-theme="light"] #company-card span,
+:root[data-theme="light"] .company-card-body * {
+    color: #0A192F !important;
+}
+
+:root[data-theme="light"] a[href^="tel:"],
+:root[data-theme="light"] a[href^="mailto:"],
+:root[data-theme="light"] a[href*="inteligencia_artificial.html"],
+:root[data-theme="light"] a[href*="deteccion_termica.html"] {
+    color: #0A192F !important;
+    font-weight: 700 !important;
+}
+
+:root[data-theme="light"] a[href^="tel:"]:hover,
+:root[data-theme="light"] a[href^="mailto:"]:hover,
+:root[data-theme="light"] a[href*="inteligencia_artificial.html"]:hover,
+:root[data-theme="light"] a[href*="deteccion_termica.html"]:hover {
+    color: #D4AF37 !important;
+}
+
+/* 2. Karla AI Virtual Technical Coordinator */
+:root[data-theme="light"] #karla-chat-modal,
+:root[data-theme="light"] #karla-widget,
+:root[data-theme="light"] .karla-container,
+:root[data-theme="light"] .karla-chat-container,
+:root[data-theme="light"] .karla-modal-content {
+    background: #FFFFFF !important;
+    border: 2px solid #D4AF37 !important;
+    color: #0A192F !important;
+    box-shadow: 0 20px 40px rgba(10, 25, 47, 0.2) !important;
+}
+
+:root[data-theme="light"] .karla-header,
+:root[data-theme="light"] .karla-header-title,
+:root[data-theme="light"] .karla-title {
+    background: linear-gradient(135deg, #0A192F 0%, #112240 100%) !important;
+    color: #FFFFFF !important;
+    border-bottom: 3px solid #D4AF37 !important;
+}
+
+:root[data-theme="light"] .karla-header *,
+:root[data-theme="light"] .karla-title * {
+    color: #FFFFFF !important;
+}
+
+:root[data-theme="light"] .karla-close,
+:root[data-theme="light"] .karla-modal-close,
+:root[data-theme="light"] .modal-close {
+    color: #0A192F !important;
+    background: rgba(10, 25, 47, 0.08) !important;
+    border: 1px solid #CBD5E1 !important;
+    font-weight: 700 !important;
+}
+
+:root[data-theme="light"] .karla-close:hover,
+:root[data-theme="light"] .karla-modal-close:hover {
+    background: #0A192F !important;
+    color: #D4AF37 !important;
+}
+
+:root[data-theme="light"] .karla-chat-body,
+:root[data-theme="light"] .karla-messages,
+:root[data-theme="light"] .karla-conversation {
+    background: #F8FAFC !important;
+    color: #0A192F !important;
+}
+
+:root[data-theme="light"] .karla-bubble,
+:root[data-theme="light"] .karla-msg,
+:root[data-theme="light"] .karla-message-text,
+:root[data-theme="light"] .karla-welcome {
+    background: #FFFFFF !important;
+    color: #0A192F !important;
+    border: 1px solid #CBD5E1 !important;
+    font-weight: 500 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+}
+
+:root[data-theme="light"] .karla-bubble.bot-msg,
+:root[data-theme="light"] .karla-msg-bot {
+    background: #FFFFFF !important;
+    color: #0A192F !important;
+    border-left: 4px solid #D4AF37 !important;
+}
+
+:root[data-theme="light"] .karla-bubble.user-msg,
+:root[data-theme="light"] .karla-msg-user {
+    background: #0A192F !important;
+    color: #FFFFFF !important;
+}
+
+:root[data-theme="light"] .karla-input,
+:root[data-theme="light"] #karla-input,
+:root[data-theme="light"] .karla-input-container input {
+    background: #FFFFFF !important;
+    color: #0A192F !important;
+    border: 1px solid #CBD5E1 !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="light"] .karla-send-btn,
+:root[data-theme="light"] .karla-mic-btn,
+:root[data-theme="light"] #karla-mic,
+:root[data-theme="light"] #karla-send {
+    background: #0A192F !important;
+    color: #D4AF37 !important;
+    border: 1px solid #D4AF37 !important;
+    font-weight: 700 !important;
+}
+
+/* 3. Formulario de Cita (Booking Panel / Modal) */
+:root[data-theme="light"] #booking-panel,
+:root[data-theme="light"] .booking-panel,
+:root[data-theme="light"] #booking-modal,
+:root[data-theme="light"] .booking-modal-content {
+    background: #FFFFFF !important;
+    border: 2px solid #D4AF37 !important;
+    color: #0A192F !important;
+    box-shadow: 0 20px 50px rgba(10, 25, 47, 0.25) !important;
+}
+
+:root[data-theme="light"] .booking-panel-header {
+    background: linear-gradient(135deg, #0A192F 0%, #112240 100%) !important;
+    border-bottom: 3px solid #D4AF37 !important;
+    color: #FFFFFF !important;
+}
+
+:root[data-theme="light"] .booking-panel-title,
+:root[data-theme="light"] .booking-panel-title * {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+}
+
+:root[data-theme="light"] .booking-panel-status,
+:root[data-theme="light"] .booking-panel-subtitle {
+    color: #E2E8F0 !important;
+    font-weight: 500 !important;
+}
+
+:root[data-theme="light"] .booking-panel label,
+:root[data-theme="light"] .booking-form label,
+:root[data-theme="light"] .booking-field-label,
+:root[data-theme="light"] .booking-label {
+    color: #0A192F !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+}
+
+:root[data-theme="light"] .booking-panel input,
+:root[data-theme="light"] .booking-panel select,
+:root[data-theme="light"] .booking-panel textarea,
+:root[data-theme="light"] .booking-form input,
+:root[data-theme="light"] .booking-form select,
+:root[data-theme="light"] .booking-form textarea {
+    background: #F8FAFC !important;
+    color: #0A192F !important;
+    border: 1px solid #CBD5E1 !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="light"] .booking-panel input:focus,
+:root[data-theme="light"] .booking-panel select:focus,
+:root[data-theme="light"] .booking-panel textarea:focus {
+    background: #FFFFFF !important;
+    border-color: #0284C7 !important;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15) !important;
+    color: #0A192F !important;
+}
+
+:root[data-theme="light"] .booking-fields-label,
+:root[data-theme="light"] #booking-fields-filled,
+:root[data-theme="light"] #booking-fields-filled * {
+    color: #334155 !important;
+    font-weight: 700 !important;
+}
+
+:root[data-theme="light"] .booking-progress {
+    background: #E2E8F0 !important;
+}
+
+:root[data-theme="light"] .booking-progress-bar {
+    background: #D4AF37 !important;
+}
+
+:root[data-theme="light"] #booking-submit-btn,
+:root[data-theme="light"] .booking-submit-btn {
+    background: #0A192F !important;
+    color: #D4AF37 !important;
+    border: 1px solid #D4AF37 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 12px rgba(10, 25, 47, 0.2) !important;
+}
+
+:root[data-theme="light"] #booking-submit-btn:hover,
+:root[data-theme="light"] .booking-submit-btn:hover {
+    background: #112240 !important;
+    color: #FFFFFF !important;
+}
+
+:root[data-theme="light"] .booking-note,
+:root[data-theme="light"] .booking-confirm-note,
+:root[data-theme="light"] .booking-panel-footer p {
+    color: #475569 !important;
+    font-weight: 500 !important;
+}
+
+/* 4. Get in Touch & Contact Section */
+:root[data-theme="light"] #contact,
+:root[data-theme="light"] .terminal-container {
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    color: #0A192F !important;
+}
+
+:root[data-theme="light"] .terminal-header {
+    background: #0A192F !important;
+    border-bottom: 2px solid #D4AF37 !important;
+}
+
+:root[data-theme="light"] .terminal-header .title {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+}
+
+:root[data-theme="light"] #contact h2,
+:root[data-theme="light"] #contact h3,
+:root[data-theme="light"] #contact h4,
+:root[data-theme="light"] .contact-profile .name {
+    color: #0A192F !important;
+    font-weight: 700 !important;
+}
+
+:root[data-theme="light"] #contact p,
+:root[data-theme="light"] .contact-profile .role,
+:root[data-theme="light"] .contact-card p {
+    color: #334155 !important;
+    font-weight: 500 !important;
+}
+
+:root[data-theme="light"] #contact input,
+:root[data-theme="light"] #contact textarea,
+:root[data-theme="light"] #contact select {
+    background: #F8FAFC !important;
+    color: #0A192F !important;
+    border: 1px solid #CBD5E1 !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="light"] #contact button[type="submit"],
+:root[data-theme="light"] .contact-btn-submit {
+    background: #0A192F !important;
+    color: #D4AF37 !important;
+    border: 1px solid #D4AF37 !important;
+    font-weight: 700 !important;
+}
+
+:root[data-theme="light"] .footer-security,
+:root[data-theme="light"] .footer-security span {
+    color: #0A192F !important;
+    font-weight: 700 !important;
+}
+
+:root[data-theme="light"] .footer-slogan,
+:root[data-theme="light"] .footer-slogan span {
+    color: #0A192F !important;
+    font-weight: 700 !important;
+}
+
+:root[data-theme="light"] .footer-slogan .graffiti-text {
+    color: #0284C7 !important;
+    -webkit-text-fill-color: #0284C7 !important;
+    font-weight: 700 !important;
+}
+
+/* 5. Social Links & Footer Navigation */
+:root[data-theme="light"] .social-links a,
+:root[data-theme="light"] .social-btn {
+    background: #0A192F !important;
+    color: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+}
+
+:root[data-theme="light"] .social-links a svg,
+:root[data-theme="light"] .social-btn svg {
+    fill: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+
+:root[data-theme="light"] .social-links a:hover,
+:root[data-theme="light"] .social-btn:hover {
+    background: #112240 !important;
+    color: #D4AF37 !important;
+    border-color: #D4AF37 !important;
+}
+
+:root[data-theme="light"] .social-links a:hover svg,
+:root[data-theme="light"] .social-btn:hover svg {
+    fill: #D4AF37 !important;
+    color: #D4AF37 !important;
+}
+
+:root[data-theme="light"] .footer-nav a {
+    background: #FFFFFF !important;
+    color: #0A192F !important;
+    border: 1px solid #CBD5E1 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+}
+
+:root[data-theme="light"] .footer-nav a:hover {
+    background: #0A192F !important;
+    color: #D4AF37 !important;
+    border-color: #D4AF37 !important;
+}
+
+/* 6. Footer Copyright, Disclaimers & Licensing */
+:root[data-theme="light"] footer,
+:root[data-theme="light"] .footer-content {
+    background: #F1F5F9 !important;
+    border-top: 3px solid #D4AF37 !important;
+    color: #0A192F !important;
+}
+
+:root[data-theme="light"] .footer-copyright-main,
+:root[data-theme="light"] .footer-copyright-branded,
+:root[data-theme="light"] .footer-copyright-branded span,
+:root[data-theme="light"] footer h4,
+:root[data-theme="light"] footer h5 {
+    color: #0A192F !important;
+    font-weight: 700 !important;
+}
+
+:root[data-theme="light"] footer p,
+:root[data-theme="light"] footer div[style*="font-size"],
+:root[data-theme="light"] footer .footer-disclaimer,
+:root[data-theme="light"] footer .ccpa-notice {
+    color: #334155 !important;
+    font-weight: 500 !important;
+}
+
+:root[data-theme="light"] footer a:not(.btn-primary):not(.social-btn) {
+    color: #0284C7 !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+}
+
+:root[data-theme="light"] footer a:not(.btn-primary):not(.social-btn):hover {
+    color: #0A192F !important;
+}
+
+
+/* ══ ROBUST SOCIAL MEDIA LINKS IN LIGHT MODE ══ */
+:root[data-theme="light"] .footer-layout-split {
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    box-shadow: 0 4px 15px rgba(10, 25, 47, 0.08) !important;
+}
+
+:root[data-theme="light"] .footer-layout-split .social-links a,
+:root[data-theme="light"] .social-links a,
+:root[data-theme="light"] .social-btn,
+:root[data-theme="light"] a[aria-label="Facebook"],
+:root[data-theme="light"] a[aria-label="Instagram"],
+:root[data-theme="light"] a[aria-label="LinkedIn"],
+:root[data-theme="light"] a[aria-label="YouTube"],
+:root[data-theme="light"] a[href*="youtube.com"] {
+    background: #0A192F !important;
+    color: #FFFFFF !important;
+    border: 1.5px solid #D4AF37 !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    text-shadow: none !important;
+    box-shadow: 0 2px 8px rgba(10, 25, 47, 0.15) !important;
+}
+
+:root[data-theme="light"] .footer-layout-split .social-links a *,
+:root[data-theme="light"] .social-links a *,
+:root[data-theme="light"] .social-btn * {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+:root[data-theme="light"] .footer-layout-split .social-links a:hover,
+:root[data-theme="light"] .social-links a:hover,
+:root[data-theme="light"] .social-btn:hover,
+:root[data-theme="light"] a[aria-label="Facebook"]:hover,
+:root[data-theme="light"] a[aria-label="Instagram"]:hover,
+:root[data-theme="light"] a[aria-label="LinkedIn"]:hover,
+:root[data-theme="light"] a[aria-label="YouTube"]:hover,
+:root[data-theme="light"] a[href*="youtube.com"]:hover {
+    background: #112240 !important;
+    color: #D4AF37 !important;
+    border-color: #D4AF37 !important;
+    transform: translateY(-2px);
+}
+
+:root[data-theme="light"] .footer-layout-split .social-links a:hover *,
+:root[data-theme="light"] .social-links a:hover *,
+:root[data-theme="light"] .social-btn:hover * {
+    color: #D4AF37 !important;
+    fill: #D4AF37 !important;
+}
+
+
+/* ═══ DEFINITIVE HIGH-CONTRAST LIGHT MODE FIX FOR SOCIAL MEDIA & FOOTER ═══ */
+:root[data-theme="light"] .footer-layout-split,
+:root[data-theme="light"] div[class*="footer-layout-split"],
+:root[data-theme="light"] footer .footer-layout-split {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid #CBD5E1 !important;
+    box-shadow: 0 10px 30px rgba(10, 25, 47, 0.08) !important;
+}
+
+:root[data-theme="light"] .footer-layout-split .social-links,
+:root[data-theme="light"] .social-links {
+    background: transparent !important;
+}
+
+:root[data-theme="light"] .footer-layout-split .social-links a,
+:root[data-theme="light"] .social-links a,
+:root[data-theme="light"] .social-links a[href],
+:root[data-theme="light"] .social-btn {
+    background: #0A192F !important;
+    background-color: #0A192F !important;
+    color: #FFFFFF !important;
+    border: 2px solid #D4AF37 !important;
+    border-radius: 8px !important;
+    padding: 10px 18px !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px rgba(10, 25, 47, 0.25) !important;
+}
+
+:root[data-theme="light"] .footer-layout-split .social-links a svg,
+:root[data-theme="light"] .social-links a svg,
+:root[data-theme="light"] .social-btn svg {
+    fill: #D4AF37 !important;
+    color: #D4AF37 !important;
+}
+
+:root[data-theme="light"] .footer-layout-split .social-links a:hover,
+:root[data-theme="light"] .social-links a:hover,
+:root[data-theme="light"] .social-btn:hover {
+    background: #112240 !important;
+    background-color: #112240 !important;
+    color: #D4AF37 !important;
+    border-color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(10, 25, 47, 0.35) !important;
+}
+
+:root[data-theme="light"] .footer-layout-split .social-links a:hover svg,
+:root[data-theme="light"] .social-links a:hover svg,
+:root[data-theme="light"] .social-btn:hover svg {
+    fill: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+
+
+/* ═══ FOOTER SOCIAL BUTTONS - UNIVERSAL DARK & LIGHT MODE HIGH VISIBILITY ═══ */
+.footer-social-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF !important;
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.footer-social-btn .social-btn-label {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    display: inline-block !important;
+}
+
+.footer-social-btn svg {
+    color: #00F5FF !important;
+    fill: #00F5FF !important;
+    flex-shrink: 0;
+}
+
+.footer-social-btn:hover {
+    background: rgba(0, 245, 255, 0.2);
+    border-color: #00F5FF;
+    transform: translateY(-2px);
+}
+
+/* LIGHT MODE OVERRIDE FOR SOCIAL BUTTONS */
+:root[data-theme="light"] .footer-social-btn {
+    background: #0A192F !important;
+    background-color: #0A192F !important;
+    border: 2px solid #D4AF37 !important;
+    box-shadow: 0 4px 12px rgba(10, 25, 47, 0.2) !important;
+}
+
+:root[data-theme="light"] .footer-social-btn .social-btn-label,
+:root[data-theme="light"] .footer-social-btn span {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    text-shadow: none !important;
+}
+
+:root[data-theme="light"] .footer-social-btn svg {
+    color: #D4AF37 !important;
+    fill: #D4AF37 !important;
+}
+
+:root[data-theme="light"] .footer-social-btn:hover {
+    background: #112240 !important;
+    background-color: #112240 !important;
+    border-color: #FFFFFF !important;
+}
+
+:root[data-theme="light"] .footer-social-btn:hover .social-btn-label {
+    color: #D4AF37 !important;
+    -webkit-text-fill-color: #D4AF37 !important;
+}
+
+:root[data-theme="light"] .footer-social-btn:hover svg {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+/* ═══ KARLA AI CHAT — LIGHT MODE BLACK TEXT FIX ═══ */
+:root[data-theme="light"] #joe-container .joe-window,
+[data-theme="light"] #joe-container .joe-window,
+body.light-theme #joe-container .joe-window {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 1.5px solid #CBD5E1 !important;
+    box-shadow: 0 12px 35px rgba(10, 25, 47, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.3) !important;
+}
+
+:root[data-theme="light"] .joe-header,
+[data-theme="light"] .joe-header {
+    background: #F1F5F9 !important;
+    border-bottom: 1.5px solid #CBD5E1 !important;
+}
+
+:root[data-theme="light"] .joe-status,
+:root[data-theme="light"] .joe-status span,
+[data-theme="light"] .joe-status,
+[data-theme="light"] .joe-status span {
+    color: #0A192F !important;
+    font-weight: 800 !important;
+}
+
+:root[data-theme="light"] .joe-header .close-btn,
+[data-theme="light"] .joe-header .close-btn {
+    color: #0A192F !important;
+}
+
+:root[data-theme="light"] .joe-messages,
+[data-theme="light"] .joe-messages {
+    background: #F8FAFC !important;
+    background-color: #F8FAFC !important;
+}
+
+/* Mensajes del Bot (Karla) y Usuario en Light Mode con letras NEGRAS */
+:root[data-theme="light"] .msg,
+:root[data-theme="light"] .msg.bot,
+:root[data-theme="light"] .msg.user,
+[data-theme="light"] .msg,
+[data-theme="light"] .msg.bot,
+[data-theme="light"] .msg.user {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    text-shadow: none !important;
+}
+
+:root[data-theme="light"] .msg.bot,
+[data-theme="light"] .msg.bot {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    color: #000000 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
+}
+
+:root[data-theme="light"] .msg.bot *,
+:root[data-theme="light"] .msg.bot p,
+:root[data-theme="light"] .msg.bot span,
+:root[data-theme="light"] .msg.bot b,
+:root[data-theme="light"] .msg.bot strong,
+:root[data-theme="light"] .msg.bot h1,
+:root[data-theme="light"] .msg.bot h2,
+:root[data-theme="light"] .msg.bot h3,
+:root[data-theme="light"] .msg.bot div,
+[data-theme="light"] .msg.bot *,
+[data-theme="light"] .msg.bot p,
+[data-theme="light"] .msg.bot span,
+[data-theme="light"] .msg.bot b,
+[data-theme="light"] .msg.bot strong {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+:root[data-theme="light"] .msg.bot a,
+[data-theme="light"] .msg.bot a {
+    color: #0284C7 !important;
+    -webkit-text-fill-color: #0284C7 !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+}
+
+:root[data-theme="light"] .msg.bot a:hover,
+[data-theme="light"] .msg.bot a:hover {
+    color: #0A192F !important;
+    -webkit-text-fill-color: #0A192F !important;
+}
+
+:root[data-theme="light"] .msg.user,
+[data-theme="light"] .msg.user {
+    background: #E0F2FE !important;
+    background-color: #E0F2FE !important;
+    border: 1px solid #BAE6FD !important;
+    color: #000000 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+}
+
+:root[data-theme="light"] .msg.user *,
+[data-theme="light"] .msg.user * {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+/* Indicador de escritura y campo de entrada en Light Mode */
+:root[data-theme="light"] .typing-indicator span,
+[data-theme="light"] .typing-indicator span {
+    background: #0A192F !important;
+}
+
+:root[data-theme="light"] .joe-input,
+[data-theme="light"] .joe-input {
+    background: #FFFFFF !important;
+    border-top: 1.5px solid #CBD5E1 !important;
+}
+
+:root[data-theme="light"] .joe-input input,
+[data-theme="light"] .joe-input input {
+    background: #F1F5F9 !important;
+    background-color: #F1F5F9 !important;
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    border: 1px solid #CBD5E1 !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="light"] .joe-input input::placeholder,
+[data-theme="light"] .joe-input input::placeholder {
+    color: #64748B !important;
+    -webkit-text-fill-color: #64748B !important;
+}
+
+:root[data-theme="light"] .joe-input button,
+[data-theme="light"] .joe-input button {
+    background: #0A192F !important;
+    color: #D4AF37 !important;
+    border: 1px solid #D4AF37 !important;
+    font-weight: 700 !important;
+}
+
+:root[data-theme="light"] .joe-mic-btn,
+[data-theme="light"] .joe-mic-btn {
+    color: #0A192F !important;
+}
