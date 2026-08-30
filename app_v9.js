@@ -19,6 +19,19 @@ const translations = {
         "contact_form_email": "Email",
         "contact_form_msg": "Message",
         "contact_form_submit": "Send Message",
+        "terminal_title": "MORALES_CONTACT_V1.0",
+        "profile_role": "Chief Technical Officer & Founder",
+        "cv_link": "PROFESSIONAL RESUME",
+        "cv_desc": "Access my professional history, certifications, and experience.",
+        "ceo_link": "CEO EXECUTIVE PROFILE",
+        "ceo_desc": "Vision, leadership, and executive strategy of Morales Plumbing.",
+        "contact_card_email_title": "EMAIL / TELEGRAM",
+        "contact_card_phone_title": "DIRECT CALL",
+        "contact_card_phone_desc": "24/7 Service",
+        "contact_card_yt_title": "YOUTUBE",
+        "contact_card_yt_desc": "Subscribe to Morales Plumbing for visual guides and tips!",
+        "team_card_title": "CORPORATE TEAM DIRECTORY",
+        "team_card_desc": "Plumbing Engineers & Tech Specialists",
         "lp_h1": "Become a Home Expert",
         "lp_sub": "The ultimate step-by-step guide to repair and improve your home without spending hundreds of dollars on service calls or complex tools.",
         "lp_cta1": "Start Building & Fixing!",
@@ -1623,6 +1636,19 @@ const translations = {
     },
     "es": {
         "booking_email": "Correo Electrónico",
+        "terminal_title": "MORALES_CONTACTO_V1.0",
+        "profile_role": "Director Técnico & Fundador",
+        "cv_link": "HOJA DE VIDA",
+        "cv_desc": "Acceso a mi historial profesional, certificaciones y experiencia.",
+        "ceo_link": "PERFIL EJECUTIVO",
+        "ceo_desc": "Visión, liderazgo y estrategia ejecutiva de Morales Plumbing.",
+        "contact_card_email_title": "CORREO / TELEGRAM",
+        "contact_card_phone_title": "LLAMADA DIRECTA",
+        "contact_card_phone_desc": "Servicio 24/7",
+        "contact_card_yt_title": "YOUTUBE",
+        "contact_card_yt_desc": "¡Suscríbete a Morales Plumbing para guías visuales y tips!",
+        "team_card_title": "DIRECTORIO DEL EQUIPO CORPORATIVO",
+        "team_card_desc": "Ingenieros de Plomería y Especialistas Técnicos",
         "stats_years_num": "15+",
         "stats_years_text": "Años de Experiencia",
         "stats_projects_num": "500+",
@@ -8666,14 +8692,19 @@ function setLanguage(lang) {
     if (!translations[lang]) lang = 'en';
     localStorage.setItem('morales_lang', lang);
 
+    // Synchronize navbar dropdown display button
+    const currentLangDisplay = document.getElementById('current-lang-display');
+    if (currentLangDisplay) {
+        currentLangDisplay.innerText = lang.toUpperCase() + ' ▾';
+    }
+
     // Toggle language specific media blocks
     document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
     document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? 'block' : 'none');
 
-
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang][key]) {
+        if (translations[lang] && translations[lang][key]) {
             if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                 el.placeholder = translations[lang][key];
             } else {
@@ -8682,7 +8713,7 @@ function setLanguage(lang) {
         }
     });
 
-    // Update active button state
+    // Update active button state in navbar and all menus
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
@@ -8700,9 +8731,9 @@ function setLanguage(lang) {
 
     // Custom updates (like Karla's initial greeting)
     const joeMsg = document.querySelector('.msg.bot');
-    if (joeMsg && translations[lang]['joe_welcome']) {
+    if (joeMsg && translations[lang] && translations[lang]['joe_welcome']) {
         // Only update if it's the first message
-        if (joeHistory.length === 0) {
+        if (typeof joeHistory !== 'undefined' && joeHistory.length === 0) {
             joeMsg.innerText = translations[lang]['joe_welcome'];
         }
     }
