@@ -34,7 +34,7 @@ const swhReplacements = {
         "swh_gas_comic_1": "Almacenamiento en tanque confiable y tradicional.",
         "swh_gas_comic_2": "Tiempos de recuperación rápidos para uso intensivo.",
         "swh_gas_comic_3": "Nota: Serán eliminados en 2027 según normas BAAQMD.",
-        "swh_hp_title": "Bombas de Calor Híbridas (Heat Pumps)",
+        "swh_hp_title": "Bombas de Calor Híbridías (Heat Pumps)",
         "swh_hp_comic_1": "El futuro del calentamiento de agua sin emisiones.",
         "swh_hp_comic_2": "Extrae el calor del aire, ahorrando hasta un 70% de energía.",
         "swh_hp_comic_3": "Califica para los máximos reembolsos del gobierno.",

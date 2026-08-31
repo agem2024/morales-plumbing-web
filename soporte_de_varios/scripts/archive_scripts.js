@@ -71,7 +71,7 @@ function archiveScripts() {
   // Crear directorio archive si no existe
   if (!fs.existsSync(ARCHIVE_DIR)) {
     fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
-    console.log(`📁 Creado directorio: archive/`);
+    console.log(` Creado directorio: archive/`);
   }
 
   const manifest = {
@@ -81,14 +81,14 @@ function archiveScripts() {
     archived: [],
   };
 
-  console.log(`\n📦 Archivando scripts de utilidad...\n`);
+  console.log(`\n Archivando scripts de utilidad...\n`);
 
   for (const scriptName of SCRIPTS_TO_ARCHIVE) {
     const srcPath = path.join(ROOT, scriptName);
     const destPath = path.join(ARCHIVE_DIR, scriptName);
 
     if (!fs.existsSync(srcPath)) {
-      console.log(`  ⏭  ${scriptName.padEnd(40)} — no encontrado`);
+      console.log(`    ${scriptName.padEnd(40)} — no encontrado`);
       manifest.skipped.push(scriptName);
       continue;
     }
@@ -96,23 +96,23 @@ function archiveScripts() {
     try {
       fs.copyFileSync(srcPath, destPath);
       fs.unlinkSync(srcPath);
-      console.log(`  ✅ ${scriptName.padEnd(40)} → archive/${scriptName}`);
+      console.log(`   ${scriptName.padEnd(40)} → archive/${scriptName}`);
       manifest.archived.push(scriptName);
       manifest.archivedCount++;
     } catch (err) {
-      console.error(`  ❌ Error archivando ${scriptName}:`, err.message);
+      console.error(`   Error archivando ${scriptName}:`, err.message);
     }
   }
 
-  // Guardar manifiesto
+  // Guíardar manifiesto
   const manifestPath = path.join(ARCHIVE_DIR, 'archive_manifest.json');
   fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
 
   console.log(`\n${'─'.repeat(60)}`);
-  console.log(`✅ Archivados: ${manifest.archivedCount} scripts`);
-  console.log(`⏭  Omitidos:  ${manifest.skipped.length} (no encontrados)`);
-  console.log(`📄 Manifiesto: archive/archive_manifest.json`);
-  console.log(`\n💡 Para restaurar un script: copiar de archive/ a la raíz.\n`);
+  console.log(` Archivados: ${manifest.archivedCount} scripts`);
+  console.log(`  Omitidos:  ${manifest.skipped.length} (no encontrados)`);
+  console.log(` Manifiesto: archive/archive_manifest.json`);
+  console.log(`\n Para restaurar un script: copiar de archive/ a la raíz.\n`);
 }
 
 archiveScripts();

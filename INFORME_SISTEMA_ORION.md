@@ -101,9 +101,9 @@ PASO 3: Resumen y confirmación visual
 
 PASO 4: Cliente hace clic en "Confirmar Cita" → submitBooking()
   ↓ Genera código aleatorio de 6 dígitos (ej: 482931)
-  ↓ Guarda cita en Firestore (status: "pending_confirmation")
-  ↓ Guarda código en Firestore (collection: confirmation_codes)
-  ↓ Guarda código en localStorage (fallback offline)
+  ↓ Guíarda cita en Firestore (status: "pending_confirmation")
+  ↓ Guíarda código en Firestore (collection: confirmation_codes)
+  ↓ Guíarda código en localStorage (fallback offline)
 
 PASO 5: Notificaciones automáticas (se abren 2 tabs de WhatsApp)
   
@@ -131,7 +131,7 @@ PASO 7: Cliente escribe el código → verifyBookingCode()
 
 ---
 
-## 4. 🛡️ FIREBASE SECURITY RULES — Implementadas hoy
+## 4. 🛡️ FIREBASE SECURITY RULES — Implementadías hoy
 
 ### Collections y permisos (nuevo `firestore.rules`)
 
@@ -150,9 +150,9 @@ PASO 7: Cliente escribe el código → verifyBookingCode()
 ## 5. 🚀 PLAN DE TRABAJO Y PROCEDIMIENTOS
 
 ### REPARACIONES REALIZADAS (LISTAS)
-- **Firebase API Key Segura:** Aunque está en el HTML, las reglas de Firestore ya protegen los datos impidiendo lecturas no autorizadas.
+- **Firebase API Key Segura:** Aunque está en el HTML, las reglas de Firestore ya protegen los datos impidiendo lecturas no autorizadías.
 - **Sistema de códigos:** WhatsApp al cliente y al admin, verificación local y remota. Completamente sin servidor.
-- **Reglas de Firestore:** 100% completadas y estrictas.
+- **Reglas de Firestore:** 100% completadías y estrictas.
 
 ### PRÓXIMOS PASOS RECOMENDADOS
 1. **Desplegar Reglas:** `firebase deploy --only firestore:rules` (Ver `deploy_firebase.md`).

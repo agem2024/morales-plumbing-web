@@ -98,7 +98,7 @@ async function run() {
         console.log(`Traducido Servicio: ${s.id}`);
     }
 
-    console.log("Traducciones completadas. Inyectando en app.js...");
+    console.log("Traducciones completadías. Inyectando en app.js...");
 
     let appJs = fs.readFileSync('app.js', 'utf8');
 

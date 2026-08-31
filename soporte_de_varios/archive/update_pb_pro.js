@@ -12,7 +12,7 @@ const data = {
     ["[Scope] Premium detection for multi-zone pressure drops. Includes isolating hot/cold manifolds, introducing inert tracer gas, and precise pinpointing under hardscapes.", 
      "Nitrogen/Hydrogen tracer gas mix (95/5), isolation caps, high-pressure test plugs.", 
      "Electronic gas sniffer (Sensit), high-gain acoustic ground microphone, pressure rig.", "3-5 hrs",
-     "[Alcance] Detección premium para caídas de presión en múltiples zonas. Incluye aislamiento de colectores, inyección de gas trazador y localización precisa bajo concreto.", 
+     "[Alcance] Detección premium para caídías de presión en múltiples zonas. Incluye aislamiento de colectores, inyección de gas trazador y localización precisa bajo concreto.", 
      "Mezcla de gas trazador (95% Nitrógeno / 5% Hidrógeno), tapones de prueba de alta presión.", 
      "Detector de gas electrónico, micrófono acústico de suelo de alta ganancia, equipo de presión.", "3-5 hrs"],
     
@@ -36,7 +36,7 @@ const data = {
      "Milwaukee M12/M18 ProPEX expansion tools, self-feed drill bits, HEPA vacuums, drop cloths.", "3-5 Days",
      "[Alcance] Repipe Premium: Hasta 3 baños, 1 cocina (ice maker, lavavajillas), lavandería, 3 llaves exteriores. Sistema de expansión Uponor completo. Incluye masilla cortafuego y parcheo rústico de yeso.", 
      "Hasta 350 pies PEX-A (Uponor), anillos ProPEX, stub-outs de cobre Tipo L de 1/2\\\", codos oreja de caída, válvulas angulares de cuarto de vuelta premium.", 
-     "Expansora Milwaukee ProPEX, brocas autoalimentadas, aspiradoras HEPA, lonas de protección.", "3-5 Días"],
+     "Expansora Milwaukee ProPEX, brocas autoalimentadías, aspiradoras HEPA, lonas de protección.", "3-5 Días"],
     
     ["[Scope] Ultra-Premium Commercial Grade: Up to 4 baths, fully sized for high flow rates (1\\\" mains). Complete Type L Copper installation with ProPress. Includes permit expediting.", 
      "Up to 400ft Type L hard copper pipe (1\\\", 3/4\\\", 1/2\\\"), Viega ProPress zero-lead fittings, acoustic pipe clamps, heavy-duty unistrut supports.", 
@@ -150,9 +150,9 @@ const data = {
     
     ["[Scope] Ultra-Premium Dual-Unit Cascaded System with built-in recirculation. Endless hot water for luxury homes (4+ baths). Includes custom unistrut rack mounting and smart WiFi integration.", 
      "2x Navien NPE-240A2 units, Ready-Link cascade cable manifold kit, smart controller, heavy-gauge Unistrut, vibration isolators.", 
-     "Advanced diagnostic manifold gauges, thermal imaging (for recirculation tuning), heavy-duty anchoring tools.", "2 Days",
-     "[Alcance] Sistema Ultra-Premium Dual en Cascada con recirculación integrada. Agua caliente infinita para casas de lujo (4+ baños). Incluye rack de montaje personalizado y WiFi inteligente.", 
-     "2 unidades Navien NPE-240A2, kit múltiple en cascada Ready-Link, controlador inteligente, Unistrut pesado, aisladores de vibración.", 
+     "Advanced diagnostic manifold gauges, thermal imaging (for recirculation tunióng), heavy-duty anchoring tools.", "2 Days",
+     "[Alcance] Sistema Ultra-Premium Dual en Cascaída con recirculación integrada. Agua caliente infinita para casas de lujo (4+ baños). Incluye rack de montaje personalizado y WiFi inteligente.", 
+     "2 unidades Navien NPE-240A2, kit múltiple en cascaída Ready-Link, controlador inteligente, Unistrut pesado, aisladores de vibración.", 
      "Manómetros de diagnóstico, termografía (para ajuste de recirculación), herramientas de anclaje pesado.", "2 Días"]
   ],
   8: [
@@ -164,7 +164,7 @@ const data = {
      "Roscadora de tubos Ridgid, llaves para tubos grandes, manómetro de prueba de presión (15 PSI).", "3-5 hrs"],
     
     ["[Scope] Premium CSST (Corrugated Stainless Steel Tubing) Installation for complex attic/crawlspace routing (up to 50 feet). Includes electrical bonding to ground system per code.", 
-     "50ft Gastite/TracPipe CSST tubing, AutoFlare fittings, striker plates (nail guards), #6 AWG copper bonding wire, grounding clamps.", 
+     "50ft Gastite/TracPipe CSST tubing, AutoFlare fittings, striker plates (nail guíards), #6 AWG copper bonding wire, grounding clamps.", 
      "CSST specific tube cutters, wire strippers, multimeter (for bonding verification).", "4-6 hrs",
      "[Alcance] Instalación Premium CSST (Acero Inoxidable Corrugado) para rutas complejas en ático/espacio de rastreo (hasta 50 pies). Incluye conexión a tierra según el código.", 
      "50 pies de CSST Gastite/TracPipe, conexiones AutoFlare, placas de protección, cable de cobre #6 AWG, abrazaderas de conexión a tierra.", 
@@ -204,7 +204,7 @@ const data = {
      "Standard wax ring with horn, stainless steel braided supply lines, standard closet bolts, silicone caulk.", 
      "Basin wrench, adjustable wrenches, putty knife, shop vacuum.", "1-2 hrs",
      "[Alcance] Reemplazo Estándar de Accesorio (1 Grifo o 1 Inodoro). Remueve la unidad existente, limpia superficie, instala nueva. Incluye retiro del equipo viejo.", 
-     "Anillo de cera estándar, líneas de suministro trenzadas, pernos estándar, masilla de silicona.", 
+     "Anillo de cera estándar, líneas de suministro trenzadías, pernos estándar, masilla de silicona.", 
      "Llave de lavabo, llaves ajustables, espátula, aspiradora.", "1-2 hrs"],
     
     ["[Scope] Premium Fixture Upgrade. Installation of a high-end Touchless Faucet or Toto Drake two-piece toilet. Includes updating the shut-off valve to quarter-turn.", 
@@ -218,8 +218,8 @@ const data = {
      "Toto Neorest / Washlet unit, heavy-duty mounting flanges, 12-2 Romex wire, GFCI receptacle, old-work electrical box.", 
      "Electrical drywall saw, voltage testers, fish tape (for wiring), advanced plumbing array.", "5-7 hrs",
      "[Alcance] Integración Ultra-Premium de Inodoro Inteligente / Bidet (ej. Toto Neorest). Incluye la instalación de un nuevo receptáculo eléctrico GFCI de 120V dedicado.", 
-     "Unidad Toto Neorest / Washlet, bridas de montaje pesado, cable Romex 12-2, receptáculo GFCI, caja eléctrica.", 
-     "Sierra para yeso, probadores de voltaje, cinta guía, herramientas avanzadas.", "5-7 hrs"]
+     "Unidad Toto Neorest / Washlet, bridías de montaje pesado, cable Romex 12-2, receptáculo GFCI, caja eléctrica.", 
+     "Sierra para yeso, probadores de voltaje, cinta guía, herramientas avanzadías.", "5-7 hrs"]
   ],
   11: [
     ["[Scope] Standard Seismic Shutoff Valve installation for residential gas meters (up to 1\\\" line). Mechanical shutoff triggered by 5.4+ magnitude. Permits included.", 
@@ -261,8 +261,8 @@ const data = {
     ["[Scope] Ultra-Premium High-Capacity Industrial Double Check Detector Assembly (DCDA) for fire sprinkler systems. Flanged installation. Includes required OSHPD/Fire Marshal coordination.", 
      "4\\\" or 6\\\" Flanged DCDA valve, heavy-duty flange gaskets, Grade 8 structural bolts/nuts, bypass meter.", 
      "Chain hoists/come-alongs (for heavy lifting), large torque wrenches, alignment pins.", "2 Days",
-     "[Alcance] Ensamblaje DCDA Industrial Ultra-Premium de Alta Capacidad para sistemas contra incendios. Instalación con bridas. Incluye coordinación con Bomberos.", 
-     "Válvula DCDA con bridas de 4\\\" o 6\\\", juntas de brida pesadas, pernos estructurales Grado 8, medidor de derivación.", 
+     "[Alcance] Ensamblaje DCDA Industrial Ultra-Premium de Alta Capacidad para sistemas contra incendios. Instalación con bridías. Incluye coordinación con Bomberos.", 
+     "Válvula DCDA con bridías de 4\\\" o 6\\\", juntas de brida pesadías, pernos estructurales Grado 8, medidor de derivación.", 
      "Polipastos de cadena, llaves dinamométricas grandes, pines de alineación.", "2 Días"]
   ],
   13: [
@@ -278,14 +278,14 @@ const data = {
      "Bearing pullers, alignment tools, heavy pipe wrenches, thermal imaging camera.", "1 Day",
      "[Alcance] Revisión Premium y Reconstrucción de Bomba. Desarme de lazos primarios/secundarios. Reconstrucción de bombas (ej. Bell & Gossett), reemplazo de tanques de expansión.", 
      "Tanque de expansión comercial, juntas de bomba de hierro fundido, ensamblajes de rodamientos, uniones dieléctricas de alta temp.", 
-     "Extractores de rodamientos, herramientas de alineación, llaves para tubos pesadas, cámara térmica.", "1 Día"],
+     "Extractores de rodamientos, herramientas de alineación, llaves para tubos pesadías, cámara térmica.", "1 Día"],
     
     ["[Scope] Ultra-Premium Complete System Modernization. Retrofit of existing controls to a modern Building Management System (BMS) with outdoor reset and smart staging control.", 
      "Tekmar or similar smart boiler control system, outdoor temperature sensors, motorized mixing valves, low-voltage wiring.", 
      "Advanced electrical diagnostic tools, laptop for BMS programming, precision calibration equipment.", "2-3 Days",
      "[Alcance] Modernización Completa del Sistema Ultra-Premium. Actualización de controles a un Sistema de Gestión de Edificios (BMS) con control inteligente por etapas.", 
-     "Sistema de control inteligente Tekmar o similar, sensores de temperatura exterior, válvulas mezcladoras motorizadas, cableado de bajo voltaje.", 
-     "Herramientas eléctricas avanzadas, laptop para programación BMS, equipo de calibración de precisión.", "2-3 Días"]
+     "Sistema de control inteligente Tekmar o similar, sensores de temperatura exterior, válvulas mezcladoras motorizadías, cableado de bajo voltaje.", 
+     "Herramientas eléctricas avanzadías, laptop para programación BMS, equipo de calibración de precisión.", "2-3 Días"]
   ],
   14: [
     ["[Scope] Standard Primary Sump Pump Replacement. Removes failed pump, cleans pit, installs new 1/3 HP cast-iron submersible pump with vertical float switch. Up to 10ft lift.", 

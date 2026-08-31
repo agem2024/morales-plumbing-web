@@ -3,11 +3,11 @@ const fs = require('fs');
 let appJs = fs.readFileSync('app.js', 'utf8');
 
 const translations = {
-    'en': '⚡ Eco Water Heater Systems',
-    'es': '⚡ Sistemas Eco de Calentadores',
-    'zh': '⚡ 环保热水器系统',
-    'tl': '⚡ Eco Water Heater Systems',
-    'vi': '⚡ Hệ thống máy nước nóng Eco'
+    'en': ' Eco Water Heater Systems',
+    'es': ' Sistemas Eco de Calentadores',
+    'zh': ' 环保热水器系统',
+    'tl': ' Eco Water Heater Systems',
+    'vi': ' Hệ thống máy nước nóng Eco'
 };
 
 let injectedCount = 0;

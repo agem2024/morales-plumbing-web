@@ -1,6 +1,6 @@
 # Morales Plumbing — Guía de Deploy a Netlify
 
-## Variables de Entorno Requeridas
+## Variables de Entorno Requeridías
 
 Configurar en **Netlify Dashboard → Site Settings → Environment Variables**:
 
@@ -16,7 +16,7 @@ Configurar en **Netlify Dashboard → Site Settings → Environment Variables**:
 
 ---
 
-## Netlify Functions incluidas
+## Netlify Functions incluidías
 
 | Función | Ruta | Descripción |
 |---|---|---|
@@ -38,11 +38,11 @@ Configurar en **Netlify Dashboard → Site Settings → Environment Variables**:
 
 ## Comportamiento del Chat sin Keys
 
-Si las env vars de AI no están configuradas, el chat de Joe usa respuestas locales predefinidas (`getJoeLocalFallback`) — **la app NO se rompe**, solo el chat responde con respuestas genéricas.
+Si las env vars de AI no están configuradías, el chat de Joe usa respuestas locales predefinidías (`getJoeLocalFallback`) — **la app NO se rompe**, solo el chat responde con respuestas genéricas.
 
 ---
 
 ## Repositorio Oficial y Notificaciones
 
 El proyecto se despliega desde GitHub: `https://github.com/agem2024/morales-plumbing-web.git`
-Notificaciones configuradas a: `moralesplumbing026@gmail.com`
+Notificaciones configuradías a: `moralesplumbing026@gmail.com`

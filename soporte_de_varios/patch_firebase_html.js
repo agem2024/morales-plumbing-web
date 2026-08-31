@@ -5,19 +5,19 @@ let html = fs.readFileSync('index.html', 'utf8');
 // ── 1. Replace booking panel labels with PICO icons ──────────
 const emojiReplacements = [
     // Booking panel labels
-    ['📅</span>\n                <span data-i18n="booking_panel_title"', 
+    ['</span>\n                <span data-i18n="booking_panel_title"', 
      '<span class="pico-icon pico-appointment"></span></span>\n                <span data-i18n="booking_panel_title"'],
-    ['👤 Nombre Completo', '<span class="pico-icon pico-person"></span> Nombre Completo'],
-    ['📞 Teléfono', '<span class="pico-icon pico-pipe_phone"></span> Teléfono'],
-    ['📍 Dirección del Servicio', '<span class="pico-icon pico-drop_pin"></span> Dirección del Servicio'],
-    ['🔧 Tipo de Servicio', '<span class="pico-icon pico-wrench"></span> Tipo de Servicio'],
-    ['📆 Fecha Preferida', '<span class="pico-icon pico-pipe_date"></span> Fecha Preferida'],
-    ['⏰ Hora', '<span class="pico-icon pico-pressure_gauge"></span> Hora'],
-    ['📝 Notas Adicionales', '<span class="pico-icon pico-clipboard"></span> Notas Adicionales'],
+    [' Nombre Completo', '<span class="pico-icon pico-person"></span> Nombre Completo'],
+    [' Teléfono', '<span class="pico-icon pico-pipe_phone"></span> Teléfono'],
+    [' Dirección del Servicio', '<span class="pico-icon pico-drop_pin"></span> Dirección del Servicio'],
+    [' Tipo de Servicio', '<span class="pico-icon pico-wrench"></span> Tipo de Servicio'],
+    [' Fecha Preferida', '<span class="pico-icon pico-pipe_date"></span> Fecha Preferida'],
+    [' Hora', '<span class="pico-icon pico-pressure_gauge"></span> Hora'],
+    [' Notas Adicionales', '<span class="pico-icon pico-clipboard"></span> Notas Adicionales'],
     // Submit button  
-    ['✅ Confirmar Cita', '<span class="pico-icon pico-valve_check"></span> Confirmar Cita'],
+    [' Confirmar Cita', '<span class="pico-icon pico-valve_check"></span> Confirmar Cita'],
     // Hero button calendar
-    ['<span style="font-size:18px; vertical-align:middle; margin-right:6px;">📅</span>',
+    ['<span style="font-size:18px; vertical-align:middle; margin-right:6px;"></span>',
      '<span class="pico-icon pico-appointment" style="width:20px;height:20px;margin-right:6px;display:inline-block;vertical-align:middle;"></span>'],
 ];
 

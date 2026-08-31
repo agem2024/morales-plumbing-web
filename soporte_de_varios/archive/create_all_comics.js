@@ -116,4 +116,4 @@ for (let i = 1; i <= 15; i++) {
     const content = template.replace(/{ID}/g, i);
     fs.writeFileSync('docs/proceso_svc_' + i + '_cliente.html', content);
 }
-console.log("Created 15 comic HTML templates with multilingual support and Back buttons.");
+console.log("Created 15 comic HTML templates with multilinguíal support and Back buttons.");

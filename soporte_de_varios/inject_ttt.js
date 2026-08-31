@@ -74,7 +74,7 @@ const replacements = {
         "promo_ttt_best_li4": "Lavado del sistema completo y prueba de presión.",
         "promo_ttt_best_li5": "Garantía de por Vida en Mano de Obra.",
         "promo_ttt_comic_title": "Guía de Instalación (Tankless a Tankless)",
-        "promo_ttt_good_comic_1": "1. Desconectar y retirar la unidad antigua.",
+        "promo_ttt_good_comic_1": "1. Desconectar y retirar la unidad antiguía.",
         "promo_ttt_good_comic_2": "2. Montar la nueva unidad Navien y conectar las líneas existentes.",
         "promo_ttt_good_comic_3": "3. Calibrar la unidad para una presión de agua óptima.",
         "promo_ttt_good_comic_4": "4. Sistema de agua caliente infinita restaurado.",

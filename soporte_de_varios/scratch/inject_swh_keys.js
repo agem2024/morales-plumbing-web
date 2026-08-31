@@ -34,7 +34,7 @@ const newKeys = {
     "swh_gas_comic_1": "Almacenamiento tradicional y confiable.",
     "swh_gas_comic_2": "Tiempos rápidos de recuperación de temperatura.",
     "swh_gas_comic_3": "Nota: Prohibición de venta en 2027 (Ley BAAQMD).",
-    "swh_hp_title": "Bombas de Calor Híbridas",
+    "swh_hp_title": "Bombas de Calor Híbridías",
     "swh_hp_comic_1": "El futuro definitivo de calentamiento sin emisiones.",
     "swh_hp_comic_2": "Extrae calor del aire, ahorrando hasta 70% de energía.",
     "swh_hp_comic_3": "Califica para los máximos reembolsos del gobierno.",

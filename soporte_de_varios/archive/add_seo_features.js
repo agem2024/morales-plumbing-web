@@ -9,7 +9,7 @@ const emergencyBar = `
     <!-- EMERGENCY TOP BAR -->
     <div id="emergency-topbar" class="emergency-topbar">
         <div class="emergency-content">
-            <span class="emergency-text" data-i18n="topbar_emergency">🚨 Servicio de Emergencia 24/7</span>
+            <span class="emergency-text" data-i18n="topbar_emergency"> Servicio de Emergencia 24/7</span>
             <a href="tel:+16692134422" class="emergency-call">
                 <span data-i18n="topbar_call">Llamar Ahora:</span> <span class="phone-number">(669) 213-4422</span>
             </a>
@@ -25,22 +25,22 @@ const trustAndMap = `
                     <!-- TRUST SIGNALS -->
                     <div class="trust-signals">
                         <div class="trust-badge">
-                            <span class="icon">📜</span>
+                            <span class="icon"></span>
                             <span data-i18n="trust_license">Licencia C-36 #1156542</span>
                         </div>
                         <div class="trust-badge">
-                            <span class="icon">⭐⭐⭐⭐⭐</span>
+                            <span class="icon"></span>
                             <span data-i18n="trust_reviews">Excelentes Reseñas</span>
                         </div>
                         <div class="trust-badge">
-                            <span class="icon">🛡️</span>
+                            <span class="icon"></span>
                             <span data-i18n="trust_insurance">Asegurados & Afianzados</span>
                         </div>
                     </div>
                     
                     <!-- SERVICE AREA -->
                     <div class="service-area-badge">
-                        <span class="icon">📍</span>
+                        <span class="icon"></span>
                         <span data-i18n="area_desc">Sirviendo San Jose y toda la Bahía (Bay Area)</span>
                     </div>
 `;
@@ -144,49 +144,49 @@ if (!css.includes('SEO & TRUST ELEMENTS')) {
 // 3. Update app.js Translations
 const newTranslations = {
     en: {
-        topbar_emergency: "🚨 24/7 Emergency Service",
+        topbar_emergency: " 24/7 Emergency Service",
         topbar_call: "Call Now:",
         trust_license: "C-36 License #1156542",
         trust_reviews: "5-Star Ratings",
         trust_insurance: "Licensed, Bonded & Insured",
         area_desc: "Serving San Jose and the Greater Bay Area",
-        hero_fast_booking: "⚡ Book Fast with Joe"
+        hero_fast_booking: " Book Fast with Joe"
     },
     es: {
-        topbar_emergency: "🚨 Servicio de Emergencia 24/7",
+        topbar_emergency: " Servicio de Emergencia 24/7",
         topbar_call: "Llamar Ahora:",
         trust_license: "Licencia C-36 #1156542",
         trust_reviews: "Reseñas de 5 Estrellas",
         trust_insurance: "Asegurados y Afianzados",
         area_desc: "Sirviendo a San Jose y toda el Área de la Bahía",
-        hero_fast_booking: "⚡ Agenda Rápido con Joe"
+        hero_fast_booking: " Agenda Rápido con Joe"
     },
     zh: {
-        topbar_emergency: "🚨 24/7 紧急服务",
+        topbar_emergency: " 24/7 紧急服务",
         topbar_call: "立即致电:",
         trust_license: "C-36 许可证 #1156542",
         trust_reviews: "五星好评",
         trust_insurance: "完全保险与保函",
         area_desc: "服务圣何塞及整个湾区",
-        hero_fast_booking: "⚡ 与 Joe 快速预订"
+        hero_fast_booking: " 与 Joe 快速预订"
     },
     tl: {
-        topbar_emergency: "🚨 24/7 Emergency Service",
+        topbar_emergency: " 24/7 Emergency Service",
         topbar_call: "Tumawag Ngayon:",
         trust_license: "C-36 Lisensya #1156542",
         trust_reviews: "5-Star na Pagsusuri",
         trust_insurance: "Licensed, Bonded at Insured",
         area_desc: "Naglilingkod sa San Jose at buong Bay Area",
-        hero_fast_booking: "⚡ Mabilis na Booking kay Joe"
+        hero_fast_booking: " Mabilis na Booking kay Joe"
     },
     vi: {
-        topbar_emergency: "🚨 Dịch vụ khẩn cấp 24/7",
+        topbar_emergency: " Dịch vụ khẩn cấp 24/7",
         topbar_call: "Gọi Ngay:",
         trust_license: "Giấy phép C-36 #1156542",
         trust_reviews: "Đánh giá 5 sao",
         trust_insurance: "Được cấp phép & Bảo hiểm",
         area_desc: "Phục vụ San Jose và Vùng Vịnh",
-        hero_fast_booking: "⚡ Đặt lịch nhanh với Joe"
+        hero_fast_booking: " Đặt lịch nhanh với Joe"
     }
 };
 

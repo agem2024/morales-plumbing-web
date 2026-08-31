@@ -13,7 +13,7 @@ const oldKeys = {
     "promo_wp_legal_apply_title": "3. Eligibility & Application:",
     "promo_wp_legal_apply_desc": "Applies to residential property owners replacing older units. If your electrical panel requires upgrading to support 240V, additional subsidies may apply.",
     "promo_wp_legal_time_title": "4. Timeframe & Disclaimer:",
-    "promo_wp_legal_time_desc": "The transition window is open now. Morales Plumbing provides certified equipment and rebate application paperwork, but does not guarantee State approval or payout timelines."
+    "promo_wp_legal_time_desc": "The transition window is open now. Morales Plumbing provides certified equipment and rebate application paperwork, but does not guíarantee State approval or payout timelines."
   },
   es: {
     "promo_wp_legal_title": "Términos Legales, Mandatos y Reembolsos",
@@ -38,7 +38,7 @@ const oldKeys = {
     "promo_wp_legal_time_desc": "过渡窗口现已开启。Morales Plumbing 提供经过认证的设备和退款申请文件，但不保证州的批准或付款时间表。"
   },
   tl: {
-    "promo_wp_legal_title": "Mga Legal na Tuntunin, Mandato, at Rebate",
+    "promo_wp_legal_title": "Mga Legal na Tuntunión, Mandato, at Rebate",
     "promo_wp_legal_mandate_title": "1. Mandato ng BAAQMD (Reg 9, Rule 6):",
     "promo_wp_legal_mandate_desc": "Simula Enero 1, 2027, mahigpit na ipinagbabawal ang pag-install ng mga natural gas water heater sa Bay Area. Inihahanda ng promosyong ito ang iyong tahanan para sa hinaharap.",
     "promo_wp_legal_rebates_title": "2. Mga Insentibo at Rebate:",

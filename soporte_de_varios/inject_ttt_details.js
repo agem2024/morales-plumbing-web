@@ -35,7 +35,7 @@ const ttt_en = `
         "promo_ttt_legal_apply_title": "3. Application Requirements:",
         "promo_ttt_legal_apply_desc": "Applies to residential homeowners replacing old equipment.",
         "promo_ttt_legal_time_title": "4. Validity and Responsibility:",
-        "promo_ttt_legal_time_desc": "The transition window is now. Morales Plumbing provides certified equipment and rebate paperwork, but does not guarantee State approval or payment timelines.",
+        "promo_ttt_legal_time_desc": "The transition window is now. Morales Plumbing provides certified equipment and rebate paperwork, but does not guíarantee State approval or payment timelines.",
 `;
 
 const ttt_es = `

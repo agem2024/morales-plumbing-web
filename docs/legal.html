@@ -1,19 +1,24 @@
+<!-- =======================================================================
+     [STRICT RED LINE / LINEA ROJA ESTRICTA]
+     ZERO EMOJIS ALLOWED IN THIS CODEBASE (100% PROHIBITED).
+     USE ONLY CLEAN TEXT, HTML ENTITIES OR PURE SVG VECTORS.
+     ======================================================================= -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marco Legal, Términos de Servicio y Políticas Financieras | Morales Plumbing</title>
+    <title>Centro Legal, Políticas Web &amp; Términos de Servicio | Morales Plumbing LLC</title>
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Global Style -->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css?v=9.5">
     <style>
         body {
             background-color: #0A192F;
             color: #E2E8F0;
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
         }
@@ -63,15 +68,65 @@
             font-weight: 700;
         }
 
+        .legal-wrapper {
+            display: flex;
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .legal-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 90px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 12px;
+            padding: 1.5rem;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+        .legal-sidebar h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.95rem;
+            color: #D4AF37;
+            margin: 0 0 1rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 0.5rem;
+        }
+        .legal-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .legal-nav-list li {
+            margin-bottom: 0.4rem;
+        }
+        .legal-nav-list a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.82rem;
+            display: block;
+            padding: 5px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .legal-nav-list a:hover {
+            color: #D4AF37;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
         .legal-container {
-            max-width: 960px;
-            margin: 3rem auto;
-            padding: 3.5rem;
+            flex: 1;
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(20px);
             border-radius: 16px;
             border: 1px solid rgba(212, 175, 55, 0.3);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            padding: 3rem 3.5rem;
+            min-width: 0;
         }
 
         h1.page-title {
@@ -86,35 +141,51 @@
             text-align: center;
             color: #94A3B8;
             font-size: 0.95rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .legal-section {
+            margin-bottom: 3.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .legal-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
         }
 
         h2 {
             font-family: 'Orbitron', monospace;
             font-size: 1.25rem;
-            margin-top: 2.5rem;
+            margin-top: 1rem;
             margin-bottom: 1rem;
             color: #38BDF8;
             border-bottom: 1px solid rgba(56, 189, 248, 0.3);
             padding-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        }
+
+        h3.sub-law {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: #F1F5F9;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         p, li {
             color: #CBD5E1;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.92rem;
         }
 
         strong {
             color: #FFFFFF;
         }
 
-        ul {
+        ul, ol {
             padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .legal-card {
@@ -153,20 +224,129 @@
             padding: 10px 14px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
+
+        code {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #38BDF8;
+            font-family: monospace;
+            font-size: 0.88rem;
+        }
+
+        /* ═══ LIGHT MODE COMPLETE STYLING ═══ */
+        :root[data-theme="light"] body {
+            background-color: #F8FAFC !important;
+            color: #0A192F !important;
+        }
+        :root[data-theme="light"] .legal-sidebar {
+            background: #FFFFFF !important;
+            border: 1px solid #CBD5E1 !important;
+            box-shadow: 0 4px 20px rgba(10, 25, 47, 0.06) !important;
+        }
+        :root[data-theme="light"] .legal-sidebar h3 {
+            color: #0A192F !important;
+            border-bottom: 1px solid #D4AF37 !important;
+        }
+        :root[data-theme="light"] .legal-nav-list a {
+            color: #475569 !important;
+        }
+        :root[data-theme="light"] .legal-nav-list a:hover {
+            color: #0A192F !important;
+            background: #F1F5F9 !important;
+            font-weight: 600 !important;
+        }
+        :root[data-theme="light"] .legal-container {
+            background: #FFFFFF !important;
+            border: 1px solid #CBD5E1 !important;
+            box-shadow: 0 10px 30px rgba(10, 25, 47, 0.08) !important;
+        }
+        :root[data-theme="light"] h1.page-title {
+            color: #0A192F !important;
+            text-shadow: none !important;
+        }
+        :root[data-theme="light"] p.page-subtitle {
+            color: #64748B !important;
+        }
+        :root[data-theme="light"] .legal-section {
+            border-top: 1px solid #E2E8F0 !important;
+        }
+        :root[data-theme="light"] h2 {
+            color: #0A192F !important;
+            border-bottom: 2px solid #D4AF37 !important;
+        }
+        :root[data-theme="light"] h3.sub-law {
+            color: #0A192F !important;
+        }
+        :root[data-theme="light"] p,
+        :root[data-theme="light"] li {
+            color: #334155 !important;
+        }
+        :root[data-theme="light"] strong {
+            color: #0A192F !important;
+        }
+        :root[data-theme="light"] .legal-card {
+            background: #F8FAFC !important;
+            border: 1px solid #CBD5E1 !important;
+            border-left: 4px solid #D4AF37 !important;
+        }
+        :root[data-theme="light"] .legal-card.info {
+            background: #EFF6FF !important;
+            border-color: #BFDBFE !important;
+            border-left-color: #3B82F6 !important;
+        }
+        :root[data-theme="light"] .legal-card.danger {
+            background: #FEF2F2 !important;
+            border-color: #FECACA !important;
+            border-left-color: #EF4444 !important;
+        }
+        :root[data-theme="light"] .legal-card.danger strong,
+        :root[data-theme="light"] .legal-card.danger strong[style*="color"] {
+            color: #991B1B !important;
+        }
+        :root[data-theme="light"] .table-legal th {
+            background: #0A192F !important;
+            color: #D4AF37 !important;
+            border-bottom: 2px solid #D4AF37 !important;
+        }
+        :root[data-theme="light"] .table-legal td {
+            background: #FFFFFF !important;
+            color: #334155 !important;
+            border-bottom: 1px solid #E2E8F0 !important;
+        }
+        :root[data-theme="light"] .table-legal td strong {
+            color: #0A192F !important;
+        }
+        :root[data-theme="light"] code {
+            background: #F1F5F9 !important;
+            color: #0A192F !important;
+            border: 1px solid #CBD5E1 !important;
+        }
+        :root[data-theme="light"] a {
+            color: #0284C7 !important;
+        }
+
+        @media (max-width: 900px) {
+            .legal-wrapper {
+                flex-direction: column;
+            }
+            .legal-sidebar {
+                position: static;
+                width: 100%;
+                max-height: none;
+            }
+            .legal-container {
+                padding: 1.5rem;
+            }
+        }
     </style>
-    <!-- morales_theme_sync: Sync Theme & Language from Main Portal -->
+    <!-- Sync Theme -->
     <script>
         (function() {
             try {
                 var theme = localStorage.getItem('morales_a11y_theme') || 'dark';
                 if (theme === 'light') document.documentElement.dataset.theme = 'light';
                 else delete document.documentElement.dataset.theme;
-                var motion = localStorage.getItem('morales_a11y_motion');
-                if (motion === 'reduced') document.documentElement.dataset.motion = 'reduced';
-                var cb = localStorage.getItem('morales_a11y_colorblind');
-                if (cb && cb !== 'none') document.documentElement.dataset.colorblind = cb;
-                var fs = localStorage.getItem('morales_a11y_fontsize');
-                if (fs && fs !== 'normal') document.documentElement.dataset.fontSize = fs;
             } catch(e) {}
         })();
     </script>
@@ -183,104 +363,286 @@
         </a>
         <div class="header-official-right">
             Lic. C-36 #1156542 | San Jose, CA<br>
-            <a href="tel:+16692134422">(669) 213-4422</a> | <a href="../index.html">← Volver al Portal Principal</a>
+            <a href="tel:+16692134422">(669) 213-4422</a> | <a href="../index.html">&larr; Volver al Portal Principal</a>
         </div>
     </header>
 
-    <div class="legal-container">
-        <h1 class="page-title">Marco Legal &amp; Términos de Servicio</h1>
-        <p class="page-subtitle">Morales Plumbing LLC — Licencia Estatal CSLB C-36 #1156542 | San Jose, CA</p>
-
-        <!-- SECCIÓN 1 -->
-        <h2>1. Identificación Legal &amp; Licenciamiento CSLB</h2>
-        <p>
-            <strong>MORALES PLUMBING</strong> opera bajo la Licencia de Contratista de Plomería del Estado de California <strong>CSLB C-36 #1156542</strong>, con sede oficial en San Jose, California. Cumplimos con todos los requisitos de fianza de contratista (*Surety Bond* de $25,000) y mantenemos una póliza de Responsabilidad Civil General (*Commercial General Liability*) y Seguro de Compensación de Trabajadores (*Workers' Compensation*).
-        </p>
-
-        <!-- SECCIÓN 2 -->
-        <h2>2. Segmentación de Paquetes: Residencial, Comercial e Industrial</h2>
-        <table class="table-legal">
-            <thead>
-                <tr>
-                    <th>Paquete</th>
-                    <th>Normativa &amp; Códigos</th>
-                    <th>Términos de Pago</th>
-                    <th>Límite de Depósito</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>🏠 Residencial</strong></td>
-                    <td>CPC, Title 24, BPC § 7159</td>
-                    <td>Due Upon Completion</td>
-                    <td>Máx. $1,000 o 10% (CSLB)</td>
-                </tr>
-                <tr>
-                    <td><strong>🏢 Comercial (B2B)</strong></td>
-                    <td>CPC, Health & Safety, ADA</td>
-                    <td>Net 15 / Net 30</td>
-                    <td>30% a 50% Anticipo</td>
-                </tr>
-                <tr>
-                    <td><strong>🏭 Industrial</strong></td>
-                    <td>Cal/OSHA, EPA, ASME B31.3</td>
-                    <td>Progress Billing (SOV)</td>
-                    <td>Pagos por Hitos + 10% Retención</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- SECCIÓN 3 -->
-        <h2>3. Políticas de Aumento y Ajuste de Precios</h2>
-        <div class="legal-card info">
-            <strong>Cláusula de Escalamiento de Materiales &amp; Ajuste Inflacionario:</strong>
-            <ul>
-                <li><strong>Ajuste Anual:</strong> Las tarifas se revisan en enero conforme al Índice de Precios al Consumidor (CPI) del Área de la Bahía de San Francisco.</li>
-                <li><strong>Escalamiento de Materiales:</strong> En cotizaciones abiertas, incrementos $> 5%$ en el mercado mayorista de cobre, resina PEX o bronce sin plomo serán ajustados mediante Orden de Cambio (*Change Order*).</li>
-                <li><strong>Preaviso de Suscripciones (California ARL):</strong> Modificaciones en planes de membresía serán notificadas con un mínimo de <strong>30 días de anticipación</strong>.</li>
+    <div class="legal-wrapper">
+        <!-- ÍNDICE LATERAL (LEGAL DIRECTORY) -->
+        <nav class="legal-sidebar" aria-label="Legal Center Navigation">
+            <h3>Centro Legal &amp; Políticas</h3>
+            <ul class="legal-nav-list">
+                <li><a href="#sec-licensing">1. Licenciamiento &amp; CSLB</a></li>
+                <li><a href="#sec-packages">2. Segmentación de Paquetes</a></li>
+                <li><a href="#sec-pricing">3. Aumento &amp; Ajuste de Precios</a></li>
+                <li><a href="#sec-payments">4. Políticas de Pago &amp; Mora</a></li>
+                <li><a href="#sec-liens">5. Gravámenes (Mechanics Liens)</a></li>
+                <li><a href="#sec-terms">6. Términos de Uso del Sitio Web</a></li>
+                <li><a href="#sec-privacy">7. Política de Privacidad (CCPA/CPRA)</a></li>
+                <li><a href="#sec-cookies">8. Cookies &amp; LocalStorage</a></li>
+                <li><a href="#sec-copyright">9. Derechos de Autor &amp; IP</a></li>
+                <li><a href="#sec-sms">10. Política de Mensajería SMS (TCPA)</a></li>
+                <li><a href="#sec-email">11. Comunicaciones por Email (CAN-SPAM)</a></li>
+                <li><a href="#sec-a11y">12. Declaración de Accesibilidad (ADA)</a></li>
+                <li><a href="#sec-consumer">13. Protección al Consumidor (BPC § 7159)</a></li>
+                <li><a href="#sec-cancellation">14. Cancelaciones &amp; Reembolsos</a></li>
+                <li><a href="#sec-warranty">15. Póliza de Garantías</a></li>
+                <li><a href="#sec-reviews">16. Testimonios &amp; Reseñas (FTC)</a></li>
+                <li><a href="#sec-ai">17. Uso de IA &amp; ORION System</a></li>
+                <li><a href="#sec-memberships">18. Membresías &amp; Renovación (ARL)</a></li>
+                <li><a href="#sec-security">19. Seguridad &amp; Protección de Datos</a></li>
+                <li><a href="#sec-disputes">20. Resolución de Disputas &amp; Ley</a></li>
             </ul>
-        </div>
+        </nav>
 
-        <!-- SECCIÓN 4 -->
-        <h2>4. Políticas de Pago, Mora y Cheques Devueltos</h2>
-        <ul>
-            <li><strong>Métodos Aceptados:</strong> Stripe (Tarjetas, Apple Pay, Google Pay), Zelle oficial (<code>moralesplumbing026@gmail.com</code> / <code>(669) 213-4422</code>), Transferencia ACH bancaria y Cheque comercial.</li>
-            <li><strong>Intereses Moratorios:</strong> Facturas vencidas acumularán un interés moratorio del <strong>1.5% mensual (18% anual)</strong> conforme a la legislación de California.</li>
-            <li><strong>Cheques sin Fondos (NSF):</strong> Cargo administrativo de <strong>$35.00</strong> por cada cheque devuelto (<em>California Civil Code § 1719</em>).</li>
-        </ul>
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="legal-container">
+            <h1 class="page-title">Centro Legal &amp; Políticas Web</h1>
+            <p class="page-subtitle">MORALES PLUMBING LLC &mdash; Marco Integral de Cumplimiento Regulatorio, Estatal (CSLB C-36 #1156542), Federal y Derechos del Consumidor de California &mdash; San Jose, CA</p>
 
-        <!-- SECCIÓN 5 -->
-        <h2>5. Procedimiento Legal de Gravamen (California Mechanics Liens)</h2>
-        <div class="legal-card danger">
-            <strong style="color: #F87171;">Aviso Legal de Gravamen (California Civil Code § 8400-8448):</strong>
-            <p style="margin: 5px 0 0; font-size: 0.9rem;">
-                Conforme a la ley de California, Morales Plumbing emitirá el <strong>Aviso Preliminar de 20 Días (*Preliminary 20-Day Notice*)</strong> en obras que lo requieran. Ante la falta de pago tras 30 días de concluido el trabajo, se registrará formalmente un <strong>Mechanics Lien</strong> en el Registro del Condado de Santa Clara contra el título de la propiedad, seguido de una demanda de ejecución hipotecaria judicial (*Foreclosure Lawsuit*) con cobro de costas y honorarios legales.
-            </p>
-        </div>
+            <!-- 1. IDENTIFICACIÓN LEGAL & LICENCIAMIENTO -->
+            <section id="sec-licensing" class="legal-section">
+                <h2>1. Identificación Legal &amp; Licenciamiento CSLB</h2>
+                <p>
+                    <strong>MORALES PLUMBING</strong> opera bajo la Licencia de Contratista de Plomería del Estado de California <strong>CSLB C-36 #1156542</strong>, con sede oficial en San Jose, California. Cumplimos con todos los requisitos de fianza de contratista (<em>Surety Bond</em> de $25,000) y mantenemos vigentes pólizas de Responsabilidad Civil General (<em>Commercial General Liability</em>) y Seguro de Compensación de Trabajadores (<em>Workers' Compensation</em>).
+                </p>
+                <p>
+                    Toda intervención hidráulica, de gas o drenaje es ejecutada conforme a los más estrictos estándares del <strong>California Plumbing Code (CPC)</strong> y el <strong>Uniform Plumbing Code (UPC)</strong>.
+                </p>
+            </section>
 
-        <!-- SECCIÓN 6 -->
-        <h2>6. Derecho de Cancelación en 3 Días (Three-Day Right to Cancel)</h2>
-        <p>
-            Conforme a <em>California BPC § 7159.10</em> y la regla federal <em>FTC 16 CFR § 429</em>, los clientes residenciales tienen derecho a rescindir contratos de mejoras al hogar sin penalización alguna dentro de los <strong>3 días hábiles</strong> posteriores a su firma.
-        </p>
+            <!-- 2. SEGMENTACIÓN DE PAQUETES -->
+            <section id="sec-packages" class="legal-section">
+                <h2>2. Segmentación de Paquetes: Residencial, Comercial e Industrial</h2>
+                <table class="table-legal">
+                    <thead>
+                        <tr>
+                            <th>Paquete</th>
+                            <th>Normativa &amp; Códigos</th>
+                            <th>Términos de Pago</th>
+                            <th>Límite de Depósito</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Residencial</strong></td>
+                            <td>CPC, Title 24, BPC § 7159</td>
+                            <td>Due Upon Completion</td>
+                            <td>Máx. $1,000 o 10% (CSLB)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Comercial (B2B)</strong></td>
+                            <td>CPC, Health &amp; Safety, ADA</td>
+                            <td>Net 15 / Net 30</td>
+                            <td>30% a 50% Anticipo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Industrial</strong></td>
+                            <td>Cal/OSHA, EPA, ASME B31.3</td>
+                            <td>Progress Billing (SOV)</td>
+                            <td>Pagos por Hitos + 10% Retención</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
-        <!-- SECCIÓN 7 -->
-        <h2>7. Ley de Renovación Automática de California (ARL - BPC § 17600)</h2>
-        <p>
-            Las membresías de mantenimiento ($19.99/mes o $49.99/mes) operan bajo cobro recurrente continuo. El cliente puede <strong>cancelar en cualquier momento en 1 solo clic</strong> desde su portal de cliente o enviando un correo electrónico a <code>moralesplumbing026@gmail.com</code> sin penalidad.
-        </p>
+            <!-- 3. AUMENTO & AJUSTE DE PRECIOS -->
+            <section id="sec-pricing" class="legal-section">
+                <h2>3. Políticas de Aumento y Ajuste de Precios</h2>
+                <div class="legal-card info">
+                    <strong>Cláusula de Escalamiento de Materiales &amp; Ajuste Inflacionario:</strong>
+                    <ul>
+                        <li><strong>Ajuste Anual:</strong> Las tarifas del Price Book se actualizan en enero conforme al Índice de Precios al Consumidor (CPI) del Área de la Bahía de San Francisco.</li>
+                        <li><strong>Escalamiento de Materiales:</strong> En cotizaciones abiertas, incrementos mayores al 5% en el mercado mayorista de cobre Tipo L/K, resina PEX-A o bronce sin plomo serán ajustados mediante Orden de Cambio (<em>Change Order</em>) documentada.</li>
+                        <li><strong>Preaviso de Suscripciones (California ARL):</strong> Modificaciones en tarifas de membresía serán notificadías con un mínimo de <strong>30 días de anticipación</strong>.</li>
+                    </ul>
+                </div>
+            </section>
 
-        <!-- SECCIÓN 8 -->
-        <h2>8. Seguridad del Agua Potable (EPA Lead-Free SDWA)</h2>
-        <p>
-            Garantizamos que el 100% de las tuberías, válvulas, soldaduras y accesorios instalados cumplen con la <em>Safe Drinking Water Act</em> (contenido ponderado de plomo &le; 0.25%).
-        </p>
+            <!-- 4. POLÍTICAS DE PAGO & MORA -->
+            <section id="sec-payments" class="legal-section">
+                <h2>4. Políticas de Pago, Mora y Cheques Devueltos</h2>
+                <ul>
+                    <li><strong>Métodos Aceptados:</strong> Stripe (Tarjetas de Crédito/Débito, Apple Pay, Google Pay), Zelle oficial (<code>moralesplumbing026@gmail.com</code> / <code>(669) 213-4422</code>), Transferencia ACH bancaria y Cheque comercial.</li>
+                    <li><strong>Intereses Moratorios:</strong> Facturas comerciales vencidías acumularán un interés moratorio del <strong>1.5% mensual (18% anual)</strong> conforme a la legislación de California.</li>
+                    <li><strong>Cheques sin Fondos (NSF):</strong> Cargo administrativo de <strong>$35.00</strong> por caída cheque devuelto (<em>California Civil Code § 1719</em>).</li>
+                </ul>
+            </section>
 
-        <!-- SECCIÓN 9 -->
-        <h2>9. Privacidad &amp; Protección de Datos (CCPA / CPRA &amp; CIPA)</h2>
-        <p>
-            Morales Plumbing no vende, alquila ni transfiere información personal de clientes a terceros. Nuestro asistente Karla AI procesa datos bajo consentimiento expreso del usuario exclusivamente para fines de diagnóstico y agendamiento técnico.
-        </p>
+            <!-- 5. GRAVÁMENES (MECHANICS LIENS) -->
+            <section id="sec-liens" class="legal-section">
+                <h2>5. Procedimiento Legal de Gravamen (California Mechanics Liens)</h2>
+                <div class="legal-card danger">
+                    <strong style="color: #F87171;">Aviso Legal de Gravamen (California Civil Code § 8400-8448):</strong>
+                    <p style="margin: 5px 0 0; font-size: 0.9rem;">
+                        Conforme a la ley de California, Morales Plumbing emitirá el <strong>Aviso Preliminar de 20 Días (<em>Preliminary 20-Day Notice</em>)</strong> en obras que lo requieran. Ante la falta de pago tras 30 días de concluido el trabajo, se registrará formalmente un <strong>Mechanics Lien</strong> en el Registro del Condado de Santa Clara contra el título de la propiedad, seguido de una demanda de ejecución hipotecaria judicial (<em>Foreclosure Lawsuit</em>) con cobro de costas y honorarios legales.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 6. TÉRMINOS DE USO DEL SITIO WEB -->
+            <section id="sec-terms" class="legal-section">
+                <h2>6. Términos de Uso del Sitio Web</h2>
+                <p>
+                    Al acceder y utilizar este sitio web (<strong>www.morales-plumbing.com</strong>) y el ecosistema interactivo ORION, el usuario acepta cumplir con los presentes Términos de Uso, todías las leyes aplicables del Estado de California y normativas federales. Queda estrictamente prohibido el uso no autorizado, scraping automatizado, inyección de código o intentos de vulnerar la infraestructura de seguridad.
+                </p>
+            </section>
+
+            <!-- 7. POLÍTICA DE PRIVACIDAD (CCPA / CPRA) -->
+            <section id="sec-privacy" class="legal-section">
+                <h2>7. Política de Privacidad (CCPA / CPRA &amp; CalOPPA)</h2>
+                <p>
+                    Morales Plumbing respeta su privacidad y cumple con la <strong>California Consumer Privacy Act (CCPA)</strong> y la <strong>California Privacy Rights Act (CPRA)</strong>.
+                </p>
+                <ul>
+                    <li><strong>Datos Recopilados:</strong> Nombre, teléfono, correo electrónico, dirección del inmueble y detalles del servicio solicitados voluntariamente.</li>
+                    <li><strong>Cero Venta de Datos:</strong> <strong>NO vendemos, alquilamos ni transferimos</strong> información personal a corredores de datos ni terceros con fines publicitarios.</li>
+                    <li><strong>Derechos del Residente de California:</strong> Derecho a conocer, rectificar, solicitar la eliminación de datos y derecho a no sufrir discriminación por ejercer sus derechos de privacidad.</li>
+                    <li><strong>Contacto de Privacidad:</strong> Correo directo: <code>moralesplumbing026@gmail.com</code> | Teléfono: <code>(669) 213-4422</code>.</li>
+                </ul>
+            </section>
+
+            <!-- 8. COOKIES & LOCALSTORAGE -->
+            <section id="sec-cookies" class="legal-section">
+                <h2>8. Política de Cookies y Almacenamiento Local (LocalStorage)</h2>
+                <p>
+                    Nuestra plataforma utiliza tecnología de <strong>Almacenamiento Local del Navegador (Web LocalStorage)</strong> en lugar de cookies invasivas de terceros para preservar sus preferencias de idioma, modo de accesibilidad visual y estado de sesión. No utilizamos cookies de rastreo intersitio.
+                </p>
+            </section>
+
+            <!-- 9. DERECHOS DE AUTOR & PROPIEDAD INTELECTUAL -->
+            <section id="sec-copyright" class="legal-section">
+                <h2>9. Política de Derechos de Autor y Propiedad Intelectual</h2>
+                <p>
+                    Todo el contenido de este sitio web &mdash; incluyendo la arquitectura de software ORION, el asistente Karla / Joe AI, diagramas de flujo hidráulico, el Price Book v6.0 PRO, videos institucionales, gráficos vectoriales y marcas &mdash; constituye <strong>propiedad intelectual exclusiva de Morales Plumbing y NeKon AI aGent Consulting</strong>. Queda prohibida la reproducción, duplicación o distribución sin consentimiento previo por escrito.
+                </p>
+            </section>
+
+            <!-- 10. POLÍTICA DE MENSAJERÍA SMS (TCPA) -->
+            <section id="sec-sms" class="legal-section">
+                <h2>10. Política de Mensajería SMS / Textos (TCPA &amp; 10DLC)</h2>
+                <p>
+                    Al ingresar su número telefónico y solicitar un servicio o confirmación de cita, usted autoriza a Morales Plumbing a enviarle mensajes transaccionales (SMS) relacionados con el despacho técnico, confirmaciones y actualizaciones de servicio.
+                </p>
+                <ul>
+                    <li>No enviamos spam publicitario no solicitado.</li>
+                    <li>Frecuencia de mensajes: Variable según el estado de su cita.</li>
+                    <li>Puede cancelar en cualquier momento respondiendo <code>STOP</code> o solicitar ayuda enviando <code>HELP</code>. Pueden aplicar tarifas estándar de mensajería según su operador.</li>
+                </ul>
+            </section>
+
+            <!-- 11. COMUNICACIONES POR EMAIL (CAN-SPAM) -->
+            <section id="sec-email" class="legal-section">
+                <h2>11. Política de Comunicaciones por Correo Electrónico (CAN-SPAM Act)</h2>
+                <p>
+                    Todías las comunicaciones enviadías por correo electrónico desde <code>moralesplumbing026@gmail.com</code> cumplen plenamente con la <strong>CAN-SPAM Act</strong> federal. Los correos contienen identificación clara del remitente, nuestra dirección física comercial en San Jose, CA, y opciones directas para gestionar preferencias de comunicación transaccional.
+                </p>
+            </section>
+
+            <!-- 12. DECLARACIÓN DE ACCESIBILIDAD (ADA) -->
+            <section id="sec-a11y" class="legal-section">
+                <h2>12. Declaración de Accesibilidad Web (ADA &amp; WCAG 2.1 AA)</h2>
+                <p>
+                    Morales Plumbing está comprometido a garantizar la accesibilidad digital para personas con discapacidades conforme a las pautas <strong>Web Content Accessibility Guidelines (WCAG) 2.1 nivel AA</strong> y la <strong>Americans with Disabilities Act (ADA)</strong>. Proveemos modos de alto contraste, filtros para daltonismo, navegación por teclado y modo seguro anti-epilepsia con reducción de animaciones.
+                </p>
+            </section>
+
+            <!-- 13. PROTECCIÓN AL CONSUMIDOR (BPC § 7159) -->
+            <section id="sec-consumer" class="legal-section">
+                <h2>13. Protección al Consumidor &amp; Contratos de Mejoras del Hogar (BPC § 7159)</h2>
+                <p>
+                    Conforme al <strong>California Business &amp; Professions Code § 7159</strong>, todo trabajo de mejoras residenciales que supere los $500 requiere un contrato escrito detallado firmado por ambas partes antes del inicio de obra. El depósito inicial no excederá de <strong>$1,000 o el 10% del precio total</strong> (lo que sea menor).
+                </p>
+                <div class="legal-card info">
+                    <strong>Divulgación Obligatoria CSLB:</strong>
+                    Los contratistas registrados en California están regulados por la Junta Estatal de Licencias de Contratistas (Contractors State License Board - CSLB). Verifique nuestra licencia C-36 #1156542 en <a href="https://www.cslb.ca.gov" target="_blank" rel="noopener noreferrer">www.cslb.ca.gov</a> o llame al 1-800-321-CSLB.
+                </div>
+            </section>
+
+            <!-- 14. CANCELACIONES & REEMBOLSOS -->
+            <section id="sec-cancellation" class="legal-section">
+                <h2>14. Política de Cancelación &amp; Derecho a Cancelar en 3 Días</h2>
+                <p>
+                    Conforme a la <strong>Home Solicitation Sales Act de California (Civil Code § 1689.5-1689.14)</strong>, los clientes residenciales tienen el derecho legal incondicional de cancelar un contrato firmado en su domicilio dentro de los <strong>3 días hábiles</strong> siguientes a la firma (o 7 días en caso de declaración de emergencia oficial), sin penalización alguna.
+                </p>
+                <p>
+                    <strong>Servicios de Emergencia:</strong> En caso de reparaciones de emergencia inmediata donde el cliente firma una renuncia formal del periodo de cancelación para evitar daños mayores a la propiedad, el trabajo se cobrará según lo ejecutado.
+                </p>
+            </section>
+
+            <!-- 15. PÓLIZA DE GARANTÍAS -->
+            <section id="sec-warranty" class="legal-section">
+                <h2>15. Póliza Integral de Garantías</h2>
+                <ul>
+                    <li><strong>Garantía de Mano de Obra:</strong> 1 año completo en todías las instalaciones y reemplazos de tubería nueva (PEX-A Uponor, Cobre Tipo L).</li>
+                    <li><strong>Equipos &amp; Calentadores de Agua:</strong> Aplica la garantía del fabricante (6 a 12 años en tanques / 15 a 25 años en calentadores tankless), respaldada por el soporte técnico de Morales Plumbing.</li>
+                    <li><strong>Drenajes &amp; Desazolve:</strong> 30 días de garantía en líneas limpiadías mediante presión hidrostática o cámara diagnóstica (excluye colapsos estructurales por raíces o tuberías fracturadías diagnosticadías previamente).</li>
+                </ul>
+            </section>
+
+            <!-- 16. TESTIMONIOS & RESEÑAS (FTC) -->
+            <section id="sec-reviews" class="legal-section">
+                <h2>16. Política de Testimonios y Reseñas (Guías FTC)</h2>
+                <p>
+                    Todías las reseñas y testimonios publicados en nuestras plataformas reflejan experiencias reales de clientes verificados de Morales Plumbing en el Área de la Bahía de San Francisco. No pagamos por reseñas ni publicamos testimonios falsos, cumpliendo estrictamente con las directrices de veracidad publicitaria de la <strong>Federal Trade Commission (FTC)</strong>.
+                </p>
+            </section>
+
+            <!-- 17. USO DE IA & ORION SYSTEM -->
+            <section id="sec-ai" class="legal-section">
+                <h2>17. Declaración de Uso de Inteligencia Artificial (ORION / Karla / Joe)</h2>
+                <p>
+                    Nuestros asistentes de inteligencia artificial (Karla AI / Joe AI) y el sistema ORION proporcionan orientación técnica preliminar y pre-diagnósticos de cortesía basados en modelos computacionales.
+                </p>
+                <div class="legal-card info">
+                    <strong>Aviso Técnico:</strong> Las estimaciones generadías por IA son cálculos de referencia preliminares no vinculantes. Toda cotización final y plan de trabajo requiere la inspección presencial y validación técnica de un maestro plomero con licencia CSLB C-36.
+                </div>
+            </section>
+
+            <!-- 18. MEMBRESÍAS & RENOVACIÓN AUTOMÁTICA -->
+            <section id="sec-memberships" class="legal-section">
+                <h2>18. Política de Membresías &amp; Ley de Renovación Automática (California ARL)</h2>
+                <p>
+                    Los planes de mantenimiento preventivo y membresías mensuales (Standard $19.99/mes, Premium $49.99/mes) operan bajo el marco de la <strong>California Automatic Renewal Law (Business &amp; Professions Code § 17600-17606)</strong>.
+                </p>
+                <ul>
+                    <li>El cliente autoriza el cobro recurrente mensual hasta su cancelación.</li>
+                    <li>La cancelación puede solicitarse en cualquier momento desde el Portal de Clientes o enviando un correo a <code>moralesplumbing026@gmail.com</code> sin cargos por penalización.</li>
+                </ul>
+            </section>
+
+            <!-- 19. SEGURIDAD & PROTECCIÓN DE DATOS -->
+            <section id="sec-security" class="legal-section">
+                <h2>19. Política de Seguridad &amp; Protección de Datos</h2>
+                <p>
+                    Implementamos cifrado de grado militar TLS 1.3 en todías las transferencias de datos web, encabezados de seguridad HTTP estrictos (HSTS, CSP, X-Frame-Options) y almacenamiento segregado. Las transacciones de pago son procesadías directamente a través de pasarelas con certificación <strong>PCI-DSS Nivel 1 (Stripe)</strong>, por lo que nunca almacenamos números de tarjetas en nuestros servidores locales.
+                </p>
+            </section>
+
+            <!-- 20. RESOLUCIÓN DE DISPUTAS & LEY APLICABLE -->
+            <section id="sec-disputes" class="legal-section">
+                <h2>20. Resolución de Disputas, Mediación &amp; Ley Aplicable</h2>
+                <p>
+                    El presente acuerdo y todías las relaciones contractuales se rigen exclusivamente por las leyes del <strong>Estado de California</strong>.
+                </p>
+                <ul>
+                    <li><strong>Paso 1: Negociación Directa:</strong> Las partes intentarán resolver de buena fe cualquier discrepancia comunicándose con la dirección de Morales Plumbing.</li>
+                    <li><strong>Paso 2: Mediación / Arbitraje CSLB:</strong> En caso de no alcanzarse un acuerdo, las controversias podrán someterse al programa voluntario de arbitraje de la CSLB.</li>
+                    <li><strong>Jurisdicción Exclusiva:</strong> Para cualquier acción judicial no sujeta a arbitraje, la jurisdicción y sede exclusiva serán los Tribunales del <strong>Condado de Santa Clara, California</strong>.</li>
+                </ul>
+            </section>
+
+            <!-- DATOS DE CONTACTO OFICIAL -->
+            <div style="margin-top: 3.5rem; padding-top: 2rem; border-top: 2px solid #D4AF37; text-align: center;">
+                <p style="font-weight: 700; color: #D4AF37; margin-bottom: 0.4rem;">MORALES PLUMBING LLC &mdash; AI-INTEGRATED SERVICES</p>
+                <p style="font-size: 0.85rem; margin-bottom: 0.4rem;">Lic. CSLB C-36 #1156542 | San Jose &amp; Santa Clara County, CA</p>
+                <p style="font-size: 0.85rem;">
+                    Teléfono: <a href="tel:+16692134422" style="font-weight: 700;">(669) 213-4422</a> | 
+                    Email: <a href="mailto:moralesplumbing026@gmail.com">moralesplumbing026@gmail.com</a> | 
+                    Web: <a href="https://www.morales-plumbing.com" target="_blank">www.morales-plumbing.com</a>
+                </p>
+            </div>
+        </main>
     </div>
 </body>
 </html>

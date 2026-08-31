@@ -40,7 +40,7 @@ Este documento fue creado después de una serie de errores críticos cometidos p
 ## 🚫 ERROR CRÍTICO 4: SALTARSE ÍTEMS EN ACTUALIZACIONES MASIVAS
 **El Error:** Al inyectar botones de YouTube (`video_url_es`), el Agente hizo un loop del `EXL-102` al `EXL-177`, e ignoró del `EXL-178` al `EXL-200` (Categoría CLEANING). Consecuencia: Desaparecieron las interfaces de esos 22 ítems.
 **La Solución Obligatoria:** 
-* Cuando hagas actualizaciones globales o reconstruyas el HTML interno (`subs_html`), asegúrate de cubrir TODO el catálogo pertinente, y haz validaciones cruzadas.
+* Cuando hagas actualizaciones globales o reconstruyas el HTML interno (`subs_html`), asegúrate de cubrir TODO el catálogo pertinente, y haz validaciones cruzadías.
 
 ---
 

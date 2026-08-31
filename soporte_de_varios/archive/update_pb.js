@@ -55,7 +55,7 @@ const data = {
     ["[Heater] High-Efficiency Condensing Unit.", "Condensing unit, PVC venting, neutralizer.", "Combustion analyzer, ProPress.", "6-8 hrs",
      "[Calentador] Unidad de condensación de alta eficiencia.", "Unidad de condensación, ventilación PVC.", "Analizador de combustión, ProPress.", "6-8 hrs"],
     ["[Heater] Dual Condensing Setup + Recirculation.", "2x Navien units, manifold kit, smart controller.", "Advanced diagnostic tools, manifold setup.", "1-2 days",
-     "[Calentador] Configuración dual con recirculación.", "2 unidades Navien, kit de múltiple, controlador inteligente.", "Herramientas avanzadas, sistema de múltiple.", "1-2 días"]
+     "[Calentador] Configuración dual con recirculación.", "2 unidades Navien, kit de múltiple, controlador inteligente.", "Herramientas avanzadías, sistema de múltiple.", "1-2 días"]
   ],
   8: [
     ["[Gas Line] Standard black iron pipe extension.", "Black iron pipe, malleable fittings.", "Pipe threader, pipe wrenches.", "3-5 hrs",
@@ -95,7 +95,7 @@ const data = {
     ["[Backflow] Commercial RPZ + Certification.", "Premium RPZ, test cocks, insulation blanket.", "Calibrated backflow test kit.", "4-6 hrs",
      "[Retorno] RPZ Comercial + Certificación.", "RPZ premium, llaves de prueba, manta aislante.", "Kit de prueba calibrado.", "4-6 hrs"],
     ["[Backflow] Large industrial backflow + Enclosure.", "Flanged backflow preventer, heated enclosure.", "Chain hoists, torque wrench, flange gaskets.", "1-2 days",
-     "[Retorno] Válvula industrial grande + Recinto.", "Válvula con bridas, recinto calefaccionado.", "Polipastos, llave dinamométrica.", "1-2 días"]
+     "[Retorno] Válvula industrial grande + Recinto.", "Válvula con bridías, recinto calefaccionado.", "Polipastos, llave dinamométrica.", "1-2 días"]
   ],
   13: [
     ["[Boiler] Annual preventative maintenance.", "Gaskets, cleaning brushes, thermocouple.", "Combustion analyzer, multimeter, wrenches.", "3-5 hrs",

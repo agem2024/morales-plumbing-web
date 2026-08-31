@@ -12,13 +12,13 @@ const translationsToAdd = {
         law_sec1_li1: "<strong>Impacto Inmediato:</strong> Los reemplazos de emergencia después de 2027 requerirán exclusivamente equipos eléctricos de cero emisiones.",
         law_sec1_li2: "<strong>Transición:</strong> Se insta a los propietarios a migrar a calentadores de bomba de calor (Heat Pump) antes del colapso de inventario de 2027.",
         law_sec2_title: "2. Tipos de Calentadores de Agua (Transición a Eléctrico)",
-        law_sec2_p1: "Comprender las tecnologías aprobadas para la transición energética de California es vital para cumplir con el Título 24 (Title 24).",
+        law_sec2_p1: "Comprender las tecnologías aprobadías para la transición energética de California es vital para cumplir con el Título 24 (Title 24).",
         law_sec2_li1: "<strong>Bomba de Calor Híbrida (Heat Pump):</strong> Extrae calor del aire ambiental para calentar el agua, logrando eficiencias superiores al 300%. Es la opción #1 requerida por el estado y califica para los máximos reembolsos (Rebates).",
         law_sec2_li2: "<strong>Eléctricos de Tanque Estándar:</strong> Utilizan resistencias térmicas, menos eficientes y generalmente penalizados bajo cálculos estrictos del Título 24, pero permitidos.",
         law_sec2_li3: "<strong>Eléctricos Tankless (Sin Tanque):</strong> Calientan el agua al instante. Aunque no emiten NOx, requieren un amperaje masivo (a menudo paneles eléctricos de más de 200A) y rara vez son viables sin actualizaciones eléctricas costosas.",
         law_sec3_title: "3. Especificaciones del Código (CSLB y Title 24)",
         law_sec3_p1: "Instalar un calentador no es solo conectar agua. Morales Plumbing garantiza el cumplimiento estricto del Código Uniforme de Plomería (UPC) de California:",
-        law_sec3_li1: "<strong>Sujeción Sísmica (Earthquake Straps):</strong> Ley de California requiere correas dobles en el tercio superior e inferior, ancladas directamente a montantes de pared para evitar el vuelco durante terremotos.",
+        law_sec3_li1: "<strong>Sujeción Sísmica (Earthquake Straps):</strong> Ley de California requiere correas dobles en el tercio superior e inferior, ancladías directamente a montantes de pared para evitar el vuelco durante terremotos.",
         law_sec3_li2: "<strong>Tanque de Expansión Térmica:</strong> Obligatorio en sistemas de plomería cerrados para absorber el exceso de presión, protegiendo las tuberías del hogar y evitando explosiones de válvulas.",
         law_sec3_li3: "<strong>Bandeja de Drenaje (Drain Pan):</strong> Requerida si el calentador está en una plataforma interior, en ático o espacio donde una fuga cause daños a la estructura. La bandeja debe tener tubería que drene al exterior.",
         law_sec3_li4: "<strong>Válvula T&P (Temperature & Pressure Relief):</strong> Crítica para la seguridad, su línea de descarga debe llevar el agua caliente a un desagüe seguro, típicamente al exterior.",
@@ -38,7 +38,7 @@ const translationsToAdd = {
         law_sec2_li2: "<strong>Standard Electric Tank:</strong> Use thermal elements, less efficient and generally penalized under strict Title 24 calculations, but allowed.",
         law_sec2_li3: "<strong>Electric Tankless:</strong> Heats water instantly. Although they do not emit NOx, they require massive amperage (often 200A+ panels) and are rarely viable without costly electrical upgrades.",
         law_sec3_title: "3. Code Specifications (CSLB & Title 24)",
-        law_sec3_p1: "Installing a heater is not just hooking up water. Morales Plumbing guarantees strict compliance with the California Uniform Plumbing Code (UPC):",
+        law_sec3_p1: "Installing a heater is not just hooking up water. Morales Plumbing guíarantees strict compliance with the California Uniform Plumbing Code (UPC):",
         law_sec3_li1: "<strong>Earthquake Straps:</strong> California law requires double straps on the top and bottom third, anchored directly to wall studs to prevent tipping during earthquakes.",
         law_sec3_li2: "<strong>Thermal Expansion Tank:</strong> Mandatory in closed plumbing systems to absorb excess pressure, protecting home pipes and preventing valve explosions.",
         law_sec3_li3: "<strong>Drain Pan:</strong> Required if the heater is on an indoor platform, attic, or space where a leak causes structural damage. The pan must have a pipe draining outdoors.",
@@ -128,4 +128,4 @@ languages.forEach(lang => {
 });
 
 fs.writeFileSync(file, appJS);
-console.log('Traducciones inyectadas exitosamente en app.js.');
+console.log('Traducciones inyectadías exitosamente en app.js.');

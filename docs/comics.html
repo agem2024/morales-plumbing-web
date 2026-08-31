@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C�mics Originales - Morales Plumbing</title>
+    <title>Cmics Originales - Morales Plumbing</title>
     <!-- Google tag (gtag.js) for Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-939YTT7Y4D"></script>
     <script>
@@ -164,7 +164,7 @@
 
     <a href="../index.html#multimedia" class="back-link"><i class="fas fa-arrow-left"></i> Volver a Multimedia</a>
 
-    <h2 class="section-title">C�mics Originales</h2>
+    <h2 class="section-title">Cmics Originales</h2>
     
     <div class="lang-filter">
         
@@ -190,12 +190,12 @@
                 
                 // Activate the correct button
                 document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-                const targetBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent.toLowerCase().includes(currentLang === 'en' ? 'english' : 'espa�ol'));
+                const targetBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent.toLowerCase().includes(currentLang === 'en' ? 'english' : 'espaol'));
                 if(targetBtn) targetBtn.classList.add('active');
                 
                 renderMedia(currentLang);
             } catch(e) {
-                document.getElementById('gallery').innerHTML = "<div class='empty-state'>An no hay im�genes publicadas o ocurri� un error al cargar los datos.</div>";
+                document.getElementById('gallery').innerHTML = "<div class='empty-state'>An no hay imgenes publicadías o ocurri un error al cargar los datos.</div>";
                 console.error(e);
             }
         }
@@ -228,7 +228,7 @@
         // Listen to global app.js changes just in case
         window.addEventListener('languageChanged', (e) => {
             if(e.detail) {
-                const targetBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent.toLowerCase().includes(e.detail === 'en' ? 'english' : 'espa�ol'));
+                const targetBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent.toLowerCase().includes(e.detail === 'en' ? 'english' : 'espaol'));
                 if(targetBtn) {
                     targetBtn.click();
                 } else {

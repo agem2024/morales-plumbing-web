@@ -30,7 +30,7 @@ indexHtml = indexHtml
              '<textarea id="bk-notes" class="booking-input booking-textarea" placeholder="Cualquier detalle adicional..." oninput="syncBookingField(\'notes\', this.value)"></textarea>');
 
 fs.writeFileSync('index.html', indexHtml);
-console.log('✅ index.html: form fields made editable');
+console.log(' index.html: form fields made editable');
 
 // ─────────────────────────────────────────────────────────────
 // 2. Replace the entire booking system JS with v2
@@ -55,24 +55,24 @@ let bookingState = {
 const BOOKING_STEPS = {
     es: [
         null, // 0 = idle
-        '¡Perfecto! Voy a ayudarte a agendar tu cita. 📅\n\n¿Cuál es tu **nombre completo**?',
-        '✅ Anotado. ¿Cuál es tu **número de teléfono** de contacto?',
-        '✅ Perfecto. ¿Cuál es la **dirección donde necesitas el servicio**?',
-        '✅ Entendido. ¿Qué **tipo de servicio** necesitas? (Ej: Water heater, detección de fugas, repipe, drain cleaning...)',
-        '✅ Excelente. ¿Cuál es tu **fecha preferida** para la visita? (Ej: Martes 15 de julio, esta semana, lo antes posible...)',
-        '✅ Anotado. ¿Tienes preferencia de **horario**? (Ej: Mañana 9am-12pm, tarde 2pm-5pm...)',
-        '✅ Casi listo. ¿Tienes algún **detalle adicional** que debamos saber? (Urgencia, acceso, tipo de problema específico...)\n\nO escribe "listo" si no hay nada más.',
+        '¡Perfecto! Voy a ayudarte a agendar tu cita. \n\n¿Cuál es tu **nombre completo**?',
+        ' Anotado. ¿Cuál es tu **número de teléfono** de contacto?',
+        ' Perfecto. ¿Cuál es la **dirección donde necesitas el servicio**?',
+        ' Entendido. ¿Qué **tipo de servicio** necesitas? (Ej: Water heater, detección de fugas, repipe, drain cleaning...)',
+        ' Excelente. ¿Cuál es tu **fecha preferida** para la visita? (Ej: Martes 15 de julio, esta semana, lo antes posible...)',
+        ' Anotado. ¿Tienes preferencia de **horario**? (Ej: Mañana 9am-12pm, tarde 2pm-5pm...)',
+        ' Casi listo. ¿Tienes algún **detalle adicional** que debamos saber? (Urgencia, acceso, tipo de problema específico...)\n\nO escribe "listo" si no hay nada más.',
         null // 8 = confirm (handled by button)
     ],
     en: [
         null,
-        'Perfect! Let me help you schedule your appointment. 📅\n\nWhat is your **full name**?',
-        '✅ Got it. What is your **contact phone number**?',
-        '✅ Great. What is the **service address**?',
-        '✅ Understood. What **type of service** do you need? (e.g., Water heater, leak detection, repipe, drain cleaning...)',
-        '✅ Excellent. What is your **preferred date** for the visit? (e.g., Tuesday July 15, this week, as soon as possible...)',
-        '✅ Noted. Do you have a preferred **time**? (e.g., Morning 9am-12pm, afternoon 2pm-5pm...)',
-        '✅ Almost done. Any **additional details** we should know? (Urgency, access, specific problem...)\n\nOr type "done" if nothing else.',
+        'Perfect! Let me help you schedule your appointment. \n\nWhat is your **full name**?',
+        ' Got it. What is your **contact phone number**?',
+        ' Great. What is the **service address**?',
+        ' Understood. What **type of service** do you need? (e.g., Water heater, leak detection, repipe, drain cleaning...)',
+        ' Excellent. What is your **preferred date** for the visit? (e.g., Tuesday July 15, this week, as soon as possible...)',
+        ' Noted. Do you have a preferred **time**? (e.g., Morning 9am-12pm, afternoon 2pm-5pm...)',
+        ' Almost done. Any **additional details** we should know? (Urgency, access, specific problem...)\n\nOr type "done" if nothing else.',
         null
     ]
 };
@@ -151,7 +151,7 @@ function updateBookingProgress() {
         if (btn) { btn.disabled = false; btn.removeAttribute('disabled'); }
         if (status) {
             const lang = localStorage.getItem('morales_lang') || 'es';
-            status.textContent = lang === 'es' ? '✅ ¡Formulario completo!' : '✅ Form complete!';
+            status.textContent = lang === 'es' ? ' ¡Formulario completo!' : ' Form complete!';
         }
     }
 }
@@ -223,27 +223,27 @@ function handleBookingState(userText) {
 function buildBookingSummary(lang) {
     const d = bookingData;
     if (lang === 'es') {
-        return \`📋 **Resumen de tu cita:**
-👤 Nombre: \${d.name || '—'}
-📞 Teléfono: \${d.phone || '—'}
-📍 Dirección: \${d.address || '—'}
-🔧 Servicio: \${d.service || '—'}
-📆 Fecha: \${d.date || '—'}
-⏰ Hora: \${d.time || '—'}
-📝 Notas: \${d.notes || '—'}
+        return \` **Resumen de tu cita:**
+ Nombre: \${d.name || '—'}
+ Teléfono: \${d.phone || '—'}
+ Dirección: \${d.address || '—'}
+ Servicio: \${d.service || '—'}
+ Fecha: \${d.date || '—'}
+ Hora: \${d.time || '—'}
+ Notas: \${d.notes || '—'}
 
-Todo se ve correcto? Haz clic en **✅ Confirmar Cita** en el formulario para enviar. Si quieres cambiar algo, edita directamente el campo en el formulario.\`;
+Todo se ve correcto? Haz clic en ** Confirmar Cita** en el formulario para enviar. Si quieres cambiar algo, edita directamente el campo en el formulario.\`;
     }
-    return \`📋 **Appointment Summary:**
-👤 Name: \${d.name || '—'}
-📞 Phone: \${d.phone || '—'}
-📍 Address: \${d.address || '—'}
-🔧 Service: \${d.service || '—'}
-📆 Date: \${d.date || '—'}
-⏰ Time: \${d.time || '—'}
-📝 Notes: \${d.notes || '—'}
+    return \` **Appointment Summary:**
+ Name: \${d.name || '—'}
+ Phone: \${d.phone || '—'}
+ Address: \${d.address || '—'}
+ Service: \${d.service || '—'}
+ Date: \${d.date || '—'}
+ Time: \${d.time || '—'}
+ Notes: \${d.notes || '—'}
 
-Does everything look correct? Click **✅ Confirm Appointment** in the form to submit. Edit any field directly in the form if needed.\`;
+Does everything look correct? Click ** Confirm Appointment** in the form to submit. Edit any field directly in the form if needed.\`;
 }
 
 // ─── SUBMIT: send confirmation to admin + user ───────────────
@@ -288,15 +288,15 @@ Este mensaje fue generado automáticamente por el Portal ORION de Morales Plumbi
 
 Tu cita con Morales Plumbing ha sido recibida:
 
-🔧 Servicio: \${d.service}
-📍 Dirección: \${d.address}
-📆 Fecha: \${d.date}
-⏰ Hora: \${d.time}
+ Servicio: \${d.service}
+ Dirección: \${d.address}
+ Fecha: \${d.date}
+ Hora: \${d.time}
 
 Te confirmaremos por teléfono al \${d.phone}.
 
 Gracias por confiar en Morales Plumbing — CSLB C-36 #1156542
-📞 (669) 213-4422 | moralesplumbing026@gmail.com
+ (669) 213-4422 | moralesplumbing026@gmail.com
 \`);
         userMailto = \`mailto:\${userEmail}?subject=\${userSubject}&body=\${userBody}\`;
     }
@@ -311,19 +311,19 @@ Gracias por confiar en Morales Plumbing — CSLB C-36 #1156542
 
     // Joe confirmation message
     const confirmMsg = lang === 'es'
-        ? \`✅ ¡Cita enviada exitosamente! \n\n📧 Se ha abierto tu cliente de correo para notificar al equipo de Morales Plumbing.\${userMailto ? '\\nTambién se envió confirmación a tu correo.' : ''}\n\nNos comunicaremos contigo al \${d.phone} para confirmar. ¡Gracias, \${d.name}! 🎉\`
-        : \`✅ Appointment submitted successfully!\n\n📧 Your email client has opened to notify the Morales Plumbing team.\${userMailto ? '\\nA confirmation was also sent to your email.' : ''}\n\nWe will contact you at \${d.phone} to confirm. Thank you, \${d.name}! 🎉\`;
+        ? \` ¡Cita enviada exitosamente! \n\n Se ha abierto tu cliente de correo para notificar al equipo de Morales Plumbing.\${userMailto ? '\\nTambién se envió confirmación a tu correo.' : ''}\n\nNos comunicaremos contigo al \${d.phone} para confirmar. ¡Gracias, \${d.name}! \`
+        : \` Appointment submitted successfully!\n\n Your email client has opened to notify the Morales Plumbing team.\${userMailto ? '\\nA confirmation was also sent to your email.' : ''}\n\nWe will contact you at \${d.phone} to confirm. Thank you, \${d.name}! \`;
 
     addMessage(confirmMsg, 'bot');
 
     // Update UI
     const statusText = document.getElementById('booking-status-text');
-    if (statusText) statusText.textContent = lang === 'es' ? '🎉 ¡Cita enviada!' : '🎉 Appointment Sent!';
+    if (statusText) statusText.textContent = lang === 'es' ? ' ¡Cita enviada!' : ' Appointment Sent!';
 
     const btn = document.getElementById('booking-submit-btn');
     if (btn) {
         btn.disabled = true;
-        btn.textContent = lang === 'es' ? '✅ Cita Enviada' : '✅ Appointment Sent';
+        btn.textContent = lang === 'es' ? ' Cita Enviada' : ' Appointment Sent';
     }
 
     // Reset booking state
@@ -369,11 +369,11 @@ if (startIdx !== -1) {
         if (appJs[i] === '}') { depth--; if (inside && depth === 0) { i++; break; } }
     }
     appJs = appJs.slice(0, startIdx) + BOOKING_JS_V2 + appJs.slice(i);
-    console.log('✅ Replaced old booking system with v2');
+    console.log(' Replaced old booking system with v2');
 } else {
     // Just append
     appJs += BOOKING_JS_V2;
-    console.log('✅ Appended booking system v2 (old block not found)');
+    console.log(' Appended booking system v2 (old block not found)');
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -383,7 +383,7 @@ const SEND_JOE_INTERCEPT_OLD = `    addMessage(text, 'user');\r\n    input.value
 const SEND_JOE_INTERCEPT_NEW = `    addMessage(text, 'user');\r\n    input.value = '';\r\n\r\n    // Handle booking state machine FIRST (independent of AI)\r\n    if (typeof handleBookingState === 'function' && handleBookingState(text)) return;\r\n\r\n    // Show typing indicator\r\n    const typingId = addTypingIndicator();`;
 
 appJs = appJs.replace(SEND_JOE_INTERCEPT_OLD, SEND_JOE_INTERCEPT_NEW);
-console.log('✅ Patched sendToJoe with booking state intercept');
+console.log(' Patched sendToJoe with booking state intercept');
 
 // ─────────────────────────────────────────────────────────────
 // 4. Patch openBooking() to use bookingState + openBookingPanel
@@ -391,7 +391,7 @@ console.log('✅ Patched sendToJoe with booking state intercept');
 const OLD_OPEN_BOOKING_PRELOAD = `    // Open booking panel simultaneously\r\n    openBookingPanel();\r\n\r\n    // Small delay so window animates open before sending\r\n    setTimeout(() => {\r\n        sendToJoe();\r\n        input.focus();\r\n    }, 350);`;
 const NEW_OPEN_BOOKING_PRELOAD = `    // Open booking panel simultaneously\r\n    openBookingPanel();\r\n\r\n    // Reset booking state for fresh start\r\n    bookingState = { active: false, step: 0, lang: localStorage.getItem('morales_lang') || 'es' };\r\n\r\n    // Small delay so window animates open before sending\r\n    setTimeout(() => {\r\n        sendToJoe();\r\n        input.focus();\r\n    }, 350);`;
 appJs = appJs.replace(OLD_OPEN_BOOKING_PRELOAD, NEW_OPEN_BOOKING_PRELOAD);
-console.log('✅ Patched openBooking() with state reset');
+console.log(' Patched openBooking() with state reset');
 
 fs.writeFileSync('app.js', appJs);
-console.log('\n✅ ALL PATCHES APPLIED. Booking System v2 is live.');
+console.log('\n ALL PATCHES APPLIED. Booking System v2 is live.');

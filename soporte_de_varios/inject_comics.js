@@ -13,10 +13,10 @@ const comicReplacements = {
     },
     "es": {
         "promo_tt_good_comic_1": "1. Desconectar, drenar y retirar el voluminoso calentador de tanque viejo.",
-        "promo_tt_good_comic_2": "2. Montar unidad Navien, instalar nueva ventilación PVC y línea de gas dedicada de 199K BTU.",
+        "promo_tt_good_comic_2": "2. Montar unidad Navien, instalar nueva ventilación PVC y línea de gas dedicaída de 199K BTU.",
         "promo_tt_good_comic_3": "3. Calibrar sensores internos para control óptimo de flujo y temperatura.",
         "promo_tt_good_comic_4": "4. Agua caliente infinita restaurada, ahorrando espacio masivo en el garaje.",
-        "promo_ttt_better_comic_1": "1. Retirar de forma segura la unidad tankless obsoleta y calcificada.",
+        "promo_ttt_better_comic_1": "1. Retirar de forma segura la unidad tankless obsoleta y calcificaída.",
         "promo_ttt_better_comic_2": "2. Instalar filtro de agua anti-sarro para proteger los nuevos intercambiadores de calor duales.",
         "promo_ttt_best_comic_1": "3. Instalar válvula PRV de trabajo pesado para regular la presión del agua en toda la casa.",
         "promo_ttt_best_comic_4": "4. Sistema Navien Premium en línea con control Smart WiFi y tranquilidad de por vida."

@@ -24,7 +24,7 @@ const newCards = `
                         <img src="assets/service_inspect.png" alt="Inspections" style="width: 80px; height: 80px; border-radius: 50%; filter: drop-shadow(0 0 10px var(--neon-blue)); object-fit: cover;">
                     </div>
                     <h4 data-i18n="service_inspect_title">Inspecciones</h4>
-                    <p data-i18n="service_inspect_desc">Asesoría para viviendas nuevas, usadas y ampliaciones.</p>
+                    <p data-i18n="service_inspect_desc">Asesoría para viviendías nuevas, usadías y ampliaciones.</p>
                     <a href="docs/eng_inspect.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
                 </div>
                 <div class="service-card glass">
@@ -32,7 +32,7 @@ const newCards = `
                         <img src="assets/service_training.png" alt="Training" style="width: 80px; height: 80px; border-radius: 50%; filter: drop-shadow(0 0 10px var(--neon-orange)); object-fit: cover;">
                     </div>
                     <h4 data-i18n="service_training_title">Capacitaciones</h4>
-                    <p data-i18n="service_training_desc">Formación de personal para empresas asociadas.</p>
+                    <p data-i18n="service_training_desc">Formación de personal para empresas asociadías.</p>
                     <a href="docs/eng_training.html" class="btn-eco-link" data-i18n="eng_btn_details" style="margin-top: 15px; display: inline-block; font-size: 0.9em;">Ver Detalles →</a>
                 </div>
                 <div class="service-card glass">

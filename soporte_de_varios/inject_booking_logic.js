@@ -56,7 +56,7 @@ function updateBookingProgress() {
         }
         if (statusText) {
             const lang = localStorage.getItem('morales_lang') || 'es';
-            statusText.textContent = lang === 'es' ? '✅ ¡Formulario completo!' : '✅ Form complete!';
+            statusText.textContent = lang === 'es' ? ' ¡Formulario completo!' : ' Form complete!';
         }
     }
 }
@@ -77,20 +77,20 @@ function submitBooking() {
 
     // Notify Joe
     const confirmMsg = lang === 'es'
-        ? '📅 ¡Cita confirmada exitosamente! Hemos guardado tu cita para el ' + bookingData.date + ' a las ' + bookingData.time + '. Te contactaremos al ' + bookingData.phone + ' para confirmar. ¡Gracias, ' + bookingData.name + '!'
-        : '📅 Appointment confirmed! We have booked your appointment for ' + bookingData.date + ' at ' + bookingData.time + '. We will contact you at ' + bookingData.phone + ' to confirm. Thank you, ' + bookingData.name + '!';
+        ? ' ¡Cita confirmada exitosamente! Hemos guíardado tu cita para el ' + bookingData.date + ' a las ' + bookingData.time + '. Te contactaremos al ' + bookingData.phone + ' para confirmar. ¡Gracias, ' + bookingData.name + '!'
+        : ' Appointment confirmed! We have booked your appointment for ' + bookingData.date + ' at ' + bookingData.time + '. We will contact you at ' + bookingData.phone + ' to confirm. Thank you, ' + bookingData.name + '!';
     
     addMessage(confirmMsg, 'bot');
 
     // Update status
     const statusText = document.getElementById('booking-status-text');
-    if (statusText) statusText.textContent = lang === 'es' ? '🎉 ¡Cita confirmada!' : '🎉 Appointment Confirmed!';
+    if (statusText) statusText.textContent = lang === 'es' ? ' ¡Cita confirmada!' : ' Appointment Confirmed!';
 
     // Disable submit
     const btn = document.getElementById('booking-submit-btn');
     if (btn) {
         btn.disabled = true;
-        btn.textContent = lang === 'es' ? '✅ Cita Enviada' : '✅ Appointment Sent';
+        btn.textContent = lang === 'es' ? ' Cita Enviada' : ' Appointment Sent';
     }
 
     // Reset data after 5 seconds

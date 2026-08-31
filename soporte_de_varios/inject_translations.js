@@ -43,7 +43,7 @@ const legalOverridesEN = {
     "_legal_apply_title": "3. Application Requirements:",
     "_legal_apply_desc": "Applies to residential homeowners replacing old equipment. If your electrical panel requires a 240V upgrade, you may qualify for additional subsidies.",
     "_legal_time_title": "4. Validity and Responsibility:",
-    "_legal_time_desc": "The transition window is now. Morales Plumbing provides certified equipment and rebate paperwork, but does not guarantee State approval or payment timelines."
+    "_legal_time_desc": "The transition window is now. Morales Plumbing provides certified equipment and rebate paperwork, but does not guíarantee State approval or payment timelines."
 };
 
 // Apply overrides to EN dictionary

@@ -7,7 +7,7 @@
 
 ### 1. PROTECCIÓN DE CLAVES Y CREDENCIALES
 * **PROHIBIDO EXPONER O IMPRIMIR CLAVES:** Ningún agente o modelo de IA debe mostrar, imprimir en respuestas públicas, ni transmitir llaves API, claves de OpenAI, Gemini o credenciales Base64.
-* **PROHIBIDO MODIFICAR CLAVES SIN PERMISO:** Ningún agente debe borrar, sobrescribir o alterar las llaves API locales contenidas en `config.js` o scripts del proyecto a menos que el USUARIO lo solicite explícitamente.
+* **PROHIBIDO MODIFICAR CLAVES SIN PERMISO:** Ningún agente debe borrar, sobrescribir o alterar las llaves API locales contenidías en `config.js` o scripts del proyecto a menos que el USUARIO lo solicite explícitamente.
 
 ---
 

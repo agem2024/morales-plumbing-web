@@ -3,16 +3,16 @@
 Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligencia Artificial que trabaje en este codigo fuente. Sigue estas reglas estrictamente para evitar reintroducir errores criticos del pasado.
 
 ## 1. Codificacion de Archivos (Prevenir "Mojibake")
-- **Regla Estricta:** TODOS los archivos (HTML, CSS, JS, MD) DEBEN ser leidos y guardados con codificacion **UTF-8**.
-- **Contexto:** En el pasado, herramientas mal configuradas guardaron archivos con codificacion de Windows que rompieron los acentos, generando errores irreversibles en traducciones (Chino, Tagalo, Vietnamita).
+- **Regla Estricta:** TODOS los archivos (HTML, CSS, JS, MD) DEBEN ser leidos y guíardados con codificacion **UTF-8**.
+- **Contexto:** En el pasado, herramientas mal configuradías guíardaron archivos con codificacion de Windows que rompieron los acentos, generando errores irreversibles en traducciones (Chino, Tagalo, Vietnamita).
 
 ## 2. Diagramas de Codigo (Mermaid JS)
 - **Regla Estricta:** Si creas un diagrama de Mermaid, CUALQUIER texto o etiqueta de nodo que contenga caracteres especiales del espanol DEBE ir entre comillas dobles (ej. id1["Texto con acentos o simbolos"]).
 - **Contexto:** Los caracteres especiales sin comillas rompen el motor de Mermaid.
 
 ## 3. Estructura de Cabeceras HTML (Headers)
-- **Regla Estricta:** Nunca insertes la cabecera antigua de "ORION TECH". Utiliza UNICAMENTE la cabecera oficial de Morales Plumbing.
-- **Contexto:** En el pasado, paginas terminaron con barras de navegacion duplicadas.
+- **Regla Estricta:** Nunca insertes la cabecera antiguía de "ORION TECH". Utiliza UNICAMENTE la cabecera oficial de Morales Plumbing.
+- **Contexto:** En el pasado, paginas terminaron con barras de navegacion duplicadías.
 
 ## 4. Motor de Traduccion (app.js)
 - **Regla Estricta:** Asegurate de que TODAS las nuevas paginas importen el script principal (`<script src="../app.js"></script>`). 
@@ -37,7 +37,7 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
 
 - Reparación quirúrgica de caracteres corruptos (mojibake) y error de sintaxis en diagrama de Mermaid en `docs/ley_water_heaters.html`.
 - Solución a la desaparición de datos y tarjetas en `pricebook.html`:
-  - Se repararon errores de sintaxis en JavaScript causados por reemplazos masivos previos defectuosos (ej. de `setLanGuage` a `setLanguage`).
+  - Se repararon errores de sintaxis en JavaScript causados por reemplazos masivos previos defectuosos (ej. de `setLanGuíage` a `setLanguage`).
   - Se actualizó el enlace del script de traducciones de `app.js` (archivo eliminado) al correcto `app_v9.js`, permitiendo volver a renderizar toda la data y precios.
 
 - Reparación del sistema de envío de formularios por AJAX (Contacto, Citas, PQR):
@@ -53,10 +53,10 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
   - Sincronización y protección de entorno local para evitar pérdida de archivos locales no rastreados durante conflictos en el control de versiones (Git).
 - Refinamiento de la Sección Principal (Hero):
   - Actualización tipográfica usando la fuente "Aladin" y ajustes de tamaño (+20%) con diseño adaptativo (`clamp()`) para mejorar la legibilidad en pantallas móviles y de escritorio.
-  - Implementación de imágenes de fondo (`plan_better.webp`, `service_tankless.webp` y el cuadro estático del video `Grok_Clip_013.webp`) con superposiciones translúcidas (gradientes oscuros) en los tres botones principales de acción ("Eco Water Heater Systems", "Explorar Ecosistema" y "Agenda Rápido").
+  - Implementación de imágenes de fondo (`plan_better.webp`, `service_tankless.webp` y el cuadro estático del video `Grok_Clip_013.webp`) con superposiciones translúcidías (gradientes oscuros) en los tres botones principales de acción ("Eco Water Heater Systems", "Explorar Ecosistema" y "Agenda Rápido").
 
 - Corrección de bugs en Interfaz de Citas:
-  - Se corrigió un error de sintaxis y caracteres corruptos (mojibake) en los textos enviados automáticamente al chatbot (`app_v9.js`) que provocaba que la frase `"我想preabout管道服务预约。"` y `"puedo agendar"` se guardaran erróneamente en el perfil local del usuario (`localStorage`), sobrescribiendo su nombre y teléfono en el formulario de citas.
+  - Se corrigió un error de sintaxis y caracteres corruptos (mojibake) en los textos enviados automáticamente al chatbot (`app_v9.js`) que provocaba que la frase `"我想preabout管道服务预约。"` y `"puedo agendar"` se guíardaran erróneamente en el perfil local del usuario (`localStorage`), sobrescribiendo su nombre y teléfono en el formulario de citas.
   - Se renombró el botón de "Agenda rápido con Joe" a únicamente "Agenda rápido", desvinculándolo del motor de traducciones para prevenir que el texto sea sobrescrito incorrectamente.
 ## Arquitectura Web (REGLA ESTRICTA)
 - **HOSTING:** El sitio está alojado 100% en GitHub Pages. 

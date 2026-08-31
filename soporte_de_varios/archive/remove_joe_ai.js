@@ -3,7 +3,7 @@ let content = fs.readFileSync('app.js', 'utf8');
 
 // Replace system prompt
 content = content.replace(/Eres Joe, asistente IA de Morales Plumbing, experto en plomería/g, "Eres Joe, coordinador de Morales Plumbing. Habla de forma humana y profesional. NUNCA menciones que eres inteligencia artificial.");
-content = content.replace(/Instrucciones para el Agente \(Joe\):/g, "Instrucciones para el Agente (Joe):\n1. Habla 100% como humano. No uses lenguaje robótico ni menciones ser IA.");
+content = content.replace(/Instrucciones para el Agente \(Joe\):/g, "Instrucciones para el Agente (Joe):\n1. Habla 100% como humano. No uses lenguíaje robótico ni menciones ser IA.");
 content = content.replace(/¡Entendido! Soy Joe, el asistente IA de Morales Plumbing/g, "¡Entendido! Soy Joe, de Morales Plumbing");
 
 // Replace Spanish
@@ -36,8 +36,8 @@ content = content.replace(/Tôi là Joe, trợ lý AI/g, "Tôi là Joe, điều 
 content = content.replace(/Trò chuyện với Joe · Trợ lý AI/g, "Trò chuyện với Joe · Điều phối viên");
 
 // Emojis
-content = content.replace(/ 🛠️/g, "");
-content = content.replace(/ 🔧/g, "");
+content = content.replace(/ /g, "");
+content = content.replace(/ /g, "");
 
 // Write back
 fs.writeFileSync('app.js', content);

@@ -43,7 +43,7 @@ async function checkoutMembership(tier) {
         if (btn) {
             btn.disabled = true;
             btn.dataset.originalText = btn.innerHTML;
-            btn.innerHTML = '<span>⏳ Conectando con Stripe...</span>';
+            btn.innerHTML = '<span>Conectando con Stripe...</span>';
         }
 
         const response = await fetch('/.netlify/functions/create-checkout-session', {
@@ -108,7 +108,7 @@ async function checkoutCustomService(amountInDollars, description) {
         if (data.url) {
             window.location.href = data.url;
         } else {
-            alert(data.message || 'Opciones de pago procesadas.');
+            alert(data.message || 'Opciones de pago procesadías.');
         }
     } catch (e) {
         console.error('[Custom Payment Error]', e);

@@ -16,7 +16,7 @@ let html = fs.readFileSync('docs/analisis_de_precios_orion.html', 'utf8');
 
 html = html.replace(/tramites y permisos\./g, 'trámites y permisos. <strong>EXCLUSIONES:</strong> No incluye texturizado, pintura final, reparación de baldosas (tiles), ni mitigación de asbesto.');
 html = html.replace(/parcheo de yeso\./g, 'parcheo de yeso. <strong>EXCLUSIONES:</strong> No incluye pintura de color final ni modificación de gabinetes.');
-html = html.replace(/parcheo total\./g, 'parcheo total. <strong>EXCLUSIONES:</strong> Incluye textura base, pero excluye pintura decorativa final de igualación exacta.');
+html = html.replace(/parcheo total\./g, 'parcheo total. <strong>EXCLUSIONES:</strong> Incluye textura base, pero excluye pintura decorativa final de iguíalación exacta.');
 
 fs.writeFileSync('docs/analisis_de_precios_orion.html', html);
 console.log("Updated SOW with specific exclusions");

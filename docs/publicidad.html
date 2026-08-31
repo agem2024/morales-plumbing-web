@@ -190,12 +190,12 @@
                 
                 // Activate the correct button
                 document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-                const targetBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent.toLowerCase().includes(currentLang === 'en' ? 'english' : 'espa�ol'));
+                const targetBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent.toLowerCase().includes(currentLang === 'en' ? 'english' : 'espaol'));
                 if(targetBtn) targetBtn.classList.add('active');
                 
                 renderMedia(currentLang);
             } catch(e) {
-                document.getElementById('gallery').innerHTML = "<div class='empty-state'>An no hay im�genes publicadas o ocurri� un error al cargar los datos.</div>";
+                document.getElementById('gallery').innerHTML = "<div class='empty-state'>An no hay imgenes publicadías o ocurri un error al cargar los datos.</div>";
                 console.error(e);
             }
         }
@@ -228,7 +228,7 @@
         // Listen to global app.js changes just in case
         window.addEventListener('languageChanged', (e) => {
             if(e.detail) {
-                const targetBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent.toLowerCase().includes(e.detail === 'en' ? 'english' : 'espa�ol'));
+                const targetBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent.toLowerCase().includes(e.detail === 'en' ? 'english' : 'espaol'));
                 if(targetBtn) {
                     targetBtn.click();
                 } else {

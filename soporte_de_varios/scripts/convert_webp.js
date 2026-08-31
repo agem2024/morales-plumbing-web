@@ -29,7 +29,7 @@ async function convertAssets() {
     return (ext === '.png' || ext === '.jpg' || ext === '.jpeg') && !f.startsWith('.');
   });
 
-  console.log(`\n🔄 Procesando ${files.length} imágenes...\n`);
+  console.log(`\n Procesando ${files.length} imágenes...\n`);
 
   let totalSaved = 0;
   let converted = 0;
@@ -45,7 +45,7 @@ async function convertAssets() {
       const inStat = fs.statSync(inputPath);
       const outStat = fs.statSync(outputPath);
       if (outStat.mtimeMs > inStat.mtimeMs) {
-        console.log(`  ⏭  ${file} — ya convertido`);
+        console.log(`    ${file} — ya convertido`);
         skipped++;
         continue;
       }
@@ -67,17 +67,17 @@ async function convertAssets() {
       totalSaved += origSize - newSize;
       converted++;
 
-      const emoji = savedPct > 60 ? '🔥' : savedPct > 30 ? '✅' : '✓';
+      const emoji = savedPct > 60 ? '' : savedPct > 30 ? '' : '';
       console.log(`  ${emoji} ${file.padEnd(55)} ${(origSize/1024).toFixed(0).padStart(6)} KB → ${(newSize/1024).toFixed(0).padStart(6)} KB  (-${savedPct}%)`);
     } catch (err) {
-      console.error(`  ❌ Error procesando ${file}:`, err.message);
+      console.error(`   Error procesando ${file}:`, err.message);
     }
   }
 
   console.log(`\n${'─'.repeat(75)}`);
-  console.log(`✅ Convertidas: ${converted}  |  Omitidas: ${skipped}`);
-  console.log(`💾 Espacio ahorrado total: ${(totalSaved / 1024 / 1024).toFixed(2)} MB`);
-  console.log(`\n⚠️  PRÓXIMO PASO:`);
+  console.log(` Convertidías: ${converted}  |  Omitidías: ${skipped}`);
+  console.log(` Espacio ahorrado total: ${(totalSaved / 1024 / 1024).toFixed(2)} MB`);
+  console.log(`\n  PRÓXIMO PASO:`);
   console.log(`   Actualiza las referencias en index.html y style.css:`);
   console.log(`   logo_portada.png → logo_portada.webp  (¡7.8 MB → ~300 KB esperado!)`);
   console.log(`   Agrega <picture> tags para compatibilidad con Safari antiguo.\n`);

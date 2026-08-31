@@ -1,9 +1,14 @@
+<!-- =======================================================================
+     [STRICT RED LINE / LINEA ROJA ESTRICTA]
+     ZERO EMOJIS ALLOWED IN THIS CODEBASE (100% PROHIBITED).
+     USE ONLY CLEAN TEXT, HTML ENTITIES OR PURE SVG VECTORS.
+     ======================================================================= -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💰 PRICE BOOK v6.0 PRO - ORION Tech</title>
+    <title>PRICE BOOK v6.0 PRO - ORION Tech</title>
     <link href="https://fonts.googleapis.com/css2family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
@@ -65,19 +70,42 @@
 <body>
 
     <!-- MORALES PLUMBING OFFICIAL HEADER -->
-<header class="mp-global-header" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 2px solid #D4AF37; padding: 8px 15px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 999999; height: 60px; box-sizing: border-box; width: 100vw; max-width: 100%;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="../index.html" style="display: flex; align-items: center;">
+
+<header class="mp-global-header" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 2px solid #D4AF37; padding: 8px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 999999; height: 60px; box-sizing: border-box; width: 100%;">
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <a href="../index.html" style="display: flex; align-items: center; text-decoration: none;">
             <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 38px; width: auto; max-width: 140px; object-fit: contain;" onerror="this.src='../assets/logo_portada.png'; this.onerror=null;">
         </a>
     </div>
-    <div style="position: relative; display: flex; align-items: center; gap: 10px;">
-        <div style="text-align: right; color: #fff; display: none;" class="header-contact-info">
-            <h2 style="margin: 0; font-size: 0.9rem; color: #D4AF37; font-weight: bold; line-height: 1;">MORALES PLUMBING</h2>
-            <p style="margin: 2px 0 0; font-size: 0.7rem; color: #aaa; line-height: 1;">Lic. C-36 #1156542</p>
+
+    <!-- Official Right Controls -->
+    <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="text-align: right; color: #FFFFFF; font-size: 0.82rem;" class="header-contact-info">
+            <div style="font-weight: 700; color: #D4AF37; font-family: 'Orbitron', monospace; font-size: 0.85rem;">MORALES PLUMBING</div>
+            <div style="font-size: 0.72rem; color: #94A3B8;">Lic. C-36 #1156542 · San Jose, CA</div>
         </div>
-        
-        </div>
+
+        <!-- Safe Mode Toggle -->
+        <button id="btn-motion-toggle" onclick="toggleEpilepsyMode()" aria-label="Toggle Safe Mode" style="background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 5px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="a11y_safe_mode">Seguro</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="btn-theme-toggle" onclick="toggleThemeMode()" aria-label="Toggle Theme" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #FFFFFF; padding: 5px 10px; border-radius: 6px; font-size: 0.78rem; cursor: pointer;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+
+        <!-- Language Selector -->
+        <select id="header-lang-select" onchange="setLanguage(this.value)" style="background: #0A192F; color: #D4AF37; border: 1px solid #D4AF37; border-radius: 6px; padding: 5px 8px; font-size: 0.78rem; font-weight: 700; cursor: pointer;">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+            <option value="zh">ZH</option>
+            <option value="tl">TL</option>
+            <option value="vi">VI</option>
+            <option value="hi">HI</option>
+        </select>
+    </div>
 </header>
 <style>
     body { padding-top: 60px !important; }
@@ -102,32 +130,33 @@
     <!-- PORTADA -->
     
 
+        
         <nav class="pb-nav glass">
-            <a href="#catalogo" class="pb-nav-btn">
+            <a href="#catalogo" onclick="scrollToSection('catalogo'); return false;" class="pb-nav-btn">
                 <img src="../assets/comic_catalog.png" class="pb-nav-icon" alt="Catalog">
                 <span data-i18n="nav_catalog">Catálogo</span>
             </a>
-            <a href="#metodologia" class="pb-nav-btn">
+            <a href="#metodologia" onclick="scrollToSection('metodologia'); return false;" class="pb-nav-btn">
                 <img src="../assets/comic_ai.png" class="pb-nav-icon" alt="Methodology">
                 <span data-i18n="nav_methodology">Metodología</span>
             </a>
-            <a href="#tiers" class="pb-nav-btn">
+            <a href="#tiers" onclick="scrollToSection('tiers'); return false;" class="pb-nav-btn">
                 <img src="../assets/comic_tiers.png" class="pb-nav-icon" alt="Tiers">
                 <span data-i18n="nav_tiers">Tiers</span>
             </a>
-            <a href="#upsells" class="pb-nav-btn">
+            <a href="#upsells" onclick="scrollToSection('upsells'); return false;" class="pb-nav-btn">
                 <img src="../assets/comic_sales.png" class="pb-nav-icon" alt="Upsells">
                 <span data-i18n="nav_upsells">Upsells</span>
             </a>
-            <a href="#promociones" class="pb-nav-btn">
+            <a href="#promociones" onclick="scrollToSection('promociones'); return false;" class="pb-nav-btn">
                 <img src="../assets/comic_eco.png" class="pb-nav-icon" alt="Promotions">
                 <span data-i18n="nav_promotions">Promociones</span>
             </a>
-            <a href="#terminos" class="pb-nav-btn">
+            <a href="#terminos" onclick="scrollToSection('terminos'); return false;" class="pb-nav-btn">
                 <img src="../assets/comic_terms.png" class="pb-nav-icon" alt="Terms">
                 <span data-i18n="nav_terms">Términos</span>
             </a>
-            <a href="#garantias" class="pb-nav-btn">
+            <a href="#garantias" onclick="scrollToSection('garantias'); return false;" class="pb-nav-btn">
                 <img src="../assets/comic_shield.png" class="pb-nav-icon" alt="Warranties">
                 <span data-i18n="nav_warranties">Garantías</span>
             </a>
@@ -149,8 +178,8 @@
             </div>
 
             <div class="pb-search-box glass">
-                <input type="text" id="serviceSearch" data-i18n="pb_search_placeholder" placeholder="Buscar servicio (ej. Water Heater, Drain, I� Mapping...)" oninput="filterServices()">
-                <button class="pb-search-btn">🔍</button>
+                <input type="text" id="serviceSearch" data-i18n="pb_search_placeholder" placeholder="Buscar servicio (ej. Water Heater, Drain, I Mapping...)" oninput="filterServices()">
+                <button class="pb-search-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
             </div>
         </div>
     </section>
@@ -158,8 +187,8 @@
     <!-- CATEGORY FILTERS -->
     <div class="pb-category-filters">
         <button class="pb-filter-btn active" onclick="filterByCategory('all')" data-i18n="cat_all">Todos</button>
-        <button class="pb-filter-btn" onclick="filterByCategory('Diagnostic')" data-i18n="cat_diagnostic">Diagn�stico</button>
-        <button class="pb-filter-btn" onclick="filterByCategory('Engineering')" data-i18n="cat_engineering">Ingenier�a</button>
+        <button class="pb-filter-btn" onclick="filterByCategory('Diagnostic')" data-i18n="cat_diagnostic">Diagnóstico</button>
+        <button class="pb-filter-btn" onclick="filterByCategory('Engineering')" data-i18n="cat_engineering">Ingeniería</button>
         <button class="pb-filter-btn" onclick="filterByCategory('Eco')" data-i18n="cat_eco">Eco-Sostenible</button>
         <button class="pb-filter-btn" onclick="filterByCategory('Safety')" data-i18n="cat_safety">Seguridad</button>
     </div>
@@ -171,12 +200,12 @@
         </div>
     </section>
 
-    <!-- �DDITION�L CONTENT SECTIONS -->
+    <!-- DDITIONL CONTENT SECTIONS -->
     <section class="pb-info-section" id="metodologia">
         <div class="glass">
             <div class="info-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
                 <img src="../assets/comic_ai.png" alt="Methodology" style="width: 100px; height: 100px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
-                <h2 data-i18n="pb_method_title" class="graffiti-3d-metallic">Metodolog�a de C�lculo</h2>
+                <h2 data-i18n="pb_method_title" class="graffiti-3d-metallic">Metodología de Cálculo</h2>
             </div>
             <p data-i18n="pb_method_p1"></p>
             <p data-i18n="pb_method_p2"></p>
@@ -220,7 +249,7 @@
         <div class="glass">
             <div class="info-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
                 <img src="../assets/comic_terms.png" alt="Terms" style="width: 100px; height: 100px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
-                <h2 data-i18n="pb_terms_title" class="graffiti-3d-metallic">T�rminos y Condiciones</h2>
+                <h2 data-i18n="pb_terms_title" class="graffiti-3d-metallic">Términos y Condiciones</h2>
             </div>
             <p data-i18n="pb_terms_p1"></p>
             <p data-i18n="pb_terms_p2"></p>
@@ -231,7 +260,7 @@
         <div class="glass">
             <div class="info-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
                 <img src="../assets/comic_shield.png" alt="Warranties" style="width: 100px; height: 100px; filter: drop-shadow(0 0 10px var(--neon-cyan));">
-                <h2 data-i18n="pb_warranties_title" class="graffiti-3d-metallic">Garant�as y Respaldo</h2>
+                <h2 data-i18n="pb_warranties_title" class="graffiti-3d-metallic">Garantías y Respaldo</h2>
             </div>
             <p data-i18n="pb_warranty_p1"></p>
             <p data-i18n="pb_warranty_p2"></p>
@@ -243,8 +272,8 @@
     <footer class="site-footer">
         <div class="footer-nav">
             <a href="../index.html" data-i18n="nav_nexus">NEXUS</a>
-            <a href="propuesta_estrategica.html" data-i18n="nav_framework">ESTR�TEGI�</a>
-            <a href="legal.html" data-i18n="nav_legal">LEG�L</a>
+            <a href="propuesta_estrategica.html" data-i18n="nav_framework">ESTRATEGIA</a>
+            <a href="legal.html" data-i18n="nav_legal">LEGAL</a>
         </div>
         <p class="footer-copyright-main" data-i18n="footer_rights">
             © 2026 Morales Plumbing. Todos los derechos reservados.
@@ -281,7 +310,64 @@
     return s;
 });
 
+        window.scrollToSection = function(id) {
+            const target = document.getElementById(id);
+            if (target) {
+                const headerHeight = 75;
+                const targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                window.scrollTo({
+                    top: targetPos,
+                    behavior: 'smooth'
+                });
+                history.pushState(null, '', '#' + id);
+            }
+        };
+
+
+        
+        
         let activeCategory = 'all';
+
+        window.filterByCategory = function(category) {
+            activeCategory = category;
+            
+            // Update active state on category buttons
+            document.querySelectorAll('.pb-filter-btn').forEach(btn => {
+                const onclickAttr = btn.getAttribute('onclick') || '';
+                if (onclickAttr.includes("'" + category + "'") || (category === 'all' && onclickAttr.includes("'all'"))) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            window.filterServices();
+        };
+
+        window.filterServices = function() {
+            const searchInput = document.getElementById('serviceSearch');
+            const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+            const filtered = services.filter(s => {
+                const matchesCategory = (activeCategory === 'all') || (s.category.toLowerCase() === activeCategory.toLowerCase());
+                
+                // Match search query against code, name, and descriptions
+                const currentLang = localStorage.getItem('morales_lang') || 'es';
+                const titleText = (translations[currentLang] && translations[currentLang]['svc_' + s.id + '_title']) || s.code;
+                const descText = (translations[currentLang] && translations[currentLang]['svc_' + s.id + '_p1']) || '';
+                const techText = (translations[currentLang] && translations[currentLang]['svc_' + s.id + '_p2']) || '';
+
+                const matchesSearch = !query || 
+                    s.code.toLowerCase().includes(query) ||
+                    titleText.toLowerCase().includes(query) ||
+                    descText.toLowerCase().includes(query) ||
+                    techText.toLowerCase().includes(query);
+
+                return matchesCategory && matchesSearch;
+            });
+
+            renderServices(filtered);
+        };
 
         function renderServices(filtered) {
             const grid = document.getElementById('servicesGrid');
@@ -296,103 +382,112 @@
                         
                         <div class="pb-service-details" style="margin: 1rem 0;">
                             <div class="pb-user-detail" style="margin-bottom: 1.2rem;">
-                                <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem; border-bottom: 1px solid rgba(0,245,255,0.2); padding-bottom: 0.3rem;"><i class="fas fa-user-circle"></i> Enfoque Comercial (Cliente)</h4>
+                                <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem; border-bottom: 1px solid rgba(0,245,255,0.2); padding-bottom: 0.3rem;"><i class="fas fa-user-circle"></i> <span data-i18n="pb_lbl_commercial">Enfoque Comercial (Cliente)</span></h4>
                                 <p class="pb-service-desc" data-i18n="svc_${s.id}_p1" style="margin-top: 0.2rem; font-size: 0.95em; line-height: 1.5; color: #e0e0e0;"></p>
                             </div>
                             
                             <div class="pb-tech-detail" style="margin-bottom: 1.2rem; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; border-left: 3px solid var(--neon-orange);">
-                                <h4 style="color: var(--neon-orange); margin-bottom: 0.5rem;"><i class="fas fa-tools"></i> Detalle T�cnico (Ingenier�a)</h4>
+                                <h4 style="color: var(--neon-orange); margin-bottom: 0.5rem;"><i class="fas fa-tools"></i> <span data-i18n="pb_lbl_technical">Detalle Técnico (Ingeniería)</span></h4>
                                 <p class="pb-service-tech" data-i18n="svc_${s.id}_p2" style="font-size: 0.9em; line-height: 1.4; color: #b0c4de;"></p>
                             </div>
 
                             <details class="pb-tier-details tier-good">
                                 <summary class="pb-tier-summary">
-                                    <span>GOOD (Standard)</span>
+                                    <span data-i18n="pb_lbl_good">GOOD (Standard)</span>
                                     <span class="pb-tier-price">${s.price_good}</span>
                                 </summary>
                                 <div class="pb-tier-content">
-                                    <p><strong>Justificaci�n:</strong> <span data-i18n="pb_svc_${s.id}_good_just"></span></p>
-                                    <p><strong>Materiales:</strong> <span data-i18n="pb_svc_${s.id}_good_mat"></span></p>
-                                    <p><strong>Herramientas:</strong> <span data-i18n="pb_svc_${s.id}_good_tools"></span></p>
-                                    <p><strong>Tiempo Est.:</strong> <span data-i18n="pb_svc_${s.id}_good_time"></span></p>
+                                    <p><strong data-i18n="pb_lbl_justification">Justificación:</strong> <span data-i18n="pb_svc_${s.id}_good_just"></span></p>
+                                    <p><strong data-i18n="pb_lbl_materials">Materiales:</strong> <span data-i18n="pb_svc_${s.id}_good_mat"></span></p>
+                                    <p><strong data-i18n="pb_lbl_tools">Herramientas:</strong> <span data-i18n="pb_svc_${s.id}_good_tools"></span></p>
+                                    <p><strong data-i18n="pb_lbl_time">Tiempo Est.:</strong> <span data-i18n="pb_svc_${s.id}_good_time"></span></p>
                                 </div>
                             </details>
 
                             <details class="pb-tier-details tier-better">
                                 <summary class="pb-tier-summary">
-                                    <span>BETTER (Premium)</span>
+                                    <span data-i18n="pb_lbl_better">BETTER (Premium)</span>
                                     <span class="pb-tier-price">${s.price_better}</span>
                                 </summary>
                                 <div class="pb-tier-content">
-                                    <p><strong>Justificaci�n:</strong> <span data-i18n="pb_svc_${s.id}_better_just"></span></p>
-                                    <p><strong>Materiales:</strong> <span data-i18n="pb_svc_${s.id}_better_mat"></span></p>
-                                    <p><strong>Herramientas:</strong> <span data-i18n="pb_svc_${s.id}_better_tools"></span></p>
-                                    <p><strong>Tiempo Est.:</strong> <span data-i18n="pb_svc_${s.id}_better_time"></span></p>
+                                    <p><strong data-i18n="pb_lbl_justification">Justificación:</strong> <span data-i18n="pb_svc_${s.id}_better_just"></span></p>
+                                    <p><strong data-i18n="pb_lbl_materials">Materiales:</strong> <span data-i18n="pb_svc_${s.id}_better_mat"></span></p>
+                                    <p><strong data-i18n="pb_lbl_tools">Herramientas:</strong> <span data-i18n="pb_svc_${s.id}_better_tools"></span></p>
+                                    <p><strong data-i18n="pb_lbl_time">Tiempo Est.:</strong> <span data-i18n="pb_svc_${s.id}_better_time"></span></p>
                                 </div>
                             </details>
 
                             <details class="pb-tier-details tier-best">
                                 <summary class="pb-tier-summary">
-                                    <span>BEST (Ultra)</span>
+                                    <span data-i18n="pb_lbl_best">BEST (Ultra)</span>
                                     <span class="pb-tier-price">${s.price_best}</span>
                                 </summary>
                                 <div class="pb-tier-content">
-                                    <p><strong>Justificaci�n:</strong> <span data-i18n="pb_svc_${s.id}_best_just"></span></p>
-                                    <p><strong>Materiales:</strong> <span data-i18n="pb_svc_${s.id}_best_mat"></span></p>
-                                    <p><strong>Herramientas:</strong> <span data-i18n="pb_svc_${s.id}_best_tools"></span></p>
-                                    <p><strong>Tiempo Est.:</strong> <span data-i18n="pb_svc_${s.id}_best_time"></span></p>
+                                    <p><strong data-i18n="pb_lbl_justification">Justificación:</strong> <span data-i18n="pb_svc_${s.id}_best_just"></span></p>
+                                    <p><strong data-i18n="pb_lbl_materials">Materiales:</strong> <span data-i18n="pb_svc_${s.id}_best_mat"></span></p>
+                                    <p><strong data-i18n="pb_lbl_tools">Herramientas:</strong> <span data-i18n="pb_svc_${s.id}_best_tools"></span></p>
+                                    <p><strong data-i18n="pb_lbl_time">Tiempo Est.:</strong> <span data-i18n="pb_svc_${s.id}_best_time"></span></p>
                                 </div>
                             </details>
 
-                            <a href="service.html?id=${s.id}" data-i18n="pb_btn_details" style="display: inline-block; width: 100%; text-align: center; margin-top: 1.5rem; padding: 12px; background: rgba(0, 245, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='0 0 15px rgba(0,245,255,0.3)';" onmouseout="this.style.background='rgba(0, 245, 255, 0.1)'; this.style.boxShadow='none';">Ver Detalle T�cnico y Comercial</a>
-                            <a href="proceso_svc_${s.id}_cliente.html" data-i18n="pb_btn_comic_repipe" style="display: inline-block; width: 100%; text-align: center; margin-top: 0.5rem; padding: 12px; background: rgba(255, 140, 0, 0.1); border: 1px solid var(--neon-orange); color: var(--neon-orange); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(255, 140, 0, 0.2)'; this.style.boxShadow='0 0 15px rgba(255,140,0,0.3)';" onmouseout="this.style.background='rgba(255, 140, 0, 0.1)'; this.style.boxShadow='none';">Ver Gu�a Ilustrada Paso a Paso</a></div>
+                            <a href="service.html?id=${s.id}" data-i18n="pb_btn_details" style="display: inline-block; width: 100%; text-align: center; margin-top: 1.5rem; padding: 12px; background: rgba(0, 245, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='0 0 15px rgba(0,245,255,0.3)';" onmouseout="this.style.background='rgba(0, 245, 255, 0.1)'; this.style.boxShadow='none';">Ver Detalle Técnico y Comercial</a>
+                            <a href="proceso_svc_${s.id}_cliente.html" data-i18n="pb_btn_comic_repipe" style="display: inline-block; width: 100%; text-align: center; margin-top: 0.5rem; padding: 12px; background: rgba(255, 140, 0, 0.1); border: 1px solid var(--neon-orange); color: var(--neon-orange); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(255, 140, 0, 0.2)'; this.style.boxShadow='0 0 15px rgba(255,140,0,0.3)';" onmouseout="this.style.background='rgba(255, 140, 0, 0.1)'; this.style.boxShadow='none';">Ver Guía Ilustrada Paso a Paso</a></div>
                     </div>
                 </div>
             `).join('');
             
-            // Re-apply translations to dynamic content
-            if(window.setLanguage) {
-                const currentLang = localStorage.getItem('morales_lang') || 'en';
-                window.setLanguage(currentLang);
+            // Re-apply translations to newly injected elements
+            applyPageTranslations();
+        }
+
+        function applyPageTranslations() {
+            const currentLang = localStorage.getItem('morales_lang') || localStorage.getItem('morales_language') || 'es';
+            const selectEl = document.getElementById('header-lang-select');
+            if (selectEl) selectEl.value = currentLang;
+
+            if (typeof translations !== 'undefined' && translations[currentLang]) {
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[currentLang][key]) {
+                        el.innerHTML = translations[currentLang][key];
+                    }
+                });
             }
         }
 
-        function filterByCategory(cat) {
-            activeCategory = cat;
-            const buttons = document.querySelectorAll('.pb-filter-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('onclick').includes(cat)) btn.classList.add('active');
-            });
-            filterServices();
+        function toggleEpilepsyMode() {
+            const isReduced = document.documentElement.dataset.motion === 'reduced';
+            if (isReduced) {
+                delete document.documentElement.dataset.motion;
+                localStorage.setItem('morales_a11y_motion', 'normal');
+            } else {
+                document.documentElement.dataset.motion = 'reduced';
+                localStorage.setItem('morales_a11y_motion', 'reduced');
+            }
         }
 
-        function filterServices() {
-            const query = document.getElementById('serviceSearch').value.toLowerCase();
-            const filtered = services.filter(s => {
-                const matchesSearch = s.code.toLowerCase().includes(query) || 
-                                     (s.nameKey && s.nameKey.toLowerCase().includes(query)) || 
-                                     (s.userDescKey && s.userDescKey.toLowerCase().includes(query)) ||
-                                     (s.techDescKey && s.techDescKey.toLowerCase().includes(query));
-                const matchesCategory = activeCategory === 'all' || s.category === activeCategory;
-                return matchesSearch && matchesCategory;
-            });
-            renderServices(filtered);
+        function toggleThemeMode() {
+            const isLight = document.documentElement.dataset.theme === 'light';
+            if (isLight) {
+                delete document.documentElement.dataset.theme;
+                localStorage.setItem('morales_a11y_theme', 'dark');
+            } else {
+                document.documentElement.dataset.theme = 'light';
+                localStorage.setItem('morales_a11y_theme', 'light');
+            }
         }
+
+        // Global setLanguage bridge
+        window.setLanguage = function(lang) {
+            localStorage.setItem('morales_lang', lang);
+            localStorage.setItem('morales_language', lang);
+            localStorage.setItem('mp_language', lang);
+            renderServices(services);
+        };
 
         document.addEventListener('DOMContentLoaded', () => {
-            renderServices(services);
-            
-            // Initialize language switching buttons in pricebook
-            document.querySelectorAll('.language-switcher .lang-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const lang = btn.getAttribute('data-lang');
-                    if(window.setLanguage) {
-                        window.setLanguage(lang);
-                        renderServices(services); // Re-render to update i18n attributes
-                    }
-                });
-            });
+
+        renderServices(services);
         });
     </script>
 </body>

@@ -1,71 +1,212 @@
+<!-- =======================================================================
+     [STRICT RED LINE / LINEA ROJA ESTRICTA]
+     ZERO EMOJIS ALLOWED IN THIS CODEBASE (100% PROHIBITED).
+     USE ONLY CLEAN TEXT, HTML ENTITIES OR PURE SVG VECTORS.
+     ======================================================================= -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Ciencia de la Detección Térmica | ORION Ecosystem</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>La Ciencia de la Detección Térmica | Morales Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../universe.css">
     <style>
-        body { background-color: var(--dark-bg); color: #fff; overflow-x: hidden; font-family: 'Inter', sans-serif; }
-        .page-content { position: relative; z-index: 10; padding: 4rem 10%; max-width: 1000px; margin: 0 auto; }
-        .hero-title { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--neon-cyan); margin-bottom: 1rem; text-align: center; }
-        .article-content { background: rgba(10, 25, 47, 0.85); border: 1px solid var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 245, 255, 0.15); padding: 3rem; border-radius: 12px; line-height: 1.8; color: #cbd5e1; font-size: 1.1rem; }
-        .article-content h1, .article-content h2, .article-content h3 { color: var(--neon-orange); font-family: 'Orbitron', sans-serif; margin-top: 2rem; margin-bottom: 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content strong { color: #fff; }
-        .back-nav { position: relative; z-index: 10; padding: 1rem 5%; background: rgba(0,0,0,0.5); border-bottom: 1px solid var(--glass-border); display: flex; justify-content: flex-start; }
-        .btn-back { color: var(--neon-cyan); text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; transition: 0.3s; }
-        .btn-back:hover { text-shadow: 0 0 8px var(--neon-cyan); }
+        body { 
+            background-color: #030712; 
+            color: #fff; 
+            overflow-x: hidden; 
+            font-family: 'Inter', sans-serif; 
+            padding-top: 70px;
+        }
+        .page-content { 
+            position: relative; 
+            z-index: 10; 
+            padding: 2rem 5% 5rem; 
+            max-width: 1050px; 
+            margin: 0 auto; 
+        }
+        .hero-banner-card {
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.9) 0%, rgba(17, 34, 64, 0.9) 100%);
+            border: 1px solid rgba(0, 245, 255, 0.35);
+            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        @media (max-width: 850px) {
+            .hero-banner-card {
+                grid-template-columns: 1fr;
+            }
+        }
+        .hero-title { 
+            font-family: 'Orbitron', sans-serif; 
+            font-size: 2.2rem; 
+            color: var(--neon-cyan, #00f5ff); 
+            margin-bottom: 1rem; 
+            line-height: 1.2;
+            text-shadow: 0 0 15px rgba(0, 245, 255, 0.4);
+        }
+        .hero-subtitle {
+            color: #D4AF37;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            object-fit: cover;
+        }
+        .article-content { 
+            background: rgba(10, 25, 47, 0.85); 
+            border: 1px solid rgba(0, 245, 255, 0.25); 
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
+            padding: 3rem; 
+            border-radius: 16px; 
+            line-height: 1.8; 
+            color: #cbd5e1; 
+            font-size: 1.05rem; 
+        }
+        .article-content h2 { 
+            color: var(--neon-orange, #ff9900); 
+            font-family: 'Orbitron', sans-serif; 
+            margin-top: 2.5rem; 
+            margin-bottom: 1rem; 
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .article-content h3 {
+            color: #D4AF37;
+            font-family: 'Orbitron', sans-serif;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.15rem;
+        }
+        .article-content p { 
+            margin-bottom: 1.4rem; 
+        }
+        .article-content strong { 
+            color: #fff; 
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin: 1.8rem 0;
+        }
+        .feature-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid #D4AF37;
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .feature-card strong {
+            display: block;
+            color: #D4AF37;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+        }
+        .tech-table th {
+            background: rgba(0, 245, 255, 0.15);
+            color: #00f5ff;
+            padding: 12px 16px;
+            text-align: left;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+        }
+        .tech-table td {
+            padding: 12px 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.95rem;
+        }
+        .tech-table tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .comic-container {
+            margin: 3rem 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+        }
+        .comic-img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 10px;
+            border: 2px solid #00f5ff;
+            box-shadow: 0 0 25px rgba(0, 245, 255, 0.3);
+        }
+        .back-nav { 
+            position: relative; 
+            z-index: 10; 
+            padding: 1rem 5%; 
+            background: rgba(0,0,0,0.5); 
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2); 
+            display: flex; 
+            justify-content: space-between;
+            align-items: center; 
+        }
+        .btn-back { 
+            color: #D4AF37; 
+            text-decoration: none; 
+            font-family: 'Inter', sans-serif; 
+            font-weight: 700;
+            font-size: 0.9rem; 
+            transition: 0.3s; 
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-back:hover { 
+            color: #fff;
+            text-shadow: 0 0 8px #D4AF37; 
+        }
     </style>
-
-    <!-- morales_theme_sync: Sync Theme & Language from Main Portal -->
-    <script>
-        (function() {
-            try {
-                var theme = localStorage.getItem('morales_a11y_theme') || 'dark';
-                if (theme === 'light') document.documentElement.dataset.theme = 'light';
-                else delete document.documentElement.dataset.theme;
-                var motion = localStorage.getItem('morales_a11y_motion');
-                if (motion === 'reduced') document.documentElement.dataset.motion = 'reduced';
-                var cb = localStorage.getItem('morales_a11y_colorblind');
-                if (cb && cb !== 'none') document.documentElement.dataset.colorblind = cb;
-                var fs = localStorage.getItem('morales_a11y_fontsize');
-                if (fs && fs !== 'normal') document.documentElement.dataset.fontSize = fs;
-                var lang = localStorage.getItem('morales_language') || localStorage.getItem('mp_language') || 'es';
-                if (typeof setLanguage === 'function') setLanguage(lang);
-                else if (typeof switchLang === 'function') switchLang(lang);
-            } catch(e) {}
-        })();
-    </script>
 </head>
 <body>
 
     <!-- MORALES PLUMBING OFFICIAL HEADER -->
-<header class="mp-global-header" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 2px solid #D4AF37; padding: 8px 15px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 999999; height: 60px; box-sizing: border-box; width: 100vw; max-width: 100%;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="../index.html" style="display: flex; align-items: center;">
-            <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 38px; width: auto; max-width: 140px; object-fit: contain;" onerror="this.src='../assets/logo_portada.png'; this.onerror=null;">
-        </a>
-    </div>
-    <div style="position: relative; display: flex; align-items: center; gap: 10px;">
-        <div style="text-align: right; color: #fff; display: none;" class="header-contact-info">
-            <h2 style="margin: 0; font-size: 0.9rem; color: #D4AF37; font-weight: bold; line-height: 1;">MORALES PLUMBING</h2>
-            <p style="margin: 2px 0 0; font-size: 0.7rem; color: #aaa; line-height: 1;">Lic. C-36 #1156542</p>
+    <header class="mp-global-header" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-bottom: 4px solid #D4AF37; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 999999; height: 65px; box-sizing: border-box;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <a href="../index.html" style="display: flex; align-items: center;">
+                <img src="../assets/logo_portada.png" alt="Morales Plumbing Logo" style="height: 42px; width: auto; object-fit: contain;">
+            </a>
+            <div>
+                <div style="font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 800; color: #fff; letter-spacing: 1px;">MORALES PLUMBING</div>
+                <div style="font-size: 0.72rem; color: #D4AF37; letter-spacing: 1px;">AI-INTEGRATED SERVICES</div>
+            </div>
         </div>
-        
+        <div style="text-align: right; color: #fff;">
+            <div style="font-size: 0.85rem; color: #D4AF37; font-weight: 700;">Lic. C-36 #1156542 | San Jose, CA</div>
+            <a href="tel:+16692134422" style="color: #00f5ff; text-decoration: none; font-size: 0.82rem; font-weight: 600;">(669) 213-4422</a>
         </div>
-</header>
-<style>
-    body { padding-top: 60px !important; }
-    .show-lang { display: flex !important; }
-    #globalLangMenu button:hover { background: rgba(0, 245, 255, 0.15) !important; color: #00f5ff !important; }
-    @media (min-width: 480px) {
-        .header-contact-info { display: block !important; }
-    }
-</style>
-
+    </header>
 
     <!-- UNIVERSE BACKGROUND -->
     <canvas id="universe-canvas" data-universe-mode="galaxy-spin"></canvas>
@@ -73,126 +214,160 @@
     <script src="../universe.js"></script>
 
     <div class="back-nav">
-        <a href="../index.html#multimedia" class="btn-back">&lt; BACK TO MULTIMEDIA</a>
+        <a href="../index.html#multimedia" class="btn-back">← Volver al Portal Principal / Multimedia</a>
+        <span style="color: #718096; font-size: 0.85rem; font-family: 'Orbitron', sans-serif;">ORION TECH · CSLB C-36</span>
     </div>
 
     <div class="page-content">
-        <h1 class="hero-title">La Ciencia de la Detección Térmica</h1>
+        <!-- HERO BANNER CARD -->
+        <div class="hero-banner-card">
+            <div>
+                <div class="hero-subtitle">Ingeniería Forense No Invasiva</div>
+                <h1 class="hero-title">La Ciencia de la Detección Térmica</h1>
+                <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 1.5rem;">
+                    Localización quirúrgica de fugas ocultas bajo losas de concreto y muros estructurales mediante termografía infrarroja FLIR MSX y análisis acústico digital.
+                </p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="../index.html?action=schedule&service=svc_1" style="background: #D4AF37; color: #0A192F; padding: 10px 22px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem;">Agendar Diagnóstico</a>
+                    <a href="tel:+16692134422" style="background: transparent; color: #00f5ff; border: 1px solid #00f5ff; padding: 10px 20px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Llamar (669) 213-4422</a>
+                </div>
+            </div>
+            <div>
+                <img src="../assets/images/eng_termografia.png" alt="Detección Térmica Morales Plumbing" class="hero-img">
+            </div>
+        </div>
+
         <div class="article-content">
-<p>Ver lo Invisible: La Ciencia de la Detección Térmica de Fugas con</p>
-<h2>Morales Plumbing</h2>
-<p>En el ecosistema de la infraestructura moderna del Ãrea de la Bahía, los problemas más</p>
-<p>costosos suelen ser los que permanecen ocultos a la percepción humana. Tradicionalmente,</p>
-<p>localizar una fuga bajo una losa de concreto implicaba una "adivinación destructiva". Sin</p>
-<p>embargo, bajo la visión de  Orion Tech , la división tecnológica de Morales Plumbing,</p>
-<p>hemos transformado la plomería en un análisis forense de precisión quirúrgica basado en la</p>
-<p>termodinámica aplicada.</p>
-<p>1. El Concepto de Termografía Infrarroja: "Ojos de Grado Militar"</p>
-<p>La termografía infrarroja no es solo "ver calor"; es la ciencia de interpretar la radiación</p>
-<p>electromagnética que cada objeto emite. Como especialistas, entendemos que materiales</p>
-<p>como el concreto y el drywall tienen diferentes niveles de  emisividad  (la eficiencia con la</p>
-<p>que emiten energía térmica). Cuando una tubería falla, la energía cinética del agua</p>
-<p>escapando se convierte en un  gradiente térmico  que altera el equilibrio del material</p>
-<p>circundante.Para aislar esta señal del ruido térmico ambiental, utilizamos configuraciones de</p>
-<p>Isotermas , una técnica que nos permite resaltar rangos de temperatura específicos para</p>
-<p>identificar la firma exacta del fluido. En suelos con  arcilla de Adobe  típicos de San José,</p>
-<p>donde la corrosión por picaduras ( pitting corrosion ) es común, esta visión es vital.La Firma</p>
-<p>Térmica:  Es el rastro de calor único e inconfundible generado por una anomalía física. Es</p>
-<p>la "huella digital" de la fuga: una representación visual de cómo el agua altera la</p>
-<p>termodinámica de la estructura, permitiéndonos ver a través de materiales sólidos con una</p>
-<p>claridad absoluta.Esta capacidad de procesar firmas térmicas invisibles es el primer paso,</p>
-<p>pero para una acción técnica definitiva, necesitamos una resolución que trascienda las</p>
-<p>manchas borrosas del pasado.</p>
-<p>2. Tecnología MSX: Claridad Quirúrgica en el Diagnóstico</p>
-<p>Morales Plumbing utiliza la vanguardia en hardware: la cámara  FLIR E8-XT . Su mayor</p>
-<p>ventaja es la tecnología  MSX (Multi-Spectral Dynamic Imaging) . A diferencia de la</p>
-<p>termografía convencional, el MSX no se limita a mostrar variaciones de temperatura; esta</p>
-<p>tecnología extrae los detalles estructurales de una cámara visual interna y los  estampa</p>
-<p>(embosses) en tiempo real sobre la imagen térmica.Esto permite al técnico identificar no</p>
-<p>solo el calor, sino también texturas, etiquetas y bordes estructurales. En fugas de agua</p>
-<p>caliente, esto revela lo que denominamos  "Anomalías Florales" , plumas térmicas con</p>
-<p>formas orgánicas definidas que contrastan nítidamente sobre la frialdad del sustrato.|</p>
-<p>Característica | Termografía Tradicional | Tecnología MSX de Morales Plumbing || ------ |</p>
-<p>------ | ------ || Visibilidad de Bordes | Difusa y borrosa (manchas) | Definida y ultra-nítida</p>
-<p>(bordes estampados) || Contexto Estructural | Solo muestra calor | Identifica vigas,</p>
-<p>etiquetas y texturas reales || Precisión de Diagnóstico | Interpretativa / Estimada |</p>
-<p>Quirúrgica (basada en contornos reales) || Detección de Anomalías | Manchas de color</p>
-<p>genéricas | Visualización de "Anomalías Florales" nítidas |</p>
-<p>Esta claridad quirúrgica es la que permite que un diagnóstico se convierta en una</p>
-<p>reparación exitosa, eliminando cualquier margen de duda antes de intervenir la propiedad.</p>
-<p>3. El Método del "Mapeo Térmico": Paso a Paso hacia la Fuga</p>
-<p>Localizar una fuga de forma no destructiva es un proceso científico secuencial que combina</p>
-<p>la física de fluidos con la acústica.</p>
-<h2>1.â</h2>
-<p>Verificación de Medidor:  Antes de cualquier escaneo, realizamos un cierre de la</p>
-<p>válvula principal ( house shut-off ) para monitorear el dial de flujo bajo en el medidor</p>
-<p>de la ciudad, confirmando la existencia y magnitud de la pérdida.</p>
-<h2>2.â</h2>
-<p>Carga Acústica y Presurización:  Inyectamos  aire comprimido a 60 PSI  en el</p>
-<p>sistema aislado. Este paso es crítico: el aire amplifica la resonancia acústica del</p>
-<p>fluido escapando, facilitando la detección de la cavitación.</p>
-<h2>3.â</h2>
-<p>Escaneo Infrarrojo (Mapeo de Isoterma):  Buscamos la "pluma térmica". Gracias a</p>
-<p>la tecnología FLIR, localizamos el punto donde la fricción del agua y el aire a presión</p>
-<p>generan el mayor diferencial de temperatura.</p>
-<h2>4.â</h2>
-<p>Triangulación Acústica:  Para la validación final, utilizamos el amplificador  Fisher</p>
-<p>XLT-17 . Escuchamos la frecuencia exacta de la cavitación en el punto marcado por</p>
-<p>la cámara, confirmando la ubicación antes de cualquier intervención.Este protocolo</p>
-<p>asegura que el diagnóstico sea verificado por dos fuentes tecnológicas</p>
-<p>independientes antes de proponer una solución.</p>
-<p>4. El "So What?": Precisión Quirúrgica y Ahorro Masivo</p>
-<p>La aplicación de esta ingeniería de diagnóstico tiene un impacto directo en el patrimonio del</p>
-<p>cliente. En un mercado con acabados de lujo, la precisión no es opcional.</p>
-<p>ââ â  Margen de error de grado militar:  Localización de la ruptura con una precisión</p>
-<p>menor a  3 pulgadas cuadradas .</p>
-<p>ââ â  Protección de Acabados Exóticos:  Evitamos la demolición "a ciegas" de pisos</p>
-<p>de madera exótica, mármol o losas de concreto de alto costo.</p>
-<p>ââ â  Ahorro Masivo:  Prevenimos reparaciones cosméticas innecesarias que pueden</p>
-<p>ascender a miles de dólares en acabados y restauración.</p>
-<p>ââ â  Reporte Forense de Humedad:  Entregamos un informe digital con imágenes</p>
-<p>térmicas inatacables, fundamental para reclamaciones ante compañías de</p>
-<p>seguros.Esta metodología elimina el "tanteo" del plomero tradicional y lo reemplaza</p>
-<p>con un estándar de consultoría técnica de alto nivel.</p>
-<p>5. El Ecosistema Morales: IA y Certificación Profesional</p>
-<p>La precisión de Morales Plumbing nace de la integración entre el talento humano y el</p>
-<p>ecosistema  Orion Tech . Nuestra identidad es tan profunda que nuestro logotipo âuna</p>
-<p>gota de agua que resguarda un  microprocesador con las siglas "AI" â simboliza</p>
-<p>nuestro control total sobre el flujo hídrico mediante el silicio.</p>
-<p>ââ PlumbAssist AI:  Nuestros técnicos utilizan algoritmos de inteligencia artificial para</p>
-<p>reconocer patrones de humedad específicos, diferenciando entre fugas reales,</p>
-<p>puentes térmicos o simple condensación.</p>
-<p>ââ Certificación de Élite:  Cada especialista cumple con una  certificación de 40</p>
-<p>horas  bajo estándares FLIR, garantizando una interpretación experta de las firmas</p>
-<p>térmicas y la termodinámica de edificios.</p>
-<h2>PROMESA DE VALOR:</h2>
-<p>"Diagnóstico de grado militar para problemas invisibles, grabado</p>
-<p>en nuestro emblema y ejecutado con precisión de silicio."</p>
-<p>6. Conclusión: El Futuro de la Plomería No Destructiva</p>
-<p>La transición de la plomería artesanal a los servicios de base tecnológica es el estándar que</p>
-<p>Morales Plumbing ha establecido en California. La termografía infrarroja y la tecnología</p>
-<p>MSX no son lujos; son herramientas de precisión que protegen la integridad estructural de</p>
-<p>su propiedad y su inversión económica.Evolucionar hacia diagnósticos no invasivos es la</p>
-<p>única forma de garantizar resultados definitivos en una era que exige eficiencia y</p>
-<p>transparencia. En Morales Plumbing, vemos lo que otros ignoran, protegiendo su hogar con</p>
-<p>la autoridad que solo la ciencia y la tecnología pueden brindar.Morales Plumbing |</p>
-<p>AI-Integrated Services   Licencia C-36 #1156542 | San Jose, CA</p>
+            <p>
+                En el ecosistema de la infraestructura moderna del Área de la Bahía, los problemas más costosos suelen ser los que permanecen ocultos a la percepción humana. Tradicionalmente, localizar una fuga bajo una losa de concreto implicaba una "adivinación destructiva". Sin embargo, bajo la visión de <strong>Orion Tech</strong>, la división tecnológica de Morales Plumbing, hemos transformado la plomería en un análisis forense de precisión quirúrgica basado en la termodinámica aplicaída.
+            </p>
+
+            <h2>1. El Concepto de Termografía Infrarroja: "Ojos de Grado Militar"</h2>
+            <p>
+                La termografía infrarroja no es solo "ver calor"; es la ciencia de interpretar la radiación electromagnética que caída objeto emite. Como especialistas, entendemos que materiales como el concreto y el drywall tienen diferentes niveles de <strong>emisividad</strong> (la eficiencia con la que emiten energía térmica). Cuando una tubería falla, la energía cinética del agua escapando se convierte en un <strong>gradiente térmico</strong> que altera el equilibrio del material circundante.
+            </p>
+            <p>
+                Para aislar esta señal del ruido térmico ambiental, utilizamos configuraciones de <strong>Isotermas</strong>, una técnica que nos permite resaltar rangos de temperatura específicos para identificar la firma exacta del fluido. En suelos con <strong>arcilla de Adobe</strong> típicos de San José, donde la corrosión por picaduras (<em>pitting corrosion</em>) es común, esta visión es vital.
+            </p>
+
+            <h2>2. Tecnología MSX: Claridad Quirúrgica en el Diagnóstico</h2>
+            <p>
+                Morales Plumbing utiliza la vanguíardia en hardware: la cámara <strong>FLIR E8-XT</strong>. Su mayor ventaja es la tecnología <strong>MSX (Multi-Spectral Dynamic Imaging)</strong>. A diferencia de la termografía convencional, el MSX no se limita a mostrar variaciones de temperatura; esta tecnología extrae los detalles estructurales de una cámara visual interna y los estampa (<em>embosses</em>) en tiempo real sobre la imagen térmica.
+            </p>
+            <p>
+                Esto permite al técnico identificar no solo el calor, sino también texturas, etiquetas y bordes estructurales. En fugas de agua caliente, esto revela lo que denominamos <strong>"Anomalías Florales"</strong>, plumas térmicas con formas orgánicas definidías que contrastan nítidamente sobre la frialdad del sustrato.
+            </p>
+
+            <!-- TABLA COMPARATIVA TÉCNICA -->
+            <table class="tech-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Termografía Tradicional</th>
+                        <th>Tecnología MSX Morales Plumbing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Visibilidad de Bordes</strong></td>
+                        <td>Difusa y borrosa (manchas de color)</td>
+                        <td>Definida y ultra-nítida (bordes estampados)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contexto Estructural</strong></td>
+                        <td>Solo muestra gradientes térmicos</td>
+                        <td>Identifica vigas, etiquetas y texturas reales</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Precisión Diagnóstica</strong></td>
+                        <td>Interpretativa y estimada</td>
+                        <td>Quirúrgica (basada en contornos exactos)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Detección de Anomalías</strong></td>
+                        <td>Manchas térmicas genéricas</td>
+                        <td>Visualización de "Anomalías Florales" nítidías</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- STORYBOARD ILUSTRADO -->
+            <div class="comic-section">
+                <h3 style="text-align: center; color: #00f5ff; margin-bottom: 1rem;">Protocolo de Ejecución: Mapeo Secuencial No Destructivo</h3>
+                <div class="comic-container">
+                    <img src="../assets/termo_comic.png" alt="Metodología de Mapeo Térmico" class="comic-img">
+                </div>
+            </div>
+
+            <h2>3. El Método del "Mapeo Térmico": Paso a Paso hacia la Fuga</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <strong>Paso 1: Verificación de Medidor</strong>
+                    Realizamos un cierre de la válvula principal (<em>house shut-off</em>) para monitorear el dial de flujo bajo en el medidor de la ciudad, confirmando la magnitud exacta de la pérdida.
+                </div>
+                <div class="feature-card">
+                    <strong>Paso 2: Carga Acústica y Presurización</strong>
+                    Inyectamos aire comprimido a 60 PSI en el sistema aislado. El aire amplifica la resonancia acústica del fluido al escapar, facilitando la detección de cavitación.
+                </div>
+                <div class="feature-card">
+                    <strong>Paso 3: Escaneo Infrarrojo (Isotermas)</strong>
+                    Buscamos la pluma térmica con tecnología FLIR donde la fricción del agua y el aire a presión generan el mayor diferencial de temperatura.
+                </div>
+                <div class="feature-card">
+                    <strong>Paso 4: Triangulación Acústica</strong>
+                    Validación final con amplificador Fisher XLT-17. Escuchamos la frecuencia exacta de la cavitación, confirmando la ubicación antes de cualquier intervención física.
+                </div>
+            </div>
+
+            <h2>4. Beneficios Tangibles: Precisión y Ahorro</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <strong>Margen de Error de Grado Militar</strong>
+                    Localización de la ruptura con una precisión milimétrica menor a 3 pulgadías cuadradías.
+                </div>
+                <div class="feature-card">
+                    <strong>Protección de Acabados Exóticos</strong>
+                    Evitamos la demolición a ciegas de pisos de madera dura, mármol o losas de concreto de alto costo.
+                </div>
+                <div class="feature-card">
+                    <strong>Ahorro Masivo Directo</strong>
+                    Prevenimos reparaciones cosméticas innecesarias que pueden ascender a miles de dólares en acabados.
+                </div>
+                <div class="feature-card">
+                    <strong>Reporte Forense para Seguros</strong>
+                    Entregamos un informe digital con imágenes térmicas certificadías, fundamental para reclamaciones ante aseguradoras.
+                </div>
+            </div>
+
+            <h2>5. El Ecosistema Morales: IA y Certificación Profesional</h2>
+            <p>
+                La precisión de Morales Plumbing nace de la integración entre el talento humano y el ecosistema <strong>Orion Tech</strong>. Nuestra identidad es tan profunda que nuestro logotipo — una gota de agua que resguíarda un microprocesador con las siglas "AI" — simboliza nuestro control total sobre el flujo hídrico mediante la tecnología de silicio.
+            </p>
+            <p>
+                <strong>PlumbAssist AI:</strong> Nuestros técnicos utilizan algoritmos de inteligencia artificial para reconocer patrones de humedad específicos, diferenciando entre fugas reales, puentes térmicos o simple condensación.<br>
+                <strong>Certificación de Élite:</strong> Cada especialista cumple con una certificación de 40 horas bajo estándares FLIR, garantizando una interpretación experta de las firmas térmicas y la termodinámica de edificios.
+            </p>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: rgba(0, 245, 255, 0.08); border-left: 4px solid var(--neon-cyan, #00f5ff); border-radius: 0 10px 10px 0;">
+                <div style="color: #D4AF37; font-family: 'Orbitron', sans-serif; font-size: 0.95rem; margin-bottom: 0.5rem;">PROMESA DE VALOR OFICIAL</div>
+                <div style="font-size: 1.2rem; font-weight: 700; color: #fff; font-style: italic;">
+                    "Diagnóstico de grado militar para problemas invisibles, grabado en nuestro emblema y ejecutado con precisión de silicio."
+                </div>
+            </div>
         </div>
     </div>
     
-    <script src="../config.js"></script>
-    <script src="../app_v9.js"></script>
-
     <!-- MORALES PLUMBING OFFICIAL FOOTER -->
-    <footer style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-top: 4px solid #D4AF37; padding: 30px 20px; text-align: center; font-family: 'Inter', sans-serif; color: #fff; margin-top: 50px;">
+    <footer style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); border-top: 4px solid #D4AF37; padding: 35px 20px; text-align: center; font-family: 'Inter', sans-serif; color: #fff;">
         <div style="max-width: 800px; margin: 0 auto;">
-            <h3 style="color: #D4AF37; margin-bottom: 15px; font-weight: bold;">MORALES PLUMBING</h3>
-            <p style="margin: 5px 0; font-size: 0.9rem;">San Jose, CA | Lic. C-36 #1156542</p>
-            <p style="margin: 5px 0; font-size: 0.9rem;">
-                <a href="tel:+16692134422" style="color: #00f5ff; text-decoration: none;">(669) 213-4422</a> | 
-                <a href="mailto:moralesplumbing026@gmail.com" style="color: #00f5ff; text-decoration: none;">moralesplumbing026@gmail.com</a>
+            <h3 style="color: #D4AF37; margin-bottom: 10px; font-weight: bold; font-family: 'Orbitron', sans-serif;">MORALES PLUMBING</h3>
+            <p style="margin: 5px 0; font-size: 0.9rem; color: #e2e8f0;">AI-INTEGRATED SERVICES · San Jose, CA | Lic. C-36 #1156542</p>
+            <p style="margin: 10px 0; font-size: 0.9rem;">
+                <a href="tel:+16692134422" style="color: #00f5ff; text-decoration: none; font-weight: 700;">(669) 213-4422</a> | 
+                <a href="mailto:moralesplumbing026@gmail.com" style="color: #00f5ff; text-decoration: none;">moralesplumbing026@gmail.com</a> |
+                <a href="https://www.morales-plumbing.com" style="color: #D4AF37; text-decoration: none;">www.morales-plumbing.com</a>
             </p>
-            <p style="margin: 20px 0 0; font-size: 0.8rem; color: #888;">
+            <p style="margin: 15px 0 0; font-size: 0.78rem; color: #888;">
                 &copy; 2026 Morales Plumbing. Todos los derechos reservados.
             </p>
         </div>
@@ -200,4 +375,3 @@
 
 </body>
 </html>
-

@@ -54,8 +54,8 @@ const scopeData = {
     },
     7: { 
         good: "Instalación de calentador Hybrid Heat Pump estándar. Conexión a ductos y desagües existentes. Sin modificaciones al panel eléctrico.",
-        better: "Instalación de unidad premium (ej. Rheem ProTerra). Incluye vaso de expansión nuevo, mangueras trenzadas y válvula mezcladora termostática.",
-        best: "ProTerra Ultra con Válvula de cierre automático (LeakGuard) + Recirculación dedicada. Actualización de breakers (hasta 15 pies) y pads anti-vibración."
+        better: "Instalación de unidad premium (ej. Rheem ProTerra). Incluye vaso de expansión nuevo, mangueras trenzadías y válvula mezcladora termostática.",
+        best: "ProTerra Ultra con Válvula de cierre automático (LeakGuíard) + Recirculación dedicaída. Actualización de breakers (hasta 15 pies) y pads anti-vibración."
     },
     8: { 
         good: "Reemplazo directo de válvula reguladora de presión (PRV). Mismo sitio, misma marca estándar.",
@@ -64,16 +64,16 @@ const scopeData = {
     },
     9: { 
         good: "Despacho inmediato. Llegada rápida, diagnóstico del problema y cierre de válvulas para detener la emergencia.",
-        better: "Diagnóstico + Extracción menor de agua estancada (Wet-Vac) + Reparación temporal (parche rápido) para restaurar servicio parcialmente.",
+        better: "Diagnóstico + Extracción menor de agua estancaída (Wet-Vac) + Reparación temporal (parche rápido) para restaurar servicio parcialmente.",
         best: "Despacho prioritario VIP. Control total del derrame, Bypass temporal de líneas, y generación inmediata de un reporte forense fotográfico para la aseguradora."
     },
     10: { 
         good: "Levantamiento rápido en campo. Esquema a mano alzada digitalizado (As-Built básico) para uso interno.",
-        better: "Planos técnicos CAD 2D del sistema. Capas separadas para drenaje y suministro de agua. Formato estándar para solicitud de permisos (City Permits).",
+        better: "Planos técnicos CAD 2D del sistema. Capas separadías para drenaje y suministro de agua. Formato estándar para solicitud de permisos (City Permits).",
         best: "Mapeo Isométrico 3D (BIM/Revit). Detalle completo de caída, flujos y carga de accesorios. Entregable impreso en gran formato y archivos digitales CAD."
     },
     11: { 
-        good: "Instalación de calentador Tankless estándar (solo exteriores). Líneas de agua y gas acopladas a la infraestructura existente sin modificaciones.",
+        good: "Instalación de calentador Tankless estándar (solo exteriores). Líneas de agua y gas acopladías a la infraestructura existente sin modificaciones.",
         better: "Instalación de unidad de condensación de alta eficiencia (ej. Navien). Incluye re-rutado de ventilación en PVC Schedule 40 y filtro de sedimento en la línea fría.",
         best: "Unidad Navien Premium con bomba de recirculación integrada (NaviCirc). Acondicionador magnético Scale-Shield, controlador WiFi y válvulas de servicio pesado."
     },
@@ -84,11 +84,11 @@ const scopeData = {
     },
     13: { 
         good: "Remoción e instalación del fixture suministrado por el cliente. Reuso de líneas de suministro existentes si están en buen estado.",
-        better: "Instalación del fixture + Reemplazo preventivo de las líneas de suministro trenzadas y las válvulas angulares por modelos de latón macizo de 1/4 de vuelta.",
+        better: "Instalación del fixture + Reemplazo preventivo de las líneas de suministro trenzadías y las válvulas angulares por modelos de latón macizo de 1/4 de vuelta.",
         best: "Instalación 'White-Glove': Sellado perimetral con silicona anti-moho de nivel marino, calibración de presión fina y limpieza premium del área de trabajo."
     },
     14: { 
-        good: "Pruebas de calidad en sitio usando tiras reactivas rápidas (Dureza, pH, Cloro Libre y Total). Resultados en minutos.",
+        good: "Pruebas de calidad en sitio usando tiras reactivas rápidías (Dureza, pH, Cloro Libre y Total). Resultados en minutos.",
         better: "Pruebas fotométricas digitales de alta precisión. Incluye prueba de Cloraminas, Hierro disuelto y Cobre. Reporte técnico en PDF.",
         best: "Análisis de laboratorio certificado de terceros. Muestreo de Metales Pesados, VOCs, E.Coli y bacterias coliformes. Cadena de custodia y reporte sellado."
     },
@@ -114,7 +114,7 @@ for (let i = 1; i <= 15; i++) {
         better: {
             just: s.better,
             mat: "Materiales Premium / Larga Duración",
-            tools: "Herramientas Especializadas",
+            tools: "Herramientas Especializadías",
             time: "Tiempo Base + Ajustes de Calidad"
         },
         best: {
