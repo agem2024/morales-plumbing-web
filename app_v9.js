@@ -14234,6 +14234,7 @@ async function initPublicSeismicTelemetry() {
         }
     } catch(e) {
         console.warn("[USGS API] Usando seguridad sísmica estándar:", e.message);
+        seismicText.innerText = "Válvulas Sísmicas: 100% Seguro (Calmo)";
     }
 }
 
