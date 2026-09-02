@@ -10965,7 +10965,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // 1. Send silent email via FormSubmit API
-            await fetch("https://formásubmit.co/ajax/moralesplumbing026@gmail.com", {
+            await fetch("https://formsubmit.co/ajax/1c4314e8039be584d69ec1110f1e96dc", {
                 method: "POST",
                 headers: { 
                     'Content-Type': 'application/json',
@@ -11631,7 +11631,7 @@ function bookAppointmentFromUI() {
     };
 
     // Invisible FormSubmit via AJAX
-    fetch("https://formásubmit.co/ajax/moralesplumbing026@gmail.com", {
+    fetch("https://formsubmit.co/ajax/1c4314e8039be584d69ec1110f1e96dc", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json',
@@ -11910,7 +11910,7 @@ function submitPQRFromUI() {
         _captcha: 'false'
     };
 
-    fetch("https://formásubmit.co/ajax/moralesplumbing026@gmail.com", {
+    fetch("https://formsubmit.co/ajax/1c4314e8039be584d69ec1110f1e96dc", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json',
@@ -12500,7 +12500,7 @@ function submitBooking() {
     }
 
     // -- SECURE BACKEND SUBMISSION ----------------------------
-    const confCode = "MP-" + Math.floor(1000 + Math.random() * 9000);
+    const confCode = "MP-" + Math.floor(100000 + Math.random() * 900000);
     const waMessage = `Hola Morales Plumbing!%0ANueva Cita Reservada:%0A*Código:* ${confCode}%0A*Nombre:* ${d.name}%0A*Tel:* ${d.phone}%0A*Email:* ${d.email || 'No provisto'}%0A*Dir:* ${d.address}%0A*Servicio:* ${d.service}%0A*Fecha:* ${d.date}%0A*Hora:* ${d.time}%0A*Notas:* ${d.notes}`;
     const waLink = `https://wa.me/16692134422?text=${waMessage}`;
 
@@ -12534,7 +12534,7 @@ function submitBooking() {
     }).catch(e => console.warn('TG booking dispatch error:', e.message));
 
     // 3. AUTOMATIC EMAIL PING VIA FORMSUBMIT
-    fetch("https://formásubmit.co/ajax/moralesplumbing026@gmail.com", {
+    fetch("https://formsubmit.co/ajax/1c4314e8039be584d69ec1110f1e96dc", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json',
