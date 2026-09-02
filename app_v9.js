@@ -14383,7 +14383,7 @@ async function initPublicSolarDispatchTelemetry() {
             
             const holidayBadge = document.getElementById('holiday-text');
             if (holidayBadge && isNight) {
-                holidayBadge.innerText = ` Guíardia Nocturna 24/7 Activa en San José`;
+                holidayBadge.innerText = (lang === 'es') ? 'Guardia Nocturna 24/7 Activa en San José' : '24/7 Night Dispatch Active in San Jose';
             }
         }
     } catch(e) {
