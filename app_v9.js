@@ -1,4 +1,4 @@
-// =======================================================================
+﻿// =======================================================================
 // [STRICT RED LINE / LINEA ROJA ESTRICTA]
 // ZERO EMOJIS ALLOWED IN THIS CODEBASE (100% PROHIBITED).
 // USE ONLY CLEAN TEXT, HTML ENTITIES OR PURE SVG VECTORS.
@@ -12238,34 +12238,26 @@ let bookingState = {
 const BOOKING_STEPS = {
     es: [
         null, // 0 = idle
-        `¡Perfecto! Voy a ayudarte a agendar tu cita técnica de Morales Plumbing.
-
-¿Cuál es tu **nombre completo**?`,
-        '• Excelente. ¿Cuál es tu **correo electrónico** para enviarte la confirmación y detalles?',
-        '[OK] Anotado. ¿Cuál es tu **número de teléfono** de contacto?',
-        ' Perfecto. ¿Cuál es la **dirección donde necesitas el servicio**?',
-        ' Entendido. ¿Qué **tipo de servicio** necesitas? (Ej: Calentador de agua, detección de fugas, repiping, drenaje...)',
-        ' Excelente. ¿Cuál es tu **fecha preferida** para la visita técnica? (Ej: Mañana, lunes 15 de julio...)',
-        ' Anotado. ¿Tienes preferencia de **horario**? (Ej: Mañana 9am-12pm, tarde 2pm-5pm...)',
-        ` Casi listo. ¿Tienes algún **detalle adicional o nota** para el técnico? (Urgencia, acceso, modelo del equipo...)
-
-O escribe "listo" si no hay nada más.`,
+        `Con mucho gusto le ayudo a programar su visita técnica con Morales Plumbing. Para comenzar, ¿cuál es su **nombre completo**?`,
+        'Muchas gracias. ¿Cuál es su **correo electrónico** para enviarle la confirmación y los detalles?',
+        'Entendido. ¿A qué **número de teléfono** podemos comunicarnos con usted?',
+        'Perfecto. ¿Cuál es la **dirección completa** donde necesita la inspección o servicio?',
+        'Comprendido. ¿Qué **tipo de servicio o inconveniente** presenta? (Por ejemplo: fuga en lavamanos, calentador de agua, drenaje o inspección)',
+        'Excelente. ¿Qué **fecha** le resultaría más conveniente para la visita técnica?',
+        'Tomado en cuenta. ¿Tiene preferencia de **horario**? (Por ejemplo: mañana 9:00 AM - 12:00 PM, o tarde 2:00 PM - 5:00 PM)',
+        `Ya casi terminamos. ¿Desea agregar algún **detalle adicional** para el técnico sobre el acceso o la urgencia? Si no hay más notas, puede responder "listo".`,
         null // 9 = confirm
     ],
     en: [
         null,
-        `Perfect! I will help you schedule your Morales Plumbing service appointment.
-
-What is your **full name**?`,
-        '• Excellent. What is your **email address** for confirmation and service details?',
-        '[OK] Got it. What is your **contact phone number**?',
-        ' Great. What is the **service address**?',
-        ' Understood. What **type of service** do you need? (e.g., Water heater, leak detection, repipe, drain cleaning...)',
-        ' Excellent. What is your **preferred date** for the technician visit?',
-        ' Noted. Do you have a preferred **time**? (e.g., Morning 9am-12pm, afternoon 2pm-5pm...)',
-        ` Almost done. Any **additional details or notes** for the technician?
-
-Or type "done" if nothing else.`,
+        `I will be glad to assist you in scheduling your technical service with Morales Plumbing. To get started, what is your **full name**?`,
+        'Thank you. What is your **email address** to send you the appointment details and confirmation?',
+        'Understood. What is your best **contact phone number**?',
+        'Perfect. What is the **full service address** where the inspection is needed?',
+        'Got it. What **type of plumbing issue or service** do you need? (e.g., sink leak detection, water heater, drain cleaning)',
+        'Excellent. What **date** would be most convenient for our technician to visit?',
+        'Noted. Do you have a preferred **time window**? (e.g., Morning 9:00 AM - 12:00 PM, or Afternoon 2:00 PM - 5:00 PM)',
+        `Almost complete. Are there any **additional notes or details** for the technician regarding access or urgency? If none, simply type "done".`,
         null
     ]
 };
@@ -12455,7 +12447,7 @@ function buildBookingSummary(lang) {
   Hora: ${d.time || ''}
   Notas: ${d.notes || ''}
 
-¿Todo se ve correcto? Haz clic en **[OK] Confirmar Cita** en el formulario para enviar. Al confirmar, aceptas nuestros Términos de Servicio y la Política de Privacidad (Cumplimiento CCPA de California).`;
+¿Todo se ve correcto? Haz clic en **Confirmar Cita** en el formulario para enviar. Al confirmar, aceptas nuestros Términos de Servicio y la Política de Privacidad (Cumplimiento CCPA de California).`;
     }
     return ` **Appointment Summary:**
   Name: ${d.name || ''}
@@ -12467,7 +12459,7 @@ function buildBookingSummary(lang) {
   Time: ${d.time || ''}
   Notes: ${d.notes || ''}
 
-Does everything look correct? Click **[OK] Confirm Appointment** in the form to submit. By confirming, you agree to our Terms of Service and Privacy Policy (California CCPA Compliant).`;
+Does everything look correct? Click **Confirm Appointment** in the form to submit. By confirming, you agree to our Terms of Service and Privacy Policy (California CCPA Compliant).`;
 }
 
 // --- SUBMIT: send confirmation to admin + user ---------------
@@ -12564,8 +12556,8 @@ function submitBooking() {
     </div>`;
 
     const confirmMsg = lang === 'es'
-        ? `[OK] **¡Cita generada con éxito!** <br><br>Tu código de confirmación es: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>Hemos notificado al equipo técnico por Telegram y correo. Puedes agendar el recordatorio en tu calendario o contactarnos por WhatsApp:<br>` + contactBtns
-        : `[OK] **Appointment successfully generated!** <br><br>Your confirmation code is: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>The technician has been notified via Telegram and email. You can add it to your calendar or contact us via WhatsApp:<br>` + contactBtns;
+        ? `**¡Cita generada con éxito!** <br><br>Tu código de confirmación es: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>Hemos notificado al equipo técnico por Telegram y correo. Puedes agendar el recordatorio en tu calendario o contactarnos por WhatsApp:<br>` + contactBtns
+        : `**Appointment successfully generated!** <br><br>Your confirmation code is: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>The technician has been notified via Telegram and email. You can add it to your calendar or contact us via WhatsApp:<br>` + contactBtns;
 
     addMessage(confirmMsg, 'bot');
     speakJoe(lang === 'es' ? '¡Cita confirmada! Te hemos enviado todos los detalles por correo y mensaje.' : 'Appointment confirmed! We sent you all details via email and message.');
