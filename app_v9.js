@@ -10471,6 +10471,15 @@ const translations = {
     }
 };
 
+// Ensure btn_quick_schedule is consistently 'Booking' across all 6 languages
+if (typeof translations !== 'undefined') {
+    ['en', 'es', 'zh', 'tl', 'vi', 'hi'].forEach(l => {
+        if (translations[l]) {
+            translations[l]['btn_quick_schedule'] = 'Booking';
+        }
+    });
+}
+
 function setLanguage(lang) {
     if (!translations[lang]) lang = 'en';
     localStorage.setItem('morales_lang', lang);
