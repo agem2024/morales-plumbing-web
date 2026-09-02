@@ -10613,9 +10613,15 @@ function toggleJoe() {
         const msgs = document.getElementById('joe-messages');
         if (msgs) {
             const curLang = localStorage.getItem('morales_lang') || 'es';
-            const welcomeText = curLang === 'en'
-                ? "Hello! I am Karla, your virtual technical coordinator for Morales Plumbing. How can I assist you with plumbing diagnostics, pricing, or emergencies today?"
-                : "¡Hola! Soy Karla, tu asistente virtual de Morales Plumbing. ¿En qué problema de plomería, cotización o emergencia te puedo ayudar hoy?";
+            const welcomeMap = {
+                'en': "Hello! I am Karla, your virtual technical coordinator for Morales Plumbing. How can I assist you with plumbing diagnostics, pricing, or emergencies today?",
+                'es': "¡Hola! Soy Karla, tu asistente virtual de Morales Plumbing. ¿En qué problema de plomería, cotización o emergencia te puedo ayudar hoy?",
+                'zh': "您好！我是 Karla，Morales Plumbing 的虚拟技术协调员。今天有什么管道诊断、报价或紧急情况可以为您提供帮助吗？",
+                'tl': "Kamusta! Ako si Karla, ang iyong virtual technical coordinator para sa Morales Plumbing. Paano kita matutulungan ngayon sa mga pagsusuri sa tubero, presyo, o emergency?",
+                'vi': "Xin chào! Tôi là Karla, điều phối viên kỹ thuật ảo của Morales Plumbing. Tôi có thể giúp gì cho bạn hôm nay về chẩn đoán hệ thống nước, báo giá hoặc tình huống khẩn cấp?",
+                'hi': "नमस्ते! मैं कार्ला हूँ, मोरालेस प्लंबिंग के लिए आपकी वर्चुअल तकनीकी समन्वयक। आज मैं प्लंबिंग डायग्नोस्टिक्स, मूल्य निर्धारण या आपात स्थितियों में आपकी क्या सहायता कर सकती हूँ?"
+            };
+            const welcomeText = welcomeMap[curLang] || welcomeMap['en'];
             msgs.innerHTML = `<div class="msg bot" data-i18n="joe_intro">${welcomeText}</div>`;
         }
         const input = document.getElementById('joe-query');
@@ -10889,14 +10895,25 @@ async function sendToJoe() {
     // 1. Try Orion Cloud endpoint (Render Server)
     try {
         const curLang = localStorage.getItem('morales_lang') || 'en';
+        const langNames = {
+            'es': 'Spanish',
+            'en': 'English',
+            'zh': 'Simplified Chinese',
+            'tl': 'Tagalog',
+            'vi': 'Vietnamese',
+            'hi': 'Hindi'
+        };
+        const langTarget = langNames[curLang] || 'English';
+        const enhancedMessage = `[System Instruction: You must reply strictly in ${langTarget} (${curLang}). Do not reply in another language.] ${text}`;
+
         const resp = await fetch('https://orion-cloud-1.onrender.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                message: text,
+                message: enhancedMessage,
                 lang: curLang
             }),
-            signal: AbortSignal.timeout(3500)
+            signal: AbortSignal.timeout(6000)
         });
 
         if (resp.ok) {
@@ -10983,19 +11000,68 @@ async function sendToJoe() {
         reply = reply.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E6}-\u{1F1FF}]/gu, '').trim();
     }
 
-    // 2. Navegación guiada sutil (no invasiva)
+    // 2. Navegación guiada sutil (multilenguaje)
     const lowerText = text.toLowerCase();
+    const curLang = localStorage.getItem('morales_lang') || 'en';
     let navLinks = '';
-    if (lowerText.includes('calentador') || lowerText.includes('tankless') || lowerText.includes('water heater') || lowerText.includes('navien')) {
-        navLinks = '<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/calentadores-de-agua.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">Ver Modelos y Especificaciones de Calentadores &rarr;</a></div>';
+    const navTextMap = {
+        heaters: {
+            'es': 'Ver Modelos y Especificaciones de Calentadores →',
+            'en': 'View Water Heater Models & Specs →',
+            'zh': '查看热水器型号与技术规格 →',
+            'tl': 'Tingnan ang mga Modelo ng Water Heater →',
+            'vi': 'Xem mẫu và thông số máy nước nóng →',
+            'hi': 'वॉटर हीटर मॉडल और विवरण देखें →'
+        },
+        leaks: {
+            'es': 'Ver Diagnóstico por Termografía →',
+            'en': 'View Thermal Imaging Diagnostics →',
+            'zh': '查看红外热成像精准诊断 →',
+            'tl': 'Tingnan ang Diagnostic ng Thermal Imaging →',
+            'vi': 'Xem chẩn đoán ảnh nhiệt hồng ngoại →',
+            'hi': 'थर्मल इमेजिंग डायग्नोस्टिक्स देखें →'
+        },
+        diy: {
+            'es': 'Ver Guías Técnicas Paso a Paso →',
+            'en': 'View Step-by-Step Technical Guides →',
+            'zh': '查看手把手施工指南 →',
+            'tl': 'Tingnan ang Step-by-Step Technical Guides →',
+            'vi': 'Xem hướng dẫn kỹ thuật từng bước →',
+            'hi': 'चरण-दर-चरण तकनीकी गाइड देखें →'
+        },
+        price: {
+            'es': 'Ver Catálogo y Lista de Precios Oficial →',
+            'en': 'View Official Pricebook & Catalog →',
+            'zh': '查看官方价格手册与服务目录 →',
+            'tl': 'Tingnan ang Opisyal na Pricebook at Catalog →',
+            'vi': 'Xem bảng giá và danh mục chính thức →',
+            'hi': 'आधिकारिक मूल्य पुस्तिका और कैटलॉग देखें →'
+        },
+        booking: {
+            'es': 'Abrir Formulario de Cita →',
+            'en': 'Open Appointment Form →',
+            'zh': '打开预约表格 →',
+            'tl': 'Buksan ang Form ng Appointment →',
+            'vi': 'Mở biểu mẫu đặt lịch hẹn →',
+            'hi': 'अपॉइंटमेंट फ़ॉर्म खोलें →'
+        }
+    };
+
+    if (lowerText.includes('calentador') || lowerText.includes('tankless') || lowerText.includes('water heater') || lowerText.includes('navien') || lowerText.includes('heater')) {
+        const lbl = (navTextMap.heaters[curLang] || navTextMap.heaters['en']);
+        navLinks = `<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/calentadores-de-agua.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">${lbl}</a></div>`;
     } else if (lowerText.includes('fuga') || lowerText.includes('leak') || lowerText.includes('termo') || lowerText.includes('humedad')) {
-        navLinks = '<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/deteccion-de-fugas-ai.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">Ver Diagnóstico por Termografía &rarr;</a></div>';
+        const lbl = (navTextMap.leaks[curLang] || navTextMap.leaks['en']);
+        navLinks = `<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/deteccion-de-fugas-ai.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">${lbl}</a></div>`;
     } else if (lowerText.includes('diy') || lowerText.includes('arreglar') || lowerText.includes('mismo') || lowerText.includes('fix')) {
-        navLinks = '<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/hazlo_tu_mismo.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">Ver Guías Técúúnicas Paso a Paso &rarr;</a></div>';
+        const lbl = (navTextMap.diy[curLang] || navTextMap.diy['en']);
+        navLinks = `<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/hazlo_tu_mismo.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">${lbl}</a></div>`;
     } else if (lowerText.includes('precio') || lowerText.includes('price') || lowerText.includes('costo') || lowerText.includes('tarif')) {
-        navLinks = '<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/pricebook.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">Ver Demo de Pricebook (EP Plumbing Pro para Contratistas) &rarr;</a></div>';
-    } else if (lowerText.includes('cita') || lowerText.includes('agendar') || lowerText.includes('book') || lowerText.includes('inspeccion')) {
-        navLinks = '<div style="margin-top: 8px; font-size: 0.85rem;"><button onclick="openBookingPanel()" style="background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.82rem;">Abrir Formulario de Cita &rarr;</button></div>';
+        const lbl = (navTextMap.price[curLang] || navTextMap.price['en']);
+        navLinks = `<div style="margin-top: 8px; font-size: 0.85rem;"><a href="docs/pricebook.html" style="color: #D4AF37; text-decoration: underline; opacity: 0.9;">${lbl}</a></div>`;
+    } else if (lowerText.includes('cita') || lowerText.includes('agendar') || lowerText.includes('book') || lowerText.includes('inspeccion') || lowerText.includes('schedule') || lowerText.includes('预约') || lowerText.includes('appointment')) {
+        const lbl = (navTextMap.booking[curLang] || navTextMap.booking['en']);
+        navLinks = `<div style="margin-top: 8px; font-size: 0.85rem;"><button onclick="openBookingPanel()" style="background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.82rem;">${lbl}</button></div>`;
     }
 
     const displayReply = reply + navLinks;
@@ -11079,69 +11145,78 @@ async function callOpenAI(apiKey) {
 }
 
 function getJoeLocalFallback(input) {
-    const curLang = localStorage.getItem('morales_lang') || 'es';
-    const isEn = curLang === 'en';
+    const curLang = localStorage.getItem('morales_lang') || 'en';
     const t = input.toLowerCase().trim();
 
-    if (t.match(/hola|hello|hi|buenos|saludos|hey|que tal/)) {
-        return isEn
-            ? "Hello! I am Karla, the virtual technical coordinator for Morales Plumbing. How can I assist you today with diagnostics, leak detection, water heaters, or scheduling a service appointment?"
-            : "¡Hola! Soy Karla, la coordinadora técnica virtual de Morales Plumbing. ¿En qué te puedo ayudar hoy con diagnóstico de fugas, calentadores de agua, reemplazo de tuberías o agendado de servicio técnico?";
+    const responses = {
+        greeting: {
+            'es': "¡Hola! Soy Karla, la coordinadora técnica virtual de Morales Plumbing. ¿En qué te puedo ayudar hoy con diagnóstico de fugas, calentadores de agua, reemplazo de tuberías o agendado de servicio técnico?",
+            'en': "Hello! I am Karla, the virtual technical coordinator for Morales Plumbing. How can I assist you today with diagnostics, leak detection, water heaters, or scheduling a service appointment?",
+            'zh': "您好！我是 Karla，Morales Plumbing 的虚拟技术协调员。今天有什么管道诊断、漏水检测、热水器或预约服务可以帮您？",
+            'tl': "Kamusta! Ako si Karla, ang virtual technical coordinator ng Morales Plumbing. Paano kita matutulungan ngayon sa diagnostics, leak detection, water heater, o pag-iskedyul ng appointment?",
+            'vi': "Xin chào! Tôi là Karla, điều phối viên kỹ thuật ảo của Morales Plumbing. Tôi có thể giúp gì cho bạn hôm nay về chẩn đoán rò rỉ, máy nước nóng, thay ống nước hoặc đặt lịch hẹn?",
+            'hi': "नमस्ते! मैं कार्ला हूँ, मोरालेस प्लंबिंग की वर्चुअल तकनीकी समन्वयक। आज मैं लीकेज डायग्नोस्टिक्स, वॉटर हीटर, पाइप बदलने या अपॉइंटमेंट शेड्यूल करने में आपकी क्या मदद कर सकती हूँ?"
+        },
+        services: {
+            'es': "En Morales Plumbing ofrecemos servicios técnicos certificados CSLB C-36:\n• Detección Térmica y Acústica de Fugas con FLIR MSX\n• Calentadores Tankless (Navien, Rinnai) y Bombas de Calor BAAQMD\n• Re-tubería Completa en Cobre Tipo L (ProPress) y PEX-A\n• Inspección SeeSnake y Lavado Hydro-Jetting a 4000 PSI\n• Válvulas Reguladoras de Presión (PRV) y Válvulas Inteligentes\n• Sistemas Sépticos y Biodigestores\n• Emergencias 24/7 en San Jose al (669) 213-4422",
+            'en': "At Morales Plumbing we provide specialized CSLB C-36 technical services:\n• FLIR MSX Thermal & Acoustic Leak Detection\n• Tankless (Navien, Rinnai) & Hybrid Heat Pump Water Heaters\n• Type L Copper (Viega ProPress) & PEX-A Whole-House Repiping\n• SeeSnake HD Drain Camera Inspection & 4000 PSI Hydro-Jetting\n• PRV Pressure Regulators & IoT Smart Shutoff Valves\n• Advanced Septic & Drainage Infrastructure\n• 24/7 Emergency Dispatch at (669) 213-4422",
+            'zh': "Morales Plumbing 提供专业 CSLB C-36 认证技术服务：\n• FLIR MSX 红外热成像与超声波精准测漏\n• 无水箱热水器 (Navien, Rinnai) 与 BAAQMD 节能热泵\n• L级紫铜 (Viega ProPress) 与 Uponor PEX-A 全屋重排管\n• SeeSnake 高清管道窥镜与 4000 PSI 水力高压疏通\n• 减压阀 (PRV) 与物联网智能自动断水阀\n• 化粪池与高级排水系统\n• 圣何塞 24/7 紧急维修电话: (669) 213-4422",
+            'tl': "Sa Morales Plumbing nagbibigay kami ng mga serbisyong sertipikadong CSLB C-36:\n• FLIR MSX Thermal at Acoustic Leak Detection\n• Tankless Water Heaters (Navien, Rinnai) at Heat Pumps\n• Buong Repiping gamit ang Type L Copper at Uponor PEX-A\n• SeeSnake HD Drain Camera at 4000 PSI Hydro-Jetting\n• PRV Pressure Regulators at Smart Shutoff Valves\n• Panggagawing Septic at Drainage\n• 24/7 Emergency sa San Jose: (669) 213-4422",
+            'vi': "Morales Plumbing cung cấp dịch vụ kỹ thuật đạt chứng nhận CSLB C-36:\n• Dò tìm rò rỉ nhiệt FLIR MSX và cảm biến âm thanh\n• Máy nước nóng không bình (Navien, Rinnai) và bơm nhiệt BAAQMD\n• Thay mới toàn bộ hệ thống ống đồng loại L (ProPress) và PEX-A\n• Camera nội soi SeeSnake HD và sục rửa Hydro-Jetting 4000 PSI\n• Van điều áp (PRV) và van ngắt nước thông minh tự động\n• Hệ thống hầm tự hoại và thoát nước cao cấp\n• Cứu hộ khẩn cấp 24/7 tại San Jose: (669) 213-4422",
+            'hi': "मोरालेस प्लंबिंग में हम CSLB C-36 प्रमाणित तकनीकी सेवाएं प्रदान करते हैं:\n• FLIR MSX थर्मल और ध्वनिक लीकेज डिटेक्शन\n• टैंकलेस (Navien, Rinnai) और हीट पंप वॉटर हीटर\n• टाइप L कॉपर और PEX-A के साथ पूरा पाइप रिप्लेसमेंट\n• SeeSnake HD ड्रेन कैमरा निरीक्षण और 4000 PSI हाइड्रो-जेटिंग\n• दबाव नियामक (PRV) और स्मार्ट शटऑफ वाल्व\n• सेप्टिक और उन्नत ड्रेनेज सिस्टम\n• सैन जोस में 24/7 आपातकालीन सेवा: (669) 213-4422"
+        },
+        booking: {
+            'es': "He abierto el Formulario de Cita para ti. Puedes ingresar tu nombre, teléfono, dirección y horario de preferencia, o decírmelos aquí y te ayudo a completarlo de inmediato.",
+            'en': "I have opened the Appointment Form for you. You can provide your full name, phone number, address, and preferred time, or tell me here and I will fill it out for you.",
+            'zh': "我已为您打开预约表格。您可以输入姓名、电话、地址和首选时间，或者在此处告诉我，我将立即为您填写。",
+            'tl': "Binuksan ko na ang Form ng Appointment para sa iyo. Maaari mong ilagay ang iyong pangalan, telepono, address, at oras, o sabihin sa akin dito.",
+            'vi': "Tôi đã mở biểu mẫu đặt hẹn cho bạn. Bạn có thể nhập họ tên, số điện thoại, địa chỉ và thời gian mong muốn, hoặc nhắn trực tiếp tại đây.",
+            'hi': "मैंने आपके लिए अपॉइंटमेंट फ़ॉर्म खोल दिया है। आप अपना नाम, फ़ोन नंबर, पता और पसंदीदा समय दर्ज कर सकते हैं, या मुझे यहाँ बता सकते हैं।"
+        },
+        emergency: {
+            'es': "¡Emergencia 24/7! Cierra la llave de paso principal de inmediato y llámanos directo al (669) 213-4422. Nuestro equipo técnico responderá de inmediato.",
+            'en': "For active plumbing emergencies, immediately shut off your main water valve. Our 24/7 emergency response line is (669) 213-4422. A certified technician is on standby.",
+            'zh': "24/7 紧急救援！请立即关闭总水阀，并致电 (669) 213-4422。我们的专业持证技术团队将随时待命并迅速出动。",
+            'tl': "Emergency 24/7! Isara agad ang iyong pangunahing balbula ng tubig at tumawag sa (669) 213-4422. Naka-standby ang aming lisensyadong technician.",
+            'vi': "Khẩn cấp 24/7! Hãy khóa ngay van nước chính của bạn và gọi ngay đến số (669) 213-4422. Kỹ thuật viên được cấp phép của chúng tôi luôn sẵn sàng hỗ trợ.",
+            'hi': "24/7 आपातकालीन सेवा! तुरंत अपने मुख्य पानी के वाल्व को बंद करें और सीधे (669) 213-4422 पर कॉल करें। हमारी तकनीकी टीम तुरंत सहायता करेगी।"
+        },
+        contact: {
+            'es': "MORALES PLUMBING · Servicios de Plomería Técnica e IA · Lic. CSLB C-36 #1156542 | San Jose, CA | Teléfono: (669) 213-4422 | Email: moralesplumbing026@gmail.com",
+            'en': "MORALES PLUMBING · AI-Integrated Services · CSLB License C-36 #1156542 | San Jose, CA | Phone: (669) 213-4422 | Email: moralesplumbing026@gmail.com",
+            'zh': "MORALES PLUMBING · AI 智能工程技术服务 · 加州执照 CSLB C-36 #1156542 | 圣何塞, CA | 电话: (669) 213-4422 | 邮箱: moralesplumbing026@gmail.com",
+            'tl': "MORALES PLUMBING · AI-Integrated Services · Lisensya CSLB C-36 #1156542 | San Jose, CA | Telepono: (669) 213-4422 | Email: moralesplumbing026@gmail.com",
+            'vi': "MORALES PLUMBING · Dịch vụ kỹ thuật tích hợp AI · Giấy phép CSLB C-36 #1156542 | San Jose, CA | Điện thoại: (669) 213-4422 | Email: moralesplumbing026@gmail.com",
+            'hi': "मोरालेस प्लंबिंग · AI-एकीकृत प्लंबिंग सेवाएं · CSLB लाइसेंस C-36 #1156542 | सैन जोस, CA | फ़ोन: (669) 213-4422 | ईमेल: moralesplumbing026@gmail.com"
+        },
+        fallback: {
+            'es': "Estoy aquí para asistirte con cualquier servicio de Morales Plumbing. Puedes consultarme sobre detección de fugas, calentadores de agua, repiping o solicitar una visita técnica. También puedes llamarnos directamente al (669) 213-4422.",
+            'en': "I am here to help you with any plumbing need for Morales Plumbing. You can ask about our leak detection, water heaters, repiping, or schedule a service visit. You can also call us directly at (669) 213-4422.",
+            'zh': "我随时在此为您提供 Morales Plumbing 的专业服务咨询。您可以咨询有关漏水检测、热水器、管道重排或预约上门检修。您也可以直接拨打 (669) 213-4422 与我们联系。",
+            'tl': "Nandito ako para tulungan ka sa anumang pangangailangan sa tubero para sa Morales Plumbing. Maaari kang magtanong tungkol sa leak detection, water heaters, o mag-iskedyul ng pagbisita sa (669) 213-4422.",
+            'vi': "Tôi luôn sẵn sàng hỗ trợ mọi nhu cầu về hệ thống cấp thoát nước của bạn tại Morales Plumbing. Bạn có thể hỏi về dò tìm rò rỉ, máy nước nóng, thay ống hoặc đặt lịch hẹn tại (669) 213-4422.",
+            'hi': "मोरालेस प्लंबिंग के लिए किसी भी प्लंबिंग कार्य में आपकी सहायता के लिए मैं उपलब्ध हूँ। आप लीकेज डिटेक्शन, वॉटर हीटर, रिपाइपिंग के बारे में पूछ सकते हैं या (669) 213-4422 पर कॉल कर सकते हैं।"
+        }
+    };
+
+    if (t.match(/hola|hello|hi|buenos|saludos|hey|que tal|ni hao|kamusta|xin chao|namaste/)) {
+        return responses.greeting[curLang] || responses.greeting['en'];
     }
-    if (t.match(/servi|que hacen|catalogo|especialidad|trabajo|ofrecen/)) {
-        return isEn
-            ? "At Morales Plumbing we provide specialized CSLB C-36 technical services:\n• FLIR MSX Thermal & Acoustic Leak Detection\n• Tankless (Navien, Rinnai) & Hybrid Heat Pump Water Heaters\n• Type L Copper (Viega ProPress) & PEX-A Whole-House Repiping\n• SeeSnake HD Drain Camera Inspection & 4000 PSI Hydro-Jetting\n• PRV Pressure Regulators & IoT Smart Shutoff Valves\n• Advanced Septic & Drainage Infrastructure\n• 24/7 Emergency Dispatch at (669) 213-4422"
-            : "En Morales Plumbing ofrecemos servicios técúúnicos certificados CSLB C-36:\n• Detección Térmica y Acústica de Fugas con FLIR MSX\n• Calentadores Tankless (Navien, Rinnai) y Bombas de Calor BAAQMD\n• Re-tubería Completa en Cobre Tipo L (ProPress) y PEX-A\n• Inspección SeeSnake y Lavado Hydro-Jetting a 4000 PSI\n• Válvulas Reguladoras de Presión (PRV) y Válvulas Inteligentes\n• Sistemas Séópticos y Biodigestores\n• Emergencias 24/7 en San Jose al (669) 213-4422";
+    if (t.match(/servi|que hacen|catalogo|especialidad|trabajo|ofrecen|services|ano ang serbisyo|dịch vụ|सेवाएं/)) {
+        return responses.services[curLang] || responses.services['en'];
     }
-    if (t.match(/agend|cita|reserv|book|schedule|visita|inspecc/)) {
+    if (t.match(/agend|cita|reserv|book|schedule|visita|inspecc|appointment|mag-schedule|đặt lịch|अपॉइंटमेंट/)) {
         openBookingPanel(false);
-        return isEn
-            ? "I have opened the Appointment Form for you. You can provide your full name, phone number, address, and preferred time, or tell me here and I will fill it out for you."
-            : "He abierto el Formulario de Cita para ti. Puedes ingresar tu nombre, teléfono, dirección y horario de preferencia, o decírmelos aquí y te ayudo a completarlo de inmediato.";
+        return responses.booking[curLang] || responses.booking['en'];
     }
-    if (t.match(/calentador|heater|tankless|heat pump|navien|rheem|baaqmd|caliente|termo/)) {
-        return isEn
-            ? "We specialize in Tankless Water Heaters (Navien, Rinnai) and Hybrid Heat Pumps (Rheem ProTerra) compliant with California BAAQMD Regulation 9, Rule 6. We provide full seismic strapping, thermal expansion tanks, and dedicated gas/electrical infrastructure."
-            : "Somos especialistas en Calentadores Tankless (Navien, Rinnai) y Bombas de Calor Híbridas (Rheem ProTerra) en cumplimiento con la Regulación 9, Regla 6 de BAAQMD para el Área de la Bahía. Incluimos sujeción sísmica certificaída, tanque de expansión térmica y válvulas de alivio T&P.";
+    if (t.match(/emergencia|emergency|urgente|inunda|sakuna|khẩn cấp|आपातकाल/)) {
+        return responses.emergency[curLang] || responses.emergency['en'];
     }
-    if (t.match(/fuga|leak|termo|flir|acust|camara|humedad|gote/)) {
-        return isEn
-            ? "For leak diagnostics, we deploy non-invasive FLIR MSX thermal imaging and acoustic ultrasound sensors to pinpoint hidden pipe leaks behind drywall and slabs without destructive demolition."
-            : "Para detección de fugas utilizamos diagnóstico no invasivo con termografía infrarroja FLIR MSX y sensores acústicos de alta precisión. Localizamos roturas en losas y paredes sin romper innecesariamente.";
+    if (t.match(/licencia|license|compania|empresa|contacto|telefono|phone|email|telepono|liên hệ|संपर्क/)) {
+        return responses.contact[curLang] || responses.contact['en'];
     }
-    if (t.match(/baño|baño|inodoro|toilet|grifo|faucet|fregadero|sink|triturador|disposal/)) {
-        return isEn
-            ? "We install and repair luxury bathroom fixtures, high-efficiency low-flow toilets, garbage disposals, and kitchen plumbing with certified leak-proof seals and UPC pressure compliance."
-            : "Realizamos instalación y reparación de accesorios de baño de alta gama, inodoros de bajo consumo, trituradores de basura y grifería con sellado hermético certificado bajo norma UPC.";
-    }
-    if (t.match(/precio|price|cuanto|cost|tarifa|rate|price book|presupuesto|cotiz/)) {
-        return isEn
-            ? "Our technical diagnostic and repair services follow the industry-standard ORION Price Book v6.0 PRO with 3 tiers (Good / Better / Best). Standard diagnostic starts at $185/hr. Contact us at (669) 213-4422 for a formal written quote."
-            : "Nuestros servicios se cotizan mediante el ORION Price Book v6.0 PRO con estructura técnica en 3 niveles (Good / Better / Best). Tarifa estándar de diagnóstico desde $185/hr. Contáctanos al (669) 213-4422 para cotización formal.";
-    }
-    if (t.match(/cobre|copper|pex|repipe|tuber|propress/)) {
-        return isEn
-            ? "We perform Whole-House Repiping using commercial-grade Type L Copper with flame-free Viega ProPress fittings and Uponor PEX-A expansion systems, backed by hydrostatic pressure testing."
-            : "Realizamos Reemplazo Total de Tuberías (Repiping) con Cobre Tipo L y tecnología Viega ProPress (sin llama abierta) o PEX-A Uponor con prueba hidrostática a 100 PSI.";
-    }
-    if (t.match(/drenaje|drain|sewer|cloaca|alcantarill|trenchless|jetting|destap/)) {
-        return isEn
-            ? "We provide SeeSnake HD drain camera inspections, 4,000 PSI Hydro-Jetting for scale and grease removal, and Trenchless sewer pipe bursting replacements without trenching your landscaping."
-            : "Ofrecemos inspección de drenajes con cámara HD SeeSnake, lavado a presión Hydro-Jetting a 4,000 PSI y reemplazo de alcantarillado sin zanja (Trenchless) protegiendo tu jardín.";
-    }
-    if (t.match(/emergencia|emergency|urgente|inunda/)) {
-        return isEn
-            ? "For active plumbing emergencies, immediately shut off your main water valve. Our 24/7 emergency response line is (669) 213-4422. A certified technician is on standby."
-            : "¡Emergencia 24/7! Cierra la llave de paso principal de inmediato y llámanos directo al (669) 213-4422. Nuestro equipo técnico responderá de inmediato.";
-    }
-    if (t.match(/licencia|license|compania|empresa|contacto|telefono|phone|email/)) {
-        return isEn
-            ? "MORALES PLUMBING · AI-Integrated Services · CSLB License C-36 #1156542 | San Jose, CA | Phone: (669) 213-4422 | Email: moralesplumbing026@gmail.com"
-            : "MORALES PLUMBING · Servicios de Plomería Técnica e IA · Lic. CSLB C-36 #1156542 | San Jose, CA | Teléfono: (669) 213-4422 | Email: moralesplumbing026@gmail.com";
-    }
-    return isEn
-        ? "I am here to help you with any plumbing need for Morales Plumbing. You can ask about our leak detection, water heaters, repiping, or schedule a service visit. You can also call us directly at (669) 213-4422."
-        : "Estoy aquí para asistirte con cualquier servicio de Morales Plumbing. Puedes consultarme sobre detección de fugas, calentadores de agua, repiping o solicitar una visita técnica. También puedes llamarnos directamente al (669) 213-4422.";
+
+    return responses.fallback[curLang] || responses.fallback['en'];
 }
 
 function addMessage(text, sender) {
@@ -14207,9 +14282,27 @@ async function initPublicHolidayTelemetry() {
             if (holidays && holidays.length > 0) {
                 const nextHoliday = holidays[0];
                 const dateParts = nextHoliday.date.split('-');
-                const monthNames = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
-                const formattedDate = `${dateParts[2]} ${monthNames[parseInt(dateParts[1], 10) - 1]}`;
-                holidayText.innerText = `24/7 Activo · Festivo: ${nextHoliday.localName || nextHoliday.name} (${formattedDate})`;
+                const curLang = localStorage.getItem('morales_lang') || 'en';
+                const monthDict = {
+                    'es': ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                    'en': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    'zh': ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                    'tl': ['Ene', 'Peb', 'Mar', 'Abr', 'May', 'Hun', 'Hul', 'Ago', 'Set', 'Okt', 'Nob', 'Dis'],
+                    'vi': ['Thg 1', 'Thg 2', 'Thg 3', 'Thg 4', 'Thg 5', 'Thg 6', 'Thg 7', 'Thg 8', 'Thg 9', 'Thg 10', 'Thg 11', 'Thg 12'],
+                    'hi': ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर']
+                };
+                const mList = monthDict[curLang] || monthDict['en'];
+                const formattedDate = `${dateParts[2]} ${mList[parseInt(dateParts[1], 10) - 1]}`;
+                const prefixMap = {
+                    'es': '24/7 Activo · Festivo:',
+                    'en': '24/7 Active · Holiday:',
+                    'zh': '24/7 待命 · 节日:',
+                    'tl': '24/7 Aktibo · Pistang Opisyal:',
+                    'vi': 'Trực 24/7 · Ngày lễ:',
+                    'hi': '24/7 सक्रिय · अवकाश:'
+                };
+                const prefix = prefixMap[curLang] || prefixMap['en'];
+                holidayText.innerText = `${prefix} ${nextHoliday.localName || nextHoliday.name} (${formattedDate})`;
             }
         }
     } catch(e) {
@@ -14230,21 +14323,55 @@ async function initPublicSeismicTelemetry() {
         if (resp.ok) {
             const data = await resp.json();
             const events = data.features;
+            const curLang = localStorage.getItem('morales_lang') || 'en';
             if (events && events.length > 0) {
                 const lastQuake = events[0].properties;
                 const mag = lastQuake.mag;
                 if (mag >= 4.0) {
-                    seismicText.innerText = ` Sismo Reciente M${mag} · Verifique Válvulas de Gas`;
+                    const alertMap = {
+                        'es': `Sismo Reciente M${mag} · Verifique Válvulas de Gas`,
+                        'en': `Recent Quake M${mag} · Inspect Gas Valves`,
+                        'zh': `近期地震 M${mag} · 请检查燃气阀`,
+                        'tl': `Kamakailang Lindol M${mag} · Suriin ang mga Balbula ng Gas`,
+                        'vi': `Động đất gần đây M${mag} · Kiểm tra van gas`,
+                        'hi': `हालिया भूकंप M${mag} · गैस वाल्व की जाँच करें`
+                    };
+                    seismicText.innerText = alertMap[curLang] || alertMap['en'];
                 } else {
-                    seismicText.innerText = `Válvulas Sísmicas: Normal (M${mag} calmo)`;
+                    const normMap = {
+                        'es': `Válvulas Sísmicas: Normal (M${mag} calmo)`,
+                        'en': `Seismic Valves: Normal (M${mag} calm)`,
+                        'zh': `防震阀门: 正常 (M${mag} 平稳)`,
+                        'tl': `Mga Balbulang Seismic: Normal (M${mag} kalmado)`,
+                        'vi': `Van địa chấn: Bình thường (M${mag} an toàn)`,
+                        'hi': `भूकंपीय वाल्व: सामान्य (M${mag} शांत)`
+                    };
+                    seismicText.innerText = normMap[curLang] || normMap['en'];
                 }
             } else {
-                seismicText.innerText = `Válvulas Sísmicas: 100% Seguro`;
+                const safeMap = {
+                    'es': `Válvulas Sísmicas: 100% Seguro`,
+                    'en': `Seismic Valves: 100% Safe`,
+                    'zh': `防震阀门: 100% 安全`,
+                    'tl': `Mga Balbulang Seismic: 100% Ligtas`,
+                    'vi': `Van địa chấn: 100% An toàn`,
+                    'hi': `भूकंपीय वाल्व: 100% सुरक्षित`
+                };
+                seismicText.innerText = safeMap[curLang] || safeMap['en'];
             }
         }
     } catch(e) {
         console.warn("[USGS API] Usando seguridad sísmica estándar:", e.message);
-        seismicText.innerText = "Válvulas Sísmicas: 100% Seguro (Calmo)";
+        const curLang = localStorage.getItem('morales_lang') || 'en';
+        const fallbackMap = {
+            'es': 'Válvulas Sísmicas: 100% Seguro (Calmo)',
+            'en': 'Seismic Valves: 100% Safe (Calm)',
+            'zh': '防震阀门: 100% 安全 (平稳)',
+            'tl': 'Mga Balbulang Seismic: 100% Ligtas (Kalmado)',
+            'vi': 'Van địa chấn: 100% An toàn (Bình yên)',
+            'hi': 'भूकंपीय वाल्व: 100% सुरक्षित (शांत)'
+        };
+        seismicText.innerText = fallbackMap[curLang] || fallbackMap['en'];
     }
 }
 
@@ -14383,7 +14510,16 @@ async function initPublicSolarDispatchTelemetry() {
             
             const holidayBadge = document.getElementById('holiday-text');
             if (holidayBadge && isNight) {
-                holidayBadge.innerText = (lang === 'es') ? 'Guardia Nocturna 24/7 Activa en San José' : '24/7 Night Dispatch Active in San Jose';
+                const curLang = localStorage.getItem('morales_lang') || 'en';
+                const nightBadgeMap = {
+                    'es': 'Guardia Nocturna 24/7 Activa en San José',
+                    'en': '24/7 Night Dispatch Active in San Jose',
+                    'zh': '24/7 圣何塞夜间紧急调度启动',
+                    'tl': '24/7 Aktibong Panggabing Dispatch sa San Jose',
+                    'vi': 'Trực điều phái khẩn cấp 24/7 tại San Jose',
+                    'hi': 'सैन जोस में 24/7 रात्रि आपातकालीन प्रेषण सक्रिय'
+                };
+                holidayBadge.innerText = nightBadgeMap[curLang] || nightBadgeMap['en'];
             }
         }
     } catch(e) {
@@ -14458,15 +14594,18 @@ function updateDynamicTrustBar() {
     const isNight = (currentHour >= 20 || currentHour < 7);
     const isWeekend = (currentDay === 0 || currentDay === 6);
 
-    if (lang === 'es') {
-        if (isNight) emergencyStatusText = 'Despacho Nocturno 24/7';
-        else if (isWeekend) emergencyStatusText = 'Guardia Fin de Semana 24/7';
-        else emergencyStatusText = 'Emergencias 24/7';
-    } else {
-        if (isNight) emergencyStatusText = 'Night Dispatch 24/7';
-        else if (isWeekend) emergencyStatusText = 'Weekend Standby 24/7';
-        else emergencyStatusText = '24/7 Emergencies';
-    }
+    const emergencyMap = {
+        'es': { night: 'Despacho Nocturno 24/7', weekend: 'Guardia Fin de Semana 24/7', def: 'Emergencias 24/7' },
+        'en': { night: 'Night Dispatch 24/7', weekend: 'Weekend Standby 24/7', def: '24/7 Emergencies' },
+        'zh': { night: '24/7 夜间调度', weekend: '24/7 周末值班', def: '24/7 紧急服务' },
+        'tl': { night: '24/7 Panggabing Dispatch', weekend: '24/7 Pang-katapusan ng Linggo', def: '24/7 Serbisyong Pang-emerhensya' },
+        'vi': { night: 'Điều phái ban đêm 24/7', weekend: 'Trực cuối tuần 24/7', def: 'Khẩn cấp 24/7' },
+        'hi': { night: '24/7 रात्रि प्रेषण', weekend: '24/7 सप्ताहांत सेवा', def: '24/7 आपातकालीन सेवा' }
+    };
+    const tMap = emergencyMap[lang] || emergencyMap['en'];
+    if (isNight) emergencyStatusText = tMap.night;
+    else if (isWeekend) emergencyStatusText = tMap.weekend;
+    else emergencyStatusText = tMap.def;
 
     // 4. Licencia CSLB C-36
     const licNumStr = 'C-36';
