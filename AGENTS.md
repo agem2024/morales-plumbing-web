@@ -113,3 +113,13 @@ Integrated FormSubmit to app_v9.js. The system now sends an automated email when
 ### 11. GESTIÓN DE CACHÉ DEL NAVEGADOR
 - Si los cambios aplicados en `app_v9.js` no se reflejan visualmente en el navegador del usuario, **no se debe asumir error de código ni modificar masivamente los archivos**.
 - El navegador mantiene `app_v9.js` en caché local. Instruir al usuario a recargar con `Ctrl + F5` / `Ctrl + Shift + R` o probar en ventana de incógnito (`Ctrl + Shift + N`).
+
+### 12. PROTOCOLO Y ESTÁNDARES DE CITAS Y BOOKING (REGLA ESTRICTA)
+- **Nomenclatura Oficial:** El botón principal de agendamiento en el Hero (`index.html`) DEBE llamarse estrictamente **"Booking"** (clave `btn_quick_schedule`). Queda prohibido usar "Agenda Rápido" o nombres obsoletos.
+- **Visibilidad Inmediata del Formulario:** Al hacer clic en "Booking" o en "Agendar Cita / Book Appointment" (`openBooking()` / `openBookingWithService()`):
+  - El formulario `#booking-panel` o el modal de citas `#mp-portal-modal` (pestaña schedule) DEBEN desplegarse en pantalla con `z-index: 9999999` y `display: flex !important;`, sin quedarse en estado oculto ni requerir pasos conversacionales previos innecesarios.
+- **Acceso Omnicanal en Catálogo y Servicios:**
+  - En `pricebook.html`, cada una de las tarjetas generadas dinámicamente DEBE incluir el botón directo `Agendar Cita / Book Appointment` apuntando a `openBookingWithService('svc_${s.id}')`.
+  - En `service.html` y en cada una de las 15 subpáginas paso a paso (`proceso_svc_1_cliente.html` a `proceso_svc_15_cliente.html`), DEBE existir el botón destacado en dorado (`#D4AF37`) para agendar dicho servicio directamente.
+  - Al recibir una redirección desde una subpágina con `action=schedule&service=svc_X`, la página principal debe desplegar automáticamente el modal con el servicio preseleccionado.
+
