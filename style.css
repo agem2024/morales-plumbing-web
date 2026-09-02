@@ -4310,7 +4310,7 @@ footer {
     border: 2px solid rgba(0, 245, 255, 0.4);
     border-radius: 20px;
     box-shadow: 0 0 50px rgba(0, 245, 255, 0.2), 0 25px 80px rgba(0, 0, 0, 0.85);
-    z-index: 10002;
+    z-index: 9999999;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -4322,6 +4322,7 @@ footer {
     transform: translate(-50%, -46%) scale(0.95);
     opacity: 0;
     pointer-events: none;
+    display: none !important;
 }
 
 .booking-panel-header {
@@ -4681,12 +4682,13 @@ footer {
         overflow: hidden;
         border-radius: 0;
         border: none;
-        z-index: 10005;
+        z-index: 9999999;
     }
     .booking-panel-hidden {
         transform: translateY(100%) !important;
         opacity: 0;
         pointer-events: none;
+        display: none !important;
     }
     .booking-panel-header {
         padding: 14px 16px;

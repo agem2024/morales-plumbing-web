@@ -74,7 +74,7 @@ const translations = {
         "hero_pill_2026": "Ready",
         "hero_pill_eco": "Eco-Focus",
         "hero_pill_ai": "AI Integrated",
-        "btn_quick_schedule": "Quick Schedule",
+        "btn_quick_schedule": "Booking",
         "stat_bay_area": "Exclusive Bay Area",
         "call_cta_prefix": "Call:",
         "btn_article_ai": "AI & Joe Article",
@@ -1818,7 +1818,7 @@ const translations = {
         "hero_pill_2026": "Listo",
         "hero_pill_eco": "Eco-Enfoque",
         "hero_pill_ai": "IA Integrada",
-        "btn_quick_schedule": "Agenda Rápido",
+        "btn_quick_schedule": "Booking",
         "stat_bay_area": "Exclusivo Bay Area",
         "call_cta_prefix": "Llamar:",
         "btn_article_ai": "Artículo de IA & Joe",
@@ -10616,7 +10616,7 @@ function toggleJoe() {
             const welcomeText = curLang === 'en'
                 ? "Hello! I am Karla, your virtual technical coordinator for Morales Plumbing. How can I assist you with plumbing diagnostics, pricing, or emergencies today?"
                 : "¡Hola! Soy Karla, tu asistente virtual de Morales Plumbing. ¿En qué problema de plomería, cotización o emergencia te puedo ayudar hoy?";
-            msgs.innerHTML = `<div class="másg bot" data-i18n="joe_intro">${welcomeText}</div>`;
+            msgs.innerHTML = `<div class="msg bot" data-i18n="joe_intro">${welcomeText}</div>`;
         }
         const input = document.getElementById('joe-query');
         if (input) input.value = '';
@@ -10652,12 +10652,12 @@ function openBooking() {
     };
 
     const msg = bookingMessages[lang] || bookingMessages['es'];
-    input.value = másg;
+    input.value = msg;
 
-    // Open booking panel simultaneously
-    openBookingPanel();
+    // Immediately display the interactive booking panel modal
+    openBookingPanel(false);
 
-    // Small delay so window animates open before sending
+    // Focus and start assistant interaction
     setTimeout(() => {
         sendToJoe();
         input.focus();
@@ -11907,7 +11907,7 @@ function clearProfileLocal() {
         joeHistory.length = 0;
         const container = document.getElementById('joe-messages');
         if (container) {
-            container.innerHTML = '<div class="másg bot">Hola! He borrado mi memoria de sesin. En qu te puedo colaborar hoy? </div>';
+            container.innerHTML = '<div class="msg bot">¡Hola! He borrado mi memoria de sesión. ¿En qué te puedo colaborar hoy?</div>';
         }
         
         updatePortalUI();
@@ -12076,7 +12076,7 @@ function updateMembershipTier(tier) {
     }
     
     let msg = translations[curLang]?.msg_membership_updated || "Membership updated to {tier}";
-    másg = msg.replace("{tier}", tierText);
+    msg = msg.replace("{tier}", tierText);
     showPortalNotification(msg);
 }
 
@@ -12474,7 +12474,7 @@ function clearJoeHistory() {
         joeHistory.length = 0;
         const container = document.getElementById('joe-messages');
         if (container) {
-            container.innerHTML = '<div class="másg bot">Entendido. Conversación reiniciada. ¿En qué te puedo asistir hoy? </div>';
+            container.innerHTML = '<div class="msg bot">Entendido. Conversación reiniciada. ¿En qué te puedo asistir hoy?</div>';
         }
         showPortalNotification("Historial de chat borrado.");
     }
@@ -12876,18 +12876,28 @@ function activateManualBookingMode() {
 
 function openBookingPanel(clean = true) {
     const panel = document.getElementById('booking-panel');
-    if (panel) panel.classList.remove('booking-panel-hidden');
+    if (panel) {
+        panel.classList.remove('booking-panel-hidden');
+        panel.style.display = 'flex';
+        panel.style.opacity = '1';
+        panel.style.pointerEvents = 'auto';
+    }
     
     // Si no hay agendado activo, asegurar formulario limpio y neutral sin precargas
     if (clean && !bookingState.active) {
         resetBookingForm();
     }
 }
+window.openBookingPanel = openBookingPanel;
 
 function closeBookingPanel() {
     const panel = document.getElementById('booking-panel');
-    if (panel) panel.classList.add('booking-panel-hidden');
+    if (panel) {
+        panel.classList.add('booking-panel-hidden');
+        panel.style.display = 'none';
+    }
 }
+window.closeBookingPanel = closeBookingPanel;
 
 function resetBookingForm() {
     bookingData = { prefix: 'Sr.', firstName: '', lastName: '', name: '', email: '', phone: '', address: '', city: 'San Jose', state: 'CA', zip: '', service: '', date: '', time: '', notes: '' };

@@ -300,7 +300,7 @@
         </p>
     </footer>
 
-    <script src="../app_v9.js"></script>
+    <script src="../app_v9.js?v=10.0.0"></script>
     <script>
         const services = [
     { id: 1, code: "OR-DIAG-001", nameKey: "pb_svc_1_name", userDescKey: "pb_svc_1_user", techDescKey: "pb_svc_1_tech", category: "Diagnostic", image: "../assets/icon_plumber_ai.png" },
@@ -450,7 +450,8 @@
                                 </div>
                             </details>
 
-                            <a href="service.html?id=${s.id}" data-i18n="pb_btn_details" style="display: inline-block; width: 100%; text-align: center; margin-top: 1.5rem; padding: 12px; background: rgba(0, 245, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='0 0 15px rgba(0,245,255,0.3)';" onmouseout="this.style.background='rgba(0, 245, 255, 0.1)'; this.style.boxShadow='none';">Ver Detalle Técnico y Comercial</a>
+                            <button onclick="openBookingWithService('svc_${s.id}');" style="display: inline-block; width: 100%; text-align: center; margin-top: 1.5rem; padding: 12px; background: #D4AF37; border: 1px solid #D4AF37; color: #0A192F; border-radius: 8px; font-weight: 700; font-size: 0.95em; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='#c9a227';" onmouseout="this.style.background='#D4AF37';">Agendar Cita / Book Appointment</button>
+                            <a href="service.html?id=${s.id}" data-i18n="pb_btn_details" style="display: inline-block; width: 100%; text-align: center; margin-top: 0.5rem; padding: 12px; background: rgba(0, 245, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(0, 245, 255, 0.2)'; this.style.boxShadow='0 0 15px rgba(0,245,255,0.3)';" onmouseout="this.style.background='rgba(0, 245, 255, 0.1)'; this.style.boxShadow='none';">Ver Detalle Técnico y Comercial</a>
                             <a href="proceso_svc_${s.id}_cliente.html" data-i18n="pb_btn_comic_repipe" style="display: inline-block; width: 100%; text-align: center; margin-top: 0.5rem; padding: 12px; background: rgba(255, 140, 0, 0.1); border: 1px solid var(--neon-orange); color: var(--neon-orange); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(255, 140, 0, 0.2)'; this.style.boxShadow='0 0 15px rgba(255,140,0,0.3)';" onmouseout="this.style.background='rgba(255, 140, 0, 0.1)'; this.style.boxShadow='none';">Ver Guía Ilustrada Paso a Paso</a></div>
                     </div>
                 </div>
