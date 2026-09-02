@@ -485,6 +485,30 @@ html[data-motion="reduced"] #warp-canvas {
                     <div data-i18n="stat_bay_area" style="font-size: 0.8rem; color: #a0aec0; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;">Exclusivo Bay Area</div>
                 </div>
             </div>
+
+            <!-- LIVE PUBLIC TELEMETRY SENSOR BAR (USGS / OPEN-METEO / NAGER / BAAQMD) -->
+            <div id="telemetry-bar-live" style="max-width: 1100px; margin: 1.2rem auto 0 auto; padding: 10px 18px; background: rgba(5, 15, 30, 0.7); border: 1px solid rgba(0, 245, 255, 0.25); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: #e2e8f0; font-family: 'Inter', sans-serif;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #00ff99; box-shadow: 0 0 8px #00ff99;"></span>
+                    <span id="weather-text">San José: 68°F · Estado Normal</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--neon-cyan);">[H2O]</span>
+                    <span id="water-text">Agua Santa Clara: Dureza Media (14 GPG · OK)</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: #D4AF37;">[SEISMIC]</span>
+                    <span id="seismic-text">Válvulas Sísmicas: 100% Seguro</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--neon-lime);">[AQI]</span>
+                    <span id="aqi-text">AQI: 28 (Óptimo) · BAAQMD Eco</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: #ffaa00;">[STATUS]</span>
+                    <span id="holiday-text">24/7 Despacho Activo en Bahía</span>
+                </div>
+            </div>
         </section>
 
 <section id="v02-quick-services" style="padding: 3rem 1.5rem; background: rgba(5, 10, 25, 0.85); position: relative; z-index: 5;">
@@ -1593,26 +1617,70 @@ html[data-motion="reduced"] #warp-canvas {
             </div>
             <button class="booking-panel-close" onclick="closeBookingPanel()" title="Cerrar">&times;</button>
         </div>
-        <div class="booking-panel-body">
-            <div class="booking-field-group">
-                <label class="booking-label" data-i18n="booking_name"><span class="pico-icon pico-person"></span> Nombre Completo</label>
-                <input type="text" id="bk-name" class="booking-input" placeholder="Tu nombre completo..." oninput="syncBookingField('name', this.value)">
+                <div class="booking-panel-body">
+            <!-- Banner de selección: Asistencia IA o llenado manual -->
+            <div class="booking-choice-banner">
+                <span data-i18n="booking_self_serve_hint">¿Prefieres llenar tú mismo los datos?</span>
+                <button type="button" class="booking-choice-btn" onclick="activateManualBookingMode()" data-i18n="booking_fill_manual_btn">
+                    Llenar Manualmente
+                </button>
             </div>
-            <div class="booking-field-group">
-                <label class="booking-label" data-i18n="booking_email"><span class="pico-icon pico-email"></span> Correo Electrónico</label>
-                <input type="email" id="bk-email" class="booking-input" data-i18n-placeholder="booking_email_placeholder" placeholder="correo@ejemplo.com" oninput="syncBookingField('email', this.value)">
+
+            <!-- Desglose de Nombre, Apellido y Sufijo -->
+            <div class="booking-row-name">
+                <div class="booking-field-group">
+                    <label class="booking-label" data-i18n="booking_suffix">Tratamiento</label>
+                    <select id="bk-prefix" class="booking-input booking-select" onchange="syncBookingField('prefix', this.value)">
+                        <option value="Sr." data-i18n="prefix_mr">Sr.</option>
+                        <option value="Sra." data-i18n="prefix_mrs">Sra.</option>
+                        <option value="Srta." data-i18n="prefix_ms">Srta.</option>
+                        <option value="Dr." data-i18n="prefix_dr">Dr.</option>
+                        <option value="Ing." data-i18n="prefix_eng">Ing.</option>
+                    </select>
+                </div>
+                <div class="booking-field-group">
+                    <label class="booking-label" data-i18n="booking_first_name"><span class="pico-icon pico-person"></span> Nombres</label>
+                    <input type="text" id="bk-firstname" class="booking-input" placeholder="Ej: Alex o Juan Carlos" oninput="syncBookingField('firstName', this.value)">
+                </div>
+                <div class="booking-field-group">
+                    <label class="booking-label" data-i18n="booking_last_name">Apellidos</label>
+                    <input type="text" id="bk-lastname" class="booking-input" placeholder="Ej: Perez o Morales Gomez" oninput="syncBookingField('lastName', this.value)">
+                </div>
             </div>
-            <div class="booking-field-group">
-                <label class="booking-label" data-i18n="booking_phone"><span class="pico-icon pico-pipe_phone"></span> Teléfono</label>
-                <input type="text" id="bk-phone" class="booking-input" placeholder="(669) 234-XXXX..." oninput="syncBookingField('phone', this.value)">
+            <div class="booking-field-row">
+                <div class="booking-field-group">
+                    <label class="booking-label" data-i18n="booking_email"><span class="pico-icon pico-email"></span> Correo Electrónico</label>
+                    <input type="email" id="bk-email" class="booking-input" placeholder="correo@ejemplo.com" oninput="syncBookingField('email', this.value)">
+                </div>
+                <div class="booking-field-group">
+                    <label class="booking-label" data-i18n="booking_phone"><span class="pico-icon pico-pipe_phone"></span> Teléfono</label>
+                    <input type="text" id="bk-phone" class="booking-input" placeholder="(669) 234-XXXX" oninput="syncBookingField('phone', this.value)">
+                </div>
             </div>
+
+            <!-- Dirección desglosada profesionalmente -->
             <div class="booking-field-group">
-                <label class="booking-label" data-i18n="booking_address"><span class="pico-icon pico-drop_pin"></span> Dirección del Servicio</label>
-                <input type="text" id="bk-address" class="booking-input" placeholder="Dirección completa..." oninput="syncBookingField('address', this.value)">
+                <label class="booking-label" data-i18n="booking_street"><span class="pico-icon pico-drop_pin"></span> Dirección de la Calle</label>
+                <input type="text" id="bk-address" class="booking-input" placeholder="Número y Calle (Ej: 5553 Walnut Blossom Dr)..." oninput="syncBookingField('address', this.value)">
             </div>
+            <div class="booking-row-3">
+                <div class="booking-field-group">
+                    <label class="booking-label" data-i18n="booking_city">Ciudad</label>
+                    <input type="text" id="bk-city" class="booking-input" placeholder="San Jose" oninput="syncBookingField('city', this.value)">
+                </div>
+                <div class="booking-field-group">
+                    <label class="booking-label" data-i18n="booking_state">Estado</label>
+                    <input type="text" id="bk-state" class="booking-input" value="CA" readonly style="opacity: 0.85; text-align: center;">
+                </div>
+                <div class="booking-field-group">
+                    <label class="booking-label" data-i18n="booking_zip">ZIP Code</label>
+                    <input type="text" id="bk-zip" class="booking-input" placeholder="95112" maxlength="5" oninput="syncBookingField('zip', this.value)">
+                </div>
+            </div>
+
             <div class="booking-field-group">
                 <label class="booking-label" data-i18n="booking_service"><span class="pico-icon pico-wrench"></span> Tipo de Servicio</label>
-                <input type="text" id="bk-service" class="booking-input" placeholder="Ej: Water heater, repipe..." oninput="syncBookingField('service', this.value)">
+                <input type="text" id="bk-service" class="booking-input" placeholder="Ej: Cambio calentador, fuga de agua, repipe..." oninput="syncBookingField('service', this.value)">
             </div>
             <div class="booking-field-row">
                 <div class="booking-field-group">
@@ -1626,17 +1694,32 @@ html[data-motion="reduced"] #warp-canvas {
             </div>
             <div class="booking-field-group">
                 <label class="booking-label" data-i18n="booking_notes"><span class="pico-icon pico-clipboard"></span> Notas Adicionales</label>
-                <textarea id="bk-notes" class="booking-input booking-textarea" placeholder="Cualquier detalle adicional..." oninput="syncBookingField('notes', this.value)"></textarea>
+                <textarea id="bk-notes" class="booking-input booking-textarea" placeholder="Cualquier detalle adicional para el técnico..." oninput="syncBookingField('notes', this.value)"></textarea>
             </div>
             <div id="booking-progress" class="booking-progress">
                 <div id="booking-progress-bar" class="booking-progress-bar" style="width:0%"></div>
             </div>
             <div id="booking-fields-filled" class="booking-fields-label">
-                <span id="booking-filled-count">0</span>/7 <span data-i18n="booking_fields_complete">campos completados</span>
+                <span id="booking-filled-count">0</span>/11 <span data-i18n="booking_fields_complete">campos completados</span>
             </div>
+
+            <!-- Aviso de verificación en el chat y cierre -->
+            <div class="booking-chat-close-notice" data-i18n="booking_chat_verify_notice">
+                Al enviar la solicitud, puede cerrar el chat y verificar los datos en pantalla. Recibirá un correo electrónico con su código de verificación para completar el agendado.
+            </div>
+
             <button id="booking-submit-btn" class="booking-submit-btn" disabled onclick="submitBooking()" data-i18n="booking_submit">
-                <span class="pico-icon pico-valve_check"></span> Confirmar Cita
+                <span class="pico-icon pico-valve_check"></span> Confirmar y Solicitar Cita
             </button>
+
+            <!-- Paso de Verificación de Código -->
+            <div id="booking-verification-step" class="booking-verification-group" style="display: none;">
+                <label class="booking-label" data-i18n="booking_code_label"><span class="pico-icon pico-clipboard"></span> Código de Verificación</label>
+                <input type="text" id="bk-verification-code" class="booking-code-input" maxlength="6" placeholder="000000" oninput="this.value = this.value.replace(/\D/g, '')">
+                <button type="button" id="booking-verify-btn" class="booking-verify-btn" onclick="verifyBookingCode()" data-i18n="booking_verify_btn">
+                    Validar Código y Finalizar
+                </button>
+            </div>
             <p class="booking-disclaimer" data-i18n="booking_disclaimer">
                 Recibirás confirmación por WhatsApp o correo electrónico.
             </p>

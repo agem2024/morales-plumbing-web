@@ -63,10 +63,41 @@ Este documento fue creado después de una serie de errores críticos cometidos p
 
 ---
 
+## 🚫 ERROR CRÍTICO 7: SCRIPTS MASIVOS DE PYTHON/BASH (DESTRUCCIÓN EN CADENA)
+**El Error:** Ejecutar scripts masivos de Regex o scripts de Python que leen y sobreescriben múltiples archivos HTML o el gran archivo `app_v9.js`. Genera mojibake, desincronización de variables y desastres sintácticos irreparables.
+**La Solución Obligatoria:** 
+* **QUEDA ESTRICTAMENTE PROHIBIDO ejecutar scripts de Python, Bash o Regex masivos.**
+* Vas a editar el archivo directamente bloque por bloque con herramientas de reemplazo localizado (`replace_file_content`).
+
+---
+
+## 🚫 ERROR CRÍTICO 8: USO DE EMOJIS E ÍCONOS DE FUENTES DE TERCEROS
+**El Error:** Insertar emojis en el texto o usar clases de fuentes externas (`<i class="fas ...">`) que se rompen o muestran caracteres de caja/interrogación en navegadores sin soporte.
+**La Solución Obligatoria:** 
+* **CERO EMOJIS** en todo el proyecto Morales Plumbing.
+* Usar exclusivamente vectores inline SVG (`<svg viewBox="0 0 24 24" ...>`) o entidades HTML estándar (`&larr;`, `&rarr;`).
+
+---
+
+## 🚫 ERROR CRÍTICO 9: LENGUAJE PROHIBIDO ("INGENIERÍA" CIVIL)
+**El Error:** Usar encabezados como *"Detalle Técnico (Ingeniería)"* o copiar especificaciones genéricas de un servicio a otro (ej. septic tanks en repipe).
+**La Solución Obligatoria:** 
+* Usar estrictamente lenguaje de plomería C-36: *"Especificaciones de Instalación y Plomería"* (EN: *"Plumbing & Installation Specs"*).
+* Toda descripción técnica debe contener los datos exactos del servicio (cobre Tipo L, PEX-A Uponor, Viega ProPress, California Title 24, UPC, pruebas a 100 PSI).
+
+---
+
+## 🚫 ERROR CRÍTICO 10: TRASLAPE VISUAL DE BOTÓN BACK Y TÍTULO
+**El Error:** Aplicar `position: absolute` al botón `.back-btn` en `.header`, provocando que el título `<h1>` se monte sobre el botón en resoluciones intermedias o móviles.
+**La Solución Obligatoria:** 
+* Encapsular el botón en un contenedor horizontal (`.header-top-bar`) y aplicar diseño vertical por bloques (`flex-direction: column; align-items: center;`) en `.header`.
+
+---
+
 ## 🔧 FLUJO DE TRABAJO OBLIGATORIO POST-ACTUALIZACIÓN
 Cada vez que modifiques el Catálogo (JSON) o la Web, DEBES:
 1. Re-generar `data.js` a partir del JSON (el navegador lee `data.js`, no el JSON).
 2. Ejecutar `node cache_buster.js` para forzar a los navegadores de los clientes a descargar la nueva versión.
 3. Si cambiaste HTML/JS del repo, hacer `git add`, `git commit` y `git push` de manera inmediata para proteger los cambios.
 
-**Firmado: El Agente de Antigravity AI (18 Agosto 2026). ¡No cometas mis errores!**
+**Actualizado: Septiembre 2026. ¡Protocolo estricto e inmutable!**

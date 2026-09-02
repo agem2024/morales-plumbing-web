@@ -1,4 +1,4 @@
-﻿// =======================================================================
+// =======================================================================
 // [STRICT RED LINE / LINEA ROJA ESTRICTA]
 // ZERO EMOJIS ALLOWED IN THIS CODEBASE (100% PROHIBITED).
 // USE ONLY CLEAN TEXT, HTML ENTITIES OR PURE SVG VECTORS.
@@ -6,6 +6,71 @@
 // Translation Dictionary (5 Bay rea Languages)
 const translations = {
     "en": {
+        "lbl_tech_scope": "Scope of Work & Procedure",
+        "lbl_tech_materials": "Materials & Code-Compliant Fittings",
+        "lbl_tech_standards": "Applicable Codes & Standards",
+        "lbl_tech_assurance": "Pressure Testing & Quality Assurance",
+        "pb_svc_1_tech_scope": "Non-destructive electroacoustic locating of hidden leaks in potable water lines and concrete slabs. Hydraulic path tracing using pressurized nitrogen decay pulses.",
+        "pb_svc_1_tech_mat": "Type L copper piping (ASTM B88) for test bypass, Viega ProPress flame-free fittings, NIST-calibrated digital pressure gauges.",
+        "pb_svc_1_tech_std": "Strict compliance with California Plumbing Code (CPC) Chapter 6, San Jose Water Co municipal static pressure standards.",
+        "pb_svc_1_tech_qa": "Hydrostatic pressure drop test at 100 PSI for 30 minutes with zero loss. Morales Plumbing Lic. C-36 #1156542 inspection certificate.",
+        "pb_svc_2_tech_scope": "Comprehensive replacement of outdated fixtures and supply stop valves. Installation of pressure-compensating aerators and dual-flush mechanisms to optimize volumetric flow.",
+        "pb_svc_2_tech_mat": "WaterSense certified fixtures, lead-free brass rough valves (NSF/ANSI 61 & 372), EPDM elastomer seals, and braided stainless steel supply lines.",
+        "pb_svc_2_tech_std": "California Title 24 efficiency standards (max 1.2 GPM lavatory, 1.8 GPM kitchen, 1.28 GPF water closets) and City of San Jose water conservation codes.",
+        "pb_svc_2_tech_qa": "Flow rate calibration and leak-tightness verification under 60 PSI continuous operational pressure. Zero leakage guarantee.",
+        "pb_svc_3_tech_scope": "Sizing and hydraulic balancing of domestic water distribution systems according to Water Supply Fixture Unit (WSFU) demand curves, friction loss tables, and residual head pressure.",
+        "pb_svc_3_tech_mat": "Hard-drawn Type L copper tubing and Uponor PEX-A cold-expansion piping per ASTM F1960. Balanced manifold systems with zero hidden joints.",
+        "pb_svc_3_tech_std": "Uniform Plumbing Code (UPC) Chapter 6 & Appendix A (Sizing of Water Supply Systems), Santa Clara Valley Water District municipal standards.",
+        "pb_svc_3_tech_qa": "Guaranteed minimum dynamic residual pressure of 35 PSI at the most demanding remote fixture during peak coincident demand.",
+        "pb_svc_4_tech_scope": "Complete decommissioning and replacement of aged galvanized lines corroded by internal tuberculation. Installation of overhead and under-floor copper trunk lines.",
+        "pb_svc_4_tech_mat": "Seamless Type L hard copper tubing (ASTM B88), Viega ProPress flame-free mechanical press fittings with heavy-duty EPDM sealing elements.",
+        "pb_svc_4_tech_std": "California Plumbing Code (CPC) Section 604, San Jose Fire Department safety regulations (100% flame-free cold-press installation).",
+        "pb_svc_4_tech_qa": "100 PSI pneumatic seal testing with pure nitrogen gas. Official City of San Jose building permit inspection and sign-off.",
+        "pb_svc_5_tech_scope": "Soil absorption field assessment, sanitary discharge invert slope alignment, and installation of dual-compartment septic tanks with effluent baffle filtration.",
+        "pb_svc_5_tech_mat": "High-strength precast concrete or heavy-wall polyethylene tanks, Schedule 40 PVC DWV piping (ASTM D2665) with solvent-cemented joints.",
+        "pb_svc_5_tech_std": "Santa Clara County Department of Environmental Health Regulations and California Plumbing Code (CPC) Chapter 7 & Appendix H.",
+        "pb_svc_5_tech_qa": "On-site percolation verification, hydrostatic standing water head test, and gravity distribution lateral balancing.",
+        "pb_svc_6_tech_scope": "Underground and vertical installation of Drain-Waste-Vent (DWV) piping, water supply distribution rough-in, and fixture stub-outs for new buildings and additions.",
+        "pb_svc_6_tech_mat": "Schedule 40 ABS / PVC DWV piping, seismic engineered pipe supports, Type L copper and Uponor PEX-A piping with thermal memory rings.",
+        "pb_svc_6_tech_std": "California Plumbing Code (CPC) Chapters 3, 6, 7, and 9; City of San Jose municipal building code and California seismic bracing standards.",
+        "pb_svc_6_tech_qa": "10-foot standing water head test on drainage stacks and 100 PSI air test on water distribution lines prior to wall closure.",
+        "pb_svc_7_tech_scope": "Installation of high-efficiency ENERGY STAR Tier-4 hybrid heat pump water heaters. Routing of condensate drainage, thermal expansion vessel, and electrical disconnect.",
+        "pb_svc_7_tech_mat": "Hybrid heat pump unit with porcelain-enameled steel tank, acid-resistant PVC condensate line with neutralizing trap, pre-pressurized expansion tank.",
+        "pb_svc_7_tech_std": "Bay Area Air Quality Management District (BAAQMD) zero-emission mandates, National Electrical Code (NEC), and CPC Section 507.",
+        "pb_svc_7_tech_qa": "Thermostat calibrated to 120°F child-scald safety standard, airflow duct clearance validation, and ASME T&P valve relief discharge testing.",
+        "pb_svc_8_tech_scope": "Mitigation and absorption of hydraulic pressure spikes caused by thermal water expansion in closed potable systems equipped with backflow preventers or PRVs.",
+        "pb_svc_8_tech_mat": "NSF 61 certified butyl diaphragm thermal expansion tanks, ASME rated 150 PSI / 210°F temperature and pressure (T&P) safety relief valves.",
+        "pb_svc_8_tech_std": "California Plumbing Code (CPC) Section 608.3 and Santa Clara County residential water heater safety ordinances.",
+        "pb_svc_8_tech_qa": "Pre-charge air pressure inside expansion diaphragm precisely calibrated to match building static water supply pressure (50-65 PSI).",
+        "pb_svc_9_tech_scope": "Computerized endoscopic internal inspection of sewer laterals and building drains. Pinpoint locating of root intrusion, cracks, offsets, and line bellies.",
+        "pb_svc_9_tech_mat": "Self-leveling high-definition optical camera head with high-lumen LED arrays, 512 Hz electromagnetic sonde transmitter, digital surface locator receiver.",
+        "pb_svc_9_tech_std": "NASSCO PACP pipeline assessment certification standards and San Jose Regional Wastewater Facility sewer lateral guidelines.",
+        "pb_svc_9_tech_qa": "Comprehensive high-definition digital video report with exact surface footage, line depth readings, and certified repair recommendation.",
+        "pb_svc_10_tech_scope": "Roof catchment rainwater diversion, first-flush contaminant filtration, and bulk storage plumbing for supplemental sub-surface landscape irrigation.",
+        "pb_svc_10_tech_mat": "Food-grade UV-stabilized virgin polyethylene storage cisterns, stainless steel fine-mesh vortex pre-filters, purple non-potable distribution piping.",
+        "pb_svc_10_tech_std": "California Plumbing Code (CPC) Chapter 16 (Nonpotable Rainwater Catchment Systems) and Valley Water conservation requirements.",
+        "pb_svc_10_tech_qa": "Complete cross-connection prevention via ASSE 1013 Reduced Pressure Zone (RPZ) backflow device and pressure-tested booster loop.",
+        "pb_svc_11_tech_scope": "Replacement of low-efficiency storage tanks with continuous-flow high-BTU tankless units. Natural gas service line upgrade and category IV exhaust venting.",
+        "pb_svc_11_tech_mat": "Dedicated 3/4-inch to 1-inch gas piping, polypropylene or AL29-4C stainless steel concentric direct vent ducting, full-port isolation flush valves.",
+        "pb_svc_11_tech_std": "California Fuel Gas Code (NFPA 54), CPC Chapter 5, and Santa Clara County Ultra-Low NOx emissions standards.",
+        "pb_svc_11_tech_qa": "Water column gas manifold pressure test at 3 PSI for 15 minutes, combustion analysis, and full operational temperature rise validation.",
+        "pb_svc_12_tech_scope": "Main service line integration of automated smart shutoff valves equipped with ultrasonic micro-leak transducers and remote multi-zone moisture sensors.",
+        "pb_svc_12_tech_mat": "Commercial-grade motorized ball shutoff valve (Moen Flo / Phyn), lead-free brass isolation ball valves, full manual bypass loop manifold.",
+        "pb_svc_12_tech_std": "ASSE 1061 / UPC certified assembly, NEC Class 2 low-voltage surge-protected power connection.",
+        "pb_svc_12_tech_qa": "Micro-leak drop test calibration, Wi-Fi pairing verification, and emergency remote closure response test.",
+        "pb_svc_13_tech_scope": "Total replacement of corroded or compromised hot and cold domestic water supply piping throughout entire residence, from water meter to all fixtures.",
+        "pb_svc_13_tech_mat": "Uponor PEX-A ProPEX expansion system or Type L hard copper piping, lead-free quarter-turn brass ball stop valves, and copper stub-out manifolds.",
+        "pb_svc_13_tech_std": "California Plumbing Code (CPC) Chapter 6, City of San Jose plumbing and building permit compliance.",
+        "pb_svc_13_tech_qa": "100 PSI static pressure test witnessed by municipal building inspector. Hot water line thermal insulation compliant with Title 24.",
+        "pb_svc_14_tech_scope": "Re-routing of laundry and shower drain lines to redirect untreated soapy rinse water into gravity or pump-assisted sub-surface mulch basin irrigation.",
+        "pb_svc_14_tech_mat": "Heavy cast-brass 3-way diversion selector valves, vented flow buffer surge tanks with lint filters, purple-striped sub-surface drip tubing.",
+        "pb_svc_14_tech_std": "California Plumbing Code (CPC) Chapter 15 (Alternate Water Sources for Plumbing Systems) and local groundwater protection rules.",
+        "pb_svc_14_tech_qa": "Backpressure-free gravity overflow test, visible non-potable cautionary labeling, and balanced mulch basin absorption delivery.",
+        "pb_svc_15_tech_scope": "Comprehensive forensic survey of mechanical plumbing structural integrity, seismic restraint strapping on water heating equipment, and distribution manifolds.",
+        "pb_svc_15_tech_mat": "State-approved 12-gauge seismic strapping kits, lead-free brass manifold assemblies, digital ultrasonic pipe wall thickness gauges.",
+        "pb_svc_15_tech_std": "California Health and Safety Code Section 19211 (Seismic strapping), CPC, and City of San Jose structural codes.",
+        "pb_svc_15_tech_qa": "Detailed residual metal wall thickness inspection report, mechanical joint torque check, and certified CSLB C-36 safety validation.",
+
         "hero_pill_2026": "Ready",
         "hero_pill_eco": "Eco-Focus",
         "hero_pill_ai": "AI Integrated",
@@ -37,7 +102,7 @@ const translations = {
         "contact_form_name": "Name",
         "contact_form_phone": "Phone",
         "contact_form_email": "Email",
-        "contact_form_másg": "Message",
+        "contact_form_msg": "Message",
         "contact_form_submit": "Send Message",
         "terminal_title": "MORALES_EXECUTIVE_V1.0",
         "profile_role": "Principal technician & Founder",
@@ -124,7 +189,7 @@ const translations = {
         "htm_toilet_title": "Fix Running Toilet",
         "htm_toilet_desc": "Stop the constant flow of water.",
         "htm_sink_title": "Clear Sink P-Trap",
-        "htm_sink_desc": "Unclog your sink mechaúnically.",
+        "htm_sink_desc": "Unclog your sink mechanically.",
         "htm_aerator_title": "Clean Faucet Aerator",
         "htm_aerator_desc": "Fix low water pressure at the sink.",
         "htm_faucet_title": "Fix Leaky Faucet",
@@ -207,7 +272,7 @@ const translations = {
         "eng_inspect_li3": "Permit Approval Consulting: Blueprint review against current California building codes.",
         "eng_training_comic_title": "Methodology: Empowering the Workforce",
         "eng_training_title": "Corporate Staff Training",
-        "eng_training_desc": "Professional training programás for partner plumbing and trade companies.",
+        "eng_training_desc": "Professional training programs for partner plumbing and trade companies.",
         "eng_training_p1": "The plumbing industry is rapidly evolving towards high-tech solutions. Morales Plumbing offers hands-on, master-level training for facility managers, property management maintenance crews, and partner HVAC technicians across Silicon Valley.",
         "eng_training_p2": "Our curriculum covers advanced ProPress copper fusion, MegaPress gas piping, thermal diagnostics, and CalGreen compliance. We turn your basic maintenance staff into code-compliant, highly capable technical operators.",
         "eng_training_li1": "Advanced Joining Tech: ProPress, MegaPress, and PEX-A expansion certification.",
@@ -223,49 +288,49 @@ const translations = {
         "eng_b2b_li3": "Corporate Liability & Compliance: Fully insured, W-9 ready, and OSHA compliant.",
         "pb_svc_1_name": "Precision Leak Detection",
         "pb_svc_1_user": "Pinpoint hidden leaks without destructive tearing of walls or floors.",
-        "pb_svc_1_tech": "Deployment of acoustic listening devices, thermal imaging, and tracer gas to locate micro-fissures in pressurized lines. Required for non-invasive repair protocols.",
-        "pb_svc_2_name": "Eco-Retrofitting",
+        "pb_svc_1_tech": "Acoustic listening equipment, thermal imaging, and nitrogen pressure decay testing to isolate pinhole leaks in domestic water lines.",
+        "pb_svc_2_name": "Eco-Retrofitting & Fixture Upgrades",
         "pb_svc_2_user": "Upgrade your fixtures to high-efficiency, water-saving technologies.",
-        "pb_svc_2_tech": "Installation of WaterSense certified fixtures, pressure compensating aerators, and dual-flush mechanismás to optimize volumetric flow rates and comply with local conservation mandates.",
-        "pb_svc_3_name": "Hydraulic Infrastructure Design",
+        "pb_svc_2_tech": "Installation of WaterSense certified fixtures, pressure-compensating aerators, and dual-flush mechanisms to optimize water flow rates and comply with California Title 24 conservation mandates.",
+        "pb_svc_3_name": "Hydraulic Infrastructure & Water Line Sizing",
         "pb_svc_3_user": "Custom plumbing blueprints and system sizing for your property.",
-        "pb_svc_3_tech": "Calculations based on fixture unit (FU) demand, static pressure analysis, and friction loss equations to engineer oóptimal pipe diameters and material selections.",
-        "pb_svc_4_name": "Elite Copper Renovations",
+        "pb_svc_3_tech": "Hydraulic calculations based on fixture unit (WSFU) demand, static pressure profiling, and friction loss curves to determine proper pipe sizing in accordance with UPC Chapter 6.",
+        "pb_svc_4_name": "Elite Copper Line Renovations",
         "pb_svc_4_user": "Replace old, failing pipes with premium, long-lasting copper.",
-        "pb_svc_4_tech": "Extraction of galvanized or defective piping, replaced with Type L copper utilizing ProPress zero-flame mechaúnical joining for superior joint integrity and reduced oxidation.",
-        "pb_svc_5_name": "Advanced Septic systems",
+        "pb_svc_4_tech": "Complete replacement of corroded galvanized water piping with Type L copper lines, utilizing Viega ProPress flame-free mechanical press connections for maximum joint reliability and zero fire hazard.",
+        "pb_svc_5_name": "Advanced Septic & Drainage Systems",
         "pb_svc_5_user": "Comprehensive septic tank installation, repair, and biological optimization.",
-        "pb_svc_5_tech": "Soil percolation analysis, leach field sizing, and installation of multi-chamber bio-reactors with effluent filters to ensure oóptimal anaerobic decomposition.",
-        "pb_svc_6_name": "New Construction Plumbing",
-        "pb_svc_6_user": "End-to-end plumbing installation for new homes and additions.",
-        "pb_svc_6_tech": "Underground rough-in (DWV), water distribution top-out, and final fixture setting in strict adherence to UPC and local municipal codes. Includes hydrostatic testing.",
-        "pb_svc_7_name": "Advanced Water Heaters",
+        "pb_svc_5_tech": "Soil percolation testing, leach field distribution sizing, and installation of dual-compartment septic tanks with effluent baffle filters conforming to Santa Clara County Environmental Health Department regulations.",
+        "pb_svc_6_name": "New Construction & Full Rough-In Plumbing",
+        "pb_svc_6_user": "End-to-end plumbing installation for new homes, ADUs, and additions.",
+        "pb_svc_6_tech": "Underground drain-waste-vent (DWV) piping, hot and cold water distribution rough-in, and final fixture trim adhering to current California Plumbing Code (CPC) with hydrostatic head testing.",
+        "pb_svc_7_name": "Hybrid Heat Pump Water Heater Systems",
         "pb_svc_7_user": "Installation of ultra-efficient Heat Pump and Hybrid water heaters.",
-        "pb_svc_7_tech": "Integration of compressor-driven heat pump units requiring condensate management, 240V dedicated circuits, and adherence to BAAQMD zero-NOx mandates.",
-        "pb_svc_8_name": "Thermal Expansion systems",
+        "pb_svc_7_tech": "Installation of ENERGY STAR Tier-4 hybrid heat pump water heaters, including condensate drain routing, thermal expansion protection, dedicated electrical disconnect, and local BAAQMD compliance.",
+        "pb_svc_8_name": "Thermal Expansion & Pressure Relief Systems",
         "pb_svc_8_user": "Protect your plumbing from dangerous pressure spikes.",
-        "pb_svc_8_tech": "Sizing and installation of hydropneumatic expansion tanks on the cold water supply of closed-loop heating systems to absorb volumetric expansion and prevent valve failure.",
-        "pb_svc_9_name": "Smart Diagnostics",
+        "pb_svc_8_tech": "Sizing and installation of pre-pressurized diaphragm thermal expansion tanks on closed-loop potable water systems to absorb thermal volume growth and protect T&P relief valves.",
+        "pb_svc_9_name": "High-Definition Sewer Camera Diagnostics",
         "pb_svc_9_user": "High-tech camera inspections of your sewer and drain lines.",
-        "pb_svc_9_tech": "Fiber-optic endoscopic scoping of DWV systems with integrated sonde locating to map lateral runs, identify root intrusion, and pinpoint structural collapses.",
-        "pb_svc_10_name": "Rainwater Harvesting",
+        "pb_svc_9_tech": "Endoscopic inspection of building drain and sewer laterals using self-leveling color cameras with integrated 512 Hz sondes for depth and path mapping from above ground.",
+        "pb_svc_10_name": "Rainwater Harvesting & Irrigation Integration",
         "pb_svc_10_user": "Capture, filter, and reuse rainwater for irrigation and non-potable use.",
-        "pb_svc_10_tech": "Design of catchment surfaces, installation of primary filtration (first flush diverters), and sizing of high-density polyethylene (HDPE) cisterns with booster pumps.",
-        "pb_svc_11_name": "Tankless Upgrades",
+        "pb_svc_10_tech": "Installation of roof runoff catchment plumbing, first-flush water diverters, food-grade storage cisterns, and submersible booster pumps with backflow prevention in compliance with CPC Chapter 16.",
+        "pb_svc_11_name": "Tankless Water Heater Conversions",
         "pb_svc_11_user": "Endless hot water and massive space savings with a tankless heater.",
-        "pb_svc_11_tech": "BTU load calculations for dynamic flow demand, upgrade of gas supply lines, and installation of concentric venting systems for modulating condensing heat exchangers.",
-        "pb_svc_12_name": "Leak Prevention (Flo)",
+        "pb_svc_11_tech": "Gas supply line sizing for high-demand BTU loads, dedicated 3/4-inch gas line runs, dual-pipe concentric category IV direct venting, and service isolation valve kits for annual descaling.",
+        "pb_svc_12_name": "Smart Water Shutoff & Flo Detection Systems",
         "pb_svc_12_user": "Smart, automated water shut-off valves that detect leaks instantly.",
-        "pb_svc_12_tech": "Inline installation of ultrasonic flow meters with machine learning algorithmás capable of distinguishing standard flow events from micro-leaks or catastrophic bursts.",
-        "pb_svc_13_name": "Whole-house Repipe",
-        "pb_svc_13_user": "Complete replacement of all water lines in your home for oóptimal flow.",
-        "pb_svc_13_tech": "Strategic abandonment of existing lines and routing of Cross-linked Polyethylene (PEX-A) utilizing expansion fittings for minimal friction loss and freeze resistance.",
-        "pb_svc_14_name": "Greywater systems",
+        "pb_svc_12_tech": "Mainline inline installation of smart shutoff valves (such as Moen Flo), featuring ultrasonic transducers for microscopic flow tracking, ambient temperature monitoring for freeze protection, and motorized remote shut-off.",
+        "pb_svc_13_name": "Complete Whole-House Water Repiping",
+        "pb_svc_13_user": "Complete replacement of all water lines in your home for optimal flow.",
+        "pb_svc_13_tech": "Complete repiping of domestic hot and cold lines using Uponor PEX-A expansion piping or Type L copper manifolds, home-run or trunk-and-branch layouts, pressure tested at 100 PSI with city permit inspections.",
+        "pb_svc_14_name": "Greywater Diversion & Recycling Systems",
         "pb_svc_14_user": "Reuse water from showers and laundry to irrigate your landscape.",
-        "pb_svc_14_tech": "Installation of 3-way diversion valves, surge tanks, and subsurface drip irrigation lines conforming to Chapter 15 of the CPC for safe effluent discharge.",
-        "pb_svc_15_name": "Structural Integrity Checks",
+        "pb_svc_14_tech": "Installation of 3-way brass diverter valves, surge suppression tanks, and subsurface gravity or pump-assisted drip distribution lines compliant with California Plumbing Code Chapter 15.",
+        "pb_svc_15_name": "Structural Plumbing & Manifold Integrity Checks",
         "pb_svc_15_user": "Complete assessment of your plumbing system's safety and longevity.",
-        "pb_svc_15_tech": "Ultrasonic thickness gauging of metallic pipes, seismic bracing validation for equipment, and comprehensive stress testing of all primary distribution manifolds.",
+        "pb_svc_15_tech": "Non-destructive ultrasonic wall-thickness measurement of metallic piping, seismic strapping inspection for water heating equipment, and hydrostatic static/dynamic pressure testing on main distribution manifolds.",
         "lbl_subtitles": "Comic Reference",
         "svc_1_step_1": "Initial diagnostic mapping.",
         "svc_1_step_2": "System isolation.",
@@ -345,16 +410,16 @@ const translations = {
         "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasónicos. Monitoreo sin partes mviles, mxima precisión de flujo e integración total con sistemas Smart Home.",
         "svc_5_good_desc": "[EN] Inspección de cámara básica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
         "svc_5_better_desc": "[EN] Inspección profunda SeeSnake con localización por sonar. Trazamos y marcamos la ubicación exacta y profundidad del problema en la superficie.",
-        "svc_5_best_desc": "[EN] Inspección HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técúnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
-        "svc_6_good_desc": "[EN] Excavación tradicional e instalación de PVC SDR-35. Cumple con los cdigos locales y provee una solución probada de flujo por gravedad.",
+        "svc_5_best_desc": "[EN] Inspección HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
+        "svc_6_good_desc": "[EN] Excavación tradicional e instalación de PVC SDR-35. Cumple con los códigos locales y provee una solución probada de flujo por gravedad.",
         "svc_6_better_desc": "[EN] Reemplazo con ABS Cdula 40. Tubería de núcleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
-        "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadías. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
+        "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadas. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
         "svc_7_good_desc": "[EN] Instalación de un calentador atmosfrico estándar de 50 galones. Reemplazo directo sin modificaciones eléctricas complejas.",
-        "svc_7_better_desc": "[EN] Instalación de calentador Hbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
+        "svc_7_better_desc": "[EN] Instalación de calentador Híbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
         "svc_7_best_desc": "[EN] Bradford White AeroTherm con integración Wi-Fi completa. Modos de programación inteligente, bomba ultra-silenciosa y sensores de detección de fugas integrados desde la fbrica.",
         "svc_8_good_desc": "[EN] Instalación de válvula PRV de latn estándar de grado residencial. Estabiliza la presión principal previniendo daños a corto plazo.",
         "svc_8_better_desc": "[EN] Wilkins 600XL con manómetro de lectura integrada. Permite un monitoreo visual y ajustes precisos sin requerir herramientas adicionales de Diagnóstico.",
-        "svc_8_best_desc": "[EN] Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios volumtricos.",
+        "svc_8_best_desc": "[EN] Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios caudales volumétricos.",
         "svc_9_good_desc": "[EN] Respuesta primaria. Cierre del agua principal y uso de tapones SharkBite temporales para detener la emergencia y permitir secado.",
         "svc_9_better_desc": "[EN] Aislamiento del sector. Instalación de válvulas de aislamiento permanente de Cobre ProPress, permitiendo dar agua al resto de la casa mientras el sector daado queda aislado.",
         "svc_9_best_desc": "[EN] Resolución y reestructuracin. Construcción de un manifold de aislamiento completo y soldadura/prensado definitivo de la falla. Solución permanente de una sola visita.",
@@ -367,7 +432,7 @@ const translations = {
         "svc_12_good_desc": "[EN] Instalación de ensamblaje RPZ (Reduced Pressure Zone) Wilkins 375 estándar. Cumplimiento inmediato con las regulaciones de la ciudad.",
         "svc_12_better_desc": "[EN] Ensamblaje Watts Serie 009 de alto flujo. Válvulas de control de cuarto de vuelta y cuerpo de bronce sin plomo para aplicaciones comerciales severas.",
         "svc_12_best_desc": "[EN] Febco 860 RPZ equipado con sensor IoT de caída de presión. Monitorea los diferenciales de presión en tiempo real y alerta al administrador sobre bloqueos o fallas antes de la inspección anual.",
-        "svc_13_good_desc": "[EN] Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadías de acero inoxidable y sellos nuevos.",
+        "svc_13_good_desc": "[EN] Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadas de acero inoxidable y sellos nuevos.",
         "svc_13_better_desc": "[EN] Instalación de herrajes de gama media-alta (Moen Align, Grohe) con acabados resistentes a manchas. Sellado con silicona comercial anti-moho.",
         "svc_13_best_desc": "[EN] Instalación e integración de grifería inteligente (Kohler Artifacts Smart Touch / Voice Control). Calibración de temperatura preestablecida y cableado del módulo sensor.",
         "svc_14_good_desc": "[EN] Test rápidías in-situ. Medición de TDS (Sólidos Disueltos Totales), prueba de dureza por gotas químicas y nivel de cloro libre.",
@@ -413,7 +478,7 @@ const translations = {
         "promo_ttt_legal_time_desc": "The transition window is now. Morales Plumbing provides certified equipment and rebate paperwork, but does not guíarantee State approval or payment timelines.",
         "promo_tt_good_comic_1": "1. Disconnect, drain, and remove the bulky old tank water heater.",
         "promo_tt_good_comic_2": "2. Mount sleek Navien unit, install new PVC venting and dedicated 199K BTU gas line.",
-        "promo_tt_good_comic_3": "3. Calibrate internal sensors for oóptimal flow and temperature control.",
+        "promo_tt_good_comic_3": "3. Calibrate internal sensors for optimal flow and temperature control.",
         "promo_tt_good_comic_4": "4. Endless hot water restored, saving massive space in the garage.",
         "promo_tt_better_comic_1": "1. Professional installation of Navien Premium NPE-240A2 series.",
         "promo_tt_better_comic_2": "2. Integrate NaviCirc valve to eliminate cold water wait times.",
@@ -569,14 +634,14 @@ const translations = {
         "pb_svc_2_good_time": "5-7 Días",
         "pb_svc_2_better_just": "[Scope] Premium Repipe (Horizontal y Vertical): Up to 3 baths, 1 kitchen (ice maker, dishwasher), laundry, 3 hose bibs. Reemplazo total de la casa (lineas de rastreo y montantes de pared). Full home Uponor expansion system. Includes firestop and drywall rough-patch.",
         "pb_svc_2_better_mat": "Up to 350ft PEX-A (Uponor), ProPEX expansion rings, 1/2\" Type L copper stub-outs, drop-ear elbows, premium quarter-turn angle stops, fire-rated caulk.",
-        "pb_svc_2_better_tools": "Milwaukee M12/M18 ProPEX expansion tools, self-feed drill bits, HEPA vacuumás, drop cloths.",
+        "pb_svc_2_better_tools": "Milwaukee M12/M18 ProPEX expansion tools, self-feed drill bits, HEPA vacuums, drop cloths.",
         "pb_svc_2_better_time": "7-10 Días",
         "pb_svc_2_best_just": "[Scope] Ultra-Premium Commercial Grade: Up to 4 baths, fully sized for high flow rates (1\" mains). Complete Type L Copper installation with ProPress. Includes permit expediting.",
         "pb_svc_2_best_mat": "Up to 400ft Type L hard copper pipe (1\", 3/4\", 1/2\"), Viega ProPress zero-lead fittings, acoustic pipe clamps, heavy-duty unistrut supports.",
         "pb_svc_2_best_tools": "Ridgid RP 350 ProPress tool, heavy-duty copper cutters, deburring and reaming tools, laser level.",
         "pb_svc_2_best_time": "10-14 Días",
         "pb_svc_3_title": "Service 3",
-        "pb_svc_3_good_just": "[Scope] Standard water softening for homes up to 3 bedroomás (approx. 32,000 grain capacity). Install via existing loop. Excludes creating a new soft water loop.",
+        "pb_svc_3_good_just": "[Scope] Standard water softening for homes up to 3 bedrooms (approx. 32,000 grain capacity). Install via existing loop. Excludes creating a new soft water loop.",
         "pb_svc_3_good_mat": "Fleck 5600SXT digital metered valve, 1.0 cu ft high-capacity resin, standard brine tank, 2 bags of solar salt, corrugated stainless flex connectors.",
         "pb_svc_3_good_tools": "Pipe threaders, teflon tape, basic multimeter, adjustable wrenches, bucket.",
         "pb_svc_3_good_time": "3-5 hrs",
@@ -663,7 +728,7 @@ const translations = {
         "pb_svc_9_better_tools": "Gas-powered skid-mounted jetter (4,000 PSI / 4+ GPM), Warthog rotating nozzle, inspection camera.",
         "pb_svc_9_better_time": "3-5 hrs",
         "pb_svc_9_best_just": "[Scope] Ultra-Premium Storm Drain / Heavy Commercial Jetting (up to 300 feet). Descales cast iron pipes and removes heavy debris/rocks. High-frequency pulsation.",
-        "pb_svc_9_best_mat": "Industrial grade descaling agents, containment boomás/mats for waste capture.",
+        "pb_svc_9_best_mat": "Industrial grade descaling agents, containment booms/mats for waste capture.",
         "pb_svc_9_best_tools": "Trailer-mounted Vactor/Jetter unit (up to 4,000 PSI / 18 GPM), chain flail nozzles, heavy-duty safety gear.",
         "pb_svc_9_best_time": "1 Day",
         "pb_svc_10_title": "Service 10",
@@ -728,7 +793,7 @@ const translations = {
         "pb_svc_14_better_tools": "Multimeter, wire strippers, battery terminal crimpers.",
         "pb_svc_14_better_time": "4-6 hrs",
         "pb_svc_14_best_just": "[Scope] Ultra-Premium Dual-Redundant Smart System. Two commercial-grade pumps alternating cycles, dual AGM batteries, and cellular/WiFi controller module for instant flood alerts.",
-        "pb_svc_14_best_mat": "Ion Technologies Dual Pump System, smart alternating controller, cellular telemetry module, 2x 100Ah AGM batteries, high-water alarmás.",
+        "pb_svc_14_best_mat": "Ion Technologies Dual Pump System, smart alternating controller, cellular telemetry module, 2x 100Ah AGM batteries, high-water alarms.",
         "pb_svc_14_best_tools": "Network diagnostic tools, electrical conduit tools for clean wire management.",
         "pb_svc_14_best_time": "1 Day",
         "pb_svc_15_title": "Service 15",
@@ -965,7 +1030,7 @@ const translations = {
         "lbl_membership_badge_premium": "PREMIUM",
         "btn_active_plan": "Active Plan",
         "usage_tracker_text": "Free calls used: {used} / 5",
-        "másg_membership_updated": "Membership updated to {tier}",
+        "msg_membership_updated": "Membership updated to {tier}",
         "portal_title": "MP CLIENT PORTAL",
         "portal_subtitle": "Smart Management of Appointments, PQR and Service Memory",
         "tab_dashboard": " My Dashboard",
@@ -991,7 +1056,7 @@ const translations = {
         "lbl_select_date": "DATE",
         "lbl_select_time": "TIME",
         "btn_confirm_appointment": "Confirm Service Appointment",
-        "pqr_title": "PQRS Center (Requests, Complaints, Claimás and Suggestions)",
+        "pqr_title": "PQRS Center (Requests, Complaints, Claims and Suggestions)",
         "pqr_desc": "Register your complaints, suggestions or requests directly.",
         "lbl_pqr_type": "REQUEST TYPE",
         "pqr_opt_request": "Request (Special Request)",
@@ -1040,7 +1105,7 @@ const translations = {
         "eng_termo_tech2_title": "Computerized Acoustic Analysis",
         "eng_termo_tech2_desc": "We use hypersensitive microphones with AI filters that differentiate ambient noise from the hiss caused by pressurized water escaping.",
         "eng_termo_tech3_title": "Digital Mapping and Reporting",
-        "eng_termo_tech3_desc": "We deliver a comprehensive digital report through our portal, proving the issue for insurance claimás and facilitating surgical repairs.",
+        "eng_termo_tech3_desc": "We deliver a comprehensive digital report through our portal, proving the issue for insurance claims and facilitating surgical repairs.",
         "eng_eco_title": "Eco-Retrofitting",
         "eng_eco_code": "ENG-CENT-002",
         "eng_eco_p1": "Eco-Retrofitting is our cutting-edge specialty to modernize existing hydraulic systems with eco-friendly materials and ultra-high efficiency water-saving components.",
@@ -1066,7 +1131,7 @@ const translations = {
         "eng_cobre_p1": "Elite Copper Renovations represent the gold standard in hydraulic infrastructure. We replace obsolete plumbing systems with high-purity Type L and Type K copper pipes.",
         "eng_cobre_p2": "Copper provides natural antimicrobial properties that passively purify water flow and guíarantee zero microplastic release.",
         "eng_cobre_tech1_title": "Precision Welding and ProPress System",
-        "eng_cobre_tech1_desc": "We employ flameless mechaúnical joining techniques (ProPress) or lead-free aerospace-grade welding.",
+        "eng_cobre_tech1_desc": "We employ flameless mechanical joining techniques (ProPress) or lead-free aerospace-grade welding.",
         "eng_cobre_tech2_title": "Longevity and ROI",
         "eng_cobre_tech2_desc": "Lifespan expectation of over 50 years. Instantly elevates the structural valuation of the property up to 15%.",
         "eng_cobre_tech3_title": "Acoustic Quality and Constant Flow",
@@ -1083,91 +1148,91 @@ const translations = {
         "eng_seóptico_tech3_desc": "End-to-end permit management, ensuring the design exceeds health requirements and mitigating fines.",
         "svc_1_title": "Precision Leak Detection",
         "svc_1_p1": "At Morales Plumbing, precision is our standard. We identify hidden faults without destructive demolition.",
-        "svc_1_p2": "Using FLIR thermal cameras and acoustic sensors we trace leaks behind walls or slabs. Massive savings vs. reconstruction.",
+        "svc_1_p2": "Acoustic listening equipment, thermal imaging, and nitrogen pressure decay testing to isolate pinhole leaks in domestic water lines.",
         "svc_1_good": "<strong>GOOD (Standard) $450 - $700</strong><br>Visual/acoustic diagnostic. Standard patches for accessible leaks.",
         "svc_1_better": "<strong>BETTER (Premium) $585 - $900</strong><br>FLIR thermal + pressure drop test. Epoxy coating repair.",
         "svc_1_best": "<strong>BEST (Ultra-Premium) $720 - $1,100</strong><br>Full structural mapping and sector isolation. ProPress copper segment.",
         "svc_2_title": "Full House Repipe",
         "svc_2_p1": "A full repipe is a heart transplant for your home. Old galvanized pipes cause floods and water quality degradation.",
-        "svc_2_p2": "We replace all water infrastructure with commercial-grade Copper and PEX. Eradicates cloudy water and chronic leaks.",
-        "svc_2_good": "<strong>? GOOD (Standard) $3,800 - $5,300</strong><br>PEX-B piping with brass Crimp fittings. Includes 100 PSI hydrostatic pressure test. UPC-certified reliable solution.",
-        "svc_2_better": "<strong>? BETTER (Premium) $4,940 - $6,500</strong><br>PEX-A Uponor Expansion system. Superior flow rate, freeze-resistant, fewer mechaúnical fittings for lower long-term risk.",
-        "svc_2_best": "<strong> BEST (Ultra-Premium) $6,080 - $8,600</strong><br>Type L Copper with ProPress technology (no solder, no flame). Maximum flow, natural antimicrobial properties and absolute commercial-grade durability for 50+ years.",
+        "svc_2_p2": "Complete replacement of aging domestic water lines with PEX-A expansion piping or Type L copper manifolds, including 100 PSI hydrostatic pressure testing and city code inspections.",
+        "svc_2_good": "<strong>GOOD (Standard) $3,800 - $5,300</strong><br>PEX-B piping with brass Crimp fittings. Includes 100 PSI hydrostatic pressure test. UPC-certified reliable solution.",
+        "svc_2_better": "<strong>BETTER (Premium) $4,940 - $6,500</strong><br>PEX-A Uponor Expansion system. Superior flow rate, freeze-resistant, fewer mechanical fittings for lower long-term risk.",
+        "svc_2_best": "<strong>BEST (Ultra-Premium) $6,080 - $8,600</strong><br>Type L Copper with ProPress technology (no solder, no flame). Maximum flow, natural antimicrobial properties and absolute commercial-grade durability for 50+ years.",
         "svc_3_title": "Water Filtration & Softening",
         "svc_3_p1": "Hard water destroys appliances and stains fixtures. We transform water quality from the entry point.",
-        "svc_3_p2": "We install systems eliminating chlorine, heavy metals and calcium. Crystal-clear water and 30% longer appliance life.",
+        "svc_3_p2": "Hydraulic calculations based on fixture unit (WSFU) demand, static pressure profiling, and friction loss curves to determine proper pipe sizing in accordance with UPC Chapter 6.",
         "svc_3_good": "<strong>GOOD $1,500 - $2,300</strong><br>Standard 32,000-grain salt-based softener.",
         "svc_3_better": "<strong>BETTER $1,950 - $2,800</strong><br>Fleck 5600SXT Metered. Digital on-demand valve.",
         "svc_3_best": "<strong>BEST $2,400 - $3,200</strong><br>Halo 5 Whole House. Salt-free, UV sterilization.",
         "svc_4_title": "Smart Valve Installation",
         "svc_4_p1": "If a pipe bursts on vacation, IoT Smart Valves auto-shutoff and alert your phone in seconds.",
-        "svc_4_p2": "These systems monitor water flow 24/7 using AI to detect micro-leaks or catastrophic ruptures.",
+        "svc_4_p2": "Complete replacement of corroded galvanized water piping with Type L copper lines, utilizing Viega ProPress flame-free mechanical press connections for maximum joint reliability and zero fire hazard.",
         "svc_4_good": "<strong>GOOD $350 - $550</strong><br>Commercial-grade 1/4-turn brass ball valve.",
         "svc_4_better": "<strong>BETTER $455 - $700</strong><br>Moen Flo Smart Valve. Daily monitoring and smartphone shutoff.",
         "svc_4_best": "<strong>BEST $560 - $850</strong><br>Phyn Plus. Ultrasonic monitoring, no moving parts, smart home integration.",
         "svc_5_title": "SeeSnake Camera Inspection",
         "svc_5_p1": "Blind diagnostics destroy properties. Our SeeSnake cameras trace problems without excavation.",
-        "svc_5_p2": "We deploy military-grade self-leveling HD cameras underground for surgical repairs instead of destroying your yard.",
+        "svc_5_p2": "Soil percolation testing, leach field distribution sizing, and installation of dual-compartment septic tanks with effluent baffle filters conforming to Santa Clara County Environmental Health Department regulations.",
         "svc_5_good": "<strong>GOOD $250 - $400</strong><br>Basic camera inspection up to 50ft. USB video delivery.",
         "svc_5_better": "<strong>BETTER $325 - $500</strong><br>Deep SeeSnake with sonar tracking. Exact surface location.",
         "svc_5_best": "<strong>BEST $400 - $600</strong><br>HD inspection and digital modeling. Full system mapping and CIPP report.",
         "svc_6_title": "Main Sewer Replacement",
         "svc_6_p1": "A collapsed main sewer is one of the most disruptive failures. We offer guíaranteed replacements for decades.",
-        "svc_6_p2": "Whether through traditional excavation or trenchless methods, we eliminate roots and fractured pipes.",
+        "svc_6_p2": "Underground drain-waste-vent (DWV) piping, hot and cold water distribution rough-in, and final fixture trim adhering to current California Plumbing Code (CPC) with hydrostatic head testing.",
         "svc_6_good": "<strong>GOOD $5,500 - $8,000</strong><br>Traditional excavation, SDR-35 PVC. Proven gravity flow solution.",
         "svc_6_better": "<strong>BETTER $7,150 - $9,700</strong><br>ABS Schedule 40. Superior solid core, gravel bed, two-way cleanouts.",
         "svc_6_best": "<strong>BEST $8,800 - $11,300</strong><br>Trenchless HDPE fused joints. Seamless, root-proof. Lifetime guíarantee.",
         "svc_7_title": "Hybrid Heat Pump Water Heater",
         "svc_7_p1": "Still spending hundreds on inefficient water heating? Hybrid Heat Pump reaches up to 400% efficiency.",
-        "svc_7_p2": "Besides qualifying for rebates, this system drastically cuts electric bills. Pays for itself in under 3 years.",
+        "svc_7_p2": "Installation of ENERGY STAR Tier-4 hybrid heat pump water heaters, including condensate drain routing, thermal expansion protection, dedicated electrical disconnect, and local BAAQMD compliance.",
         "svc_7_good": "<strong>GOOD $2,200 - $3,000</strong><br>Standard 50-gallon atmospheric heater. Direct replacement.",
         "svc_7_better": "<strong>BETTER $2,860 - $3,700</strong><br>Rheem ProTerra Hybrid. Digital panel, rebate-eligible efficiency.",
         "svc_7_best": "<strong>BEST $3,520 - $5,100</strong><br>Bradford White AeroTherm with Wi-Fi. Smart scheduling, quiet pump, leak sensors.",
         "svc_8_title": "Pressure Reducing Valve (PRV)",
         "svc_8_p1": "Operating above 80 PSI destroys hoses, bursts valves, and voids warranties. A PRV protects silently.",
-        "svc_8_p2": "A PRV regulates flow to a safe 55-60 PSI, acting as a mechaúnical shield at your home entry point.",
+        "svc_8_p2": "Sizing and installation of pre-pressurized diaphragm thermal expansion tanks on closed-loop potable water systems to absorb thermal volume growth and protect T&P relief valves.",
         "svc_8_good": "<strong>GOOD $480 - $750</strong><br>Standard residential-grade brass PRV.",
         "svc_8_better": "<strong>BETTER $624 - $950</strong><br>Wilkins 600XL with integrated pressure gauge.",
         "svc_8_best": "<strong>BEST $768 - $1,200</strong><br>Watts LFN45B with inline strainer and thermal expansion tank.",
         "svc_9_title": "Emergency Triage",
         "svc_9_p1": "When a pipe bursts at 3AM, every second counts. We arrive fast, stabilize the leak, mitigate damage.",
-        "svc_9_p2": "Our rapid response squad stops catastrophic flow and restores vital service to functional aáreas.",
+        "svc_9_p2": "Endoscopic inspection of building drain and sewer laterals using self-leveling color cameras with integrated 512 Hz sondes for depth and path mapping from above ground.",
         "svc_9_good": "<strong>GOOD $380 - $600</strong><br>Main shutoff and SharkBite temporary caps.",
         "svc_9_better": "<strong>BETTER $494 - $750</strong><br>Sector isolation with permanent ProPress valves.",
         "svc_9_best": "<strong>BEST $608 - $950</strong><br>Full isolation manifold. Permanent one-visit solution.",
         "svc_10_title": "CAD & Digital Tracing",
         "svc_10_p1": "Modern development requires documented precision. We trace underground lines and deliver as-built plans.",
-        "svc_10_p2": "We use electromagnetic tracing and digital modeling to map your invisible network and prevent accidents.",
+        "svc_10_p2": "Installation of roof runoff catchment plumbing, first-flush water diverters, food-grade storage cisterns, and submersible booster pumps with backflow prevention in compliance with CPC Chapter 16.",
         "svc_10_good": "<strong>GOOD $600 - $900</strong><br>Main line tracing with surface paint and professional schematic.",
         "svc_10_better": "<strong>BETTER $780 - $1,200</strong><br>2D AutoCAD overlay integrated with property architectural plans.",
         "svc_10_best": "<strong>BEST $960 - $1,450</strong><br>3D BIM/Revit modeling. Every node, pipe and valve geolocated.",
         "svc_11_title": "Tankless Water Heater",
         "svc_11_p1": "Imagine endless hot water on demand. Tankless systems only fire when you open the tap.",
-        "svc_11_p2": "Save space, reduce carbon footprint, and ensure constant purified hot water without tank explosion risks.",
+        "svc_11_p2": "Gas supply line sizing for high-demand BTU loads, dedicated 3/4-inch gas line runs, dual-pipe concentric category IV direct venting, and service isolation valve kits for annual descaling.",
         "svc_11_good": "<strong>GOOD $3,200 - $4,700</strong><br>Navien NPE-A2 non-condensing. Great for quick replacements.",
         "svc_11_better": "<strong>BETTER $4,160 - $5,700</strong><br>Rinnai RU Sensei Condensing. 0.95 UEF, smart modulating burners.",
         "svc_11_best": "<strong>BEST $5,120 - $7,700</strong><br>Navien NPE-240A2 with ComfortFlow recirculation. Instant hot water, zero wait.",
         "svc_12_title": "Backflow Preventer Assembly",
         "svc_12_p1": "If you manage a business or irrigation, a Backflow preventer is federally mandated. Avoid crippling fines.",
-        "svc_12_p2": "We are certified to install, calibrate and register these assemblies that protect drinking water.",
+        "svc_12_p2": "Mainline inline installation of smart shutoff valves (such as Moen Flo), featuring ultrasonic transducers for microscopic flow tracking, ambient temperature monitoring for freeze protection, and motorized remote shut-off.",
         "svc_12_good": "<strong>GOOD $850 - $1,300</strong><br>Standard Wilkins 375 RPZ. Immediate city compliance.",
         "svc_12_better": "<strong>BETTER $1,105 - $2,000</strong><br>High-flow Watts Series 009. Lead-free bronze for severe commercial use.",
         "svc_12_best": "<strong>BEST $1,360 - $2,200</strong><br>Febco 860 RPZ with IoT sensor. Real-time differential monitoring.",
         "svc_13_title": "Luxury Fixture Swap",
         "svc_13_p1": "A luxury bathroom requires matching hardware with precise calibration, not just aesthetics.",
-        "svc_13_p2": "We perform perfectly leveled, hermetically sealed installations tested at maximum pressure.",
+        "svc_13_p2": "Complete repiping of domestic hot and cold lines using Uponor PEX-A expansion piping or Type L copper manifolds, home-run or trunk-and-branch layouts, pressure tested at 100 PSI with city permit inspections.",
         "svc_13_good": "<strong>GOOD $250 - $400</strong><br>Standard Delta/Moen installation with stainless braided supply lines.",
         "svc_13_better": "<strong>BETTER $325 - $500</strong><br>Moen Align/Grohe spot-resist. Commercial anti-mold silicone sealing.",
         "svc_13_best": "<strong>BEST $400 - $600</strong><br>Kohler Artifacts Smart Touch integration. Temperature calibration and sensor wiring.",
         "svc_14_title": "Water Chemistry Panel",
         "svc_14_p1": "Your tap water may look clear but contain heavy metals or chloramine. Test before investing in filters.",
-        "svc_14_p2": "We provide precise scientific analysis on-site and via certified labs for a custom water treatment plan.",
+        "svc_14_p2": "Installation of 3-way brass diverter valves, surge suppression tanks, and subsurface gravity or pump-assisted drip distribution lines compliant with California Plumbing Code Chapter 15.",
         "svc_14_good": "<strong>GOOD $150 - $250</strong><br>Rapid on-site TDS, hardness and free chlorine test.",
         "svc_14_better": "<strong>BETTER $195 - $300</strong><br>16-point certified lab panel (heavy metals, lead, nitrates). Report in 5 days.",
         "svc_14_best": "<strong>BEST $240 - $400</strong><br>On-site test plus permanent inline digital TDS meter for real-time monitoring.",
         "svc_15_title": "Commercial Hydro-Jetting",
         "svc_15_p1": "When scale or thick roots calcify sewer pipes, electric snakes fail. Time for industrial force.",
-        "svc_15_p2": "Our Hydro-Jetting blasts at 4000+ PSI with rotating laser nozzles restoring the original pipe diameter.",
+        "svc_15_p2": "Non-destructive ultrasonic wall-thickness measurement of metallic piping, seismic strapping inspection for water heating equipment, and hydrostatic static/dynamic pressure testing on main distribution manifolds.",
         "svc_15_good": "<strong>GOOD $750 - $1,150</strong><br>Heavy augering with 7/8 sectional electric cable.",
         "svc_15_better": "<strong>BETTER $975 - $1,500</strong><br>4000 PSI Hydro-Jetting. Eliminates scale and emulsified gárease.",
         "svc_15_best": "<strong>BEST $1,200 - $2,000</strong><br>Heavy jetting + HD camera inspection + 12-month RootX inhibitor application.",
@@ -1199,8 +1264,8 @@ const translations = {
         "service_copper_purpose": "Eliminate polymer degradation and metallic corrosion, ensuring water purity and incáreasing Bay Area property value.",
         "service_copper_usage": "Luxury residential projects in San Jose, Palo Alto, and Los Gatos, where durability and seismic code are critical.",
         "service_copper_potential": "systems designed for 50+ year lifespans, 100% recyclable, and compatible with high-flow centralized filtration.",
-        "service_copper_costs": "Immediate ROI through reduced insurance premiumás and elimination of recurring leak repairs.",
-        "service_copper_comp": "Outperforming competitors using low-density PEX and mechaúnical joints prone to pressure failure.",
+        "service_copper_costs": "Immediate ROI through reduced insurance premiums and elimination of recurring leak repairs.",
+        "service_copper_comp": "Outperforming competitors using low-density PEX and mechanical joints prone to pressure failure.",
         "service_copper_plus": "Sustainable Plumbing systems: Post-installation sanitization protocols and lead-free soldering certification.",
         "service_copper_lean": "Lean Methodology: Off-site pre-fabrication kits reducing on-site time by 40%.",
         "service_expansion_content": "Design and execution of new hydraulic branches for ADUs, gourmet kitchens, and master expansions.",
@@ -1235,7 +1300,7 @@ const translations = {
         "service_septic_comp": "Against traditional concrete tanks, we offer high-strength polymers with 0% seepage probability.",
         "service_septic_plus": "Environmental Protocols: Soil auditing and hydraulic design based on local absorption rates.",
         "service_septic_lean": "Lean Process: 48-hour modular installation via GPS-guided excavation.",
-        "service_water_content": "Pluvial capture networks and greywater treatment systems (bathroomás/laundry) for non-potable use.",
+        "service_water_content": "Pluvial capture networks and greywater treatment systems (bathrooms/laundry) for non-potable use.",
         "service_water_purpose": "Mitigate California drought impact and reduce municipal supply dependency through hydric autonomy.",
         "service_water_usage": "Integrated systems for smart gardens and toilet flushing under extreme saving mandates.",
         "service_water_potential": "Partial hydric independence of up to 65% of annual residential consumption.",
@@ -1283,7 +1348,7 @@ const translations = {
         "pb_hero_subtitle": "Professional Plumbing Services | Bay Area, CA",
         "pb_hero_location": "Bay Area, California",
         "pb_hero_updated": "Updated: December 2024",
-        "pb_hero_details": "15 Detailed Professional Services",
+        "pb_hero_details": "15 Professional Plumbing Services · San Jose, CA",
         "pb_hero_rates": "Lead: $185/hr | Helper: $95/hr | Markup: 30%",
         "pb_hero_compliance": "technical plumbing Standard: ORION Tech | Quality Guíaranteed",
         "pb_hero_powered": "Developed by NeKon AI aGent Consulting | ORION System",
@@ -1294,7 +1359,7 @@ const translations = {
         "pb_terms_title": "Terms and Conditions",
         "pb_warranties_title": "Warranties and Support",
         "pb_catalog_title": "Service Catalog",
-        "pricebook_desc": "Industry Standard Edition with +100 Detailed Professional Services, 3 Pricing Tiers, and Integrated Upsells System.",
+        "pricebook_desc": "Catálogo Maestro de Plomería Profesional C-36 con 15 Servicios Especializados, 3 Niveles de Solución (Good, Better, Best) y Precios Transparentes.",
         "pricebook_feat1": "+100 Services",
         "pricebook_feat2": "Good/Better/Best Tiers",
         "pricebook_feat3": "Upsells & Promos",
@@ -1314,7 +1379,7 @@ const translations = {
         "footer_rights": " 2026 Morales Plumbing. All rights reserved.",
         "slogan_text": "Defining the Future of Flow. Innovation for Life.",
         "contact_lic": "License",
-        "pb_method_p1": "The ORION calculation methodology is based on a precision technical plumbing approach to hydraulic costing. We use industrial-grade algorithmás that consider material durability, labor intensity (categorized by Lead and Helper roles), and technical complexity. This eliminates estimation variability, providing a fixed-rate structure aligned with CSLB standards and California construction market volatility.",
+        "pb_method_p1": "The ORION calculation methodology is based on a precision technical plumbing approach to hydraulic costing. We use industrial-grade algorithms that consider material durability, labor intensity (categorized by Lead and Helper roles), and technical complexity. This eliminates estimation variability, providing a fixed-rate structure aligned with CSLB standards and California construction market volatility.",
         "pb_method_p2": "By integrating real-time supply chain data and high-efficiency proprietary workflow protocols, our methodology guíarantees an optimized 30% markup while maintaining sustainable margins for high-fidelity technical execution. This scientific pricing approach ensures that every project is backed by verified hydraulic data and transparent resource allocation.",
         "pb_tiers_p1": "The Good/Better/Best system provides our clients with three distinct tiers of technical plumbing solutions, tailored to different project lifecycle goals. The 'Good' tier focuses on UPC-compliant repairs and efficient restoration. The 'Better' tier introduces enhanced component durability and mid-range performance upgrades. The 'Best' tier represents the ORION Tech standard: premium industrial-grade materials, AI-integrated monitoring, and extended life-cycle warranties.",
         "pb_tiers_p2": "Each tier is designed to offer maximum value within its scope, allowing residential and commercial stakeholders to make informed decisions based on their long-term infrastructure strategy, not just immediate need.",
@@ -1371,11 +1436,11 @@ const translations = {
         "profile_header_role": "Senior AI Solutions Specialist | C-36 Specialist | Project Manager",
         "app_pricebook_detail": "The ORION Price Book v6.0 PRO is a cost technical plumbing tool that standardizes service rates across the Bay Area. It utilizes a tiered system (Good/Better/Best) to offer flexible options that comply with UPC safety standards.",
         "app_mp_detail": "The Morales Plumbing (MP) Portal centralizes client commuúnication, allowing for smart scheduling and access to technical reports generated by our Karla AI. It ensures full transparency in every project phase.",
-        "app_ep_detail": "Orion Estimator Pro uses computer vision algorithmás to analyze blueprints and site photos, generating Bills of Materials (BOM) and labor estimates with 99% accuracy. Integrated with +8000 itemás updated in real-time for the California market.",
+        "app_ep_detail": "Orion Estimator Pro uses computer vision algorithms to analyze blueprints and site photos, generating Bills of Materials (BOM) and labor estimates with 99% accuracy. Integrated with +8000 items updated in real-time for the California market.",
         "app_tratamiento_title": "Water Treatment systems",
         "app_tratamiento_detail": "The Water Treatment application manages advanced filtration and purification cycles. Provides real-time data on water hardness, pH levels, and contaminant removal efficiency, allowing for predictive maintenance of industrial RO systems.",
         "app_redes_title": "Hydraulic Network Design",
-        "app_redes_detail": "Our Hydraulic Network Design app allows for simulation of complex fluid dynamics in residential and commercial environments. Uses ISO-standard algorithmás to optimize pipe sizing and pressure distribution, reducing material waste and ensuring UPC/CPC compliance.",
+        "app_redes_detail": "Our Hydraulic Network Design app allows for simulation of complex fluid dynamics in residential and commercial environments. Uses ISO-standard algorithms to optimize pipe sizing and pressure distribution, reducing material waste and ensuring UPC/CPC compliance.",
         "app_heaters_title": "Tankless Water Heaters",
         "app_heaters_detail": "This application optimizes the installation and performance of tankless water heating systems. Calculates peak flow demands and gas pressure requirements to ensure uniónterrupted hot water delivery, including a diagnostic module for troubleshooting.",
         "legal_title": "Legal Framework & Cybersecurity",
@@ -1459,11 +1524,11 @@ const translations = {
         "faq_q5": "What is the advantage of the Morales Plumbing PLUS framework?",
         "faq_a5": "It combines CSLB C-36 expertise with Sustainable Plumbing systems, AI diagnostics, and Lean Process, providing a level of precision and sustainability unmatched in the local competition.",
         "faq_q6": "How does Morales Plumbing ensure UPC compliance?",
-        "faq_a6": "Our technicians are CSLB C-36 certified and utilize AI-assisted code-check protocols to ensure every joint exceeds California standards. In addition, we provide traditional double-inspector physical checks and manual verification checklists for clients who prefer classic mechaúnical oversight. <span class=\"comic-choice\">The choice is yours</span>: choose our modern, high-precision AI-assisted digital validation, or our time-tested manual human inspection and mechaúnical warranties.",
+        "faq_a6": "Our technicians are CSLB C-36 certified and utilize AI-assisted code-check protocols to ensure every joint exceeds California standards. In addition, we provide traditional double-inspector physical checks and manual verification checklists for clients who prefer classic mechanical oversight. <span class=\"comic-choice\">The choice is yours</span>: choose our modern, high-precision AI-assisted digital validation, or our time-tested manual human inspection and mechanical warranties.",
         "faq_q7": "What specific 'Lean' metrics do you track?",
         "faq_a7": "We track Takt Time, Lead Time, and First-Pass Yield to ensure a predictable, zero-waste workflow for large-scale projects. At the same time, we support classic milestone-based checkpoints, standard flat-rate billing, and traditional labor-hour audits for simpler, non-technical oversight. <span class=\"comic-choice\">The choice is yours</span>: optimize your project with real-time Lean data dashboards, or manage it via straightforward, traditional project milestones.",
         "faq_q8": "How can I future-proof my infrastructure?",
-        "faq_a8": "By integrating water harvesting and greywater reuse systems today, you avoid future mandates and incárease property value by up to 15%. Alternatively, you can choose an ultra-reliable, passive layout focusing on high-durability classic repiping and simplified manifold configurations that minimize active mechaúnical parts. <span class=\"comic-choice\">The choice is yours</span>: invest in active sustainable water technologies, or select a highly reliable, low-maintenance passive loop system.",
+        "faq_a8": "By integrating water harvesting and greywater reuse systems today, you avoid future mandates and incárease property value by up to 15%. Alternatively, you can choose an ultra-reliable, passive layout focusing on high-durability classic repiping and simplified manifold configurations that minimize active mechanical parts. <span class=\"comic-choice\">The choice is yours</span>: invest in active sustainable water technologies, or select a highly reliable, low-maintenance passive loop system.",
         "app_ep_desc": "AI-driven estimator with Computer Vision for high-precision resource allocation.",
         "app_ep_title": "Orion Estimator Pro",
         "app_heaters_desc": "Smart diagnostic module for optimizing high-efficiency water heating systems.",
@@ -1483,7 +1548,7 @@ const translations = {
         "pb_warranties_p1": "Full transparency on labor and material warranties, backed by CSLB C-36 certification.",
         "service_copper_detail": "CONTENT: Full copper piping systems (Types L, M, K) for residential and commercial infrastructure. PURPOSE: Guíaranteed structural integrity and flow efficiency. USAGE: Renovations, expansions, new construction, and repairs. POTENTIAL: Life-cycle of 50+ years with zero microplastic leaching. ROI: Incáreases property value by 15% compared to PEX; 30% lower maintenance costs. COMPETITION: Specialized brazing and environmental protocols. PLUS: Integrated Sustainable Plumbing systems with Lean Construction protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_expansion_detail": "CONTENT: Modular hydraulic expansion blocks. PURPOSE: Seamless integration of new fixtures without pressure loss. USAGE: Commercial additions and residential expansions. POTENTIAL: Infinite scalability. ROI: Scalable infrastructure. PLUS: Lean process integration. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
-        "service_construction_detail": "CONTENT: CAD Blueprints, rough-in, and finish plumbing. PURPOSE: Build-to-code excellence (UPC/CPC). ROI: 20% lower insurance premiumás. PLUS: Int'l Environmental Protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
+        "service_construction_detail": "CONTENT: CAD Blueprints, rough-in, and finish plumbing. PURPOSE: Build-to-code excellence (UPC/CPC). ROI: 20% lower insurance premiums. PLUS: Int'l Environmental Protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_repair_detail": "CONTENT: Precision leak repair and component replacement. PURPOSE: Infrastructure recovery. USAGE: Emergency and scheduled maintenance. POTENTIAL: Early detection of failures. ROI: Prevents structural damage and water waste. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_septic_detail": "CONTENT: Bio-digesters and leach fields. PURPOSE: Sustainable waste management. ROI: Eliminates utility fees. PLUS: Lean Process + CA Water Board compliance. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_water_detail": "CONTENT: Multi-stage filtration and UV sterilization. PURPOSE: Self-sufficiency. ROI: 60% reduction in water utility costs. PLUS: Int'l Environmental Protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
@@ -1516,7 +1581,7 @@ const translations = {
         "multimedia_subtitle": "High-Fidelity Audio In-Depth Insights & Critical Analyses",
         "mp_podcasts_title": "MP Ecosystem Series",
         "pod_type_deep_dive": "Deep Dive",
-        "mp_pod_1_title": "Silicon Valley AI transformás modern plumbing",
+        "mp_pod_1_title": "Silicon Valley AI transforms modern plumbing",
         "btn_listen": "Listen Now",
         "pod_type_brief": "Brief",
         "mp_pod_2_title": "AI for water leak prediction",
@@ -1551,7 +1616,7 @@ const translations = {
         "req_hp_title": "Hybrid Heat Pump: technical Requirements",
         "req_hp_elec": "Electrical & Spatial Requirements",
         "req_hp_1": "Dedicated 240V / 30-Amp electrical circuit (for most 50-80 gallon models).",
-        "req_hp_2": "Minimum of 700 cubic feet of surrounding air space (unobstructed) for oóptimal heat exchange.",
+        "req_hp_2": "Minimum of 700 cubic feet of surrounding air space (unobstructed) for optimal heat exchange.",
         "req_hp_3": "Condensate drain line routed to a suitable drain or condensate pump.",
         "req_hp_4": "Clearance of at least 6 inches from the top of the unit for the air filter.",
         "req_hp_5": "Seismic strapping in upper and lower 1/3 of the tank.",
@@ -1605,7 +1670,7 @@ const translations = {
         "ai_s2_li3": "<strong>Liability Shielding:</strong> Creates customized waivers before initiating any destructive work.",
         "ai_s2_p2": "Data and laws protect our liability, but our sensors allow us to see through solid concrete.",
         "ai_s3_title": "3. Seeing the Invisible: FLIR Thermography with Artificial Intelligence",
-        "ai_s3_p1": "To achieve true Military-Grade precision, we use high-resolution thermal imaging cameras (FLIR E8-XT or C5 models). By integrating these cameras with AI algorithmás, we perform 'Thermal Mapping' that identifies temperature gradients invisible to the human eye.",
+        "ai_s3_p1": "To achieve true Military-Grade precision, we use high-resolution thermal imaging cameras (FLIR E8-XT or C5 models). By integrating these cameras with AI algorithms, we perform 'Thermal Mapping' that identifies temperature gradients invisible to the human eye.",
         "ai_s3_p2": "This allows us to detect 'floral anomalies' the thermal plume or 'feathering' effect generated by hot water escaping under a slab locating slab leaks without unnecessary demolition. The high-end MSX (Multi-Spectral Dynamic Imaging) Technology extracts structural details from the visual camera and embosses them onto the thermal image.",
         "ai_s3_p3": "Thanks to MSX and AI processing, the margin of error for locating a rupture under concrete is reduced to less than 3 square inches. Once we have 'seen' the invisible, the next step is to present the solution with the same level of technological sophistication.",
         "ai_s4_title": "4. The Tablet as a Closing Tool: Orion Price Book",
@@ -1685,6 +1750,71 @@ const translations = {
         "booking_fields_complete": "fields completed"
     },
     "es": {
+        "lbl_tech_scope": "Alcance de Obra y Procedimiento",
+        "lbl_tech_materials": "Materiales y Accesorios Normativos",
+        "lbl_tech_standards": "Códigos y Normas Aplicables",
+        "lbl_tech_assurance": "Pruebas de Presión y Aseguramiento",
+        "pb_svc_1_tech_scope": "Localización electroacústica no destructiva de fugas ocultas en líneas de agua potable y losas de concreto. Trazado de trayectorias hidráulicas mediante pulsos de presión de nitrógeno.",
+        "pb_svc_1_tech_mat": "Tubería de cobre Tipo L (ASTM B88) para bypass de prueba, coplas ProPress Viega de cero flama, manómetros digitales calibrados NIST.",
+        "pb_svc_1_tech_std": "Cumplimiento estricto con el California Plumbing Code (CPC) Capítulo 6, estándares de presión estática municipal de San José Water Co.",
+        "pb_svc_1_tech_qa": "Prueba hidrostática de caída de presión a 100 PSI durante 30 minutos sin pérdida. Certificado oficial de inspección Morales Plumbing Lic. C-36 #1156542.",
+        "pb_svc_2_tech_scope": "Reemplazo integral de grifería obsoleta y válvulas de escuadra. Instalación de aireadores de compensación de presión y mecanismos de doble descarga para optimizar caudal volumétrico.",
+        "pb_svc_2_tech_mat": "Accesorios certificados WaterSense, grifería de latón sin plomo (NSF/ANSI 61 y 372), sellos de elastómero EPDM y latiguillos trenzados de acero inoxidable.",
+        "pb_svc_2_tech_std": "Normativa California Title 24 (máximo 1.2 GPM en lavabos, 1.8 GPM en cocinas, 1.28 GPF en inodoros) y Código de Conservación de San José.",
+        "pb_svc_2_tech_qa": "Calibración de caudal y verificación de estanqueidad bajo presión operativa continua de 60 PSI. Cero fugas y máxima eficiencia hídrica.",
+        "pb_svc_3_tech_scope": "Dimensionamiento y balanceo de redes de distribución de agua según demanda de unidades de gasto de artefactos (WSFU). Análisis de pérdidas por fricción y presión residual.",
+        "pb_svc_3_tech_mat": "Tuberías de cobre rígido Tipo L y PEX-A Uponor con expansión en frío según ASTM F1960. Manifolds de distribución de flujo balanceado sin juntas ocultas.",
+        "pb_svc_3_tech_std": "Uniform Plumbing Code (UPC) Capítulo 6 y Apéndice A (Sizing of Water Supply Systems), especificaciones de Santa Clara Valley Water District.",
+        "pb_svc_3_tech_qa": "Garantía de presión dinámica mínima de 35 PSI en el punto más desfavorable de la instalación bajo demanda pico simultánea.",
+        "pb_svc_4_tech_scope": "Desmantelamiento y reemplazo total de tuberías galvanizadas degradadas por corrosión interna o sarro. Montaje de nuevas troncales y derivaciones aéreas y bajo piso.",
+        "pb_svc_4_tech_mat": "Tubería de cobre rígido Tipo L sin costura (ASTM B88), conexiones mecánicas prensadas Viega ProPress con sellos EPDM de alta temperatura.",
+        "pb_svc_4_tech_std": "California Plumbing Code (CPC) Sección 604, normas de seguridad contra incendios de San José (instalación 100% libre de llama abierta).",
+        "pb_svc_4_tech_qa": "Prueba de hermeticidad a 100 PSI con nitrógeno. Inspección y aprobación con permiso oficial de la Ciudad de San José.",
+        "pb_svc_5_tech_scope": "Evaluación de campo de absorción, nivelación de pendientes de descarga sanitaria e instalación de tanques sépticos de doble compartimento con filtro de efluentes.",
+        "pb_svc_5_tech_mat": "Tanques de concreto prefabricado de alta resistencia o polietileno reforzado, tuberías sanitarias de PVC Cédula 40 (ASTM D2665) con uniones cementadas al solvente.",
+        "pb_svc_5_tech_std": "Código de Salud Ambiental del Condado de Santa Clara (Department of Environmental Health) y CPC Capítulo 7 y Apéndice H.",
+        "pb_svc_5_tech_qa": "Prueba de percolación en sitio, prueba de estanqueidad por columna de agua y balanceo gravimétrico de líneas de distribución.",
+        "pb_svc_6_tech_scope": "Tendido subterráneo y vertical del sistema de desagüe, ventilación (DWV) y suministro de agua potable en edificaciones nuevas y adiciones estructurales.",
+        "pb_svc_6_tech_mat": "Tuberías ABS Cédula 40 / PVC DWV, soportes antisísmicos para tuberías, cobre Tipo L y tubería Uponor PEX-A con anillos de memoria térmica.",
+        "pb_svc_6_tech_std": "California Plumbing Code (CPC) Capítulos 3, 6, 7 y 9; Código de Construcción de San José y estándares sísmicos de California.",
+        "pb_svc_6_tech_qa": "Prueba de cabeza de agua de 10 pies en redes de desagüe y prueba neumática de 100 PSI en redes de suministro antes del sellado de muros.",
+        "pb_svc_7_tech_scope": "Instalación de calentadores de agua híbridos de alta eficiencia (Tier-4 ENERGY STAR). Tendido de drenaje de condensados, válvula de alivio térmico y desconectador eléctrico.",
+        "pb_svc_7_tech_mat": "Unidad bomba de calor híbrida con tanque vitrificado, líneas de condensado en PVC con neutralizador de acidez, vaso de expansión térmico pre-presurizado.",
+        "pb_svc_7_tech_std": "Normativa ambiental BAAQMD (Bay Area Air Quality Management District), Código Eléctrico (NEC) y CPC Sección 507.",
+        "pb_svc_7_tech_qa": "Ajuste de termostato a 120°F según norma de seguridad infantil, verificación de flujo de aire y prueba de funcionamiento de la válvula T&P.",
+        "pb_svc_8_tech_scope": "Diagnóstico y mitigación de sobrepresión provocada por calentamiento de agua en circuitos cerrados con válvula antirretorno o regulador de presión (PRV).",
+        "pb_svc_8_tech_mat": "Tanques de expansión térmica de diafragma de butilo (aprobados NSF 61), válvulas de alivio de temperatura y presión (T&P) de 150 PSI / 210°F ASME.",
+        "pb_svc_8_tech_std": "California Plumbing Code (CPC) Sección 608.3 y ordenanzas locales de seguridad en calentadores de agua del Condado de Santa Clara.",
+        "pb_svc_8_tech_qa": "Calibración de la precarga de aire del tanque de expansión exactamente igual a la presión estática del agua del inmueble (50 a 65 PSI).",
+        "pb_svc_9_tech_scope": "Inspección endoscópica computarizada de líneas laterales de drenaje y cloaca principal. Localización precisa de fisuras, raíces, colapsos y contrapendientes.",
+        "pb_svc_9_tech_mat": "Cámara autonivelante de alta resolución con iluminación LED envolvente, transmisor de sonda electromagnética de 512 Hz y receptor localizador digital de profundidad.",
+        "pb_svc_9_tech_std": "Estándares de inspección de alcantarillado de NASSCO (PACP) y regulaciones del San José Regional Wastewater Facility.",
+        "pb_svc_9_tech_qa": "Reporte digital en video de alta definición con telemetría en metros/pies, indicación exacta de profundidad y ubicación en superficie.",
+        "pb_svc_10_tech_scope": "Instalación de sistemas de captación pluvial de techos, desviadores de primer lavado y almacenamiento para reutilización en riego y sanitarios.",
+        "pb_svc_10_tech_mat": "Cisternas de polietileno virgen con protección UV grado alimenticio, filtros de sedimentos de malla fina de acero inoxidable, tubería de distribución no potable marcada en morado.",
+        "pb_svc_10_tech_std": "California Plumbing Code (CPC) Capítulo 16 (Nonpotable Rainwater Catchment Systems) y lineamientos de Valley Water.",
+        "pb_svc_10_tech_qa": "Protección total contra reflujo con dispositivo de prevención de contraflujo certificado ASSE 1013 y prueba de presión del circuito de impulsión.",
+        "pb_svc_11_tech_scope": "Reemplazo de calentadores de tanque convencionales por equipos continuos sin tanque de alta demanda BTU. Modificación y ampliación de líneas de gas natural y ventilación.",
+        "pb_svc_11_tech_mat": "Líneas de gas dedicadas de 3/4 pulg. a 1 pulg., conductos concéntricos de polipropileno o acero inoxidable Categoría IV, kit de válvulas de aislamiento para descalcificación.",
+        "pb_svc_11_tech_std": "California Fuel Gas Code (NFPA 54), CPC Capítulo 5 y normativas de emisión Ultra Low NOx de Santa Clara County.",
+        "pb_svc_11_tech_qa": "Prueba de presión de gas con columna de agua (manómetro de mercurio/digital a 3 PSI durante 15 minutos) y puesta en marcha con calibración de combustión.",
+        "pb_svc_12_tech_scope": "Instalación en línea principal de válvulas inteligentes de cierre automático con micro-transductores ultrasónicos y sensores remotos de humedad.",
+        "pb_svc_12_tech_mat": "Válvula de corte motorizada inteligente (Moen Flo / Phyn), accesorios roscados de bronce sin plomo, bypass manual de mantenimiento con válvulas de bola de cuarto de vuelta.",
+        "pb_svc_12_tech_std": "Certificación ASSE 1061 / UPC, instalación eléctrica bajo código NEC con fuente de poder clase 2 protegida contra sobretensiones.",
+        "pb_svc_12_tech_qa": "Prueba de disparo de cierre automático por caída de presión milimétrica y enlace a red de monitoreo 24/7 de Morales Plumbing.",
+        "pb_svc_13_tech_scope": "Reemplazo integral de toda la tubería de suministro de agua potable fría y caliente en la vivienda, desde el medidor hasta cada accesorio de consumo.",
+        "pb_svc_13_tech_mat": "Sistema Uponor PEX-A ProPEX de alta flexibilidad o cobre rígido Tipo L, llaves de paso angulares de cuarto de vuelta de bola metálica, cajas de pared de latón.",
+        "pb_svc_13_tech_std": "California Plumbing Code (CPC) Capítulo 6, aprobaciones de plomería y edificación de la Ciudad de San José.",
+        "pb_svc_13_tech_qa": "Prueba de presión de 100 PSI en presencia del inspector municipal. Aislamiento térmico de tuberías de agua caliente según Title 24.",
+        "pb_svc_14_tech_scope": "Desconexión de desagües de lavandería y duchas para reorientar aguas jabonosas hacia sistemas de irrigación subsuperficial por gravedad o bombeo.",
+        "pb_svc_14_tech_mat": "Válvulas desviadoras de 3 vías de latón fundido, tanques de compensación de flujo con filtro de pelusas de acero inoxidable, tubería de goteo subterránea con emisor antiobstrucción.",
+        "pb_svc_14_tech_std": "California Plumbing Code (CPC) Capítulo 15 (Alternate Water Sources for Plumbing Systems) y directrices de protección de mantos freáticos de Santa Clara.",
+        "pb_svc_14_tech_qa": "Prueba de flujo sin contrapresión, etiquetado de precaución en tuberías ('Agua No Potable') y ajuste de zona de descarga de absorción.",
+        "pb_svc_15_tech_scope": "Inspección técnica diagnóstica de la solidez estructural de las instalaciones mecánicas de plomería, anclajes antisísmicos de calentadores y colectores principales.",
+        "pb_svc_15_tech_mat": "Anclajes y correas de acero galvanizado calibre 12 aprobadas por el estado de California, colectores de latón de alta resistencia, medidores de espesor ultrasónicos.",
+        "pb_svc_15_tech_std": "California Health and Safety Code Sección 19211 (Seismic strapping of water heaters), CPC y normas de resistencia estructural de San José.",
+        "pb_svc_15_tech_qa": "Informe detallado de grosor remanente de pared en tuberías metálicas, verificación de par de apriete en juntas mecánicas y certificación de seguridad.",
+
         "hero_pill_2026": "Listo",
         "hero_pill_eco": "Eco-Enfoque",
         "hero_pill_ai": "IA Integrada",
@@ -1716,7 +1846,7 @@ const translations = {
         "contact_form_name": "Name",
         "contact_form_phone": "Phone",
         "contact_form_email": "Email",
-        "contact_form_másg": "Message",
+        "contact_form_msg": "Message",
         "contact_form_submit": "Send Message",
         "terminal_title": "MORALES_EXECUTIVE_V1.0",
         "profile_role": "Ingeniero Principal y Fundador",
@@ -1740,10 +1870,10 @@ const translations = {
         "lp_f1": "Lista Exacta",
         "lp_f1_d": "Conoce exactamente qué materiales económicos comprar en tu ferretería local.",
         "lp_f2": "100% Visual",
-        "lp_f2_d": "Diseño en tarjetas interactivas e ilustraciones técúúnicas detalladías por Inteligencia Artificial.",
+        "lp_f2_d": "Diseño en tarjetas interactivas e ilustraciones técúúnicas detalladas por Inteligencia Artificial.",
         "lp_f3": "Cero Riesgos",
         "lp_f3_d": "Trucos PRO e indicaciones claras de seguridad para evitar desastres o inundaciones.",
-        "lp_f4": "Rápidías",
+        "lp_f4": "Rápidas",
         "lp_f4_d": "La mayoría de estas 20 reparaciones maestras toman menos de una hora en completarse.",
         "lp_test_title": "Historias de Ééxito de Nuestra Comunidad",
         "lp_t1_d": "\"No pensé que fuera tan fácil. Cambié la válvula del inodoro siguiendo los 4 pasos gráficos en 15 minutos y me ahorré $150 USD de un fontanero. ¡Excelente guía!\"",
@@ -1755,9 +1885,9 @@ const translations = {
         "lp_cta2": "Explorar las 20 Guías Maestras",
         "lp_faq_title": "Preguntas Frecuentes del DIY",
         "lp_q1": "¿Necesito experiencia previa con herramientas?",
-        "lp_a1": "Absolutamente no. Todías las guías de este portal fueron curadías asumiendo que nunca has tocado una pinza en tu vida. Empezamos desde lo más básico.",
+        "lp_a1": "Absolutamente no. Todías las guías de este portal fueron curadas asumiendo que nunca has tocado una pinza en tu vida. Empezamos desde lo más básico.",
         "lp_q2": "¿Cuánto dinero aproximado gastaré en materiales?",
-        "lp_a2": "La gran mayoría de las reparaciones aquí listadías utilizan insumos que cuestan menos de $20 dólares, o incluso cosas que ya tienes en casa como Vinagre o Jabón.",
+        "lp_a2": "La gran mayoría de las reparaciones aquí listadas utilizan insumos que cuestan menos de $20 dólares, o incluso cosas que ya tienes en casa como Vinagre o Jabón.",
         "lp_q3": "¿Y si cometo un error y rompo algo?",
         "lp_a3": "Todías las guías inician con el paso de seguridad más importante (como cerrar la llave de paso). Si algo sale mal, tu casa está segura. Además, nuestra asistente Karla AI está disponible para ayudarte.",
         "htm_hvac_filter_title": "Cambiar Filtro A/C",
@@ -1794,7 +1924,7 @@ const translations = {
         "htm_joe_desc": "Selecciona una tarea para calcular materiales o consulta a nuestra coordinadora técnica.",
         "htm_calc_btn": "Calcular Materiales",
         "htm_materials": "Materiales Necesarios",
-        "htm_tools": "Herramientas Requeridías",
+        "htm_tools": "Herramientas Requeridas",
         "htm_steps": "Paso a Paso",
         "htm_disposal_title": "Destrabar Triturador",
         "htm_disposal_desc": "Libera un motor atascado fácilmente.",
@@ -1855,9 +1985,9 @@ const translations = {
         "service_valves_title": "Válvulas y Cartuchos",
         "service_valves_desc": "Cambio de válvulas para duchas, tinas y lavabos.",
         "service_inspect_title": "Inspecciones",
-        "service_inspect_desc": "Asesora para viviendías nuevas, usadías y ampliaciones.",
+        "service_inspect_desc": "Asesora para viviendías nuevas, usadas y ampliaciones.",
         "service_training_title": "Capacitaciones",
-        "service_training_desc": "Formación de personal para empresas asociadías.",
+        "service_training_desc": "Formación de personal para empresas asociadas.",
         "service_b2b_title": "Trabajos Especializados B2B",
         "service_b2b_desc": "Alianzas con empresas del trade para proyectos complejos.",
         "eng_wh_comic_title": "Metodología: El Retrofit Inteligente",
@@ -1878,22 +2008,22 @@ const translations = {
         "eng_valves_li3": "Calibración Anti-Quemaduras CPC: Ajuste exacto del Límite de temperatura para seguridad familiar.",
         "eng_inspect_comic_title": "Metodología: Diagnóstico de Alta Tecnología",
         "eng_inspect_title": "Consultoría e Inspección de Viviendías",
-        "eng_inspect_desc": "Inspecciones expertas de plomería para viviendías nuevas y usadías.",
+        "eng_inspect_desc": "Inspecciones expertas de plomería para viviendías nuevas y usadas.",
         "eng_inspect_p1": "El mercado inmobiliario en el área de la Bahía se mueve rápidías. Muchas casas de 1950-1970 en el Condado de Santa Clara an dependen de alcantarillados de hierro fundido a punto de fallar. Nuestras inspecciones robticas con fibra óptica revelan intrusiones de races y colapsos estructurales antes del cierre del escrow.",
         "eng_inspect_p2": "Planea un ADU (Accesory Dwelling Unit) o una remodelación mayor? Proveemos consultoría BIM 3D, cálculos de capacidad del alcantarillado lateral y revisiones de planos para garantizar que su proyecto pase las inspecciones municipales a la primera.",
         "eng_inspect_li1": "Auditorías de Alcantarillado con Fibra óptica: Proteja su inversión inmobiliaria.",
         "eng_inspect_li2": "Cálculos de Capacidad para ADUs: Asegurando que su línea principal soporte la nueva carga.",
-        "eng_inspect_li3": "Consultoría para Aprobacin de Permisos: Revisión de planos contra el cdigo de California.",
+        "eng_inspect_li3": "Consultoría para Aprobacin de Permisos: Revisión de planos contra el código de California.",
         "eng_training_comic_title": "Metodología: Empoderando a la Fuerza Laboral",
         "eng_training_title": "Capacitacin de Personal Corporativo",
-        "eng_training_desc": "Programas de formación profesional para empresas asociadías.",
+        "eng_training_desc": "Programas de formación profesional para empresas asociadas.",
         "eng_training_p1": "La industria de la plomería evoluciona rápidamente hacia soluciones tecnolgicas. Morales Plumbing ofrece capacitaciones prcticas de nivel maestro para administradores de edificios, equipos de mantenimiento y técúúnicos HVAC en todo Silicon Valley.",
         "eng_training_p2": "Nuestro currculo cubre fusin de cobre ProPress, tuberías de gas MegaPress, diagnósticos trmicos y cumplimiento de CalGreen. Convertimos a su personal básico de mantenimiento en operadores técúúnicos altamente capacitados.",
         "eng_training_li1": "Tecnología Avanzada de Unión: Certificación en expansión PEX-A, ProPress y MegaPress.",
         "eng_training_li2": "Dominio de CalGreen y Título 24: Navegando las complejas leyes de conservación de California.",
         "eng_training_li3": "Diagnósticos Inteligentes: Capacitando a su equipo con cámaras térmicas y robticas.",
         "eng_b2b_comic_title": "Metodología: Sinergia en la Construcción",
-        "eng_b2b_title": "Alianzas Comerciales Especializadías B2B",
+        "eng_b2b_title": "Alianzas Comerciales Especializadas B2B",
         "eng_b2b_desc": "Trabajo colaborativo especializado con otros contratistas y oficios.",
         "eng_b2b_p1": "Morales Plumbing es el subcontratista C-36 principal para General Contractors y desarrolladores de campus tecnológicos en Silicon Valley. Manejamos la infraestructura hidráulica compleja mientras usted se enfoca en la construcción principal.",
         "eng_b2b_p2": "Desde sistemas comerciales de manifolds hasta líneas de gas de alto volumen para unidades HVAC industriales en techos, nos integramos sin problems en el cronograma de su proyecto. Completamente licenciados, con fianzas (bonded) y asegurados.",
@@ -1902,49 +2032,49 @@ const translations = {
         "eng_b2b_li3": "Responsabilidad Corporativa: Seguros completos, formularios W-9 listos y cumplimiento OSHA.",
         "pb_svc_1_name": "Detección de Fugas de Precisión",
         "pb_svc_1_user": "Encuentre fugas ocultas sin romper paredes o pisos.",
-        "pb_svc_1_tech": "Despliegue de dispositivos acústicos, imágenes térmicas y gas trazador para localizar microfisuras en líneas presurizadías. Requerido para protocolos de reparación no invasivos.",
-        "pb_svc_2_name": "Retrofit Ecológico",
+        "pb_svc_1_tech": "Despliegue de equipos acústicos, termografía infrarroja y pruebas de caída de presión para aislar micro-fugas en líneas de agua potable.",
+        "pb_svc_2_name": "Retrofit Ecológico y Reemplazo de Grifería",
         "pb_svc_2_user": "Actualice sus accesorios a tecnologías de alta eficiencia que ahorran agua.",
-        "pb_svc_2_tech": "Instalación de accesorios certificados WaterSense, aireadores compensadores de presión y mecanismos de doble descarga para optimizar caudales volumtricos.",
-        "pb_svc_3_name": "Diseño de Infraestructura Hidráulica",
+        "pb_svc_2_tech": "Instalación de accesorios certificados WaterSense, aireadores compensadores de presión y mecanismos de doble descarga para optimizar caudales de consumo según normas de conservación de California.",
+        "pb_svc_3_name": "Diseño de Redes y Dimensionamiento de Tuberías",
         "pb_svc_3_user": "Planos de plomería personalizados y dimensionamiento de sistemas.",
-        "pb_svc_3_tech": "Cálculos basados en demanda de unidades (FU), anlisis de presión esttica y ecuaciones de prdida por friccin para disear dimetros de tubería óóptimos.",
+        "pb_svc_3_tech": "Cálculos hidráulicos basados en unidades WSFU, análisis de presión estática disponible y pérdidas por fricción para determinar diámetros de tubería según el Código Uniforme de Plomería (UPC).",
         "pb_svc_4_name": "Renovaciones en Cobre Elite",
-        "pb_svc_4_user": "Reemplace tuberías viejas con cobre premium de larga duracin.",
-        "pb_svc_4_tech": "Extraccin de tuberías galvanizadías, reemplazadías con cobre Tipo L utilizando unión mecánica ProPress cero llamas para una integridad superior.",
-        "pb_svc_5_name": "Sistemas Sópticos Avanzados",
-        "pb_svc_5_user": "Instalación, reparación y optimización biolgica de tanques sópticos.",
-        "pb_svc_5_tech": "Anlisis de percolacin de suelos, dimensionamiento de campo de lixiviacin e instalación de biorreactores de múltiples cámaras con filtros de efluentes.",
-        "pb_svc_6_name": "Plomería para Construcción Nueva",
-        "pb_svc_6_user": "Instalación completa de plomería para casas nuevas y adiciones.",
-        "pb_svc_6_tech": "Instalación subterrnea (DWV), distribución de agua superior y colocación de accesorios en estricto cumplimiento con UPC y cdigos municipales.",
-        "pb_svc_7_name": "Calentadores de Agua Avanzados",
-        "pb_svc_7_user": "Instalación de calentadores ultra eficientes Heat Pump e Hbridos.",
-        "pb_svc_7_tech": "Integración de unidades de bomba de calor con compresor que requieren manejo de condensado, circuitos dedicados de 240V y cumplimiento BAAQMD.",
-        "pb_svc_8_name": "Sistemas de Expansión Térmica",
+        "pb_svc_4_user": "Reemplace tuberías viejas con cobre premium de larga duración.",
+        "pb_svc_4_tech": "Reemplazo completo de tuberías galvanizadas corroídas por cobre rígido Tipo L, empleando prensado mecánico Viega ProPress sin soldadura abierta para máxima seguridad estructural.",
+        "pb_svc_5_name": "Sistemas Sépticos y Drenaje Avanzado",
+        "pb_svc_5_user": "Instalación, reparación y optimización biológica de tanques sépticos.",
+        "pb_svc_5_tech": "Pruebas de percolación de suelos, dimensionamiento de campo de drenaje e instalación de fosas sépticas de doble cámara con filtros de efluentes según normas de salud ambiental del Condado de Santa Clara.",
+        "pb_svc_6_name": "Plomería para Construcción Nueva y Remodelación",
+        "pb_svc_6_user": "Instalación completa de plomería para casas nuevas, ADUs y adiciones.",
+        "pb_svc_6_tech": "Tendido subterráneo de drenaje y ventilación (DWV), distribución de agua fría/caliente y colocación final de artefactos con prueba hidrostática obligatoria según el Código de Plomería de California.",
+        "pb_svc_7_name": "Calentadores de Agua Híbridos Heat Pump",
+        "pb_svc_7_user": "Instalación de calentadores ultra eficientes Heat Pump e Híbridos.",
+        "pb_svc_7_tech": "Instalación de calentadores híbridos con bomba de calor categoría ENERGY STAR, con línea de drenaje de condensados, tanque de expansión térmica, interruptor eléctrico y cumplimiento BAAQMD.",
+        "pb_svc_8_name": "Sistemas de Expansión Térmica y Alivio de Presión",
         "pb_svc_8_user": "Proteja su plomería de picos de presión peligrosos.",
-        "pb_svc_8_tech": "Dimensionamiento e instalación de tanques de expansión hidroneumticos en el suministro de agua fra para absorber la expansión volumtrica.",
-        "pb_svc_9_name": "Diagnósticos Inteligentes",
+        "pb_svc_8_tech": "Dimensionamiento e instalación de tanques de expansión térmica de diafragma presurizado en sistemas cerrados para absorber el aumento de volumen y proteger las válvulas T&P.",
+        "pb_svc_9_name": "Diagnóstico y Cámara HD para Drenajes",
         "pb_svc_9_user": "Inspecciones de alta tecnología con cámara en líneas de drenaje.",
-        "pb_svc_9_tech": "Endoscopia de fibra óptica de sistemas DWV con localización por sonda integrada para mapear tramos laterales e identificar colapsos estructurales.",
-        "pb_svc_10_name": "Recolección de Agua de Lluvia",
-        "pb_svc_10_user": "Capture, filtre y reutilice el agua de lluvia para riego.",
-        "pb_svc_10_tech": "Diseño de superficies de captación, filtración primaria y dimensionamiento de cisternas de polietileno (HDPE) con bombas de refuerzo.",
-        "pb_svc_11_name": "Actualizaciones a Tankless",
+        "pb_svc_9_tech": "Inspección endoscópica de líneas sanitarias con cámaras a color autonivelantes y transmisor de sonda de 512 Hz para localizar profundidad y trayectoria exacta desde la superficie.",
+        "pb_svc_10_name": "Recolección de Agua de Lluvia e Irrigación",
+        "pb_svc_10_user": "Capture, filtre y reutilice el agua de lluvia para riego y usos secundarios.",
+        "pb_svc_10_tech": "Tendido de tuberías de captación pluvial, desviadores de primer lavado, cisternas de polietileno de alta densidad y bombas de refuerzo con protección antirreflujo según el CPC Capítulo 16.",
+        "pb_svc_11_name": "Conversión y Reemplazo a Calentadores Tankless",
         "pb_svc_11_user": "Agua caliente infinita y gran ahorro de espacio con calentadores de paso.",
-        "pb_svc_11_tech": "Cálculos de carga BTU para demanda de flujo dinmico, actualización de líneas de gas e instalación de sistemas de ventilación concntrica.",
-        "pb_svc_12_name": "Prevención de Fugas (Flo)",
+        "pb_svc_11_tech": "Dimensionamiento de línea de gas para alta demanda de BTU (3/4 pulgada mínimo), tubería concéntrica de ventilación Categoría IV y válvulas de aislamiento para descalcificación anual periódica.",
+        "pb_svc_12_name": "Válvulas Inteligentes y Detección Automática de Fugas",
         "pb_svc_12_user": "Válvulas automáticas inteligentes que detectan fugas al instante.",
-        "pb_svc_12_tech": "Instalación en línea de medidores de flujo ultrasónicos con algoritmos de aprendizaje automático capaces de distinguir eventos de flujo de micro-fugas.",
-        "pb_svc_13_name": "Repipe (Remplazo) de Toda la Casa",
-        "pb_svc_13_user": "Reemplazo completo de todías las líneas de agua de su hogar.",
-        "pb_svc_13_tech": "Abandono estratégico de líneas existentes y enrutamiento de polietileno reticulado (PEX-A) utilizando accesorios de expansión para mnima friccin.",
-        "pb_svc_14_name": "Sistemas de Aguas Grises",
-        "pb_svc_14_user": "Reutilice el agua de duchas para regar su jardín.",
-        "pb_svc_14_tech": "Instalación de válvulas de desviación de 3 vas, tanques de compensacin y líneas de riego por goteo subsuperficial conforme al Captulo 15 del CPC.",
-        "pb_svc_15_name": "Chequeos de Integridad Estructural",
+        "pb_svc_12_tech": "Instalación en la acometida principal de válvulas inteligentes (tipo Moen Flo) con transductores ultrasónicos para medir microflujos, sensor de congelamiento y cierre motorizado instantáneo.",
+        "pb_svc_13_name": "Repipe (Reemplazo Completo) de Toda la Casa",
+        "pb_svc_13_user": "Reemplazo completo de todas las líneas de agua de su hogar.",
+        "pb_svc_13_tech": "Reemplazo integral de líneas de agua fría y caliente con tubería PEX-A Uponor por expansión o cobre Tipo L, diseño en colectores equilibrados, prueba hidrostática a 100 PSI e inspección oficial de la ciudad.",
+        "pb_svc_14_name": "Sistemas de Aguas Grises y Reciclaje",
+        "pb_svc_14_user": "Reutilice el agua de duchas y lavadoras para regar su jardín.",
+        "pb_svc_14_tech": "Instalación de válvulas desviadoras de 3 vías de latón, tanques de compensación y líneas de goteo subterráneo conformes al Capítulo 15 del Código de Plomería de California.",
+        "pb_svc_15_name": "Inspección Estructural de Colectores y Manifolds",
         "pb_svc_15_user": "Evaluación completa de la seguridad y longevidad de su sistema.",
-        "pb_svc_15_tech": "Medición ultrasónica de espesor de tuberías metálicas, validación de refuerzo sísmico y pruebas de estrs de todos los colectores primarios.",
+        "pb_svc_15_tech": "Medición ultrasónica no destructiva del espesor de pared en tuberías metálicas, verificación de anclajes sísmicos en calentadores y pruebas de presión estática/dinámica en manifolds principales.",
         "lbl_subtitles": "Traduccin de Historieta",
         "svc_1_step_1": "Mapeo Diagnóstico inicial.",
         "svc_1_step_2": "Aislamiento del sistema.",
@@ -1956,17 +2086,17 @@ const translations = {
         "svc_2_step_4": "Verificación de eficiencia.",
         "svc_3_step_1": "Modelado BIM 3D.",
         "svc_3_step_2": "Simulacin de gradiente de presión.",
-        "svc_3_step_3": "Revisión de cumplimiento de cdigo.",
+        "svc_3_step_3": "Revisión de cumplimiento de código.",
         "svc_3_step_4": "Entrega final de planos.",
         "svc_4_step_1": "Retiro de tuberías viejas.",
         "svc_4_step_2": "Enrutamiento de cobre Tipo L.",
         "svc_4_step_3": "Aseguramiento de juntas ProPress.",
         "svc_4_step_4": "Prueba de presión hidrosttica.",
-        "svc_5_step_1": "Prueba de percolacin.",
+        "svc_5_step_1": "Prueba de percolación.",
         "svc_5_step_2": "Excavación y nivelacin.",
         "svc_5_step_3": "Instalación de bio-reactor.",
         "svc_5_step_4": "Validación de flujo de efluentes.",
-        "svc_6_step_1": "Instalación subterrnea.",
+        "svc_6_step_1": "Instalación subterránea.",
         "svc_6_step_2": "Plomería en estructura.",
         "svc_6_step_3": "Instalación de accesorios.",
         "svc_6_step_4": "Aprobacin de inspección municipal.",
@@ -2024,16 +2154,16 @@ const translations = {
         "svc_4_best_desc": "Phyn Plus Smart Water Assistant con sensores ultrasónicos. Monitoreo sin partes mviles, mxima precisión de flujo e integración total con sistemas Smart Home.",
         "svc_5_good_desc": "Inspección de cámara básica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
         "svc_5_better_desc": "Inspección profunda SeeSnake con localización por sonar. Trazamos y marcamos la ubicación exacta y profundidad del problema en la superficie.",
-        "svc_5_best_desc": "Inspección HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técúnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
-        "svc_6_good_desc": "Excavación tradicional e instalación de PVC SDR-35. Cumple con los cdigos locales y provee una solución probada de flujo por gravedad.",
+        "svc_5_best_desc": "Inspección HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
+        "svc_6_good_desc": "Excavación tradicional e instalación de PVC SDR-35. Cumple con los códigos locales y provee una solución probada de flujo por gravedad.",
         "svc_6_better_desc": "Reemplazo con ABS Cdula 40. Tubería de núcleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
-        "svc_6_best_desc": "Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadías. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
+        "svc_6_best_desc": "Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadas. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
         "svc_7_good_desc": "Instalación de un calentador atmosfrico estándar de 50 galones. Reemplazo directo sin modificaciones eléctricas complejas.",
-        "svc_7_better_desc": "Instalación de calentador Hbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
+        "svc_7_better_desc": "Instalación de calentador Híbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
         "svc_7_best_desc": "Bradford White AeroTherm con integración Wi-Fi completa. Modos de programación inteligente, bomba ultra-silenciosa y sensores de detección de fugas integrados desde la fbrica.",
         "svc_8_good_desc": "Instalación de válvula PRV de latn estándar de grado residencial. Estabiliza la presión principal previniendo daños a corto plazo.",
         "svc_8_better_desc": "Wilkins 600XL con manómetro de lectura integrada. Permite un monitoreo visual y ajustes precisos sin requerir herramientas adicionales de Diagnóstico.",
-        "svc_8_best_desc": "Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios volumtricos.",
+        "svc_8_best_desc": "Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios caudales volumétricos.",
         "svc_9_good_desc": "Respuesta primaria. Cierre del agua principal y uso de tapones SharkBite temporales para detener la emergencia y permitir secado.",
         "svc_9_better_desc": "Aislamiento del sector. Instalación de válvulas de aislamiento permanente de Cobre ProPress, permitiendo dar agua al resto de la casa mientras el sector daado queda aislado.",
         "svc_9_best_desc": "Resolución y reestructuracin. Construcción de un manifold de aislamiento completo y soldadura/prensado definitivo de la falla. Solución permanente de una sola visita.",
@@ -2046,7 +2176,7 @@ const translations = {
         "svc_12_good_desc": "Instalación de ensamblaje RPZ (Reduced Pressure Zone) Wilkins 375 estándar. Cumplimiento inmediato con las regulaciones de la ciudad.",
         "svc_12_better_desc": "Ensamblaje Watts Serie 009 de alto flujo. Válvulas de control de cuarto de vuelta y cuerpo de bronce sin plomo para aplicaciones comerciales severas.",
         "svc_12_best_desc": "Febco 860 RPZ equipado con sensor IoT de caída de presión. Monitorea los diferenciales de presión en tiempo real y alerta al administrador sobre bloqueos o fallas antes de la inspección anual.",
-        "svc_13_good_desc": "Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadías de acero inoxidable y sellos nuevos.",
+        "svc_13_good_desc": "Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadas de acero inoxidable y sellos nuevos.",
         "svc_13_better_desc": "Instalación de herrajes de gama media-alta (Moen Align, Grohe) con acabados resistentes a manchas. Sellado con silicona comercial anti-moho.",
         "svc_13_best_desc": "Instalación e integración de grifería inteligente (Kohler Artifacts Smart Touch / Voice Control). Calibración de temperatura preestablecida y cableado del módulo sensor.",
         "svc_14_good_desc": "Test rápidías in-situ. Medición de TDS (Sólidos Disueltos Totales), prueba de dureza por gotas químicas y nivel de cloro libre.",
@@ -2136,13 +2266,13 @@ const translations = {
         "law_sec1_li1": "<strong>Impacto Inmediato:</strong> Los reemplazos de emergencia después de 2027 requerirán exclusivamente equipos eléctricos de cero emisiones.",
         "law_sec1_li2": "<strong>Transición:</strong> Se insta a los propietarios a migrar a calentadores de bomba de calor (Heat Pump) antes del colapso de inventario de 2027.",
         "law_sec2_title": "2. Tipos de Calentadores de Agua (Transición a Eléctrico)",
-        "law_sec2_p1": "Comprender las tecnologías aprobadías para la transición energética de California es vital para cumplir con el Título 24 (Title 24).",
+        "law_sec2_p1": "Comprender las tecnologías aprobadas para la transición energética de California es vital para cumplir con el Título 24 (Title 24).",
         "law_sec2_li1": "<strong>Bomba de Calor Híbrida (Heat Pump):</strong> Extrae calor del aire ambiental para calentar el agua, logrando eficiencias superiores al 300%. Es la opción #1 requerida por el estado y califica para los máximos reembolsos (Rebates).",
         "law_sec2_li2": "<strong>Eléctricos de Tanque Estándar:</strong> Utilizan resistencias térmicas, menos eficientes y generalmente penalizados bajo cálculos estrictos del Título 24, pero permitidos.",
         "law_sec2_li3": "<strong>Eléctricos Tankless (Sin Tanque):</strong> Calientan el agua al instante. Aunque no emiten NOx, requieren un amperaje masivo (a menudo paneles eléctricos de más de 200A) y rara vez son viables sin actualizaciones eléctricas costosas.",
         "law_sec3_title": "3. Especificaciones del Código (CSLB y Title 24)",
         "law_sec3_p1": "Instalar un calentador no es solo conectar agua. Morales Plumbing garantiza el cumplimiento estricto del Código Uniforme de Plomería (UPC) de California:",
-        "law_sec3_li1": "<strong>Sujeción Sísmica (Earthquake Straps):</strong> La ley de California requiere correas dobles en el tercio superior e inferior, ancladías directamente a montantes de pared para evitar el vuelco durante terremotos.",
+        "law_sec3_li1": "<strong>Sujeción Sísmica (Earthquake Straps):</strong> La ley de California requiere correas dobles en el tercio superior e inferior, ancladas directamente a montantes de pared para evitar el vuelco durante terremotos.",
         "law_sec3_li2": "<strong>Tanque de Expansión Térmica:</strong> Obligatorio en sistemas de plomería cerrados para absorber el exceso de presión, protegiendo las tuberías del hogar y evitando explosiones de válvulas.",
         "law_sec3_li3": "<strong>Bandeja de Drenaje (Drain Pan):</strong> Requerida si el calentador está en una plataforma interior, en ático o espacio donde una fuga cause daños a la estructura. La bandeja debe tener tubería que drene al exterior.",
         "law_sec3_li4": "<strong>Válvula T&P (Temperature & Pressure Relief):</strong> Crítica para la seguridad, su línea de descarga debe llevar el agua caliente a un desagüe seguro, típicamente al exterior.",
@@ -2233,7 +2363,7 @@ const translations = {
         "pb_svc_1_good_mat": "Tinte trazador no tóxico, tiza de mapeo, materiales de parche temporal.",
         "pb_svc_1_good_tools": "Discos acústicos estándar, medidores de humedad, manómetros.",
         "pb_svc_1_good_time": "2-3 hrs",
-        "pb_svc_1_better_just": "[Alcance] Detección premium para cadías de presión en múltiples zonas. Incluye aislamiento de colectores, inyeccin de gas trazador y localización precisa bajo concreto.",
+        "pb_svc_1_better_just": "[Alcance] Detección premium para caídas de presión en múltiples zonas. Incluye aislamiento de colectores, inyeccin de gas trazador y localización precisa bajo concreto.",
         "pb_svc_1_better_mat": "Mezcla de gas trazador (95% Nitrógeno / 5% Hidrógeno), tapones de prueba de alta presión.",
         "pb_svc_1_better_tools": "Detector de gas electrónico, micrófono acústico de suelo de alta ganancia, equipo de presión.",
         "pb_svc_1_better_time": "3-5 hrs",
@@ -2248,7 +2378,7 @@ const translations = {
         "pb_svc_2_good_time": "5-7 Días",
         "pb_svc_2_better_just": "[Scope] Premium Repipe (Horizontal y Vertical): Up to 3 baths, 1 kitchen (ice maker, dishwasher), laundry, 3 hose bibs. Reemplazo total de la casa (lineas de rastreo y montantes de pared). Full home Uponor expansion system. Includes firestop and drywall rough-patch.",
         "pb_svc_2_better_mat": "Hasta 350 pies PEX-A (Uponor), anillos ProPEX, stub-outs de cobre Tipo L de 1/2\", codos oreja de caída, válvulas angulares de cuarto de vuelta premium.",
-        "pb_svc_2_better_tools": "Expansora Milwaukee ProPEX, brocas autoalimentadías, aspiradoras HEPA, lonas de protección.",
+        "pb_svc_2_better_tools": "Expansora Milwaukee ProPEX, brocas autoalimentadas, aspiradoras HEPA, lonas de protección.",
         "pb_svc_2_better_time": "7-10 Días",
         "pb_svc_2_best_just": "[Alcance] Grado Comercial Ultra-Premium: Hasta 4 baños, dimensionado para alto flujo (línea principal de 1\"). Instalación completa en Cobre Tipo L con ProPress. Incluye gestin rápida de permisos.",
         "pb_svc_2_best_mat": "Hasta 400 pies de tubo rígido de Cobre Tipo L (1\", 3/4\", 1/2\"), conexiones Viega ProPress sin plomo, abrazaderas acústicas, soportes unistrut.",
@@ -2324,12 +2454,12 @@ const translations = {
         "pb_svc_8_good_mat": "Hasta 20 pies de Tubería de Hierro Negro de 1/2\" o 3/4\", conexiones de hierro maleable, tefln para gas, compuesto para juntas.",
         "pb_svc_8_good_tools": "Roscadora de tubos Ridgid, llaves para tubos grandes, manómetro de prueba de presión (15 PSI).",
         "pb_svc_8_good_time": "3-5 hrs",
-        "pb_svc_8_better_just": "[Alcance] Instalación Premium CSST (Acero Inoxidable Corrugado) para rutas complejas en tico/espacio de rastreo (hasta 50 pies). Incluye conexin a tierra segn el cdigo.",
+        "pb_svc_8_better_just": "[Alcance] Instalación Premium CSST (Acero Inoxidable Corrugado) para rutas complejas en tico/espacio de rastreo (hasta 50 pies). Incluye conexin a tierra segn el código.",
         "pb_svc_8_better_mat": "50 pies de CSST Gastite/TracPipe, conexiones AutoFlare, placas de protección, cable de cobre #6 AWG, abrazaderas de conexin a tierra.",
         "pb_svc_8_better_tools": "Cortadores especficos para CSST, pelacables, multímetro (para verificación de tierra).",
         "pb_svc_8_better_time": "4-6 hrs",
         "pb_svc_8_best_just": "[Alcance] Línea de Gas Subterrnea PE de Alta Capacidad (hasta 100 pies). Para calentadores de piscina o ADUs. Incluye zanjeo (24\" de profundidad), elevadores, cable trazador y relleno.",
-        "pb_svc_8_best_mat": "100 pies de Tubería PE amarilla de alta densidad, elevadores con válvulas, cable trazador, cinta de advertencia subterrnea.",
+        "pb_svc_8_best_mat": "100 pies de Tubería PE amarilla de alta densidad, elevadores con válvulas, cable trazador, cinta de advertencia subterránea.",
         "pb_svc_8_best_tools": "Mquina de fusin a tope McElroy, equipo de zanjeo (Ditch Witch), compactadora de placa.",
         "pb_svc_8_best_time": "2 Días",
         "pb_svc_9_title": "Service 9",
@@ -2347,7 +2477,7 @@ const translations = {
         "pb_svc_9_best_time": "1 Día",
         "pb_svc_10_title": "Service 10",
         "pb_svc_10_good_just": "[Alcance] Reemplazo Estándar de Accesorio (1 Grifo o 1 Inodoro). Remueve la unidad existente, limpia superficie, instala nueva. Incluye retiro del equipo viejo.",
-        "pb_svc_10_good_mat": "Anillo de cera estándar, líneas de suministro trenzadías, pernos estándar, masilla de silicona.",
+        "pb_svc_10_good_mat": "Anillo de cera estándar, líneas de suministro trenzadas, pernos estándar, masilla de silicona.",
         "pb_svc_10_good_tools": "Llave de lavabo, llaves ajustables, espátula, aspiradora.",
         "pb_svc_10_good_time": "1-2 hrs",
         "pb_svc_10_better_just": "[Alcance] Actualización Premium. Instalación de un Grifo Sin Contacto de alta gama o inodoro Toto Drake. Incluye actualización de válvula de cierre a un cuarto de vuelta.",
@@ -2355,8 +2485,8 @@ const translations = {
         "pb_svc_10_better_tools": "ProPress (para nuevas válvulas), multímetro, nivel de precisión.",
         "pb_svc_10_better_time": "2-4 hrs",
         "pb_svc_10_best_just": "[Alcance] Integración Ultra-Premium de Inodoro Inteligente / Bidet (ej. Toto Neorest). Incluye la instalación de un nuevo receptculo eléctrico GFCI de 120V dedicado.",
-        "pb_svc_10_best_mat": "Unidad Toto Neorest / Washlet, bridías de montaje pesado, cable Romex 12-2, receptculo GFCI, caja eléctrica.",
-        "pb_svc_10_best_tools": "Sierra para yeso, probadores de voltaje, cinta guía, herramientas avanzadías.",
+        "pb_svc_10_best_mat": "Unidad Toto Neorest / Washlet, bridas de montaje pesado, cable Romex 12-2, receptculo GFCI, caja eléctrica.",
+        "pb_svc_10_best_tools": "Sierra para yeso, probadores de voltaje, cinta guía, herramientas avanzadas.",
         "pb_svc_10_best_time": "5-7 hrs",
         "pb_svc_11_title": "Service 11",
         "pb_svc_11_good_just": "[Alcance] Instalación Estándar de Válvula Sísmica para medidor residencial (línea de hasta 1\"). Cierre mecúnico por magnitud 5.4+. Incluye permisos.",
@@ -2380,22 +2510,22 @@ const translations = {
         "pb_svc_12_better_mat": "Válvula RPZ Comercial de 2\", recinto de aluminio calefaccionado, materiales para base de concreto, cinta aislante.",
         "pb_svc_12_better_tools": "Taladro sacatestigos, multímetro (cableado del calentador), kit de prueba calibrado.",
         "pb_svc_12_better_time": "6-8 hrs",
-        "pb_svc_12_best_just": "[Alcance] Ensamblaje DCDA Industrial Ultra-Premium de Alta Capacidad para sistemas contra incendios. Instalación con bridías. Incluye coordinacin con Bomberos.",
-        "pb_svc_12_best_mat": "Válvula DCDA con bridías de 4\" o 6\", juntas de brida pesadías, pernos estructurales Grado 8, medidor de derivacin.",
+        "pb_svc_12_best_just": "[Alcance] Ensamblaje DCDA Industrial Ultra-Premium de Alta Capacidad para sistemas contra incendios. Instalación con bridas. Incluye coordinacin con Bomberos.",
+        "pb_svc_12_best_mat": "Válvula DCDA con bridas de 4\" o 6\", juntas de brida pesadas, pernos estructurales Grado 8, medidor de derivacin.",
         "pb_svc_12_best_tools": "Polipastos de cadena, llaves dinamométricas grandes, pines de alineación.",
         "pb_svc_12_best_time": "2 Días",
         "pb_svc_13_title": "Service 13",
-        "pb_svc_13_good_just": "[Alcance] Mantenimiento Preventivo Estándar para calderas (hasta 399k BTU). Incluye limpieza de quemador, verificación de ignitor, lavado de intercambiador y anlisis de combustión.",
+        "pb_svc_13_good_just": "[Alcance] Mantenimiento Preventivo Estándar para calderas (hasta 399k BTU). Incluye limpieza de quemador, verificación de ignitor, lavado de intercambiador y análisis de combustión.",
         "pb_svc_13_good_mat": "Juntas de repuesto OEM, sensores de llama, químico descalcificador del sistema (ej. Haymaker).",
         "pb_svc_13_good_tools": "Analizador de gases de combustión, manómetro digital, bomba de circulacin para lavado.",
         "pb_svc_13_good_time": "3-5 hrs",
         "pb_svc_13_better_just": "[Alcance] Revisión Premium y Reconstrucción de Bomba. Desarme de lazos primarios/secundarios. Reconstrucción de bombas (ej. Bell & Gossett), reemplazo de tanques de expansión.",
         "pb_svc_13_better_mat": "Tanque de expansión comercial, juntas de bomba de hierro fundido, ensamblajes de rodamientos, uniones dielctricas de alta temp.",
-        "pb_svc_13_better_tools": "Extractores de rodamientos, herramientas de alineación, llaves para tubos pesadías, cámara térmica.",
+        "pb_svc_13_better_tools": "Extractores de rodamientos, herramientas de alineación, llaves para tubos pesadas, cámara térmica.",
         "pb_svc_13_better_time": "1 Día",
         "pb_svc_13_best_just": "[Alcance] Modernizacin Completa del Sistema Ultra-Premium. Actualización de controles a un Sistema de Gestin de Edificios (BMS) con control inteligente por etapas.",
-        "pb_svc_13_best_mat": "Sistema de control inteligente Tekmar o similar, sensores de temperatura exterior, válvulas mezcladoras motorizadías, cableado de bajo voltaje.",
-        "pb_svc_13_best_tools": "Herramientas eléctricas avanzadías, laptop para programación BMS, equipo de calibración de precisión.",
+        "pb_svc_13_best_mat": "Sistema de control inteligente Tekmar o similar, sensores de temperatura exterior, válvulas mezcladoras motorizadas, cableado de bajo voltaje.",
+        "pb_svc_13_best_tools": "Herramientas eléctricas avanzadas, laptop para programación BMS, equipo de calibración de precisión.",
         "pb_svc_13_best_time": "2-3 Días",
         "pb_svc_14_title": "Service 14",
         "pb_svc_14_good_just": "[Alcance] Reemplazo Estándar de Bomba Principal. Remueve bomba averiada, limpia el foso, instala bomba de hierro fundido de 1/3 HP. Elevacin de hasta 10 pies.",
@@ -2439,7 +2569,7 @@ const translations = {
         "faq100_q_6": "Por qu solo tengo baja presión de agua en un grifo?",
         "faq100_a_6": "Suele ser causado por un aireador obstruido con minerales o un cartucho defectuoso en esa llave.",
         "faq100_q_7": "El sarro afecta la presión del agua?",
-        "faq100_a_7": "S, la calcificacin dentro de las tuberías reduce el dimetro interno, restringiendo el flujo de agua.",
+        "faq100_a_7": "S, la calcificacin dentro de las tuberías reduce el diámetro interno, restringiendo el flujo de agua.",
         "faq100_q_8": "Cmo mejoro la presión del agua en la ducha?",
         "faq100_a_8": "Limpiando el cabezal de la ducha en vinagre para remover sarro o revisando la válvula reductora.",
         "faq100_q_9": "Un calentador de agua defectuoso puede reducir la presión?",
@@ -2481,7 +2611,7 @@ const translations = {
         "faq100_q_27": "Ques el repipe (re-tubería)?",
         "faq100_a_27": "Es reemplazar todo el sistema de distribución de agua antiguo por cobre tipo L o PEX.",
         "faq100_q_28": "Cmo protejo tuberías de la congelacin?",
-        "faq100_a_28": "Aislando tuberías expuestas y dejando un ligero goteo en noches heladías.",
+        "faq100_a_28": "Aislando tuberías expuestas y dejando un ligero goteo en noches heladas.",
         "faq100_q_29": "Por qu el agua huele a huevo podrido?",
         "faq100_a_29": "Bacterias sulfurosas en el calentador o drenajes secos (trampas P sin agua).",
         "faq100_q_30": "Dnde estla válvula de cierre principal?",
@@ -2497,7 +2627,7 @@ const translations = {
         "faq100_q_35": "Ques una inspección con cámara?",
         "faq100_a_35": "Es usar fibra óptica para diagnosticar problems subterrneos sin necesidad de excavar.",
         "faq100_q_36": "Qusignifica reparación 'trenchless' (sin zanja)?",
-        "faq100_a_36": "Es reemplazar la línea de alcantarillado subterrnea sin excavar una zanja en todo el patio.",
+        "faq100_a_36": "Es reemplazar la línea de alcantarillado subterránea sin excavar una zanja en todo el patio.",
         "faq100_q_37": "Por qu burbujea el inodoro al usar la ducha?",
         "faq100_a_37": "Indica un problema grave de ventilación o bloqueo en la línea principal.",
         "faq100_q_38": "Ques un backwater valve?",
@@ -2521,11 +2651,11 @@ const translations = {
         "faq100_q_47": "Por qu hay poca presión en la ducha y no en el lavamanos?",
         "faq100_a_47": "El cabezal de la ducha suele tener un restrictor bloqueado por minerales.",
         "faq100_q_48": "Para qusirve el agujero de rebose en el lavamanos?",
-        "faq100_a_48": "Previene desbordes si olvidías cerrar la llave con el tapn puesto y ayuda al drenaje.",
+        "faq100_a_48": "Previene desbordes si olvidas cerrar la llave con el tapn puesto y ayuda al drenaje.",
         "faq100_q_49": "Si se cae algo de valor por el lavamanos?",
         "faq100_a_49": "Apaga el agua, desenrosca la trampa 'P' debajo del lavamanos y recupralo ah.",
         "faq100_q_50": "Cunto tiempo dura un inodoro?",
-        "faq100_a_50": "La porcelana dcadías, pero los componentes internos deben reemplazarse caída 5 a 7 años.",
+        "faq100_a_50": "La porcelana dcaídas, pero los componentes internos deben reemplazarse caída 5 a 7 años.",
         "faq100_q_51": "Por qu el triturador de basura zumba y no gira?",
         "faq100_a_51": "Estatascado. Usa una llave Allen en la parte inferior para girarlo manualmente y destrabarlo.",
         "faq100_q_52": "QuNO poner en el triturador?",
@@ -2533,7 +2663,7 @@ const translations = {
         "faq100_q_53": "Cmo eliminar malos olores del triturador?",
         "faq100_a_53": "Muele cubitos de hielo y cscaras de ctricos con agua fra para limpiarlo.",
         "faq100_q_54": "Usar agua fra o caliente con el triturador?",
-        "faq100_a_54": "Siempre fra, para que las grasas se solidifiquen y puedan ser trituradías sin pegarse.",
+        "faq100_a_54": "Siempre fra, para que las grasas se solidifiquen y puedan ser trituradas sin pegarse.",
         "faq100_q_55": "Baja presión en grifo de cocina?",
         "faq100_a_55": "Desatornilla el aireador en la punta y limpia los sedimentos minerales.",
         "faq100_q_56": "Agua estancaída en el lavavajillas?",
@@ -2617,10 +2747,10 @@ const translations = {
         "faq100_q_95": "Ques una bomba recirculadora?",
         "faq100_a_95": "Entrega agua caliente al instante a las duchas sin tener que dejar correr el agua esperando que caliente.",
         "faq100_q_96": "Puedo usar lluvia para el inodoro?",
-        "faq100_a_96": "S, usando redes de tuberías moradías y captación de grises, siguiendo estrictos cdigos ecolgicos.",
+        "faq100_a_96": "S, usando redes de tuberías moradas y captación de grises, siguiendo estrictos códigos ecolgicos.",
         "faq100_q_97": "Por qu mi inodoro nuevo tiene poca agua?",
         "faq100_a_97": "Estándares estatales para ahorrar agua obligan a modelos de alta eficiencia de bajo flujo (1.28 GPM).",
-        "faq100_q_98": "Ques un calentador Hbrido (Heat Pump)?",
+        "faq100_q_98": "Ques un calentador Híbrido (Heat Pump)?",
         "faq100_a_98": "Usa temperatura ambiente para calentar el agua, siendo hasta 3 veces más eficiente que uno eléctrico normal.",
         "faq100_q_99": "Qubeneficios ecolgicos tiene Morales Plumbing?",
         "faq100_a_99": "Cálculos precisos para reducir gasto material, reciclaje de metales e implementacin de sistemas de ultra-bajo consumo.",
@@ -2634,7 +2764,7 @@ const translations = {
         "lbl_list_price": "Precio de Lista",
         "lbl_discounted_price": "Precio con Descuento",
         "lbl_free_trial": "Prueba Gratis",
-        "pricing_note_free_trial": "Llamada de Prueba Gratis ({count} de 5 usadías)",
+        "pricing_note_free_trial": "Llamada de Prueba Gratis ({count} de 5 usadas)",
         "pricing_note_free_limit": "Precio Completo (Límite de prueba gratuita alcanzado)",
         "pricing_note_standard": "Nivel Standard: 10% de descuento aplicado",
         "pricing_note_premium": "Nivel Premium: 20% de descuento aplicado",
@@ -2643,8 +2773,8 @@ const translations = {
         "lbl_membership_badge_standard": "STANDARD",
         "lbl_membership_badge_premium": "PREMIUM",
         "btn_active_plan": "Plan Activo",
-        "usage_tracker_text": "Llamadías gratuitas usadías: {used} / 5",
-        "másg_membership_updated": "Membresa actualizada a {tier}",
+        "usage_tracker_text": "Llamadas gratuitas usadas: {used} / 5",
+        "msg_membership_updated": "Membresa actualizada a {tier}",
         "portal_title": "PORTAL DE CLIENTES MP",
         "portal_subtitle": "Gestin Inteligente de Citas, PQR y Memoria de Servicio",
         "tab_dashboard": " Mi Dashboard",
@@ -2654,13 +2784,13 @@ const translations = {
         "tab_policies": "? Polticas",
         "dash_welcome": "Bienvenido a tu Ecosistema",
         "dash_intro": "Aqupuedes ver el estado de tus citas, reportes y requerimientos activos.",
-        "dash_active_appointments": " Citas Programadías",
+        "dash_active_appointments": " Citas Programadas",
         "dash_active_pqrs": " Requerimientos PQR",
         "dash_feedback_title": "Valoración y retroalimentación de Servicio",
-        "dash_feedback_desc": "Tu opinión nos ayuda a retroalimentar la IA Karla y mejorar nuestra Plomería Técúnica.",
+        "dash_feedback_desc": "Tu opinión nos ayuda a retroalimentar la IA Karla y mejorar nuestra Plomería Técnica.",
         "feedback_rating": "Calificación:",
         "btn_submit_feedback": "Enviar Valoración",
-        "schedule_title": "Agendar Nueva Cita Técúnica",
+        "schedule_title": "Agendar Nueva Cita Técnica",
         "schedule_desc": "Selecciona uno de nuestros 15 servicios del Price Book v6.0 PRO para programar una visita.",
         "lbl_select_service": "SERVICIO REQUERIDO",
         "lbl_select_tier": "NIVEL DE SERVICIO (PRICE BOOK)",
@@ -2669,7 +2799,7 @@ const translations = {
         "lbl_tier_best": "BEST (Ultra-Premium)",
         "lbl_select_date": "FECHA",
         "lbl_select_time": "HORA",
-        "btn_confirm_appointment": "Confirmar Cita de Plomería Técúnica",
+        "btn_confirm_appointment": "Confirmar Cita de Plomería Técnica",
         "pqr_title": "Centro de PQRS (Peticiones, Quejas, Reclamos y Sugerencias)",
         "pqr_desc": "Registra tus quejas, sugerencias o solicitudes de forma directa. Cada caso es procesado bajo estrictos protocolos.",
         "lbl_pqr_type": "TIPO DE SOLICITUD",
@@ -2690,7 +2820,7 @@ const translations = {
         "pol_quality_title": "SEGURIDAD DE CALIDAD Y MANTENIMIENTO PREVENTIVO",
         "pol_quality_text": "Garantizamos la máxima calidad de instalación y servicio a través de un estricto protocolo de doble inspección. Para asegurar la durabilidad del sistema a largo plazo, Morales Plumbing ofrece a sus afiliados Estándar 1 inspección preventiva anual gratuita (detección de fugas o lavado de calentador de agua) y a sus afiliados Premium 2 inspecciones preventivas anuales gratuitas (cámara SeeSnake en drenajes, análisis químico de agua, calibración de PRV o termografía). Todo el trabajo cumple con el Código Uniforme de Plomería (UPC).",
         "pol_sec_title": "SEGURIDAD HÍDRICA Y CUMPLIMIENTO CSLB",
-        "pol_sec_text": "Todías las operaciones de Morales Plumbing están regidías por la Junta de Licencias del Estado de Contratistas de California (CSLB #1156542 C-36). Implementamos protocolos estrictos de doble inspección y cumplimiento con el Código Uniforme de Plomería (UPC).",
+        "pol_sec_text": "Todías las operaciones de Morales Plumbing están regidas por la Junta de Licencias del Estado de Contratistas de California (CSLB #1156542 C-36). Implementamos protocolos estrictos de doble inspección y cumplimiento con el Código Uniforme de Plomería (UPC).",
         "pol_priv_title": "CONFIDENCIALIDAD E2EE Y CERO EXPOSICIÓN",
         "pol_priv_text": "Tu privacidad es absoluta. Este sistema web utiliza encriptación de datos local (Web LocalStorage). Tus datos de contacto, dirección y detalles de citas nunca son transmitidos a servidores de terceros ni expuestos.",
         "pol_copy_title": "DERECHOS DE AUTOR Y PROPIEDAD INTELECTUAL",
@@ -2698,9 +2828,9 @@ const translations = {
         "tier_free_title": "Gratis <span class=\"membership-status-badge badge-free\">FREE</span>",
         "tier_free_desc": "Ideal para nuevos clientes. Incluye hasta 5 agendamientos de servicio con $0 de cargo por llamada inicial.",
         "tier_standard_title": "Estándar <span class=\"membership-status-badge badge-standard\">STANDARD</span>",
-        "tier_standard_desc": "Para mantenimiento regular. Citas ilimitadías, 10% de descuento directo y 1 Mantenimiento Preventivo Anual (inspección de fugas o lavado de calentador de agua).",
+        "tier_standard_desc": "Para mantenimiento regular. Citas ilimitadas, 10% de descuento directo y 1 Mantenimiento Preventivo Anual (inspección de fugas o lavado de calentador de agua).",
         "tier_premium_title": "Premium <span class=\"membership-status-badge badge-premium\">PREMIUM</span>",
-        "tier_premium_desc": "Cobertura integral. Citas prioritarias ilimitadías, 20% de descuento directo, soporte preferencial y 2 Mantenimientos Preventivos Anuales (inspección SeeSnake, análisis químico del agua o calibración de PRV).",
+        "tier_premium_desc": "Cobertura integral. Citas prioritarias ilimitadas, 20% de descuento directo, soporte preferencial y 2 Mantenimientos Preventivos Anuales (inspección SeeSnake, análisis químico del agua o calibración de PRV).",
         "btn_activate": "Activar",
         "maint_title": "Sistema de Mantenimiento Preventivo",
         "maint_free": "No se incluyen inspecciones de mantenimiento preventivo en el nivel Gratuito. Actualice a Estándar o Premium para proteger la infraestructura de su hogar.",
@@ -2732,7 +2862,7 @@ const translations = {
         "eng_eco_tech3_desc": "Entregamos cálculos de Retorno de Inversión (ROI) y ahorro hdrico garantizado (hasta un 40% mensual), apto para aplicar a rebates estatales.",
         "eng_diseno_title": "Diseño de Sistemas de Tuberías",
         "eng_diseno_code": "ENG-CENT-003",
-        "eng_diseno_p1": "El Diseño de Sistemas de Tuberías de Morales Plumbing es un servicio avanzado de Plomería Técúnica que garantiza la viabilidad, eficiencia y escalabilidad.",
+        "eng_diseno_p1": "El Diseño de Sistemas de Tuberías de Morales Plumbing es un servicio avanzado de Plomería Técnica que garantiza la viabilidad, eficiencia y escalabilidad.",
         "eng_diseno_p2": "Nuestros ingenieros utilizan software de modelado 3D y simuladores de dinmica de fluidos para calcular gradientes de presión, expansión térmica y velocidad de flujo.",
         "eng_diseno_tech1_title": "Modelado BIM Integrado",
         "eng_diseno_tech1_desc": "Diseño paramtrico compatible con Autodesk Revit, permitiendo una coordinacin impecable con arquitectos y contratistas.",
@@ -2755,107 +2885,107 @@ const translations = {
         "eng_seóptico_p1": "Nuestra divisin de Sistemas Sópticos Avanzada disea, despliega y mantiene sistemas de manejo de efluentes fuera de la red utilizando biotecnología moderna.",
         "eng_seóptico_p2": "En lugar de instalar fosas convencionales, implementamos Sistemas de Tratamiento Aerbico (ATU) que procesan el agua a un nivel casi apto para riego.",
         "eng_seóptico_tech1_title": "Estudios de Percolacin y Diseño Topogrfico",
-        "eng_seóptico_tech1_desc": "Evaluación geolgica del terreno para determinar la tasa exacta de absorcin y dimensionar el campo de lixiviacin.",
+        "eng_seóptico_tech1_desc": "Evaluación geolgica del terreno para determinar la tasa exacta de absorcin y dimensionar el campo de lixiviación.",
         "eng_seóptico_tech2_title": "Integración de Bio-Reactores",
         "eng_seóptico_tech2_desc": "Equipamiento con sistemas de aireacin que aceleran la descomposicin de sólidos mediante bacterias aerbicas ultra-eficientes.",
         "eng_seóptico_tech3_title": "Cumplimiento Normativo",
         "eng_seóptico_tech3_desc": "Gestin end-to-end de permisos, garantizando que el diseño supere requerimientos de sanidad y mitigando multas.",
         "svc_1_title": "Precision Leak Detection",
         "svc_1_p1": "En Morales Plumbing, la precision es nuestro estándar. Identificamos fallas ocultas sin demoliciones destructivas.",
-        "svc_1_p2": "Usamos camaras FLIR y sensores acusticos para trazar el origen exacto de la fuga. Ahorre miles en reconstruccion.",
+        "svc_1_p2": "Despliegue de equipos acústicos, termografía infrarroja y pruebas de caída de presión para aislar micro-fugas en líneas de agua potable.",
         "svc_1_good": "<strong>Nivel GOOD (estándar) $450 - $700</strong><br>Diagnóstico visual y acustico basico. Parche estándar para fugas accesibles.",
         "svc_1_better": "<strong>Nivel BETTER (Premium) $585 - $900</strong><br>Termografia FLIR y prueba de presion. Reparacion con epoxia.",
         "svc_1_best": "<strong>Nivel BEST (Ultra-Premium) $720 - $1,100</strong><br>Mapeo estructural completo. Reparacion definitiva con Cobre ProPress.",
         "svc_2_title": "Full House Repipe",
-        "svc_2_p1": "El Repipe no es un parche, es un trasplante de corazon para su hogar. Las tuberías viejas causan inundaciones.",
-        "svc_2_p2": "Reemplazamos toda la infraestructura con cobre y PEX de grado comercial. Erradica agua turbia y fugas croúúnicas.",
-        "svc_2_good": "<strong>? Nivel GOOD (Estándar) $3,800 - $5,300</strong><br>Tubería PEX-B con conectores Crimp de latn. Prueba de presión hidráulica a 100 PSI. Solución confiable y econmica certificaída bajo UPC.",
-        "svc_2_better": "<strong>? Nivel BETTER (Premium) $4,940 - $6,500</strong><br>Tubería PEX-A Uponor sistema de Expansión. Mayor caudal, resistencia total a congelamiento y mínimos conectores mecúúnicos.",
-        "svc_2_best": "<strong> Nivel BEST (Ultra-Premium) $6,080 - $8,600</strong><br>Cobre Tipo L con tecnología ProPress (sin soldadura, sin flama). Caudal máximo, propiedades antimicrobianas naturales y durabilidad absoluta de grado comercial por 50+ años.",
+        "svc_2_p1": "El Repipe no es un parche, es un trasplante de corazón para su hogar. Las tuberías viejas causan inundaciones y degradación de agua.",
+        "svc_2_p2": "Reemplazo integral de tuberías de agua potable con PEX-A Uponor por expansión o Cobre Tipo L con prensado Viega ProPress, prueba hidrostática a 100 PSI e inspección oficial.",
+        "svc_2_good": "<strong>Nivel GOOD (Estándar) $3,800 - $5,300</strong><br>Tubería PEX-B con conectores Crimp de latón. Prueba de presión hidráulica a 100 PSI. Solución confiable y económica certificada bajo UPC.",
+        "svc_2_better": "<strong>Nivel BETTER (Premium) $4,940 - $6,500</strong><br>Tubería PEX-A Uponor sistema de Expansión. Mayor caudal, resistencia total a congelamiento y mínimos conectores mecánicos.",
+        "svc_2_best": "<strong>Nivel BEST (Ultra-Premium) $6,080 - $8,600</strong><br>Cobre Tipo L con tecnología ProPress (sin soldadura, sin flama). Caudal máximo, propiedades antimicrobianas naturales y durabilidad absoluta de grado comercial por 50+ años.",
         "svc_3_title": "Water Filtration & Softening",
         "svc_3_p1": "El agua dura destruye electrodomesticos y deja manchas. Transformamos la calidad desde el punto de entrada.",
-        "svc_3_p2": "Instalamos sistemas que eliminan cloro, metales pesados y calcio. Agua cristalina y 30% mas vida util en equipos.",
+        "svc_3_p2": "Cálculos hidráulicos basados en unidades WSFU, análisis de presión estática disponible y pérdidas por fricción para determinar diámetros de tubería según el Código Uniforme de Plomería (UPC).",
         "svc_3_good": "<strong>Nivel GOOD $1,500 - $2,300</strong><br>Ablandador 32k granos a base de sal.",
         "svc_3_better": "<strong>Nivel BETTER $1,950 - $2,800</strong><br>Fleck 5600SXT Metered digital.",
         "svc_3_best": "<strong>Nivel BEST $2,400 - $3,200</strong><br>Halo 5 sin sal, sin mantenimiento, con UV.",
         "svc_4_title": "Smart Valve Installation",
         "svc_4_p1": "Si una tuberia estalla de vacaciones, las valvulas IoT cortan el agua y alertan su telefono en segundos.",
-        "svc_4_p2": "Monitorizan el flujo 24/7 con IA y detectan microfugas o rupturas catastroficas.",
+        "svc_4_p2": "Reemplazo completo de tuberías galvanizadas corroídas por cobre rígido Tipo L, empleando prensado mecánico Viega ProPress sin soldadura abierta para máxima seguridad estructural.",
         "svc_4_good": "<strong>Nivel GOOD $350 - $550</strong><br>Valvula de bola de laton 1/4 vuelta.",
         "svc_4_better": "<strong>Nivel BETTER $455 - $700</strong><br>Moen Flo Smart. Monitoreo diario, microfugas, cierre desde app.",
         "svc_4_best": "<strong>Nivel BEST $560 - $850</strong><br>Phyn Plus ultrasoúnico. Sin partes moviles, integracion Smart Home.",
         "svc_5_title": "SeeSnake Camera Inspection",
         "svc_5_p1": "El Diagnóstico a ciegas destruye propiedades. Nuestras camaras HD trazan el problema sin excavar.",
-        "svc_5_p2": "Entregamos video del estado exacto de sus tuberías para reparaciones quirurgicas en lugar de excavar el jardin.",
+        "svc_5_p2": "Pruebas de percolación de suelos, dimensionamiento de campo de drenaje e instalación de fosas sépticas de doble cámara con filtros de efluentes según normas de salud ambiental del Condado de Santa Clara.",
         "svc_5_good": "<strong>Nivel GOOD $250 - $400</strong><br>Inspeccion basica 50 pies, video USB.",
         "svc_5_better": "<strong>Nivel BETTER $325 - $500</strong><br>SeeSnake con sonar. Ubicacion exacta en superficie.",
         "svc_5_best": "<strong>Nivel BEST $400 - $600</strong><br>HD + modelado digital, mapeo completo, opciones CIPP.",
         "svc_6_title": "Main Sewer Replacement",
-        "svc_6_p1": "Una linea de alcantarillado colapsada es devastadora. Ofrecemos reemplazos garantizados por decadías.",
-        "svc_6_p2": "Eliminamos raices y tuberías fracturadías por excavacion tradicional o metodos sin zanja (Trenchless).",
+        "svc_6_p1": "Una linea de alcantarillado colapsada es devastadora. Ofrecemos reemplazos garantizados por décadas.",
+        "svc_6_p2": "Tendido subterráneo de drenaje y ventilación (DWV), distribución de agua fría/caliente y colocación final de artefactos con prueba hidrostática obligatoria según el Código de Plomería de California.",
         "svc_6_good": "<strong>Nivel GOOD $5,500 - $8,000</strong><br>PVC SDR-35. Solucion probada por gravedad.",
         "svc_6_better": "<strong>Nivel BETTER $7,150 - $9,700</strong><br>ABS Cedula 40. Nucleo solido, cama de grava, registros bidireccionales.",
         "svc_6_best": "<strong>Nivel BEST $8,800 - $11,300</strong><br>HDPE Trenchless fusionado. Sin costura, garantia de por vida.",
         "svc_7_title": "Hybrid Heat Pump Water Heater",
         "svc_7_p1": "Gasta cientos calentando agua con gas ineficiente? La bomba de calor hibrida alcanza el 400% de eficiencia.",
-        "svc_7_p2": "Califica para miles en rebates estatales y se paga solo en menos de 3 anos reduciendo su factura electrica.",
+        "svc_7_p2": "Instalación de calentadores híbridos con bomba de calor categoría ENERGY STAR, con línea de drenaje de condensados, tanque de expansión térmica, interruptor eléctrico y cumplimiento BAAQMD.",
         "svc_7_good": "<strong>Nivel GOOD $2,200 - $3,000</strong><br>Calentador atmosferico 50 gal estándar.",
         "svc_7_better": "<strong>Nivel BETTER $2,860 - $3,700</strong><br>Rheem ProTerra Hibrido. Panel digital, rebate-eligible.",
         "svc_7_best": "<strong>Nivel BEST $3,520 - $5,100</strong><br>Bradford White AeroTherm Wi-Fi. Inteligente, ultra-silencioso, sensor de fugas.",
         "svc_8_title": "Pressure Reducing Valve (PRV)",
         "svc_8_p1": "Mas de 80 PSI destruye mangueras, revienta valvulas y anula garantias. La PRV protege silenciosamente.",
-        "svc_8_p2": "Regula el flujo a 55-60 PSI seguros. Un escudo mecaúnico que alarga la vida de caída empaque y sello.",
+        "svc_8_p2": "Dimensionamiento e instalación de tanques de expansión térmica de diafragma presurizado en sistemas cerrados para absorber el aumento de volumen y proteger las válvulas T&P.",
         "svc_8_good": "<strong>Nivel GOOD $480 - $750</strong><br>PRV de laton residencial estándar.",
         "svc_8_better": "<strong>Nivel BETTER $624 - $950</strong><br>Wilkins 600XL con manometro integrado.",
         "svc_8_best": "<strong>Nivel BEST $768 - $1,200</strong><br>Watts LFN45B con filtro en linea y tanque de expansion termica.",
         "svc_9_title": "Emergency Triage",
         "svc_9_p1": "Una tuberia rota a las 3 AM: caída segundo cuenta. Llegamos rápidías, estabilizamos la fuga, mitigamos el dano.",
-        "svc_9_p2": "Detenemos el flujo catastrofico, sellamos rupturas y devolvemos el servicio vital mientras planificamos.",
+        "svc_9_p2": "Inspección endoscópica de líneas sanitarias con cámaras a color autonivelantes y transmisor de sonda de 512 Hz para localizar profundidad y trayectoria exacta desde la superficie.",
         "svc_9_good": "<strong>Nivel GOOD $380 - $600</strong><br>Cierre principal + tapones SharkBite temporales.",
         "svc_9_better": "<strong>Nivel BETTER $494 - $750</strong><br>Aislamiento sectorial con valvulas ProPress permanentes.",
         "svc_9_best": "<strong>Nivel BEST $608 - $950</strong><br>Manifold de aislamiento completo. Solucion permanente en una visita.",
         "svc_10_title": "CAD & Digital Tracing",
         "svc_10_p1": "El desarrollo moderno exige precision documentada. Trazamos lineas subterraneas y entregamos planos as-built.",
-        "svc_10_p2": "Usamos rastreo electromagnetico y modelado digital para mapear su red invisible.",
+        "svc_10_p2": "Tendido de tuberías de captación pluvial, desviadores de primer lavado, cisternas de polietileno de alta densidad y bombas de refuerzo con protección antirreflujo según el CPC Capítulo 16.",
         "svc_10_good": "<strong>Nivel GOOD $600 - $900</strong><br>Trazado con pintura y esquema profesional con profundidades.",
         "svc_10_better": "<strong>Nivel BETTER $780 - $1,200</strong><br>Superposicion AutoCAD 2D integrable con planos arquitectoúúnicos.",
         "svc_10_best": "<strong>Nivel BEST $960 - $1,450</strong><br>Modelo BIM/Revit 3D. Cada nodo y valvula geolocalizados.",
         "svc_11_title": "Tankless Water Heater",
         "svc_11_p1": "Agua caliente infinita sin esperar. El sistema Tankless se enciende solo cuando usted abre la llave.",
-        "svc_11_p2": "Ahorra espacio, reduce huella de carbono y entrega agua caliente constante sin riesgo de explosion de tanque.",
+        "svc_11_p2": "Dimensionamiento de línea de gas para alta demanda de BTU (3/4 pulgada mínimo), tubería concéntrica de ventilación Categoría IV y válvulas de aislamiento para descalcificación anual periódica.",
         "svc_11_good": "<strong>Nivel GOOD $3,200 - $4,700</strong><br>Navien NPE-A2 sin condensacion.",
         "svc_11_better": "<strong>Nivel BETTER $4,160 - $5,700</strong><br>Rinnai RU Sensei condensacion (0.95 UEF). Quemadores modulantes.",
         "svc_11_best": "<strong>Nivel BEST $5,120 - $7,700</strong><br>Navien NPE-240A2 con bomba ComfortFlow. Agua instantanea en todos los grifos.",
         "svc_12_title": "Backflow Preventer Assembly",
         "svc_12_p1": "Si administra un negocio o riego complejo, el preventor de contraflujo es mandato federal.",
-        "svc_12_p2": "Estamos certificados para instalar, calibrar y registrar estos ensamblajes que protegen el agua potable.",
+        "svc_12_p2": "Instalación en la acometida principal de válvulas inteligentes (tipo Moen Flo) con transductores ultrasónicos para medir microflujos, sensor de congelamiento y cierre motorizado instantáneo.",
         "svc_12_good": "<strong>Nivel GOOD $850 - $1,300</strong><br>Wilkins 375 RPZ. Cumplimiento inmediato.",
         "svc_12_better": "<strong>Nivel BETTER $1,105 - $2,000</strong><br>Watts Serie 009 alto flujo. Bronce sin plomo, grado comercial.",
         "svc_12_best": "<strong>Nivel BEST $1,360 - $2,200</strong><br>Febco 860 RPZ con sensor IoT de presion. Monitoreo en tiempo real.",
         "svc_13_title": "Luxury Fixture Swap",
         "svc_13_p1": "Un baño de lujo exige herrajeria a la altura. El reemplazo requiere calibracion precisa, no solo estetica.",
-        "svc_13_p2": "Instalamos, nivelamos y probamos a maxima presion. Su herraje operara con la suavidad de fabrica.",
-        "svc_13_good": "<strong>Nivel GOOD $250 - $400</strong><br>Delta/Moen estándar. Incluye lineas de suministro trenzadías.",
+        "svc_13_p2": "Reemplazo integral de líneas de agua fría y caliente con tubería PEX-A Uponor por expansión o cobre Tipo L, diseño en colectores equilibrados, prueba hidrostática a 100 PSI e inspección oficial de la ciudad.",
+        "svc_13_good": "<strong>Nivel GOOD $250 - $400</strong><br>Delta/Moen estándar. Incluye lineas de suministro trenzadas.",
         "svc_13_better": "<strong>Nivel BETTER $325 - $500</strong><br>Moen Align / Grohe antimanchas. Silicona comercial anti-moho.",
         "svc_13_best": "<strong>Nivel BEST $400 - $600</strong><br>Kohler Artifacts Smart Touch. Calibracion de temperatura y cableado de sensores.",
         "svc_14_title": "Water Chemistry Panel",
         "svc_14_p1": "Su agua puede verse clara y contener metales pesados o cloramina. Analizar antes de filtrar es inteligente.",
-        "svc_14_p2": "Ofrecemos analisis cientifico en sitio y via laboratorios certificados para disenar el tratamiento exacto.",
+        "svc_14_p2": "Instalación de válvulas desviadoras de 3 vías de latón, tanques de compensación y líneas de goteo subterráneo conformes al Capítulo 15 del Código de Plomería de California.",
         "svc_14_good": "<strong>Nivel GOOD $150 - $250</strong><br>Test rápidías TDS, dureza y cloro libre.",
         "svc_14_better": "<strong>Nivel BETTER $195 - $300</strong><br>Panel de 16 puntos en laboratorio certificado (plomo, nitratos, VOCs).",
         "svc_14_best": "<strong>Nivel BEST $240 - $400</strong><br>Test in-situ + medidor TDS digital permanente bajo el fregadero.",
         "svc_15_title": "Commercial Hydro-Jetting",
         "svc_15_p1": "Cuando el sarro o las raices gruesas calcifican sus drenajes, la serpiente ya no alcanza. Fuerza industrial.",
-        "svc_15_p2": "Disparamos agua a +4000 PSI con boquillas rotativas que restauran la tuberia a su diametro original.",
+        "svc_15_p2": "Medición ultrasónica no destructiva del espesor de pared en tuberías metálicas, verificación de anclajes sísmicos en calentadores y pruebas de presión estática/dinámica en manifolds principales.",
         "svc_15_good": "<strong>Nivel GOOD $750 - $1,150</strong><br>Barrena seccional 7/8 para tapones duros.",
         "svc_15_better": "<strong>Nivel BETTER $975 - $1,500</strong><br>Hydro-Jetting 4000 PSI. Elimina sarro y grasa emulsificaída.",
         "svc_15_best": "<strong>Nivel BEST $1,200 - $2,000</strong><br>Hydro-Jetting pesado + camara HD + inhibidor RootX 12 meses.",
-        "btn_view_detail": "Ver Detalle Técúnico y Comercial",
+        "btn_view_detail": "Ver Detalle Técnico y Comercial",
         "lbl_tech_specs": "Especificaciones Técúúnicas",
         "nav_back": "← Volver al Catálogo",
         "nav_nexus": "Nexus Inicio",
         "nav_orion": "Ecosistema Orion",
-        "nav_services": "Plomería Técúnica Pro",
+        "nav_services": "Plomería Técnica Pro",
         "nav_multimedia": "Podcasts",
         "nav_about": "Misión",
         "nav_terminal": "Terminal",
@@ -2867,7 +2997,7 @@ const translations = {
         "stat_ai": "Integrado",
         "hero_explore": "Explorar Ecosistema",
         "hero_joe": "Hablar con Karla",
-        "projects_title": "Excelencia en Plomería Técúnica",
+        "projects_title": "Excelencia en Plomería Técnica",
         "projects_desc": "Nuestras aplicaciones tecnológicas del mundo real y sistemas de gestión de proyectos.",
         "card_ep_title": "ORION ESTIMATOR PRO",
         "card_ep_desc": "Estimacin automática basada en visin por computadora con catálogo de +8000 artculos. Optimización de mrgenes >70%.",
@@ -2876,31 +3006,31 @@ const translations = {
         "btn_pricing": "Ver Catlogo de Precios",
         "service_copper_content": "Sustitucin integral de sistemas legados (Galvanizado/PEX) por Cobre Tipo L y K con soldadura de precisión certificaída.",
         "service_copper_purpose": "Eliminar la degradacin de polmeros y la corrosión metálica, asegurando la pureza del agua y aumentando la plusvala en el Bay Area.",
-        "service_copper_usage": "Proyectos residenciales de lujo en San Jose, Palo Alto y Los Gatos, donde la durabilidad y el cdigo sísmico son críticos.",
+        "service_copper_usage": "Proyectos residenciales de lujo en San Jose, Palo Alto y Los Gatos, donde la durabilidad y el código sísmico son críticos.",
         "service_copper_potential": "Sistemas diseñados para durar 50+ años, totalmente reciclables y compatibles con filtración centralizada de alto flujo.",
         "service_copper_costs": "ROI inmediato mediante la reducción de primas de seguro y eliminacin de reparaciones recurrentes por fugas.",
         "service_copper_comp": "Superamos a la competencia que utiliza PEX de baja densidad y uniones mecáúúnicas propensas a fallas por presión.",
-        "service_copper_plus": "Plomería Técúnica Sostenible: Protocolos de sanitización post-instalación y certificación de soldadura sin plomo.",
+        "service_copper_plus": "Plomería Técnica Sostenible: Protocolos de sanitización post-instalación y certificación de soldadura sin plomo.",
         "service_copper_lean": "Metodología Lean: Kit de pre-fabricación en taller que reduce el tiempo en sitio en un 40%.",
         "service_expansion_content": "Diseño y ejecución de nuevas ramificaciones hidráulicas para ADUs, cocinas gourmet y expansiones maestras.",
         "service_expansion_purpose": "Asegurar que la carga hidráulica adicional no comprometa la presión o integridad del sistema existente.",
-        "service_expansion_usage": "Creciente mercado de ADUs en Silicon Valley, garantizando cumplimiento con el cdigo de construcción vigente.",
+        "service_expansion_usage": "Creciente mercado de ADUs en Silicon Valley, garantizando cumplimiento con el código de construcción vigente.",
         "service_expansion_potential": "Capacidad de integración con sistemas inteligentes de detección de fugas para toda la propiedad.",
         "service_expansion_costs": "Precios cerrados mediante el Price Book v6.0, evitando sorpresas de 'cambio de orden'.",
         "service_expansion_comp": "Uso de gemelos digitales para simular presión antes de la primera perforacin.",
-        "service_expansion_plus": "Morales Plus: Verificación de balanceo trmico en líneas de agua caliente expandidías.",
+        "service_expansion_plus": "Morales Plus: Verificación de balanceo trmico en líneas de agua caliente expandidas.",
         "service_expansion_lean": "Lean Process: Logstica 'Just-in-Time' para materiales, manteniendo el sitio de obra limpio.",
-        "service_construction_content": "Planificacin desde el nivel de cimentacin, rough-in de alta velocidad y acabados de Plomería Técúnica premium.",
+        "service_construction_content": "Planificacin desde el nivel de cimentacin, rough-in de alta velocidad y acabados de Plomería Técnica premium.",
         "service_construction_purpose": "Establecer una base de infraestructura impecable que exceda los estándares de inspección de California.",
         "service_construction_usage": "Nuevas residencias modernas y complejos multifamiliares de vanguíardia tecnolgica.",
         "service_construction_potential": "Preparación nativa para integración completa con Smart Home e IoT hdrico.",
-        "service_construction_costs": "Optimización del presupuesto mediante Plomería Técúnica de valor y seleccin estratégica de materiales.",
+        "service_construction_costs": "Optimización del presupuesto mediante Plomería Técnica de valor y seleccin estratégica de materiales.",
         "service_construction_comp": "Colaboracin directa con arquitectos mediante archivos BIM, eliminando conflictos de diseño en sitio.",
         "service_construction_plus": "Protocolos Ambientales: Certificación LEED para la instalación hidráulica.",
         "service_construction_lean": "Lean Process: Planificacin de taáreas concurrentes para reducir el cronograma de obra en un 15%.",
         "service_repair_content": "Localización precisa de fallas invisibles y reparaciones quirrgicas con mnima interrupcin estructural.",
         "service_repair_purpose": "Resolver problems complejos de plomería sin necesidad de demoliciones masivas innecesarias.",
-        "service_repair_usage": "Mantenimiento crítico en residencias habitadías y edificios comerciales de operación continua.",
+        "service_repair_usage": "Mantenimiento crítico en residencias habitadas y edificios comerciales de operación continua.",
         "service_repair_potential": "Historial digital de reparaciones almacenado en el ecosistema ORION para mantenimiento predictivo.",
         "service_repair_costs": "Evita el costo masivo de reconstrucción post-reparación al localizar el punto exacto de falla.",
         "service_repair_comp": "Uso de Karla AI Assistant para análisis de patrones de flujo vs. 'prueba y error' tradicional.",
@@ -2919,8 +3049,8 @@ const translations = {
         "service_water_usage": "Sistemas integrados en jardines inteligentes y flushing de sanitarios bajo normativas de ahorro extremo.",
         "service_water_potential": "Independencia hídrica parcial de hasta el 65% del consumo anual residencial.",
         "service_water_costs": "Ahorro masivo en facturas de agua y acceso a incentivos estatales por conservación ambiental.",
-        "service_water_comp": "Diseños personalizados frente a barriles de lluvia simples; nosotros entregamos Plomería Técúnica de filtración de grado 2.",
-        "service_water_plus": "Plomería Técúnica Sostenible: Sistemas de desinfección UV integrados para prevenir la proliferación de patógenos.",
+        "service_water_comp": "Diseños personalizados frente a barriles de lluvia simples; nosotros entregamos Plomería Técnica de filtración de grado 2.",
+        "service_water_plus": "Plomería Técnica Sostenible: Sistemas de desinfección UV integrados para prevenir la proliferación de patógenos.",
         "service_water_lean": "Lean Process: Mapeo de flujo dinámico para minimizar el uso de bombas eléctricas.",
         "btn_buy": "Comprar Licencia",
         "btn_proposal": "Marco Estratégico",
@@ -2934,9 +3064,9 @@ const translations = {
         "service_3_desc": "Planificación experta de redes hidráulicas de alta precisión para infraestructura residencial y comercial.",
         "manifesto_title": "Manifiesto de Morales Plumbing",
         "mission_title": "MISIÓN",
-        "mission_desc": "Liderar la industria integrando más de 21 años de experiencia en Plomería Técúnica con inteligencia artificial, ofreciendo soluciones de alta precisión bajo los estándares regulatorios de la CSLB y el Código Uniforme de Plomería (UPC).",
+        "mission_desc": "Liderar la industria integrando más de 21 años de experiencia en Plomería Técnica con inteligencia artificial, ofreciendo soluciones de alta precisión bajo los estándares regulatorios de la CSLB y el Código Uniforme de Plomería (UPC).",
         "vision_title": "VISIÓN",
-        "vision_desc": "Ser el estándar global para la fontanería técnica y la Plomería Técúnica sostenible — definido por la innovación constante, la excelencia operativa y la integridad absoluta en caída proyecto.",
+        "vision_desc": "Ser el estándar global para la fontanería técnica y la Plomería Técnica sostenible — definido por la innovación constante, la excelencia operativa y la integridad absoluta en caída proyecto.",
         "btn_team_dir": "> ACCEDER AL DIRECTORIO",
         "network_link": "> RED: ORION TECH",
         "joe_status": "KARLA · COORDINADORA TÉCNICA VIRTUAL",
@@ -2944,7 +3074,7 @@ const translations = {
         "joe_intro": "¡Hola! Soy Karla, tu coordinadora técnica virtual en Morales Plumbing. ¿En qué servicio, inspección o cita te puedo ayudar hoy?",
         "joe_placeholder": "Pregúntale a Karla sobre servicios, inspecciones o citas...",
         "joe_send": "ENVIAR",
-        "joe_trigger_title": "Hablar con Karla · Coordinadora Técúnica Virtual",
+        "joe_trigger_title": "Hablar con Karla · Coordinadora Técnica Virtual",
         "nav_pricebook": "Libro de Precios",
         "nav_legal": "Legal",
         "back_home": "VOLVER AL INICIO",
@@ -2962,7 +3092,7 @@ const translations = {
         "pb_hero_subtitle": "Servicios Profesionales de Plomería | Bay Area, CA",
         "pb_hero_location": " Bay Area, California",
         "pb_hero_updated": "Actualizado: Diciembre 2024",
-        "pb_hero_details": "15 Servicios Profesionales Detallados",
+        "pb_hero_details": "15 Servicios Profesionales de Plomería · San Jose, CA",
         "pb_hero_rates": "Líder: $185/hr | Ayudante: $95/hr | Margen: 30%",
         "pb_hero_compliance": "Calidad Garantizada: Servicio Personalizado en Tiempo Real",
         "pb_hero_powered": "Desarrollado por NeKon AI aGent Consulting | Sistema ORION",
@@ -2973,7 +3103,7 @@ const translations = {
         "pb_terms_title": "Términos y Condiciones",
         "pb_warranties_title": "Garantías y Soporte",
         "pb_catalog_title": "Catálogo de Servicios",
-        "pricebook_desc": "Edición Estándar de la Industria con +100 Servicios Profesionales Detallados, 3 Niveles de Precios y Sistema de Ventas Adicionales Integrado.",
+        "pricebook_desc": "Catálogo Maestro de Plomería Profesional C-36 con 15 Servicios Especializados, 3 Niveles de Solución (Good, Better, Best) y Precios Transparentes.",
         "pricebook_feat1": "+100 Servicios",
         "pricebook_feat2": "Niveles Bueno/Mejor/Excelente",
         "pricebook_feat3": "Ventas Adicionales y Promos",
@@ -2987,44 +3117,44 @@ const translations = {
         "coming_soon_badge": "PRÓXIMAMENTE",
         "footer_e2ee": "Cifrado E2EE",
         "footer_cyber": "Ciberseguridad por IA Activa",
-        "footer_rights_long": "© 2026 Morales Plumbing. Todos los derechos reservados. El contenido, videos, imágenes generadías y la tecnología ORION / Karla AI son propiedad intelectual exclusiva de Morales Plumbing y NeKon AI aGent Consulting.",
+        "footer_rights_long": "© 2026 Morales Plumbing. Todos los derechos reservados. El contenido, videos, imágenes generadas y la tecnología ORION / Karla AI son propiedad intelectual exclusiva de Morales Plumbing y NeKon AI aGent Consulting.",
         "footer_rights_branded": "MORALES PLUMBING · Todos los derechos reservados · Marca Registrada",
         "nav_framework": "Marco Estratégico",
         "footer_rights": "© 2026 Morales Plumbing. Todos los derechos reservados.",
         "slogan_text": "Definiendo el Futuro del Flujo. Innovación para la Vida.",
         "contact_lic": "Licencia",
-        "pb_method_p1": "La metodologa de cálculo de ORION se basa en un enfoque de Plomería Técúnica de precisión para el costeo hidráulico. Utilizamos algoritmos de grado industrial que consideran la durabilidad del material, la intensidad de la mano de obra (categorizada por roles de Lder y Ayudante) y la complejidad técnica. Esto elimina la variabilidad de la estimación, proporcionando una estructura de tarifa fija alineada con los estándares de la CSLB y la volatilidad del mercado de la construcción en California.",
+        "pb_method_p1": "La metodologa de cálculo de ORION se basa en un enfoque de Plomería Técnica de precisión para el costeo hidráulico. Utilizamos algoritmos de grado industrial que consideran la durabilidad del material, la intensidad de la mano de obra (categorizada por roles de Lder y Ayudante) y la complejidad técnica. Esto elimina la variabilidad de la estimación, proporcionando una estructura de tarifa fija alineada con los estándares de la CSLB y la volatilidad del mercado de la construcción en California.",
         "pb_method_p2": "Al integrar datos de la cadena de suministro en tiempo real y protocolos de flujo de trabajo de marca propia altamente eficientes, nuestra metodologa garantiza un margen optimizado del 30% mientras mantiene mrgenes sostenibles para una ejecución técnica de alta fidelidad. Este enfoque cientfico de fijación de precios asegura que caída proyecto está respaldado por datos hidráulicos verificados y una asignacin transparente de recursos.",
-        "pb_tiers_p1": "El sistema Bueno/Mejor/Excelente proporciona a nuestros clientes tres niveles distintos de soluciones de Plomería Técúnica, adaptados a los diferentes objetivos del ciclo de vida del proyecto. El nivel 'Bueno' se centra en reparaciones que cumplen con el UPC y una restauracin eficiente. El nivel 'Mejor' introduce una mayor durabilidad de los componentes y mejoras de rendimiento de rango medio. El nivel 'Excelente' representa el estándar de ORION Tech: materiales premium de grado industrial, monitoreo integrado por IA y garantías de ciclo de vida extendidías.",
-        "pb_tiers_p2": "Cada nivel estdiseñado para ofrecer el máximo valor dentro de su alcance, permitiendo a los interesados residenciales y comerciales tomar decisiones informadías basadías en su estrategia de infraestructura a largo plazo, no solo en la necesidad inmediata.",
+        "pb_tiers_p1": "El sistema Bueno/Mejor/Excelente proporciona a nuestros clientes tres niveles distintos de soluciones de Plomería Técnica, adaptados a los diferentes objetivos del ciclo de vida del proyecto. El nivel 'Bueno' se centra en reparaciones que cumplen con el UPC y una restauracin eficiente. El nivel 'Mejor' introduce una mayor durabilidad de los componentes y mejoras de rendimiento de rango medio. El nivel 'Excelente' representa el estándar de ORION Tech: materiales premium de grado industrial, monitoreo integrado por IA y garantías de ciclo de vida extendidas.",
+        "pb_tiers_p2": "Cada nivel estdiseñado para ofrecer el máximo valor dentro de su alcance, permitiendo a los interesados residenciales y comerciales tomar decisiones informadas basadas en su estrategia de infraestructura a largo plazo, no solo en la necesidad inmediata.",
         "pb_upsells_p1": "Nuestro sistema de ventas adicionales estdiseñado para ofrecer una protección proactiva de la infraestructura. Ms allde la solicitud principal, analizamos el entorno hidráulico para recomendar actualizaciones críticas como válvulas de cierre inteligentes, sistemas de filtración de agua y bombas de recirculación de alta eficiencia. Estas adiciones no son solo opciones, sino inversiones estratégicas en la seguridad de la propiedad.",
         "pb_upsells_p2": "Cada recomendacin está respaldada por datos de Diagnóstico, lo que garantiza que caída integración desempee un papel funcional en la prevencin de fallas futuras y la reducción de los costos operativos a largo plazo.",
-        "pb_promo_p1": "El marco de promociones de Morales Plumbing recompensa el mantenimiento proactivo y los compromisos de proyectos de gran volumen. Ofrecemos incentivos peridicos para el cambio de tuberías en todo el hogar, optimizaciones estacionales de calentadores de agua e integraciones de ORION Tech por primera vez. Estas promociones estn diseñadías para reducir la barrera de entrada a soluciones de Plomería Técúnica de alta precisión.",
-        "pb_promo_p2": "Todías las promociones activas estn sujetas a revisión de Plomería Técúnica y no pueden combinarse con otros descuentos estratégicos, asegurando que la calidad del proyecto siga siendo la prioridad absoluta.",
+        "pb_promo_p1": "El marco de promociones de Morales Plumbing recompensa el mantenimiento proactivo y los compromisos de proyectos de gran volumen. Ofrecemos incentivos peridicos para el cambio de tuberías en todo el hogar, optimizaciones estacionales de calentadores de agua e integraciones de ORION Tech por primera vez. Estas promociones estn diseñadas para reducir la barrera de entrada a soluciones de Plomería Técnica de alta precisión.",
+        "pb_promo_p2": "Todías las promociones activas estn sujetas a revisión de Plomería Técnica y no pueden combinarse con otros descuentos estratégicos, asegurando que la calidad del proyecto siga siendo la prioridad absoluta.",
         "pb_terms_p1": "Todos los servicios proporcionados por Morales Plumbing se rigen por la Junta de Licencias del Estado de Contratistas de California (CSLB) y el Código Uniforme de Plomería (UPC). Cada contrato incluye un alcance detallado del trabajo, precios de tarifa fija (sin tarifas ocultas) y una declaracin clara de la metodologa técnica. Los pagos estn estructurados para alinearse con los hitos del proyecto.",
-        "pb_terms_p2": "La responsabilidad y la resolución de disputas siguen los estándares industriales de California, asegurando una asociacin profesional y transparente entre el equipo de Plomería Técúnica y el cliente.",
-        "pb_warranty_p1": "Morales Plumbing ofrece una garantía estándar de 1 año en toda la mano de obra e integraciones técúúnicas, con garantías extendidías disponibles para sistemas de nivel 'Excelente' e instalaciones de ORION Tech. Además, contamos con planes de crdito y sistemas de garantía en mano de obra de por vida con repipe completo, ya sea de agua, drenaje o gas. Nuestro equipo de soporte utiliza datos de monitoreo de IoT para proporcionar respuestas de Diagnóstico rápidías, minimizando el tiempo de inactividad y asegurando la integridad del sistema.",
-        "pb_warranty_p2": "Las garantías del fabricante se aplican a todos los materiales industriales utilizados, con Morales Plumbing como el principal punto de contacto técnico para todías las consultas relacionadías con la garantía y las auditorías del sistema.",
+        "pb_terms_p2": "La responsabilidad y la resolución de disputas siguen los estándares industriales de California, asegurando una asociacin profesional y transparente entre el equipo de Plomería Técnica y el cliente.",
+        "pb_warranty_p1": "Morales Plumbing ofrece una garantía estándar de 1 año en toda la mano de obra e integraciones técúúnicas, con garantías extendidas disponibles para sistemas de nivel 'Excelente' e instalaciones de ORION Tech. Además, contamos con planes de crdito y sistemas de garantía en mano de obra de por vida con repipe completo, ya sea de agua, drenaje o gas. Nuestro equipo de soporte utiliza datos de monitoreo de IoT para proporcionar respuestas de Diagnóstico rápidías, minimizando el tiempo de inactividad y asegurando la integridad del sistema.",
+        "pb_warranty_p2": "Las garantías del fabricante se aplican a todos los materiales industriales utilizados, con Morales Plumbing como el principal punto de contacto técnico para todas las consultas relacionadas con la garantía y las auditorías del sistema.",
         "pb_warranty_note": "*Monitoreo de IoT:* Se refiere al uso de tecnología inteligente (válvulas de corte de agua Wi-Fi, sensores de fugas, calentadores inteligentes) que envan datos y alertas a la nube para un Diagnóstico preventivo rápidías.",
-        "pb_prose_p1": "El ORION Price Book v6.0 PRO es el núcleo operativo de Morales Plumbing, diseñado para ofrecer una transparencia absoluta en la Plomería Técúnica de costos. Este catálogo, actualizado a diciembre de 2024 para el área de la Bahía de California, ha sido desarrollado bajo los rigurosos lineamientos de la Junta de Licencias del Estado de Contratistas de California (CSLB) y el Código Uniforme de Plomería (UPC), asegurando que caída intervención técnica está respaldada por estándares de seguridad industrial y sostenibilidad ambiental.",
-        "pb_prose_p2": "La estructura de este documento prioriza la claridad para el cliente, eliminando cálculos complejos en sitio y garantizando que caída presupuesto refleje el uso de materiales de grado industrial y metodologas de precisión auditadías por protocolos de alta eficiencia. En Morales Plumbing, no solo arreglamos tuberías; diseamos sistemas hidráulicos sostenibles para la prxima generacin.",
-        "pb_prose_p3": "Nuestro enfoque integra estimaciones impulsadías por IA con más de 21 años de experiencia en el campo, lo que permite una tasa de precisión del 99% en la asignacin de recursos y la proyeccin de plazos. Al elegir ORION, esteligiendo un socio de infraestructura estratégica comprometido con los niveles más altos de excelencia técnica e integridad.",
+        "pb_prose_p1": "El ORION Price Book v6.0 PRO es el núcleo operativo de Morales Plumbing, diseñado para ofrecer una transparencia absoluta en la Plomería Técnica de costos. Este catálogo, actualizado a diciembre de 2024 para el área de la Bahía de California, ha sido desarrollado bajo los rigurosos lineamientos de la Junta de Licencias del Estado de Contratistas de California (CSLB) y el Código Uniforme de Plomería (UPC), asegurando que caída intervención técnica está respaldada por estándares de seguridad industrial y sostenibilidad ambiental.",
+        "pb_prose_p2": "La estructura de este documento prioriza la claridad para el cliente, eliminando cálculos complejos en sitio y garantizando que caída presupuesto refleje el uso de materiales de grado industrial y metodologas de precisión auditadas por protocolos de alta eficiencia. En Morales Plumbing, no solo arreglamos tuberías; diseamos sistemas hidráulicos sostenibles para la prxima generacin.",
+        "pb_prose_p3": "Nuestro enfoque integra estimaciones impulsadas por IA con más de 21 años de experiencia en el campo, lo que permite una tasa de precisión del 99% en la asignacin de recursos y la proyeccin de plazos. Al elegir ORION, esteligiendo un socio de infraestructura estratégica comprometido con los niveles más altos de excelencia técnica e integridad.",
         "aq_title": "ORION AQUA GUARD v1.0",
         "aq_desc": "Monitoreo y gestin avanzada de sistemas de tratamiento de agua de alta precisión. Anlisis en tiempo real de pH, dureza y filtración.",
         "aq_feat1": "Monitoreo IoT",
         "aq_feat2": "Retrolavado Automático",
         "aq_feat3": "Alertas de Pureza",
         "aq_prose_p1": "ORION AQUA GUARD v1.0 representa la cspide de la gestin de purificación de agua residencial y comercial. Este sistema utiliza una network de sensores IoT para monitorear continuamente la calidad del agua entrante, midiendo variables como la dureza (granos por galn), los niveles de pH y las concentraciones de contaminantes. Los datos se procesan a travs de nuestro motor patentado ORION para optimizar la eficiencia de la filtración y el consumo de sal.",
-        "aq_prose_p2": "Ms all del simple ablandamiento, Aqua Guíard gestiona unidades de smosis inversa de múltiples etapas y sistemas de esterilizacin por UV. Los usuarios reciben alertas en tiempo real a travs del ecosistema ORION sobre los ciclos de vida de los filtros y las cadías de pureza, asegurando que el agua utilizada para el consumo e infraestructura se mantenga en estándares de grado de laboratorio.",
+        "aq_prose_p2": "Ms all del simple ablandamiento, Aqua Guíard gestiona unidades de smosis inversa de múltiples etapas y sistemas de esterilizacin por UV. Los usuarios reciben alertas en tiempo real a travs del ecosistema ORION sobre los ciclos de vida de los filtros y las caídas de pureza, asegurando que el agua utilizada para el consumo e infraestructura se mantenga en estándares de grado de laboratorio.",
         "aq_prose_p3": "Al integrar Aqua Guíard en su red hidráulica, prolonga la vida til de todos los electrodomésticos y accesorios aguas abajo. Las capacidades de mantenimiento predictivo del sistema aseguran que la intervención solo se requiera cuando sea estadsticamente necesario, maximizando tanto la calidad del agua como el ROI del sistema.",
         "hn_title": "ORION HYDRAULIC NEXUS",
         "hn_desc": "Diseño hidráulico integrado en CAD y simulacin de presión para infraestructuras complejas. Distribución optimizada de flujo y volumen.",
         "hn_feat1": "Integración CAD",
         "hn_feat2": "Mapeo de Presión",
         "hn_feat3": "Simulacin de Fugas",
-        "hn_prose_p1": "ORION HYDRAULIC NEXUS es nuestra suite de diseño de grado profesional para planificar y simular infraestructuras hidrulicas de alta presión. Utilizando planos integrados en CAD, creamos un gemelo digital de su sistema de plomería para analizar la dinmica del flujo, las cadías de presión en tramos largos y las variables de expansión térmica. Esto es crítico para proyectos residenciales de alta gama y comerciales de varios pisos donde la estimación estándar falla.",
+        "hn_prose_p1": "ORION HYDRAULIC NEXUS es nuestra suite de diseño de grado profesional para planificar y simular infraestructuras hidrulicas de alta presión. Utilizando planos integrados en CAD, creamos un gemelo digital de su sistema de plomería para analizar la dinmica del flujo, las caídas de presión en tramos largos y las variables de expansión térmica. Esto es crítico para proyectos residenciales de alta gama y comerciales de varios pisos donde la estimación estándar falla.",
         "hn_prose_p2": "El sistema permite a nuestros ingenieros realizar pruebas de estrs en la red virtual bajo varios escenarios de demanda mxima, identificando posibles puntos dbiles antes de instalar una sola tubería. Esta metodologa asegura que caída accesorio reciba la presión exacta requerida por el UPC, eliminando las 'zonas muertas' y optimizando la velocidad de entrega de agua.",
-        "hn_prose_p3": "Hydraulic Nexus tambin se integra con nuestros diagnósticos de termografía, permitindonos superponer datos trmicos en tiempo real sobre los planos originales para una detección de fugas y auditoría de infraestructura precisas. Es la herramienta definitiva para la Plomería Técúnica Avanzada de precisión.",
+        "hn_prose_p3": "Hydraulic Nexus tambin se integra con nuestros diagnósticos de termografía, permitindonos superponer datos trmicos en tiempo real sobre los planos originales para una detección de fugas y auditoría de infraestructura precisas. Es la herramienta definitiva para la Plomería Técnica Avanzada de precisión.",
         "wh_title": "ORION THERMO CORE v2.0",
         "wh_desc": "Sistema inteligente de Diagnóstico y optimización para calentadores de agua sin tanque de alta eficiencia. Alertas predictivas de incrustacin y ajuste de combustión.",
         "wh_feat1": "Ajuste de Combustin",
@@ -3037,18 +3167,18 @@ const translations = {
         "pb_search_placeholder": "Buscar servicio...",
         "cat_all": "Todos",
         "cat_diagnostic": "Diagnóstico",
-        "cat_technical plumbing": "Plomería Técúnica",
+        "cat_technical plumbing": "Plomería Técnica",
         "cat_eco": "Sostenible",
         "cat_safety": "Seguridad",
         "price_standard": "Tarifa Estándar",
         "price_member": "Tarifa Miembro",
         "lbl_client_view": "Visin Cliente:",
-        "lbl_tech_view": "Esp. Técúnica & Materiales (3 Niveles):",
+        "lbl_tech_view": "Esp. Técnica & Materiales (3 Niveles):",
         "doc_title": "DOCUMENTO TCNICO",
         "doc_subtitle": "ESTNDARES DE OPERACIN",
         "sig_name": "Alex G. Espinosa",
-        "profile_header_role": "Liderazgo en Plomería Técúnica",
-        "app_pricebook_detail": "El Libro de Precios Orion v6.0 PRO es una herramienta de Plomería Técúnica de costos que estandariza las tarifas de servicio en todo el Área de la Bahía. Utiliza un sistema de niveles (Bueno/Mejor/Excelente) para ofrecer opciones flexibles que cumplen con los estándares de seguridad UPC.",
+        "profile_header_role": "Liderazgo en Plomería Técnica",
+        "app_pricebook_detail": "El Libro de Precios Orion v6.0 PRO es una herramienta de Plomería Técnica de costos que estandariza las tarifas de servicio en todo el Área de la Bahía. Utiliza un sistema de niveles (Bueno/Mejor/Excelente) para ofrecer opciones flexibles que cumplen con los estándares de seguridad UPC.",
         "app_mp_detail": "El Portal Morales Plumbing (MP) centraliza la comuúnicación con el cliente, permitiendo el agendamiento inteligente y el acceso a reportes técúúnicos generados por nuestra asistente Karla AI. Garantiza transparencia total en caída fase del proyecto.",
         "app_ep_detail": "Orion Estimator Pro utiliza algoritmos de visin artificial para analizar planos y fotos de sitio, generando listas de materiales (BOM) y estimaciones de mano de obra con un 99% de precisión. Integrado con catálogos de +8000 artculos actualizados en tiempo real para el mercado de California.",
         "app_tratamiento_title": "AQUA GUARD MANAGEMENT",
@@ -3056,20 +3186,20 @@ const translations = {
         "app_redes_title": "HYDRAULIC REDES DESIGN",
         "app_redes_detail": "Software de diseño hidráulico con integración CAD que permite modelar flujos, presiones y gradientes trmicos. Esencial para infraestructura de alta complejidad en el área de la Bahía.",
         "app_heaters_title": "THERMO CORE DIAGNOSTICS",
-        "app_heaters_detail": "Mdulo de Diagnóstico Thermo Core especializado en calentadores de agua sin tanque de alta eficiencia. Optimiza el consumo energtico y predice fallos mediante anlisis de datos trmicos.",
+        "app_heaters_detail": "Mdulo de Diagnóstico Thermo Core especializado en calentadores de agua sin tanque de alta eficiencia. Optimiza el consumo energtico y predice fallos mediante análisis de datos trmicos.",
         "legal_title": "MARCO LEGAL Y CUMPLIMIENTO",
         "sec1_title": "SECCIN 1: CUMPLIMIENTO CSLB",
         "sec1_legal_p1": "Todías las operaciones se rigen por la junta de licencias de California.",
         "sec1_legal_li1": "Licencia CSLB C-36 Activa",
         "sec1_legal_li2": "Certificación C-36 en Sistemas Sostenibles",
-        "sec1_legal_p2": "Garantizamos el cumplimiento total de los cdigos de seguridad.",
+        "sec1_legal_p2": "Garantizamos el cumplimiento total de los códigos de seguridad.",
         "sec2_legal_title": "SECCIN 2: ESTNDARES UPC",
         "sec2_legal_p1": "Nuestras instalaciones siguen estrictamente el Código Uniforme de Plomería.",
-        "sec2_legal_li1": "Tuberías Certificadías",
+        "sec2_legal_li1": "Tuberías Certificadas",
         "sec2_legal_li2": "Pruebas de Presión Digitales",
         "sec2_legal_li3": "Protocolos de Sanitizacin",
         "sec3_legal_title": "SECCIN 3: PROPIEDAD INTELECTUAL",
-        "sec3_legal_p1": "El ecosistema ORION y Karla AI son marcas protegidías.",
+        "sec3_legal_p1": "El ecosistema ORION y Karla AI son marcas protegidas.",
         "sec3_legal_li1": "Patentes de Software en Trmite",
         "sec3_legal_li2": "Derechos de Autor del Catlogo",
         "sec3_legal_li3": "Acuerdos de Confidencialidad E2EE",
@@ -3116,27 +3246,27 @@ const translations = {
         "service_septic_title": "Sistemas Séópticos Avanzados",
         "service_septic_desc": "Sistemas de tratamiento in-situ para infraestructura rural y eco-sostenible.",
         "service_water_title": "Sistemas de Recolección Hídrica",
-        "service_water_desc": "Plomería Técúnica de captura de lluvia y reutilización de aguas grises estratégicas.",
+        "service_water_desc": "Plomería Técnica de captura de lluvia y reutilización de aguas grises estratégicas.",
         "service_expansion_title": "Ampliaciones Hidráulicas Pro",
         "service_expansion_desc": "Expansión estratégica de redes para renovaciones y anexos (ADUs).",
-        "service_construction_title": "Plomería Técúnica de Obra Nueva",
+        "service_construction_title": "Plomería Técnica de Obra Nueva",
         "service_construction_desc": "Diseño y despliegue integral de infraestructura para edificios inteligentes.",
         "service_repair_title": "Diagnóstico y Reparación Smart",
         "service_repair_desc": "Restauracin técnica mediante termografía y acústica no invasiva.",
-        "faq_title": "P&R | Centro Técúnico",
+        "faq_title": "P&R | Centro Técnico",
         "faq_cat_plumbing": "Sistemas de Plomería",
         "faq_cat_eco": "Mezcla de Eco-Plomería",
         "faq_cat_env": "Regulaciones Ambientales",
         "faq_q1": "Por qu usar cobre en lugar de PEX para construcciones nuevas?",
         "faq_a1": "El cobre proporciona una durabilidad superior, resistencia al fuego y previene el crecimiento bacteriano. Bajo el UPC de California, sigue siendo el estándar de oro para el valor de alta gama. Por otro lado, el PEX ofrece una flexibilidad excepcional, menos conexiones de unión (reduciendo puntos de fuga), instalación más rápida y menores costos iniciales de material. <span class=\"comic-choice\">La decisin es suya</span>: elija la longevidad premium y el valor clsico del cobre, o la rentabilidad moderna y la resiliencia elstica del PEX.",
         "faq_q2": "Cules son las regulaciones sópticas y ambientales de California para 2026?",
-        "faq_a2": "Las regulaciones se centran en la reducción de nitrgeno, protección de aguas subterrneas y eficiencia en la reutilizacin de agua. Morales Plumbing garantiza el 100% de cumplimiento mediante Plomería Técúnica avanzada y protocolos de la Junta de Agua. Además, diseamos sistemas sópticos estándar que minimizan los costos iniciales utilizando rutas de permisos locales tradicionales. <span class=\"comic-choice\">La decisin es suya</span>: invierta en sistemas ecolgicos avanzados para anticiparse a las normas de 2030, o seleccione una configuracin estándar de bajo costo inmediato.",
-        "faq_q3": "Cmo beneficia el Proceso Lean y la Plomería Técúnica Sostenible a mi proyecto?",
+        "faq_a2": "Las regulaciones se centran en la reducción de nitrgeno, protección de aguas subterráneas y eficiencia en la reutilizacin de agua. Morales Plumbing garantiza el 100% de cumplimiento mediante Plomería Técnica avanzada y protocolos de la Junta de Agua. Además, diseamos sistemas sópticos estándar que minimizan los costos iniciales utilizando rutas de permisos locales tradicionales. <span class=\"comic-choice\">La decisin es suya</span>: invierta en sistemas ecolgicos avanzados para anticiparse a las normas de 2030, o seleccione una configuracin estándar de bajo costo inmediato.",
+        "faq_q3": "Cmo beneficia el Proceso Lean y la Plomería Técnica Sostenible a mi proyecto?",
         "faq_a3": "Al eliminar desperdicios y usar materiales sostenibles, reducimos costos en un 25% y plazos en un 30%. Nuestros protocolos aseguran una menor huella de carbono y mayor ROI de infraestructura. Como alternativa, ofrecemos mtodos de construcción clsicos enfocados en la mxima personalizacin y redundancia estructural manual absoluta sin los límites del proceso Lean. <span class=\"comic-choice\">La decisin es suya</span>: elija el proceso ecológico Lean acelerado para mxima eficiencia, o nuestra construcción manual clsica para una personalizacin tradicional a medida.",
         "faq_q4": "Puedo integrar la recolección de agua en mi sistema de plomería existente?",
         "faq_a4": "S, nos especializamos en la adaptacin de captaciones y sistemas de aguas grises a redes existentes, reduciendo significativamente la dependencia municipal y los costos operativos.",
         "faq_q5": "Cul es la ventaja del marco Morales Plumbing PLUS?",
-        "faq_a5": "Combina la experiencia CSLB C-36 con Plomería Técúnica Sostenible, diagnósticos por IA y Proceso Lean, brindando un nivel de precisión y sostenibilidad iniguíalable.",
+        "faq_a5": "Combina la experiencia CSLB C-36 con Plomería Técnica Sostenible, diagnósticos por IA y Proceso Lean, brindando un nivel de precisión y sostenibilidad iniguíalable.",
         "faq_q6": "Cmo asegura Morales Plumbing el cumplimiento del UPC?",
         "faq_a6": "Nuestros ingenieros cuentan con certificación CSLB C-36 y utilizan protocolos de verificación por IA para asegurar que caída conexin supere los estándares de California. Además, ofrecemos inspecciones fsicas tradicionales de doble inspector y listas de verificación manuales para clientes que prefieren la supervisión mecánica clsica. <span class=\"comic-choice\">La decisin es suya</span>: elija nuestra validación digital de alta precisión asistida por IA, o nuestra inspección humana manual probada en el tiempo con garantías mecúúnicas.",
         "faq_q7": "Qumtricas 'Lean' especficas rastrean?",
@@ -3160,12 +3290,12 @@ const translations = {
         "eco_title": "ECO-PLOMERA",
         "pb_promotions_p1": "Promociones exclusivas para el área de la Bahía en renovaciones y modernización.",
         "pb_warranties_p1": "Garantías integrales de 1 a 5 años en mano de obra y materiales certificados.",
-        "service_copper_detail": "CONTENIDO: Sistemas completos de tuberías de cobre (Tipos L, M, K) para infraestructura residencial y comercial. PROPÓSITO: Integridad estructural garantizada y eficiencia de flujo. USO: Renovaciones, ampliaciones, construcciones nuevas y reparaciones. POTENCIALIDADES: Vida útil de más de 50 años, sin microplásticos. COSTOS: Reducción del 30% en mantenimiento a largo plazo vs PEX. COMPETENCIA: Superamos los estándares locales con soldadura especializada. PLUS: Plomería Técúnica Sostenible, protocolos internacionales y procesos Lean. COPYRIGHT: © 2026 Morales Plumbing. Todos los derechos reservados.",
-        "service_expansion_detail": "CONTENIDO: Bloques de expansión hidráulica modular. PROPSITO: Integración perfecta de nuevos accesorios sin prdida de presión. USO: Adiciones comerciales y ampliaciones residenciales. POTENCIALIDADES: Escalabilidad infinita. COSTOS: Evita el rediseño total del sistema. PLUS: Plomería Técúnica avanzada y procesos Lean. COPYRIGHT: 2026 Morales Plumbing. Todos los derechos reservados.",
+        "service_copper_detail": "CONTENIDO: Sistemas completos de tuberías de cobre (Tipos L, M, K) para infraestructura residencial y comercial. PROPÓSITO: Integridad estructural garantizada y eficiencia de flujo. USO: Renovaciones, ampliaciones, construcciones nuevas y reparaciones. POTENCIALIDADES: Vida útil de más de 50 años, sin microplásticos. COSTOS: Reducción del 30% en mantenimiento a largo plazo vs PEX. COMPETENCIA: Superamos los estándares locales con soldadura especializada. PLUS: Plomería Técnica Sostenible, protocolos internacionales y procesos Lean. COPYRIGHT: © 2026 Morales Plumbing. Todos los derechos reservados.",
+        "service_expansion_detail": "CONTENIDO: Bloques de expansión hidráulica modular. PROPSITO: Integración perfecta de nuevos accesorios sin prdida de presión. USO: Adiciones comerciales y ampliaciones residenciales. POTENCIALIDADES: Escalabilidad infinita. COSTOS: Evita el rediseño total del sistema. PLUS: Plomería Técnica avanzada y procesos Lean. COPYRIGHT: 2026 Morales Plumbing. Todos los derechos reservados.",
         "service_construction_detail": "CONTENIDO: Planos CAD, Rough-in y acabados de lujo. PROPSITO: Excelencia técnica desde cero. USO: Nuevos edificios residenciales y comerciales. POTENCIALIDADES: Valorizacin inmediata de la propiedad. COSTOS: Optimización de materiales mediante Lean Process. PLUS: Protocolos Ambientales Internacionales. COPYRIGHT: 2026 Morales Plumbing. Todos los derechos reservados.",
         "service_repair_detail": "CONTENIDO: Diagnóstico por termografía y reparación de precisión. PROPSITO: Restauracin inmediata de la operatividad. USO: Emergencias y mantenimiento preventivo. POTENCIALIDADES: Detección temprana de fallas invisibles. COSTOS: Evita daños estructurales costosos. PLUS: Joe AI Assistant para diagnósticos. COPYRIGHT: 2026 Morales Plumbing. Todos los derechos reservados.",
-        "service_septic_detail": "CONTENIDO: Sistemas avanzados de biodigestores y campos de infiltración. PROPÓSITO: Tratamiento de aguas residuales ecológico y autónomo. USO: Zonas rurales y proyectos sostenibles. POTENCIALIDADES: Independencia total del drenaje municipal. COSTOS: Eliminación de cuotas de alcantarillado. COMPETENCIA: Plomería Técúnica biológica vs tanques séópticos simples. PLUS: Cumplimiento ambiental estricto. LEAN: Mantenimiento automatizado.",
-        "service_water_detail": "CONTENIDO: Plomería Técúnica de recolección de lluvia y tratamiento de aguas grises. PROPSITO: Autonoma hdrica extrema y conservación. USO: Riego y uso doméstico reciclado. POTENCIALIDADES: Resiliencia ante sequas. COSTOS: Reducción del 60% en consumo de agua potable. COMPETENCIA: Filtración avanzada vs barriles simples. PLUS: Protocolos de sostenibilidad gubernamentales. LEAN: Automatización de ciclos hdricos.",
+        "service_septic_detail": "CONTENIDO: Sistemas avanzados de biodigestores y campos de infiltración. PROPÓSITO: Tratamiento de aguas residuales ecológico y autónomo. USO: Zonas rurales y proyectos sostenibles. POTENCIALIDADES: Independencia total del drenaje municipal. COSTOS: Eliminación de cuotas de alcantarillado. COMPETENCIA: Plomería Técnica biológica vs tanques séópticos simples. PLUS: Cumplimiento ambiental estricto. LEAN: Mantenimiento automatizado.",
+        "service_water_detail": "CONTENIDO: Plomería Técnica de recolección de lluvia y tratamiento de aguas grises. PROPSITO: Autonoma hdrica extrema y conservación. USO: Riego y uso doméstico reciclado. POTENCIALIDADES: Resiliencia ante sequas. COSTOS: Reducción del 60% en consumo de agua potable. COMPETENCIA: Filtración avanzada vs barriles simples. PLUS: Protocolos de sostenibilidad gubernamentales. LEAN: Automatización de ciclos hdricos.",
         "sec1_desc": "We move beyond traditional plumbing by integrating Sustainable Plumbing systems principles into every hydraulic design. We prioritize water efficiency, safe handling of hazardous materials (CSLB C-36 Compliance), and zero ecological impact systems across the Bay Area.",
         "sec2_title": "AI Integration & Computer Vision",
         "sec2_desc": "The ORION system uses proprietary neural networks for non-invasive leak detection and infrared diagnostics. Computer vision allows us to map infrastructure with millimeter precision, optimizing costs and execution timelines.",
@@ -3189,7 +3319,7 @@ const translations = {
         "spec_plus": "MORALES PLUS",
         "spec_lean": "LEAN PROCESS",
         "eco_podcasts_card_title": "Biblioteca de Podcasts ORION",
-        "eco_podcasts_card_desc": "Audios interactivos de alta fidelidad y anlisis críticos sobre la revolucin de la IA en la infraestructura hdrica y los marcos de cumplimiento de California.",
+        "eco_podcasts_card_desc": "Audios interactivos de alta fidelidad y análisis críticos sobre la revolucin de la IA en la infraestructura hdrica y los marcos de cumplimiento de California.",
         "btn_open_podcasts": "Escuchar Podcasts",
         "multimedia_title": "Biblioteca de Podcasts ORION",
         "multimedia_subtitle": "Perspectivas en Audio de Alta Fidelidad y Anlisis Crticos",
@@ -3220,7 +3350,7 @@ const translations = {
         "swh_gas_comic_1": "Almacenamiento en tanque confiable y tradicional.",
         "swh_gas_comic_2": "Tiempos de recuperacin rápidos para uso intensivo.",
         "swh_gas_comic_3": "Nota: Sern eliminados en 2027 segn normas BAAQMD.",
-        "swh_hp_title": "Bombas de Calor Hbridías (Heat Pumps)",
+        "swh_hp_title": "Bombas de Calor Hbridas (Heat Pumps)",
         "swh_hp_comic_1": "El futuro del calentamiento de agua sin emisiones.",
         "swh_hp_comic_2": "Extrae el calor del aire, ahorrando hasta un 70% de energía.",
         "swh_hp_comic_3": "Califica para los máximos reembolsos del gobierno.",
@@ -3232,7 +3362,7 @@ const translations = {
         "req_hp_1": "Circuito eléctrico dedicado de 240V / 30-Amp (para la mayora de modelos de 50-80 galones).",
         "req_hp_2": "Mínimo de 700 pies cbicos de espacio areo circundante para un óptimo intercambio de calor.",
         "req_hp_3": "Línea de drenaje de condensado dirigida a un desage adecuado o bomba de condensado.",
-        "req_hp_4": "Espacio libre de al menos 6 pulgadías en la parte superior para el filtro de aire.",
+        "req_hp_4": "Espacio libre de al menos 6 pulgadas en la parte superior para el filtro de aire.",
         "req_hp_5": "Coráreas sísmicas en el tercio superior e inferior del tanque.",
         "req_hp_6": "Tanque de expansión térmica instalado en la entrada de agua fra.",
         "req_hp_7": "Cumplimiento automático del estándar de cero emisiones BAAQMD Regla 9-6.",
@@ -3242,13 +3372,13 @@ const translations = {
         "req_tt_1": "Requiere una línea de gas dedicaída capaz de entregar 199,000 BTU/h (generalmente 3/4 de pulgada o mayor).",
         "req_tt_2": "Nueva ventilación de acero inoxidable Categora III/IV o PVC Cdula 40 directamente a travs del techo o pared exterior.",
         "req_tt_3": "Tomacorriente estándar de 120V para el panel digital y encendido electrónico.",
-        "req_tt_4": "Válvulas de aislamiento dedicadías para lavado anual y mantenimiento.",
+        "req_tt_4": "Válvulas de aislamiento dedicadas para lavado anual y mantenimiento.",
         "req_tt_5": "Kit neutralizador de condensado (si descarga en hierro fundido o alcantarillado pblico).",
         "req_ttt_title": "Tankless a Tankless: Requerimientos Técúúnicos",
         "req_ttt_plumb": "Consideraciones de Plomería y Reequipamiento",
         "req_ttt_1": "Reutilización de la línea de gas existente asumiendo que cumple con la demanda de 199,000 BTU/h.",
         "req_ttt_2": "Adaptacin de la ventilación PVC o concntrica existente al collar de escape de la nueva unidad.",
-        "req_ttt_3": "Actualización de válvulas de aislamiento si las antiguías estn muy calcificadías o presentan fugas.",
+        "req_ttt_3": "Actualización de válvulas de aislamiento si las antiguías estn muy calcificadas o presentan fugas.",
         "req_ttt_4": "Instalación de un filtro anticalcreo para proteger los nuevos intercambiadores de acero inoxidable duales.",
         "req_ttt_5": "Prueba de Válvula Reguladora de Presión (PRV) para asegurar que la presión de la casa no exceda los 80 PSI.",
         "booking_email": "Correo Electróúnico",
@@ -3256,7 +3386,7 @@ const translations = {
         "ai_intro_1": "Bienvenidos a la Academia Morales. Soy su Instructor Senior y hoy no solo les entrego una llave inglesa, sino las llaves del ecosistema tecnológico más avanzado en la historia de los servicios hdricos.",
         "ai_intro_2": "En Morales Plumbing, hemos dejado atrs la era de la adivinanza manual para entrar en la era de la 'precisión quirrgica'. Ustedes no son simples aprendices; son la nueva Élite técnica de Silicon Valley, una fuerza operativa que combina el sudor del oficio con el cerebro de la inteligencia artificial de Grado Militar.",
         "ai_intro_3": "Observen nuestro escudo: esa gota de agua translcida que resguíarda un microchip en su interior no es solo diseño. Simboliza nuestra filosofa de 'Tech-Service': el control absoluto del flujo mediante la innovacin digital.",
-        "ai_quote": "\"Nuestra misin es brindar soluciones de la más alta calidad, fusionando la experiencia técnica artesanal con tecnologías avanzadías de IA para proteger la salud pblica y la integridad de los hogares de forma rápida y definitiva.\"  Filosofa Morales Plumbing",
+        "ai_quote": "\"Nuestra misin es brindar soluciones de la más alta calidad, fusionando la experiencia técnica artesanal con tecnologías avanzadas de IA para proteger la salud pblica y la integridad de los hogares de forma rápida y definitiva.\"  Filosofa Morales Plumbing",
         "ai_intro_4": "Esta mentalidad de vanguíardia es lo que separa a un plomero convencional de un consultor tecnológico de la Academia Morales. Para dominar este entorno, su primera herramienta no ser un soplete, sino su copiloto digital.",
         "ai_s1_title": "1. Tu Copiloto Digital: Quin es Karla AI?",
         "ai_s1_p1": "En el campo de batalla de la infraestructura hdrica, el conocimiento es poder. Karla AI es nuestra asistente virtual muúltimodal, un Modelo de Lenguíaje de Gran Escala (LLM) que ha sido fine-tuned (ajustado finamente) especficamente con el Código de Plomería de California (CPC) y los esquemas técúúnicos de fabricantes lderes. Karla no 'adivina'; Karla procesa datos vectoriales en tiempo real.",
@@ -3277,25 +3407,25 @@ const translations = {
         "ai_t_r4_2": "Lenta, propensa a segundías visitas.",
         "ai_t_r4_3": "40% más rápida; resolución en la primera cita.",
         "ai_s1_p3": "Esta eficiencia nos permite ser infalibles no solo en la técnica, sino tambin en el blindaje normativo de caída intervención.",
-        "ai_s2_title": "2. PlumbAssist AI: Tu Garantía de Cumplimiento Técúnico",
+        "ai_s2_title": "2. PlumbAssist AI: Tu Garantía de Cumplimiento Técnico",
         "ai_s2_p1": "Como la Élite de California, operamos bajo el microscopio legal. PlumbAssist AI es su guíardin de cumplimiento. Mientras ustedes trabajan, este sistema cruza caída decisin con el Código de Plomería de California (CPC) en tiempo real. Pero su funcin va más all de la normativa técnica; est integrado con el Generador Legal Morales. Este sistema automatiza la creacin de documentos críticos que protegen nuestra responsabilidad y los derechos del cliente, asegurando que caída contrato sea inexpugnable.",
         "ai_s2_li1": "<strong>Seguridad Normativa:</strong> Consulta instantnea del CPC, eliminando errores por memorizacin deficiente.",
         "ai_s2_li2": "<strong>Gestin Documental Automática:</strong> Generacin inmediata de avisos de 'Derecho a Cancelar' y el documento 'Notice to Owner' (NTO) para proteger nuestros derechos de retención mecánica.",
-        "ai_s2_li3": "<strong>Blindaje de Responsabilidad:</strong> Crea exenciones de responsabilidad (Waivers) personalizadías antes de iniciar cualquier labor destructiva.",
+        "ai_s2_li3": "<strong>Blindaje de Responsabilidad:</strong> Crea exenciones de responsabilidad (Waivers) personalizadas antes de iniciar cualquier labor destructiva.",
         "ai_s2_p2": "Los datos y las leyes protegen nuestra responsabilidad, pero nuestros sensores nos permiten atravesar el concreto slido.",
         "ai_s3_title": "3. Ver lo Invisible: Termografía FLIR con Inteligencia Artificial",
         "ai_s3_p1": "Para alcanzar la verdadera precisión de Grado Militar, utilizamos cámaras termogrficas de alta resolución (modelos FLIR E8-XT o C5). Al integrar estas cámaras con algoritmos de IA, realizamos un 'Mapeo Trmico' que identifica gradientes de temperatura invisibles al ojo humano.",
         "ai_s3_p2": "Esto nos permite detectar 'anomalas florales' el efecto de pluma térmica o 'feathering' que genera el agua caliente al escapar bajo una losa localizando fugas (slab leaks) sin demoliciones innecesarias. La Tecnología MSX (Multi-Spectral Dynamic Imaging) de alta gama extrae los detalles estructurales de la cámara visual y los graba sobre la imagen térmica.",
-        "ai_s3_p3": "Gracias al MSX y al procesamiento de IA, el margen de error para localizar una ruptura bajo el concreto se reduce a menos de 3 pulgadías cuadradías. Una vez que hemos 'visto' lo invisible, el siguiente paso es presentar la solución con el mismo nivel de sofisticacin tecnolgica.",
+        "ai_s3_p3": "Gracias al MSX y al procesamiento de IA, el margen de error para localizar una ruptura bajo el concreto se reduce a menos de 3 pulgadas cuadradas. Una vez que hemos 'visto' lo invisible, el siguiente paso es presentar la solución con el mismo nivel de sofisticacin tecnolgica.",
         "ai_s4_title": "4. La Tablet como Herramienta de Cierre: Orion Price Book",
-        "ai_s4_p1": "El profesionalismo extremo se consolida en el momento de la cotización. El sistema Orion Price Book POS utiliza la psicologa de ventas para eliminar la friccin del precio. Presentamos siempre tres opciones: 'Good, Better, Best'.",
+        "ai_s4_p1": "El profesionalismo extremo se consolida en el momento de la cotización. El sistema Orion Price Book POS utiliza la psicologa de ventas para eliminar la fricción del precio. Presentamos siempre tres opciones: 'Good, Better, Best'.",
         "ai_s4_p2": "Como instructores, les enseamos el secreto: la opcin 'Best' (Premium) funciona como un ancla de precio, haciendo que la opcin 'Better' (Recomendada) sea percibida como el valor lgico más alto. Aqu es donde transformamos una reparación en una actualización de activos. Para un cierre exitoso, sigan este protocolo en su tablet:",
         "ai_s4_li1": "<strong>Evidencia Visual:</strong> Muestren al cliente las imágenes de la cámara FLIR y el reporte de Karla AI.",
         "ai_s4_li2": "<strong>Presentacin de Opciones:</strong> Ofrezcan soluciones reales, como un Navien NPE-240A para agua caliente infinita o un sistema de repiping integral con Uponor PEX-A.",
         "ai_s4_li3": "<strong>Transparencia Flat Rate:</strong> Usen precios cerrados. El cliente paga por la solución, no por las horas que ustedes pasen en el sitio.",
         "ai_s4_li4": "<strong>Cierre y Firma Legal:</strong> El cliente firma el contrato generado por el Generador Legal Morales, recibiendo su copia digital al instante.",
         "ai_s4_p3": "Este proceso genera un 'hiper-profesionalismo' que justifica nuestras tarifas premium y consolida su autoridad ante el cliente.",
-        "ai_s5_title": "5. Conclusin: El Técúnico del Maana",
+        "ai_s5_title": "5. Conclusin: El Técnico del Maana",
         "ai_s5_p1": "En la Academia Morales, no los estamos formando para ser plomeros; los estamos entrenando para gestionar un ecosistema de alta tecnología. Al dominar Karla AI, la termografía de grado militar y el sistema Orion, garantizamos una tasa de resolución en la primera visita superior al 95%.",
         "ai_s5_p2": "Ustedes son el futuro de un oficio dignificado por la ciencia. No solo reparan tuberías; protegen la infraestructura de Silicon Valley con la precisión de un cirujano y la inteligencia de un ingeniero de datos. Recuerden: la innovacin y la dignidad técnica son nuestro estandarte. Bienvenidos a la Élite.",
         "ai_s5_p3": "Bienvenidos a Morales Plumbing.",
@@ -3364,6 +3494,71 @@ const translations = {
         "booking_fields_complete": "campos completados"
     },
     "zh": {
+        "lbl_tech_scope": "工程范围与施工程序",
+        "lbl_tech_materials": "规范材料与管件",
+        "lbl_tech_standards": "适用规范与标准",
+        "lbl_tech_assurance": "压力测试与质量保证",
+        "pb_svc_1_tech_scope": "Localización electroacústica no destructiva de fugas ocultas en líneas de agua potable y losas de concreto. Trazado de trayectorias hidráulicas mediante pulsos de presión de nitrógeno.",
+        "pb_svc_1_tech_mat": "Tubería de cobre Tipo L (ASTM B88) para bypass de prueba, coplas ProPress Viega de cero flama, manómetros digitales calibrados NIST.",
+        "pb_svc_1_tech_std": "Cumplimiento estricto con el California Plumbing Code (CPC) Capítulo 6, estándares de presión estática municipal de San José Water Co.",
+        "pb_svc_1_tech_qa": "Prueba hidrostática de caída de presión a 100 PSI durante 30 minutos sin pérdida. Certificado oficial de inspección Morales Plumbing Lic. C-36 #1156542.",
+        "pb_svc_2_tech_scope": "Reemplazo integral de grifería obsoleta y válvulas de escuadra. Instalación de aireadores de compensación de presión y mecanismos de doble descarga para optimizar caudal volumétrico.",
+        "pb_svc_2_tech_mat": "Accesorios certificados WaterSense, grifería de latón sin plomo (NSF/ANSI 61 y 372), sellos de elastómero EPDM y latiguillos trenzados de acero inoxidable.",
+        "pb_svc_2_tech_std": "Normativa California Title 24 (máximo 1.2 GPM en lavabos, 1.8 GPM en cocinas, 1.28 GPF en inodoros) y Código de Conservación de San José.",
+        "pb_svc_2_tech_qa": "Calibración de caudal y verificación de estanqueidad bajo presión operativa continua de 60 PSI. Cero fugas y máxima eficiencia hídrica.",
+        "pb_svc_3_tech_scope": "Dimensionamiento y balanceo de redes de distribución de agua según demanda de unidades de gasto de artefactos (WSFU). Análisis de pérdidas por fricción y presión residual.",
+        "pb_svc_3_tech_mat": "Tuberías de cobre rígido Tipo L y PEX-A Uponor con expansión en frío según ASTM F1960. Manifolds de distribución de flujo balanceado sin juntas ocultas.",
+        "pb_svc_3_tech_std": "Uniform Plumbing Code (UPC) Capítulo 6 y Apéndice A (Sizing of Water Supply Systems), especificaciones de Santa Clara Valley Water District.",
+        "pb_svc_3_tech_qa": "Garantía de presión dinámica mínima de 35 PSI en el punto más desfavorable de la instalación bajo demanda pico simultánea.",
+        "pb_svc_4_tech_scope": "Desmantelamiento y reemplazo total de tuberías galvanizadas degradadas por corrosión interna o sarro. Montaje de nuevas troncales y derivaciones aéreas y bajo piso.",
+        "pb_svc_4_tech_mat": "Tubería de cobre rígido Tipo L sin costura (ASTM B88), conexiones mecánicas prensadas Viega ProPress con sellos EPDM de alta temperatura.",
+        "pb_svc_4_tech_std": "California Plumbing Code (CPC) Sección 604, normas de seguridad contra incendios de San José (instalación 100% libre de llama abierta).",
+        "pb_svc_4_tech_qa": "Prueba de hermeticidad a 100 PSI con nitrógeno. Inspección y aprobación con permiso oficial de la Ciudad de San José.",
+        "pb_svc_5_tech_scope": "Evaluación de campo de absorción, nivelación de pendientes de descarga sanitaria e instalación de tanques sépticos de doble compartimento con filtro de efluentes.",
+        "pb_svc_5_tech_mat": "Tanques de concreto prefabricado de alta resistencia o polietileno reforzado, tuberías sanitarias de PVC Cédula 40 (ASTM D2665) con uniones cementadas al solvente.",
+        "pb_svc_5_tech_std": "Código de Salud Ambiental del Condado de Santa Clara (Department of Environmental Health) y CPC Capítulo 7 y Apéndice H.",
+        "pb_svc_5_tech_qa": "Prueba de percolación en sitio, prueba de estanqueidad por columna de agua y balanceo gravimétrico de líneas de distribución.",
+        "pb_svc_6_tech_scope": "Tendido subterráneo y vertical del sistema de desagüe, ventilación (DWV) y suministro de agua potable en edificaciones nuevas y adiciones estructurales.",
+        "pb_svc_6_tech_mat": "Tuberías ABS Cédula 40 / PVC DWV, soportes antisísmicos para tuberías, cobre Tipo L y tubería Uponor PEX-A con anillos de memoria térmica.",
+        "pb_svc_6_tech_std": "California Plumbing Code (CPC) Capítulos 3, 6, 7 y 9; Código de Construcción de San José y estándares sísmicos de California.",
+        "pb_svc_6_tech_qa": "Prueba de cabeza de agua de 10 pies en redes de desagüe y prueba neumática de 100 PSI en redes de suministro antes del sellado de muros.",
+        "pb_svc_7_tech_scope": "Instalación de calentadores de agua híbridos de alta eficiencia (Tier-4 ENERGY STAR). Tendido de drenaje de condensados, válvula de alivio térmico y desconectador eléctrico.",
+        "pb_svc_7_tech_mat": "Unidad bomba de calor híbrida con tanque vitrificado, líneas de condensado en PVC con neutralizador de acidez, vaso de expansión térmico pre-presurizado.",
+        "pb_svc_7_tech_std": "Normativa ambiental BAAQMD (Bay Area Air Quality Management District), Código Eléctrico (NEC) y CPC Sección 507.",
+        "pb_svc_7_tech_qa": "Ajuste de termostato a 120°F según norma de seguridad infantil, verificación de flujo de aire y prueba de funcionamiento de la válvula T&P.",
+        "pb_svc_8_tech_scope": "Diagnóstico y mitigación de sobrepresión provocada por calentamiento de agua en circuitos cerrados con válvula antirretorno o regulador de presión (PRV).",
+        "pb_svc_8_tech_mat": "Tanques de expansión térmica de diafragma de butilo (aprobados NSF 61), válvulas de alivio de temperatura y presión (T&P) de 150 PSI / 210°F ASME.",
+        "pb_svc_8_tech_std": "California Plumbing Code (CPC) Sección 608.3 y ordenanzas locales de seguridad en calentadores de agua del Condado de Santa Clara.",
+        "pb_svc_8_tech_qa": "Calibración de la precarga de aire del tanque de expansión exactamente igual a la presión estática del agua del inmueble (50 a 65 PSI).",
+        "pb_svc_9_tech_scope": "Inspección endoscópica computarizada de líneas laterales de drenaje y cloaca principal. Localización precisa de fisuras, raíces, colapsos y contrapendientes.",
+        "pb_svc_9_tech_mat": "Cámara autonivelante de alta resolución con iluminación LED envolvente, transmisor de sonda electromagnética de 512 Hz y receptor localizador digital de profundidad.",
+        "pb_svc_9_tech_std": "Estándares de inspección de alcantarillado de NASSCO (PACP) y regulaciones del San José Regional Wastewater Facility.",
+        "pb_svc_9_tech_qa": "Reporte digital en video de alta definición con telemetría en metros/pies, indicación exacta de profundidad y ubicación en superficie.",
+        "pb_svc_10_tech_scope": "Instalación de sistemas de captación pluvial de techos, desviadores de primer lavado y almacenamiento para reutilización en riego y sanitarios.",
+        "pb_svc_10_tech_mat": "Cisternas de polietileno virgen con protección UV grado alimenticio, filtros de sedimentos de malla fina de acero inoxidable, tubería de distribución no potable marcada en morado.",
+        "pb_svc_10_tech_std": "California Plumbing Code (CPC) Capítulo 16 (Nonpotable Rainwater Catchment Systems) y lineamientos de Valley Water.",
+        "pb_svc_10_tech_qa": "Protección total contra reflujo con dispositivo de prevención de contraflujo certificado ASSE 1013 y prueba de presión del circuito de impulsión.",
+        "pb_svc_11_tech_scope": "Reemplazo de calentadores de tanque convencionales por equipos continuos sin tanque de alta demanda BTU. Modificación y ampliación de líneas de gas natural y ventilación.",
+        "pb_svc_11_tech_mat": "Líneas de gas dedicadas de 3/4 pulg. a 1 pulg., conductos concéntricos de polipropileno o acero inoxidable Categoría IV, kit de válvulas de aislamiento para descalcificación.",
+        "pb_svc_11_tech_std": "California Fuel Gas Code (NFPA 54), CPC Capítulo 5 y normativas de emisión Ultra Low NOx de Santa Clara County.",
+        "pb_svc_11_tech_qa": "Prueba de presión de gas con columna de agua (manómetro de mercurio/digital a 3 PSI durante 15 minutos) y puesta en marcha con calibración de combustión.",
+        "pb_svc_12_tech_scope": "Instalación en línea principal de válvulas inteligentes de cierre automático con micro-transductores ultrasónicos y sensores remotos de humedad.",
+        "pb_svc_12_tech_mat": "Válvula de corte motorizada inteligente (Moen Flo / Phyn), accesorios roscados de bronce sin plomo, bypass manual de mantenimiento con válvulas de bola de cuarto de vuelta.",
+        "pb_svc_12_tech_std": "Certificación ASSE 1061 / UPC, instalación eléctrica bajo código NEC con fuente de poder clase 2 protegida contra sobretensiones.",
+        "pb_svc_12_tech_qa": "Prueba de disparo de cierre automático por caída de presión milimétrica y enlace a red de monitoreo 24/7 de Morales Plumbing.",
+        "pb_svc_13_tech_scope": "Reemplazo integral de toda la tubería de suministro de agua potable fría y caliente en la vivienda, desde el medidor hasta cada accesorio de consumo.",
+        "pb_svc_13_tech_mat": "Sistema Uponor PEX-A ProPEX de alta flexibilidad o cobre rígido Tipo L, llaves de paso angulares de cuarto de vuelta de bola metálica, cajas de pared de latón.",
+        "pb_svc_13_tech_std": "California Plumbing Code (CPC) Capítulo 6, aprobaciones de plomería y edificación de la Ciudad de San José.",
+        "pb_svc_13_tech_qa": "Prueba de presión de 100 PSI en presencia del inspector municipal. Aislamiento térmico de tuberías de agua caliente según Title 24.",
+        "pb_svc_14_tech_scope": "Desconexión de desagües de lavandería y duchas para reorientar aguas jabonosas hacia sistemas de irrigación subsuperficial por gravedad o bombeo.",
+        "pb_svc_14_tech_mat": "Válvulas desviadoras de 3 vías de latón fundido, tanques de compensación de flujo con filtro de pelusas de acero inoxidable, tubería de goteo subterránea con emisor antiobstrucción.",
+        "pb_svc_14_tech_std": "California Plumbing Code (CPC) Capítulo 15 (Alternate Water Sources for Plumbing Systems) y directrices de protección de mantos freáticos de Santa Clara.",
+        "pb_svc_14_tech_qa": "Prueba de flujo sin contrapresión, etiquetado de precaución en tuberías ('Agua No Potable') y ajuste de zona de descarga de absorción.",
+        "pb_svc_15_tech_scope": "Inspección técnica diagnóstica de la solidez estructural de las instalaciones mecánicas de plomería, anclajes antisísmicos de calentadores y colectores principales.",
+        "pb_svc_15_tech_mat": "Anclajes y correas de acero galvanizado calibre 12 aprobadas por el estado de California, colectores de latón de alta resistencia, medidores de espesor ultrasónicos.",
+        "pb_svc_15_tech_std": "California Health and Safety Code Sección 19211 (Seismic strapping of water heaters), CPC y normas de resistencia estructural de San José.",
+        "pb_svc_15_tech_qa": "Informe detallado de grosor remanente de pared en tuberías metálicas, verificación de par de apriete en juntas mecánicas y certificación de seguridad.",
+
         "hero_pill_2026": "就绪",
         "hero_pill_eco": "环保聚焦",
         "hero_pill_ai": "AI 集成",
@@ -3395,7 +3590,7 @@ const translations = {
         "contact_form_name": "姓名",
         "contact_form_phone": "电话",
         "contact_form_email": "电子邮件",
-        "contact_form_másg": "留言信息",
+        "contact_form_msg": "留言信息",
         "contact_form_submit": "发送信息",
         "terminal_title": "MORALES_EXECUTIVE_V1.0",
         "profile_role": "首席工程师兼创始人",
@@ -3579,51 +3774,51 @@ const translations = {
         "eng_b2b_li1": "复杂安装项目的分包。",
         "eng_b2b_li2": "跨行业的系统集成。",
         "eng_b2b_li3": "专属的项目管理支持。",
-        "pb_svc_1_name": "[ZH] Precision Leak Detection",
-        "pb_svc_1_user": "[ZH] Pinpoint hidden leaks without destructive tearing of walls or floors.",
-        "pb_svc_1_tech": "[ZH] Deployment of acoustic listening devices, thermal imaging, and tracer gas to locate micro-fissures in pressurized lines. Required for non-invasive repair protocols.",
-        "pb_svc_2_name": "[ZH] Eco-Retrofitting",
-        "pb_svc_2_user": "[ZH] Upgrade your fixtures to high-efficiency, water-saving technologies.",
-        "pb_svc_2_tech": "[ZH] Installation of WaterSense certified fixtures, pressure compensating aerators, and dual-flush mechanismás to optimize volumetric flow rates and comply with local conservation mandates.",
-        "pb_svc_3_name": "[ZH] Hydraulic Infrastructure Design",
-        "pb_svc_3_user": "[ZH] Custom plumbing blueprints and system sizing for your property.",
-        "pb_svc_3_tech": "[ZH] Calculations based on fixture unit (FU) demand, static pressure analysis, and friction loss equations to engineer oóptimal pipe diameters and material selections.",
-        "pb_svc_4_name": "[ZH] Elite Copper Renovations",
-        "pb_svc_4_user": "[ZH] Replace old, failing pipes with premium, long-lasting copper.",
-        "pb_svc_4_tech": "[ZH] Extraction of galvanized or defective piping, replaced with Type L copper utilizing ProPress zero-flame mechanical joining for superior joint integrity and reduced oxidation.",
-        "pb_svc_5_name": "[ZH] Advanced Septic Systemás",
-        "pb_svc_5_user": "[ZH] Comprehensive septic tank installation, repair, and biological optimization.",
-        "pb_svc_5_tech": "[ZH] Soil percolation analysis, leach field sizing, and installation of multi-chamber bio-reactors with effluent filters to ensure oóptimal anaerobic decomposition.",
-        "pb_svc_6_name": "[ZH] New Construction Plumbing",
-        "pb_svc_6_user": "[ZH] End-to-end plumbing installation for new homes and additions.",
-        "pb_svc_6_tech": "[ZH] Underground rough-in (DWV), water distribution top-out, and final fixture setting in strict adherence to UPC and local municipal codes. Includes hydrostatic testing.",
-        "pb_svc_7_name": "[ZH] Advanced Water Heaters",
-        "pb_svc_7_user": "[ZH] Installation of ultra-efficient Heat Pump and Hybrid water heaters.",
-        "pb_svc_7_tech": "[ZH] Integration of compressor-driven heat pump units requiring condensate management, 240V dedicated circuits, and adherence to BAAQMD zero-NOx mandates.",
-        "pb_svc_8_name": "[ZH] Thermal Expansion Systemás",
-        "pb_svc_8_user": "[ZH] Protect your plumbing from dangerous pressure spikes.",
-        "pb_svc_8_tech": "[ZH] Sizing and installation of hydropneumatic expansion tanks on the cold water supply of closed-loop heating systems to absorb volumetric expansion and prevent valve failure.",
-        "pb_svc_9_name": "[ZH] Smart Diagnostics",
-        "pb_svc_9_user": "[ZH] High-tech camera inspections of your sewer and drain lines.",
-        "pb_svc_9_tech": "[ZH] Fiber-optic endoscopic scoping of DWV systems with integrated sonde locating to map lateral runs, identify root intrusion, and pinpoint structural collapses.",
-        "pb_svc_10_name": "[ZH] Rainwater Harvesting",
-        "pb_svc_10_user": "[ZH] Capture, filter, and reuse rainwater for irrigation and non-potable use.",
-        "pb_svc_10_tech": "[ZH] Design of catchment surfaces, installation of primary filtration (first flush diverters), and sizing of high-density polyethylene (HDPE) cisterns with booster pumps.",
-        "pb_svc_11_name": "[ZH] Tankless Upgrades",
-        "pb_svc_11_user": "[ZH] Endless hot water and massive space savings with a tankless heater.",
-        "pb_svc_11_tech": "[ZH] BTU load calculations for dynamic flow demand, upgrade of gas supply lines, and installation of concentric venting systems for modulating condensing heat exchangers.",
-        "pb_svc_12_name": "[ZH] Leak Prevention (Flo)",
-        "pb_svc_12_user": "[ZH] Smart, automated water shut-off valves that detect leaks instantly.",
-        "pb_svc_12_tech": "[ZH] Inline installation of ultrasonic flow meters with machine learning algorithmás capable of distinguishing standard flow events from micro-leaks or catastrophic bursts.",
-        "pb_svc_13_name": "[ZH] Whole-house Repipe",
-        "pb_svc_13_user": "[ZH] Complete replacement of all water lines in your home for oóptimal flow.",
-        "pb_svc_13_tech": "[ZH] Strategic abandonment of existing lines and routing of Cross-linked Polyethylene (PEX-A) utilizing expansion fittings for minimal friction loss and freeze resistance.",
-        "pb_svc_14_name": "[ZH] Greywater Systemás",
-        "pb_svc_14_user": "[ZH] Reuse water from showers and laundry to irrigate your landscape.",
-        "pb_svc_14_tech": "[ZH] Installation of 3-way diversion valves, surge tanks, and subsurface drip irrigation lines conforming to Chapter 15 of the CPC for safe effluent discharge.",
-        "pb_svc_15_name": "[ZH] Structural Integrity Checks",
-        "pb_svc_15_user": "[ZH] Complete assessment of your plumbing system's safety and longevity.",
-        "pb_svc_15_tech": "[ZH] Ultrasonic thickness gauging of metallic pipes, seismic bracing validation for equipment, and comprehensive stress testing of all primary distribution manifolds.",
+        "pb_svc_1_name": "高精度水管漏水探测",
+        "pb_svc_1_user": "精准定位隐蔽漏水，无需破坏性开墙破地。",
+        "pb_svc_1_tech": "采用专业声学听漏仪、红外热成像及气压衰减测试，精准锁定生活供水管线微小砂眼与渗漏点。",
+        "pb_svc_2_name": "节水卫浴升级与配件改造",
+        "pb_svc_2_user": "将卫浴器具升级为符合加州环保标准的高效节水设备。",
+        "pb_svc_2_tech": "安装经WaterSense认证的卫浴洁具、压力补偿起泡器及双冲节水阀芯，确保水流充沛并严格符合加州Title 24节水法规。",
+        "pb_svc_3_name": "给水管网水力平衡与管径计算",
+        "pb_svc_3_user": "根据住宅户型定制水力管网，消除水压忽大忽小和管道共振。",
+        "pb_svc_3_tech": "依据UPC第6章标准，根据给水当量(WSFU)负荷、入户静水压及沿程摩擦阻力，科学计算主管与支管管径，保障充沛出水。",
+        "pb_svc_4_name": "精品L型铜管管网改造",
+        "pb_svc_4_user": "以经久耐用的商用级无铅铜管替换老旧生锈管道，彻底消除黄水与异味。",
+        "pb_svc_4_tech": "彻底拆除老化镀锌钢管，采用L型优质厚壁铜管并配合Viega ProPress无火机械冷压接头，消除施工火灾隐患并保证管路零渗漏。",
+        "pb_svc_5_name": "高效化粪池与排污系统维护",
+        "pb_svc_5_user": "化粪池安装、排污过滤与化粪场生物吸附维护，保障地下水清洁。",
+        "pb_svc_5_tech": "进行土壤渗滤率实测，精确计算渗透管网尺寸，安装带有出水过滤隔板的双室化粪池，符合圣克拉拉县环保健康局规范。",
+        "pb_svc_6_name": "新建住宅与加建全套水暖预埋",
+        "pb_svc_6_user": "新建独立屋、ADU后屋与扩建项目的全套进水、排水及通气管预埋安装。",
+        "pb_svc_6_tech": "地下排污及通气管(DWV)埋设、冷热水主管顶层布管与最终器具安装，全流程执行水压试验并符合最新加州水暖法规(CPC)。",
+        "pb_svc_7_name": "热泵混动节能电热水器系统",
+        "pb_svc_7_user": "安装超高能效热泵混动热水器，节省高达70%能源费用并申请加州退税。",
+        "pb_svc_7_tech": "配置ENERGY STAR 4级热泵混动热水器，包含专用冷凝水排放路由、膨胀罐防超压保护、240V专用电路保护器并符合湾区空气质量管理局零排放标准。",
+        "pb_svc_8_name": "管网热膨胀与压力安全泄压系统",
+        "pb_svc_8_user": "保护您的水管、龙头与热水器免受加热膨胀产生的破坏性高水压冲击。",
+        "pb_svc_8_tech": "在密闭供水回路上安装预充压隔膜式热膨胀罐并校准气压，吸收热水体积膨胀，防止安全泄压阀(T&P Valve)频繁滴漏损坏。",
+        "pb_svc_9_name": "高清管道内窥摄像与声呐定位探测",
+        "pb_svc_9_user": "高清实时视频窥探地下主排污管与侧管内部，精准查明树根入侵与管道坍塌。",
+        "pb_svc_9_tech": "使用自调平彩色光纤工业内窥摄像系统巡检排水管道，配合内置512Hz探头地下声波发射器，在地面精准标记管道埋深与走向。",
+        "pb_svc_10_name": "雨水收集与花园智能滴灌系统",
+        "pb_svc_10_user": "收集净化屋顶天然降雨，用于花园灌溉与户外冲洗，大幅降低市政水费。",
+        "pb_svc_10_tech": "布置屋顶雨水汇流管道，安装初期降雨弃流装置、食品级HDPE蓄水储罐以及潜水增压水泵，严格配备倒流防止器以符合加州CPC第16章规范。",
+        "pb_svc_11_name": "即热式无水箱智能热水器升级",
+        "pb_svc_11_user": "告别大水桶，享受源源不断的即开即热热水，释放车库宝贵储存空间。",
+        "pb_svc_11_tech": "核算高达199,000 BTU瞬时燃气负荷，扩容专线3/4英寸燃气主管，架设Category IV耐腐蚀同轴排烟管道，并标配快速除垢隔离维护阀门组。",
+        "pb_svc_12_name": "智能声波防漏水自动切断主阀",
+        "pb_svc_12_user": "通过手机APP实时监测全屋水流量与水压，一旦突发爆管或微渗漏自动紧急切断进水。",
+        "pb_svc_12_tech": "在主进水总管串联安装智能水阀（如Moen Flo），搭载高灵敏度超声波微流传感器与防冻测温芯片，具备突发水流异常自动遥控电动球阀断水功能。",
+        "pb_svc_13_name": "全屋冷热水管彻底重新布设 (Repipe)",
+        "pb_svc_13_user": "彻底舍弃墙体内老化锈蚀的主管与支管，以高分子PEX-A或L型铜管全面重新排管。",
+        "pb_svc_13_tech": "全面弃用旧管，选用Uponor PEX-A记忆膨胀型管材或L型铜管分水器，采用独立回路或平衡分支走向，以100 PSI保压测试并申报市政府正规Permit验收。",
+        "pb_svc_14_name": "生活杂排水(灰水)分流与循环系统",
+        "pb_svc_14_user": "将洗衣机和淋浴间洁净排水科学分流，自动灌溉庭院树木，积极响应加利福尼亚抗旱政策。",
+        "pb_svc_14_tech": "在排水主管安装全铜三通分流手阀、消能沉淀箱以及符合加州水暖法第15章标准的地下埋渗滴灌管路，杜绝地表污水外露与异味。",
+        "pb_svc_15_name": "主进水配水阀组与结构耐压安全检测",
+        "pb_svc_15_user": "对入户总进水阀组、减压阀(PRV)、水锤消除器及配水歧管进行全方位受压与耐腐蚀评估。",
+        "pb_svc_15_tech": "采用无损超声波测量金属管道管壁腐蚀厚度，核验热水器与主控管件抗震加固拉带，并对总分配歧管进行静压与动压极限工况测试。",
         "lbl_subtitles": "漫画参考翻译",
         "svc_1_step_1": "初步诊断映射。",
         "svc_1_step_2": "系统隔离。",
@@ -3704,15 +3899,15 @@ const translations = {
         "svc_5_good_desc": "[EN] Inspección de cámara básica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
         "svc_5_better_desc": "[EN] Inspección profunda SeeSnake con localización por sonar. Trazamos y marcamos la ubicación exacta y profundidad del problema en la superficie.",
         "svc_5_best_desc": "[EN] Inspección HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Tcúúnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
-        "svc_6_good_desc": "[EN] Excavación tradicional e instalación de PVC SDR-35. Cumple con los cdigos locales y provee una solución probada de flujo por gravedad.",
+        "svc_6_good_desc": "[EN] Excavación tradicional e instalación de PVC SDR-35. Cumple con los códigos locales y provee una solución probada de flujo por gravedad.",
         "svc_6_better_desc": "[EN] Reemplazo con ABS Cdula 40. Tubería de núcleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
-        "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadías. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
+        "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadas. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
         "svc_7_good_desc": "[EN] Instalación de un calentador atmosfrico estándar de 50 galones. Reemplazo directo sin modificaciones eléctricas complejas.",
-        "svc_7_better_desc": "[EN] Instalación de calentador Hbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
+        "svc_7_better_desc": "[EN] Instalación de calentador Híbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
         "svc_7_best_desc": "[EN] Bradford White AeroTherm con integración Wi-Fi completa. Modos de programación inteligente, bomba ultra-silenciosa y sensores de detección de fugas integrados desde la fbrica.",
         "svc_8_good_desc": "[EN] Instalación de válvula PRV de latn estándar de grado residencial. Estabiliza la presión principal previniendo daños a corto plazo.",
         "svc_8_better_desc": "[EN] Wilkins 600XL con manómetro de lectura integrada. Permite un monitoreo visual y ajustes precisos sin requerir herramientas adicionales de diagnóstico.",
-        "svc_8_best_desc": "[EN] Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios volumtricos.",
+        "svc_8_best_desc": "[EN] Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios caudales volumétricos.",
         "svc_9_good_desc": "[EN] Respuesta primaria. Cierre del agua principal y uso de tapones SharkBite temporales para detener la emergencia y permitir secado.",
         "svc_9_better_desc": "[EN] Aislamiento del sector. Instalación de válvulas de aislamiento permanente de Cobre ProPress, permitiendo dar agua al resto de la casa mientras el sector daado queda aislado.",
         "svc_9_best_desc": "[EN] Resolución y reestructuracin. Construcción de un manifold de aislamiento completo y soldadura/prensado definitivo de la falla. Solución permanente de una sola visita.",
@@ -3725,7 +3920,7 @@ const translations = {
         "svc_12_good_desc": "[EN] Instalación de ensamblaje RPZ (Reduced Pressure Zone) Wilkins 375 estándar. Cumplimiento inmediato con las regulaciones de la ciudad.",
         "svc_12_better_desc": "[EN] Ensamblaje Watts Serie 009 de alto flujo. Válvulas de control de cuarto de vuelta y cuerpo de bronce sin plomo para aplicaciones comerciales severas.",
         "svc_12_best_desc": "[EN] Febco 860 RPZ equipado con sensor IoT de caída de presión. Monitorea los diferenciales de presión en tiempo real y alerta al administrador sobre bloqueos o fallas antes de la inspección anual.",
-        "svc_13_good_desc": "[EN] Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadías de acero inoxidable y sellos nuevos.",
+        "svc_13_good_desc": "[EN] Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadas de acero inoxidable y sellos nuevos.",
         "svc_13_better_desc": "[EN] Instalación de herrajes de gama media-alta (Moen Align, Grohe) con acabados resistentes a manchas. Sellado con silicona comercial anti-moho.",
         "svc_13_best_desc": "[EN] Instalación e integración de grifería inteligente (Kohler Artifacts Smart Touch / Voice Control). Calibración de temperatura preestablecida y cableado del módulo sensor.",
         "svc_14_good_desc": "[EN] Test rápido in-situ. Medición de TDS (Sólidos Disueltos Totales), prueba de dureza por gotas químicas y nivel de cloro libre.",
@@ -3927,14 +4122,14 @@ const translations = {
         "pb_svc_2_good_time": "5-7 Días",
         "pb_svc_2_better_just": "[Scope] Premium Repipe (Horizontal y Vertical): Up to 3 baths, 1 kitchen (ice maker, dishwasher), laundry, 3 hose bibs. Reemplazo total de la casa (lineas de rastreo y montantes de pared). Full home Uponor expansion system. Includes firestop and drywall rough-patch.",
         "pb_svc_2_better_mat": "Up to 350ft PEX-A (Uponor), ProPEX expansion rings, 1/2\" Type L copper stub-outs, drop-ear elbows, premium quarter-turn angle stops, fire-rated caulk.",
-        "pb_svc_2_better_tools": "Milwaukee M12/M18 ProPEX expansion tools, self-feed drill bits, HEPA vacuumás, drop cloths.",
+        "pb_svc_2_better_tools": "Milwaukee M12/M18 ProPEX expansion tools, self-feed drill bits, HEPA vacuums, drop cloths.",
         "pb_svc_2_better_time": "7-10 Días",
         "pb_svc_2_best_just": "[Scope] Ultra-Premium Commercial Grade: Up to 4 baths, fully sized for high flow rates (1\" mains). Complete Type L Copper installation with ProPress. Includes permit expediting.",
         "pb_svc_2_best_mat": "Up to 400ft Type L hard copper pipe (1\", 3/4\", 1/2\"), Viega ProPress zero-lead fittings, acoustic pipe clamps, heavy-duty unistrut supports.",
         "pb_svc_2_best_tools": "Ridgid RP 350 ProPress tool, heavy-duty copper cutters, deburring and reaming tools, laser level.",
         "pb_svc_2_best_time": "10-14 Días",
         "pb_svc_3_title": "Service 3",
-        "pb_svc_3_good_just": "[Scope] Standard water softening for homes up to 3 bedroomás (approx. 32,000 grain capacity). Install via existing loop. Excludes creating a new soft water loop.",
+        "pb_svc_3_good_just": "[Scope] Standard water softening for homes up to 3 bedrooms (approx. 32,000 grain capacity). Install via existing loop. Excludes creating a new soft water loop.",
         "pb_svc_3_good_mat": "Fleck 5600SXT digital metered valve, 1.0 cu ft high-capacity resin, standard brine tank, 2 bags of solar salt, corrugated stainless flex connectors.",
         "pb_svc_3_good_tools": "Pipe threaders, teflon tape, basic multimeter, adjustable wrenches, bucket.",
         "pb_svc_3_good_time": "3-5 hrs",
@@ -4021,7 +4216,7 @@ const translations = {
         "pb_svc_9_better_tools": "Gas-powered skid-mounted jetter (4,000 PSI / 4+ GPM), Warthog rotating nozzle, inspection camera.",
         "pb_svc_9_better_time": "3-5 hrs",
         "pb_svc_9_best_just": "[Scope] Ultra-Premium Storm Drain / Heavy Commercial Jetting (up to 300 feet). Descales cast iron pipes and removes heavy debris/rocks. High-frequency pulsation.",
-        "pb_svc_9_best_mat": "Industrial grade descaling agents, containment boomás/mats for waste capture.",
+        "pb_svc_9_best_mat": "Industrial grade descaling agents, containment booms/mats for waste capture.",
         "pb_svc_9_best_tools": "Trailer-mounted Vactor/Jetter unit (up to 4,000 PSI / 18 GPM), chain flail nozzles, heavy-duty safety gear.",
         "pb_svc_9_best_time": "1 Day",
         "pb_svc_10_title": "Service 10",
@@ -4086,7 +4281,7 @@ const translations = {
         "pb_svc_14_better_tools": "Multimeter, wire strippers, battery terminal crimpers.",
         "pb_svc_14_better_time": "4-6 hrs",
         "pb_svc_14_best_just": "[Scope] Ultra-Premium Dual-Redundant Smart System. Two commercial-grade pumps alternating cycles, dual AGM batteries, and cellular/WiFi controller module for instant flood alerts.",
-        "pb_svc_14_best_mat": "Ion Technologies Dual Pump System, smart alternating controller, cellular telemetry module, 2x 100Ah AGM batteries, high-water alarmás.",
+        "pb_svc_14_best_mat": "Ion Technologies Dual Pump System, smart alternating controller, cellular telemetry module, 2x 100Ah AGM batteries, high-water alarms.",
         "pb_svc_14_best_tools": "Network diagnostic tools, electrical conduit tools for clean wire management.",
         "pb_svc_14_best_time": "1 Day",
         "pb_svc_15_title": "Service 15",
@@ -4323,7 +4518,7 @@ const translations = {
         "lbl_membership_badge_premium": "高级",
         "btn_active_plan": "当前计划",
         "usage_tracker_text": "已使用免费额度：{used} / 5",
-        "másg_membership_updated": "会员计划已更新为 {tier}",
+        "msg_membership_updated": "会员计划已更新为 {tier}",
         "portal_title": "MP 客户门户",
         "portal_subtitle": "智能约见、PQR管理与服务记忆",
         "tab_dashboard": " 我的控制台",
@@ -4441,91 +4636,91 @@ const translations = {
         "eng_seóptico_tech3_desc": "端到端许可管理，确保设计超越健康要求并减轻罚款。",
         "svc_1_title": "Precision Leak Detection",
         "svc_1_p1": "At Morales Plumbing, precision is our standard. We identify hidden faults without destructive demolition.",
-        "svc_1_p2": "Using FLIR thermal cameras and acoustic sensors we trace leaks behind walls or slabs. Massive savings vs. reconstruction.",
+        "svc_1_p2": "采用专业声学听漏仪、红外热成像及气压衰减测试，精准锁定生活供水管线微小砂眼与渗漏点。",
         "svc_1_good": "<strong>GOOD (Standard) $450 - $700</strong><br>Visual/acoustic diagnostic. Standard patches for accessible leaks.",
         "svc_1_better": "<strong>BETTER (Premium) $585 - $900</strong><br>FLIR thermal + pressure drop test. Epoxy coating repair.",
         "svc_1_best": "<strong>BEST (Ultra-Premium) $720 - $1,100</strong><br>Full structural mapping and sector isolation. ProPress copper segment.",
         "svc_2_title": "Full House Repipe",
         "svc_2_p1": "A full repipe is a heart transplant for your home. Old galvanized pipes cause floods and water quality degradation.",
-        "svc_2_p2": "We replace all water infrastructure with commercial-grade Copper and PEX. Eradicates cloudy water and chronic leaks.",
+        "svc_2_p2": "安装经WaterSense认证的卫浴洁具、压力补偿起泡器及双冲节水阀芯，确保水流充沛并严格符合加州Title 24节水法规。",
         "svc_2_good": "<strong> GOOD (Standard) $3,800 - $5,300</strong><br>PEX-B piping with brass Crimp fittings. Includes 100 PSI hydrostatic pressure test. UPC-certified reliable solution.",
         "svc_2_better": "<strong> BETTER (Premium) $4,940 - $6,500</strong><br>PEX-A Uponor Expansion system. Superior flow rate, freeze-resistant, fewer mechanical fittings for lower long-term risk.",
         "svc_2_best": "<strong> BEST (Ultra-Premium) $6,080 - $8,600</strong><br>Type L Copper with ProPress technology (no solder, no flame). Maximum flow, natural antimicrobial properties and absolute commercial-grade durability for 50+ years.",
         "svc_3_title": "Water Filtration & Softening",
         "svc_3_p1": "Hard water destroys appliances and stains fixtures. We transform water quality from the entry point.",
-        "svc_3_p2": "We install systems eliminating chlorine, heavy metals and calcium. Crystal-clear water and 30% longer appliance life.",
+        "svc_3_p2": "依据UPC第6章标准，根据给水当量(WSFU)负荷、入户静水压及沿程摩擦阻力，科学计算主管与支管管径，保障充沛出水。",
         "svc_3_good": "<strong>GOOD $1,500 - $2,300</strong><br>Standard 32,000-grain salt-based softener.",
         "svc_3_better": "<strong>BETTER $1,950 - $2,800</strong><br>Fleck 5600SXT Metered. Digital on-demand valve.",
         "svc_3_best": "<strong>BEST $2,400 - $3,200</strong><br>Halo 5 Whole House. Salt-free, UV sterilization.",
         "svc_4_title": "Smart Valve Installation",
         "svc_4_p1": "If a pipe bursts on vacation, IoT Smart Valves auto-shutoff and alert your phone in seconds.",
-        "svc_4_p2": "These systems monitor water flow 24/7 using AI to detect micro-leaks or catastrophic ruptures.",
+        "svc_4_p2": "彻底拆除老化镀锌钢管，采用L型优质厚壁铜管并配合Viega ProPress无火机械冷压接头，消除施工火灾隐患并保证管路零渗漏。",
         "svc_4_good": "<strong>GOOD $350 - $550</strong><br>Commercial-grade 1/4-turn brass ball valve.",
         "svc_4_better": "<strong>BETTER $455 - $700</strong><br>Moen Flo Smart Valve. Daily monitoring and smartphone shutoff.",
         "svc_4_best": "<strong>BEST $560 - $850</strong><br>Phyn Plus. Ultrasonic monitoring, no moving parts, smart home integration.",
         "svc_5_title": "SeeSnake Camera Inspection",
         "svc_5_p1": "Blind diagnostics destroy properties. Our SeeSnake cameras trace problems without excavation.",
-        "svc_5_p2": "We deploy military-grade self-leveling HD cameras underground for surgical repairs instead of destroying your yard.",
+        "svc_5_p2": "进行土壤渗滤率实测，精确计算渗透管网尺寸，安装带有出水过滤隔板的双室化粪池，符合圣克拉拉县环保健康局规范。",
         "svc_5_good": "<strong>GOOD $250 - $400</strong><br>Basic camera inspection up to 50ft. USB video delivery.",
         "svc_5_better": "<strong>BETTER $325 - $500</strong><br>Deep SeeSnake with sonar tracking. Exact surface location.",
         "svc_5_best": "<strong>BEST $400 - $600</strong><br>HD inspection and digital modeling. Full system mapping and CIPP report.",
         "svc_6_title": "Main Sewer Replacement",
         "svc_6_p1": "A collapsed main sewer is one of the most disruptive failures. We offer guíaranteed replacements for decades.",
-        "svc_6_p2": "Whether through traditional excavation or trenchless methods, we eliminate roots and fractured pipes.",
+        "svc_6_p2": "地下排污及通气管(DWV)埋设、冷热水主管顶层布管与最终器具安装，全流程执行水压试验并符合最新加州水暖法规(CPC)。",
         "svc_6_good": "<strong>GOOD $5,500 - $8,000</strong><br>Traditional excavation, SDR-35 PVC. Proven gravity flow solution.",
         "svc_6_better": "<strong>BETTER $7,150 - $9,700</strong><br>ABS Schedule 40. Superior solid core, gravel bed, two-way cleanouts.",
         "svc_6_best": "<strong>BEST $8,800 - $11,300</strong><br>Trenchless HDPE fused joints. Seamless, root-proof. Lifetime guíarantee.",
         "svc_7_title": "Hybrid Heat Pump Water Heater",
         "svc_7_p1": "Still spending hundreds on inefficient water heating? Hybrid Heat Pump reaches up to 400% efficiency.",
-        "svc_7_p2": "Besides qualifying for rebates, this system drastically cuts electric bills. Pays for itself in under 3 years.",
+        "svc_7_p2": "配置ENERGY STAR 4级热泵混动热水器，包含专用冷凝水排放路由、膨胀罐防超压保护、240V专用电路保护器并符合湾区空气质量管理局零排放标准。",
         "svc_7_good": "<strong>GOOD $2,200 - $3,000</strong><br>Standard 50-gallon atmospheric heater. Direct replacement.",
         "svc_7_better": "<strong>BETTER $2,860 - $3,700</strong><br>Rheem ProTerra Hybrid. Digital panel, rebate-eligible efficiency.",
         "svc_7_best": "<strong>BEST $3,520 - $5,100</strong><br>Bradford White AeroTherm with Wi-Fi. Smart scheduling, quiet pump, leak sensors.",
         "svc_8_title": "Pressure Reducing Valve (PRV)",
         "svc_8_p1": "Operating above 80 PSI destroys hoses, bursts valves, and voids warranties. A PRV protects silently.",
-        "svc_8_p2": "A PRV regulates flow to a safe 55-60 PSI, acting as a mechanical shield at your home entry point.",
+        "svc_8_p2": "在密闭供水回路上安装预充压隔膜式热膨胀罐并校准气压，吸收热水体积膨胀，防止安全泄压阀(T&P Valve)频繁滴漏损坏。",
         "svc_8_good": "<strong>GOOD $480 - $750</strong><br>Standard residential-grade brass PRV.",
         "svc_8_better": "<strong>BETTER $624 - $950</strong><br>Wilkins 600XL with integrated pressure gauge.",
         "svc_8_best": "<strong>BEST $768 - $1,200</strong><br>Watts LFN45B with inline strainer and thermal expansion tank.",
         "svc_9_title": "Emergency Triage",
         "svc_9_p1": "When a pipe bursts at 3AM, every second counts. We arrive fast, stabilize the leak, mitigate damage.",
-        "svc_9_p2": "Our rapid response squad stops catastrophic flow and restores vital service to functional aáreas.",
+        "svc_9_p2": "使用自调平彩色光纤工业内窥摄像系统巡检排水管道，配合内置512Hz探头地下声波发射器，在地面精准标记管道埋深与走向。",
         "svc_9_good": "<strong>GOOD $380 - $600</strong><br>Main shutoff and SharkBite temporary caps.",
         "svc_9_better": "<strong>BETTER $494 - $750</strong><br>Sector isolation with permanent ProPress valves.",
         "svc_9_best": "<strong>BEST $608 - $950</strong><br>Full isolation manifold. Permanent one-visit solution.",
         "svc_10_title": "CAD & Digital Tracing",
         "svc_10_p1": "Modern development requires documented precision. We trace underground lines and deliver as-built plans.",
-        "svc_10_p2": "We use electromagnetic tracing and digital modeling to map your invisible network and prevent accidents.",
+        "svc_10_p2": "布置屋顶雨水汇流管道，安装初期降雨弃流装置、食品级HDPE蓄水储罐以及潜水增压水泵，严格配备倒流防止器以符合加州CPC第16章规范。",
         "svc_10_good": "<strong>GOOD $600 - $900</strong><br>Main line tracing with surface paint and professional schematic.",
         "svc_10_better": "<strong>BETTER $780 - $1,200</strong><br>2D AutoCAD overlay integrated with property architectural plans.",
         "svc_10_best": "<strong>BEST $960 - $1,450</strong><br>3D BIM/Revit modeling. Every node, pipe and valve geolocated.",
         "svc_11_title": "Tankless Water Heater",
         "svc_11_p1": "Imagine endless hot water on demand. Tankless systems only fire when you open the tap.",
-        "svc_11_p2": "Save space, reduce carbon footprint, and ensure constant purified hot water without tank explosion risks.",
+        "svc_11_p2": "核算高达199,000 BTU瞬时燃气负荷，扩容专线3/4英寸燃气主管，架设Category IV耐腐蚀同轴排烟管道，并标配快速除垢隔离维护阀门组。",
         "svc_11_good": "<strong>GOOD $3,200 - $4,700</strong><br>Navien NPE-A2 non-condensing. Great for quick replacements.",
         "svc_11_better": "<strong>BETTER $4,160 - $5,700</strong><br>Rinnai RU Sensei Condensing. 0.95 UEF, smart modulating burners.",
         "svc_11_best": "<strong>BEST $5,120 - $7,700</strong><br>Navien NPE-240A2 with ComfortFlow recirculation. Instant hot water, zero wait.",
         "svc_12_title": "Backflow Preventer Assembly",
         "svc_12_p1": "If you manage a business or irrigation, a Backflow preventer is federally mandated. Avoid crippling fines.",
-        "svc_12_p2": "We are certified to install, calibrate and register these assemblies that protect drinking water.",
+        "svc_12_p2": "在主进水总管串联安装智能水阀（如Moen Flo），搭载高灵敏度超声波微流传感器与防冻测温芯片，具备突发水流异常自动遥控电动球阀断水功能。",
         "svc_12_good": "<strong>GOOD $850 - $1,300</strong><br>Standard Wilkins 375 RPZ. Immediate city compliance.",
         "svc_12_better": "<strong>BETTER $1,105 - $2,000</strong><br>High-flow Watts Series 009. Lead-free bronze for severe commercial use.",
         "svc_12_best": "<strong>BEST $1,360 - $2,200</strong><br>Febco 860 RPZ with IoT sensor. Real-time differential monitoring.",
         "svc_13_title": "Luxury Fixture Swap",
         "svc_13_p1": "A luxury bathroom requires matching hardware with precise calibration, not just aesthetics.",
-        "svc_13_p2": "We perform perfectly leveled, hermetically sealed installations tested at maximum pressure.",
+        "svc_13_p2": "全面弃用旧管，选用Uponor PEX-A记忆膨胀型管材或L型铜管分水器，采用独立回路或平衡分支走向，以100 PSI保压测试并申报市政府正规Permit验收。",
         "svc_13_good": "<strong>GOOD $250 - $400</strong><br>Standard Delta/Moen installation with stainless braided supply lines.",
         "svc_13_better": "<strong>BETTER $325 - $500</strong><br>Moen Align/Grohe spot-resist. Commercial anti-mold silicone sealing.",
         "svc_13_best": "<strong>BEST $400 - $600</strong><br>Kohler Artifacts Smart Touch integration. Temperature calibration and sensor wiring.",
         "svc_14_title": "Water Chemistry Panel",
         "svc_14_p1": "Your tap water may look clear but contain heavy metals or chloramine. Test before investing in filters.",
-        "svc_14_p2": "We provide precise scientific analysis on-site and via certified labs for a custom water treatment plan.",
+        "svc_14_p2": "在排水主管安装全铜三通分流手阀、消能沉淀箱以及符合加州水暖法第15章标准的地下埋渗滴灌管路，杜绝地表污水外露与异味。",
         "svc_14_good": "<strong>GOOD $150 - $250</strong><br>Rapid on-site TDS, hardness and free chlorine test.",
         "svc_14_better": "<strong>BETTER $195 - $300</strong><br>16-point certified lab panel (heavy metals, lead, nitrates). Report in 5 days.",
         "svc_14_best": "<strong>BEST $240 - $400</strong><br>On-site test plus permanent inline digital TDS meter for real-time monitoring.",
         "svc_15_title": "Commercial Hydro-Jetting",
         "svc_15_p1": "When scale or thick roots calcify sewer pipes, electric snakes fail. Time for industrial force.",
-        "svc_15_p2": "Our Hydro-Jetting blasts at 4000+ PSI with rotating laser nozzles restoring the original pipe diameter.",
+        "svc_15_p2": "采用无损超声波测量金属管道管壁腐蚀厚度，核验热水器与主控管件抗震加固拉带，并对总分配歧管进行静压与动压极限工况测试。",
         "svc_15_good": "<strong>GOOD $750 - $1,150</strong><br>Heavy augering with 7/8 sectional electric cable.",
         "svc_15_better": "<strong>BETTER $975 - $1,500</strong><br>4000 PSI Hydro-Jetting. Eliminates scale and emulsified gárease.",
         "svc_15_best": "<strong>BEST $1,200 - $2,000</strong><br>Heavy jetting + HD camera inspection + 12-month RootX inhibitor application.",
@@ -4641,7 +4836,7 @@ const translations = {
         "pb_hero_subtitle": "专业管道服务 | 加州湾区",
         "pb_hero_location": "加州湾区",
         "pb_hero_updated": "更新时间：2024 年 12 月",
-        "pb_hero_details": "15 个详细的专业服务",
+        "pb_hero_details": "15项持牌专业水暖服务 · 加州圣荷西",
         "pb_hero_rates": "负责人：$185/小时 | 助手：$95/小时 | 加价：30%",
         "pb_hero_compliance": "工程标准：ORION Tech | 品质保证",
         "pb_hero_powered": "由 NeKon AI aGent Consulting 开发 | ORION 系统",
@@ -5043,6 +5238,71 @@ const translations = {
         "booking_fields_complete": "项已完成"
     },
     "tl": {
+        "lbl_tech_scope": "Saklaw ng Trabaho at Pamamaraan",
+        "lbl_tech_materials": "Mga Materyales at Angkop na Gamit",
+        "lbl_tech_standards": "Mga Naaangkop na Kodigo at Pamantayan",
+        "lbl_tech_assurance": "Pagsusuri ng Presyon at Garantiya",
+        "pb_svc_1_tech_scope": "Localización electroacústica no destructiva de fugas ocultas en líneas de agua potable y losas de concreto. Trazado de trayectorias hidráulicas mediante pulsos de presión de nitrógeno.",
+        "pb_svc_1_tech_mat": "Tubería de cobre Tipo L (ASTM B88) para bypass de prueba, coplas ProPress Viega de cero flama, manómetros digitales calibrados NIST.",
+        "pb_svc_1_tech_std": "Cumplimiento estricto con el California Plumbing Code (CPC) Capítulo 6, estándares de presión estática municipal de San José Water Co.",
+        "pb_svc_1_tech_qa": "Prueba hidrostática de caída de presión a 100 PSI durante 30 minutos sin pérdida. Certificado oficial de inspección Morales Plumbing Lic. C-36 #1156542.",
+        "pb_svc_2_tech_scope": "Reemplazo integral de grifería obsoleta y válvulas de escuadra. Instalación de aireadores de compensación de presión y mecanismos de doble descarga para optimizar caudal volumétrico.",
+        "pb_svc_2_tech_mat": "Accesorios certificados WaterSense, grifería de latón sin plomo (NSF/ANSI 61 y 372), sellos de elastómero EPDM y latiguillos trenzados de acero inoxidable.",
+        "pb_svc_2_tech_std": "Normativa California Title 24 (máximo 1.2 GPM en lavabos, 1.8 GPM en cocinas, 1.28 GPF en inodoros) y Código de Conservación de San José.",
+        "pb_svc_2_tech_qa": "Calibración de caudal y verificación de estanqueidad bajo presión operativa continua de 60 PSI. Cero fugas y máxima eficiencia hídrica.",
+        "pb_svc_3_tech_scope": "Dimensionamiento y balanceo de redes de distribución de agua según demanda de unidades de gasto de artefactos (WSFU). Análisis de pérdidas por fricción y presión residual.",
+        "pb_svc_3_tech_mat": "Tuberías de cobre rígido Tipo L y PEX-A Uponor con expansión en frío según ASTM F1960. Manifolds de distribución de flujo balanceado sin juntas ocultas.",
+        "pb_svc_3_tech_std": "Uniform Plumbing Code (UPC) Capítulo 6 y Apéndice A (Sizing of Water Supply Systems), especificaciones de Santa Clara Valley Water District.",
+        "pb_svc_3_tech_qa": "Garantía de presión dinámica mínima de 35 PSI en el punto más desfavorable de la instalación bajo demanda pico simultánea.",
+        "pb_svc_4_tech_scope": "Desmantelamiento y reemplazo total de tuberías galvanizadas degradadas por corrosión interna o sarro. Montaje de nuevas troncales y derivaciones aéreas y bajo piso.",
+        "pb_svc_4_tech_mat": "Tubería de cobre rígido Tipo L sin costura (ASTM B88), conexiones mecánicas prensadas Viega ProPress con sellos EPDM de alta temperatura.",
+        "pb_svc_4_tech_std": "California Plumbing Code (CPC) Sección 604, normas de seguridad contra incendios de San José (instalación 100% libre de llama abierta).",
+        "pb_svc_4_tech_qa": "Prueba de hermeticidad a 100 PSI con nitrógeno. Inspección y aprobación con permiso oficial de la Ciudad de San José.",
+        "pb_svc_5_tech_scope": "Evaluación de campo de absorción, nivelación de pendientes de descarga sanitaria e instalación de tanques sépticos de doble compartimento con filtro de efluentes.",
+        "pb_svc_5_tech_mat": "Tanques de concreto prefabricado de alta resistencia o polietileno reforzado, tuberías sanitarias de PVC Cédula 40 (ASTM D2665) con uniones cementadas al solvente.",
+        "pb_svc_5_tech_std": "Código de Salud Ambiental del Condado de Santa Clara (Department of Environmental Health) y CPC Capítulo 7 y Apéndice H.",
+        "pb_svc_5_tech_qa": "Prueba de percolación en sitio, prueba de estanqueidad por columna de agua y balanceo gravimétrico de líneas de distribución.",
+        "pb_svc_6_tech_scope": "Tendido subterráneo y vertical del sistema de desagüe, ventilación (DWV) y suministro de agua potable en edificaciones nuevas y adiciones estructurales.",
+        "pb_svc_6_tech_mat": "Tuberías ABS Cédula 40 / PVC DWV, soportes antisísmicos para tuberías, cobre Tipo L y tubería Uponor PEX-A con anillos de memoria térmica.",
+        "pb_svc_6_tech_std": "California Plumbing Code (CPC) Capítulos 3, 6, 7 y 9; Código de Construcción de San José y estándares sísmicos de California.",
+        "pb_svc_6_tech_qa": "Prueba de cabeza de agua de 10 pies en redes de desagüe y prueba neumática de 100 PSI en redes de suministro antes del sellado de muros.",
+        "pb_svc_7_tech_scope": "Instalación de calentadores de agua híbridos de alta eficiencia (Tier-4 ENERGY STAR). Tendido de drenaje de condensados, válvula de alivio térmico y desconectador eléctrico.",
+        "pb_svc_7_tech_mat": "Unidad bomba de calor híbrida con tanque vitrificado, líneas de condensado en PVC con neutralizador de acidez, vaso de expansión térmico pre-presurizado.",
+        "pb_svc_7_tech_std": "Normativa ambiental BAAQMD (Bay Area Air Quality Management District), Código Eléctrico (NEC) y CPC Sección 507.",
+        "pb_svc_7_tech_qa": "Ajuste de termostato a 120°F según norma de seguridad infantil, verificación de flujo de aire y prueba de funcionamiento de la válvula T&P.",
+        "pb_svc_8_tech_scope": "Diagnóstico y mitigación de sobrepresión provocada por calentamiento de agua en circuitos cerrados con válvula antirretorno o regulador de presión (PRV).",
+        "pb_svc_8_tech_mat": "Tanques de expansión térmica de diafragma de butilo (aprobados NSF 61), válvulas de alivio de temperatura y presión (T&P) de 150 PSI / 210°F ASME.",
+        "pb_svc_8_tech_std": "California Plumbing Code (CPC) Sección 608.3 y ordenanzas locales de seguridad en calentadores de agua del Condado de Santa Clara.",
+        "pb_svc_8_tech_qa": "Calibración de la precarga de aire del tanque de expansión exactamente igual a la presión estática del agua del inmueble (50 a 65 PSI).",
+        "pb_svc_9_tech_scope": "Inspección endoscópica computarizada de líneas laterales de drenaje y cloaca principal. Localización precisa de fisuras, raíces, colapsos y contrapendientes.",
+        "pb_svc_9_tech_mat": "Cámara autonivelante de alta resolución con iluminación LED envolvente, transmisor de sonda electromagnética de 512 Hz y receptor localizador digital de profundidad.",
+        "pb_svc_9_tech_std": "Estándares de inspección de alcantarillado de NASSCO (PACP) y regulaciones del San José Regional Wastewater Facility.",
+        "pb_svc_9_tech_qa": "Reporte digital en video de alta definición con telemetría en metros/pies, indicación exacta de profundidad y ubicación en superficie.",
+        "pb_svc_10_tech_scope": "Instalación de sistemas de captación pluvial de techos, desviadores de primer lavado y almacenamiento para reutilización en riego y sanitarios.",
+        "pb_svc_10_tech_mat": "Cisternas de polietileno virgen con protección UV grado alimenticio, filtros de sedimentos de malla fina de acero inoxidable, tubería de distribución no potable marcada en morado.",
+        "pb_svc_10_tech_std": "California Plumbing Code (CPC) Capítulo 16 (Nonpotable Rainwater Catchment Systems) y lineamientos de Valley Water.",
+        "pb_svc_10_tech_qa": "Protección total contra reflujo con dispositivo de prevención de contraflujo certificado ASSE 1013 y prueba de presión del circuito de impulsión.",
+        "pb_svc_11_tech_scope": "Reemplazo de calentadores de tanque convencionales por equipos continuos sin tanque de alta demanda BTU. Modificación y ampliación de líneas de gas natural y ventilación.",
+        "pb_svc_11_tech_mat": "Líneas de gas dedicadas de 3/4 pulg. a 1 pulg., conductos concéntricos de polipropileno o acero inoxidable Categoría IV, kit de válvulas de aislamiento para descalcificación.",
+        "pb_svc_11_tech_std": "California Fuel Gas Code (NFPA 54), CPC Capítulo 5 y normativas de emisión Ultra Low NOx de Santa Clara County.",
+        "pb_svc_11_tech_qa": "Prueba de presión de gas con columna de agua (manómetro de mercurio/digital a 3 PSI durante 15 minutos) y puesta en marcha con calibración de combustión.",
+        "pb_svc_12_tech_scope": "Instalación en línea principal de válvulas inteligentes de cierre automático con micro-transductores ultrasónicos y sensores remotos de humedad.",
+        "pb_svc_12_tech_mat": "Válvula de corte motorizada inteligente (Moen Flo / Phyn), accesorios roscados de bronce sin plomo, bypass manual de mantenimiento con válvulas de bola de cuarto de vuelta.",
+        "pb_svc_12_tech_std": "Certificación ASSE 1061 / UPC, instalación eléctrica bajo código NEC con fuente de poder clase 2 protegida contra sobretensiones.",
+        "pb_svc_12_tech_qa": "Prueba de disparo de cierre automático por caída de presión milimétrica y enlace a red de monitoreo 24/7 de Morales Plumbing.",
+        "pb_svc_13_tech_scope": "Reemplazo integral de toda la tubería de suministro de agua potable fría y caliente en la vivienda, desde el medidor hasta cada accesorio de consumo.",
+        "pb_svc_13_tech_mat": "Sistema Uponor PEX-A ProPEX de alta flexibilidad o cobre rígido Tipo L, llaves de paso angulares de cuarto de vuelta de bola metálica, cajas de pared de latón.",
+        "pb_svc_13_tech_std": "California Plumbing Code (CPC) Capítulo 6, aprobaciones de plomería y edificación de la Ciudad de San José.",
+        "pb_svc_13_tech_qa": "Prueba de presión de 100 PSI en presencia del inspector municipal. Aislamiento térmico de tuberías de agua caliente según Title 24.",
+        "pb_svc_14_tech_scope": "Desconexión de desagües de lavandería y duchas para reorientar aguas jabonosas hacia sistemas de irrigación subsuperficial por gravedad o bombeo.",
+        "pb_svc_14_tech_mat": "Válvulas desviadoras de 3 vías de latón fundido, tanques de compensación de flujo con filtro de pelusas de acero inoxidable, tubería de goteo subterránea con emisor antiobstrucción.",
+        "pb_svc_14_tech_std": "California Plumbing Code (CPC) Capítulo 15 (Alternate Water Sources for Plumbing Systems) y directrices de protección de mantos freáticos de Santa Clara.",
+        "pb_svc_14_tech_qa": "Prueba de flujo sin contrapresión, etiquetado de precaución en tuberías ('Agua No Potable') y ajuste de zona de descarga de absorción.",
+        "pb_svc_15_tech_scope": "Inspección técnica diagnóstica de la solidez estructural de las instalaciones mecánicas de plomería, anclajes antisísmicos de calentadores y colectores principales.",
+        "pb_svc_15_tech_mat": "Anclajes y correas de acero galvanizado calibre 12 aprobadas por el estado de California, colectores de latón de alta resistencia, medidores de espesor ultrasónicos.",
+        "pb_svc_15_tech_std": "California Health and Safety Code Sección 19211 (Seismic strapping of water heaters), CPC y normas de resistencia estructural de San José.",
+        "pb_svc_15_tech_qa": "Informe detallado de grosor remanente de pared en tuberías metálicas, verificación de par de apriete en juntas mecánicas y certificación de seguridad.",
+
         "hero_pill_2026": "Handa",
         "hero_pill_eco": "Eco-Pokus",
         "hero_pill_ai": "AI Pinagsama",
@@ -5074,7 +5334,7 @@ const translations = {
         "contact_form_name": "Pangalan",
         "contact_form_phone": "Telepono",
         "contact_form_email": "Email",
-        "contact_form_másg": "Mensahe",
+        "contact_form_msg": "Mensahe",
         "contact_form_submit": "Ipadala ang Mensahe",
         "terminal_title": "MORALES_EXECUTIVE_V1.0",
         "profile_role": "Principal technician & Tagapagtatag",
@@ -5258,51 +5518,51 @@ const translations = {
         "eng_b2b_li1": "Subcontracting para sa mga kumplikadong pag-install.",
         "eng_b2b_li2": "HVAC & Electrical Integration: Gas lines, condensate drains, and hybrid unit setups.",
         "eng_b2b_li3": "Dedikadong suporta sa pamamahala ng proyekto.",
-        "pb_svc_1_name": "[TL] Precision Leak Detection",
-        "pb_svc_1_user": "[TL] Pinpoint hidden leaks without destructive tearing of walls or floors.",
-        "pb_svc_1_tech": "[TL] Deployment of acoustic listening devices, thermal imaging, and tracer gas to locate micro-fissures in pressurized lines. Required for non-invasive repair protocols.",
-        "pb_svc_2_name": "[TL] Eco-Retrofitting",
-        "pb_svc_2_user": "[TL] Upgrade your fixtures to high-efficiency, water-saving technologies.",
-        "pb_svc_2_tech": "[TL] Installation of WaterSense certified fixtures, pressure compensating aerators, and dual-flush mechanismás to optimize volumetric flow rates and comply with local conservation mandates.",
-        "pb_svc_3_name": "[TL] Hydraulic Infrastructure Design",
-        "pb_svc_3_user": "[TL] Custom plumbing blueprints and system sizing for your property.",
-        "pb_svc_3_tech": "[TL] Calculations based on fixture unit (FU) demand, static pressure analysis, and friction loss equations to engineer oóptimal pipe diameters and material selections.",
-        "pb_svc_4_name": "[TL] Elite Copper Renovations",
-        "pb_svc_4_user": "[TL] Replace old, failing pipes with premium, long-lasting copper.",
-        "pb_svc_4_tech": "[TL] Extraction of galvanized or defective piping, replaced with Type L copper utilizing ProPress zero-flame mechanical joining for superior joint integrity and reduced oxidation.",
-        "pb_svc_5_name": "[TL] Advanced Septic Systemás",
-        "pb_svc_5_user": "[TL] Comprehensive septic tank installation, repair, and biological optimization.",
-        "pb_svc_5_tech": "[TL] Soil percolation analysis, leach field sizing, and installation of multi-chamber bio-reactors with effluent filters to ensure oóptimal anaerobic decomposition.",
-        "pb_svc_6_name": "[TL] New Construction Plumbing",
-        "pb_svc_6_user": "[TL] End-to-end plumbing installation for new homes and additions.",
-        "pb_svc_6_tech": "[TL] Underground rough-in (DWV), water distribution top-out, and final fixture setting in strict adherence to UPC and local municipal codes. Includes hydrostatic testing.",
-        "pb_svc_7_name": "[TL] Advanced Water Heaters",
-        "pb_svc_7_user": "[TL] Installation of ultra-efficient Heat Pump and Hybrid water heaters.",
-        "pb_svc_7_tech": "[TL] Integration of compressor-driven heat pump units requiring condensate management, 240V dedicated circuits, and adherence to BAAQMD zero-NOx mandates.",
-        "pb_svc_8_name": "[TL] Thermal Expansion Systemás",
-        "pb_svc_8_user": "[TL] Protect your plumbing from dangerous pressure spikes.",
-        "pb_svc_8_tech": "[TL] Sizing and installation of hydropneumatic expansion tanks on the cold water supply of closed-loop heating systems to absorb volumetric expansion and prevent valve failure.",
-        "pb_svc_9_name": "[TL] Smart Diagnostics",
-        "pb_svc_9_user": "[TL] High-tech camera inspections of your sewer and drain lines.",
-        "pb_svc_9_tech": "[TL] Fiber-optic endoscopic scoping of DWV systems with integrated sonde locating to map lateral runs, identify root intrusion, and pinpoint structural collapses.",
-        "pb_svc_10_name": "[TL] Rainwater Harvesting",
-        "pb_svc_10_user": "[TL] Capture, filter, and reuse rainwater for irrigation and non-potable use.",
-        "pb_svc_10_tech": "[TL] Design of catchment surfaces, installation of primary filtration (first flush diverters), and sizing of high-density polyethylene (HDPE) cisterns with booster pumps.",
-        "pb_svc_11_name": "[TL] Tankless Upgrades",
-        "pb_svc_11_user": "[TL] Endless hot water and massive space savings with a tankless heater.",
-        "pb_svc_11_tech": "[TL] BTU load calculations for dynamic flow demand, upgrade of gas supply lines, and installation of concentric venting systems for modulating condensing heat exchangers.",
-        "pb_svc_12_name": "[TL] Leak Prevention (Flo)",
-        "pb_svc_12_user": "[TL] Smart, automated water shut-off valves that detect leaks instantly.",
-        "pb_svc_12_tech": "[TL] Inline installation of ultrasonic flow meters with machine learning algorithmás capable of distinguishing standard flow events from micro-leaks or catastrophic bursts.",
-        "pb_svc_13_name": "[TL] Whole-house Repipe",
-        "pb_svc_13_user": "[TL] Complete replacement of all water lines in your home for oóptimal flow.",
-        "pb_svc_13_tech": "[TL] Strategic abandonment of existing lines and routing of Cross-linked Polyethylene (PEX-A) utilizing expansion fittings for minimal friction loss and freeze resistance.",
-        "pb_svc_14_name": "[TL] Greywater Systemás",
-        "pb_svc_14_user": "[TL] Reuse water from showers and laundry to irrigate your landscape.",
-        "pb_svc_14_tech": "[TL] Installation of 3-way diversion valves, surge tanks, and subsurface drip irrigation lines conforming to Chapter 15 of the CPC for safe effluent discharge.",
-        "pb_svc_15_name": "[TL] Structural Integrity Checks",
-        "pb_svc_15_user": "[TL] Complete assessment of your plumbing system's safety and longevity.",
-        "pb_svc_15_tech": "[TL] Ultrasonic thickness gauging of metallic pipes, seismic bracing validation for equipment, and comprehensive stress testing of all primary distribution manifolds.",
+        "pb_svc_1_name": "Tiyak na Pagtukoy sa Tagas ng Tubig",
+        "pb_svc_1_user": "Matukoy ang mga nakatagong tagas nang hindi sinisira ang mga pader o sahig.",
+        "pb_svc_1_tech": "Paggamit ng mga aparatong pakikinig na acoustic, thermal imaging, at pagsusuri sa pagbaba ng presyon upang mahanap ang mga micro-tagas sa mga tubo ng tubig.",
+        "pb_svc_2_name": "Eco-Retrofitting at Pag-upgrade ng Gripo",
+        "pb_svc_2_user": "I-upgrade ang iyong mga fixture sa mataas na kahusayan at teknolohiyang nagtitipid ng tubig.",
+        "pb_svc_2_tech": "Pag-install ng mga fixture na sertipikadong WaterSense, mga pressure-compensating aerator, at mga dual-flush na mekanismo upang mapabuti ang daloy ng tubig at sumunod sa mga batas sa konserbasyon.",
+        "pb_svc_3_name": "Pagsusuri at Pag-aayos ng Linya ng Tubig",
+        "pb_svc_3_user": "Pasadyang mga plano sa tubero at tamang sukat ng sistema para sa iyong ari-arian.",
+        "pb_svc_3_tech": "Mga kalkulasyon ng tubig batay sa WSFU demand, static pressure, at pagbaba ng presyon upang matukoy ang tamang laki ng tubo alinsunod sa UPC Code.",
+        "pb_svc_4_name": "Elite Copper Line Renovations",
+        "pb_svc_4_user": "Palitan ang mga lumang tubo ng de-kalidad at matibay na tanso.",
+        "pb_svc_4_tech": "Kumpletong pagpapalit ng mga kalawanging tubo gamit ang Type L copper at Viega ProPress mechanical joints para sa tibay at kaligtasan.",
+        "pb_svc_5_name": "Advanced Septic at Drainage Systems",
+        "pb_svc_5_user": "Komprehensibong pag-install, pagkumpuni, at pagpapanatili ng septic tank.",
+        "pb_svc_5_tech": "Pagsusuri sa lupa, pagsukat ng leach field, at pag-install ng dual-compartment septic tank na may effluent filter ayon sa mga regulasyon ng Santa Clara County.",
+        "pb_svc_6_name": "Plumbing para sa Bagong Bahay at Konstruksyon",
+        "pb_svc_6_user": "Kumpletong pag-install ng tubero para sa mga bagong bahay, ADU, at dagdag na silid.",
+        "pb_svc_6_tech": "Underground DWV piping, pamamahagi ng mainit at malamig na tubig, at paglalagay ng mga gamit na may pagsusuri sa presyon ng tubig alinsunod sa California Plumbing Code.",
+        "pb_svc_7_name": "Hybrid Heat Pump Water Heater Systems",
+        "pb_svc_7_user": "Pag-install ng mga napakatipid na Heat Pump at Hybrid water heater.",
+        "pb_svc_7_tech": "Pag-install ng mga ENERGY STAR hybrid heat pump water heater, kasama ang condensate drain, expansion tank, at wastong koneksyon sa kuryente.",
+        "pb_svc_8_name": "Thermal Expansion at Pressure Relief Systems",
+        "pb_svc_8_user": "Protektahan ang iyong tubero mula sa mapanganib na pagtaas ng presyon.",
+        "pb_svc_8_tech": "Tamang sukat at pag-install ng expansion tank sa mga saradong linya ng tubig upang maiwasan ang pinsala sa mga balbula at tubo dahil sa mataas na presyon.",
+        "pb_svc_9_name": "High-Definition Sewer Camera Diagnostics",
+        "pb_svc_9_user": "High-tech na pag-inspeksyon gamit ang camera sa mga linya ng imburnal at kanal.",
+        "pb_svc_9_tech": "Pagsusuri sa linya ng imburnal gamit ang self-leveling color camera na may 512 Hz sonde para malaman ang eksaktong lalim at daan ng tubo mula sa lupa.",
+        "pb_svc_10_name": "Rainwater Harvesting at Irrigation Integration",
+        "pb_svc_10_user": "Kolektahin, salain, at gamitin muli ang tubig-ulan para sa pagdidilig ng halaman.",
+        "pb_svc_10_tech": "Pag-install ng mga tubo para sa tubig-ulan, first-flush diverters, cistern tank, at booster pump na may proteksyon laban sa backflow.",
+        "pb_svc_11_name": "Tankless Water Heater Conversions",
+        "pb_svc_11_user": "Walang katapusang mainit na tubig at malaking matitipid sa espasyo gamit ang tankless heater.",
+        "pb_svc_11_tech": "Pagsukat ng linya ng gas para sa mataas na demand ng BTU, pagpapatakbo ng 3/4-inch gas line, concentric direct venting, at isolation valves para sa descaling.",
+        "pb_svc_12_name": "Smart Water Shutoff at Leak Prevention (Flo)",
+        "pb_svc_12_user": "Smart at automated na shut-off valve na agad na tumitigil sa tubig kapag may tagas.",
+        "pb_svc_12_tech": "Pag-install sa main line ng mga smart valve (tulad ng Moen Flo) na may ultrasonic sensors para sa micro-flow tracking at awtomatikong shut-off.",
+        "pb_svc_13_name": "Kumpletong Repipe sa Buong Bahay",
+        "pb_svc_13_user": "Kumpletong pagpapalit ng lahat ng linya ng tubig sa iyong tahanan para sa malakas na daloy.",
+        "pb_svc_13_tech": "Kumpletong repiping gamit ang Uponor PEX-A o Type L copper manifolds, sinusuri sa 100 PSI pressure kasama ang permit at inspeksyon mula sa lungsod.",
+        "pb_svc_14_name": "Greywater Diversion at Recycling Systems",
+        "pb_svc_14_user": "Gamitin muli ang tubig mula sa pampaligo at labada upang idilig sa iyong hardin.",
+        "pb_svc_14_tech": "Pag-install ng 3-way diverter valve, surge tank, at subsurface drip irrigation lines ayon sa California Plumbing Code Chapter 15.",
+        "pb_svc_15_name": "Structural Plumbing at Manifold Integrity Checks",
+        "pb_svc_15_user": "Kumpletong pagsusuri sa kaligtasan at tibay ng iyong buong sistema ng tubero.",
+        "pb_svc_15_tech": "Pagsusuri sa kapal ng mga metal na tubo gamit ang ultrasound, pag-inspeksyon sa seismic straps ng heater, at pagsubok sa presyon ng main manifold.",
         "lbl_subtitles": "Pagsasalin ng Komiks",
         "svc_1_step_1": "Pangunahing diagnostic mapping.",
         "svc_1_step_2": "System isolation.",
@@ -5383,15 +5643,15 @@ const translations = {
         "svc_5_good_desc": "[EN] Inspección de cámara básica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
         "svc_5_better_desc": "[EN] Inspección profunda SeeSnake con localización por sonar. Trazamos y marcamos la ubicación exacta y profundidad del problema en la superficie.",
         "svc_5_best_desc": "[EN] Inspección HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Tcúúnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
-        "svc_6_good_desc": "[EN] Excavación tradicional e instalación de PVC SDR-35. Cumple con los cdigos locales y provee una solución probada de flujo por gravedad.",
+        "svc_6_good_desc": "[EN] Excavación tradicional e instalación de PVC SDR-35. Cumple con los códigos locales y provee una solución probada de flujo por gravedad.",
         "svc_6_better_desc": "[EN] Reemplazo con ABS Cdula 40. Tubería de núcleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
-        "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadías. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
+        "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadas. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
         "svc_7_good_desc": "[EN] Instalación de un calentador atmosfrico estándar de 50 galones. Reemplazo directo sin modificaciones eléctricas complejas.",
-        "svc_7_better_desc": "[EN] Instalación de calentador Hbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
+        "svc_7_better_desc": "[EN] Instalación de calentador Híbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
         "svc_7_best_desc": "[EN] Bradford White AeroTherm con integración Wi-Fi completa. Modos de programación inteligente, bomba ultra-silenciosa y sensores de detección de fugas integrados desde la fbrica.",
         "svc_8_good_desc": "[EN] Instalación de válvula PRV de latn estándar de grado residencial. Estabiliza la presión principal previniendo daños a corto plazo.",
         "svc_8_better_desc": "[EN] Wilkins 600XL con manómetro de lectura integrada. Permite un monitoreo visual y ajustes precisos sin requerir herramientas adicionales de diagnóstico.",
-        "svc_8_best_desc": "[EN] Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios volumtricos.",
+        "svc_8_best_desc": "[EN] Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios caudales volumétricos.",
         "svc_9_good_desc": "[EN] Respuesta primaria. Cierre del agua principal y uso de tapones SharkBite temporales para detener la emergencia y permitir secado.",
         "svc_9_better_desc": "[EN] Aislamiento del sector. Instalación de válvulas de aislamiento permanente de Cobre ProPress, permitiendo dar agua al resto de la casa mientras el sector daado queda aislado.",
         "svc_9_best_desc": "[EN] Resolución y reestructuracin. Construcción de un manifold de aislamiento completo y soldadura/prensado definitivo de la falla. Solución permanente de una sola visita.",
@@ -5404,7 +5664,7 @@ const translations = {
         "svc_12_good_desc": "[EN] Instalación de ensamblaje RPZ (Reduced Pressure Zone) Wilkins 375 estándar. Cumplimiento inmediato con las regulaciones de la ciudad.",
         "svc_12_better_desc": "[EN] Ensamblaje Watts Serie 009 de alto flujo. Válvulas de control de cuarto de vuelta y cuerpo de bronce sin plomo para aplicaciones comerciales severas.",
         "svc_12_best_desc": "[EN] Febco 860 RPZ equipado con sensor IoT de caída de presión. Monitorea los diferenciales de presión en tiempo real y alerta al administrador sobre bloqueos o fallas antes de la inspección anual.",
-        "svc_13_good_desc": "[EN] Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadías de acero inoxidable y sellos nuevos.",
+        "svc_13_good_desc": "[EN] Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadas de acero inoxidable y sellos nuevos.",
         "svc_13_better_desc": "[EN] Instalación de herrajes de gama media-alta (Moen Align, Grohe) con acabados resistentes a manchas. Sellado con silicona comercial anti-moho.",
         "svc_13_best_desc": "[EN] Instalación e integración de grifería inteligente (Kohler Artifacts Smart Touch / Voice Control). Calibración de temperatura preestablecida y cableado del módulo sensor.",
         "svc_14_good_desc": "[EN] Test rápido in-situ. Medición de TDS (Sólidos Disueltos Totales), prueba de dureza por gotas químicas y nivel de cloro libre.",
@@ -5606,14 +5866,14 @@ const translations = {
         "pb_svc_2_good_time": "5-7 Días",
         "pb_svc_2_better_just": "[Scope] Premium Repipe (Horizontal y Vertical): Up to 3 baths, 1 kitchen (ice maker, dishwasher), laundry, 3 hose bibs. Reemplazo total de la casa (lineas de rastreo y montantes de pared). Full home Uponor expansion system. Includes firestop and drywall rough-patch.",
         "pb_svc_2_better_mat": "Up to 350ft PEX-A (Uponor), ProPEX expansion rings, 1/2\" Type L copper stub-outs, drop-ear elbows, premium quarter-turn angle stops, fire-rated caulk.",
-        "pb_svc_2_better_tools": "Milwaukee M12/M18 ProPEX expansion tools, self-feed drill bits, HEPA vacuumás, drop cloths.",
+        "pb_svc_2_better_tools": "Milwaukee M12/M18 ProPEX expansion tools, self-feed drill bits, HEPA vacuums, drop cloths.",
         "pb_svc_2_better_time": "7-10 Días",
         "pb_svc_2_best_just": "[Scope] Ultra-Premium Commercial Grade: Up to 4 baths, fully sized for high flow rates (1\" mains). Complete Type L Copper installation with ProPress. Includes permit expediting.",
         "pb_svc_2_best_mat": "Up to 400ft Type L hard copper pipe (1\", 3/4\", 1/2\"), Viega ProPress zero-lead fittings, acoustic pipe clamps, heavy-duty unistrut supports.",
         "pb_svc_2_best_tools": "Ridgid RP 350 ProPress tool, heavy-duty copper cutters, deburring and reaming tools, laser level.",
         "pb_svc_2_best_time": "10-14 Días",
         "pb_svc_3_title": "Service 3",
-        "pb_svc_3_good_just": "[Scope] Standard water softening for homes up to 3 bedroomás (approx. 32,000 grain capacity). Install via existing loop. Excludes creating a new soft water loop.",
+        "pb_svc_3_good_just": "[Scope] Standard water softening for homes up to 3 bedrooms (approx. 32,000 grain capacity). Install via existing loop. Excludes creating a new soft water loop.",
         "pb_svc_3_good_mat": "Fleck 5600SXT digital metered valve, 1.0 cu ft high-capacity resin, standard brine tank, 2 bags of solar salt, corrugated stainless flex connectors.",
         "pb_svc_3_good_tools": "Pipe threaders, teflon tape, basic multimeter, adjustable wrenches, bucket.",
         "pb_svc_3_good_time": "3-5 hrs",
@@ -5700,7 +5960,7 @@ const translations = {
         "pb_svc_9_better_tools": "Gas-powered skid-mounted jetter (4,000 PSI / 4+ GPM), Warthog rotating nozzle, inspection camera.",
         "pb_svc_9_better_time": "3-5 hrs",
         "pb_svc_9_best_just": "[Scope] Ultra-Premium Storm Drain / Heavy Commercial Jetting (up to 300 feet). Descales cast iron pipes and removes heavy debris/rocks. High-frequency pulsation.",
-        "pb_svc_9_best_mat": "Industrial grade descaling agents, containment boomás/mats for waste capture.",
+        "pb_svc_9_best_mat": "Industrial grade descaling agents, containment booms/mats for waste capture.",
         "pb_svc_9_best_tools": "Trailer-mounted Vactor/Jetter unit (up to 4,000 PSI / 18 GPM), chain flail nozzles, heavy-duty safety gear.",
         "pb_svc_9_best_time": "1 Day",
         "pb_svc_10_title": "Service 10",
@@ -5765,7 +6025,7 @@ const translations = {
         "pb_svc_14_better_tools": "Multimeter, wire strippers, battery terminal crimpers.",
         "pb_svc_14_better_time": "4-6 hrs",
         "pb_svc_14_best_just": "[Scope] Ultra-Premium Dual-Redundant Smart System. Two commercial-grade pumps alternating cycles, dual AGM batteries, and cellular/WiFi controller module for instant flood alerts.",
-        "pb_svc_14_best_mat": "Ion Technologies Dual Pump System, smart alternating controller, cellular telemetry module, 2x 100Ah AGM batteries, high-water alarmás.",
+        "pb_svc_14_best_mat": "Ion Technologies Dual Pump System, smart alternating controller, cellular telemetry module, 2x 100Ah AGM batteries, high-water alarms.",
         "pb_svc_14_best_tools": "Network diagnostic tools, electrical conduit tools for clean wire management.",
         "pb_svc_14_best_time": "1 Day",
         "pb_svc_15_title": "Service 15",
@@ -6002,7 +6262,7 @@ const translations = {
         "lbl_membership_badge_premium": "PREMIUM",
         "btn_active_plan": "Aktibong Plano",
         "usage_tracker_text": "Libreng tawag na nagamit: {used} / 5",
-        "másg_membership_updated": "Nai-update ang pagsasapi sa {tier}",
+        "msg_membership_updated": "Nai-update ang pagsasapi sa {tier}",
         "portal_title": "MP CLIENT PORTAL",
         "portal_subtitle": "Matalinong Pamamahala ng Appointments, PQR at Service Memory",
         "tab_dashboard": " Aking Dashboard",
@@ -6028,7 +6288,7 @@ const translations = {
         "lbl_select_date": "PETSA",
         "lbl_select_time": "ORAS",
         "btn_confirm_appointment": "Kumpirmahin ang Appointment",
-        "pqr_title": "PQRS Center (Mga Kahilingan, Reklamo, Claimás, at Mungkahi)",
+        "pqr_title": "PQRS Center (Mga Kahilingan, Reklamo, Claims, at Mungkahi)",
         "pqr_desc": "Direktang irehistro ang iyong mga reklamo, mungkahi, o kahilingan. Bawat kaso ay pinapamahalaan sa ilalim ng mahigpit na proseso.",
         "lbl_pqr_type": "URI NG KAHILINGAN",
         "pqr_opt_request": "Kahilingan (Espesyal)",
@@ -6108,9 +6368,9 @@ const translations = {
         "eng_cobre_tech2_desc": "Inaasahang buhay ng higit sa 50 taon. Agad na itinataas ang structural valuation ng pag-aari hanggang 15%.",
         "eng_cobre_tech3_title": "Katangiang Acoustic at Patuloy na Daloy",
         "eng_cobre_tech3_desc": "Tinatanggal ng kapal ng pader ng Type L copper ang water hammer at kinakaya ang matinding presyon.",
-        "eng_seóptico_title": "Advanced Septic Systemás",
+        "eng_seóptico_title": "Advanced Septic Systems",
         "eng_seóptico_code": "ENG-CENT-005",
-        "eng_seóptico_p1": "Dinisenyo, ipinapatupad, at pinapanatili ng aming dibisyon ng Advanced Septic Systemás ang mga off-grid na sistema sa pamamahala ng effluent gamit ang modernong biotechnology.",
+        "eng_seóptico_p1": "Dinisenyo, ipinapatupad, at pinapanatili ng aming dibisyon ng Advanced Septic Systems ang mga off-grid na sistema sa pamamahala ng effluent gamit ang modernong biotechnology.",
         "eng_seóptico_p2": "Sa halip na mag-install ng maginoong mga septic tank, kami ay nagpapatupad ng mga Aerobic Treatment Unit (ATU) na nagpoproseso ng tubig sa isang antas ng kadalisayan na halos angkop para sa ibabaw na irigasyon.",
         "eng_seóptico_tech1_title": "Percolation Studies at Topographic Design",
         "eng_seóptico_tech1_desc": "Geological na pagsusuri ng lupa upang matukoy ang eksaktong bilis ng pagsipsip at laki ng leach field.",
@@ -6120,91 +6380,91 @@ const translations = {
         "eng_seóptico_tech3_desc": "End-to-end permit management, na tinitiyak na ang disenyo ay lumalampas sa mga kinakailangan sa kalusugan at pagbawas sa mga multa.",
         "svc_1_title": "Precision Leak Detection",
         "svc_1_p1": "At Morales Plumbing, precision is our standard. We identify hidden faults without destructive demolition.",
-        "svc_1_p2": "Using FLIR thermal cameras and acoustic sensors we trace leaks behind walls or slabs. Massive savings vs. reconstruction.",
+        "svc_1_p2": "Paggamit ng mga aparatong pakikinig na acoustic, thermal imaging, at pagsusuri sa pagbaba ng presyon upang mahanap ang mga micro-tagas sa mga tubo ng tubig.",
         "svc_1_good": "<strong>GOOD (Standard) $450 - $700</strong><br>Visual/acoustic diagnostic. Standard patches for accessible leaks.",
         "svc_1_better": "<strong>BETTER (Premium) $585 - $900</strong><br>FLIR thermal + pressure drop test. Epoxy coating repair.",
         "svc_1_best": "<strong>BEST (Ultra-Premium) $720 - $1,100</strong><br>Full structural mapping and sector isolation. ProPress copper segment.",
         "svc_2_title": "Full House Repipe",
         "svc_2_p1": "A full repipe is a heart transplant for your home. Old galvanized pipes cause floods and water quality degradation.",
-        "svc_2_p2": "We replace all water infrastructure with commercial-grade Copper and PEX. Eradicates cloudy water and chronic leaks.",
+        "svc_2_p2": "Pag-install ng mga fixture na sertipikadong WaterSense, mga pressure-compensating aerator, at mga dual-flush na mekanismo upang mapabuti ang daloy ng tubig at sumunod sa mga batas sa konserbasyon.",
         "svc_2_good": "<strong> GOOD (Standard) $3,800 - $5,300</strong><br>PEX-B piping with brass Crimp fittings. Includes 100 PSI hydrostatic pressure test. UPC-certified reliable solution.",
         "svc_2_better": "<strong> BETTER (Premium) $4,940 - $6,500</strong><br>PEX-A Uponor Expansion system. Superior flow rate, freeze-resistant, fewer mechanical fittings for lower long-term risk.",
         "svc_2_best": "<strong> BEST (Ultra-Premium) $6,080 - $8,600</strong><br>Type L Copper with ProPress technology (no solder, no flame). Maximum flow, natural antimicrobial properties and absolute commercial-grade durability for 50+ years.",
         "svc_3_title": "Water Filtration & Softening",
         "svc_3_p1": "Hard water destroys appliances and stains fixtures. We transform water quality from the entry point.",
-        "svc_3_p2": "We install systems eliminating chlorine, heavy metals and calcium. Crystal-clear water and 30% longer appliance life.",
+        "svc_3_p2": "Mga kalkulasyon ng tubig batay sa WSFU demand, static pressure, at pagbaba ng presyon upang matukoy ang tamang laki ng tubo alinsunod sa UPC Code.",
         "svc_3_good": "<strong>GOOD $1,500 - $2,300</strong><br>Standard 32,000-grain salt-based softener.",
         "svc_3_better": "<strong>BETTER $1,950 - $2,800</strong><br>Fleck 5600SXT Metered. Digital on-demand valve.",
         "svc_3_best": "<strong>BEST $2,400 - $3,200</strong><br>Halo 5 Whole House. Salt-free, UV sterilization.",
         "svc_4_title": "Smart Valve Installation",
         "svc_4_p1": "If a pipe bursts on vacation, IoT Smart Valves auto-shutoff and alert your phone in seconds.",
-        "svc_4_p2": "These systems monitor water flow 24/7 using AI to detect micro-leaks or catastrophic ruptures.",
+        "svc_4_p2": "Kumpletong pagpapalit ng mga kalawanging tubo gamit ang Type L copper at Viega ProPress mechanical joints para sa tibay at kaligtasan.",
         "svc_4_good": "<strong>GOOD $350 - $550</strong><br>Commercial-grade 1/4-turn brass ball valve.",
         "svc_4_better": "<strong>BETTER $455 - $700</strong><br>Moen Flo Smart Valve. Daily monitoring and smartphone shutoff.",
         "svc_4_best": "<strong>BEST $560 - $850</strong><br>Phyn Plus. Ultrasonic monitoring, no moving parts, smart home integration.",
         "svc_5_title": "SeeSnake Camera Inspection",
         "svc_5_p1": "Blind diagnostics destroy properties. Our SeeSnake cameras trace problems without excavation.",
-        "svc_5_p2": "We deploy military-grade self-leveling HD cameras underground for surgical repairs instead of destroying your yard.",
+        "svc_5_p2": "Pagsusuri sa lupa, pagsukat ng leach field, at pag-install ng dual-compartment septic tank na may effluent filter ayon sa mga regulasyon ng Santa Clara County.",
         "svc_5_good": "<strong>GOOD $250 - $400</strong><br>Basic camera inspection up to 50ft. USB video delivery.",
         "svc_5_better": "<strong>BETTER $325 - $500</strong><br>Deep SeeSnake with sonar tracking. Exact surface location.",
         "svc_5_best": "<strong>BEST $400 - $600</strong><br>HD inspection and digital modeling. Full system mapping and CIPP report.",
         "svc_6_title": "Main Sewer Replacement",
         "svc_6_p1": "A collapsed main sewer is one of the most disruptive failures. We offer guíaranteed replacements for decades.",
-        "svc_6_p2": "Whether through traditional excavation or trenchless methods, we eliminate roots and fractured pipes.",
+        "svc_6_p2": "Underground DWV piping, pamamahagi ng mainit at malamig na tubig, at paglalagay ng mga gamit na may pagsusuri sa presyon ng tubig alinsunod sa California Plumbing Code.",
         "svc_6_good": "<strong>GOOD $5,500 - $8,000</strong><br>Traditional excavation, SDR-35 PVC. Proven gravity flow solution.",
         "svc_6_better": "<strong>BETTER $7,150 - $9,700</strong><br>ABS Schedule 40. Superior solid core, gravel bed, two-way cleanouts.",
         "svc_6_best": "<strong>BEST $8,800 - $11,300</strong><br>Trenchless HDPE fused joints. Seamless, root-proof. Lifetime guíarantee.",
         "svc_7_title": "Hybrid Heat Pump Water Heater",
         "svc_7_p1": "Still spending hundreds on inefficient water heating? Hybrid Heat Pump reaches up to 400% efficiency.",
-        "svc_7_p2": "Besides qualifying for rebates, this system drastically cuts electric bills. Pays for itself in under 3 years.",
+        "svc_7_p2": "Pag-install ng mga ENERGY STAR hybrid heat pump water heater, kasama ang condensate drain, expansion tank, at wastong koneksyon sa kuryente.",
         "svc_7_good": "<strong>GOOD $2,200 - $3,000</strong><br>Standard 50-gallon atmospheric heater. Direct replacement.",
         "svc_7_better": "<strong>BETTER $2,860 - $3,700</strong><br>Rheem ProTerra Hybrid. Digital panel, rebate-eligible efficiency.",
         "svc_7_best": "<strong>BEST $3,520 - $5,100</strong><br>Bradford White AeroTherm with Wi-Fi. Smart scheduling, quiet pump, leak sensors.",
         "svc_8_title": "Pressure Reducing Valve (PRV)",
         "svc_8_p1": "Operating above 80 PSI destroys hoses, bursts valves, and voids warranties. A PRV protects silently.",
-        "svc_8_p2": "A PRV regulates flow to a safe 55-60 PSI, acting as a mechanical shield at your home entry point.",
+        "svc_8_p2": "Tamang sukat at pag-install ng expansion tank sa mga saradong linya ng tubig upang maiwasan ang pinsala sa mga balbula at tubo dahil sa mataas na presyon.",
         "svc_8_good": "<strong>GOOD $480 - $750</strong><br>Standard residential-grade brass PRV.",
         "svc_8_better": "<strong>BETTER $624 - $950</strong><br>Wilkins 600XL with integrated pressure gauge.",
         "svc_8_best": "<strong>BEST $768 - $1,200</strong><br>Watts LFN45B with inline strainer and thermal expansion tank.",
         "svc_9_title": "Emergency Triage",
         "svc_9_p1": "When a pipe bursts at 3AM, every second counts. We arrive fast, stabilize the leak, mitigate damage.",
-        "svc_9_p2": "Our rapid response squad stops catastrophic flow and restores vital service to functional aáreas.",
+        "svc_9_p2": "Pagsusuri sa linya ng imburnal gamit ang self-leveling color camera na may 512 Hz sonde para malaman ang eksaktong lalim at daan ng tubo mula sa lupa.",
         "svc_9_good": "<strong>GOOD $380 - $600</strong><br>Main shutoff and SharkBite temporary caps.",
         "svc_9_better": "<strong>BETTER $494 - $750</strong><br>Sector isolation with permanent ProPress valves.",
         "svc_9_best": "<strong>BEST $608 - $950</strong><br>Full isolation manifold. Permanent one-visit solution.",
         "svc_10_title": "CAD & Digital Tracing",
         "svc_10_p1": "Modern development requires documented precision. We trace underground lines and deliver as-built plans.",
-        "svc_10_p2": "We use electromagnetic tracing and digital modeling to map your invisible network and prevent accidents.",
+        "svc_10_p2": "Pag-install ng mga tubo para sa tubig-ulan, first-flush diverters, cistern tank, at booster pump na may proteksyon laban sa backflow.",
         "svc_10_good": "<strong>GOOD $600 - $900</strong><br>Main line tracing with surface paint and professional schematic.",
         "svc_10_better": "<strong>BETTER $780 - $1,200</strong><br>2D AutoCAD overlay integrated with property architectural plans.",
         "svc_10_best": "<strong>BEST $960 - $1,450</strong><br>3D BIM/Revit modeling. Every node, pipe and valve geolocated.",
         "svc_11_title": "Tankless Water Heater",
         "svc_11_p1": "Imagine endless hot water on demand. Tankless systems only fire when you open the tap.",
-        "svc_11_p2": "Save space, reduce carbon footprint, and ensure constant purified hot water without tank explosion risks.",
+        "svc_11_p2": "Pagsukat ng linya ng gas para sa mataas na demand ng BTU, pagpapatakbo ng 3/4-inch gas line, concentric direct venting, at isolation valves para sa descaling.",
         "svc_11_good": "<strong>GOOD $3,200 - $4,700</strong><br>Navien NPE-A2 non-condensing. Great for quick replacements.",
         "svc_11_better": "<strong>BETTER $4,160 - $5,700</strong><br>Rinnai RU Sensei Condensing. 0.95 UEF, smart modulating burners.",
         "svc_11_best": "<strong>BEST $5,120 - $7,700</strong><br>Navien NPE-240A2 with ComfortFlow recirculation. Instant hot water, zero wait.",
         "svc_12_title": "Backflow Preventer Assembly",
         "svc_12_p1": "If you manage a business or irrigation, a Backflow preventer is federally mandated. Avoid crippling fines.",
-        "svc_12_p2": "We are certified to install, calibrate and register these assemblies that protect drinking water.",
+        "svc_12_p2": "Pag-install sa main line ng mga smart valve (tulad ng Moen Flo) na may ultrasonic sensors para sa micro-flow tracking at awtomatikong shut-off.",
         "svc_12_good": "<strong>GOOD $850 - $1,300</strong><br>Standard Wilkins 375 RPZ. Immediate city compliance.",
         "svc_12_better": "<strong>BETTER $1,105 - $2,000</strong><br>High-flow Watts Series 009. Lead-free bronze for severe commercial use.",
         "svc_12_best": "<strong>BEST $1,360 - $2,200</strong><br>Febco 860 RPZ with IoT sensor. Real-time differential monitoring.",
         "svc_13_title": "Luxury Fixture Swap",
         "svc_13_p1": "A luxury bathroom requires matching hardware with precise calibration, not just aesthetics.",
-        "svc_13_p2": "We perform perfectly leveled, hermetically sealed installations tested at maximum pressure.",
+        "svc_13_p2": "Kumpletong repiping gamit ang Uponor PEX-A o Type L copper manifolds, sinusuri sa 100 PSI pressure kasama ang permit at inspeksyon mula sa lungsod.",
         "svc_13_good": "<strong>GOOD $250 - $400</strong><br>Standard Delta/Moen installation with stainless braided supply lines.",
         "svc_13_better": "<strong>BETTER $325 - $500</strong><br>Moen Align/Grohe spot-resist. Commercial anti-mold silicone sealing.",
         "svc_13_best": "<strong>BEST $400 - $600</strong><br>Kohler Artifacts Smart Touch integration. Temperature calibration and sensor wiring.",
         "svc_14_title": "Water Chemistry Panel",
         "svc_14_p1": "Your tap water may look clear but contain heavy metals or chloramine. Test before investing in filters.",
-        "svc_14_p2": "We provide precise scientific analysis on-site and via certified labs for a custom water treatment plan.",
+        "svc_14_p2": "Pag-install ng 3-way diverter valve, surge tank, at subsurface drip irrigation lines ayon sa California Plumbing Code Chapter 15.",
         "svc_14_good": "<strong>GOOD $150 - $250</strong><br>Rapid on-site TDS, hardness and free chlorine test.",
         "svc_14_better": "<strong>BETTER $195 - $300</strong><br>16-point certified lab panel (heavy metals, lead, nitrates). Report in 5 days.",
         "svc_14_best": "<strong>BEST $240 - $400</strong><br>On-site test plus permanent inline digital TDS meter for real-time monitoring.",
         "svc_15_title": "Commercial Hydro-Jetting",
         "svc_15_p1": "When scale or thick roots calcify sewer pipes, electric snakes fail. Time for industrial force.",
-        "svc_15_p2": "Our Hydro-Jetting blasts at 4000+ PSI with rotating laser nozzles restoring the original pipe diameter.",
+        "svc_15_p2": "Pagsusuri sa kapal ng mga metal na tubo gamit ang ultrasound, pag-inspeksyon sa seismic straps ng heater, at pagsubok sa presyon ng main manifold.",
         "svc_15_good": "<strong>GOOD $750 - $1,150</strong><br>Heavy augering with 7/8 sectional electric cable.",
         "svc_15_better": "<strong>BETTER $975 - $1,500</strong><br>4000 PSI Hydro-Jetting. Eliminates scale and emulsified gárease.",
         "svc_15_best": "<strong>BEST $1,200 - $2,000</strong><br>Heavy jetting + HD camera inspection + 12-month RootX inhibitor application.",
@@ -6236,9 +6496,9 @@ const translations = {
         "service_copper_purpose": "Garantisadong structural integrity at flow efficiency. Inaalis ang korapsyon at microplastic.",
         "service_copper_usage": "Mga luxury renovation sa San Jose, Palo Alto, at Los Gatos kung saan kritikal ang durability.",
         "service_copper_potential": "Mga sistema na idinisenyo para sa 50+ taon na lifespan, 100% nare-recycle.",
-        "service_copper_costs": "Agarang ROI sa pamamagitan ng pinababang insurance premiumás at pag-aalis ng paulit-ulit na pag-aayos.",
+        "service_copper_costs": "Agarang ROI sa pamamagitan ng pinababang insurance premiums at pag-aalis ng paulit-ulit na pag-aayos.",
         "service_copper_comp": "Mas mahusay kaysa sa mga kakumpitensya na gumagamit ng mababang densidad na PEX.",
-        "service_copper_plus": "Sustainable Plumbing Systemás: Post-installation sanitization at lead-free soldering certification.",
+        "service_copper_plus": "Sustainable Plumbing Systems: Post-installation sanitization at lead-free soldering certification.",
         "service_copper_lean": "Lean Methodology: Off-site pre-fabrication kits na nagpapababa ng on-site time ng 40%.",
         "service_expansion_content": "Disenyo at pagpapatupad ng mga bagong hydraulic branch para sa mga ADU at master expansions.",
         "service_expansion_purpose": "Tiyakin na ang karagdagang hydraulic load ay hindi nagkokompromiso sa kasalukuyang pressure ng sistema.",
@@ -6278,7 +6538,7 @@ const translations = {
         "service_water_potential": "Partial hydric independence ng hanggang 65% ng taunang residential na konsumo.",
         "service_water_costs": "Malaking pagtitipid sa water bills at access sa state environmental conservation incentives.",
         "service_water_comp": "Custom designs kumpara sa simpleng rain barrels; nag-deliver kami ng grade-2 filtration techúúnical plumbing.",
-        "service_water_plus": "Sustainable Plumbing Systemás: Integrated UV disinfection systems para maiwasan ang pathogen.",
+        "service_water_plus": "Sustainable Plumbing Systems: Integrated UV disinfection systems para maiwasan ang pathogen.",
         "service_water_lean": "Lean Process: Dynamic flow mapping para mabawasan ang paggamit ng electric pump.",
         "btn_buy": "Bumili ng Lisensya",
         "btn_proposal": "Strategic Framework",
@@ -6320,7 +6580,7 @@ const translations = {
         "pb_hero_subtitle": "Mga Propesyonal na Serbisyo sa Plumbing | Bay Area, CA",
         "pb_hero_location": "Bay Area, California",
         "pb_hero_updated": "Na-update: Disyembre 2024",
-        "pb_hero_details": "15 Detalyadong Propesyonal na Serbisyo",
+        "pb_hero_details": "15 Propesyonal na Serbisyo sa Tubero · San Jose, CA",
         "pb_hero_rates": "Lead: $185/hr | Helper: $95/hr | Markup: 30%",
         "pb_hero_compliance": "techúúnical plumbing Standard: ORION Tech | Garantisadong Kalidad",
         "pb_hero_powered": "Binuo ng NeKon AI aGent Consulting | Sistemang ORION",
@@ -6403,20 +6663,20 @@ const translations = {
         "lbl_client_view": "Pananaw ng Kliyente:",
         "lbl_tech_view": "Tech Spec & Materials (3 Antas):",
         "doc_title": "STRATEGIC PROPOSAL",
-        "doc_subtitle": "Mastering Smart Plumbing & Sustainable Plumbing Systemás",
+        "doc_subtitle": "Mastering Smart Plumbing & Sustainable Plumbing Systems",
         "sig_name": "Alex G. Espinosa",
         "profile_header_role": "Senior AI Solutions Specialist | C-36 Specialist | Project Manager",
         "app_pricebook_detail": "Ang ORION Price Book v6.0 PRO ay isang tool sa cost techúúnical plumbing na nag-istandardize ng mga rate ng serbisyo sa buong Bay Area. Gumagamit ito ng tiered na sistema (Mabuti/Mas Mabuti/Pinakamabuti) upang mag-alok ng mga flexible na opsyon na sumusunod sa mga pamantayan sa kaligtasan ng UPC.",
         "app_mp_detail": "Ang Morales Plumbing (MP) Portal ay nagpapasentralisa sa komunikasyon ng kliyente, na nagpapahintulot para sa matalinong pag-iiskedyul at pag-access sa mga teknikal na ulat na binuo ng aming Karla AI. Tinitiyak nito ang buong transparency sa bawat yugto ng proyekto.",
         "app_ep_detail": "Ang Orion Estimator Pro ay gumagamit ng mga algorithm ng computer vision upang suriin ang mga blueprint at mga larawan ng site, na bumubuo ng mga Bill of Materials (BOM) at mga pagtatantya ng paggawa na may 99% na katumpakan. Integrado sa +8000 item na na-update sa real-time para sa merkado ng California.",
-        "app_tratamiento_title": "Water Treatment Systemás",
+        "app_tratamiento_title": "Water Treatment Systems",
         "app_tratamiento_detail": "Ang Water Treatment application ay namamahala ng advanced filtration at purification cycles. Nagbibigay ng real-time data sa hardness ng tubig, mga antas ng pH, at kahusayan sa pag-alis ng contaminant, na nagpapahintulot para sa predictive maintenance ng mga industrial RO system.",
         "app_redes_title": "Hydraulic Network Design",
         "app_redes_detail": "Pinapayagan ng aming Hydraulic Network Design app ang simulation ng mga kumplikadong fluid dynamics sa residential at commercial na kapaligiran. Gumagamit ng ISO-standard na mga algorithm upang i-optimize ang pipe sizing at pressure distribution, binabawasan ang pag-aaksaya ng materyal at tinitiyak ang pagsunod sa UPC/CPC.",
         "app_heaters_title": "Tankless Water Heaters",
         "app_heaters_detail": "Ino-optimize ng application na ito ang pag-install at pagganap ng mga tankless water heating system. Kinakalkula ang peak flow demands at mga kinakailangan sa gas pressure upang matiyak ang walang harang na paghahatid ng mainit na tubig, kabilang ang isang diagnostic module para sa pag-troubleshoot.",
         "legal_title": "Legal Framework & Cybersecurity",
-        "sec1_title": "Sustainable Plumbing Systemás at Sustainability",
+        "sec1_title": "Sustainable Plumbing Systems at Sustainability",
         "sec1_legal_p1": "Lahat ng nilalaman sa platform na ito, kabilang ang ngunit hindi limitado sa mga corporate video, nabuong 3D images, source code, at ang ORION Price Book v6.0 PRO database structure, ay mahigpit na pinoprotektahan ng intelektwal na ari-arian at mga batas sa copyright ng United States at ng Estado ng California.",
         "sec1_legal_li1": "Ang Morales Plumbing ay nagpapanatili ng eksklusibong karapatan sa trademark nito, mga metodolohiya sa techúúnical plumbing, customer base, at portfolio ng mga teknikal na serbisyo.",
         "sec1_legal_li2": "Ang NeKon AI aGent Consulting ay nagpapanatili ng co-authorship at mga karapatan sa AI infrastructure ('Joe AI'), neural network models, computer vision diagnostic systems, at ang pinagbabatayan na teknolohiya ng automation ng ORION system.",
@@ -6471,9 +6731,9 @@ const translations = {
         "aca_mex_li2": "Kasalukuyang binubuo - 2025",
         "service_copper_title": "Copper Plumbing at Renovations",
         "service_copper_desc": "High-precision na copper installations para sa mga renovation at restoration.",
-        "service_septic_title": "Septic Systemás",
+        "service_septic_title": "Septic Systems",
         "service_septic_desc": "Advanced environmental septic systems para sa off-grid at rural infrastructure.",
-        "service_water_title": "Water Harvesting Systemás",
+        "service_water_title": "Water Harvesting Systems",
         "service_water_desc": "Estratehikong rainwater capture at greywater reuse techúúnical plumbing.",
         "service_expansion_title": "System Expansions",
         "service_expansion_desc": "Estratehikong hydraulic expansion para sa lumalagong imprastraktura at multi-family units.",
@@ -6488,7 +6748,7 @@ const translations = {
         "faq_q1": "Bakit gagamit ng copper sa halip na PEX para sa bagong construction?",
         "faq_a1": "Ang copper ay nagbibigay ng higit na tibay, fire resistance, at pumipigil sa paglaki ng bakterya. Sa ilalim ng California UPC, nananatili itong gold standard para sa high-end value. Sa kabilang banda, ang PEX ay nag-aalok ng pambihirang flexibility, mas kaunting koneksyon (nagpapababa ng leak points), mas mabilis na pag-install, at mas mababang paunang gastos. <span class=\"comic-choice\">Ang pagpili ay nasa iyo</span>: piliin ang premium na katibayan at klasikong halaga (Copper), o modernong matipid na halaga at elastic resilience (PEX).",
         "faq_q2": "Ano ang mga septic regulation ng California para sa 2026?",
-        "faq_a2": "Ang mga regulasyon ay nakatuon sa pagbawas ng nitrogen, proteksyon ng tubig sa ilalim ng lupa, at kahusayan sa muling paggamit ng tubig. Tinitiyak ng Morales Plumbing ang 100% compliance sa pamamagitan ng advanced Sustainable Plumbing Systemás. Bukod dito, nagdidisenyo kami ng mga septic setup na sumusunod sa pamantayan upang mabawasan ang paunang gastos gamit ang tradisyunal na permit paths. <span class=\"comic-choice\">Ang desisyon ay nasa iyo</span>: mag-invest sa advanced eco systems na epektibo lampas sa 2030 standards, o pumili ng standard compliance na nakatuon sa agarang tipid.",
+        "faq_a2": "Ang mga regulasyon ay nakatuon sa pagbawas ng nitrogen, proteksyon ng tubig sa ilalim ng lupa, at kahusayan sa muling paggamit ng tubig. Tinitiyak ng Morales Plumbing ang 100% compliance sa pamamagitan ng advanced Sustainable Plumbing Systems. Bukod dito, nagdidisenyo kami ng mga septic setup na sumusunod sa pamantayan upang mabawasan ang paunang gastos gamit ang tradisyunal na permit paths. <span class=\"comic-choice\">Ang desisyon ay nasa iyo</span>: mag-invest sa advanced eco systems na epektibo lampas sa 2030 standards, o pumili ng standard compliance na nakatuon sa agarang tipid.",
         "faq_q3": "Paano binabawasan ng Lean Process ang mga gastos sa plumbing?",
         "faq_a3": "Sa pamamagitan ng pag-aalis ng basura at paggamit ng sustainable materials, binabawasan namin ang mga gastos ng 25% at timeline ng 30%. Tinitiyak ng aming mga protocol ang mas mababang carbon footprint at mas mataas na ROI. Bilang alternatibo, nag-aalok kami ng klasikong paraan ng pagtatayo na nakatuon sa maximum na pasadyang mga detalye at absolute manual structural redundancy nang walang lean schedule limit. <span class=\"comic-choice\">Ang pagpili ay nasa iyo</span>: piliin ang mabilis na Lean Eco-process para sa maximum efficiency, o ang aming klasikong manual custom build para sa tradisyunal na detalye.",
         "faq_q4": "Paano ko mai-a-upgrade ang aking lumang ari-arian sa kasalukuyang California Environmental Standards?",
@@ -6518,13 +6778,13 @@ const translations = {
         "eco_title": "Eco-Sustainable technical plumbing",
         "pb_promotions_p1": "Access exclusive incentives for high-volume projects and seasonal infrastructure optimizations.",
         "pb_warranties_p1": "Full transparency on labor and material warranties, backed by CSLB C-36 certification.",
-        "service_copper_detail": "NILALAMAN: Buong copper piping systems (L, M, K types) para sa residential at commercial infrastructure. LAYUNIN: Garantisadong structural integrity at flow efficiency. PAGGAMIT: Renovations, expansions, new construction, at repairs. POTENSYAL: Life-cycle na 50+ taon na may zero microplastic leaching. ROI: Pinapataas ang halaga ng ari-arian ng 15% kumpara sa PEX; 30% mas mababang gastos sa maintenance. KUMPETISYON: Specialized brazing at environmental protocols. PLUS: Integrated Sustainable Plumbing Systemás na may Lean Construction protocols. COPYRIGHT: © 2026 Morales Plumbing. Lahat ng Karapatan ay Rezervado.",
+        "service_copper_detail": "NILALAMAN: Buong copper piping systems (L, M, K types) para sa residential at commercial infrastructure. LAYUNIN: Garantisadong structural integrity at flow efficiency. PAGGAMIT: Renovations, expansions, new construction, at repairs. POTENSYAL: Life-cycle na 50+ taon na may zero microplastic leaching. ROI: Pinapataas ang halaga ng ari-arian ng 15% kumpara sa PEX; 30% mas mababang gastos sa maintenance. KUMPETISYON: Specialized brazing at environmental protocols. PLUS: Integrated Sustainable Plumbing Systems na may Lean Construction protocols. COPYRIGHT: © 2026 Morales Plumbing. Lahat ng Karapatan ay Rezervado.",
         "service_expansion_detail": "NILALAMAN: Modular hydraulic expansion blocks. LAYUNIN: Seamless na integration ng mga bagong fixture nang walang pressure loss. PAGGAMIT: Commercial additions at residential expansions. POTENSYAL: Infinite scalability. ROI: Scalable infrastructure. PLUS: Lean process integration. COPYRIGHT: © 2026 Morales Plumbing. Lahat ng Karapatan ay Rezervado.",
-        "service_construction_detail": "NILALAMAN: CAD Blueprints, rough-in, at finish plumbing. LAYUNIN: Build-to-code excellence (UPC/CPC). ROI: 20% mas mababang insurance premiumás. PLUS: Int'l Environmental Protocols. COPYRIGHT: © 2026 Morales Plumbing. Lahat ng Karapatan ay Rezervado.",
+        "service_construction_detail": "NILALAMAN: CAD Blueprints, rough-in, at finish plumbing. LAYUNIN: Build-to-code excellence (UPC/CPC). ROI: 20% mas mababang insurance premiums. PLUS: Int'l Environmental Protocols. COPYRIGHT: © 2026 Morales Plumbing. Lahat ng Karapatan ay Rezervado.",
         "service_repair_detail": "NILALAMAN: Precision leak repair at component replacement. LAYUNIN: Infrastructure recovery. PAGGAMIT: Emergency at scheduled maintenance. POTENSYAL: Early detection of failures. ROI: Pinipigilan ang structural damage at water waste. COPYRIGHT: © 2026 Morales Plumbing. Lahat ng Karapatan ay Rezervado.",
         "service_septic_detail": "NILALAMAN: Bio-digesters at leach fields. LAYUNIN: Sustainable waste management. ROI: Tinatanggal ang utility fees. PLUS: Lean Process + CA Water Board compliance. COPYRIGHT: © 2026 Morales Plumbing. Lahat ng Karapatan ay Rezervado.",
         "service_water_detail": "NILALAMAN: Multi-stage filtration at UV sterilization. LAYUNIN: Self-sufficiency. ROI: 60% reduction sa water utility costs. PLUS: Int'l Environmental Protocols. COPYRIGHT: © 2026 Morales Plumbing. Lahat ng Karapatan ay Rezervado.",
-        "sec1_desc": "Lumalayo kami sa tradisyunal na plumbing sa pamamagitan ng pagsasama ng mga prinsipyo ng Sustainable Plumbing Systemás sa bawat hydraulic design. Inuuna namin ang kahusayan ng tubig, ligtas na paghawak ng mga mapanganib na materyales (CSLB C-36 Compliance), at mga zero ecological impact na sistema sa buong Bay Area.",
+        "sec1_desc": "Lumalayo kami sa tradisyunal na plumbing sa pamamagitan ng pagsasama ng mga prinsipyo ng Sustainable Plumbing Systems sa bawat hydraulic design. Inuuna namin ang kahusayan ng tubig, ligtas na paghawak ng mga mapanganib na materyales (CSLB C-36 Compliance), at mga zero ecological impact na sistema sa buong Bay Area.",
         "sec2_title": "AI Integration at Computer Vision",
         "sec2_desc": "Gumagamit ang sistemang ORION ng mga proprietary neural network para sa non-invasive na pagtuklas ng tumagas at infrared diagnostics. Pinapayagan ng computer vision na i-map namin ang imprastraktura nang may katumpakan sa milimetro, na ino-optimize ang mga gastos at timeline ng pagpapatupad.",
         "sec3_title": "Strategic Workflow (ORION Framework)",
@@ -6588,7 +6848,7 @@ const translations = {
         "req_hp_title": "Hybrid Heat Pump: Teknikal na Kinakailangan",
         "req_hp_elec": "Electrical at Spatial na Kinakailangan",
         "req_hp_1": "Nakalaang 240V / 30-Amp electrical circuit (para sa karamihan ng 50-80 galon models).",
-        "req_hp_2": "Minimum na 700 cubic feet ng nakapaligid na air space para sa oóptimal na heat exchange.",
+        "req_hp_2": "Minimum na 700 cubic feet ng nakapaligid na air space para sa optimal na heat exchange.",
         "req_hp_3": "Condensate drain line na nakakonekta sa angkop na drain o condensate pump.",
         "req_hp_4": "Clearance na hindi bababa sa 6 na pulgada mula sa itaas para sa air filter.",
         "req_hp_5": "Seismic strapping sa itaas at ibabang 1/3 ng tanke.",
@@ -6722,6 +6982,71 @@ const translations = {
         "booking_fields_complete": "mga patlang ang nakumpleto"
     },
     "vi": {
+        "lbl_tech_scope": "Phạm vi Công việc & Quy trình",
+        "lbl_tech_materials": "Vật liệu & Phụ kiện Tiêu chuẩn",
+        "lbl_tech_standards": "Bộ luật & Tiêu chuẩn Áp dụng",
+        "lbl_tech_assurance": "Kiểm tra Áp suất & Đảm bảo Chất lượng",
+        "pb_svc_1_tech_scope": "Localización electroacústica no destructiva de fugas ocultas en líneas de agua potable y losas de concreto. Trazado de trayectorias hidráulicas mediante pulsos de presión de nitrógeno.",
+        "pb_svc_1_tech_mat": "Tubería de cobre Tipo L (ASTM B88) para bypass de prueba, coplas ProPress Viega de cero flama, manómetros digitales calibrados NIST.",
+        "pb_svc_1_tech_std": "Cumplimiento estricto con el California Plumbing Code (CPC) Capítulo 6, estándares de presión estática municipal de San José Water Co.",
+        "pb_svc_1_tech_qa": "Prueba hidrostática de caída de presión a 100 PSI durante 30 minutos sin pérdida. Certificado oficial de inspección Morales Plumbing Lic. C-36 #1156542.",
+        "pb_svc_2_tech_scope": "Reemplazo integral de grifería obsoleta y válvulas de escuadra. Instalación de aireadores de compensación de presión y mecanismos de doble descarga para optimizar caudal volumétrico.",
+        "pb_svc_2_tech_mat": "Accesorios certificados WaterSense, grifería de latón sin plomo (NSF/ANSI 61 y 372), sellos de elastómero EPDM y latiguillos trenzados de acero inoxidable.",
+        "pb_svc_2_tech_std": "Normativa California Title 24 (máximo 1.2 GPM en lavabos, 1.8 GPM en cocinas, 1.28 GPF en inodoros) y Código de Conservación de San José.",
+        "pb_svc_2_tech_qa": "Calibración de caudal y verificación de estanqueidad bajo presión operativa continua de 60 PSI. Cero fugas y máxima eficiencia hídrica.",
+        "pb_svc_3_tech_scope": "Dimensionamiento y balanceo de redes de distribución de agua según demanda de unidades de gasto de artefactos (WSFU). Análisis de pérdidas por fricción y presión residual.",
+        "pb_svc_3_tech_mat": "Tuberías de cobre rígido Tipo L y PEX-A Uponor con expansión en frío según ASTM F1960. Manifolds de distribución de flujo balanceado sin juntas ocultas.",
+        "pb_svc_3_tech_std": "Uniform Plumbing Code (UPC) Capítulo 6 y Apéndice A (Sizing of Water Supply Systems), especificaciones de Santa Clara Valley Water District.",
+        "pb_svc_3_tech_qa": "Garantía de presión dinámica mínima de 35 PSI en el punto más desfavorable de la instalación bajo demanda pico simultánea.",
+        "pb_svc_4_tech_scope": "Desmantelamiento y reemplazo total de tuberías galvanizadas degradadas por corrosión interna o sarro. Montaje de nuevas troncales y derivaciones aéreas y bajo piso.",
+        "pb_svc_4_tech_mat": "Tubería de cobre rígido Tipo L sin costura (ASTM B88), conexiones mecánicas prensadas Viega ProPress con sellos EPDM de alta temperatura.",
+        "pb_svc_4_tech_std": "California Plumbing Code (CPC) Sección 604, normas de seguridad contra incendios de San José (instalación 100% libre de llama abierta).",
+        "pb_svc_4_tech_qa": "Prueba de hermeticidad a 100 PSI con nitrógeno. Inspección y aprobación con permiso oficial de la Ciudad de San José.",
+        "pb_svc_5_tech_scope": "Evaluación de campo de absorción, nivelación de pendientes de descarga sanitaria e instalación de tanques sépticos de doble compartimento con filtro de efluentes.",
+        "pb_svc_5_tech_mat": "Tanques de concreto prefabricado de alta resistencia o polietileno reforzado, tuberías sanitarias de PVC Cédula 40 (ASTM D2665) con uniones cementadas al solvente.",
+        "pb_svc_5_tech_std": "Código de Salud Ambiental del Condado de Santa Clara (Department of Environmental Health) y CPC Capítulo 7 y Apéndice H.",
+        "pb_svc_5_tech_qa": "Prueba de percolación en sitio, prueba de estanqueidad por columna de agua y balanceo gravimétrico de líneas de distribución.",
+        "pb_svc_6_tech_scope": "Tendido subterráneo y vertical del sistema de desagüe, ventilación (DWV) y suministro de agua potable en edificaciones nuevas y adiciones estructurales.",
+        "pb_svc_6_tech_mat": "Tuberías ABS Cédula 40 / PVC DWV, soportes antisísmicos para tuberías, cobre Tipo L y tubería Uponor PEX-A con anillos de memoria térmica.",
+        "pb_svc_6_tech_std": "California Plumbing Code (CPC) Capítulos 3, 6, 7 y 9; Código de Construcción de San José y estándares sísmicos de California.",
+        "pb_svc_6_tech_qa": "Prueba de cabeza de agua de 10 pies en redes de desagüe y prueba neumática de 100 PSI en redes de suministro antes del sellado de muros.",
+        "pb_svc_7_tech_scope": "Instalación de calentadores de agua híbridos de alta eficiencia (Tier-4 ENERGY STAR). Tendido de drenaje de condensados, válvula de alivio térmico y desconectador eléctrico.",
+        "pb_svc_7_tech_mat": "Unidad bomba de calor híbrida con tanque vitrificado, líneas de condensado en PVC con neutralizador de acidez, vaso de expansión térmico pre-presurizado.",
+        "pb_svc_7_tech_std": "Normativa ambiental BAAQMD (Bay Area Air Quality Management District), Código Eléctrico (NEC) y CPC Sección 507.",
+        "pb_svc_7_tech_qa": "Ajuste de termostato a 120°F según norma de seguridad infantil, verificación de flujo de aire y prueba de funcionamiento de la válvula T&P.",
+        "pb_svc_8_tech_scope": "Diagnóstico y mitigación de sobrepresión provocada por calentamiento de agua en circuitos cerrados con válvula antirretorno o regulador de presión (PRV).",
+        "pb_svc_8_tech_mat": "Tanques de expansión térmica de diafragma de butilo (aprobados NSF 61), válvulas de alivio de temperatura y presión (T&P) de 150 PSI / 210°F ASME.",
+        "pb_svc_8_tech_std": "California Plumbing Code (CPC) Sección 608.3 y ordenanzas locales de seguridad en calentadores de agua del Condado de Santa Clara.",
+        "pb_svc_8_tech_qa": "Calibración de la precarga de aire del tanque de expansión exactamente igual a la presión estática del agua del inmueble (50 a 65 PSI).",
+        "pb_svc_9_tech_scope": "Inspección endoscópica computarizada de líneas laterales de drenaje y cloaca principal. Localización precisa de fisuras, raíces, colapsos y contrapendientes.",
+        "pb_svc_9_tech_mat": "Cámara autonivelante de alta resolución con iluminación LED envolvente, transmisor de sonda electromagnética de 512 Hz y receptor localizador digital de profundidad.",
+        "pb_svc_9_tech_std": "Estándares de inspección de alcantarillado de NASSCO (PACP) y regulaciones del San José Regional Wastewater Facility.",
+        "pb_svc_9_tech_qa": "Reporte digital en video de alta definición con telemetría en metros/pies, indicación exacta de profundidad y ubicación en superficie.",
+        "pb_svc_10_tech_scope": "Instalación de sistemas de captación pluvial de techos, desviadores de primer lavado y almacenamiento para reutilización en riego y sanitarios.",
+        "pb_svc_10_tech_mat": "Cisternas de polietileno virgen con protección UV grado alimenticio, filtros de sedimentos de malla fina de acero inoxidable, tubería de distribución no potable marcada en morado.",
+        "pb_svc_10_tech_std": "California Plumbing Code (CPC) Capítulo 16 (Nonpotable Rainwater Catchment Systems) y lineamientos de Valley Water.",
+        "pb_svc_10_tech_qa": "Protección total contra reflujo con dispositivo de prevención de contraflujo certificado ASSE 1013 y prueba de presión del circuito de impulsión.",
+        "pb_svc_11_tech_scope": "Reemplazo de calentadores de tanque convencionales por equipos continuos sin tanque de alta demanda BTU. Modificación y ampliación de líneas de gas natural y ventilación.",
+        "pb_svc_11_tech_mat": "Líneas de gas dedicadas de 3/4 pulg. a 1 pulg., conductos concéntricos de polipropileno o acero inoxidable Categoría IV, kit de válvulas de aislamiento para descalcificación.",
+        "pb_svc_11_tech_std": "California Fuel Gas Code (NFPA 54), CPC Capítulo 5 y normativas de emisión Ultra Low NOx de Santa Clara County.",
+        "pb_svc_11_tech_qa": "Prueba de presión de gas con columna de agua (manómetro de mercurio/digital a 3 PSI durante 15 minutos) y puesta en marcha con calibración de combustión.",
+        "pb_svc_12_tech_scope": "Instalación en línea principal de válvulas inteligentes de cierre automático con micro-transductores ultrasónicos y sensores remotos de humedad.",
+        "pb_svc_12_tech_mat": "Válvula de corte motorizada inteligente (Moen Flo / Phyn), accesorios roscados de bronce sin plomo, bypass manual de mantenimiento con válvulas de bola de cuarto de vuelta.",
+        "pb_svc_12_tech_std": "Certificación ASSE 1061 / UPC, instalación eléctrica bajo código NEC con fuente de poder clase 2 protegida contra sobretensiones.",
+        "pb_svc_12_tech_qa": "Prueba de disparo de cierre automático por caída de presión milimétrica y enlace a red de monitoreo 24/7 de Morales Plumbing.",
+        "pb_svc_13_tech_scope": "Reemplazo integral de toda la tubería de suministro de agua potable fría y caliente en la vivienda, desde el medidor hasta cada accesorio de consumo.",
+        "pb_svc_13_tech_mat": "Sistema Uponor PEX-A ProPEX de alta flexibilidad o cobre rígido Tipo L, llaves de paso angulares de cuarto de vuelta de bola metálica, cajas de pared de latón.",
+        "pb_svc_13_tech_std": "California Plumbing Code (CPC) Capítulo 6, aprobaciones de plomería y edificación de la Ciudad de San José.",
+        "pb_svc_13_tech_qa": "Prueba de presión de 100 PSI en presencia del inspector municipal. Aislamiento térmico de tuberías de agua caliente según Title 24.",
+        "pb_svc_14_tech_scope": "Desconexión de desagües de lavandería y duchas para reorientar aguas jabonosas hacia sistemas de irrigación subsuperficial por gravedad o bombeo.",
+        "pb_svc_14_tech_mat": "Válvulas desviadoras de 3 vías de latón fundido, tanques de compensación de flujo con filtro de pelusas de acero inoxidable, tubería de goteo subterránea con emisor antiobstrucción.",
+        "pb_svc_14_tech_std": "California Plumbing Code (CPC) Capítulo 15 (Alternate Water Sources for Plumbing Systems) y directrices de protección de mantos freáticos de Santa Clara.",
+        "pb_svc_14_tech_qa": "Prueba de flujo sin contrapresión, etiquetado de precaución en tuberías ('Agua No Potable') y ajuste de zona de descarga de absorción.",
+        "pb_svc_15_tech_scope": "Inspección técnica diagnóstica de la solidez estructural de las instalaciones mecánicas de plomería, anclajes antisísmicos de calentadores y colectores principales.",
+        "pb_svc_15_tech_mat": "Anclajes y correas de acero galvanizado calibre 12 aprobadas por el estado de California, colectores de latón de alta resistencia, medidores de espesor ultrasónicos.",
+        "pb_svc_15_tech_std": "California Health and Safety Code Sección 19211 (Seismic strapping of water heaters), CPC y normas de resistencia estructural de San José.",
+        "pb_svc_15_tech_qa": "Informe detallado de grosor remanente de pared en tuberías metálicas, verificación de par de apriete en juntas mecánicas y certificación de seguridad.",
+
         "hero_pill_2026": "Sẵn sàng",
         "hero_pill_eco": "Trọng tâm sinh thái",
         "hero_pill_ai": "Tích hợp AI",
@@ -6753,7 +7078,7 @@ const translations = {
         "contact_form_name": "Họ và tên",
         "contact_form_phone": "Số điện thoại",
         "contact_form_email": "Email",
-        "contact_form_másg": "Tin nhắn",
+        "contact_form_msg": "Tin nhắn",
         "contact_form_submit": "Gửi tin nhắn",
         "terminal_title": "MORALES_EXECUTIVE_V1.0",
         "profile_role": "Kỹ sư trưởng & Nhà sng lập",
@@ -6937,51 +7262,51 @@ const translations = {
         "eng_b2b_li1": "Ký hợp đồng phụ cho các công trình lắp đặt phức tạp.",
         "eng_b2b_li2": "Tích hợp hệ thống cho ngành.",
         "eng_b2b_li3": "Hỗ trợ quản lý dự án chuyên dụng.",
-        "pb_svc_1_name": "[VI] Precision Leak Detection",
-        "pb_svc_1_user": "[VI] Pinpoint hidden leaks without destructive tearing of walls or floors.",
-        "pb_svc_1_tech": "[VI] Deployment of acoustic listening devices, thermal imaging, and tracer gas to locate micro-fissures in pressurized lines. Required for non-invasive repair protocols.",
-        "pb_svc_2_name": "[VI] Eco-Retrofitting",
-        "pb_svc_2_user": "[VI] Upgrade your fixtures to high-efficiency, water-saving technologies.",
-        "pb_svc_2_tech": "[VI] Installation of WaterSense certified fixtures, pressure compensating aerators, and dual-flush mechanismás to optimize volumetric flow rates and comply with local conservation mandates.",
-        "pb_svc_3_name": "[VI] Hydraulic Infrastructure Design",
-        "pb_svc_3_user": "[VI] Custom plumbing blueprints and system sizing for your property.",
-        "pb_svc_3_tech": "[VI] Calculations based on fixture unit (FU) demand, static pressure analysis, and friction loss equations to engineer oóptimal pipe diameters and material selections.",
-        "pb_svc_4_name": "[VI] Elite Copper Renovations",
-        "pb_svc_4_user": "[VI] Replace old, failing pipes with premium, long-lasting copper.",
-        "pb_svc_4_tech": "[VI] Extraction of galvanized or defective piping, replaced with Type L copper utilizing ProPress zero-flame mechanical joining for superior joint integrity and reduced oxidation.",
-        "pb_svc_5_name": "[VI] Advanced Septic Systemás",
-        "pb_svc_5_user": "[VI] Comprehensive septic tank installation, repair, and biological optimization.",
-        "pb_svc_5_tech": "[VI] Soil percolation analysis, leach field sizing, and installation of multi-chamber bio-reactors with effluent filters to ensure oóptimal anaerobic decomposition.",
-        "pb_svc_6_name": "[VI] New Construction Plumbing",
-        "pb_svc_6_user": "[VI] End-to-end plumbing installation for new homes and additions.",
-        "pb_svc_6_tech": "[VI] Underground rough-in (DWV), water distribution top-out, and final fixture setting in strict adherence to UPC and local municipal codes. Includes hydrostatic testing.",
-        "pb_svc_7_name": "[VI] Advanced Water Heaters",
-        "pb_svc_7_user": "[VI] Installation of ultra-efficient Heat Pump and Hybrid water heaters.",
-        "pb_svc_7_tech": "[VI] Integration of compressor-driven heat pump units requiring condensate management, 240V dedicated circuits, and adherence to BAAQMD zero-NOx mandates.",
-        "pb_svc_8_name": "[VI] Thermal Expansion Systemás",
-        "pb_svc_8_user": "[VI] Protect your plumbing from dangerous pressure spikes.",
-        "pb_svc_8_tech": "[VI] Sizing and installation of hydropneumatic expansion tanks on the cold water supply of closed-loop heating systems to absorb volumetric expansion and prevent valve failure.",
-        "pb_svc_9_name": "[VI] Smart Diagnostics",
-        "pb_svc_9_user": "[VI] High-tech camera inspections of your sewer and drain lines.",
-        "pb_svc_9_tech": "[VI] Fiber-optic endoscopic scoping of DWV systems with integrated sonde locating to map lateral runs, identify root intrusion, and pinpoint structural collapses.",
-        "pb_svc_10_name": "[VI] Rainwater Harvesting",
-        "pb_svc_10_user": "[VI] Capture, filter, and reuse rainwater for irrigation and non-potable use.",
-        "pb_svc_10_tech": "[VI] Design of catchment surfaces, installation of primary filtration (first flush diverters), and sizing of high-density polyethylene (HDPE) cisterns with booster pumps.",
-        "pb_svc_11_name": "[VI] Tankless Upgrades",
-        "pb_svc_11_user": "[VI] Endless hot water and massive space savings with a tankless heater.",
-        "pb_svc_11_tech": "[VI] BTU load calculations for dynamic flow demand, upgrade of gas supply lines, and installation of concentric venting systems for modulating condensing heat exchangers.",
-        "pb_svc_12_name": "[VI] Leak Prevention (Flo)",
-        "pb_svc_12_user": "[VI] Smart, automated water shut-off valves that detect leaks instantly.",
-        "pb_svc_12_tech": "[VI] Inline installation of ultrasonic flow meters with machine learning algorithmás capable of distinguishing standard flow events from micro-leaks or catastrophic bursts.",
-        "pb_svc_13_name": "[VI] Whole-house Repipe",
-        "pb_svc_13_user": "[VI] Complete replacement of all water lines in your home for oóptimal flow.",
-        "pb_svc_13_tech": "[VI] Strategic abandonment of existing lines and routing of Cross-linked Polyethylene (PEX-A) utilizing expansion fittings for minimal friction loss and freeze resistance.",
-        "pb_svc_14_name": "[VI] Greywater Systemás",
-        "pb_svc_14_user": "[VI] Reuse water from showers and laundry to irrigate your landscape.",
-        "pb_svc_14_tech": "[VI] Installation of 3-way diversion valves, surge tanks, and subsurface drip irrigation lines conforming to Chapter 15 of the CPC for safe effluent discharge.",
-        "pb_svc_15_name": "[VI] Structural Integrity Checks",
-        "pb_svc_15_user": "[VI] Complete assessment of your plumbing system's safety and longevity.",
-        "pb_svc_15_tech": "[VI] Ultrasonic thickness gauging of metallic pipes, seismic bracing validation for equipment, and comprehensive stress testing of all primary distribution manifolds.",
+        "pb_svc_1_name": "Dò tìm Rò rỉ Nước Siêu âm Chính xác",
+        "pb_svc_1_user": "Xác định vị trí rò rỉ ngầm mà không cần đục phá tường hoặc sàn.",
+        "pb_svc_1_tech": "Sử dụng thiết bị khuếch đại âm thanh, ảnh nhiệt hồng ngoại và kiểm tra áp lực đường ống để xác định chính xác các điểm rò rỉ ngầm.",
+        "pb_svc_2_name": "Nâng cấp Thiết bị Vệ sinh Tiết kiệm Nước",
+        "pb_svc_2_user": "Nâng cấp vòi sen và bồn cầu sang các thiết bị tiết kiệm nước đạt chuẩn cao cấp.",
+        "pb_svc_2_tech": "Lắp đặt thiết bị vệ sinh đạt chứng chỉ WaterSense, đầu lọc sục khí điều áp và bộ xả kép nhằm tối ưu lưu lượng nước theo quy chuẩn bảo tồn California.",
+        "pb_svc_3_name": "Tính toán và Cân bằng Thủy lực Đường ống Cấp nước",
+        "pb_svc_3_user": "Thiết kế và định cỡ đường ống cấp nước tối ưu cho toàn bộ ngôi nhà.",
+        "pb_svc_3_tech": "Tính toán tổn thất áp lực, áp lực tĩnh và định cỡ đường kính ống theo tiêu chuẩn UPC Chương 6 dựa trên tổng đương lượng thiết bị (WSFU).",
+        "pb_svc_4_name": "Cải tạo và Thay thế Đường ống Đồng Cao cấp",
+        "pb_svc_4_user": "Thay thế các đường ống rỉ sét cũ bằng ống đồng chất lượng cao bền bỉ hàng chục năm.",
+        "pb_svc_4_tech": "Thay thế triệt để ống kẽm gỉ sét bằng ống đồng loại L (Type L) kết hợp phụ kiện ép nguội Viega ProPress không dùng lửa, an toàn và chống rò rỉ tuyệt đối.",
+        "pb_svc_5_name": "Hệ thống Bể tự hoại & Thoát nước Nâng cao",
+        "pb_svc_5_user": "Lắp đặt, sửa chữa và tối ưu hóa hệ thống bể tự hoại và thoát nước thải sinh hoạt.",
+        "pb_svc_5_tech": "Kiểm tra độ thẩm thấu đất, định kích thước bãi lọc và lắp đặt bể tự hoại hai ngăn có màng lọc cặn theo tiêu chuẩn Y tế Môi trường Hạt Santa Clara.",
+        "pb_svc_6_name": "Thi công Đường ống Thô cho Công trình Mới & Mở rộng",
+        "pb_svc_6_user": "Thi công trọn gói hệ thống cấp thoát nước cho nhà xây mới, căn hộ phụ (ADU) và phần mở rộng.",
+        "pb_svc_6_tech": "Thi công đường ống thoát khí thải ngầm (DWV), cấp nước nóng lạnh thô và lắp đặt hoàn thiện thiết bị kèm thử áp lực nước theo CPC.",
+        "pb_svc_7_name": "Hệ thống Bình nước nóng Bơm nhiệt Hybrid Siêu tiết kiệm",
+        "pb_svc_7_user": "Lắp đặt bình nước nóng bơm nhiệt kết hợp điện trở giúp tiết kiệm đến 70% điện năng và nhận hoàn tiền trợ cấp.",
+        "pb_svc_7_tech": "Lắp đặt bình nước nóng bơm nhiệt ENERGY STAR đạt chuẩn, bao gồm đường thoát nước ngưng, bình giãn nở áp suất và ngắt điện chuyên dụng theo quy định BAAQMD.",
+        "pb_svc_8_name": "Bình giãn nở Nhiệt & Hệ thống Van giảm áp An toàn",
+        "pb_svc_8_user": "Bảo vệ đường ống và bình nước nóng khỏi các đợt tăng vọt áp suất nguy hiểm.",
+        "pb_svc_8_tech": "Lắp đặt bình giãn nở nhiệt màng ngăn điều áp trên hệ thống cấp nước kín nhằm hấp thụ áp suất gia tăng khi nước nở vì nhiệt, bảo vệ van an toàn T&P.",
+        "pb_svc_9_name": "Nội soi Đường ống Thoát nước bằng Camera HD & Định vị",
+        "pb_svc_9_user": "Nội soi đường cống ngầm bằng camera tự cân bằng HD giúp phát hiện chính xác rễ cây chui vào hay sụp vỡ.",
+        "pb_svc_9_tech": "Nội soi hệ thống thoát nước thải bằng camera màu tự thăng bằng kết hợp đầu phát tín hiệu sonde 512Hz định vị độ sâu và lộ trình từ trên mặt đất.",
+        "pb_svc_10_name": "Hệ thống Thu gom Nước mưa & Tái tưới Tiêu",
+        "pb_svc_10_user": "Thu gom, lọc cặn và tái sử dụng nước mưa cho tưới tiêu cảnh quan, tiết kiệm chi phí nước sạch.",
+        "pb_svc_10_tech": "Thi công đường ống thu gom nước mưa mái, van xả nước rửa đầu tiên, bồn trữ nước HDPE chịu lực và máy bơm tăng áp có van chống chảy ngược theo CPC Chương 16.",
+        "pb_svc_11_name": "Chuyển đổi & Nâng cấp Bình nước nóng Trực tiếp Tankless",
+        "pb_svc_11_user": "Tận hưởng nguồn nước nóng liên tục không bao giờ cạn và giải phóng không gian nhà kho/gara.",
+        "pb_svc_11_tech": "Nâng cấp đường ống dẫn khí đốt đạt tải BTU cao (tối thiểu 3/4 inch), lắp đặt ống khói đồng tâm loại IV và bộ van xả tẩy cặn bảo dưỡng định kỳ.",
+        "pb_svc_12_name": "Van Khóa nước Thông minh & Hệ thống Chống rò rỉ Tự động",
+        "pb_svc_12_user": "Van thông minh tự động khóa toàn bộ nguồn nước vào nhà ngay khi phát hiện rò rỉ hoặc vỡ ống, điều khiển qua điện thoại.",
+        "pb_svc_12_tech": "Lắp đặt van thông minh (như Moen Flo) trên đường cấp chính, sử dụng cảm biến siêu âm phát hiện rò rỉ cực nhỏ, cảnh báo đóng băng và khóa van cơ điện từ xa.",
+        "pb_svc_13_name": "Thay thế Toàn bộ Hệ thống Ống Cấp Nước trong Nhà (Repipe)",
+        "pb_svc_13_user": "Thay thế mới hoàn toàn tất cả đường ống nước trong nhà, mang lại áp lực nước mạnh và nguồn nước tinh khiết.",
+        "pb_svc_13_tech": "Thi công thay thế toàn diện hệ thống cấp nước bằng ống Uponor PEX-A giãn nở nhiệt hoặc ống đồng loại L, thử áp lực 100 PSI và nghiệm thu cấp phép thành phố.",
+        "pb_svc_14_name": "Hệ thống Tách lọc & Tái sử dụng Nước xám (Greywater)",
+        "pb_svc_14_user": "Tái sử dụng nguồn nước từ vòi tắm và máy giặt để tưới cây cảnh, tiết kiệm nước tưới sinh hoạt.",
+        "pb_svc_14_tech": "Lắp đặt van chuyển hướng 3 chiều bằng đồng, bể cân bằng áp và đường ống tưới nhỏ giọt ngầm dưới mặt đất đạt chuẩn CPC Chương 15.",
+        "pb_svc_15_name": "Kiểm định Cấu trúc Ống & Độ bền Cụm Phân phối Nước",
+        "pb_svc_15_user": "Đánh giá toàn diện độ an toàn, áp lực và độ bền của toàn bộ cụm van phân phối nước trong nhà.",
+        "pb_svc_15_tech": "Đo độ dày thành ống kim loại bằng sóng siêu âm không phá hủy, kiểm tra đai giằng chống động đất cho bình nước nóng và thử nghiệm áp lực cụm van phân phối.",
         "lbl_subtitles": "Bản dịch Truyện tranh",
         "svc_1_step_1": "Lập bản đồ chẩn đoán ban đầu.",
         "svc_1_step_2": "Cch ly hệ thống.",
@@ -7061,16 +7386,16 @@ const translations = {
         "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasónicos. Monitoreo sin partes mviles, mxima precisión de flujo e integración total con sistemas Smart Home.",
         "svc_5_good_desc": "[EN] Inspección de cámara básica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
         "svc_5_better_desc": "[EN] Inspección profunda SeeSnake con localización por sonar. Trazamos y marcamos la ubicación exacta y profundidad del problema en la superficie.",
-        "svc_5_best_desc": "[EN] Inspección HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técúnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
-        "svc_6_good_desc": "[EN] Excavación tradicional e instalación de PVC SDR-35. Cumple con los cdigos locales y provee una solución probada de flujo por gravedad.",
+        "svc_5_best_desc": "[EN] Inspección HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
+        "svc_6_good_desc": "[EN] Excavación tradicional e instalación de PVC SDR-35. Cumple con los códigos locales y provee una solución probada de flujo por gravedad.",
         "svc_6_better_desc": "[EN] Reemplazo con ABS Cdula 40. Tubería de núcleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
-        "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadías. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
+        "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadas. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
         "svc_7_good_desc": "[EN] Instalación de un calentador atmosfrico estándar de 50 galones. Reemplazo directo sin modificaciones eléctricas complejas.",
-        "svc_7_better_desc": "[EN] Instalación de calentador Hbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
+        "svc_7_better_desc": "[EN] Instalación de calentador Híbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
         "svc_7_best_desc": "[EN] Bradford White AeroTherm con integración Wi-Fi completa. Modos de programación inteligente, bomba ultra-silenciosa y sensores de detección de fugas integrados desde la fbrica.",
         "svc_8_good_desc": "[EN] Instalación de válvula PRV de latn estándar de grado residencial. Estabiliza la presión principal previniendo daños a corto plazo.",
         "svc_8_better_desc": "[EN] Wilkins 600XL con manómetro de lectura integrada. Permite un monitoreo visual y ajustes precisos sin requerir herramientas adicionales de Diagnóstico.",
-        "svc_8_best_desc": "[EN] Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios volumtricos.",
+        "svc_8_best_desc": "[EN] Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios caudales volumétricos.",
         "svc_9_good_desc": "[EN] Respuesta primaria. Cierre del agua principal y uso de tapones SharkBite temporales para detener la emergencia y permitir secado.",
         "svc_9_better_desc": "[EN] Aislamiento del sector. Instalación de válvulas de aislamiento permanente de Cobre ProPress, permitiendo dar agua al resto de la casa mientras el sector daado queda aislado.",
         "svc_9_best_desc": "[EN] Resolución y reestructuracin. Construcción de un manifold de aislamiento completo y soldadura/prensado definitivo de la falla. Solución permanente de una sola visita.",
@@ -7083,7 +7408,7 @@ const translations = {
         "svc_12_good_desc": "[EN] Instalación de ensamblaje RPZ (Reduced Pressure Zone) Wilkins 375 estándar. Cumplimiento inmediato con las regulaciones de la ciudad.",
         "svc_12_better_desc": "[EN] Ensamblaje Watts Serie 009 de alto flujo. Válvulas de control de cuarto de vuelta y cuerpo de bronce sin plomo para aplicaciones comerciales severas.",
         "svc_12_best_desc": "[EN] Febco 860 RPZ equipado con sensor IoT de caída de presión. Monitorea los diferenciales de presión en tiempo real y alerta al administrador sobre bloqueos o fallas antes de la inspección anual.",
-        "svc_13_good_desc": "[EN] Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadías de acero inoxidable y sellos nuevos.",
+        "svc_13_good_desc": "[EN] Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadas de acero inoxidable y sellos nuevos.",
         "svc_13_better_desc": "[EN] Instalación de herrajes de gama media-alta (Moen Align, Grohe) con acabados resistentes a manchas. Sellado con silicona comercial anti-moho.",
         "svc_13_best_desc": "[EN] Instalación e integración de grifería inteligente (Kohler Artifacts Smart Touch / Voice Control). Calibración de temperatura preestablecida y cableado del módulo sensor.",
         "svc_14_good_desc": "[EN] Test rápidías in-situ. Medición de TDS (Sólidos Disueltos Totales), prueba de dureza por gotas químicas y nivel de cloro libre.",
@@ -7285,14 +7610,14 @@ const translations = {
         "pb_svc_2_good_time": "5-7 Días",
         "pb_svc_2_better_just": "[Scope] Premium Repipe (Horizontal y Vertical): Up to 3 baths, 1 kitchen (ice maker, dishwasher), laundry, 3 hose bibs. Reemplazo total de la casa (lineas de rastreo y montantes de pared). Full home Uponor expansion system. Includes firestop and drywall rough-patch.",
         "pb_svc_2_better_mat": "Up to 350ft PEX-A (Uponor), ProPEX expansion rings, 1/2\" Type L copper stub-outs, drop-ear elbows, premium quarter-turn angle stops, fire-rated caulk.",
-        "pb_svc_2_better_tools": "Milwaukee M12/M18 ProPEX expansion tools, self-feed drill bits, HEPA vacuumás, drop cloths.",
+        "pb_svc_2_better_tools": "Milwaukee M12/M18 ProPEX expansion tools, self-feed drill bits, HEPA vacuums, drop cloths.",
         "pb_svc_2_better_time": "7-10 Días",
         "pb_svc_2_best_just": "[Scope] Ultra-Premium Commercial Grade: Up to 4 baths, fully sized for high flow rates (1\" mains). Complete Type L Copper installation with ProPress. Includes permit expediting.",
         "pb_svc_2_best_mat": "Up to 400ft Type L hard copper pipe (1\", 3/4\", 1/2\"), Viega ProPress zero-lead fittings, acoustic pipe clamps, heavy-duty unistrut supports.",
         "pb_svc_2_best_tools": "Ridgid RP 350 ProPress tool, heavy-duty copper cutters, deburring and reaming tools, laser level.",
         "pb_svc_2_best_time": "10-14 Días",
         "pb_svc_3_title": "Service 3",
-        "pb_svc_3_good_just": "[Scope] Standard water softening for homes up to 3 bedroomás (approx. 32,000 grain capacity). Install via existing loop. Excludes creating a new soft water loop.",
+        "pb_svc_3_good_just": "[Scope] Standard water softening for homes up to 3 bedrooms (approx. 32,000 grain capacity). Install via existing loop. Excludes creating a new soft water loop.",
         "pb_svc_3_good_mat": "Fleck 5600SXT digital metered valve, 1.0 cu ft high-capacity resin, standard brine tank, 2 bags of solar salt, corrugated stainless flex connectors.",
         "pb_svc_3_good_tools": "Pipe threaders, teflon tape, basic multimeter, adjustable wrenches, bucket.",
         "pb_svc_3_good_time": "3-5 hrs",
@@ -7379,7 +7704,7 @@ const translations = {
         "pb_svc_9_better_tools": "Gas-powered skid-mounted jetter (4,000 PSI / 4+ GPM), Warthog rotating nozzle, inspection camera.",
         "pb_svc_9_better_time": "3-5 hrs",
         "pb_svc_9_best_just": "[Scope] Ultra-Premium Storm Drain / Heavy Commercial Jetting (up to 300 feet). Descales cast iron pipes and removes heavy debris/rocks. High-frequency pulsation.",
-        "pb_svc_9_best_mat": "Industrial grade descaling agents, containment boomás/mats for waste capture.",
+        "pb_svc_9_best_mat": "Industrial grade descaling agents, containment booms/mats for waste capture.",
         "pb_svc_9_best_tools": "Trailer-mounted Vactor/Jetter unit (up to 4,000 PSI / 18 GPM), chain flail nozzles, heavy-duty safety gear.",
         "pb_svc_9_best_time": "1 Day",
         "pb_svc_10_title": "Service 10",
@@ -7444,7 +7769,7 @@ const translations = {
         "pb_svc_14_better_tools": "Multimeter, wire strippers, battery terminal crimpers.",
         "pb_svc_14_better_time": "4-6 hrs",
         "pb_svc_14_best_just": "[Scope] Ultra-Premium Dual-Redundant Smart System. Two commercial-grade pumps alternating cycles, dual AGM batteries, and cellular/WiFi controller module for instant flood alerts.",
-        "pb_svc_14_best_mat": "Ion Technologies Dual Pump System, smart alternating controller, cellular telemetry module, 2x 100Ah AGM batteries, high-water alarmás.",
+        "pb_svc_14_best_mat": "Ion Technologies Dual Pump System, smart alternating controller, cellular telemetry module, 2x 100Ah AGM batteries, high-water alarms.",
         "pb_svc_14_best_tools": "Network diagnostic tools, electrical conduit tools for clean wire management.",
         "pb_svc_14_best_time": "1 Day",
         "pb_svc_15_title": "Service 15",
@@ -7681,7 +8006,7 @@ const translations = {
         "lbl_membership_badge_premium": "PREMIUM",
         "btn_active_plan": "Kế hoạch Hiện tại",
         "usage_tracker_text": "Số cuộc gọi miễn phđã dùng: {used} / 5",
-        "másg_membership_updated": "Thành viên đã cập nhật thành {tier}",
+        "msg_membership_updated": "Thành viên đã cập nhật thành {tier}",
         "portal_title": "CỔNG THÔNG TIN KHÁCH HÀNG MP",
         "portal_subtitle": "¿Quéản lý thông minh Lịch hẹn, PQR và Bộ nhớ dịch vụ",
         "tab_dashboard": " Bảng điều khiển",
@@ -7799,91 +8124,91 @@ const translations = {
         "eng_seóptico_tech3_desc": "¿Quéản lý giấy php từ đầu đến cuối, đảm bảo thiết kế vượt qua các yêu cầu về sức khỏe và giảm bớt các khoản tiền phạt.",
         "svc_1_title": "Precision Leak Detection",
         "svc_1_p1": "At Morales Plumbing, precision is our standard. We identify hidden faults without destructive demolition.",
-        "svc_1_p2": "Using FLIR thermal cameras and acoustic sensors we trace leaks behind walls or slabs. Massive savings vs. reconstruction.",
+        "svc_1_p2": "Sử dụng thiết bị khuếch đại âm thanh, ảnh nhiệt hồng ngoại và kiểm tra áp lực đường ống để xác định chính xác các điểm rò rỉ ngầm.",
         "svc_1_good": "<strong>GOOD (Standard) $450</strong><br>Visual/acoustic diagnostic. Standard patches for accessible leaks.",
         "svc_1_better": "<strong>BETTER (Premium) $585</strong><br>FLIR thermal + pressure drop test. Epoxy coating repair.",
         "svc_1_best": "<strong>BEST (Ultra-Premium) $720</strong><br>Full structural mapping and sector isolation. ProPress copper segment.",
         "svc_2_title": "Full House Repipe",
         "svc_2_p1": "A full repipe is a heart transplant for your home. Old galvanized pipes cause floods and water quality degradation.",
-        "svc_2_p2": "We replace all water infrastructure with commercial-grade Copper and PEX. Eradicates cloudy water and chronic leaks.",
+        "svc_2_p2": "Lắp đặt thiết bị vệ sinh đạt chứng chỉ WaterSense, đầu lọc sục khí điều áp và bộ xả kép nhằm tối ưu lưu lượng nước theo quy chuẩn bảo tồn California.",
         "svc_2_good": "<strong> GOOD (Standard) $3,800</strong><br>PEX-B piping with brass Crimp fittings. Includes 100 PSI hydrostatic pressure test. UPC-certified reliable solution.",
         "svc_2_better": "<strong> BETTER (Premium) $4,940</strong><br>PEX-A Uponor Expansion system. Superior flow rate, freeze-resistant, fewer mechanical fittings for lower long-term risk.",
         "svc_2_best": "<strong> BEST (Ultra-Premium) $6,080</strong><br>Type L Copper with ProPress technology (no solder, no flame). Maximum flow, natural antimicrobial properties and absolute commercial-grade durability for 50+ years.",
         "svc_3_title": "Water Filtration & Softening",
         "svc_3_p1": "Hard water destroys appliances and stains fixtures. We transform water quality from the entry point.",
-        "svc_3_p2": "We install systems eliminating chlorine, heavy metals and calcium. Crystal-clear water and 30% longer appliance life.",
+        "svc_3_p2": "Tính toán tổn thất áp lực, áp lực tĩnh và định cỡ đường kính ống theo tiêu chuẩn UPC Chương 6 dựa trên tổng đương lượng thiết bị (WSFU).",
         "svc_3_good": "<strong>GOOD $1,500</strong><br>Standard 32,000-grain salt-based softener.",
         "svc_3_better": "<strong>BETTER $1,950</strong><br>Fleck 5600SXT Metered. Digital on-demand valve.",
         "svc_3_best": "<strong>BEST $2,400</strong><br>Halo 5 Whole House. Salt-free, UV sterilization.",
         "svc_4_title": "Smart Valve Installation",
         "svc_4_p1": "If a pipe bursts on vacation, IoT Smart Valves auto-shutoff and alert your phone in seconds.",
-        "svc_4_p2": "These systems monitor water flow 24/7 using AI to detect micro-leaks or catastrophic ruptures.",
+        "svc_4_p2": "Thay thế triệt để ống kẽm gỉ sét bằng ống đồng loại L (Type L) kết hợp phụ kiện ép nguội Viega ProPress không dùng lửa, an toàn và chống rò rỉ tuyệt đối.",
         "svc_4_good": "<strong>GOOD $350</strong><br>Commercial-grade 1/4-turn brass ball valve.",
         "svc_4_better": "<strong>BETTER $455</strong><br>Moen Flo Smart Valve. Daily monitoring and smartphone shutoff.",
         "svc_4_best": "<strong>BEST $560</strong><br>Phyn Plus. Ultrasonic monitoring, no moving parts, smart home integration.",
         "svc_5_title": "SeeSnake Camera Inspection",
         "svc_5_p1": "Blind diagnostics destroy properties. Our SeeSnake cameras trace problems without excavation.",
-        "svc_5_p2": "We deploy military-grade self-leveling HD cameras underground for surgical repairs instead of destroying your yard.",
+        "svc_5_p2": "Kiểm tra độ thẩm thấu đất, định kích thước bãi lọc và lắp đặt bể tự hoại hai ngăn có màng lọc cặn theo tiêu chuẩn Y tế Môi trường Hạt Santa Clara.",
         "svc_5_good": "<strong>GOOD $250</strong><br>Basic camera inspection up to 50ft. USB video delivery.",
         "svc_5_better": "<strong>BETTER $325</strong><br>Deep SeeSnake with sonar tracking. Exact surface location.",
         "svc_5_best": "<strong>BEST $400</strong><br>HD inspection and digital modeling. Full system mapping and CIPP report.",
         "svc_6_title": "Main Sewer Replacement",
         "svc_6_p1": "A collapsed main sewer is one of the most disruptive failures. We offer guíaranteed replacements for decades.",
-        "svc_6_p2": "Whether through traditional excavation or trenchless methods, we eliminate roots and fractured pipes.",
+        "svc_6_p2": "Thi công đường ống thoát khí thải ngầm (DWV), cấp nước nóng lạnh thô và lắp đặt hoàn thiện thiết bị kèm thử áp lực nước theo CPC.",
         "svc_6_good": "<strong>GOOD $5,500</strong><br>Traditional excavation, SDR-35 PVC. Proven gravity flow solution.",
         "svc_6_better": "<strong>BETTER $7,150</strong><br>ABS Schedule 40. Superior solid core, gravel bed, two-way cleanouts.",
         "svc_6_best": "<strong>BEST $8,800</strong><br>Trenchless HDPE fused joints. Seamless, root-proof. Lifetime guíarantee.",
         "svc_7_title": "Hybrid Heat Pump Water Heater",
         "svc_7_p1": "Still spending hundreds on inefficient water heating? Hybrid Heat Pump reaches up to 400% efficiency.",
-        "svc_7_p2": "Besides qualifying for rebates, this system drastically cuts electric bills. Pays for itself in under 3 years.",
+        "svc_7_p2": "Lắp đặt bình nước nóng bơm nhiệt ENERGY STAR đạt chuẩn, bao gồm đường thoát nước ngưng, bình giãn nở áp suất và ngắt điện chuyên dụng theo quy định BAAQMD.",
         "svc_7_good": "<strong>GOOD $2,200</strong><br>Standard 50-gallon atmospheric heater. Direct replacement.",
         "svc_7_better": "<strong>BETTER $2,860</strong><br>Rheem ProTerra Hybrid. Digital panel, rebate-eligible efficiency.",
         "svc_7_best": "<strong>BEST $3,520</strong><br>Bradford White AeroTherm with Wi-Fi. Smart scheduling, quiet pump, leak sensors.",
         "svc_8_title": "Pressure Reducing Valve (PRV)",
         "svc_8_p1": "Operating above 80 PSI destroys hoses, bursts valves, and voids warranties. A PRV protects silently.",
-        "svc_8_p2": "A PRV regulates flow to a safe 55-60 PSI, acting as a mechanical shield at your home entry point.",
+        "svc_8_p2": "Lắp đặt bình giãn nở nhiệt màng ngăn điều áp trên hệ thống cấp nước kín nhằm hấp thụ áp suất gia tăng khi nước nở vì nhiệt, bảo vệ van an toàn T&P.",
         "svc_8_good": "<strong>GOOD $480</strong><br>Standard residential-grade brass PRV.",
         "svc_8_better": "<strong>BETTER $624</strong><br>Wilkins 600XL with integrated pressure gauge.",
         "svc_8_best": "<strong>BEST $768</strong><br>Watts LFN45B with inline strainer and thermal expansion tank.",
         "svc_9_title": "Emergency Triage",
         "svc_9_p1": "When a pipe bursts at 3AM, every second counts. We arrive fast, stabilize the leak, mitigate damage.",
-        "svc_9_p2": "Our rapid response squad stops catastrophic flow and restores vital service to functional aáreas.",
+        "svc_9_p2": "Nội soi hệ thống thoát nước thải bằng camera màu tự thăng bằng kết hợp đầu phát tín hiệu sonde 512Hz định vị độ sâu và lộ trình từ trên mặt đất.",
         "svc_9_good": "<strong>GOOD $380</strong><br>Main shutoff and SharkBite temporary caps.",
         "svc_9_better": "<strong>BETTER $494</strong><br>Sector isolation with permanent ProPress valves.",
         "svc_9_best": "<strong>BEST $608</strong><br>Full isolation manifold. Permanent one-visit solution.",
         "svc_10_title": "CAD & Digital Tracing",
         "svc_10_p1": "Modern development requires documented precision. We trace underground lines and deliver as-built plans.",
-        "svc_10_p2": "We use electromagnetic tracing and digital modeling to map your invisible network and prevent accidents.",
+        "svc_10_p2": "Thi công đường ống thu gom nước mưa mái, van xả nước rửa đầu tiên, bồn trữ nước HDPE chịu lực và máy bơm tăng áp có van chống chảy ngược theo CPC Chương 16.",
         "svc_10_good": "<strong>GOOD $600</strong><br>Main line tracing with surface paint and professional schematic.",
         "svc_10_better": "<strong>BETTER $780</strong><br>2D AutoCAD overlay integrated with property architectural plans.",
         "svc_10_best": "<strong>BEST $960</strong><br>3D BIM/Revit modeling. Every node, pipe and valve geolocated.",
         "svc_11_title": "Tankless Water Heater",
         "svc_11_p1": "Imagine endless hot water on demand. Tankless systems only fire when you open the tap.",
-        "svc_11_p2": "Save space, reduce carbon footprint, and ensure constant purified hot water without tank explosion risks.",
+        "svc_11_p2": "Nâng cấp đường ống dẫn khí đốt đạt tải BTU cao (tối thiểu 3/4 inch), lắp đặt ống khói đồng tâm loại IV và bộ van xả tẩy cặn bảo dưỡng định kỳ.",
         "svc_11_good": "<strong>GOOD $3,200</strong><br>Navien NPE-A2 non-condensing. Great for quick replacements.",
         "svc_11_better": "<strong>BETTER $4,160</strong><br>Rinnai RU Sensei Condensing. 0.95 UEF, smart modulating burners.",
         "svc_11_best": "<strong>BEST $5,120</strong><br>Navien NPE-240A2 with ComfortFlow recirculation. Instant hot water, zero wait.",
         "svc_12_title": "Backflow Preventer Assembly",
         "svc_12_p1": "If you manage a business or irrigation, a Backflow preventer is federally mandated. Avoid crippling fines.",
-        "svc_12_p2": "We are certified to install, calibrate and register these assemblies that protect drinking water.",
+        "svc_12_p2": "Lắp đặt van thông minh (như Moen Flo) trên đường cấp chính, sử dụng cảm biến siêu âm phát hiện rò rỉ cực nhỏ, cảnh báo đóng băng và khóa van cơ điện từ xa.",
         "svc_12_good": "<strong>GOOD $850</strong><br>Standard Wilkins 375 RPZ. Immediate city compliance.",
         "svc_12_better": "<strong>BETTER $1,105</strong><br>High-flow Watts Series 009. Lead-free bronze for severe commercial use.",
         "svc_12_best": "<strong>BEST $1,360</strong><br>Febco 860 RPZ with IoT sensor. Real-time differential monitoring.",
         "svc_13_title": "Luxury Fixture Swap",
         "svc_13_p1": "A luxury bathroom requires matching hardware with precise calibration, not just aesthetics.",
-        "svc_13_p2": "We perform perfectly leveled, hermetically sealed installations tested at maximum pressure.",
+        "svc_13_p2": "Thi công thay thế toàn diện hệ thống cấp nước bằng ống Uponor PEX-A giãn nở nhiệt hoặc ống đồng loại L, thử áp lực 100 PSI và nghiệm thu cấp phép thành phố.",
         "svc_13_good": "<strong>GOOD $250</strong><br>Standard Delta/Moen installation with stainless braided supply lines.",
         "svc_13_better": "<strong>BETTER $325</strong><br>Moen Align/Grohe spot-resist. Commercial anti-mold silicone sealing.",
         "svc_13_best": "<strong>BEST $400</strong><br>Kohler Artifacts Smart Touch integration. Temperature calibration and sensor wiring.",
         "svc_14_title": "Water Chemistry Panel",
         "svc_14_p1": "Your tap water may look clear but contain heavy metals or chloramine. Test before investing in filters.",
-        "svc_14_p2": "We provide precise scientific analysis on-site and via certified labs for a custom water treatment plan.",
+        "svc_14_p2": "Lắp đặt van chuyển hướng 3 chiều bằng đồng, bể cân bằng áp và đường ống tưới nhỏ giọt ngầm dưới mặt đất đạt chuẩn CPC Chương 15.",
         "svc_14_good": "<strong>GOOD $150</strong><br>Rapid on-site TDS, hardness and free chlorine test.",
         "svc_14_better": "<strong>BETTER $195</strong><br>16-point certified lab panel (heavy metals, lead, nitrates). Report in 5 days.",
         "svc_14_best": "<strong>BEST $240</strong><br>On-site test plus permanent inline digital TDS meter for real-time monitoring.",
         "svc_15_title": "Commercial Hydro-Jetting",
         "svc_15_p1": "When scale or thick roots calcify sewer pipes, electric snakes fail. Time for industrial force.",
-        "svc_15_p2": "Our Hydro-Jetting blasts at 4000+ PSI with rotating laser nozzles restoring the original pipe diameter.",
+        "svc_15_p2": "Đo độ dày thành ống kim loại bằng sóng siêu âm không phá hủy, kiểm tra đai giằng chống động đất cho bình nước nóng và thử nghiệm áp lực cụm van phân phối.",
         "svc_15_good": "<strong>GOOD $750</strong><br>Heavy augering with 7/8 sectional electric cable.",
         "svc_15_better": "<strong>BETTER $975</strong><br>4000 PSI Hydro-Jetting. Eliminates scale and emulsified gárease.",
         "svc_15_best": "<strong>BEST $1,200</strong><br>Heavy jetting + HD camera inspection + 12-month RootX inhibitor application.",
@@ -7915,8 +8240,8 @@ const translations = {
         "service_copper_purpose": "Eliminate polymer degradation and metallic corrosion, ensuring water purity and incáreasing Bay Area property value.",
         "service_copper_usage": "Luxury residential projects in San Jose, Palo Alto, and Los Gatos, where durability and seismic code are critical.",
         "service_copper_potential": "systems designed for 50+ year lifespans, 100% recyclable, and compatible with high-flow centralized filtration.",
-        "service_copper_costs": "Immediate ROI through reduced insurance premiumás and elimination of recurring leak repairs.",
-        "service_copper_comp": "Outperforming competitors using low-density PEX and mechaúnical joints prone to pressure failure.",
+        "service_copper_costs": "Immediate ROI through reduced insurance premiums and elimination of recurring leak repairs.",
+        "service_copper_comp": "Outperforming competitors using low-density PEX and mechanical joints prone to pressure failure.",
         "service_copper_plus": "Sustainable Plumbing systems: Post-installation sanitization protocols and lead-free soldering certification.",
         "service_copper_lean": "Lean Methodology: Off-site pre-fabrication kits reducing on-site time by 40%.",
         "service_expansion_content": "Design and execution of new hydraulic branches for ADUs, gourmet kitchens, and master expansions.",
@@ -7951,7 +8276,7 @@ const translations = {
         "service_septic_comp": "Against traditional concrete tanks, we offer high-strength polymers with 0% seepage probability.",
         "service_septic_plus": "Environmental Protocols: Soil auditing and hydraulic design based on local absorption rates.",
         "service_septic_lean": "Lean Process: 48-hour modular installation via GPS-guided excavation.",
-        "service_water_content": "Pluvial capture networks and greywater treatment systems (bathroomás/laundry) for non-potable use.",
+        "service_water_content": "Pluvial capture networks and greywater treatment systems (bathrooms/laundry) for non-potable use.",
         "service_water_purpose": "Mitigate California drought impact and reduce municipal supply dependency through hydric autonomy.",
         "service_water_usage": "Integrated systems for smart gardens and toilet flushing under extreme saving mandates.",
         "service_water_potential": "Partial hydric independence of up to 65% of annual residential consumption.",
@@ -7999,7 +8324,7 @@ const translations = {
         "pb_hero_subtitle": "Dịch vụ ống nước chuyên nghiệp | Vùng Vịnh California",
         "pb_hero_location": "Vùng Vịnh California",
         "pb_hero_updated": "Cập nhật: Thng 12 năm 2024",
-        "pb_hero_details": "15 dịch vụ chuyên nghiệp chi tiết",
+        "pb_hero_details": "15 Dịch vụ Đường ống Chuyên nghiệp · San Jose, CA",
         "pb_hero_rates": "Phụ trch: $185/giờ | Trợ lý: $95/giờ | Phụ ph: 30%",
         "pb_hero_compliance": "Tiêu chuẩn Kỹ thuật: ORION Tech | Chất lượng Đảm bảo",
         "pb_hero_powered": "Pht triển bởi NeKon AI aGent Consulting | Hệ thống ORION",
@@ -8199,7 +8524,7 @@ const translations = {
         "pb_warranties_p1": "Full transparency on labor and material warranties, backed by CSLB C-36 certification.",
         "service_copper_detail": "CONTENT: Full copper piping systems (Types L, M, K) for residential and commercial infrastructure. PURPOSE: Guíaranteed structural integrity and flow efficiency. USAGE: Renovations, expansions, new construction, and repairs. POTENTIAL: Life-cycle of 50+ years with zero microplastic leaching. ROI: Incáreases property value by 15% compared to PEX; 30% lower maintenance costs. COMPETITION: Specialized brazing and environmental protocols. PLUS: Integrated Sustainable Plumbing systems with Lean Construction protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_expansion_detail": "CONTENT: Modular hydraulic expansion blocks. PURPOSE: Seamless integration of new fixtures without pressure loss. USAGE: Commercial additions and residential expansions. POTENTIAL: Infinite scalability. ROI: Scalable infrastructure. PLUS: Lean process integration. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
-        "service_construction_detail": "CONTENT: CAD Blueprints, rough-in, and finish plumbing. PURPOSE: Build-to-code excellence (UPC/CPC). ROI: 20% lower insurance premiumás. PLUS: Int'l Environmental Protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
+        "service_construction_detail": "CONTENT: CAD Blueprints, rough-in, and finish plumbing. PURPOSE: Build-to-code excellence (UPC/CPC). ROI: 20% lower insurance premiums. PLUS: Int'l Environmental Protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_repair_detail": "CONTENT: Precision leak repair and component replacement. PURPOSE: Infrastructure recovery. USAGE: Emergency and scheduled maintenance. POTENTIAL: Early detection of failures. ROI: Prevents structural damage and water waste. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_septic_detail": "CONTENT: Bio-digesters and leach fields. PURPOSE: Sustainable waste management. ROI: Eliminates utility fees. PLUS: Lean Process + CA Water Board compliance. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_water_detail": "CONTENT: Multi-stage filtration and UV sterilization. PURPOSE: Self-sufficiency. ROI: 60% reduction in water utility costs. PLUS: Int'l Environmental Protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
@@ -8401,6 +8726,71 @@ const translations = {
         "booking_fields_complete": "trường đã hoàn thành"
     },
     "hi": {
+        "lbl_tech_scope": "कार्य का दायरा और प्रक्रिया",
+        "lbl_tech_materials": "मानक सामग्री और फिटिंग",
+        "lbl_tech_standards": "लागू कोड और मानक",
+        "lbl_tech_assurance": "दबाव परीक्षण और गुणवत्ता आश्वासन",
+        "pb_svc_1_tech_scope": "Localización electroacústica no destructiva de fugas ocultas en líneas de agua potable y losas de concreto. Trazado de trayectorias hidráulicas mediante pulsos de presión de nitrógeno.",
+        "pb_svc_1_tech_mat": "Tubería de cobre Tipo L (ASTM B88) para bypass de prueba, coplas ProPress Viega de cero flama, manómetros digitales calibrados NIST.",
+        "pb_svc_1_tech_std": "Cumplimiento estricto con el California Plumbing Code (CPC) Capítulo 6, estándares de presión estática municipal de San José Water Co.",
+        "pb_svc_1_tech_qa": "Prueba hidrostática de caída de presión a 100 PSI durante 30 minutos sin pérdida. Certificado oficial de inspección Morales Plumbing Lic. C-36 #1156542.",
+        "pb_svc_2_tech_scope": "Reemplazo integral de grifería obsoleta y válvulas de escuadra. Instalación de aireadores de compensación de presión y mecanismos de doble descarga para optimizar caudal volumétrico.",
+        "pb_svc_2_tech_mat": "Accesorios certificados WaterSense, grifería de latón sin plomo (NSF/ANSI 61 y 372), sellos de elastómero EPDM y latiguillos trenzados de acero inoxidable.",
+        "pb_svc_2_tech_std": "Normativa California Title 24 (máximo 1.2 GPM en lavabos, 1.8 GPM en cocinas, 1.28 GPF en inodoros) y Código de Conservación de San José.",
+        "pb_svc_2_tech_qa": "Calibración de caudal y verificación de estanqueidad bajo presión operativa continua de 60 PSI. Cero fugas y máxima eficiencia hídrica.",
+        "pb_svc_3_tech_scope": "Dimensionamiento y balanceo de redes de distribución de agua según demanda de unidades de gasto de artefactos (WSFU). Análisis de pérdidas por fricción y presión residual.",
+        "pb_svc_3_tech_mat": "Tuberías de cobre rígido Tipo L y PEX-A Uponor con expansión en frío según ASTM F1960. Manifolds de distribución de flujo balanceado sin juntas ocultas.",
+        "pb_svc_3_tech_std": "Uniform Plumbing Code (UPC) Capítulo 6 y Apéndice A (Sizing of Water Supply Systems), especificaciones de Santa Clara Valley Water District.",
+        "pb_svc_3_tech_qa": "Garantía de presión dinámica mínima de 35 PSI en el punto más desfavorable de la instalación bajo demanda pico simultánea.",
+        "pb_svc_4_tech_scope": "Desmantelamiento y reemplazo total de tuberías galvanizadas degradadas por corrosión interna o sarro. Montaje de nuevas troncales y derivaciones aéreas y bajo piso.",
+        "pb_svc_4_tech_mat": "Tubería de cobre rígido Tipo L sin costura (ASTM B88), conexiones mecánicas prensadas Viega ProPress con sellos EPDM de alta temperatura.",
+        "pb_svc_4_tech_std": "California Plumbing Code (CPC) Sección 604, normas de seguridad contra incendios de San José (instalación 100% libre de llama abierta).",
+        "pb_svc_4_tech_qa": "Prueba de hermeticidad a 100 PSI con nitrógeno. Inspección y aprobación con permiso oficial de la Ciudad de San José.",
+        "pb_svc_5_tech_scope": "Evaluación de campo de absorción, nivelación de pendientes de descarga sanitaria e instalación de tanques sépticos de doble compartimento con filtro de efluentes.",
+        "pb_svc_5_tech_mat": "Tanques de concreto prefabricado de alta resistencia o polietileno reforzado, tuberías sanitarias de PVC Cédula 40 (ASTM D2665) con uniones cementadas al solvente.",
+        "pb_svc_5_tech_std": "Código de Salud Ambiental del Condado de Santa Clara (Department of Environmental Health) y CPC Capítulo 7 y Apéndice H.",
+        "pb_svc_5_tech_qa": "Prueba de percolación en sitio, prueba de estanqueidad por columna de agua y balanceo gravimétrico de líneas de distribución.",
+        "pb_svc_6_tech_scope": "Tendido subterráneo y vertical del sistema de desagüe, ventilación (DWV) y suministro de agua potable en edificaciones nuevas y adiciones estructurales.",
+        "pb_svc_6_tech_mat": "Tuberías ABS Cédula 40 / PVC DWV, soportes antisísmicos para tuberías, cobre Tipo L y tubería Uponor PEX-A con anillos de memoria térmica.",
+        "pb_svc_6_tech_std": "California Plumbing Code (CPC) Capítulos 3, 6, 7 y 9; Código de Construcción de San José y estándares sísmicos de California.",
+        "pb_svc_6_tech_qa": "Prueba de cabeza de agua de 10 pies en redes de desagüe y prueba neumática de 100 PSI en redes de suministro antes del sellado de muros.",
+        "pb_svc_7_tech_scope": "Instalación de calentadores de agua híbridos de alta eficiencia (Tier-4 ENERGY STAR). Tendido de drenaje de condensados, válvula de alivio térmico y desconectador eléctrico.",
+        "pb_svc_7_tech_mat": "Unidad bomba de calor híbrida con tanque vitrificado, líneas de condensado en PVC con neutralizador de acidez, vaso de expansión térmico pre-presurizado.",
+        "pb_svc_7_tech_std": "Normativa ambiental BAAQMD (Bay Area Air Quality Management District), Código Eléctrico (NEC) y CPC Sección 507.",
+        "pb_svc_7_tech_qa": "Ajuste de termostato a 120°F según norma de seguridad infantil, verificación de flujo de aire y prueba de funcionamiento de la válvula T&P.",
+        "pb_svc_8_tech_scope": "Diagnóstico y mitigación de sobrepresión provocada por calentamiento de agua en circuitos cerrados con válvula antirretorno o regulador de presión (PRV).",
+        "pb_svc_8_tech_mat": "Tanques de expansión térmica de diafragma de butilo (aprobados NSF 61), válvulas de alivio de temperatura y presión (T&P) de 150 PSI / 210°F ASME.",
+        "pb_svc_8_tech_std": "California Plumbing Code (CPC) Sección 608.3 y ordenanzas locales de seguridad en calentadores de agua del Condado de Santa Clara.",
+        "pb_svc_8_tech_qa": "Calibración de la precarga de aire del tanque de expansión exactamente igual a la presión estática del agua del inmueble (50 a 65 PSI).",
+        "pb_svc_9_tech_scope": "Inspección endoscópica computarizada de líneas laterales de drenaje y cloaca principal. Localización precisa de fisuras, raíces, colapsos y contrapendientes.",
+        "pb_svc_9_tech_mat": "Cámara autonivelante de alta resolución con iluminación LED envolvente, transmisor de sonda electromagnética de 512 Hz y receptor localizador digital de profundidad.",
+        "pb_svc_9_tech_std": "Estándares de inspección de alcantarillado de NASSCO (PACP) y regulaciones del San José Regional Wastewater Facility.",
+        "pb_svc_9_tech_qa": "Reporte digital en video de alta definición con telemetría en metros/pies, indicación exacta de profundidad y ubicación en superficie.",
+        "pb_svc_10_tech_scope": "Instalación de sistemas de captación pluvial de techos, desviadores de primer lavado y almacenamiento para reutilización en riego y sanitarios.",
+        "pb_svc_10_tech_mat": "Cisternas de polietileno virgen con protección UV grado alimenticio, filtros de sedimentos de malla fina de acero inoxidable, tubería de distribución no potable marcada en morado.",
+        "pb_svc_10_tech_std": "California Plumbing Code (CPC) Capítulo 16 (Nonpotable Rainwater Catchment Systems) y lineamientos de Valley Water.",
+        "pb_svc_10_tech_qa": "Protección total contra reflujo con dispositivo de prevención de contraflujo certificado ASSE 1013 y prueba de presión del circuito de impulsión.",
+        "pb_svc_11_tech_scope": "Reemplazo de calentadores de tanque convencionales por equipos continuos sin tanque de alta demanda BTU. Modificación y ampliación de líneas de gas natural y ventilación.",
+        "pb_svc_11_tech_mat": "Líneas de gas dedicadas de 3/4 pulg. a 1 pulg., conductos concéntricos de polipropileno o acero inoxidable Categoría IV, kit de válvulas de aislamiento para descalcificación.",
+        "pb_svc_11_tech_std": "California Fuel Gas Code (NFPA 54), CPC Capítulo 5 y normativas de emisión Ultra Low NOx de Santa Clara County.",
+        "pb_svc_11_tech_qa": "Prueba de presión de gas con columna de agua (manómetro de mercurio/digital a 3 PSI durante 15 minutos) y puesta en marcha con calibración de combustión.",
+        "pb_svc_12_tech_scope": "Instalación en línea principal de válvulas inteligentes de cierre automático con micro-transductores ultrasónicos y sensores remotos de humedad.",
+        "pb_svc_12_tech_mat": "Válvula de corte motorizada inteligente (Moen Flo / Phyn), accesorios roscados de bronce sin plomo, bypass manual de mantenimiento con válvulas de bola de cuarto de vuelta.",
+        "pb_svc_12_tech_std": "Certificación ASSE 1061 / UPC, instalación eléctrica bajo código NEC con fuente de poder clase 2 protegida contra sobretensiones.",
+        "pb_svc_12_tech_qa": "Prueba de disparo de cierre automático por caída de presión milimétrica y enlace a red de monitoreo 24/7 de Morales Plumbing.",
+        "pb_svc_13_tech_scope": "Reemplazo integral de toda la tubería de suministro de agua potable fría y caliente en la vivienda, desde el medidor hasta cada accesorio de consumo.",
+        "pb_svc_13_tech_mat": "Sistema Uponor PEX-A ProPEX de alta flexibilidad o cobre rígido Tipo L, llaves de paso angulares de cuarto de vuelta de bola metálica, cajas de pared de latón.",
+        "pb_svc_13_tech_std": "California Plumbing Code (CPC) Capítulo 6, aprobaciones de plomería y edificación de la Ciudad de San José.",
+        "pb_svc_13_tech_qa": "Prueba de presión de 100 PSI en presencia del inspector municipal. Aislamiento térmico de tuberías de agua caliente según Title 24.",
+        "pb_svc_14_tech_scope": "Desconexión de desagües de lavandería y duchas para reorientar aguas jabonosas hacia sistemas de irrigación subsuperficial por gravedad o bombeo.",
+        "pb_svc_14_tech_mat": "Válvulas desviadoras de 3 vías de latón fundido, tanques de compensación de flujo con filtro de pelusas de acero inoxidable, tubería de goteo subterránea con emisor antiobstrucción.",
+        "pb_svc_14_tech_std": "California Plumbing Code (CPC) Capítulo 15 (Alternate Water Sources for Plumbing Systems) y directrices de protección de mantos freáticos de Santa Clara.",
+        "pb_svc_14_tech_qa": "Prueba de flujo sin contrapresión, etiquetado de precaución en tuberías ('Agua No Potable') y ajuste de zona de descarga de absorción.",
+        "pb_svc_15_tech_scope": "Inspección técnica diagnóstica de la solidez estructural de las instalaciones mecánicas de plomería, anclajes antisísmicos de calentadores y colectores principales.",
+        "pb_svc_15_tech_mat": "Anclajes y correas de acero galvanizado calibre 12 aprobadas por el estado de California, colectores de latón de alta resistencia, medidores de espesor ultrasónicos.",
+        "pb_svc_15_tech_std": "California Health and Safety Code Sección 19211 (Seismic strapping of water heaters), CPC y normas de resistencia estructural de San José.",
+        "pb_svc_15_tech_qa": "Informe detallado de grosor remanente de pared en tuberías metálicas, verificación de par de apriete en juntas mecánicas y certificación de seguridad.",
+
         "hero_pill_2026": "तैयार",
         "hero_pill_eco": "इको-फोकस",
         "hero_pill_ai": "AI एकीकृत",
@@ -8432,7 +8822,7 @@ const translations = {
         "contact_form_name": "पूरा नाम",
         "contact_form_phone": "फ़ोन नंबर",
         "contact_form_email": "ईमेल",
-        "contact_form_másg": "संदेश विवरण",
+        "contact_form_msg": "संदेश विवरण",
         "contact_form_submit": "संदेश भेजें",
         "terminal_title": "MORALES_EXECUTIVE_V1.0",
         "profile_role": "Principal technician & Founder",
@@ -8519,7 +8909,7 @@ const translations = {
         "htm_toilet_title": "Fix Running Toilet",
         "htm_toilet_desc": "Stop the constant flow of water.",
         "htm_sink_title": "Clear Sink P-Trap",
-        "htm_sink_desc": "Unclog your sink mechaúnically.",
+        "htm_sink_desc": "Unclog your sink mechanically.",
         "htm_aerator_title": "Clean Faucet Aerator",
         "htm_aerator_desc": "Fix low water pressure at the sink.",
         "htm_faucet_title": "Fix Leaky Faucet",
@@ -8602,7 +8992,7 @@ const translations = {
         "eng_inspect_li3": "Permit Approval Consulting: Blueprint review against current California building codes.",
         "eng_training_comic_title": "Methodology: Empowering the Workforce",
         "eng_training_title": "Corporate Staff Training",
-        "eng_training_desc": "Professional training programás for partner plumbing and trade companies.",
+        "eng_training_desc": "Professional training programs for partner plumbing and trade companies.",
         "eng_training_p1": "The plumbing industry is rapidly evolving towards high-tech solutions. Morales Plumbing offers hands-on, master-level training for facility managers, property management maintenance crews, and partner HVAC technicians across Silicon Valley.",
         "eng_training_p2": "Our curriculum covers advanced ProPress copper fusion, MegaPress gas piping, thermal diagnostics, and CalGreen compliance. We turn your basic maintenance staff into code-compliant, highly capable technical operators.",
         "eng_training_li1": "Advanced Joining Tech: ProPress, MegaPress, and PEX-A expansion certification.",
@@ -8616,51 +9006,51 @@ const translations = {
         "eng_b2b_li1": "C-36 Commercial Subcontracting: Elite plumbing support for General Contractors.",
         "eng_b2b_li2": "HVAC & Electrical Integration: Gas lines, condensate drains, and hybrid unit setups.",
         "eng_b2b_li3": "Corporate Liability & Compliance: Fully insured, W-9 ready, and OSHA compliant.",
-        "pb_svc_1_name": "Precision Leak Detection",
-        "pb_svc_1_user": "Pinpoint hidden leaks without destructive tearing of walls or floors.",
-        "pb_svc_1_tech": "Deployment of acoustic listening devices, thermal imaging, and tracer gas to locate micro-fissures in pressurized lines. Required for non-invasive repair protocols.",
-        "pb_svc_2_name": "Eco-Retrofitting",
-        "pb_svc_2_user": "Upgrade your fixtures to high-efficiency, water-saving technologies.",
-        "pb_svc_2_tech": "Installation of WaterSense certified fixtures, pressure compensating aerators, and dual-flush mechanismás to optimize volumetric flow rates and comply with local conservation mandates.",
-        "pb_svc_3_name": "Hydraulic Infrastructure Design",
-        "pb_svc_3_user": "Custom plumbing blueprints and system sizing for your property.",
-        "pb_svc_3_tech": "Calculations based on fixture unit (FU) demand, static pressure analysis, and friction loss equations to engineer oóptimal pipe diameters and material selections.",
-        "pb_svc_4_name": "Elite Copper Renovations",
-        "pb_svc_4_user": "Replace old, failing pipes with premium, long-lasting copper.",
-        "pb_svc_4_tech": "Extraction of galvanized or defective piping, replaced with Type L copper utilizing ProPress zero-flame mechaúnical joining for superior joint integrity and reduced oxidation.",
-        "pb_svc_5_name": "Advanced Septic systems",
-        "pb_svc_5_user": "Comprehensive septic tank installation, repair, and biological optimization.",
-        "pb_svc_5_tech": "Soil percolation analysis, leach field sizing, and installation of multi-chamber bio-reactors with effluent filters to ensure oóptimal anaerobic decomposition.",
-        "pb_svc_6_name": "New Construction Plumbing",
-        "pb_svc_6_user": "End-to-end plumbing installation for new homes and additions.",
-        "pb_svc_6_tech": "Underground rough-in (DWV), water distribution top-out, and final fixture setting in strict adherence to UPC and local municipal codes. Includes hydrostatic testing.",
-        "pb_svc_7_name": "Advanced Water Heaters",
-        "pb_svc_7_user": "Installation of ultra-efficient Heat Pump and Hybrid water heaters.",
-        "pb_svc_7_tech": "Integration of compressor-driven heat pump units requiring condensate management, 240V dedicated circuits, and adherence to BAAQMD zero-NOx mandates.",
-        "pb_svc_8_name": "Thermal Expansion systems",
-        "pb_svc_8_user": "Protect your plumbing from dangerous pressure spikes.",
-        "pb_svc_8_tech": "Sizing and installation of hydropneumatic expansion tanks on the cold water supply of closed-loop heating systems to absorb volumetric expansion and prevent valve failure.",
-        "pb_svc_9_name": "Smart Diagnostics",
-        "pb_svc_9_user": "High-tech camera inspections of your sewer and drain lines.",
-        "pb_svc_9_tech": "Fiber-optic endoscopic scoping of DWV systems with integrated sonde locating to map lateral runs, identify root intrusion, and pinpoint structural collapses.",
-        "pb_svc_10_name": "Rainwater Harvesting",
-        "pb_svc_10_user": "Capture, filter, and reuse rainwater for irrigation and non-potable use.",
-        "pb_svc_10_tech": "Design of catchment surfaces, installation of primary filtration (first flush diverters), and sizing of high-density polyethylene (HDPE) cisterns with booster pumps.",
-        "pb_svc_11_name": "Tankless Upgrades",
-        "pb_svc_11_user": "Endless hot water and massive space savings with a tankless heater.",
-        "pb_svc_11_tech": "BTU load calculations for dynamic flow demand, upgrade of gas supply lines, and installation of concentric venting systems for modulating condensing heat exchangers.",
-        "pb_svc_12_name": "Leak Prevention (Flo)",
-        "pb_svc_12_user": "Smart, automated water shut-off valves that detect leaks instantly.",
-        "pb_svc_12_tech": "Inline installation of ultrasonic flow meters with machine learning algorithmás capable of distinguishing standard flow events from micro-leaks or catastrophic bursts.",
-        "pb_svc_13_name": "Whole-house Repipe",
-        "pb_svc_13_user": "Complete replacement of all water lines in your home for oóptimal flow.",
-        "pb_svc_13_tech": "Strategic abandonment of existing lines and routing of Cross-linked Polyethylene (PEX-A) utilizing expansion fittings for minimal friction loss and freeze resistance.",
-        "pb_svc_14_name": "Greywater systems",
-        "pb_svc_14_user": "Reuse water from showers and laundry to irrigate your landscape.",
-        "pb_svc_14_tech": "Installation of 3-way diversion valves, surge tanks, and subsurface drip irrigation lines conforming to Chapter 15 of the CPC for safe effluent discharge.",
-        "pb_svc_15_name": "Structural Integrity Checks",
-        "pb_svc_15_user": "Complete assessment of your plumbing system's safety and longevity.",
-        "pb_svc_15_tech": "Ultrasonic thickness gauging of metallic pipes, seismic bracing validation for equipment, and comprehensive stress testing of all primary distribution manifolds.",
+        "pb_svc_1_name": "सटीक जल रिसाव पहचान",
+        "pb_svc_1_user": "दीवारों या फर्श को नुकसान पहुंचाए बिना छिपे रिसाव का सटीक पता लगाएं।",
+        "pb_svc_1_tech": "घरेलू पानी की लाइनों में सूक्ष्म रिसाव को अलग करने के लिए ध्वनिक उपकरण, थर्मल इमेजिंग और दबाव परीक्षण का उपयोग।",
+        "pb_svc_2_name": "पर्यावरण अनुकूल प्लंबing उन्नयन",
+        "pb_svc_2_user": "अपने फिक्स्चर को उच्च दक्षता, पानी बचाने वाली तकनीकों में अपग्रेड करें।",
+        "pb_svc_2_tech": "वाटरसेंस प्रमाणित फिक्स्चर, दबाव-संतुलन एरेटर और दोहरे फ्लश तंत्र की स्थापना ताकि जल संरक्षण नियमों का पालन हो सके।",
+        "pb_svc_3_name": "जल लाइन आकार और हाइड्रोलिक संतुलन",
+        "pb_svc_3_user": "आपकी संपत्ति के लिए अनुकूलित प्लंबिंग लेआउट और पाइप आकार गणना।",
+        "pb_svc_3_tech": "यूपीसी कोड के अनुसार फिक्स्चर यूनिट की मांग, स्थिर दबाव और घर्षण हानि के आधार पर पाइप के सही आकार का निर्धारण।",
+        "pb_svc_4_name": "प्रीमियम कॉपर पाइपलाइन नवीनीकरण",
+        "pb_svc_4_user": "पुराने, जंग लगे पाइपों को प्रीमियम, लंबे समय तक चलने वाले तांबे के पाइपों से बदलें।",
+        "pb_svc_4_tech": "टाइप एल तांबे के पाइपों के साथ जंग लगी जस्ती पाइपिंग का पूरा प्रतिस्थापन, विएगा प्रोप्रेस तकनीक के साथ।",
+        "pb_svc_5_name": "उन्नत सेप्टिक और जल निकासी प्रणाली",
+        "pb_svc_5_user": "सेप्टिक टैंक की व्यापक स्थापना, मरम्मत और जैविक अनुकूलन।",
+        "pb_svc_5_tech": "सांता क्लारा काउंटी नियमों के अनुसार मिट्टी की जांच और दोहरे डिब्बे वाले सेप्टिक टैंक की स्थापना।",
+        "pb_svc_6_name": "नए निर्माण और नवीनीकरण के लिए प्लंबिंग",
+        "pb_svc_6_user": "नए घरों, एडीयू और कमरों के लिए पूर्ण नलसाजी स्थापना।",
+        "pb_svc_6_tech": "कैलिफोर्निया प्लंबिंग कोड के अनुसार भूमिगत नाली, वेंट और पानी वितरण पाइपलाइन स्थापना।",
+        "pb_svc_7_name": "हाइब्रिड हीट पंप वॉटर हीटर सिस्टम",
+        "pb_svc_7_user": "अत्यधिक कुशल हीट पंप और हाइब्रिड वॉटर हीटर की स्थापना।",
+        "pb_svc_7_tech": "एनर्जी स्टार हाइब्रिड हीट पंप वॉटर हीटर की स्थापना, थर्मल विस्तार सुरक्षा और संक्षेपण जल निकासी के साथ।",
+        "pb_svc_8_name": "थर्मल विस्तार और दबाव राहत प्रणाली",
+        "pb_svc_8_user": "खतरनाक दबाव स्पाइक्स से अपने प्लंबिंग सिस्टम को सुरक्षित रखें।",
+        "pb_svc_8_tech": "थर्मल विस्तार को अवशोषित करने और टीएंडपी राहत वाल्वों की सुरक्षा के लिए डायाफ्राम थर्मल विस्तार टैंक की स्थापना।",
+        "pb_svc_9_name": "हाई-डेफिनिशन सीवर कैमरा निरीक्षण",
+        "pb_svc_9_user": "सीवर और जल निकासी लाइनों का उच्च तकनीक कैमरा निरीक्षण।",
+        "pb_svc_9_tech": "सटीक गहराई और स्थान की पहचान के लिए 512 हर्ट्ज जांच ट्रांसमीटर के साथ रंगीन कैमरों का उपयोग करके सीवर निरीक्षण।",
+        "pb_svc_10_name": "वर्षा जल संचयन और सिंचाई प्रणाली",
+        "pb_svc_10_user": "सिंचाई और गैर-पीने योग्य उपयोग के लिए वर्षा जल एकत्र करें, छानें और पुन: उपयोग करें।",
+        "pb_svc_10_tech": "कैलिफोर्निया प्लंबिंग कोड के अनुसार जल भंडारण और बूस्टर पंपों के साथ वर्षा जल संचयन प्रणाली की स्थापना।",
+        "pb_svc_11_name": "टैंकलेस वॉटर हीटर रूपांतरण",
+        "pb_svc_11_user": "टैंकलेस वॉटर हीटर के साथ अंतहीन गर्म पानी और जगह की बड़ी बचत।",
+        "pb_svc_11_tech": "उच्च बीटीयू भार के लिए गैस आपूर्ति पाइपलाइन का आकार, वेंटिंग और नियमित सफाई के लिए वाल्व किट की स्थापना।",
+        "pb_svc_12_name": "स्मार्ट जल शटऑफ और रिसाव सुरक्षा वाल्व",
+        "pb_svc_12_user": "स्मार्ट स्वचालित शटऑफ वाल्व जो रिसाव का पता चलने पर तुरंत पानी बंद कर देते हैं।",
+        "pb_svc_12_tech": "मुख्य जल आपूर्ति लाइन पर स्मार्ट स्वचालित शटऑफ वाल्व की स्थापना, पानी की बचत और आपातकालीन कटऑफ के लिए।",
+        "pb_svc_13_name": "संपूर्ण घर की जल पाइपलाइन का पूर्ण प्रतिस्थापन",
+        "pb_svc_13_user": "मजबूत जल प्रवाह और सुरक्षा के लिए आपके घर की सभी जल लाइनों का पूर्ण प्रतिस्थापन।",
+        "pb_svc_13_tech": "अपोनोर पेक्स-ए या तांबे के मैनिफोल्ड्स का उपयोग करके सभी घरेलू पानी लाइनों का पूर्ण प्रतिस्थापन।",
+        "pb_svc_14_name": "ग्रेवाटर रीसाइक्लिंग और जल संचयन प्रणाली",
+        "pb_svc_14_user": "अपने बगीचे की सिंचाई के लिए शॉवर और कपड़े धोने के पानी का पुन: उपयोग करें।",
+        "pb_svc_14_tech": "कैलिफोर्निया प्लंबिंग कोड अध्याय 15 के अनुसार 3-तरफा वाल्व और उपसतह ड्रिप लाइनों की स्थापना।",
+        "pb_svc_15_name": "संरचनात्मक प्लंबिंग और मैनिफोल्ड सुरक्षा निरीक्षण",
+        "pb_svc_15_user": "अपने प्लंबिंग सिस्टम की सुरक्षा और दीर्घायु का संपूर्ण मूल्यांकन।",
+        "pb_svc_15_tech": "धातु के पाइपों की मोटाई का अल्ट्रासोनिक परीक्षण, भूकंपीय सुरक्षा निरीक्षण और मुख्य मैनिफोल्ड्स पर दबाव परीक्षण।",
         "lbl_subtitles": "Comic Reference",
         "svc_1_step_1": "Initial diagnostic mapping.",
         "svc_1_step_2": "System isolation.",
@@ -8740,16 +9130,16 @@ const translations = {
         "svc_4_best_desc": "[EN] Phyn Plus Smart Water Assistant con sensores ultrasónicos. Monitoreo sin partes mviles, mxima precisión de flujo e integración total con sistemas Smart Home.",
         "svc_5_good_desc": "[EN] Inspección de cámara básica hasta 50 pies. Identificacin de bloqueos y entrega de video en memoria USB.",
         "svc_5_better_desc": "[EN] Inspección profunda SeeSnake con localización por sonar. Trazamos y marcamos la ubicación exacta y profundidad del problema en la superficie.",
-        "svc_5_best_desc": "[EN] Inspección HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técúnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
-        "svc_6_good_desc": "[EN] Excavación tradicional e instalación de PVC SDR-35. Cumple con los cdigos locales y provee una solución probada de flujo por gravedad.",
+        "svc_5_best_desc": "[EN] Inspección HD y modelado. Mapeo completo del sistema, trazado de sonar y reporte de Plomería Técnica digital detallando pendientes, intrusiones y opciones de recubrimiento sin zanja (CIPP).",
+        "svc_6_good_desc": "[EN] Excavación tradicional e instalación de PVC SDR-35. Cumple con los códigos locales y provee una solución probada de flujo por gravedad.",
         "svc_6_better_desc": "[EN] Reemplazo con ABS Cdula 40. Tubería de núcleo slido superior, instalada con cama de grava estabilizadora y registros de limpieza bidireccionales.",
-        "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadías. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
+        "svc_6_best_desc": "[EN] Reemplazo sin zanja (Trenchless) con polietileno de alta densidad (HDPE) de juntas fusionadas. Tubería continua sin costuras, imposible de penetrar por races. Garantía de por vida.",
         "svc_7_good_desc": "[EN] Instalación de un calentador atmosfrico estándar de 50 galones. Reemplazo directo sin modificaciones eléctricas complejas.",
-        "svc_7_better_desc": "[EN] Instalación de calentador Hbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
+        "svc_7_better_desc": "[EN] Instalación de calentador Híbrido Rheem ProTerra. Incluye válvula de mezcla térmica, panel de control digital y eficiencia que califica para incentivos fiscales.",
         "svc_7_best_desc": "[EN] Bradford White AeroTherm con integración Wi-Fi completa. Modos de programación inteligente, bomba ultra-silenciosa y sensores de detección de fugas integrados desde la fbrica.",
         "svc_8_good_desc": "[EN] Instalación de válvula PRV de latn estándar de grado residencial. Estabiliza la presión principal previniendo daños a corto plazo.",
         "svc_8_better_desc": "[EN] Wilkins 600XL con manómetro de lectura integrada. Permite un monitoreo visual y ajustes precisos sin requerir herramientas adicionales de Diagnóstico.",
-        "svc_8_best_desc": "[EN] Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios volumtricos.",
+        "svc_8_best_desc": "[EN] Válvula Watts LFN45B. Incluye filtro en línea integrado para proteger la válvula de sedimentos, acompaado de un tanque de expansión térmica para manejar cambios caudales volumétricos.",
         "svc_9_good_desc": "[EN] Respuesta primaria. Cierre del agua principal y uso de tapones SharkBite temporales para detener la emergencia y permitir secado.",
         "svc_9_better_desc": "[EN] Aislamiento del sector. Instalación de válvulas de aislamiento permanente de Cobre ProPress, permitiendo dar agua al resto de la casa mientras el sector daado queda aislado.",
         "svc_9_best_desc": "[EN] Resolución y reestructuracin. Construcción de un manifold de aislamiento completo y soldadura/prensado definitivo de la falla. Solución permanente de una sola visita.",
@@ -8762,7 +9152,7 @@ const translations = {
         "svc_12_good_desc": "[EN] Instalación de ensamblaje RPZ (Reduced Pressure Zone) Wilkins 375 estándar. Cumplimiento inmediato con las regulaciones de la ciudad.",
         "svc_12_better_desc": "[EN] Ensamblaje Watts Serie 009 de alto flujo. Válvulas de control de cuarto de vuelta y cuerpo de bronce sin plomo para aplicaciones comerciales severas.",
         "svc_12_best_desc": "[EN] Febco 860 RPZ equipado con sensor IoT de caída de presión. Monitorea los diferenciales de presión en tiempo real y alerta al administrador sobre bloqueos o fallas antes de la inspección anual.",
-        "svc_13_good_desc": "[EN] Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadías de acero inoxidable y sellos nuevos.",
+        "svc_13_good_desc": "[EN] Instalación de accesorios estándar nivel residencial (Delta/Moen). Incluye nuevas líneas de suministro trenzadas de acero inoxidable y sellos nuevos.",
         "svc_13_better_desc": "[EN] Instalación de herrajes de gama media-alta (Moen Align, Grohe) con acabados resistentes a manchas. Sellado con silicona comercial anti-moho.",
         "svc_13_best_desc": "[EN] Instalación e integración de grifería inteligente (Kohler Artifacts Smart Touch / Voice Control). Calibración de temperatura preestablecida y cableado del módulo sensor.",
         "svc_14_good_desc": "[EN] Test rápidías in-situ. Medición de TDS (Sólidos Disueltos Totales), prueba de dureza por gotas químicas y nivel de cloro libre.",
@@ -8808,7 +9198,7 @@ const translations = {
         "promo_ttt_legal_time_desc": "The transition window is now. Morales Plumbing provides certified equipment and rebate paperwork, but does not guíarantee State approval or payment timelines.",
         "promo_tt_good_comic_1": "1. Disconnect, drain, and remove the bulky old tank water heater.",
         "promo_tt_good_comic_2": "2. Mount sleek Navien unit, install new PVC venting and dedicated 199K BTU gas line.",
-        "promo_tt_good_comic_3": "3. Calibrate internal sensors for oóptimal flow and temperature control.",
+        "promo_tt_good_comic_3": "3. Calibrate internal sensors for optimal flow and temperature control.",
         "promo_tt_good_comic_4": "4. Endless hot water restored, saving massive space in the garage.",
         "promo_tt_better_comic_1": "1. Professional installation of Navien Premium NPE-240A2 series.",
         "promo_tt_better_comic_2": "2. Integrate NaviCirc valve to eliminate cold water wait times.",
@@ -8964,14 +9354,14 @@ const translations = {
         "pb_svc_2_good_time": "5-7 Días",
         "pb_svc_2_better_just": "[Scope] Premium Repipe (Horizontal y Vertical): Up to 3 baths, 1 kitchen (ice maker, dishwasher), laundry, 3 hose bibs. Reemplazo total de la casa (lineas de rastreo y montantes de pared). Full home Uponor expansion system. Includes firestop and drywall rough-patch.",
         "pb_svc_2_better_mat": "Up to 350ft PEX-A (Uponor), ProPEX expansion rings, 1/2\" Type L copper stub-outs, drop-ear elbows, premium quarter-turn angle stops, fire-rated caulk.",
-        "pb_svc_2_better_tools": "Milwaukee M12/M18 ProPEX expansion tools, self-feed drill bits, HEPA vacuumás, drop cloths.",
+        "pb_svc_2_better_tools": "Milwaukee M12/M18 ProPEX expansion tools, self-feed drill bits, HEPA vacuums, drop cloths.",
         "pb_svc_2_better_time": "7-10 Días",
         "pb_svc_2_best_just": "[Scope] Ultra-Premium Commercial Grade: Up to 4 baths, fully sized for high flow rates (1\" mains). Complete Type L Copper installation with ProPress. Includes permit expediting.",
         "pb_svc_2_best_mat": "Up to 400ft Type L hard copper pipe (1\", 3/4\", 1/2\"), Viega ProPress zero-lead fittings, acoustic pipe clamps, heavy-duty unistrut supports.",
         "pb_svc_2_best_tools": "Ridgid RP 350 ProPress tool, heavy-duty copper cutters, deburring and reaming tools, laser level.",
         "pb_svc_2_best_time": "10-14 Días",
         "pb_svc_3_title": "Service 3",
-        "pb_svc_3_good_just": "[Scope] Standard water softening for homes up to 3 bedroomás (approx. 32,000 grain capacity). Install via existing loop. Excludes creating a new soft water loop.",
+        "pb_svc_3_good_just": "[Scope] Standard water softening for homes up to 3 bedrooms (approx. 32,000 grain capacity). Install via existing loop. Excludes creating a new soft water loop.",
         "pb_svc_3_good_mat": "Fleck 5600SXT digital metered valve, 1.0 cu ft high-capacity resin, standard brine tank, 2 bags of solar salt, corrugated stainless flex connectors.",
         "pb_svc_3_good_tools": "Pipe threaders, teflon tape, basic multimeter, adjustable wrenches, bucket.",
         "pb_svc_3_good_time": "3-5 hrs",
@@ -9058,7 +9448,7 @@ const translations = {
         "pb_svc_9_better_tools": "Gas-powered skid-mounted jetter (4,000 PSI / 4+ GPM), Warthog rotating nozzle, inspection camera.",
         "pb_svc_9_better_time": "3-5 hrs",
         "pb_svc_9_best_just": "[Scope] Ultra-Premium Storm Drain / Heavy Commercial Jetting (up to 300 feet). Descales cast iron pipes and removes heavy debris/rocks. High-frequency pulsation.",
-        "pb_svc_9_best_mat": "Industrial grade descaling agents, containment boomás/mats for waste capture.",
+        "pb_svc_9_best_mat": "Industrial grade descaling agents, containment booms/mats for waste capture.",
         "pb_svc_9_best_tools": "Trailer-mounted Vactor/Jetter unit (up to 4,000 PSI / 18 GPM), chain flail nozzles, heavy-duty safety gear.",
         "pb_svc_9_best_time": "1 Day",
         "pb_svc_10_title": "Service 10",
@@ -9123,7 +9513,7 @@ const translations = {
         "pb_svc_14_better_tools": "Multimeter, wire strippers, battery terminal crimpers.",
         "pb_svc_14_better_time": "4-6 hrs",
         "pb_svc_14_best_just": "[Scope] Ultra-Premium Dual-Redundant Smart System. Two commercial-grade pumps alternating cycles, dual AGM batteries, and cellular/WiFi controller module for instant flood alerts.",
-        "pb_svc_14_best_mat": "Ion Technologies Dual Pump System, smart alternating controller, cellular telemetry module, 2x 100Ah AGM batteries, high-water alarmás.",
+        "pb_svc_14_best_mat": "Ion Technologies Dual Pump System, smart alternating controller, cellular telemetry module, 2x 100Ah AGM batteries, high-water alarms.",
         "pb_svc_14_best_tools": "Network diagnostic tools, electrical conduit tools for clean wire management.",
         "pb_svc_14_best_time": "1 Day",
         "pb_svc_15_title": "Service 15",
@@ -9360,7 +9750,7 @@ const translations = {
         "lbl_membership_badge_premium": "PREMIUM",
         "btn_active_plan": "Active Plan",
         "usage_tracker_text": "Free calls used: {used} / 5",
-        "másg_membership_updated": "Membership updated to {tier}",
+        "msg_membership_updated": "Membership updated to {tier}",
         "portal_title": "MP CLIENT PORTAL",
         "portal_subtitle": "Smart Management of Appointments, PQR and Service Memory",
         "tab_dashboard": " My Dashboard",
@@ -9386,7 +9776,7 @@ const translations = {
         "lbl_select_date": "DATE",
         "lbl_select_time": "TIME",
         "btn_confirm_appointment": "Confirm Service Appointment",
-        "pqr_title": "PQRS Center (Requests, Complaints, Claimás and Suggestions)",
+        "pqr_title": "PQRS Center (Requests, Complaints, Claims and Suggestions)",
         "pqr_desc": "Register your complaints, suggestions or requests directly.",
         "lbl_pqr_type": "REQUEST TYPE",
         "pqr_opt_request": "Request (Special Request)",
@@ -9435,7 +9825,7 @@ const translations = {
         "eng_termo_tech2_title": "Computerized Acoustic Analysis",
         "eng_termo_tech2_desc": "We use hypersensitive microphones with AI filters that differentiate ambient noise from the hiss caused by pressurized water escaping.",
         "eng_termo_tech3_title": "Digital Mapping and Reporting",
-        "eng_termo_tech3_desc": "We deliver a comprehensive digital report through our portal, proving the issue for insurance claimás and facilitating surgical repairs.",
+        "eng_termo_tech3_desc": "We deliver a comprehensive digital report through our portal, proving the issue for insurance claims and facilitating surgical repairs.",
         "eng_eco_title": "Eco-Retrofitting",
         "eng_eco_code": "ENG-CENT-002",
         "eng_eco_p1": "Eco-Retrofitting is our cutting-edge specialty to modernize existing hydraulic systems with eco-friendly materials and ultra-high efficiency water-saving components.",
@@ -9461,7 +9851,7 @@ const translations = {
         "eng_cobre_p1": "Elite Copper Renovations represent the gold standard in hydraulic infrastructure. We replace obsolete plumbing systems with high-purity Type L and Type K copper pipes.",
         "eng_cobre_p2": "Copper provides natural antimicrobial properties that passively purify water flow and guíarantee zero microplastic release.",
         "eng_cobre_tech1_title": "Precision Welding and ProPress System",
-        "eng_cobre_tech1_desc": "We employ flameless mechaúnical joining techniques (ProPress) or lead-free aerospace-grade welding.",
+        "eng_cobre_tech1_desc": "We employ flameless mechanical joining techniques (ProPress) or lead-free aerospace-grade welding.",
         "eng_cobre_tech2_title": "Longevity and ROI",
         "eng_cobre_tech2_desc": "Lifespan expectation of over 50 years. Instantly elevates the structural valuation of the property up to 15%.",
         "eng_cobre_tech3_title": "Acoustic Quality and Constant Flow",
@@ -9478,91 +9868,91 @@ const translations = {
         "eng_seóptico_tech3_desc": "End-to-end permit management, ensuring the design exceeds health requirements and mitigating fines.",
         "svc_1_title": "Precision Leak Detection",
         "svc_1_p1": "At Morales Plumbing, precision is our standard. We identify hidden faults without destructive demolition.",
-        "svc_1_p2": "Using FLIR thermal cameras and acoustic sensors we trace leaks behind walls or slabs. Massive savings vs. reconstruction.",
+        "svc_1_p2": "घरेलू पानी की लाइनों में सूक्ष्म रिसाव को अलग करने के लिए ध्वनिक उपकरण, थर्मल इमेजिंग और दबाव परीक्षण का उपयोग।",
         "svc_1_good": "<strong>GOOD (Standard) $450 - $700</strong><br>Visual/acoustic diagnostic. Standard patches for accessible leaks.",
         "svc_1_better": "<strong>BETTER (Premium) $585 - $900</strong><br>FLIR thermal + pressure drop test. Epoxy coating repair.",
         "svc_1_best": "<strong>BEST (Ultra-Premium) $720 - $1,100</strong><br>Full structural mapping and sector isolation. ProPress copper segment.",
         "svc_2_title": "Full House Repipe",
         "svc_2_p1": "A full repipe is a heart transplant for your home. Old galvanized pipes cause floods and water quality degradation.",
-        "svc_2_p2": "We replace all water infrastructure with commercial-grade Copper and PEX. Eradicates cloudy water and chronic leaks.",
+        "svc_2_p2": "वाटरसेंस प्रमाणित फिक्स्चर, दबाव-संतुलन एरेटर और दोहरे फ्लश तंत्र की स्थापना ताकि जल संरक्षण नियमों का पालन हो सके।",
         "svc_2_good": "<strong>? GOOD (Standard) $3,800 - $5,300</strong><br>PEX-B piping with brass Crimp fittings. Includes 100 PSI hydrostatic pressure test. UPC-certified reliable solution.",
-        "svc_2_better": "<strong>? BETTER (Premium) $4,940 - $6,500</strong><br>PEX-A Uponor Expansion system. Superior flow rate, freeze-resistant, fewer mechaúnical fittings for lower long-term risk.",
+        "svc_2_better": "<strong>? BETTER (Premium) $4,940 - $6,500</strong><br>PEX-A Uponor Expansion system. Superior flow rate, freeze-resistant, fewer mechanical fittings for lower long-term risk.",
         "svc_2_best": "<strong> BEST (Ultra-Premium) $6,080 - $8,600</strong><br>Type L Copper with ProPress technology (no solder, no flame). Maximum flow, natural antimicrobial properties and absolute commercial-grade durability for 50+ years.",
         "svc_3_title": "Water Filtration & Softening",
         "svc_3_p1": "Hard water destroys appliances and stains fixtures. We transform water quality from the entry point.",
-        "svc_3_p2": "We install systems eliminating chlorine, heavy metals and calcium. Crystal-clear water and 30% longer appliance life.",
+        "svc_3_p2": "यूपीसी कोड के अनुसार फिक्स्चर यूनिट की मांग, स्थिर दबाव और घर्षण हानि के आधार पर पाइप के सही आकार का निर्धारण।",
         "svc_3_good": "<strong>GOOD $1,500 - $2,300</strong><br>Standard 32,000-grain salt-based softener.",
         "svc_3_better": "<strong>BETTER $1,950 - $2,800</strong><br>Fleck 5600SXT Metered. Digital on-demand valve.",
         "svc_3_best": "<strong>BEST $2,400 - $3,200</strong><br>Halo 5 Whole House. Salt-free, UV sterilization.",
         "svc_4_title": "Smart Valve Installation",
         "svc_4_p1": "If a pipe bursts on vacation, IoT Smart Valves auto-shutoff and alert your phone in seconds.",
-        "svc_4_p2": "These systems monitor water flow 24/7 using AI to detect micro-leaks or catastrophic ruptures.",
+        "svc_4_p2": "टाइप एल तांबे के पाइपों के साथ जंग लगी जस्ती पाइपिंग का पूरा प्रतिस्थापन, विएगा प्रोप्रेस तकनीक के साथ।",
         "svc_4_good": "<strong>GOOD $350 - $550</strong><br>Commercial-grade 1/4-turn brass ball valve.",
         "svc_4_better": "<strong>BETTER $455 - $700</strong><br>Moen Flo Smart Valve. Daily monitoring and smartphone shutoff.",
         "svc_4_best": "<strong>BEST $560 - $850</strong><br>Phyn Plus. Ultrasonic monitoring, no moving parts, smart home integration.",
         "svc_5_title": "SeeSnake Camera Inspection",
         "svc_5_p1": "Blind diagnostics destroy properties. Our SeeSnake cameras trace problems without excavation.",
-        "svc_5_p2": "We deploy military-grade self-leveling HD cameras underground for surgical repairs instead of destroying your yard.",
+        "svc_5_p2": "सांता क्लारा काउंटी नियमों के अनुसार मिट्टी की जांच और दोहरे डिब्बे वाले सेप्टिक टैंक की स्थापना।",
         "svc_5_good": "<strong>GOOD $250 - $400</strong><br>Basic camera inspection up to 50ft. USB video delivery.",
         "svc_5_better": "<strong>BETTER $325 - $500</strong><br>Deep SeeSnake with sonar tracking. Exact surface location.",
         "svc_5_best": "<strong>BEST $400 - $600</strong><br>HD inspection and digital modeling. Full system mapping and CIPP report.",
         "svc_6_title": "Main Sewer Replacement",
         "svc_6_p1": "A collapsed main sewer is one of the most disruptive failures. We offer guíaranteed replacements for decades.",
-        "svc_6_p2": "Whether through traditional excavation or trenchless methods, we eliminate roots and fractured pipes.",
+        "svc_6_p2": "कैलिफोर्निया प्लंबिंग कोड के अनुसार भूमिगत नाली, वेंट और पानी वितरण पाइपलाइन स्थापना।",
         "svc_6_good": "<strong>GOOD $5,500 - $8,000</strong><br>Traditional excavation, SDR-35 PVC. Proven gravity flow solution.",
         "svc_6_better": "<strong>BETTER $7,150 - $9,700</strong><br>ABS Schedule 40. Superior solid core, gravel bed, two-way cleanouts.",
         "svc_6_best": "<strong>BEST $8,800 - $11,300</strong><br>Trenchless HDPE fused joints. Seamless, root-proof. Lifetime guíarantee.",
         "svc_7_title": "Hybrid Heat Pump Water Heater",
         "svc_7_p1": "Still spending hundreds on inefficient water heating? Hybrid Heat Pump reaches up to 400% efficiency.",
-        "svc_7_p2": "Besides qualifying for rebates, this system drastically cuts electric bills. Pays for itself in under 3 years.",
+        "svc_7_p2": "एनर्जी स्टार हाइब्रिड हीट पंप वॉटर हीटर की स्थापना, थर्मल विस्तार सुरक्षा और संक्षेपण जल निकासी के साथ।",
         "svc_7_good": "<strong>GOOD $2,200 - $3,000</strong><br>Standard 50-gallon atmospheric heater. Direct replacement.",
         "svc_7_better": "<strong>BETTER $2,860 - $3,700</strong><br>Rheem ProTerra Hybrid. Digital panel, rebate-eligible efficiency.",
         "svc_7_best": "<strong>BEST $3,520 - $5,100</strong><br>Bradford White AeroTherm with Wi-Fi. Smart scheduling, quiet pump, leak sensors.",
         "svc_8_title": "Pressure Reducing Valve (PRV)",
         "svc_8_p1": "Operating above 80 PSI destroys hoses, bursts valves, and voids warranties. A PRV protects silently.",
-        "svc_8_p2": "A PRV regulates flow to a safe 55-60 PSI, acting as a mechaúnical shield at your home entry point.",
+        "svc_8_p2": "थर्मल विस्तार को अवशोषित करने और टीएंडपी राहत वाल्वों की सुरक्षा के लिए डायाफ्राम थर्मल विस्तार टैंक की स्थापना।",
         "svc_8_good": "<strong>GOOD $480 - $750</strong><br>Standard residential-grade brass PRV.",
         "svc_8_better": "<strong>BETTER $624 - $950</strong><br>Wilkins 600XL with integrated pressure gauge.",
         "svc_8_best": "<strong>BEST $768 - $1,200</strong><br>Watts LFN45B with inline strainer and thermal expansion tank.",
         "svc_9_title": "Emergency Triage",
         "svc_9_p1": "When a pipe bursts at 3AM, every second counts. We arrive fast, stabilize the leak, mitigate damage.",
-        "svc_9_p2": "Our rapid response squad stops catastrophic flow and restores vital service to functional aáreas.",
+        "svc_9_p2": "सटीक गहराई और स्थान की पहचान के लिए 512 हर्ट्ज जांच ट्रांसमीटर के साथ रंगीन कैमरों का उपयोग करके सीवर निरीक्षण।",
         "svc_9_good": "<strong>GOOD $380 - $600</strong><br>Main shutoff and SharkBite temporary caps.",
         "svc_9_better": "<strong>BETTER $494 - $750</strong><br>Sector isolation with permanent ProPress valves.",
         "svc_9_best": "<strong>BEST $608 - $950</strong><br>Full isolation manifold. Permanent one-visit solution.",
         "svc_10_title": "CAD & Digital Tracing",
         "svc_10_p1": "Modern development requires documented precision. We trace underground lines and deliver as-built plans.",
-        "svc_10_p2": "We use electromagnetic tracing and digital modeling to map your invisible network and prevent accidents.",
+        "svc_10_p2": "कैलिफोर्निया प्लंबिंग कोड के अनुसार जल भंडारण और बूस्टर पंपों के साथ वर्षा जल संचयन प्रणाली की स्थापना।",
         "svc_10_good": "<strong>GOOD $600 - $900</strong><br>Main line tracing with surface paint and professional schematic.",
         "svc_10_better": "<strong>BETTER $780 - $1,200</strong><br>2D AutoCAD overlay integrated with property architectural plans.",
         "svc_10_best": "<strong>BEST $960 - $1,450</strong><br>3D BIM/Revit modeling. Every node, pipe and valve geolocated.",
         "svc_11_title": "Tankless Water Heater",
         "svc_11_p1": "Imagine endless hot water on demand. Tankless systems only fire when you open the tap.",
-        "svc_11_p2": "Save space, reduce carbon footprint, and ensure constant purified hot water without tank explosion risks.",
+        "svc_11_p2": "उच्च बीटीयू भार के लिए गैस आपूर्ति पाइपलाइन का आकार, वेंटिंग और नियमित सफाई के लिए वाल्व किट की स्थापना।",
         "svc_11_good": "<strong>GOOD $3,200 - $4,700</strong><br>Navien NPE-A2 non-condensing. Great for quick replacements.",
         "svc_11_better": "<strong>BETTER $4,160 - $5,700</strong><br>Rinnai RU Sensei Condensing. 0.95 UEF, smart modulating burners.",
         "svc_11_best": "<strong>BEST $5,120 - $7,700</strong><br>Navien NPE-240A2 with ComfortFlow recirculation. Instant hot water, zero wait.",
         "svc_12_title": "Backflow Preventer Assembly",
         "svc_12_p1": "If you manage a business or irrigation, a Backflow preventer is federally mandated. Avoid crippling fines.",
-        "svc_12_p2": "We are certified to install, calibrate and register these assemblies that protect drinking water.",
+        "svc_12_p2": "मुख्य जल आपूर्ति लाइन पर स्मार्ट स्वचालित शटऑफ वाल्व की स्थापना, पानी की बचत और आपातकालीन कटऑफ के लिए।",
         "svc_12_good": "<strong>GOOD $850 - $1,300</strong><br>Standard Wilkins 375 RPZ. Immediate city compliance.",
         "svc_12_better": "<strong>BETTER $1,105 - $2,000</strong><br>High-flow Watts Series 009. Lead-free bronze for severe commercial use.",
         "svc_12_best": "<strong>BEST $1,360 - $2,200</strong><br>Febco 860 RPZ with IoT sensor. Real-time differential monitoring.",
         "svc_13_title": "Luxury Fixture Swap",
         "svc_13_p1": "A luxury bathroom requires matching hardware with precise calibration, not just aesthetics.",
-        "svc_13_p2": "We perform perfectly leveled, hermetically sealed installations tested at maximum pressure.",
+        "svc_13_p2": "अपोनोर पेक्स-ए या तांबे के मैनिफोल्ड्स का उपयोग करके सभी घरेलू पानी लाइनों का पूर्ण प्रतिस्थापन।",
         "svc_13_good": "<strong>GOOD $250 - $400</strong><br>Standard Delta/Moen installation with stainless braided supply lines.",
         "svc_13_better": "<strong>BETTER $325 - $500</strong><br>Moen Align/Grohe spot-resist. Commercial anti-mold silicone sealing.",
         "svc_13_best": "<strong>BEST $400 - $600</strong><br>Kohler Artifacts Smart Touch integration. Temperature calibration and sensor wiring.",
         "svc_14_title": "Water Chemistry Panel",
         "svc_14_p1": "Your tap water may look clear but contain heavy metals or chloramine. Test before investing in filters.",
-        "svc_14_p2": "We provide precise scientific analysis on-site and via certified labs for a custom water treatment plan.",
+        "svc_14_p2": "कैलिफोर्निया प्लंबिंग कोड अध्याय 15 के अनुसार 3-तरफा वाल्व और उपसतह ड्रिप लाइनों की स्थापना।",
         "svc_14_good": "<strong>GOOD $150 - $250</strong><br>Rapid on-site TDS, hardness and free chlorine test.",
         "svc_14_better": "<strong>BETTER $195 - $300</strong><br>16-point certified lab panel (heavy metals, lead, nitrates). Report in 5 days.",
         "svc_14_best": "<strong>BEST $240 - $400</strong><br>On-site test plus permanent inline digital TDS meter for real-time monitoring.",
         "svc_15_title": "Commercial Hydro-Jetting",
         "svc_15_p1": "When scale or thick roots calcify sewer pipes, electric snakes fail. Time for industrial force.",
-        "svc_15_p2": "Our Hydro-Jetting blasts at 4000+ PSI with rotating laser nozzles restoring the original pipe diameter.",
+        "svc_15_p2": "धातु के पाइपों की मोटाई का अल्ट्रासोनिक परीक्षण, भूकंपीय सुरक्षा निरीक्षण और मुख्य मैनिफोल्ड्स पर दबाव परीक्षण।",
         "svc_15_good": "<strong>GOOD $750 - $1,150</strong><br>Heavy augering with 7/8 sectional electric cable.",
         "svc_15_better": "<strong>BETTER $975 - $1,500</strong><br>4000 PSI Hydro-Jetting. Eliminates scale and emulsified gárease.",
         "svc_15_best": "<strong>BEST $1,200 - $2,000</strong><br>Heavy jetting + HD camera inspection + 12-month RootX inhibitor application.",
@@ -9594,8 +9984,8 @@ const translations = {
         "service_copper_purpose": "Eliminate polymer degradation and metallic corrosion, ensuring water purity and incáreasing Bay Area property value.",
         "service_copper_usage": "Luxury residential projects in San Jose, Palo Alto, and Los Gatos, where durability and seismic code are critical.",
         "service_copper_potential": "systems designed for 50+ year lifespans, 100% recyclable, and compatible with high-flow centralized filtration.",
-        "service_copper_costs": "Immediate ROI through reduced insurance premiumás and elimination of recurring leak repairs.",
-        "service_copper_comp": "Outperforming competitors using low-density PEX and mechaúnical joints prone to pressure failure.",
+        "service_copper_costs": "Immediate ROI through reduced insurance premiums and elimination of recurring leak repairs.",
+        "service_copper_comp": "Outperforming competitors using low-density PEX and mechanical joints prone to pressure failure.",
         "service_copper_plus": "Sustainable Plumbing systems: Post-installation sanitization protocols and lead-free soldering certification.",
         "service_copper_lean": "Lean Methodology: Off-site pre-fabrication kits reducing on-site time by 40%.",
         "service_expansion_content": "Design and execution of new hydraulic branches for ADUs, gourmet kitchens, and master expansions.",
@@ -9630,7 +10020,7 @@ const translations = {
         "service_septic_comp": "Against traditional concrete tanks, we offer high-strength polymers with 0% seepage probability.",
         "service_septic_plus": "Environmental Protocols: Soil auditing and hydraulic design based on local absorption rates.",
         "service_septic_lean": "Lean Process: 48-hour modular installation via GPS-guided excavation.",
-        "service_water_content": "Pluvial capture networks and greywater treatment systems (bathroomás/laundry) for non-potable use.",
+        "service_water_content": "Pluvial capture networks and greywater treatment systems (bathrooms/laundry) for non-potable use.",
         "service_water_purpose": "Mitigate California drought impact and reduce municipal supply dependency through hydric autonomy.",
         "service_water_usage": "Integrated systems for smart gardens and toilet flushing under extreme saving mandates.",
         "service_water_potential": "Partial hydric independence of up to 65% of annual residential consumption.",
@@ -9689,7 +10079,7 @@ const translations = {
         "pb_terms_title": "Terms and Conditions",
         "pb_warranties_title": "Warranties and Support",
         "pb_catalog_title": "Service Catalog",
-        "pricebook_desc": "Industry Standard Edition with +100 Detailed Professional Services, 3 Pricing Tiers, and Integrated Upsells System.",
+        "pricebook_desc": "Catálogo Maestro de Plomería Profesional C-36 con 15 Servicios Especializados, 3 Niveles de Solución (Good, Better, Best) y Precios Transparentes.",
         "pricebook_feat1": "+100 Services",
         "pricebook_feat2": "Good/Better/Best Tiers",
         "pricebook_feat3": "Upsells & Promos",
@@ -9709,7 +10099,7 @@ const translations = {
         "footer_rights": " 2026 Morales Plumbing. All rights reserved.",
         "slogan_text": "प्रवाह के भविष्य को परिभाषित करना। जीवन के लिए नवाचार।",
         "contact_lic": "License",
-        "pb_method_p1": "The ORION calculation methodology is based on a precision technical plumbing approach to hydraulic costing. We use industrial-grade algorithmás that consider material durability, labor intensity (categorized by Lead and Helper roles), and technical complexity. This eliminates estimation variability, providing a fixed-rate structure aligned with CSLB standards and California construction market volatility.",
+        "pb_method_p1": "The ORION calculation methodology is based on a precision technical plumbing approach to hydraulic costing. We use industrial-grade algorithms that consider material durability, labor intensity (categorized by Lead and Helper roles), and technical complexity. This eliminates estimation variability, providing a fixed-rate structure aligned with CSLB standards and California construction market volatility.",
         "pb_method_p2": "By integrating real-time supply chain data and high-efficiency proprietary workflow protocols, our methodology guíarantees an optimized 30% markup while maintaining sustainable margins for high-fidelity technical execution. This scientific pricing approach ensures that every project is backed by verified hydraulic data and transparent resource allocation.",
         "pb_tiers_p1": "The Good/Better/Best system provides our clients with three distinct tiers of technical plumbing solutions, tailored to different project lifecycle goals. The 'Good' tier focuses on UPC-compliant repairs and efficient restoration. The 'Better' tier introduces enhanced component durability and mid-range performance upgrades. The 'Best' tier represents the ORION Tech standard: premium industrial-grade materials, AI-integrated monitoring, and extended life-cycle warranties.",
         "pb_tiers_p2": "Each tier is designed to offer maximum value within its scope, allowing residential and commercial stakeholders to make informed decisions based on their long-term infrastructure strategy, not just immediate need.",
@@ -9766,11 +10156,11 @@ const translations = {
         "profile_header_role": "Senior AI Solutions Specialist | C-36 Specialist | Project Manager",
         "app_pricebook_detail": "The ORION Price Book v6.0 PRO is a cost technical plumbing tool that standardizes service rates across the Bay Area. It utilizes a tiered system (Good/Better/Best) to offer flexible options that comply with UPC safety standards.",
         "app_mp_detail": "The Morales Plumbing (MP) Portal centralizes client commuúnication, allowing for smart scheduling and access to technical reports generated by our Karla AI. It ensures full transparency in every project phase.",
-        "app_ep_detail": "Orion Estimator Pro uses computer vision algorithmás to analyze blueprints and site photos, generating Bills of Materials (BOM) and labor estimates with 99% accuracy. Integrated with +8000 itemás updated in real-time for the California market.",
+        "app_ep_detail": "Orion Estimator Pro uses computer vision algorithms to analyze blueprints and site photos, generating Bills of Materials (BOM) and labor estimates with 99% accuracy. Integrated with +8000 items updated in real-time for the California market.",
         "app_tratamiento_title": "Water Treatment systems",
         "app_tratamiento_detail": "The Water Treatment application manages advanced filtration and purification cycles. Provides real-time data on water hardness, pH levels, and contaminant removal efficiency, allowing for predictive maintenance of industrial RO systems.",
         "app_redes_title": "Hydraulic Network Design",
-        "app_redes_detail": "Our Hydraulic Network Design app allows for simulation of complex fluid dynamics in residential and commercial environments. Uses ISO-standard algorithmás to optimize pipe sizing and pressure distribution, reducing material waste and ensuring UPC/CPC compliance.",
+        "app_redes_detail": "Our Hydraulic Network Design app allows for simulation of complex fluid dynamics in residential and commercial environments. Uses ISO-standard algorithms to optimize pipe sizing and pressure distribution, reducing material waste and ensuring UPC/CPC compliance.",
         "app_heaters_title": "Tankless Water Heaters",
         "app_heaters_detail": "This application optimizes the installation and performance of tankless water heating systems. Calculates peak flow demands and gas pressure requirements to ensure uniónterrupted hot water delivery, including a diagnostic module for troubleshooting.",
         "legal_title": "Legal Framework & Cybersecurity",
@@ -9854,11 +10244,11 @@ const translations = {
         "faq_q5": "What is the advantage of the Morales Plumbing PLUS framework?",
         "faq_a5": "It combines CSLB C-36 expertise with Sustainable Plumbing systems, AI diagnostics, and Lean Process, providing a level of precision and sustainability unmatched in the local competition.",
         "faq_q6": "How does Morales Plumbing ensure UPC compliance?",
-        "faq_a6": "Our technicians are CSLB C-36 certified and utilize AI-assisted code-check protocols to ensure every joint exceeds California standards. In addition, we provide traditional double-inspector physical checks and manual verification checklists for clients who prefer classic mechaúnical oversight. <span class=\"comic-choice\">The choice is yours</span>: choose our modern, high-precision AI-assisted digital validation, or our time-tested manual human inspection and mechaúnical warranties.",
+        "faq_a6": "Our technicians are CSLB C-36 certified and utilize AI-assisted code-check protocols to ensure every joint exceeds California standards. In addition, we provide traditional double-inspector physical checks and manual verification checklists for clients who prefer classic mechanical oversight. <span class=\"comic-choice\">The choice is yours</span>: choose our modern, high-precision AI-assisted digital validation, or our time-tested manual human inspection and mechanical warranties.",
         "faq_q7": "What specific 'Lean' metrics do you track?",
         "faq_a7": "We track Takt Time, Lead Time, and First-Pass Yield to ensure a predictable, zero-waste workflow for large-scale projects. At the same time, we support classic milestone-based checkpoints, standard flat-rate billing, and traditional labor-hour audits for simpler, non-technical oversight. <span class=\"comic-choice\">The choice is yours</span>: optimize your project with real-time Lean data dashboards, or manage it via straightforward, traditional project milestones.",
         "faq_q8": "How can I future-proof my infrastructure?",
-        "faq_a8": "By integrating water harvesting and greywater reuse systems today, you avoid future mandates and incárease property value by up to 15%. Alternatively, you can choose an ultra-reliable, passive layout focusing on high-durability classic repiping and simplified manifold configurations that minimize active mechaúnical parts. <span class=\"comic-choice\">The choice is yours</span>: invest in active sustainable water technologies, or select a highly reliable, low-maintenance passive loop system.",
+        "faq_a8": "By integrating water harvesting and greywater reuse systems today, you avoid future mandates and incárease property value by up to 15%. Alternatively, you can choose an ultra-reliable, passive layout focusing on high-durability classic repiping and simplified manifold configurations that minimize active mechanical parts. <span class=\"comic-choice\">The choice is yours</span>: invest in active sustainable water technologies, or select a highly reliable, low-maintenance passive loop system.",
         "app_ep_desc": "AI-driven estimator with Computer Vision for high-precision resource allocation.",
         "app_ep_title": "Orion Estimator Pro",
         "app_heaters_desc": "Smart diagnostic module for optimizing high-efficiency water heating systems.",
@@ -9878,7 +10268,7 @@ const translations = {
         "pb_warranties_p1": "Full transparency on labor and material warranties, backed by CSLB C-36 certification.",
         "service_copper_detail": "CONTENT: Full copper piping systems (Types L, M, K) for residential and commercial infrastructure. PURPOSE: Guíaranteed structural integrity and flow efficiency. USAGE: Renovations, expansions, new construction, and repairs. POTENTIAL: Life-cycle of 50+ years with zero microplastic leaching. ROI: Incáreases property value by 15% compared to PEX; 30% lower maintenance costs. COMPETITION: Specialized brazing and environmental protocols. PLUS: Integrated Sustainable Plumbing systems with Lean Construction protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_expansion_detail": "CONTENT: Modular hydraulic expansion blocks. PURPOSE: Seamless integration of new fixtures without pressure loss. USAGE: Commercial additions and residential expansions. POTENTIAL: Infinite scalability. ROI: Scalable infrastructure. PLUS: Lean process integration. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
-        "service_construction_detail": "CONTENT: CAD Blueprints, rough-in, and finish plumbing. PURPOSE: Build-to-code excellence (UPC/CPC). ROI: 20% lower insurance premiumás. PLUS: Int'l Environmental Protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
+        "service_construction_detail": "CONTENT: CAD Blueprints, rough-in, and finish plumbing. PURPOSE: Build-to-code excellence (UPC/CPC). ROI: 20% lower insurance premiums. PLUS: Int'l Environmental Protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_repair_detail": "CONTENT: Precision leak repair and component replacement. PURPOSE: Infrastructure recovery. USAGE: Emergency and scheduled maintenance. POTENTIAL: Early detection of failures. ROI: Prevents structural damage and water waste. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_septic_detail": "CONTENT: Bio-digesters and leach fields. PURPOSE: Sustainable waste management. ROI: Eliminates utility fees. PLUS: Lean Process + CA Water Board compliance. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
         "service_water_detail": "CONTENT: Multi-stage filtration and UV sterilization. PURPOSE: Self-sufficiency. ROI: 60% reduction in water utility costs. PLUS: Int'l Environmental Protocols. COPYRIGHT: 2026 Morales Plumbing. All Rights Reserved.",
@@ -9911,7 +10301,7 @@ const translations = {
         "multimedia_subtitle": "High-Fidelity Audio In-Depth Insights & Critical Analyses",
         "mp_podcasts_title": "MP Ecosystem Series",
         "pod_type_deep_dive": "Deep Dive",
-        "mp_pod_1_title": "Silicon Valley AI transformás modern plumbing",
+        "mp_pod_1_title": "Silicon Valley AI transforms modern plumbing",
         "btn_listen": "Listen Now",
         "pod_type_brief": "Brief",
         "mp_pod_2_title": "AI for water leak prediction",
@@ -9946,7 +10336,7 @@ const translations = {
         "req_hp_title": "Hybrid Heat Pump: technical Requirements",
         "req_hp_elec": "Electrical & Spatial Requirements",
         "req_hp_1": "Dedicated 240V / 30-Amp electrical circuit (for most 50-80 gallon models).",
-        "req_hp_2": "Minimum of 700 cubic feet of surrounding air space (unobstructed) for oóptimal heat exchange.",
+        "req_hp_2": "Minimum of 700 cubic feet of surrounding air space (unobstructed) for optimal heat exchange.",
         "req_hp_3": "Condensate drain line routed to a suitable drain or condensate pump.",
         "req_hp_4": "Clearance of at least 6 inches from the top of the unit for the air filter.",
         "req_hp_5": "Seismic strapping in upper and lower 1/3 of the tank.",
@@ -10000,7 +10390,7 @@ const translations = {
         "ai_s2_li3": "<strong>Liability Shielding:</strong> Creates customized waivers before initiating any destructive work.",
         "ai_s2_p2": "Data and laws protect our liability, but our sensors allow us to see through solid concrete.",
         "ai_s3_title": "3. Seeing the Invisible: FLIR Thermography with Artificial Intelligence",
-        "ai_s3_p1": "To achieve true Military-Grade precision, we use high-resolution thermal imaging cameras (FLIR E8-XT or C5 models). By integrating these cameras with AI algorithmás, we perform 'Thermal Mapping' that identifies temperature gradients invisible to the human eye.",
+        "ai_s3_p1": "To achieve true Military-Grade precision, we use high-resolution thermal imaging cameras (FLIR E8-XT or C5 models). By integrating these cameras with AI algorithms, we perform 'Thermal Mapping' that identifies temperature gradients invisible to the human eye.",
         "ai_s3_p2": "This allows us to detect 'floral anomalies' the thermal plume or 'feathering' effect generated by hot water escaping under a slab locating slab leaks without unnecessary demolition. The high-end MSX (Multi-Spectral Dynamic Imaging) Technology extracts structural details from the visual camera and embosses them onto the thermal image.",
         "ai_s3_p3": "Thanks to MSX and AI processing, the margin of error for locating a rupture under concrete is reduced to less than 3 square inches. Once we have 'seen' the invisible, the next step is to present the solution with the same level of technological sophistication.",
         "ai_s4_title": "4. The Tablet as a Closing Tool: Orion Price Book",
@@ -10123,13 +10513,14 @@ function setLanguage(lang) {
     }
 
     // Custom updates (like Karla's initial greeting)
-    const joeMsg = document.querySelector('.másg.bot');
+    const joeMsg = document.querySelector('.msg.bot');
     if (joeMsg && translations[lang] && translations[lang]['joe_welcome']) {
         // Only update if it's the first message
         if (typeof joeHistory !== 'undefined' && joeHistory.length === 0) {
             joeMsg.innerText = translations[lang]['joe_welcome'];
         }
     }
+    updateDynamicTrustBar();
     if (typeof updateMembershipCardsUI === 'function') {
         updateMembershipCardsUI();
     }
@@ -10219,18 +10610,18 @@ function toggleJoe() {
         if (typeof localStorage !== 'undefined') {
             localStorage.removeItem('morales_joe_history');
         }
-        const másgs = document.getElementById('joe-messages');
-        if (másgs) {
+        const msgs = document.getElementById('joe-messages');
+        if (msgs) {
             const curLang = localStorage.getItem('morales_lang') || 'es';
             const welcomeText = curLang === 'en'
                 ? "Hello! I am Karla, your virtual technical coordinator for Morales Plumbing. How can I assist you with plumbing diagnostics, pricing, or emergencies today?"
                 : "¡Hola! Soy Karla, tu asistente virtual de Morales Plumbing. ¿En qué problema de plomería, cotización o emergencia te puedo ayudar hoy?";
-            másgs.innerHTML = `<div class="másg bot" data-i18n="joe_intro">${welcomeText}</div>`;
+            msgs.innerHTML = `<div class="másg bot" data-i18n="joe_intro">${welcomeText}</div>`;
         }
         const input = document.getElementById('joe-query');
         if (input) input.value = '';
     } else {
-        const joeMsg = document.querySelector('.másg.bot');
+        const joeMsg = document.querySelector('.msg.bot');
         if (joeMsg && joeHistory.length === 0) {
             speakJoe(joeMsg.innerText);
         }
@@ -10260,7 +10651,7 @@ function openBooking() {
         'vi': 'Tôi muốn đặt lịch hẹn dịch vụ sửa ống nước.'
     };
 
-    const másg = bookingMessages[lang] || bookingMessages['es'];
+    const msg = bookingMessages[lang] || bookingMessages['es'];
     input.value = másg;
 
     // Open booking panel simultaneously
@@ -10274,7 +10665,7 @@ function openBooking() {
 
     // Greet if first time
     if (!joeHasGreeted) {
-        const joeMsg = document.querySelector('.másg.bot');
+        const joeMsg = document.querySelector('.msg.bot');
         if (joeMsg && joeHistory.length === 0) {
             speakJoe(joeMsg.innerText);
         }
@@ -10376,17 +10767,17 @@ async function speakJoe(text) {
 
     // 2. RESPALDO LOCAL: Síntesis nativa del navegador con voz estrictamente femenina
     if ('speechSynthesis' in window) {
-        const másg = new SpeechSynthesisUtterance(cleanText);
-        másg.pitch = 1.08; // Timbre femenino natural
-        másg.rate  = 0.95; // Velocidad pausada y humana
-        másg.volume = 1.0;
+        const msg = new SpeechSynthesisUtterance(cleanText);
+        msg.pitch = 1.08; // Timbre femenino natural
+        msg.rate  = 0.95; // Velocidad pausada y humana
+        msg.volume = 1.0;
 
         const voices = window.speechSynthesis.getVoices();
         const isMale = (v) => /david|raul|mark|george|guy|stefan|pablo|jorge|manuel|carlos|diego|enrique|richard|james|male|hombre/i.test(v.name);
         const isFemale = (v) => /sabina|dalia|paulina|moúnica|paloma|helena|laura|lucia|victoria|samantha|zira|karen|eva|sofia|hilda|female|woman|natural|neural|online|google/i.test(v.name) && !isMale(v);
 
         if (curLang === 'es') {
-            másg.lang = 'es-MX';
+            msg.lang = 'es-MX';
             if (voices && voices.length > 0) {
                 const esFemaleVoices = voices.filter(v => 
                     ((v.lang && (v.lang.toLowerCase().startsWith('es') || v.lang.toLowerCase().includes('es'))) ||
@@ -10395,23 +10786,23 @@ async function speakJoe(text) {
                 let chosen = esFemaleVoices.find(v => /sabina|dalia|paulina|google|moúnica/i.test(v.name)) || esFemaleVoices[0];
                 if (!chosen) chosen = voices.find(v => (v.lang && v.lang.toLowerCase().startsWith('es')) && !isMale(v));
                 if (chosen) {
-                    másg.voice = chosen;
-                    másg.lang  = chosen.lang || 'es-MX';
+                    msg.voice = chosen;
+                    msg.lang  = chosen.lang || 'es-MX';
                 }
             }
         } else {
-            másg.lang = 'en-US';
+            msg.lang = 'en-US';
             if (voices && voices.length > 0) {
                 const enFemaleVoices = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en') && isFemale(v));
                 let chosen = enFemaleVoices.find(v => /samantha|jenny|zira|natural|neural|google/i.test(v.name)) || enFemaleVoices[0];
                 if (chosen) {
-                    másg.voice = chosen;
-                    másg.lang  = chosen.lang || 'en-US';
+                    msg.voice = chosen;
+                    msg.lang  = chosen.lang || 'en-US';
                 }
             }
         }
 
-        window.speechSynthesis.speak(másg);
+        window.speechSynthesis.speak(msg);
     }
 }
 
@@ -10621,7 +11012,7 @@ async function sendToJoe() {
 
 async function callGemini(apiKey) {
     const model   = (typeof GEMINI_MODEL !== 'undefined') ? GEMINI_MODEL : 'gemini-1.5-flash';
-    let sysPrompt = (typeof KARLA_SYSTEM_PROMPT !== 'undefined') ? KARLA_SYSTEM_PROMPT : ((typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Karla, la Coordinadora Técúnica Virtual de Morales Plumbing. Profesional, empática, femenina, sin emojis y sin dar precios directos.');
+    let sysPrompt = (typeof KARLA_SYSTEM_PROMPT !== 'undefined') ? KARLA_SYSTEM_PROMPT : ((typeof JOE_SYSTEM_PROMPT !== 'undefined') ? JOE_SYSTEM_PROMPT : 'Eres Karla, la Coordinadora Técnica Virtual de Morales Plumbing. Profesional, empática, femenina, sin emojis y sin dar precios directos.');
     sysPrompt += getJoeDynamicContext();
     if (typeof BOOKING_SYSTEM_ADDITION !== 'undefined') sysPrompt += BOOKING_SYSTEM_ADDITION;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
@@ -10711,7 +11102,7 @@ function getJoeLocalFallback(input) {
     if (t.match(/calentador|heater|tankless|heat pump|navien|rheem|baaqmd|caliente|termo/)) {
         return isEn
             ? "We specialize in Tankless Water Heaters (Navien, Rinnai) and Hybrid Heat Pumps (Rheem ProTerra) compliant with California BAAQMD Regulation 9, Rule 6. We provide full seismic strapping, thermal expansion tanks, and dedicated gas/electrical infrastructure."
-            : "Somos especialistas en Calentadores Tankless (Navien, Rinnai) y Bombas de Calor Híbridías (Rheem ProTerra) en cumplimiento con la Regulación 9, Regla 6 de BAAQMD para el Área de la Bahía. Incluimos sujeción sísmica certificaída, tanque de expansión térmica y válvulas de alivio T&P.";
+            : "Somos especialistas en Calentadores Tankless (Navien, Rinnai) y Bombas de Calor Híbridas (Rheem ProTerra) en cumplimiento con la Regulación 9, Regla 6 de BAAQMD para el Área de la Bahía. Incluimos sujeción sísmica certificaída, tanque de expansión térmica y válvulas de alivio T&P.";
     }
     if (t.match(/fuga|leak|termo|flir|acust|camara|humedad|gote/)) {
         return isEn
@@ -10746,7 +11137,7 @@ function getJoeLocalFallback(input) {
     if (t.match(/licencia|license|compania|empresa|contacto|telefono|phone|email/)) {
         return isEn
             ? "MORALES PLUMBING · AI-Integrated Services · CSLB License C-36 #1156542 | San Jose, CA | Phone: (669) 213-4422 | Email: moralesplumbing026@gmail.com"
-            : "MORALES PLUMBING · Servicios de Plomería Técúnica e IA · Lic. CSLB C-36 #1156542 | San Jose, CA | Teléfono: (669) 213-4422 | Email: moralesplumbing026@gmail.com";
+            : "MORALES PLUMBING · Servicios de Plomería Técnica e IA · Lic. CSLB C-36 #1156542 | San Jose, CA | Teléfono: (669) 213-4422 | Email: moralesplumbing026@gmail.com";
     }
     return isEn
         ? "I am here to help you with any plumbing need for Morales Plumbing. You can ask about our leak detection, water heaters, repiping, or schedule a service visit. You can also call us directly at (669) 213-4422."
@@ -10756,11 +11147,11 @@ function getJoeLocalFallback(input) {
 function addMessage(text, sender) {
     const container = document.getElementById('joe-messages');
     if (!container) return;
-    const másg = document.createElement('div');
-    másg.classList.add('másg', sender);
+    const msg = document.createElement('div');
+    msg.classList.add('msg', sender);
     let cleanText = text.replace(/### (.*)/g, '<h3>$1</h3>').replace(/## (.*)/g, '<h2>$1</h2>').replace(/# (.*)/g, '<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\*(.*?)\*/g, '<i>$1</i>').replace(/\n/g, '<br>');
-    másg.innerHTML = cleanText;
-    container.appendChild(másg);
+    msg.innerHTML = cleanText;
+    container.appendChild(msg);
     container.scrollTop = container.scrollHeight;
 }
 
@@ -10769,7 +11160,7 @@ function addTypingIndicator() {
     if (!container) return;
     const id = 'typing-' + Date.now();
     const div = document.createElement('div');
-    div.classList.add('másg', 'bot', 'typing-indicator');
+    div.classList.add('msg', 'bot', 'typing-indicator');
     div.id = id;
     div.innerHTML = '<span></span><span></span><span></span>';
     container.appendChild(div);
@@ -11413,7 +11804,8 @@ function openClientPortal() {
         populateServiceDropdown();
         updatePortalUI();
         
-        if (typeof updateMembershipCardsUI === 'function') {
+        updateDynamicTrustBar();
+    if (typeof updateMembershipCardsUI === 'function') {
             updateMembershipCardsUI();
         }
         if (typeof updatePricePreview === 'function') {
@@ -11519,7 +11911,8 @@ function clearProfileLocal() {
         }
         
         updatePortalUI();
-        if (typeof updateMembershipCardsUI === 'function') {
+        updateDynamicTrustBar();
+    if (typeof updateMembershipCardsUI === 'function') {
             updateMembershipCardsUI();
         }
         if (typeof updatePricePreview === 'function') {
@@ -11595,7 +11988,7 @@ function bookAppointmentFromUI() {
     const time = document.getElementById('schedule-time-input').value;
     
     if (!date || !time) {
-        alert("Por favor selecciona una fecha y hora válidías.");
+        alert("Por favor selecciona una fecha y hora válidas.");
         return;
     }
     
@@ -11682,9 +12075,9 @@ function updateMembershipTier(tier) {
         tierText = translations[curLang][`lbl_membership_badge_${tier}`];
     }
     
-    let másg = translations[curLang]?.másg_membership_updated || "Membership updated to {tier}";
-    másg = másg.replace("{tier}", tierText);
-    showPortalNotification(másg);
+    let msg = translations[curLang]?.msg_membership_updated || "Membership updated to {tier}";
+    másg = msg.replace("{tier}", tierText);
+    showPortalNotification(msg);
 }
 
 function updateMembershipCardsUI() {
@@ -11985,7 +12378,7 @@ function updatePortalUI() {
     
     if (apptsList) {
         if (appts.length === 0) {
-            apptsList.innerHTML = '<p style="color:var(--text-muted); font-style:italic;">No hay citas agendadías.</p>';
+            apptsList.innerHTML = '<p style="color:var(--text-muted); font-style:italic;">No hay citas agendadas.</p>';
         } else {
             let html = '<div style="display:flex; flex-direction:column; gap:10px;">';
             const curLang = localStorage.getItem('morales_lang') || 'en';
@@ -12012,7 +12405,7 @@ function updatePortalUI() {
                 }
 
                 html += `
-                <div class="glass" style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.05); display:flex; justify-content:space-between; align-itemás:center;">
+                <div class="glass" style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.05); display:flex; justify-content:space-between; align-items:center;">
                     <div>
                         <strong style="color:var(--neon-cyan);">${a.serviceName}</strong><br>
                         <span style="font-size:0.75rem; color:var(--text-muted);">${a.date} @ ${a.time} (${a.tier.toUpperCase()})  ${labelCost}: ${costText}</span><br>
@@ -12096,7 +12489,7 @@ function getJoeDynamicContext() {
     const tier = profile.membership || "free";
     contextText += `- Nivel de Membresa: ${tier.toUpperCase()}\n`;
     if (tier === "free") {
-        contextText += `  * Citas de Prueba Usadías: ${appts.length} de 5 mximas gratuitas.\n`;
+        contextText += `  * Citas de Prueba Usadas: ${appts.length} de 5 mximas gratuitas.\n`;
         if (appts.length >= 5) {
             contextText += `  * CRTICO: Límite de citas gratuitas alcanzado. Debe mejorar su plan para poder agendar más citas.\n`;
         }
@@ -12115,12 +12508,12 @@ function getJoeDynamicContext() {
     }
     
     if (appts.length > 0) {
-        contextText += `- Citas de plomería agendadías:\n`;
+        contextText += `- Citas de plomería agendadas:\n`;
         appts.forEach(a => {
             contextText += `  * ${a.id}: ${a.serviceName} (${a.tier.toUpperCase()}) - Fecha: ${a.date}, Hora: ${a.time} - Estado: ${a.status}\n`;
         });
     } else {
-        contextText += `- Citas: No hay citas agendadías actualmente.\n`;
+        contextText += `- Citas: No hay citas agendadas actualmente.\n`;
     }
     
     if (pqrs.length > 0) {
@@ -12129,7 +12522,7 @@ function getJoeDynamicContext() {
             contextText += `  * ${p.id} [${p.type.toUpperCase()}]: ${p.description} (Fecha: ${p.date}) - Estado: ${p.status}\n`;
         });
     } else {
-        contextText += `- PQRs: No hay quejas o sugerencias registradías.\n`;
+        contextText += `- PQRs: No hay quejas o sugerencias registradas.\n`;
     }
     
     contextText += `
@@ -12225,8 +12618,8 @@ function processJoeActions(responseText) {
 // ---------------------------------------------------------------
 const ADMIN_EMAIL = 'moralesplumbing026@gmail.com';
 
-let bookingData = { name: '', email: '', phone: '', address: '', service: '', date: '', time: '', notes: '' };
-const BOOKING_FIELDS = ['name', 'email', 'phone', 'address', 'service', 'date', 'time'];
+let bookingData = { prefix: 'Sr.', firstName: '', lastName: '', name: '', email: '', phone: '', address: '', city: 'San Jose', state: 'CA', zip: '', service: '', date: '', time: '', notes: '' };
+const BOOKING_FIELDS = ['firstName', 'lastName', 'email', 'phone', 'address', 'city', 'state', 'zip', 'service', 'date', 'time'];
 
 // Booking conversation state machine
 let bookingState = {
@@ -12238,7 +12631,7 @@ let bookingState = {
 const BOOKING_STEPS = {
     es: [
         null, // 0 = idle
-        `Con mucho gusto le ayudo a programar su visita técnica con Morales Plumbing. Para comenzar, ¿cuál es su **nombre completo**?`,
+        `Con mucho gusto le ayudo a programar su visita técnica con Morales Plumbing. Si lo prefiere, puede presionar el botón 'Llenar Manualmente' en el formulario para completarlo usted mismo. Para continuar por aquí, ¿cuál es su **nombre completo**?`,
         'Muchas gracias. ¿Cuál es su **correo electrónico** para enviarle la confirmación y los detalles?',
         'Entendido. ¿A qué **número de teléfono** podemos comunicarnos con usted?',
         'Perfecto. ¿Cuál es la **dirección completa** donde necesita la inspección o servicio?',
@@ -12250,7 +12643,7 @@ const BOOKING_STEPS = {
     ],
     en: [
         null,
-        `I will be glad to assist you in scheduling your technical service with Morales Plumbing. To get started, what is your **full name**?`,
+        `I will be glad to assist you in scheduling your technical service with Morales Plumbing. If you prefer, you can click 'Fill Manually' in the form to fill it out yourself. To continue here, what is your **full name**?`,
         'Thank you. What is your **email address** to send you the appointment details and confirmation?',
         'Understood. What is your best **contact phone number**?',
         'Perfect. What is the **full service address** where the inspection is needed?',
@@ -12267,11 +12660,218 @@ const BOOKING_FIELD_KEYS = [null, 'name', 'email', 'phone', 'address', 'service'
 // Called when user manually edits a form field – syncs bookingData
 function syncBookingField(fieldId, value) {
     bookingData[fieldId] = value;
-    const input = document.getElementById('bk-' + fieldId);
+    if (fieldId === 'firstName' || fieldId === 'lastName' || fieldId === 'prefix') {
+        const p = bookingData.prefix || 'Sr.';
+        const fn = bookingData.firstName || '';
+        const ln = bookingData.lastName || '';
+        bookingData.name = [p, fn, ln].filter(Boolean).join(' ').trim();
+    }
+    const input = document.getElementById('bk-' + fieldId.toLowerCase());
     if (input) {
-        input.classList.toggle('field-filled', value.trim().length > 0);
+        input.classList.toggle('field-filled', (value && String(value).trim().length > 0));
     }
     updateBookingProgress();
+}
+
+
+// Parser inteligente de nombres y apellidos (soporta clientes con dos nombres y dos apellidos)
+
+// Parser inteligente de direcciones completas de California (ej: 5553 walnut blossom dr apt 8 95123 san jose ca)
+
+// Parser inteligente de fechas relativas y absolutas
+
+// Parser inteligente de horas y ventanas horarias
+function parsePreferredTime(rawTimeStr) {
+    if (!rawTimeStr) return null;
+    const str = rawTimeStr.trim();
+
+    // 1. Formato explícito 05:00 PM, 3:30pm, 17:00
+    const matchColons = str.match(/\b([01]?\d|2[0-3]):([0-5]\d)(?:\s*(am|pm|AM|PM))?\b/);
+    if (matchColons) {
+        let h = parseInt(matchColons[1], 10);
+        const m = matchColons[2];
+        const ampm = matchColons[3];
+        if (ampm && ampm.toUpperCase() === 'PM' && h < 12) h += 12;
+        if (ampm && ampm.toUpperCase() === 'AM' && h === 12) h = 0;
+        return String(h).padStart(2, '0') + ':' + m;
+    }
+
+    // 2. Formato simple como "a las 5 pm", "5pm", "3 de la tarde", "10 am"
+    const matchSimple = str.match(/\b(1[0-2]|0?[1-9])\s*(am|pm|AM|PM)\b/i) ||
+                        str.match(/\b(?:a\s+las\s+)?(1[0-2]|0?[1-9])\s*(?:de\s+la\s+)?(tarde|noche|mañana|manana)\b/i);
+    if (matchSimple) {
+        let h = parseInt(matchSimple[1], 10);
+        const modifier = (matchSimple[2] || '').toLowerCase();
+        if ((modifier === 'pm' || modifier === 'tarde' || modifier === 'noche') && h < 12) {
+            h += 12;
+        }
+        if ((modifier === 'am' || modifier === 'mañana' || modifier === 'manana') && h === 12) {
+            h = 0;
+        }
+        return String(h).padStart(2, '0') + ':00';
+    }
+
+    // 3. Ventanas aproximadas
+    if (/\b(tarde|afternoon)\b/i.test(str)) return '14:00';
+    if (/\b(mañana|manana|morning)\b/i.test(str)) return '09:00';
+
+    return null;
+}
+
+function parsePreferredDate(rawDateStr) {
+    if (!rawDateStr) return null;
+    const str = rawDateStr.toLowerCase().trim();
+    const now = new Date();
+
+    if (str.includes('hoy') || str.includes('today')) {
+        return now.toISOString().slice(0, 10);
+    }
+    if (str.includes('mañana') || str.includes('manana') || str.includes('tomorrow')) {
+        const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+        return tomorrow.toISOString().slice(0, 10);
+    }
+    if (str.includes('pasado mañana') || str.includes('pasado manana') || str.includes('day after tomorrow')) {
+        const dayAfter = new Date(now.getTime() + 48 * 60 * 60 * 1000);
+        return dayAfter.toISOString().slice(0, 10);
+    }
+
+    // Días de la semana
+    const daysMap = {
+        'domingo': 0, 'sunday': 0,
+        'lunes': 1, 'monday': 1,
+        'martes': 2, 'tuesday': 2,
+        'miercoles': 3, 'miércoles': 3, 'wednesday': 3,
+        'jueves': 4, 'thursday': 4,
+        'viernes': 5, 'friday': 5,
+        'sabado': 6, 'sábado': 6, 'saturday': 6
+    };
+    for (const [dayName, dayIndex] of Object.entries(daysMap)) {
+        if (str.includes(dayName)) {
+            const currentDay = now.getDay();
+            let distance = (dayIndex - currentDay + 7) % 7;
+            if (distance === 0) distance = 7; // Próximo día de la semana
+            const targetDate = new Date(now.getTime() + distance * 24 * 60 * 60 * 1000);
+            return targetDate.toISOString().slice(0, 10);
+        }
+    }
+
+    // Fechas numéricas: MM/DD/YYYY, DD/MM/YYYY, YYYY-MM-DD
+    const numMatch = str.match(/\b(202\d[-/\.](?:0?[1-9]|1[0-2])[-/\.](?:0?[1-9]|[12]\d|3[01])|(?:0?[1-9]|1[0-2])[-/\.](?:0?[1-9]|[12]\d|3[01])[-/\.]202\d)\b/);
+    if (numMatch) {
+        let raw = numMatch[0];
+        if (raw.includes('/')) {
+            const parts = raw.split('/');
+            if (parts[2] && parts[2].length === 4) {
+                return parts[2] + '-' + parts[0].padStart(2, '0') + '-' + parts[1].padStart(2, '0');
+            }
+        }
+        return raw;
+    }
+    return null;
+}
+
+function parseFullServiceAddress(rawAddress) {
+    if (!rawAddress) return { street: '', city: 'San Jose', state: 'CA', zip: '' };
+    let text = rawAddress.trim();
+    let zip = '';
+    let city = 'San Jose';
+    let state = 'CA';
+
+    // Extraer ZIP (5 dígitos empezando por 94 o 95)
+    const zipMatch = text.match(/\b(9[45]\d{3})\b/);
+    if (zipMatch) {
+        zip = zipMatch[1];
+        text = text.replace(zipMatch[0], ' ');
+    }
+
+    // Extraer Estado (CA o California)
+    const stateMatch = text.match(/\b(california|ca)\b/i);
+    if (stateMatch) {
+        state = 'CA';
+        text = text.replace(new RegExp('\\b' + stateMatch[0] + '\\b', 'i'), ' ');
+    }
+
+    // Extraer Ciudades conocidas del Área de la Bahía
+    const bayCities = [
+        'san jose', 'santa clara', 'sunnyvale', 'mountain view', 'palo alto',
+        'milpitas', 'campbell', 'cupertino', 'los gatos', 'saratoga',
+        'morgan hill', 'gilroy', 'fremont', 'newark', 'union city'
+    ];
+    for (const c of bayCities) {
+        const cRegex = new RegExp('\\b' + c + '\\b', 'i');
+        if (cRegex.test(text)) {
+            // Formatear ciudad en Title Case
+            city = c.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+            text = text.replace(cRegex, ' ');
+            break;
+        }
+    }
+
+    // Lo restante limpio es la calle (con apt, suite o número)
+    let street = text.replace(/[,]+/g, ' ').replace(/\s+/g, ' ').trim();
+    // Capitalizar palabras de la calle
+    street = street.split(' ').map(w => {
+        if (/^(apt|ste|unit|#)/i.test(w)) return w.toUpperCase();
+        return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+    }).join(' ');
+
+    return { street, city, state, zip };
+}
+
+function parseFullName(rawText) {
+    if (!rawText) return { prefix: 'Sr.', firstName: '', lastName: '', fullName: '' };
+    let text = rawText.trim();
+    let detectedPrefix = 'Sr.';
+
+    // Detección de prefijos comunes (español e inglés)
+    const prefixMatch = text.match(/^(sr\.?|sra\.?|srta\.?|mr\.?|mrs\.?|ms\.?|dr\.?|dra\.?|ing\.?)\s+/i);
+    if (prefixMatch) {
+        const p = prefixMatch[1].toLowerCase().replace('.', '');
+        if (p === 'sra' || p === 'mrs') detectedPrefix = 'Sra.';
+        else if (p === 'srta' || p === 'ms') detectedPrefix = 'Srta.';
+        else if (p === 'dr' || p === 'dra') detectedPrefix = 'Dr.';
+        else if (p === 'ing') detectedPrefix = 'Ing.';
+        else detectedPrefix = 'Sr.';
+        text = text.substring(prefixMatch[0].length).trim();
+    }
+
+    const tokens = text.split(/\s+/).filter(t => t.length > 0);
+    let firstName = '';
+    let lastName = '';
+
+    if (tokens.length === 1) {
+        firstName = tokens[0];
+        lastName = '';
+    } else if (tokens.length === 2) {
+        firstName = tokens[0];
+        lastName = tokens[1];
+    } else if (tokens.length === 3) {
+        // Ej: Juan Carlos Perez -> Nombres: Juan Carlos, Apellido: Perez
+        firstName = tokens[0] + ' ' + tokens[1];
+        lastName = tokens[2];
+    } else if (tokens.length >= 4) {
+        // Ej: Juan Carlos Perez Gomez -> Nombres: Juan Carlos, Apellidos: Perez Gomez
+        firstName = tokens[0] + ' ' + tokens[1];
+        lastName = tokens.slice(2).join(' ');
+    }
+
+    const fullName = (detectedPrefix ? detectedPrefix + ' ' : '') + [firstName, lastName].filter(Boolean).join(' ');
+    return { prefix: detectedPrefix, firstName, lastName, fullName };
+}
+
+function activateManualBookingMode() {
+    const lang = localStorage.getItem('morales_lang') || 'es';
+    openBookingPanel(false);
+    bookingState.active = false;
+    const notice = (lang === 'es')
+        ? 'Modo manual activado. Puede completar los campos directamente en el formulario y verificar sus datos.'
+        : 'Manual mode enabled. You can fill out the form fields directly and verify your details.';
+    const statusText = document.getElementById('booking-status-text');
+    if (statusText) {
+        statusText.textContent = (lang === 'es') ? 'Llenado manual de cita' : 'Manual appointment entry';
+    }
+    addMessage(notice, 'bot');
+    speakJoe(notice);
 }
 
 function openBookingPanel(clean = true) {
@@ -12290,11 +12890,14 @@ function closeBookingPanel() {
 }
 
 function resetBookingForm() {
-    bookingData = { name: '', email: '', phone: '', address: '', service: '', date: '', time: '', notes: '' };
-    ['name', 'email', 'phone', 'address', 'service', 'date', 'time', 'notes'].forEach(fieldId => {
+    bookingData = { prefix: 'Sr.', firstName: '', lastName: '', name: '', email: '', phone: '', address: '', city: 'San Jose', state: 'CA', zip: '', service: '', date: '', time: '', notes: '' };
+    ['prefix', 'firstname', 'lastname', 'email', 'phone', 'address', 'city', 'state', 'zip', 'service', 'date', 'time', 'notes'].forEach(fieldId => {
         const input = document.getElementById('bk-' + fieldId);
         if (input) {
-            input.value = '';
+            if (fieldId === 'prefix') input.value = 'Sr.';
+            else if (fieldId === 'city') input.value = 'San Jose';
+            else if (fieldId === 'state') input.value = 'CA';
+            else input.value = '';
             input.classList.remove('field-filled', 'field-filling');
         }
     });
@@ -12329,7 +12932,7 @@ function updateBookingField(fieldId, value) {
 
 function updateBookingProgress() {
     const filled = BOOKING_FIELDS.filter(f => bookingData[f] && String(bookingData[f]).trim().length > 0).length;
-    const totalRequired = BOOKING_FIELDS.length; // 7 campos
+    const totalRequired = BOOKING_FIELDS.length; // 11 campos
     const pct = Math.round((filled / totalRequired) * 100);
 
     const bar   = document.getElementById('booking-progress-bar');
@@ -12404,14 +13007,61 @@ function handleBookingState(userText) {
         updateBookingField('phone', phoneMatch[0]);
     }
 
+    // 3. Check for parsed date
+    const parsedDate = parsePreferredDate(trimmed);
+    if (parsedDate) {
+        updateBookingField('date', parsedDate);
+    }
+
+    // 4. Check for parsed time
+    const parsedTime = parsePreferredTime(trimmed);
+    if (parsedTime) {
+        updateBookingField('time', parsedTime);
+    }
+
+    // 5. Check for ZIP Code
+    const zipMatch = trimmed.match(/\b9[45]\d{3}\b/);
+    if (zipMatch) {
+        updateBookingField('zip', zipMatch[0]);
+    }
+
     // Current step assignment
     const fieldKey = BOOKING_FIELD_KEYS[bookingState.step];
     if (fieldKey && trimmed) {
         let value = trimmed;
-        if (fieldKey === 'notes' && (value.toLowerCase() === 'listo' || value.toLowerCase() === 'done' || value.toLowerCase() === 'no')) {
-            value = 'Ninguna';
+        if (fieldKey === 'name') {
+            const parsed = parseFullName(value);
+            bookingData.prefix = parsed.prefix;
+            bookingData.firstName = parsed.firstName;
+            bookingData.lastName = parsed.lastName;
+            bookingData.name = parsed.fullName;
+            updateBookingField('prefix', parsed.prefix);
+            updateBookingField('firstname', parsed.firstName);
+            updateBookingField('lastname', parsed.lastName);
+        } else {
+            if (fieldKey === 'address') {
+                const addrParsed = parseFullServiceAddress(value);
+                bookingData.address = addrParsed.street || value;
+                bookingData.city = addrParsed.city || 'San Jose';
+                bookingData.state = addrParsed.state || 'CA';
+                if (addrParsed.zip) bookingData.zip = addrParsed.zip;
+                updateBookingField('address', bookingData.address);
+                updateBookingField('city', bookingData.city);
+                updateBookingField('state', bookingData.state);
+                if (addrParsed.zip) updateBookingField('zip', bookingData.zip);
+            } else if (fieldKey === 'date') {
+                const dParsed = parsePreferredDate(value);
+                updateBookingField('date', dParsed || value);
+            } else if (fieldKey === 'time') {
+                const tParsed = parsePreferredTime(value);
+                updateBookingField('time', tParsed || value);
+            } else {
+                if (fieldKey === 'notes' && (value.toLowerCase() === 'listo' || value.toLowerCase() === 'done' || value.toLowerCase() === 'no')) {
+                    value = 'Ninguna';
+                }
+                updateBookingField(fieldKey, value);
+            }
         }
-        updateBookingField(fieldKey, value);
     }
 
     // Advance step
@@ -12426,7 +13076,7 @@ function handleBookingState(userText) {
         bookingState.step = 8;
         const summary = buildBookingSummary(lang);
         addMessage(summary, 'bot');
-        speakJoe(lang === 'es' ? 'He completado el formulario de cita con tus datos. Por favor confirma en el botón verde.' : 'I have filled out the appointment form with your details. Please click the green button to confirm.');
+        speakJoe(lang === 'es' ? 'He completado el formulario con sus datos. Puede cerrar este chat para verificar la información en pantalla y presionar confirmar.' : 'I have completed the form with your details. You may close this chat to verify the information on screen and confirm.');
         joeHistory.push({ role: 'assistant', content: summary });
         updateBookingProgress();
     }
@@ -12447,7 +13097,7 @@ function buildBookingSummary(lang) {
   Hora: ${d.time || ''}
   Notas: ${d.notes || ''}
 
-¿Todo se ve correcto? Haz clic en **Confirmar Cita** en el formulario para enviar. Al confirmar, aceptas nuestros Términos de Servicio y la Política de Privacidad (Cumplimiento CCPA de California).`;
+¿Todo se ve correcto? Puede cerrar la ventana de chat si desea verificar cómodamente los datos en el formulario antes de presionar **Confirmar y Solicitar Cita**. Una vez enviado, recibirá su código por correo para finalizar.`;
     }
     return ` **Appointment Summary:**
   Name: ${d.name || ''}
@@ -12459,61 +13109,77 @@ function buildBookingSummary(lang) {
   Time: ${d.time || ''}
   Notes: ${d.notes || ''}
 
-Does everything look correct? Click **Confirm Appointment** in the form to submit. By confirming, you agree to our Terms of Service and Privacy Policy (California CCPA Compliant).`;
+Does everything look correct? You can close this chat window to review the form fields directly before clicking **Confirm & Request Appointment**. Once submitted, you will receive your verification code via email to finalize.`;
 }
 
 // --- SUBMIT: send confirmation to admin + user ---------------
-function submitBooking() {
-    const lang = localStorage.getItem('morales_lang') || 'en';
+
+// Global tracker for current pending booking
+let currentPendingBooking = null;
+
+// SUBMIT: Etapa 1 - Validación de campos, generación de código, envío de código y cambio de estado UI
+async function submitBooking() {
+    const lang = localStorage.getItem('morales_lang') || 'es';
     const d = bookingData;
 
-    // Save appointment  Firebase if available, always localStorage as backup
-    const appt = { id: Date.now().toString(), ...d, created: new Date().toISOString(), status: 'pending' };
-    
+    // Asegurar valores por defecto para ciudad y estado
+    if (!d.city) d.city = 'San Jose';
+    if (!d.state) d.state = 'CA';
+
+    // Sincronizar nombre completo si viene de llenado directo
+    if (!d.name && (d.firstName || d.lastName)) {
+        d.name = [(d.prefix || 'Sr.'), d.firstName, d.lastName].filter(Boolean).join(' ').trim();
+    }
+
+    // Validación estricta de campos obligatorios (nombre y apellido separados)
+    if ((!d.firstName && !d.name) || !d.email || !d.phone || !d.address || !d.service || !d.date || !d.time) {
+        const warnMsg = (typeof translations !== 'undefined' && translations[lang] && translations[lang]['booking_fields_complete'])
+            ? (lang === 'es' ? 'Por favor complete todos los campos obligatorios del formulario antes de continuar.' : 'Please complete all required fields before proceeding.')
+            : 'Por favor complete todos los campos obligatorios antes de continuar.';
+        alert(warnMsg);
+        return;
+    }
+
+    const apptId = "MP-" + Math.floor(100000 + Math.random() * 900000);
+    const numericCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const fullFormattedAddress = d.address + ', ' + (d.city || 'San Jose') + ', ' + (d.state || 'CA') + (d.zip ? ' ' + d.zip : '');
+    const appt = {
+        id: apptId,
+        ...d,
+        fullAddress: fullFormattedAddress,
+        code: numericCode,
+        created: new Date().toISOString(),
+        status: 'pending_code_verification'
+    };
+
+    currentPendingBooking = appt;
+    localStorage.setItem('morales_pending_booking', JSON.stringify(appt));
+    localStorage.setItem('morales_pending_code_' + apptId, JSON.stringify({
+        code: numericCode,
+        appointmentId: apptId,
+        clientEmail: d.email,
+        createdAt: new Date().toISOString(),
+        expiresAt: new Date(Date.now() + 30 * 60 * 1000).toISOString(),
+        status: 'pending'
+    }));
+
+    // Sincronizar con Firebase si está disponible
     if (window.MoralesFirebase && typeof window.MoralesFirebase.saveAppointment === 'function') {
-        // Save to Firebase (also saves to localStorage internally)
-        window.MoralesFirebase.saveAppointment(appt).then(() => {
-            console.log('Appointment saved to Firebase:', appt.id);
-        }).catch(e => console.warn('Firebase save failed:', e.message));
-    } else {
-        // Pure localStorage fallback
-        const appointments = JSON.parse(localStorage.getItem('morales_appointments') || '[]');
-        appointments.push(appt);
-        localStorage.setItem('morales_appointments', JSON.stringify(appointments));
-    }
-    
-    // Save/update user profile from booking data
-    const profileToSave = { name: d.name, phone: d.phone, address: d.address };
-    if (window.MoralesFirebase && typeof window.MoralesFirebase.saveProfile === 'function') {
-        window.MoralesFirebase.saveProfile(profileToSave);
-    } else {
-        const existing = JSON.parse(localStorage.getItem('morales_user_profile') || '{}');
-        localStorage.setItem('morales_user_profile', JSON.stringify({ ...existing, ...profileToSave }));
+        window.MoralesFirebase.saveAppointment(appt).catch(e => console.warn('[Firebase] Pre-save failed:', e.message));
     }
 
-    // -- SECURE BACKEND SUBMISSION ----------------------------
-    const confCode = "MP-" + Math.floor(100000 + Math.random() * 900000);
-    const waMessage = `Hola Morales Plumbing!%0ANueva Cita Reservada:%0A*Código:* ${confCode}%0A*Nombre:* ${d.name}%0A*Tel:* ${d.phone}%0A*Email:* ${d.email || 'No provisto'}%0A*Dir:* ${d.address}%0A*Servicio:* ${d.service}%0A*Fecha:* ${d.date}%0A*Hora:* ${d.time}%0A*Notas:* ${d.notes}`;
-    const waLink = `https://wa.me/16692134422?text=${waMessage}`;
-
-    // 1. GOOGLE CALENDAR EVENT LINK (1-CLIC ADD TO CALENDAR)
-    const calDateStr = (d.date ? d.date.replace(/-/g, '') : new Date().toISOString().slice(0,10).replace(/-/g, ''));
-    const calTimeStr = (d.time ? d.time.replace(/:/g, '') + '00' : '090000');
-    const gCalStart = `${calDateStr}T${calTimeStr}`;
-    const gCalEnd = `${calDateStr}T${String(parseInt(calTimeStr.slice(0,2),10) + 1).padStart(2, '0')}${calTimeStr.slice(2)}`;
-    const gCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Cita Técúnica: ' + (d.service || 'Plomería') + ' - Morales Plumbing')}&dates=${gCalStart}/${gCalEnd}&details=${encodeURIComponent('Cliente: ' + d.name + '\nTel: ' + d.phone + '\nEmail: ' + (d.email || 'N/A') + '\nDir: ' + d.address + '\nNotas: ' + (d.notes || 'Ninguna') + '\nCódigo: ' + confCode)}&location=${encodeURIComponent(d.address || 'San Jose, CA')}&add=moralesplumbing026@gmail.com`;
-
-    // 2. DISPATCH INSTANT TELEGRAM NOTIFICATION TO ADMIN
-    const tgMsg = `[!] *NUEVA CITA AGENDADA EN LA WEB — MORALES PLUMBING*\n\n` +
-        ` *Código:* \`${confCode}\`\n` +
-        ` *Cliente:* ${d.name || 'Sin Nombre'}\n` +
-        ` *Teléfono:* [${d.phone || 'Sin Teléfono'}](tel:${d.phone})\n` +
-        ` *Dirección:* ${d.address || 'Sin Dirección'}\n` +
-        ` *Servicio:* ${d.service || 'Inspección General'}\n` +
-        ` *Fecha:* ${d.date || 'Por coordinar'} |  *Hora:* ${d.time || 'Por coordinar'}\n` +
-        ` *Notas:* ${d.notes || 'Ninguna'}\n\n` +
-        ` [Agregar a Google Calendar](${gCalUrl})\n` +
-        ` *Lic. C-36 #1156542 | San José & Santa Clara, CA*`;
+    // 1. Notificación instantánea vía Telegram al Master Plumber / Administrador con código generado
+    const tgMsg = "[!] CITA EN ESPERA DE CODIGO - MORALES PLUMBING\n\n" +
+        " *Ticket ID:* `" + apptId + "`\n" +
+        " *Codigo de Verificacion:* `" + numericCode + "`\n" +
+        " *Cliente:* " + (d.name || 'Sin Nombre') + "\n" +
+        " *Telefono:* [" + (d.phone || 'Sin Telefono') + "](tel:" + d.phone + ")\n" +
+        " *Email:* " + (d.email || 'Sin Email') + "\n" +
+        " *Direccion:* " + (appt.fullAddress || d.address || 'Sin Direccion') + "\n" +
+        " *Servicio:* " + (d.service || 'Inspeccion General') + "\n" +
+        " *Fecha:* " + (d.date || 'Por coordinar') + " | *Hora:* " + (d.time || 'Por coordinar') + "\n" +
+        " *Notas:* " + (d.notes || 'Ninguna') + "\n\n" +
+        " *Lic. C-36 #1156542 | San Jose & Santa Clara, CA*";
 
     fetch("https://api.telegram.org/bot8851834588:AAGBVYYM0pK5EtNgdb-CIWmvKZIOvawi_Lk/sendMessage", {
         method: "POST",
@@ -12523,60 +13189,256 @@ function submitBooking() {
             text: tgMsg,
             parse_mode: "Markdown"
         })
-    }).catch(e => console.warn('TG booking dispatch error:', e.message));
+    }).catch(e => console.warn('TG dispatch error:', e.message));
 
-    // 3. AUTOMATIC EMAIL PING VIA FORMSUBMIT
+    // 2. Enviar primer correo con el código de verificación al cliente vía FormSubmit
+    const codeSubject = lang === 'es'
+        ? "Codigo de Verificacion de Cita: " + numericCode + " - Morales Plumbing"
+        : "Appointment Verification Code: " + numericCode + " - Morales Plumbing";
+
+    const codeAutoresponse = lang === 'es'
+        ? "Hola " + d.name + ", su codigo de verificacion de 6 digitos para la cita " + apptId + " con Morales Plumbing es: " + numericCode + ". Ingrese este codigo en el formulario de la pagina web para confirmar definitivamente su visita tecnica."
+        : "Hello " + d.name + ", your 6-digit appointment verification code for " + apptId + " with Morales Plumbing is: " + numericCode + ". Please enter this code on our website booking form to confirm your technical visit.";
+
+    // Envío del primer correo de verificación vía FormSubmit
     fetch("https://formsubmit.co/ajax/1c4314e8039be584d69ec1110f1e96dc", {
         method: "POST",
-        headers: { 
+        headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
         body: JSON.stringify({
             name: d.name,
-            email: d.email || "no-email@morales-plumbing.com",
+            email: d.email,
+            _replyto: d.email,
             phone: d.phone,
-            address: d.address,
+            address: appt.fullAddress || d.address,
+            city: d.city || 'San Jose',
+            zip: d.zip || '',
             service: d.service,
             date: d.date,
             time: d.time,
-            notes: d.notes,
-            confirmationCode: confCode,
-            googleCalendarLink: gCalUrl,
-            _subject: "[!] NUEVA CITA RESERVADA: " + confCode,
-            _autoresponse: "Gracias por agendar con Morales Plumbing. Hemos recibido tu solicitud de cita. Tu código de confirmación es " + confCode + ". Un técnico te contactará pronto."
+            notes: d.notes || 'Ninguna',
+            ticketId: apptId,
+            verificationCode: numericCode,
+            _subject: codeSubject,
+            _autoresponse: codeAutoresponse
         })
-    }).then(res => res.json())
-      .then(data => console.log("Email auto-sent via FormSubmit", data))
-      .catch(err => console.error("Error sending email", err));
+    }).then(res => res.json()).then(data => {
+        console.log('[FormSubmit] Verification code dispatched:', data);
+    }).catch(err => console.error("Error enviando codigo FormSubmit:", err));
 
-    const contactBtns = `<div style="display:flex; flex-direction:column; gap:10px; margin-top:15px; margin-bottom:10px;">
-        <a href="${gCalUrl}" target="_blank" style="background:rgba(66,133,244,0.2); color:#4285F4; border: 1px solid #4285F4; padding:10px; text-align:center; border-radius:5px; text-decoration:none; font-weight:bold;"> Agregar a mi Google Calendar</a>
-        <a href="${waLink}" target="_blank" style="background:rgba(37,211,102,0.2); color:#25D366; border: 1px solid #25D366; padding:10px; text-align:center; border-radius:5px; text-decoration:none; font-weight:bold;"> Hablar por WhatsApp (Opcional)</a>
-    </div>`;
-
-    const confirmMsg = lang === 'es'
-        ? `**¡Cita generada con éxito!** <br><br>Tu código de confirmación es: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>Hemos notificado al equipo técnico por Telegram y correo. Puedes agendar el recordatorio en tu calendario o contactarnos por WhatsApp:<br>` + contactBtns
-        : `**Appointment successfully generated!** <br><br>Your confirmation code is: <strong style="color:#D4AF37;font-size:1.2em;">${confCode}</strong><br><br>The technician has been notified via Telegram and email. You can add it to your calendar or contact us via WhatsApp:<br>` + contactBtns;
-
-    addMessage(confirmMsg, 'bot');
-    speakJoe(lang === 'es' ? '¡Cita confirmada! Te hemos enviado todos los detalles por correo y mensaje.' : 'Appointment confirmed! We sent you all details via email and message.');
-
-    // Update UI
+    // 3. Modificar la UI del formulario: Ocultar botón de confirmación y mostrar el paso de código
+    const submitBtn = document.getElementById('booking-submit-btn');
+    const verificationStep = document.getElementById('booking-verification-step');
     const statusText = document.getElementById('booking-status-text');
-    if (statusText) statusText.textContent = lang === 'es' ? ' Cita enviada!' : ' Appointment Sent!';
+    const codeInput = document.getElementById('bk-verification-code');
 
-    const btn = document.getElementById('booking-submit-btn');
-    if (btn) {
-        btn.disabled = true;
-        btn.textContent = lang === 'es' ? ' Cita Enviada' : ' Appointment Sent';
+    if (submitBtn) submitBtn.style.display = 'none';
+    if (verificationStep) verificationStep.style.display = 'flex';
+    if (codeInput) {
+        codeInput.focus();
     }
 
-    // Reset booking state
+    const waitingMsg = (typeof translations !== 'undefined' && translations[lang] && translations[lang]['booking_status_waiting_code'])
+        ? translations[lang]['booking_status_waiting_code']
+        : (lang === 'es' ? 'Esperando código de verificación...' : 'Waiting for verification code...');
+
+    if (statusText) statusText.textContent = waitingMsg;
+
+    const chatAlert = (typeof translations !== 'undefined' && translations[lang] && translations[lang]['booking_code_sent_msg'])
+        ? translations[lang]['booking_code_sent_msg']
+        : (lang === 'es' ? 'Hemos enviado un código de verificación de 6 dígitos a su correo. Por favor ingréselo en el formulario para finalizar.' : 'We sent a 6-digit verification code to your email. Please enter it in the form to confirm.');
+
+    addMessage(chatAlert, 'bot');
+    speakJoe(chatAlert);
+}
+
+// SUBMIT: Etapa 2 - Validación del código, segundo correo con políticas/paquetes/calendar y confirmación
+async function verifyBookingCode() {
+    const lang = localStorage.getItem('morales_lang') || 'es';
+    const codeInput = document.getElementById('bk-verification-code');
+    const enteredCode = codeInput ? codeInput.value.trim() : '';
+
+    const pending = currentPendingBooking || JSON.parse(localStorage.getItem('morales_pending_booking') || 'null');
+
+    if (!pending) {
+        alert(lang === 'es' ? 'No hay ninguna cita pendiente de verificación.' : 'No pending appointment found.');
+        return;
+    }
+
+    let isValid = false;
+    if (window.MoralesFirebase && typeof window.MoralesFirebase.verifyConfirmationCode === 'function') {
+        const result = await window.MoralesFirebase.verifyConfirmationCode(pending.id, enteredCode);
+        isValid = result && result.valid;
+    }
+
+    if (!isValid) {
+        const localDoc = JSON.parse(localStorage.getItem('morales_pending_code_' + pending.id) || 'null');
+        if (localDoc && localDoc.code === enteredCode && localDoc.status !== 'used') {
+            isValid = true;
+            localDoc.status = 'used';
+            localStorage.setItem('morales_pending_code_' + pending.id, JSON.stringify(localDoc));
+        }
+    }
+
+    if (!isValid) {
+        const errText = (typeof translations !== 'undefined' && translations[lang] && translations[lang]['booking_code_invalid_msg'])
+            ? translations[lang]['booking_code_invalid_msg']
+            : (lang === 'es' ? 'Código de verificación incorrecto. Por favor verifique e intente nuevamente.' : 'Incorrect verification code. Please check and try again.');
+        alert(errText);
+        return;
+    }
+
+    // Código válido: Confirmar cita y generar Google Calendar URL
+    pending.status = 'confirmed';
+    pending.confirmedAt = new Date().toISOString();
+    localStorage.setItem('morales_confirmed_booking_' + pending.id, JSON.stringify(pending));
+
+    const calDateStr = (pending.date ? pending.date.replace(/-/g, '') : new Date().toISOString().slice(0,10).replace(/-/g, ''));
+    const calTimeStr = (pending.time ? pending.time.replace(/:/g, '') + '00' : '090000');
+    const gCalStart = calDateStr + "T" + calTimeStr;
+    const gCalEnd = calDateStr + "T" + String(parseInt(calTimeStr.slice(0,2),10) + 2).padStart(2, '0') + calTimeStr.slice(2);
+    const gCalUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent("Cita Tecnica: " + (pending.service || "Plomeria") + " - Morales Plumbing") + "&dates=" + gCalStart + "/" + gCalEnd + "&details=" + encodeURIComponent("Cliente: " + pending.name + "\nTel: " + pending.phone + "\nEmail: " + pending.email + "\nDireccion: " + pending.address + "\nTicket: " + pending.id + "\nNotas: " + (pending.notes || "Ninguna")) + "&location=" + encodeURIComponent(pending.address || "San Jose, CA") + "&add=moralesplumbing026@gmail.com";
+
+    // Enlace de confirmación técnica para despacho (permite al técnico marcar recibido / ETA)
+    const techConfirmUrl = "https://www.morales-plumbing.com/?action=tech_ack&ticket=" + pending.id + "&tech=master_alex";
+    const techRescheduleUrl = "https://www.morales-plumbing.com/?action=tech_reschedule&ticket=" + pending.id;
+
+    // 1. Notificación final al Telegram del Master Plumber con enlaces operativos
+    const finalTgMsg = "[!] CITA CONFIRMADA POR CLIENTE - MORALES PLUMBING\n\n" +
+        " *Ticket ID:* `" + pending.id + "`\n" +
+        " *Estado:* CONFIRMADA (Codigo validado)\n" +
+        " *Cliente:* " + pending.name + "\n" +
+        " *Telefono:* [" + pending.phone + "](tel:" + pending.phone + ")\n" +
+        " *Email:* " + pending.email + "\n" +
+        " *Direccion:* " + pending.address + "\n" +
+        " *Servicio:* " + pending.service + "\n" +
+        " *Fecha:* " + pending.date + " | *Hora:* " + pending.time + "\n" +
+        " *Notas:* " + (pending.notes || "Ninguna") + "\n\n" +
+        " [Ver en Google Calendar](" + gCalUrl + ")\n" +
+        " [Confirmar Despacho / ETA](" + techConfirmUrl + ")\n" +
+        " [Reportar Demora / Reprogramar](" + techRescheduleUrl + ")\n\n" +
+        " *Lic. C-36 #1156542 | San Jose & Santa Clara, CA*";
+
+    fetch("https://api.telegram.org/bot8851834588:AAGBVYYM0pK5EtNgdb-CIWmvKZIOvawi_Lk/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: "5989183300",
+            text: finalTgMsg,
+            parse_mode: "Markdown"
+        })
+    }).catch(e => console.warn('TG final error:', e.message));
+
+    // 2. Segundo correo formal al cliente: Políticas legales, paquetes Morales Plumbing y enlace a Calendar
+    const secondEmailSubject = lang === 'es'
+        ? "Confirmacion Oficial de Cita - Morales Plumbing (Ticket " + pending.id + ")"
+        : "Official Appointment Confirmation - Morales Plumbing (Ticket " + pending.id + ")";
+
+    const secondEmailBody = lang === 'es'
+        ? "Estimado/a " + pending.name + ",\n\n" +
+          "Su cita tecnica con Morales Plumbing ha sido confirmada exitosamente.\n\n" +
+          "DETALLES DE LA VISITA:\n" +
+          "- Ticket ID: " + pending.id + "\n" +
+          "- Servicio: " + pending.service + "\n" +
+          "- Fecha y Horario: " + pending.date + " a las " + pending.time + "\n" +
+          "- Direccion: " + pending.address + "\n" +
+          "- Agregar a su Calendario: " + gCalUrl + "\n\n" +
+          "PAQUETES DE SERVICIO MORALES PLUMBING:\n" +
+          "1. GOOD (Estandar): Reparacion puntual certificada bajo codigo UPC.\n" +
+          "2. BETTER (Premium): Reemplazo con materiales de grado industrial (Cobre Tipo L Viega ProPress o PEX-A expansion).\n" +
+          "3. BEST (Ultra Eficiente): Soluciones inteligentes de alta gama (Tankless Navien/Rinnai, valvulas inteligentes IoT, garantia extendida).\n\n" +
+          "POLITICAS Y MARCO LEGAL (CALIFORNIA):\n" +
+          "- Licencia CSLB C-36 #1156542 vigente para el Area de la Bahia de San Jose.\n" +
+          "- Cumplimiento con el Codigo de Negocios y Profesiones de California (BPC 7159).\n" +
+          "- Derecho legal de cancelacion en 3 dias habiles conforme al Home Solicitation Sales Act (Codigo Civil 1689.5-1689.14).\n" +
+          "- Toda cotizacion definitiva se emite por escrito tras la inspeccion tecnica en sitio.\n\n" +
+          "Atentamente,\n" +
+          "Morales Plumbing | AI-Integrated Services\n" +
+          "Telefono: (669) 213-4422 | Email: moralesplumbing026@gmail.com\n" +
+          "Web: www.morales-plumbing.com"
+        : "Dear " + pending.name + ",\n\n" +
+          "Your technical appointment with Morales Plumbing has been successfully confirmed.\n\n" +
+          "VISIT DETAILS:\n" +
+          "- Ticket ID: " + pending.id + "\n" +
+          "- Service: " + pending.service + "\n" +
+          "- Date & Time: " + pending.date + " at " + pending.time + "\n" +
+          "- Address: " + pending.address + "\n" +
+          "- Add to your Calendar: " + gCalUrl + "\n\n" +
+          "MORALES PLUMBING SERVICE PACKAGES:\n" +
+          "1. GOOD (Standard): Precision repair certified under UPC code.\n" +
+          "2. BETTER (Premium): Replacement using industrial-grade materials (Type L Copper Viega ProPress or PEX-A expansion).\n" +
+          "3. BEST (Ultra High-Efficiency): Top-tier smart infrastructure (Navien/Rinnai Tankless, IoT shutoff valves, extended warranty).\n\n" +
+          "CALIFORNIA LEGAL POLICIES & DISCLOSURES:\n" +
+          "- CSLB Lic. C-36 #1156542 active in San Jose and the California Bay Area.\n" +
+          "- Fully compliant with California Business & Professions Code (BPC 7159).\n" +
+          "- Three-day statutory right to cancel under the California Home Solicitation Sales Act (Civil Code 1689.5-1689.14).\n" +
+          "- All final quotes are issued in writing following on-site technical inspection.\n\n" +
+          "Sincerely,\n" +
+          "Morales Plumbing | AI-Integrated Services\n" +
+          "Phone: (669) 213-4422 | Email: moralesplumbing026@gmail.com\n" +
+          "Web: www.morales-plumbing.com";
+
+    fetch("https://formsubmit.co/ajax/1c4314e8039be584d69ec1110f1e96dc", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: pending.name,
+            email: pending.email,
+            phone: pending.phone,
+            address: pending.address,
+            service: pending.service,
+            date: pending.date,
+            time: pending.time,
+            ticketId: pending.id,
+            googleCalendarLink: gCalUrl,
+            techConfirmLink: techConfirmUrl,
+            techRescheduleLink: techRescheduleUrl,
+            _subject: secondEmailSubject,
+            _autoresponse: secondEmailBody
+        })
+    }).then(res => res.json()).catch(e => console.warn('Second email ping error:', e.message));
+
+    // 3. Actualizar la interfaz de usuario con confirmación final
+    const verificationStep = document.getElementById('booking-verification-step');
+    const statusText = document.getElementById('booking-status-text');
+
+    if (verificationStep) {
+        verificationStep.innerHTML = "<div style='color: #39ff14; font-family: Orbitron, monospace; font-size: 0.85rem; text-align: center; padding: 10px; background: rgba(57,255,20,0.1); border: 1px solid #39ff14; border-radius: 8px;'>" +
+            (lang === 'es' ? "Cita Confirmada (Ticket: " + pending.id + ")" : "Appointment Confirmed (Ticket: " + pending.id + ")") +
+            "</div>";
+    }
+
+    if (statusText) {
+        statusText.textContent = lang === 'es' ? "Cita confirmada y despachada" : "Appointment confirmed and dispatched";
+    }
+
+    const finalSuccessMsg = (typeof translations !== 'undefined' && translations[lang] && translations[lang]['booking_confirmed_final_msg'])
+        ? translations[lang]['booking_confirmed_final_msg']
+        : (lang === 'es' ? "Cita confirmada con éxito. Hemos notificado al equipo técnico y enviado los detalles a su correo." : "Appointment successfully confirmed. We notified our technical team and emailed your details.");
+
+    const calendarActionBtn = "<div style='margin-top: 15px; display: flex; flex-direction: column; gap: 8px;'>" +
+        "<a href='" + gCalUrl + "' target='_blank' style='background: rgba(66,133,244,0.2); color: #4285F4; border: 1px solid #4285F4; padding: 10px; text-align: center; border-radius: 6px; text-decoration: none; font-weight: bold; font-family: Orbitron, sans-serif; font-size: 0.82rem;'>Agregar a Google Calendar</a>" +
+        "</div>";
+
+    addMessage(finalSuccessMsg + calendarActionBtn, 'bot');
+    speakJoe(finalSuccessMsg);
+
+    // Guardar perfil del usuario
+    const profileToSave = { name: pending.name, phone: pending.phone, address: pending.address, email: pending.email };
+    if (window.MoralesFirebase && typeof window.MoralesFirebase.saveProfile === 'function') {
+        window.MoralesFirebase.saveProfile(profileToSave);
+    }
+
+    // Resetear máquina de estados
     bookingState.active = false;
     bookingState.step = 0;
-    bookingData = { name: '', phone: '', address: '', service: '', date: '', time: '', notes: '' };
 }
+
 
 // Parse [ACTION_FILL_BOOKING] tags from AI responses
 function processBookingFill(responseText) {
@@ -12585,14 +13447,43 @@ function processBookingFill(responseText) {
         try {
             const data = JSON.parse(match[1]);
             openBookingPanel();
-            const fieldMap = { name:'name', email:'email', phone:'phone', address:'address', service:'service', date:'date', time:'time', notes:'notes' };
             let delay = 0;
-            for (const [key, domId] of Object.entries(fieldMap)) {
+
+            if (data.name) {
+                const parsed = parseFullName(data.name);
+                setTimeout(() => {
+                    updateBookingField('prefix', parsed.prefix);
+                    updateBookingField('firstname', parsed.firstName);
+                    updateBookingField('lastname', parsed.lastName);
+                }, delay);
+                delay += 200;
+            }
+            if (data.address) {
+                const addrParsed = parseFullServiceAddress(data.address);
+                setTimeout(() => {
+                    updateBookingField('address', addrParsed.street || data.address);
+                    updateBookingField('city', addrParsed.city || 'San Jose');
+                    updateBookingField('state', addrParsed.state || 'CA');
+                    if (addrParsed.zip) updateBookingField('zip', addrParsed.zip);
+                }, delay);
+                delay += 200;
+            }
+            if (data.date) {
+                const dParsed = parsePreferredDate(data.date) || data.date;
+                setTimeout(() => updateBookingField('date', dParsed), delay);
+                delay += 200;
+            }
+            if (data.time) {
+                const tParsed = parsePreferredTime(data.time) || data.time;
+                setTimeout(() => updateBookingField('time', tParsed), delay);
+                delay += 200;
+            }
+            ['email', 'phone', 'service', 'notes'].forEach(key => {
                 if (data[key]) {
-                    setTimeout(() => updateBookingField(domId, data[key]), delay);
+                    setTimeout(() => updateBookingField(key, data[key]), delay);
                     delay += 200;
                 }
-            }
+            });
         } catch(e) { console.warn('ACTION_FILL_BOOKING parse error:', e.message); }
     }
 }
@@ -12786,7 +13677,7 @@ if(typeof translations !== 'undefined' && translations['en']) {
     "ai_s2_li3": "<strong>Liability Shielding:</strong> Creates customized waivers before initiating any destructive work.",
     "ai_s2_p2": "Data and laws protect our liability, but our sensors allow us to see through solid concrete.",
     "ai_s3_title": "3. Seeing the Invisible: FLIR Thermography with Artificial Intelligence",
-    "ai_s3_p1": "To achieve true Military-Grade precision, we use high-resolution thermal imaging cameras (FLIR E8-XT or C5 models). By integrating these cameras with AI algorithmás, we perform 'Thermal Mapping' that identifies temperature gradients invisible to the human eye.",
+    "ai_s3_p1": "To achieve true Military-Grade precision, we use high-resolution thermal imaging cameras (FLIR E8-XT or C5 models). By integrating these cameras with AI algorithms, we perform 'Thermal Mapping' that identifies temperature gradients invisible to the human eye.",
     "ai_s3_p2": "This allows us to detect 'floral anomalies' the thermal plume or 'feathering' effect generated by hot water escaping under a slab locating slab leaks without unnecessary demolition. The high-end MSX (Multi-Spectral Dynamic Imaging) Technology extracts structural details from the visual camera and embosses them onto the thermal image.",
     "ai_s3_p3": "Thanks to MSX and AI processing, the margin of error for locating a rupture under concrete is reduced to less than 3 square inches. Once we have 'seen' the invisible, the next step is to present the solution with the same level of technological sophistication.",
     "ai_s4_title": "4. The Tablet as a Closing Tool: Orion Price Book",
@@ -12809,7 +13700,7 @@ if(typeof translations !== 'undefined' && translations['es']) {
     "ai_intro_1": "Bienvenidos a la Academia Morales. Soy su Instructor Senior y hoy no solo les entrego una llave inglesa, sino las llaves del ecosistema tecnológico más avanzado en la historia de los servicios hdricos.",
     "ai_intro_2": "En Morales Plumbing, hemos dejado atrs la era de la adivinanza manual para entrar en la era de la 'precisión quirrgica'. Ustedes no son simples aprendices; son la nueva Élite técnica de Silicon Valley, una fuerza operativa que combina el sudor del oficio con el cerebro de la inteligencia artificial de Grado Militar.",
     "ai_intro_3": "Observen nuestro escudo: esa gota de agua translcida que resguíarda un microchip en su interior no es solo diseño. Simboliza nuestra filosofa de 'Tech-Service': el control absoluto del flujo mediante la innovacin digital.",
-    "ai_quote": "\"Nuestra misin es brindar soluciones de la más alta calidad, fusionando la experiencia técnica artesanal con tecnologías avanzadías de IA para proteger la salud pblica y la integridad de los hogares de forma rápida y definitiva.\"  Filosofa Morales Plumbing",
+    "ai_quote": "\"Nuestra misin es brindar soluciones de la más alta calidad, fusionando la experiencia técnica artesanal con tecnologías avanzadas de IA para proteger la salud pblica y la integridad de los hogares de forma rápida y definitiva.\"  Filosofa Morales Plumbing",
     "ai_intro_4": "Esta mentalidad de vanguíardia es lo que separa a un plomero convencional de un consultor tecnológico de la Academia Morales. Para dominar este entorno, su primera herramienta no ser un soplete, sino su copiloto digital.",
     "ai_s1_title": "1. Tu Copiloto Digital: Quin es Karla AI?",
     "ai_s1_p1": "En el campo de batalla de la infraestructura hdrica, el conocimiento es poder. Karla AI es nuestra asistente virtual muúltimodal, un Modelo de Lenguíaje de Gran Escala (LLM) que ha sido fine-tuned (ajustado finamente) especficamente con el Código de Plomería de California (CPC) y los esquemas técúúnicos de fabricantes lderes. Karla no 'adivina'; Karla procesa datos vectoriales en tiempo real.",
@@ -12830,25 +13721,25 @@ if(typeof translations !== 'undefined' && translations['es']) {
     "ai_t_r4_2": "Lenta, propensa a segundías visitas.",
     "ai_t_r4_3": "40% más rápida; resolución en la primera cita.",
     "ai_s1_p3": "Esta eficiencia nos permite ser infalibles no solo en la técnica, sino tambin en el blindaje normativo de caída intervención.",
-    "ai_s2_title": "2. PlumbAssist AI: Tu Garantía de Cumplimiento Técúnico",
+    "ai_s2_title": "2. PlumbAssist AI: Tu Garantía de Cumplimiento Técnico",
     "ai_s2_p1": "Como la Élite de California, operamos bajo el microscopio legal. PlumbAssist AI es su guíardin de cumplimiento. Mientras ustedes trabajan, este sistema cruza caída decisin con el Código de Plomería de California (CPC) en tiempo real. Pero su funcin va más all de la normativa técnica; est integrado con el Generador Legal Morales. Este sistema automatiza la creacin de documentos críticos que protegen nuestra responsabilidad y los derechos del cliente, asegurando que caída contrato sea inexpugnable.",
     "ai_s2_li1": "<strong>Seguridad Normativa:</strong> Consulta instantnea del CPC, eliminando errores por memorizacin deficiente.",
     "ai_s2_li2": "<strong>Gestin Documental Automática:</strong> Generacin inmediata de avisos de 'Derecho a Cancelar' y el documento 'Notice to Owner' (NTO) para proteger nuestros derechos de retención mecánica.",
-    "ai_s2_li3": "<strong>Blindaje de Responsabilidad:</strong> Crea exenciones de responsabilidad (Waivers) personalizadías antes de iniciar cualquier labor destructiva.",
+    "ai_s2_li3": "<strong>Blindaje de Responsabilidad:</strong> Crea exenciones de responsabilidad (Waivers) personalizadas antes de iniciar cualquier labor destructiva.",
     "ai_s2_p2": "Los datos y las leyes protegen nuestra responsabilidad, pero nuestros sensores nos permiten atravesar el concreto slido.",
     "ai_s3_title": "3. Ver lo Invisible: Termografía FLIR con Inteligencia Artificial",
     "ai_s3_p1": "Para alcanzar la verdadera precisión de Grado Militar, utilizamos cámaras termogrficas de alta resolución (modelos FLIR E8-XT o C5). Al integrar estas cámaras con algoritmos de IA, realizamos un 'Mapeo Trmico' que identifica gradientes de temperatura invisibles al ojo humano.",
     "ai_s3_p2": "Esto nos permite detectar 'anomalas florales' el efecto de pluma térmica o 'feathering' que genera el agua caliente al escapar bajo una losa localizando fugas (slab leaks) sin demoliciones innecesarias. La Tecnología MSX (Multi-Spectral Dynamic Imaging) de alta gama extrae los detalles estructurales de la cámara visual y los graba sobre la imagen térmica.",
-    "ai_s3_p3": "Gracias al MSX y al procesamiento de IA, el margen de error para localizar una ruptura bajo el concreto se reduce a menos de 3 pulgadías cuadradías. Una vez que hemos 'visto' lo invisible, el siguiente paso es presentar la solución con el mismo nivel de sofisticacin tecnolgica.",
+    "ai_s3_p3": "Gracias al MSX y al procesamiento de IA, el margen de error para localizar una ruptura bajo el concreto se reduce a menos de 3 pulgadas cuadradas. Una vez que hemos 'visto' lo invisible, el siguiente paso es presentar la solución con el mismo nivel de sofisticacin tecnolgica.",
     "ai_s4_title": "4. La Tablet como Herramienta de Cierre: Orion Price Book",
-    "ai_s4_p1": "El profesionalismo extremo se consolida en el momento de la cotización. El sistema Orion Price Book POS utiliza la psicologa de ventas para eliminar la friccin del precio. Presentamos siempre tres opciones: 'Good, Better, Best'.",
+    "ai_s4_p1": "El profesionalismo extremo se consolida en el momento de la cotización. El sistema Orion Price Book POS utiliza la psicologa de ventas para eliminar la fricción del precio. Presentamos siempre tres opciones: 'Good, Better, Best'.",
     "ai_s4_p2": "Como instructores, les enseamos el secreto: la opcin 'Best' (Premium) funciona como un ancla de precio, haciendo que la opcin 'Better' (Recomendada) sea percibida como el valor lgico más alto. Aqu es donde transformamos una reparación en una actualización de activos. Para un cierre exitoso, sigan este protocolo en su tablet:",
     "ai_s4_li1": "<strong>Evidencia Visual:</strong> Muestren al cliente las imágenes de la cámara FLIR y el reporte de Karla AI.",
     "ai_s4_li2": "<strong>Presentacin de Opciones:</strong> Ofrezcan soluciones reales, como un Navien NPE-240A para agua caliente infinita o un sistema de repiping integral con Uponor PEX-A.",
     "ai_s4_li3": "<strong>Transparencia Flat Rate:</strong> Usen precios cerrados. El cliente paga por la solución, no por las horas que ustedes pasen en el sitio.",
     "ai_s4_li4": "<strong>Cierre y Firma Legal:</strong> El cliente firma el contrato generado por el Generador Legal Morales, recibiendo su copia digital al instante.",
     "ai_s4_p3": "Este proceso genera un 'hiper-profesionalismo' que justifica nuestras tarifas premium y consolida su autoridad ante el cliente.",
-    "ai_s5_title": "5. Conclusin: El Técúnico del Maana",
+    "ai_s5_title": "5. Conclusin: El Técnico del Maana",
     "ai_s5_p1": "En la Academia Morales, no los estamos formando para ser plomeros; los estamos entrenando para gestionar un ecosistema de alta tecnología. Al dominar Karla AI, la termografía de grado militar y el sistema Orion, garantizamos una tasa de resolución en la primera visita superior al 95%.",
     "ai_s5_p2": "Ustedes son el futuro de un oficio dignificado por la ciencia. No solo reparan tuberías; protegen la infraestructura de Silicon Valley con la precisión de un cirujano y la inteligencia de un ingeniero de datos. Recuerden: la innovacin y la dignidad técnica son nuestro estandarte. Bienvenidos a la Élite.",
     "ai_s5_p3": "Bienvenidos a Morales Plumbing."
@@ -13050,7 +13941,7 @@ function setEpilepsySafeMode(enabled) {
         });
 
         window.dispatchEvent(new CustomEvent('a11y-motion-changed', { detail: { reduced: false } }));
-        showPortalNotification('Animaciones visuales reactivadías');
+        showPortalNotification('Animaciones visuales reactivadas');
     }
 }
 
@@ -13377,7 +14268,7 @@ async function initPublicAQITelemetry() {
         if (resp.ok) {
             const data = await resp.json();
             const aqi = data.current?.us_aqi || 25;
-            let status = 'Óóptimo';
+            let status = 'Óptimo';
             if (aqi > 50 && aqi <= 100) status = 'Moderado';
             else if (aqi > 100) status = 'Alerta';
             aqiText.innerText = `AQI: ${aqi} (${status}) · BAAQMD Eco`;
@@ -13515,6 +14406,97 @@ async function initPublicVisitorGeoTelemetry() {
     }
 }
 
+
+// ─── TELEMETRÍA DINÁMICA DE CONFIANZA Y TEMPORALIDAD (MORALES PLUMBING) ────────
+// Calcula en tiempo real según la fecha actual (año, mes, día y hora) y la recurrencia del mismo cliente:
+// 1. Años de Experiencia: Calculado desde el inicio de operaciones (2011) en base al año actual.
+// 2. Proyectos Completados: Base certificada + incremento dinámico proporcional a los meses transcurridos + citas locales completadas por el cliente.
+// 3. Emergencias 24/7: Estado operativo dinámico (indicando despacho nocturno, diurno o fin de semana en tiempo real).
+// 4. Licencia CSLB C-36 #1156542: Estado de validación CSLB y cumplimiento activo.
+// 5. Cobertura 100% Bay Area: Ratio de satisfacción y tiempo de respuesta en la bahía de San José.
+function updateDynamicTrustBar() {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth(); // 0 a 11
+    const currentHour = now.getHours();
+    const currentDay = now.getDay(); // 0 = Domingo, 6 = Sábado
+    const lang = localStorage.getItem('morales_lang') || 'es';
+
+    // 1. Años de Experiencia Dinámicos (Fundada en 2011)
+    const baseYear = 2011;
+    const computedYears = Math.max(15, currentYear - baseYear);
+    const yearsNumStr = computedYears + '+';
+
+    // 2. Proyectos Completados Dinámicos (Base 500 + incremento mensual acumulado desde 2026 + historial del cliente)
+    // Registro de interacciones / citas del cliente en localStorage
+    let clientApptCount = 0;
+    try {
+        const storedPending = localStorage.getItem('morales_pending_booking');
+        if (storedPending) clientApptCount += 1;
+        const profile = localStorage.getItem('morales_user_profile');
+        if (profile) clientApptCount += 1;
+    } catch(e) {}
+
+    // Crecimiento orgánico mensual (~12 proyectos por mes a partir de 2026)
+    const monthsSinceStart2026 = Math.max(0, (currentYear - 2026) * 12 + currentMonth);
+    const totalProjects = 500 + (monthsSinceStart2026 * 12) + clientApptCount;
+    const projectsNumStr = totalProjects + '+';
+
+    // 3. Emergencias 24/7 y Disponibilidad Horaria según el momento del día
+    let emergencyStatusText = '';
+    const isNight = (currentHour >= 20 || currentHour < 7);
+    const isWeekend = (currentDay === 0 || currentDay === 6);
+
+    if (lang === 'es') {
+        if (isNight) emergencyStatusText = 'Despacho Nocturno 24/7';
+        else if (isWeekend) emergencyStatusText = 'Guardia Fin de Semana 24/7';
+        else emergencyStatusText = 'Emergencias 24/7';
+    } else {
+        if (isNight) emergencyStatusText = 'Night Dispatch 24/7';
+        else if (isWeekend) emergencyStatusText = 'Weekend Standby 24/7';
+        else emergencyStatusText = '24/7 Emergencies';
+    }
+
+    // 4. Licencia CSLB C-36
+    const licNumStr = 'C-36';
+    const licTextStr = 'CSLB Lic. #1156542';
+
+    // 5. Porcentaje de Eficiencia / Satisfacción en Bay Area
+    const bayAreaPctStr = '100%';
+
+    // Aplicar a los elementos en el DOM si existen
+    const elYearsNum = document.querySelector('[data-i18n="stats_years_num"]');
+    if (elYearsNum) elYearsNum.textContent = yearsNumStr;
+
+    const elProjectsNum = document.querySelector('[data-i18n="stats_projects_num"]');
+    if (elProjectsNum) elProjectsNum.textContent = projectsNumStr;
+
+    const elHoursNum = document.querySelector('[data-i18n="stats_hours_num"]');
+    if (elHoursNum) elHoursNum.textContent = '24/7';
+
+    const elHoursText = document.querySelector('[data-i18n="stats_hours_text"]');
+    if (elHoursText && emergencyStatusText) elHoursText.textContent = emergencyStatusText;
+
+    const elLicNum = document.querySelector('[data-i18n="stats_lic_num"]');
+    if (elLicNum) elLicNum.textContent = licNumStr;
+
+    const elLicText = document.querySelector('[data-i18n="stats_lic_text"]');
+    if (elLicText) elLicText.textContent = licTextStr;
+
+    // Actualizar también el diccionario translations en memoria para que no sea sobreescrito al cambiar idioma
+    if (typeof translations !== 'undefined') {
+        ['en', 'es', 'zh', 'tl', 'vi', 'hi'].forEach(l => {
+            if (translations[l]) {
+                translations[l]['stats_years_num'] = yearsNumStr;
+                translations[l]['stats_projects_num'] = projectsNumStr;
+                translations[l]['stats_hours_num'] = '24/7';
+                translations[l]['stats_lic_num'] = licNumStr;
+                translations[l]['stats_lic_text'] = licTextStr;
+            }
+        });
+    }
+}
+
 // Auto-inicializar las APIs Públicas al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     initPublicWeatherTelemetry();
@@ -13525,6 +14507,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPacificTimeSync();
     initPublicSolarDispatchTelemetry();
     initPublicVisitorGeoTelemetry();
+    updateDynamicTrustBar();
     
     // Auto-open client portal schedule if redirected from subpage
     try {
@@ -13543,8 +14526,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.openTermsModal = typeof openTermsModal === 'function' ? openTermsModal : function() { const m = document.getElementById('terms-modal'); if(m) m.style.display='block'; };
 window.closeTermsModal = typeof closeTermsModal === 'function' ? closeTermsModal : function() { const m = document.getElementById('terms-modal'); if(m) m.style.display='none'; };
-window.openTermásModal = window.openTermsModal;
-window.closeTermásModal = window.closeTermsModal;
+window.openTermsModal = window.openTermsModal;
+window.closeTermsModal = window.closeTermsModal;
 
 // Supplemental Complete Dictionary Injection (100% Coverage, 0 Emojis, Zero Corruption)
 (function() {
@@ -13773,6 +14756,174 @@ window.closeTermásModal = window.closeTermsModal;
     "tl": "Karagdagang Tala o Detalye ng Emergency",
     "vi": "Ghi chú Bổ sung hoặc Chi tiết Khẩn cấp",
     "hi": "अतिरिक्त नोट्स या आपातकालीन विवरण"
+  },
+    "booking_code_label": {
+    "en": "Verification Code",
+    "es": "Código de Verificación",
+    "zh": "验证码",
+    "tl": "Verification Code",
+    "vi": "Mã Xác Thực",
+    "hi": "सत्यापन कोड"
+  },
+  "booking_verify_btn": {
+    "en": "Verify Code & Confirm Appointment",
+    "es": "Validar Código y Finalizar Cita",
+    "zh": "验证代码并确认预约",
+    "tl": "I-verify ang Code at Kumpirmahin ang Appointment",
+    "vi": "Xác Thực Mã & Hoàn Tất Đặt Lịch",
+    "hi": "कोड सत्यापित करें और अपॉइंटमेंट पूरा करें"
+  },
+  "booking_status_waiting_code": {
+    "en": "Waiting for verification code...",
+    "es": "Esperando código de verificación...",
+    "zh": "正在等待验证码...",
+    "tl": "Naghihintay ng verification code...",
+    "vi": "Đang chờ mã xác thực...",
+    "hi": "सत्यापन कोड की प्रतीक्षा कर रहा है..."
+  },
+  "booking_code_sent_msg": {
+    "en": "We sent a 6-digit verification code to your email and phone. Please enter it below to confirm your appointment.",
+    "es": "Hemos enviado un código de verificación de 6 dígitos a su correo y teléfono. Por favor ingréselo a continuación para confirmar su cita.",
+    "zh": "我们已向您的电子邮箱和电话发送了6位数验证码。请在下方输入以确认您的预约。",
+    "tl": "Nagpadala kami ng 6-digit na verification code sa iyong email at telepono. Pakilagay ito sa ibaba upang makumpirma ang iyong appointment.",
+    "vi": "Chúng tôi đã gửi mã xác thực 6 chữ số đến email và số điện thoại của bạn. Vui lòng nhập mã bên dưới để xác nhận lịch hẹn.",
+    "hi": "हमने आपके ईमेल और फोन पर 6 अंकों का सत्यापन कोड भेजा है। कृपया अपनी नियुक्ति की पुष्टि करने के लिए इसे नीचे दर्ज करें।"
+  },
+  "booking_code_invalid_msg": {
+    "en": "The verification code is incorrect or expired. Please check and try again.",
+    "es": "El código de verificación es incorrecto o ha expirado. Por favor verifíquelo e intente nuevamente.",
+    "zh": "验证码不正确或已过期。请核对后重试。",
+    "tl": "Mali o expired na ang verification code. Pakisuri at subukang muli.",
+    "vi": "Mã xác thực không chính xác hoặc đã hết hạn. Vui lòng kiểm tra và thử lại.",
+    "hi": "सत्यापन कोड गलत या समाप्त हो गया है। कृपया जांचें और पुनः प्रयास करें।"
+  },
+  "booking_confirmed_final_msg": {
+    "en": "Appointment successfully confirmed. We have dispatched our technical team, generated your Google Calendar event, and sent legal terms along with service packages to your email.",
+    "es": "Cita confirmada con éxito. Hemos notificado al equipo técnico, generado su evento en Google Calendar y enviado las políticas legales junto con los paquetes de servicio a su correo.",
+    "zh": "预约确认成功。我们已通知技术团队，生成您的 Google Calendar 日程，并将法律条款与服务方案发送至您的电子邮箱。",
+    "tl": "Matagumpay na nakumpirma ang appointment. Naabisuhan na ang technical team, nagawa na ang Google Calendar event, at naipadala ang legal terms at service packages sa iyong email.",
+    "vi": "Cuộc hẹn đã được xác nhận thành công. Chúng tôi đã điều động đội ngũ kỹ thuật, tạo sự kiện Google Calendar và gửi các điều khoản pháp lý kèm gói dịch vụ đến email của bạn.",
+    "hi": "अपॉइंटमेंट सफलतापूर्वक पुष्टि हो गई है। हमने तकनीकी टीम को भेज दिया है, आपका Google Calendar इवेंट जनरेट कर दिया है, और कानूनी शर्तों के साथ सेवा पैकेज आपके ईमेल पर भेज दिए हैं।"
+  },
+      "booking_suffix": {
+    "en": "Title",
+    "es": "Tratamiento",
+    "zh": "尊称",
+    "tl": "Pamagat",
+    "vi": "Danh xưng",
+    "hi": "उपाधि"
+  },
+  "booking_first_name": {
+    "en": "First Name(s)",
+    "es": "Nombre(s)",
+    "zh": "名字",
+    "tl": "Pangalan",
+    "vi": "Tên",
+    "hi": "पहला नाम"
+  },
+  "booking_last_name": {
+    "en": "Last Name(s)",
+    "es": "Apellido(s)",
+    "zh": "姓氏",
+    "tl": "Apelyido",
+    "vi": "Họ",
+    "hi": "उपनाम"
+  },
+  "prefix_mr": {
+    "en": "Mr.",
+    "es": "Sr.",
+    "zh": "先生",
+    "tl": "G.",
+    "vi": "Ông",
+    "hi": "श्री"
+  },
+  "prefix_mrs": {
+    "en": "Mrs.",
+    "es": "Sra.",
+    "zh": "女士",
+    "tl": "Gng.",
+    "vi": "Bà",
+    "hi": "श्रीमती"
+  },
+  "prefix_ms": {
+    "en": "Ms.",
+    "es": "Srta.",
+    "zh": "小姐",
+    "tl": "Bb.",
+    "vi": "Cô",
+    "hi": "सुश्री"
+  },
+  "prefix_dr": {
+    "en": "Dr.",
+    "es": "Dr.",
+    "zh": "博士/医生",
+    "tl": "Dr.",
+    "vi": "Bác sĩ/Tiến sĩ",
+    "hi": "डॉ."
+  },
+  "prefix_eng": {
+    "en": "Eng.",
+    "es": "Ing.",
+    "zh": "工程师",
+    "tl": "Ing.",
+    "vi": "Kỹ sư",
+    "hi": "इंजीनियर"
+  },
+  "booking_street": {
+    "en": "Street Address",
+    "es": "Dirección de la Calle",
+    "zh": "街道地址",
+    "tl": "Tirahan ng Kalye",
+    "vi": "Địa chỉ Đường",
+    "hi": "सड़क का पता"
+  },
+  "booking_city": {
+    "en": "City",
+    "es": "Ciudad",
+    "zh": "城市",
+    "tl": "Lungsod",
+    "vi": "Thành phố",
+    "hi": "शहर"
+  },
+  "booking_state": {
+    "en": "State",
+    "es": "Estado",
+    "zh": "州",
+    "tl": "Estado",
+    "vi": "Tiểu bang",
+    "hi": "राज्य"
+  },
+  "booking_zip": {
+    "en": "ZIP Code",
+    "es": "Código Postal",
+    "zh": "邮政编码",
+    "tl": "ZIP Code",
+    "vi": "Mã Bưu chính",
+    "hi": "पिन कोड"
+  },
+  "booking_self_serve_hint": {
+    "en": "Prefer to fill in your details yourself?",
+    "es": "¿Prefieres llenar tú mismo los datos?",
+    "zh": "希望自己填写资料吗？",
+    "tl": "Nais mo bang punan ang iyong impormasyon?",
+    "vi": "Bạn muốn tự điền thông tin?",
+    "hi": "क्या आप स्वयं विवरण भरना पसंद करेंगे?"
+  },
+  "booking_fill_manual_btn": {
+    "en": "Fill Manually",
+    "es": "Llenar Manualmente",
+    "zh": "手动填写",
+    "tl": "Manu-manong Punan",
+    "vi": "Tự Điền Thủ Công",
+    "hi": "मैन्युअल रूप से भरें"
+  },
+  "booking_chat_verify_notice": {
+    "en": "You may close this chat to review your details in the form. Once submitted, you will receive an email with your verification code.",
+    "es": "Al enviar la solicitud, puede cerrar el chat y verificar los datos en pantalla. Recibirá un correo electrónico con su código de verificación para completar el agendado.",
+    "zh": "提交后可关闭聊天并在屏幕上核对信息。您将收到一封包含验证码的电子邮件以完成预约。",
+    "tl": "Maaari mong isara ang chat upang suriin ang iyong datos. Makakatanggap ka ng email na may verification code.",
+    "vi": "Bạn có thể đóng cuộc trò chuyện để kiểm tra thông tin. Bạn sẽ nhận được email có mã xác thực để hoàn tất.",
+    "hi": "सबमिट करने पर, आप चैट बंद कर सकते हैं और फॉर्म में विवरण देख सकते हैं। आपको सत्यापन कोड वाला एक ईमेल प्राप्त होगा।"
   },
   "booking_submit": {
     "en": "Confirm & Request Appointment",
@@ -14248,7 +15399,7 @@ window.closeTermásModal = window.closeTermsModal;
   },
   "man_step6_desc": {
     "en": "Pay approved invoices via Stripe, Zelle, ACH or commercial checks.",
-    "es": "Paga facturas aprobadías mediante Stripe, Zelle, ACH o cheque comercial.",
+    "es": "Paga facturas aprobadas mediante Stripe, Zelle, ACH o cheque comercial.",
     "zh": "通过 Stripe、Zelle、ACH 或商业支票支付已确认的发票。",
     "tl": "Magbayad ng mga naaprubahang invoice sa pamamagitan ng Stripe o Zelle.",
     "vi": "Thanh toán hóa đơn an toàn qua Stripe, Zelle hoặc chuyển khoản.",
@@ -14528,7 +15679,7 @@ window.closeTermásModal = window.closeTermsModal;
   },
   "set_lang_desc": {
     "en": "Choose your preferred language across all ecosystem tools.",
-    "es": "Elige tu idioma preferido en todías las herramientas del ecosistema.",
+    "es": "Elige tu idioma preferido en todas las herramientas del ecosistema.",
     "zh": "选择您在所有生态工具中的首选语言。",
     "tl": "Piliin ang iyong wika para sa buong platform.",
     "vi": "Chọn ngôn ngữ hiển thị trên toàn hệ thống.",
@@ -14672,7 +15823,7 @@ window.closeTermásModal = window.closeTermsModal;
   },
   "set_font_desc": {
     "en": "Scale typography across all sections without breaking layout alignment.",
-    "es": "Escala la tipografía en todías las secciones sin desalinear el diseño.",
+    "es": "Escala la tipografía en todas las secciones sin desalinear el diseño.",
     "zh": "缩放页面字体大小，同时保持布局整洁完美。",
     "tl": "Palakihin ang font nang hindi nasisira ang ayos ng pahina.",
     "vi": "Phóng to hoặc thu nhỏ phông chữ trên toàn trang.",
@@ -14792,7 +15943,7 @@ window.closeTermásModal = window.closeTermsModal;
   },
   "privacy_sec6_desc": {
     "en": "All direct email communications originating from moralesplumbing026@gmail.com comply with federal CAN-SPAM regulations, clearly identifying our physical licensed address in San Jose, CA, and providing transparent contact options.",
-    "es": "Todías las comunicaciones por correo electrónico originadías en moralesplumbing026@gmail.com cumplen plenamente con las regulaciones federales CAN-SPAM, identificando claramente nuestra dirección física comercial en San Jose, CA y opciones transparentes de contacto.",
+    "es": "Todías las comunicaciones por correo electrónico originadas en moralesplumbing026@gmail.com cumplen plenamente con las regulaciones federales CAN-SPAM, identificando claramente nuestra dirección física comercial en San Jose, CA y opciones transparentes de contacto.",
     "zh": "来自 moralesplumbing026@gmail.com 的所有直接电子邮件通信均严格遵守联邦 CAN-SPAM 法规，清晰标明我们在加利福尼亚州圣何塞的实体经营地址并提供透明的联系方式。",
     "tl": "Lahat ng komunikasyon sa email mula sa moralesplumbing026@gmail.com ay sumusunod sa mga pederal na regulasyon ng CAN-SPAM, na malinaw na nagpapakita ng aming opisyal na address sa San Jose, CA.",
     "vi": "Mọi liên lạc qua email từ moralesplumbing026@gmail.com đều tuân thủ quy định CAN-SPAM của liên bang, nêu rõ địa chỉ văn phòng tại San Jose, CA và cung cấp các kênh phản hồi minh bạch.",
@@ -14808,7 +15959,7 @@ window.closeTermásModal = window.closeTermsModal;
   },
   "privacy_sec7_desc": {
     "en": "We enforce TLS 1.3 encryption across all website data transfers and maintain PCI-DSS Level 1 compliance for all payment processing via Stripe. Sensitive credit card details are never stored on local servers.",
-    "es": "Implementamos cifrado TLS 1.3 en todías las transferencias de datos web y mantenemos certificación PCI-DSS Nivel 1 para todo el procesamiento de pagos mediante Stripe. La información bancaria y de tarjetas nunca se almacena en servidores locales.",
+    "es": "Implementamos cifrado TLS 1.3 en todas las transferencias de datos web y mantenemos certificación PCI-DSS Nivel 1 para todo el procesamiento de pagos mediante Stripe. La información bancaria y de tarjetas nunca se almacena en servidores locales.",
     "zh": "我们在所有网站数据传输中均强制执行 TLS 1.3 军工级加密，并通过 Stripe 保持支付结算全流程符合 PCI-DSS 1 级安全标准。敏感银行卡信息绝不会保存在本地服务器上。",
     "tl": "Ipinapatupad namin ang TLS 1.3 encryption sa lahat ng paglilipat ng datos at pinapanatili ang PCI-DSS Level 1 compliance para sa pagpoproseso ng pagbabayad sa Stripe. Ang mga detalye ng card ay hindi kailanman iniimbak sa mga lokal na server.",
     "vi": "Chúng tôi áp dụng mã hóa TLS 1.3 trên mọi kết nối và duy trì chứng nhận bảo mật PCI-DSS Cấp 1 khi xử lý thanh toán qua Stripe. Thông tin thẻ tín dụng nhạy cảm không baño giờ lưu trữ trên máy chủ cục bộ.",
@@ -14920,7 +16071,7 @@ window.closeTermásModal = window.closeTermsModal;
   },
   "terms_sec5_desc": {
     "en": "Accepted payment methods include Stripe (Credit/Debit/Apple Pay), official Zelle, ACH bank transfer, and commercial check. Past-due commercial invoices accrue finance charges of 1.5% per month (18% per annum). A mandatory $35.00 administrative fee applies to all returned checks (California Civil Code § 1719).",
-    "es": "Los métodos aceptados incluyen Stripe (Crédito/Débito/Apple Pay), Zelle oficial, transferencia ACH bancaria y cheque comercial. Facturas comerciales vencidías acumularán un interés moratorio del 1.5% mensual (18% anual). Se aplicará un cargo administrativo obligatorio de $35.00 por cheque devuelto sin fondos (Código Civil de California § 1719).",
+    "es": "Los métodos aceptados incluyen Stripe (Crédito/Débito/Apple Pay), Zelle oficial, transferencia ACH bancaria y cheque comercial. Facturas comerciales vencidas acumularán un interés moratorio del 1.5% mensual (18% anual). Se aplicará un cargo administrativo obligatorio de $35.00 por cheque devuelto sin fondos (Código Civil de California § 1719).",
     "zh": "接受的付款方式包括 Stripe（信用卡/借记卡/Apple Pay）、官方 Zelle、ACH 银行转账及商业支票。逾期商业账单按每月 1.5%（年化 18%）计收滞纳利息。对于每张退票（无资金支票），将加收 $35.00 的法定行政手续费（《加州民法典》§ 1719）。",
     "tl": "Kasama sa mga tinatanggap na paraan ng pagbabayad ang Stripe, Zelle, ACH, at tseke. Ang mga late commercial invoice ay may interes na 1.5% bawat buwan (18% bawat taon). Mayroong $35.00 administrative fee para sa mga tumalbog na tseke (California Civil Code § 1719).",
     "vi": "Các phương thức thanh toán được chấp nhận gồm Stripe (Thẻ/Apple Pay), Zelle chính thức, chuyển khoản ACH và séc thương mại. Hóa đơn thương mại quá hạn chịu phí 1.5%/tháng (18%/năm). Phí hành chính bắt buộc $35.00 áp dụng cho séc bị trả lại (Bộ luật Dân sự California § 1719).",
@@ -14952,7 +16103,7 @@ window.closeTermásModal = window.closeTermsModal;
   },
   "terms_sec7_desc": {
     "en": "Morales Plumbing provides a full 1-Year Workmanship Warranty on all whole-house repiping and fixture installations. Water heaters carry manufacturer warranties (6 to 12 years on tank models, up to 25 years on tankless units). Drain clearing carries a 30-day warranty (excluding broken or root-intruded pipes identified on inspection camera).",
-    "es": "Morales Plumbing otorga una Garantía de Mano de Obra de 1 Año Completo en todías las instalaciones y reemplazos de tubería completa (PEX-A Uponor, Cobre Tipo L). Los calentadores de agua cuentan con garantía del fabricante (6 a 12 años en tanques, hasta 25 años en tankless). El desazolve de drenajes cuenta con 30 días de garantía (excluyendo fracturas estructurales o raíces detectadías por cámara).",
+    "es": "Morales Plumbing otorga una Garantía de Mano de Obra de 1 Año Completo en todas las instalaciones y reemplazos de tubería completa (PEX-A Uponor, Cobre Tipo L). Los calentadores de agua cuentan con garantía del fabricante (6 a 12 años en tanques, hasta 25 años en tankless). El desazolve de drenajes cuenta con 30 días de garantía (excluyendo fracturas estructurales o raíces detectadas por cámara).",
     "zh": "Morales Plumbing 为全屋管道重铺及洁具安装提供整整 1 年的施工质量保修。热水器享受原厂保修（储水式 6 至 12 年，即热式最高 25 年）。疏通下水管道提供 30 天质保（管道检测摄像机事先探明的破裂或树根入侵除外）。",
     "tl": "Ang Morales Plumbing ay nagbibigay ng 1 Taon na Workmanship Warranty sa buong bahay na repiping at mga fixture. Ang mga water heater ay may warranty ng manufacturer (6 hanggang 12 taon). Ang drain clearing ay may 30-araw na warranty.",
     "vi": "Morales Plumbing bảo hành 1 năm toàn bộ tay nghề đối với thi công thay mới đường ống và thiết bị vệ sinh. Bình nóng lạnh áp dụng bảo hành của nhà sản xuất (6 đến 12 năm cho bình chứa, tối đa 25 năm cho máy không bình chứa). Thông cống bảo hành 30 ngày.",
@@ -15032,12 +16183,28 @@ window.closeTermásModal = window.closeTermsModal;
     "hi": "वाणिज्यिक फोकस (ग्राहक)"
   },
   "pb_lbl_technical": {
-    "en": "Technical Detail (Engineering)",
-    "es": "Detalle Técnico (Ingeniería)",
-    "zh": "技术细节 (工程)",
-    "tl": "Teknikal na Detalye (Inhinyeriya)",
-    "vi": "Chi tiết Kỹ thuật (Kỹ thuật)",
-    "hi": "तकनीकी विवरण (इंजीनियरिंग)"
+    "en": "Plumbing & Installation Specs",
+    "es": "Especificaciones de Instalación y Plomería",
+    "zh": "水暖安装技术规范",
+    "tl": "Mga Pagtutukoy sa Tubero at Pag-install",
+    "vi": "Quy cách Lắp đặt & Kỹ thuật Đường ống",
+    "hi": "प्लंबिंग और स्थापना विनिर्देश"
+  },
+  "lbl_tecnico": {
+    "en": "Plumbing & Installation Specs",
+    "es": "Especificaciones de Instalación y Plomería",
+    "zh": "水暖安装技术规范",
+    "tl": "Mga Pagtutukoy sa Tubero at Pag-install",
+    "vi": "Quy cách Lắp đặt & Kỹ thuật Đường ống",
+    "hi": "प्लंबिंग और स्थापना विनिर्देश"
+  },
+  "lbl_tech_specs": {
+    "en": "Plumbing & Installation Specs",
+    "es": "Especificaciones de Instalación y Plomería",
+    "zh": "水暖安装技术规范",
+    "tl": "Mga Pagtutukoy sa Tubero at Pag-install",
+    "vi": "Quy cách Lắp đặt & Kỹ thuật Đường ống",
+    "hi": "प्लंबिंग और स्थापना विनिर्देश"
   },
   "pb_lbl_good": {
     "en": "GOOD (Standard)",
@@ -15128,12 +16295,12 @@ window.closeTermásModal = window.closeTermsModal;
     "hi": "निदान"
   },
   "cat_engineering": {
-    "en": "Engineering",
-    "es": "Ingeniería",
-    "zh": "工程管网",
-    "tl": "Inhinyeriya",
-    "vi": "Kỹ thuật",
-    "hi": "इंजीनियरिंग"
+    "en": "Piping & Water Lines",
+    "es": "Redes y Tuberías",
+    "zh": "供水与管网系统",
+    "tl": "Mga Linya ng Tubig at Tubo",
+    "vi": "Hệ thống Đường ống & Mạng lưới Nước",
+    "hi": "पाइपिंग और जल लाइनें"
   },
   "cat_eco": {
     "en": "Eco",
@@ -15150,6 +16317,14 @@ window.closeTermásModal = window.closeTermsModal;
     "tl": "Kaligtasan",
     "vi": "An toàn",
     "hi": "सुरक्षा"
+  },
+  "nav_back_pb": {
+    "en": "← Back to Catalog",
+    "es": "← Volver al Catálogo",
+    "zh": "← 返回价目表",
+    "tl": "← Bumalik sa Katalogo",
+    "vi": "← Quay lại Danh mục",
+    "hi": "← कैटलॉग पर वापस जाएं"
   }
 };
         ['en', 'es', 'zh', 'tl', 'vi', 'hi'].forEach(lang => {

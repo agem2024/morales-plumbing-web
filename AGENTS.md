@@ -67,8 +67,49 @@ Esta es una guia de uso obligatorio para cualquier agente o modelo de Inteligenc
 ## UPDATE AUGUST 2026 - ENCODING AND EMAIL SYSTEM FIXES
 
 **CRITICAL FIX REGARDING ENCODING:**
-DO NOT use PowerShell Get-Content/Set-Content or '> / >>' redirections to modify index.html or any UI file. These tools in Windows default to ANSI or Windows-1252 and will DESTROY the Spanish accents (mojibake). To edit text, either use proper IDE tools, or write a NodeJS script using pure s.readFileSync(..., 'utf8') with unicode escapes (e.g. \u00f3 for ó) to apply patches.
+DO NOT use PowerShell Get-Content/Set-Content or '> / >>' redirections to modify index.html or any UI file. These tools in Windows default to ANSI or Windows-1252 and will DESTROY the Spanish accents (mojibake). To edit text, either use proper IDE tools, or write a NodeJS script using pure fs.readFileSync(..., 'utf8') with unicode escapes (e.g. \u00f3 for ó) to apply patches.
 All missing accents in the Quick Services tabs (Plomería General, Baños y Remodelación, etc.) have been completely FIXED via a pure JS patch. The user is extremely frustrated by AI claiming to fix it and failing due to encoding corruption. ALWAYS verify via a Node script output, not PowerShell output.
 
 **EMAIL NOTIFICATION SYSTEM:**
 Integrated FormSubmit to app_v9.js. The system now sends an automated email when a booking is created, and generates a 4-digit verification code (e.g., MP-1234) shown to the user on the UI and sent to the administration email.
+
+---
+
+## UPDATE SEPTEMBER 2026 - PROTOCOLOS DE ENTRENAMIENTO Y REGLAS DE ORO
+
+### 7. PROHIBICIÓN ABSOLUTA DE SCRIPTS MASIVOS (REGLA DE ORO)
+- **Queda estrictamente prohibido ejecutar scripts de Python, Bash o Regex masivos** sobre archivos HTML o sobre el motor `app_v9.js`.
+- **Procedimiento Obligatorio:** Toda edición debe realizarse **directamente bloque por bloque** inspeccionando el archivo original.
+- Los scripts masivos introducen mojibake, reemplazos ciegos fuera de contexto, sobreescrituras destructivas y corrupción de cadenas multilenguaje en Chino, Tagalo, Vietnamita e Hindi.
+
+### 8. PROHIBICIÓN TOTAL DE EMOJIS (ZERO EMOJIS POLICY)
+- **Cero emojis en todo el código fuente, respuestas de Karla/Sofia y archivos HTML.**
+- En interfaces y tarjetas de servicio, NUNCA usar iconos tipo emoji ni fuentes de terceros (como FontAwesome) que rendericen fallbacks Unicode o glifos no soportados.
+- **Solución Obligatoria:** Utilizar exclusivamente vectores inline SVG nativos (`<svg viewBox="0 0 24 24" ...>`) o entidades HTML estándar (`&larr;`, `&rarr;`).
+
+### 9. LENGUAJE DE LA INDUSTRIA C-36 (CERO LENGUAJE PROHIBIDO)
+- Está terminantemente prohibido usar términos como *"Detalle Técnico (Ingeniería)"* o inventar alcances de ingeniería civil/estructural.
+- Emplear siempre la terminología oficial de la industria de plomería CSLB C-36:
+  - *"Especificaciones de Instalación y Plomería"* (EN: *"Plumbing & Installation Specs"*).
+  - *"Enfoque Comercial (Cliente)"* (EN: *"Commercial Focus (Client)"*).
+  - *"Redes y Tuberías"* (EN: *"Piping & Networks"*).
+- Cada tarjeta técnica y subpágina de servicio debe describir con total precisión técnica los materiales (PEX-A Uponor por expansión, Cobre Tipo L, prensado mecánico Viega ProPress, NSF/ANSI 61/372, California Title 24, UPC, pruebas hidrostáticas a 100 PSI).
+
+### 10. REGLAS DE MAQUETACIÓN: EVITAR TRASLAPE DE BOTONES Y TÍTULOS
+- En las cabeceras de las subpáginas (`docs/proceso_svc_X_cliente.html` y `docs/service.html`), **NUNCA usar `position: absolute` para el botón de regreso (`.back-btn`)** dentro de un contenedor relativo donde compita con el título `<h1>`.
+- Esto provoca que en pantallas medianas o títulos extensos el título quede sobrepuesto y tape el botón.
+- **Estructura Estándar Obligatoria:**
+  ```html
+  <div class="header">
+      <div class="header-top-bar">
+          <a href="pricebook.html" class="back-btn" data-i18n="nav_back_pb">&larr; Volver al Cat&aacute;logo</a>
+      </div>
+      <h1 data-i18n="pb_svc_X_name">Título del Servicio</h1>
+      <p data-i18n="pb_svc_X_user">Descripción del servicio.</p>
+  </div>
+  ```
+  Con flexbox vertical (`flex-direction: column; align-items: center;`) para garantizar espacio limpio, responsive e indestructible.
+
+### 11. GESTIÓN DE CACHÉ DEL NAVEGADOR
+- Si los cambios aplicados en `app_v9.js` no se reflejan visualmente en el navegador del usuario, **no se debe asumir error de código ni modificar masivamente los archivos**.
+- El navegador mantiene `app_v9.js` en caché local. Instruir al usuario a recargar con `Ctrl + F5` / `Ctrl + Shift + R` o probar en ventana de incógnito (`Ctrl + Shift + N`).
