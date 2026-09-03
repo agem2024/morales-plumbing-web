@@ -123,3 +123,17 @@ Integrated FormSubmit to app_v9.js. The system now sends an automated email when
   - En `service.html` y en cada una de las 15 subpáginas paso a paso (`proceso_svc_1_cliente.html` a `proceso_svc_15_cliente.html`), DEBE existir el botón destacado en dorado (`#D4AF37`) para agendar dicho servicio directamente.
   - Al recibir una redirección desde una subpágina con `action=schedule&service=svc_X`, la página principal debe desplegar automáticamente el modal con el servicio preseleccionado.
 
+
+### 13. GESTIN DE EXCLUSIONES EN FIREBASE (FIREBASE.JSON) - ERROR RECURRENTE!
+- **NUNCA** excluyas (`ignore`) carpetas enteras de la web como `"corporate_team/**"` simplemente porque contienen archivos pesados. Hacerlo provoca que Firebase ignore por completo las pginas HTML pblicas dentro de ellas, causando que la pgina "se destruya" o devuelva 404 en produccin.
+- **Cuidado con las reglas globales de extensin:** Reglas como `"**/*.mp4"` excluirn TODOS los videos de forma indiscriminada. Esto causa que videos vitales para la interfaz (como `assets/urgente_llamada.mp4` en el footer) no se suban al servidor. 
+- **Solucin Obligatoria:** Si usas un comodn global (`"**/*.mp4"`), AADE excepciones explcitas (`"!assets/urgente_llamada.mp4"`) para des-ignorar los recursos legtimos de la web.
+- **Advertencia Estricta:** Esta es la tercera vez que ocurre un error donde la pgina funciona en local pero "se destruye en el entorno de Firebase/Netlify/GitHub". **Antes de modificar HTML, siempre verifica `firebase.json` si un archivo desaparece en produccin.**
+
+### 14. MULTIMEDIA Y REPRODUCCIN AUTOMTICA (LOCAL VS PRODUCCIN)
+- Para garantizar el `autoplay` en videos al trabajar en local (`file:///`) y produccin, la estructura HTML debe ser infalible:
+  - Nunca usar solo el atributo `src` dentro de `<video>`.
+  - SIEMPRE usar la etiqueta anidada `<source src="..." type="video/mp4">`.
+  - SIEMPRE agregar los atributos: `autoplay loop muted playsinline`.
+  - Aadir forzado por JS para mitigar bloqueos del navegador: `oncanplay="this.play()"` y `onloadedmetadata="this.muted = true"`.
+- **IMPORTANTE:** Si los videos no se reproducen en local, verifica si la variable `localStorage.getItem('morales_a11y_motion')` est en `'reduced'`. El botn "Modo Seguro Anti-Epilepsia" detiene automticamente todos los videos. Esto **NO** es un error de programacin, sino el comportamiento diseado de la accesibilidad; debes avisar al usuario de esto.
