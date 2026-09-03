@@ -124,17 +124,20 @@ Integrated FormSubmit to app_v9.js. The system now sends an automated email when
   - Al recibir una redirección desde una subpágina con `action=schedule&service=svc_X`, la página principal debe desplegar automáticamente el modal con el servicio preseleccionado.
 
 
-### 13. GESTIN DE EXCLUSIONES EN FIREBASE (FIREBASE.JSON) - ERROR RECURRENTE!
-- **NUNCA** excluyas (`ignore`) carpetas enteras de la web como `"corporate_team/**"` simplemente porque contienen archivos pesados. Hacerlo provoca que Firebase ignore por completo las pginas HTML pblicas dentro de ellas, causando que la pgina "se destruya" o devuelva 404 en produccin.
-- **Cuidado con las reglas globales de extensin:** Reglas como `"**/*.mp4"` excluirn TODOS los videos de forma indiscriminada. Esto causa que videos vitales para la interfaz (como `assets/urgente_llamada.mp4` en el footer) no se suban al servidor. 
-- **Solucin Obligatoria:** Si usas un comodn global (`"**/*.mp4"`), AADE excepciones explcitas (`"!assets/urgente_llamada.mp4"`) para des-ignorar los recursos legtimos de la web.
-- **Advertencia Estricta:** Esta es la tercera vez que ocurre un error donde la pgina funciona en local pero "se destruye en el entorno de Firebase/Netlify/GitHub". **Antes de modificar HTML, siempre verifica `firebase.json` si un archivo desaparece en produccin.**
+### 13. GESTIÓN DE EXCLUSIONES EN FIREBASE (FIREBASE.JSON) - PROHIBIDO WILDCARDS DE MEDIOS
+- **NUNCA usar wildcards de medios como `"**/*.mp4"`, `"**/*.m4a"`, o `"**/*.pptx"` en `firebase.json`.**
+- **ADVERTENCIA CRÍTICA:** Firebase CLI **NO soporta negaciones (`!`) de forma confiable** en el array `ignore`. Si pones `"**/*.mp4"` seguido de `"!assets/urgente_llamada.mp4"`, Firebase ignora la negación y NUNCA sube los archivos, rompiendo videos y audios en producción.
+- **NUNCA excluir carpetas públicas enteras** como `"corporate_team/**"` porque anula los archivos HTML y recursos de esas secciones.
+- Si un archivo pesa más de 500 MB y no se debe subir, debe ponerse en `archive/` o `scratch/` que ya están ignorados, o ignorar ese archivo específico por su ruta completa exacta, NUNCA por extensión global.
 
-### 14. MULTIMEDIA Y REPRODUCCIN AUTOMTICA (VIDEO, MP3 Y M4A)
-- Para garantizar el `autoplay` y el funcionamiento en videos (`.mp4`) y audios (`.mp3`, `.m4a`) al trabajar en local (`file:///`) y produccin, la estructura HTML debe ser infalible:
-  - Nunca usar solo el atributo `src` dentro de `<video>` o `<audio>`.
+### 14. MULTIMEDIA Y REPRODUCCIÓN AUTOMÁTICA (VIDEO, MP3 Y M4A)
+- Para garantizar el `autoplay` y el funcionamiento en videos (`.mp4`) y audios (`.mp3`, `.m4a`) al trabajar en local (`file:///`) y producción:
+  - NUNCA usar solo el atributo `src` dentro de `<video>` o `<audio>`.
   - SIEMPRE usar la etiqueta anidada `<source src="..." type="...">` (ej: `type="video/mp4"`, `type="audio/mp4"` para .m4a, o `type="audio/mpeg"` para .mp3).
   - Para videos autoplay, SIEMPRE agregar los atributos: `autoplay loop muted playsinline`.
-  - Para audios/videos con autoplay, aadir forzado por JS para mitigar bloqueos del navegador: `oncanplay="this.play()"`. (Para videos aadir adems `onloadedmetadata="this.muted = true"`).
-- **Control de Exclusiones:** Si un audio (`.mp3` / `.m4a`) no se reproduce en produccin pero s en local, verificar inmediatamente si `firebase.json` tiene una regla global (ej: `"**/*.m4a"`) bloqueando su despliegue, y aadir la excepcin especfica (ej: `"!corporate_team/archivo.m4a"`).
-- **IMPORTANTE:** Si los videos no se reproducen en local, verifica si la variable `localStorage.getItem('morales_a11y_motion')` est en `'reduced'`. El botn "Modo Seguro Anti-Epilepsia" detiene automticamente todos los videos. Esto **NO** es un error de programacin, sino el comportamiento diseado de la accesibilidad; debes avisar al usuario de esto.
+  - Los navegadores modernos (Chrome, Safari, Edge) BLOQUEAN estrictamente el autoplay de audio no silenciado sin interacción del usuario. Por tanto, los botones de música/jingle deben iniciar mostrando el icono de Play (no fingir que está en pausa cuando el navegador lo tiene bloqueado) y registrar un listener de un solo uso (`{ once: true }`) en `window` para desbloquear el audio con el primer toque o clic del visitante.
+
+### 15. GESTIÓN DE CUOTA DE ALMACENAMIENTO DE FIREBASE HOSTING (HTTP 429)
+- En el plan gratuito Spark de Firebase, el almacenamiento total para Hosting tiene un límite de 10 GB acumulado a través de TODAS las versiones históricas (releases).
+- Si un despliegue falla con `HTTP Error: 429, You have exceeded the Hosting storage quota`, la solución NO es borrar archivos de la web ni poner ignores destructivos.
+- La solución es purgar las versiones inactivas anteriores mediante la API de Firebase Hosting (`DELETE /v1beta1/sites/{siteId}/versions/{versionId}`) o desde la consola de Firebase en "Release storage settings", manteniendo únicamente las 2 versiones más recientes.
