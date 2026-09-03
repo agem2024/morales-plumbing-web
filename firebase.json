@@ -11,7 +11,6 @@
       "**/node_modules/**",
       "archive/**",
       "scratch/**",
-      "corporate_team/**",
       "soporte_de_varios/**",
       "assets/podcasts/**",
       "assets/videos/**",

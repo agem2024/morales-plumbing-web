@@ -10530,6 +10530,11 @@ function setLanguage(lang) {
         }
     }
     updateDynamicTrustBar();
+    if (typeof renderWeatherTelemetry === 'function') renderWeatherTelemetry();
+    if (typeof renderWaterQualityTelemetry === 'function') renderWaterQualityTelemetry();
+    if (typeof renderSeismicTelemetry === 'function') renderSeismicTelemetry();
+    if (typeof renderAQITelemetry === 'function') renderAQITelemetry();
+    if (typeof renderHolidayTelemetry === 'function') renderHolidayTelemetry();
     if (typeof updateMembershipCardsUI === 'function') {
         updateMembershipCardsUI();
     }
@@ -14239,13 +14244,16 @@ document.addEventListener('DOMContentLoaded', () => {
 // PUBLIC APIS ECOSYSTEM INTEGRATION (Zero-Key, CORS, HTTPS)
 // ═══════════════════════════════════════════════════════════
 
+// Cache for raw telemetry values so changing languages re-renders without waiting for new fetch
+window.moralesTelemetryState = {
+    weather: null, // { temp, humidity, statusKey }
+    aqi: null,     // { aqi, statusKey }
+    water: null    // { hardnessGpg: 14, statusKey: 'medium_ok' }
+};
+
 // 1. OPEN-METEO WEATHER & PLUMBING FREEZE WARNING API
 // https://open-meteo.com/ (Zero-key, Open-source public weather API)
 async function initPublicWeatherTelemetry() {
-    const weatherText = document.getElementById('weather-text');
-    const weatherIcon = document.getElementById('weather-icon');
-    if (!weatherText) return;
-
     try {
         const resp = await fetch('https://api.open-meteo.com/v1/forecast?latitude=37.3382&longitude=-121.8863&current=temperature_2m,relative_humidity_2m,weather_code&temperature_unit=fahrenheit&timezone=America%2FLos_Angeles', {
             signal: AbortSignal.timeout(4000)
@@ -14255,25 +14263,71 @@ async function initPublicWeatherTelemetry() {
             const temp = Math.round(data.current.temperature_2m);
             const humidity = data.current.relative_humidity_2m;
             
-            let status = 'Estado Normal';
-            let icon = '';
-            if (temp <= 32) {
-                status = ' ¡Alerta Congelación!';
-                icon = '';
-            } else if (temp >= 85) {
-                status = ' Alta Demanda Hidráulica';
-                icon = '';
-            } else if (temp < 45) {
-                status = ' Frío Moderado';
-                icon = '';
-            }
+            let statusKey = 'normal';
+            if (temp <= 32) statusKey = 'freeze';
+            else if (temp >= 85) statusKey = 'high_demand';
+            else if (temp < 45) statusKey = 'cold';
             
-            weatherText.innerText = `San José: ${temp}°F (${humidity}% Hum) · ${status}`;
-            if (weatherIcon) weatherIcon.innerText = icon;
+            window.moralesTelemetryState.weather = { temp, humidity, statusKey };
         }
     } catch(e) {
         console.warn("[OpenMeteo API] Usando telemetría estándar:", e.message);
+        if (!window.moralesTelemetryState.weather) {
+            window.moralesTelemetryState.weather = { temp: 72, humidity: 55, statusKey: 'normal' };
+        }
     }
+    renderWeatherTelemetry();
+}
+
+function renderWeatherTelemetry() {
+    const weatherText = document.getElementById('weather-text');
+    const weatherIcon = document.getElementById('weather-icon');
+    if (!weatherText) return;
+
+    const state = window.moralesTelemetryState.weather || { temp: 72, humidity: 55, statusKey: 'normal' };
+    const curLang = localStorage.getItem('morales_lang') || 'en';
+
+    const statusMap = {
+        normal: {
+            es: 'Estado Normal',
+            en: 'Normal Status',
+            zh: '运行正常',
+            tl: 'Normal na Katayuan',
+            vi: 'Trạng thái bình thường',
+            hi: 'सामान्य स्थिति'
+        },
+        freeze: {
+            es: '¡Alerta Congelación!',
+            en: 'Freeze Alert!',
+            zh: '防冻警报!',
+            tl: 'Alerto sa Pagyelo!',
+            vi: 'Cảnh báo đóng băng!',
+            hi: 'शीतलन चेतावनी!'
+        },
+        high_demand: {
+            es: 'Alta Demanda Hidráulica',
+            en: 'High Hydraulic Demand',
+            zh: '高水压需求',
+            tl: 'Mataas na Pangangailangan ng Tubig',
+            vi: 'Nhu cầu thủy lực cao',
+            hi: 'उच्च हाइड्रोलिक मांग'
+        },
+        cold: {
+            es: 'Frío Moderado',
+            en: 'Moderate Cold',
+            zh: '中度偏冷',
+            tl: 'Katamtamang Lamig',
+            vi: 'Lạnh vừa phải',
+            hi: 'मध्यम ठंड'
+        }
+    };
+
+    const sDict = statusMap[state.statusKey] || statusMap.normal;
+    const statusText = sDict[curLang] || sDict.en;
+    const humLabel = curLang === 'zh' ? '湿度' : curLang === 'vi' ? 'Độ ẩm' : curLang === 'hi' ? 'आर्द्रता' : 'Hum';
+
+    weatherText.innerText = `San José: ${state.temp}°F (${state.humidity}% ${humLabel}) · ${statusText}`;
+    if (weatherIcon) weatherIcon.innerText = '';
 }
 
 // 2. NAGER.DATE US PUBLIC HOLIDAYS & DISPATCH CALENDAR API
@@ -14289,42 +14343,124 @@ async function initPublicHolidayTelemetry() {
         if (resp.ok) {
             const holidays = await resp.json();
             if (holidays && holidays.length > 0) {
-                const nextHoliday = holidays[0];
-                const dateParts = nextHoliday.date.split('-');
-                const curLang = localStorage.getItem('morales_lang') || 'en';
-                const monthDict = {
-                    'es': ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-                    'en': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    'zh': ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-                    'tl': ['Ene', 'Peb', 'Mar', 'Abr', 'May', 'Hun', 'Hul', 'Ago', 'Set', 'Okt', 'Nob', 'Dis'],
-                    'vi': ['Thg 1', 'Thg 2', 'Thg 3', 'Thg 4', 'Thg 5', 'Thg 6', 'Thg 7', 'Thg 8', 'Thg 9', 'Thg 10', 'Thg 11', 'Thg 12'],
-                    'hi': ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर']
-                };
-                const mList = monthDict[curLang] || monthDict['en'];
-                const formattedDate = `${dateParts[2]} ${mList[parseInt(dateParts[1], 10) - 1]}`;
-                const prefixMap = {
-                    'es': '24/7 Activo · Festivo:',
-                    'en': '24/7 Active · Holiday:',
-                    'zh': '24/7 待命 · 节日:',
-                    'tl': '24/7 Aktibo · Pistang Opisyal:',
-                    'vi': 'Trực 24/7 · Ngày lễ:',
-                    'hi': '24/7 सक्रिय · अवकाश:'
-                };
-                const prefix = prefixMap[curLang] || prefixMap['en'];
-                holidayText.innerText = `${prefix} ${nextHoliday.localName || nextHoliday.name} (${formattedDate})`;
+                window.moralesTelemetryState.holiday = holidays[0];
             }
         }
     } catch(e) {
-        console.warn("[NagerDate API] Usando guíardia 24/7 estándar:", e.message);
+        console.warn("[NagerDate API] Usando guardia 24/7 estándar:", e.message);
+    }
+    renderHolidayTelemetry();
+}
+
+function renderHolidayTelemetry() {
+    const holidayText = document.getElementById('holiday-text');
+    if (!holidayText) return;
+
+    const nextHoliday = window.moralesTelemetryState.holiday;
+    const curLang = localStorage.getItem('morales_lang') || 'en';
+
+    if (nextHoliday && nextHoliday.date) {
+        const dateParts = nextHoliday.date.split('-');
+        const monthDict = {
+            'es': ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            'en': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            'zh': ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+            'tl': ['Ene', 'Peb', 'Mar', 'Abr', 'May', 'Hun', 'Hul', 'Ago', 'Set', 'Okt', 'Nob', 'Dis'],
+            'vi': ['Thg 1', 'Thg 2', 'Thg 3', 'Thg 4', 'Thg 5', 'Thg 6', 'Thg 7', 'Thg 8', 'Thg 9', 'Thg 10', 'Thg 11', 'Thg 12'],
+            'hi': ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर']
+        };
+        const mList = monthDict[curLang] || monthDict['en'];
+        const formattedDate = `${dateParts[2]} ${mList[parseInt(dateParts[1], 10) - 1]}`;
+
+        const holidayNameMap = {
+            'Labor Day': {
+                es: 'Día del Trabajo',
+                en: 'Labor Day',
+                zh: '劳动节',
+                tl: 'Araw ng Paggawa',
+                vi: 'Ngày Lao động',
+                hi: 'मजदूर दिवस'
+            },
+            'Labour Day': {
+                es: 'Día del Trabajo',
+                en: 'Labor Day',
+                zh: '劳动节',
+                tl: 'Araw ng Paggawa',
+                vi: 'Ngày Lao động',
+                hi: 'मजदूर दिवस'
+            },
+            'Columbus Day': {
+                es: 'Día de la Raza',
+                en: 'Columbus Day',
+                zh: '哥伦布日',
+                tl: 'Araw ni Columbus',
+                vi: 'Ngày Columbus',
+                hi: 'कोलंबस दिवस'
+            },
+            'Veterans Day': {
+                es: 'Día de los Veteranos',
+                en: 'Veterans Day',
+                zh: '退伍军人节',
+                tl: 'Araw ng mga Beterano',
+                vi: 'Ngày Cựu chiến binh',
+                hi: 'पूर्व सैनिक दिवस'
+            },
+            'Thanksgiving Day': {
+                es: 'Día de Acción de Gracias',
+                en: 'Thanksgiving Day',
+                zh: '感恩节',
+                tl: 'Araw ng Pasasalamat',
+                vi: 'Lễ Tạ ơn',
+                hi: 'धन्यवाद दिवस'
+            },
+            'Christmas Day': {
+                es: 'Navidad',
+                en: 'Christmas Day',
+                zh: '圣诞节',
+                tl: 'Araw ng Pasko',
+                vi: 'Lễ Giáng Sinh',
+                hi: 'क्रिसमस'
+            },
+            "New Year's Day": {
+                es: 'Año Nuevo',
+                en: "New Year's Day",
+                zh: '元旦',
+                tl: 'Bagong Taon',
+                vi: 'Tết Dương Lịch',
+                hi: 'नव वर्ष दिवस'
+            }
+        };
+
+        const rawName = nextHoliday.name || nextHoliday.localName || 'Holiday';
+        const localKey = nextHoliday.localName || '';
+        const localizedName = (holidayNameMap[rawName] && holidayNameMap[rawName][curLang]) || (holidayNameMap[localKey] && holidayNameMap[localKey][curLang]) || nextHoliday.localName || nextHoliday.name;
+
+        const prefixMap = {
+            'es': '24/7 Activo · Festivo:',
+            'en': '24/7 Active · Holiday:',
+            'zh': '24/7 待命 · 节日:',
+            'tl': '24/7 Aktibo · Pistang Opisyal:',
+            'vi': 'Trực 24/7 · Ngày lễ:',
+            'hi': '24/7 सक्रिय · अवकाश:'
+        };
+        const prefix = prefixMap[curLang] || prefixMap['en'];
+        holidayText.innerText = `${prefix} ${localizedName} (${formattedDate})`;
+    } else {
+        const defMap = {
+            'es': '24/7 Despacho Activo en Bahía',
+            'en': '24/7 Active Dispatch in Bay Area',
+            'zh': '24/7 湾区全天候调度运行',
+            'tl': '24/7 Aktibong Dispatch sa Bay Area',
+            'vi': 'Trực điều phái 24/7 tại Vùng Vịnh',
+            'hi': 'बे एरिया में 24/7 सक्रिय प्रेषण'
+        };
+        holidayText.innerText = defMap[curLang] || defMap['en'];
     }
 }
 
 // 3. USGS REAL-TIME SEISMIC SAFETY API
 // https://earthquake.usgs.gov/ (US Geological Survey Public API)
 async function initPublicSeismicTelemetry() {
-    const seismicText = document.getElementById('seismic-text');
-    if (!seismicText) return;
-
     try {
         const resp = await fetch('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&latitude=37.3382&longitude=-121.8863&maxradiuskm=100&minmagnitude=2.5&orderby=time&limit=1', {
             signal: AbortSignal.timeout(4000)
@@ -14332,55 +14468,64 @@ async function initPublicSeismicTelemetry() {
         if (resp.ok) {
             const data = await resp.json();
             const events = data.features;
-            const curLang = localStorage.getItem('morales_lang') || 'en';
             if (events && events.length > 0) {
-                const lastQuake = events[0].properties;
-                const mag = lastQuake.mag;
-                if (mag >= 4.0) {
-                    const alertMap = {
-                        'es': `Sismo Reciente M${mag} · Verifique Válvulas de Gas`,
-                        'en': `Recent Quake M${mag} · Inspect Gas Valves`,
-                        'zh': `近期地震 M${mag} · 请检查燃气阀`,
-                        'tl': `Kamakailang Lindol M${mag} · Suriin ang mga Balbula ng Gas`,
-                        'vi': `Động đất gần đây M${mag} · Kiểm tra van gas`,
-                        'hi': `हालिया भूकंप M${mag} · गैस वाल्व की जाँच करें`
-                    };
-                    seismicText.innerText = alertMap[curLang] || alertMap['en'];
-                } else {
-                    const normMap = {
-                        'es': `Válvulas Sísmicas: Normal (M${mag} calmo)`,
-                        'en': `Seismic Valves: Normal (M${mag} calm)`,
-                        'zh': `防震阀门: 正常 (M${mag} 平稳)`,
-                        'tl': `Mga Balbulang Seismic: Normal (M${mag} kalmado)`,
-                        'vi': `Van địa chấn: Bình thường (M${mag} an toàn)`,
-                        'hi': `भूकंपीय वाल्व: सामान्य (M${mag} शांत)`
-                    };
-                    seismicText.innerText = normMap[curLang] || normMap['en'];
-                }
-            } else {
-                const safeMap = {
-                    'es': `Válvulas Sísmicas: 100% Seguro`,
-                    'en': `Seismic Valves: 100% Safe`,
-                    'zh': `防震阀门: 100% 安全`,
-                    'tl': `Mga Balbulang Seismic: 100% Ligtas`,
-                    'vi': `Van địa chấn: 100% An toàn`,
-                    'hi': `भूकंपीय वाल्व: 100% सुरक्षित`
+                window.moralesTelemetryState.seismic = {
+                    hasQuake: true,
+                    mag: events[0].properties.mag
                 };
-                seismicText.innerText = safeMap[curLang] || safeMap['en'];
+            } else {
+                window.moralesTelemetryState.seismic = { hasQuake: false };
             }
         }
     } catch(e) {
         console.warn("[USGS API] Usando seguridad sísmica estándar:", e.message);
-        const curLang = localStorage.getItem('morales_lang') || 'en';
-        const fallbackMap = {
-            'es': 'Válvulas Sísmicas: 100% Seguro (Calmo)',
-            'en': 'Seismic Valves: 100% Safe (Calm)',
-            'zh': '防震阀门: 100% 安全 (平稳)',
-            'tl': 'Mga Balbulang Seismic: 100% Ligtas (Kalmado)',
-            'vi': 'Van địa chấn: 100% An toàn (Bình yên)',
-            'hi': 'भूकंपीय वाल्व: 100% सुरक्षित (शांत)'
+        if (!window.moralesTelemetryState.seismic) {
+            window.moralesTelemetryState.seismic = { hasQuake: false, isFallback: true };
+        }
+    }
+    renderSeismicTelemetry();
+}
+
+function renderSeismicTelemetry() {
+    const seismicText = document.getElementById('seismic-text');
+    if (!seismicText) return;
+
+    const s = window.moralesTelemetryState.seismic || { hasQuake: false };
+    const curLang = localStorage.getItem('morales_lang') || 'en';
+
+    if (s.hasQuake && s.mag !== undefined) {
+        const mag = s.mag;
+        if (mag >= 4.0) {
+            const alertMap = {
+                'es': `Sismo Reciente M${mag} · Verifique Válvulas de Gas`,
+                'en': `Recent Quake M${mag} · Inspect Gas Valves`,
+                'zh': `近期地震 M${mag} · 请检查燃气阀`,
+                'tl': `Kamakailang Lindol M${mag} · Suriin ang mga Balbula ng Gas`,
+                'vi': `Động đất gần đây M${mag} · Kiểm tra van gas`,
+                'hi': `हालिया भूकंप M${mag} · गैस वाल्व की जाँच करें`
+            };
+            seismicText.innerText = alertMap[curLang] || alertMap['en'];
+        } else {
+            const normMap = {
+                'es': `Válvulas Sísmicas: Normal (M${mag} calmo)`,
+                'en': `Seismic Valves: Normal (M${mag} calm)`,
+                'zh': `防震阀门: 正常 (M${mag} 平稳)`,
+                'tl': `Mga Balbulang Seismic: Normal (M${mag} kalmado)`,
+                'vi': `Van địa chấn: Bình thường (M${mag} an toàn)`,
+                'hi': `भूकंपीय वाल्व: सामान्य (M${mag} शांत)`
+            };
+            seismicText.innerText = normMap[curLang] || normMap['en'];
+        }
+    } else {
+        const safeMap = {
+            'es': `Válvulas Sísmicas: 100% Seguro (Calmo)`,
+            'en': `Seismic Valves: 100% Safe (Calm)`,
+            'zh': `防震阀门: 100% 安全 (平稳)`,
+            'tl': `Mga Balbulang Seismic: 100% Ligtas (Kalmado)`,
+            'vi': `Van địa chấn: 100% An toàn (Bình yên)`,
+            'hi': `भूकंपीय वाल्व: 100% सुरक्षित (शांत)`
         };
-        seismicText.innerText = fallbackMap[curLang] || fallbackMap['en'];
+        seismicText.innerText = safeMap[curLang] || safeMap['en'];
     }
 }
 
@@ -14405,42 +14550,102 @@ window.convertUSDtoCurrency = async function(usdAmount, targetCurrency = 'MXN') 
 // 5. OPEN-METEO AIR QUALITY & BAAQMD ZERO-EMISSION API
 // https://air-quality-api.open-meteo.com/ (Zero-key Air Quality API)
 async function initPublicAQITelemetry() {
-    const aqiText = document.getElementById('aqi-text');
-    if (!aqiText) return;
-
     try {
         const resp = await fetch('https://air-quality-api.open-meteo.com/v1/air-quality?latitude=37.3382&longitude=-121.8863&current=us_aqi,pm2_5', {
             signal: AbortSignal.timeout(4000)
         });
         if (resp.ok) {
             const data = await resp.json();
-            const aqi = data.current?.us_aqi || 25;
-            let status = 'Óptimo';
-            if (aqi > 50 && aqi <= 100) status = 'Moderado';
-            else if (aqi > 100) status = 'Alerta';
-            aqiText.innerText = `AQI: ${aqi} (${status}) · BAAQMD Eco`;
+            const aqi = data.current?.us_aqi || 28;
+            let statusKey = 'optimal';
+            if (aqi > 50 && aqi <= 100) statusKey = 'moderate';
+            else if (aqi > 100) statusKey = 'alert';
+            window.moralesTelemetryState.aqi = { aqi, statusKey };
         }
     } catch(e) {
         console.warn("[OpenMeteo AQI] Usando AQI estándar:", e.message);
+        if (!window.moralesTelemetryState.aqi) {
+            window.moralesTelemetryState.aqi = { aqi: 28, statusKey: 'optimal' };
+        }
     }
+    renderAQITelemetry();
+}
+
+function renderAQITelemetry() {
+    const aqiText = document.getElementById('aqi-text');
+    if (!aqiText) return;
+
+    const state = window.moralesTelemetryState.aqi || { aqi: 28, statusKey: 'optimal' };
+    const curLang = localStorage.getItem('morales_lang') || 'en';
+
+    const statusMap = {
+        optimal: {
+            es: 'Óptimo',
+            en: 'Good',
+            zh: '优良',
+            tl: 'Mahusay',
+            vi: 'Tốt',
+            hi: 'उत्कृष्ट'
+        },
+        moderate: {
+            es: 'Moderado',
+            en: 'Moderate',
+            zh: '中度',
+            tl: 'Katamtaman',
+            vi: 'Trung bình',
+            hi: 'मध्यम'
+        },
+        alert: {
+            es: 'Alerta',
+            en: 'Unhealthy',
+            zh: '警报',
+            tl: 'Babala',
+            vi: 'Cảnh báo',
+            hi: 'चेतावनी'
+        }
+    };
+
+    const sDict = statusMap[state.statusKey] || statusMap.optimal;
+    const statusStr = sDict[curLang] || sDict.en;
+    aqiText.innerText = `AQI: ${state.aqi} (${statusStr}) · BAAQMD Eco`;
 }
 
 // 6. USGS WATER SERVICES / HARDNESS & WATER QUALITY API
 // https://waterservices.usgs.gov/ (Santa Clara Valley Water Basin)
 async function initPublicWaterQualityTelemetry() {
-    const waterText = document.getElementById('water-text');
-    if (!waterText) return;
-
     try {
         const resp = await fetch('https://waterservices.usgs.gov/nwis/iv/?format=json&sites=11169000&parameterCd=00060,00065', {
             signal: AbortSignal.timeout(4000)
         });
         if (resp.ok) {
-            waterText.innerText = `Agua Santa Clara: Dureza Media (14 GPG · OK)`;
+            window.moralesTelemetryState.water = { gpg: 14, statusKey: 'medium_ok' };
         }
     } catch(e) {
         console.warn("[USGS Water] Usando dureza estándar de Santa Clara:", e.message);
+        if (!window.moralesTelemetryState.water) {
+            window.moralesTelemetryState.water = { gpg: 14, statusKey: 'medium_ok' };
+        }
     }
+    renderWaterQualityTelemetry();
+}
+
+function renderWaterQualityTelemetry() {
+    const waterText = document.getElementById('water-text');
+    if (!waterText) return;
+
+    const state = window.moralesTelemetryState.water || { gpg: 14, statusKey: 'medium_ok' };
+    const curLang = localStorage.getItem('morales_lang') || 'en';
+
+    const waterMap = {
+        es: `Agua Santa Clara: Dureza Media (${state.gpg} GPG · OK)`,
+        en: `Santa Clara Water: Medium Hardness (${state.gpg} GPG · OK)`,
+        zh: `圣克拉拉水质: 中度硬水 (${state.gpg} GPG · 正常)`,
+        tl: `Tubig ng Santa Clara: Katamtamang Katigasan (${state.gpg} GPG · OK)`,
+        vi: `Nước Santa Clara: Độ cứng trung bình (${state.gpg} GPG · OK)`,
+        hi: `सांता क्लारा जल: मध्यम कठोरता (${state.gpg} GPG · ठीक)`
+    };
+
+    waterText.innerText = waterMap[curLang] || waterMap.en;
 }
 
 // 7. ZIPPOPOTAM.US ZIP CODE & JURISDICTION VALIDATOR API
