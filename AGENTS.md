@@ -130,10 +130,11 @@ Integrated FormSubmit to app_v9.js. The system now sends an automated email when
 - **Solucin Obligatoria:** Si usas un comodn global (`"**/*.mp4"`), AADE excepciones explcitas (`"!assets/urgente_llamada.mp4"`) para des-ignorar los recursos legtimos de la web.
 - **Advertencia Estricta:** Esta es la tercera vez que ocurre un error donde la pgina funciona en local pero "se destruye en el entorno de Firebase/Netlify/GitHub". **Antes de modificar HTML, siempre verifica `firebase.json` si un archivo desaparece en produccin.**
 
-### 14. MULTIMEDIA Y REPRODUCCIN AUTOMTICA (LOCAL VS PRODUCCIN)
-- Para garantizar el `autoplay` en videos al trabajar en local (`file:///`) y produccin, la estructura HTML debe ser infalible:
-  - Nunca usar solo el atributo `src` dentro de `<video>`.
-  - SIEMPRE usar la etiqueta anidada `<source src="..." type="video/mp4">`.
-  - SIEMPRE agregar los atributos: `autoplay loop muted playsinline`.
-  - Aadir forzado por JS para mitigar bloqueos del navegador: `oncanplay="this.play()"` y `onloadedmetadata="this.muted = true"`.
+### 14. MULTIMEDIA Y REPRODUCCIN AUTOMTICA (VIDEO, MP3 Y M4A)
+- Para garantizar el `autoplay` y el funcionamiento en videos (`.mp4`) y audios (`.mp3`, `.m4a`) al trabajar en local (`file:///`) y produccin, la estructura HTML debe ser infalible:
+  - Nunca usar solo el atributo `src` dentro de `<video>` o `<audio>`.
+  - SIEMPRE usar la etiqueta anidada `<source src="..." type="...">` (ej: `type="video/mp4"`, `type="audio/mp4"` para .m4a, o `type="audio/mpeg"` para .mp3).
+  - Para videos autoplay, SIEMPRE agregar los atributos: `autoplay loop muted playsinline`.
+  - Para audios/videos con autoplay, aadir forzado por JS para mitigar bloqueos del navegador: `oncanplay="this.play()"`. (Para videos aadir adems `onloadedmetadata="this.muted = true"`).
+- **Control de Exclusiones:** Si un audio (`.mp3` / `.m4a`) no se reproduce en produccin pero s en local, verificar inmediatamente si `firebase.json` tiene una regla global (ej: `"**/*.m4a"`) bloqueando su despliegue, y aadir la excepcin especfica (ej: `"!corporate_team/archivo.m4a"`).
 - **IMPORTANTE:** Si los videos no se reproducen en local, verifica si la variable `localStorage.getItem('morales_a11y_motion')` est en `'reduced'`. El botn "Modo Seguro Anti-Epilepsia" detiene automticamente todos los videos. Esto **NO** es un error de programacin, sino el comportamiento diseado de la accesibilidad; debes avisar al usuario de esto.
