@@ -338,7 +338,7 @@ html[data-motion="reduced"] #warp-canvas {
                 <span class="ham-line"></span>
             </button>
             <div class="logo-container" onclick="navigate('home')" role="button" aria-label="Ir al inicio" tabindex="0">
-                <video autoplay muted loop class="nav-logo" playsinline poster="assets/logo_portada.png" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid #D4AF37;">
+                <video autoplay muted loop class="nav-logo" playsinline poster="assets/logo_portada.png" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid #D4AF37;" oncanplay="this.play()" onloadedmetadata="this.muted = true">
                     <source src="assets/morales_logo_video.mp4" type="video/mp4">
                     <img src="assets/logo_portada.png" alt="Morales Plumbing" class="nav-logo" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
                 </video>
@@ -350,7 +350,7 @@ html[data-motion="reduced"] #warp-canvas {
             </div>
 
             <!-- Eye video — between brand and nav links -->
-            <video autoplay muted loop class="nav-eye-video" id="eye-trigger" playsinline preload="auto" onclick="toggleCompanyCard()" poster="assets/bg_eye_poster.webp">
+            <video autoplay muted loop class="nav-eye-video" id="eye-trigger" playsinline preload="auto" onclick="toggleCompanyCard()" poster="assets/bg_eye_poster.webp" oncanplay="this.play()" onloadedmetadata="this.muted = true">
                 <source src="assets/bg_eye.mp4" type="video/mp4">
             </video>
 
@@ -757,7 +757,7 @@ html[data-motion="reduced"] #warp-canvas {
                 <!-- Featured: Price Book -->
                 <div class="eco-card glass" data-app="pricebook">
                     <div class="eco-card-img">
-                        <video autoplay muted loop playsinline loading="lazy">
+                        <video autoplay muted loop playsinline loading="lazy" oncanplay="this.play()" onloadedmetadata="this.muted = true">
                             <source src="assets/pricebook_demo.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -1298,7 +1298,8 @@ html[data-motion="reduced"] #warp-canvas {
             <div style="text-align: center; margin-bottom: 50px;">
                 <!-- EN VERSION: Video + Infographics -->
                 <div class="lang-en" style="display: none;">
-                    <video src="assets/videos/ai_in_bluecollar_trades.mp4" controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 15px; border: 1px solid rgba(0,245,255,0.3); margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"></video>
+                    <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 15px; border: 1px solid rgba(0,245,255,0.3); margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    <source src="assets/videos/ai_in_bluecollar_trades.mp4" type="video/mp4"></video>
                     <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
                         <img src="assets/images/morales_plumbing_ai_technology_infographic.webp" style="max-width: 250px; width: 100%; border-radius: 10px; border: 2px solid #D4AF37; background-color: #ffffff; padding: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.8);" alt="AI Technology">
                         <img src="assets/images/morales_plumbing_aiintegrated_services.webp" style="max-width: 250px; width: 100%; border-radius: 10px; border: 2px solid #D4AF37; background-color: #ffffff; padding: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.8);" alt="AI Services">
@@ -1307,7 +1308,8 @@ html[data-motion="reduced"] #warp-canvas {
 
                 <!-- ES VERSION: Video + Infographic -->
                 <div class="lang-es">
-                    <video src="assets/videos/morales_plumbing__innovacion.mp4" controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 15px; border: 1px solid rgba(0,245,255,0.3); margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"></video>
+                    <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 15px; border: 1px solid rgba(0,245,255,0.3); margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    <source src="assets/videos/morales_plumbing__innovacion.mp4" type="video/mp4"></video>
                     <div style="margin-top: 20px;">
                         <img src="assets/images/innovacion_en_plomeria_con_ia.webp" style="max-width: 400px; width: 100%; border-radius: 10px; border: 2px solid #D4AF37; background-color: #ffffff; padding: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.8);" alt="Innovación IA">
                     </div>
@@ -1574,7 +1576,8 @@ html[data-motion="reduced"] #warp-canvas {
         <div class="joe-window glass">
             <div class="joe-header">
                 <div class="joe-identity">
-                    <video src="assets/susa.mp4" autoplay loop muted playsinline preload="auto" poster="assets/susa_poster.webp" class="joe-avatar-small" style="object-fit: cover;">
+                    <video autoplay loop muted playsinline preload="auto" poster="assets/susa_poster.webp" class="joe-avatar-small" style="object-fit: cover;" oncanplay="this.play()" onloadedmetadata="this.muted = true">
+    <source src="assets/susa.mp4" type="video/mp4">
                         <img src="assets/susa_poster.webp" alt="Karla AI" class="joe-avatar-small">
                     </video>
                     <div class="joe-status">
@@ -1598,7 +1601,8 @@ html[data-motion="reduced"] #warp-canvas {
         </div>
         <!-- Karla floating trigger — avatar icon -->
         <div class="joe-trigger" onclick="toggleJoe()" data-i18n-title="joe_trigger_title" title="Habla con Karla · Asistente Virtual Morales Plumbing">
-            <video src="assets/susa.mp4" autoplay loop muted playsinline preload="auto" poster="assets/susa_poster.webp" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;">
+            <video autoplay loop muted playsinline preload="auto" poster="assets/susa_poster.webp" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;" oncanplay="this.play()" onloadedmetadata="this.muted = true">
+    <source src="assets/susa.mp4" type="video/mp4">
                             <img src="assets/susa_poster.webp" alt="Karla AI" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
                         </video>
         </div>
