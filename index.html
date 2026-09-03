@@ -426,10 +426,10 @@ html[data-motion="reduced"] #warp-canvas {
                             <source id="jingle-source" src="assets/media/morales_jingle_es.mp4" type="audio/mp4">
                         </audio>
                         <button id="jingle-toggle-btn" onclick="toggleJingle()" style="width: 44px; height: 44px; border-radius: 50%; background: rgba(212,175,55,0.15); border: 2px solid #D4AF37; color: #D4AF37; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s ease; box-shadow: 0 0 15px rgba(212,175,55,0.4);" aria-label="Play/Pause Jingle" title="Corporate Jingle">
-                            <!-- Play Icon (hidden by default since it autoplays) -->
-                            <svg id="jingle-icon-play" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display: none;"><path d="M8 5v14l11-7z"/></svg>
+                            <!-- Play Icon -->
+                            <svg id="jingle-icon-play" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display: block;"><path d="M8 5v14l11-7z"/></svg>
                             <!-- Pause/Mute Icon -->
-                            <svg id="jingle-icon-pause" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display: block;">
+                            <svg id="jingle-icon-pause" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
                                 <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
                             </svg>
                         </button>
@@ -2903,6 +2903,35 @@ html[data-motion="reduced"] #warp-canvas {
         }
     }
 
+    // Attempt autoplay on load with interaction fallback
+    window.addEventListener('DOMContentLoaded', () => {
+        if (jingleAudio) {
+            const currentLang = localStorage.getItem('morales_lang') || 'es';
+            jingleAudio.src = currentLang === 'en' ? 'assets/media/morales_jingle_en.mp4' : 'assets/media/morales_jingle_es.mp4';
+            jingleAudio.load();
+            jingleAudio.volume = 0.5;
+            jingleAudio.play().then(() => {
+                jingleIsPlaying = true;
+                updateJingleUI(true);
+            }).catch(() => {
+                jingleIsPlaying = false;
+                updateJingleUI(false);
+                const unlockAudio = () => {
+                    jingleAudio.play().then(() => {
+                        jingleIsPlaying = true;
+                        updateJingleUI(true);
+                    }).catch(() => {});
+                    window.removeEventListener('click', unlockAudio);
+                    window.removeEventListener('touchstart', unlockAudio);
+                    window.removeEventListener('keydown', unlockAudio);
+                };
+                window.addEventListener('click', unlockAudio, { once: true });
+                window.addEventListener('touchstart', unlockAudio, { once: true });
+                window.addEventListener('keydown', unlockAudio, { once: true });
+            });
+        }
+    });
+
     function toggleJingle() {
         if (!jingleAudio) return;
         const curLang = localStorage.getItem('morales_lang') || 'es';
@@ -2930,15 +2959,7 @@ html[data-motion="reduced"] #warp-canvas {
         }
     }
 
-    // Attempt autoplay on load
-    window.addEventListener('DOMContentLoaded', () => {
-        if (jingleAudio) {
-            const currentLang = localStorage.getItem('morales_lang') || 'es';
-            jingleAudio.src = currentLang === 'en' ? 'assets/media/morales_jingle_en.mp4' : 'assets/media/morales_jingle_es.mp4';
-            jingleAudio.load();
-            jingleAudio.volume = 0.5;
-        }
-    });
+
 
     // Hook into setLanguage to switch audio track
     const originalSetLanguage = window.setLanguage;
