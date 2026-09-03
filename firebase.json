@@ -18,6 +18,8 @@
       "assets/original_images/**",
       "assets/raw_images/**",
       "**/*.mp4",
+      "!assets/urgente_llamada.mp4",
+      "!assets/videos/urgente_llamada.mp4",
       "**/*.mov",
       "**/*.m4a",
       "**/*.pptx",

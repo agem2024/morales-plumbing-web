@@ -1868,7 +1868,9 @@ html[data-motion="reduced"] #warp-canvas {
         <div class="footer-layout-split" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 40px; margin-top: 2rem; background: rgba(0,0,0,0.3); padding: 30px; border-radius: 15px; border: 1px solid rgba(0,245,255,0.1);">
             <!-- LEFT SIDE: VIDEO -->
             <div class="footer-left" style="flex: 1; min-width: 300px; max-width: 450px;">
-                <video src="assets/urgente_llamada.mp4" autoplay loop muted playsinline preload="metadata" poster="assets/urgente_llamada_poster.webp" style="width: 100%; border-radius: 10px; box-shadow: 0 0 20px rgba(0,245,255,0.15); border: 1px solid var(--neon-cyan); object-fit: cover;"></video>
+                <video autoplay loop muted playsinline preload="metadata" poster="assets/urgente_llamada_poster.webp" style="width: 100%; border-radius: 10px; box-shadow: 0 0 20px rgba(0,245,255,0.15); border: 1px solid var(--neon-cyan); object-fit: cover;" oncanplay="this.play()" onloadedmetadata="this.muted = true">
+                    <source src="assets/urgente_llamada.mp4" type="video/mp4">
+                </video>
             </div>
             
             <div class="social-links footer-social-group" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
