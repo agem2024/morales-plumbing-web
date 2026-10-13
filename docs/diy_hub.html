@@ -605,62 +605,6 @@
                 gfi: { name: "GFCI / Electrical Fault (Appliance)", cpc: "CEC Article 210.8", cslb: "C-10 Class (Sub)", materials: ["20á GFCI Receptacle", "Weatherproof Cover"], supplier: "CES", labor: "1.0 hours", options: ["Option A: Outlet Reset/Test - $85", "Option B: Replace Outlet - $150"] },
                 smell: { name: "Sewer Gas / Dry Trap Prime", cpc: "CPC 1007.0", cslb: "C-36 Class", materials: ["Trap Primer Valve", "Bio-Enzymatic Drain Cleaner"], supplier: "Ferguson Enterprises", labor: "1.5 hours", options: ["Option A: Video Camera Inspection - $250", "Option B: Install Trap Primer - $450"] },
 
-                tankless_flush: {
-                    target: "KNOWLEDGE BASE: TANKLESS FLUSH",
-                    bg: "url('../assets/service_tankless.png')",
-                    panels: [
-                        { cap: "INFO:", img: "../assets/wh_comic.png", text: t.tf1 },
-                        { cap: "HOW-TO:", img: "../assets/pb_svc_2.png", text: t.tf2 },
-                        { cap: "SOLUTION:", img: "../assets/plan_best.png", text: t.tf3 }
-                    ]
-                },
-                caulk: {
-                    target: "KNOWLEDGE BASE: TUB CAULKING",
-                    bg: "url('../assets/pb_svc_10.png')",
-                    panels: [
-                        { cap: "INFO:", img: "../assets/pb_svc_3.png", text: t.ck1 },
-                        { cap: "HOW-TO:", img: "../assets/plan_good.png", text: t.ck2 },
-                        { cap: "SOLUTION:", img: "../assets/pb_svc_4.png", text: t.ck3 }
-                    ]
-                },
-                aerator: {
-                    target: "KNOWLEDGE BASE: FAUCET AERATOR",
-                    bg: "url('../assets/pb_svc_11.png')",
-                    panels: [
-                        { cap: "INFO:", img: "../assets/pb_svc_5.png", text: t.ae1 },
-                        { cap: "HOW-TO:", img: "../assets/plan_better.png", text: t.ae2 },
-                        { cap: "SOLUTION:", img: "../assets/pb_svc_6.png", text: t.ae3 }
-                    ]
-                },
-                washer_hose: {
-                    target: "KNOWLEDGE BASE: WASHER HOSES",
-                    bg: "url('../assets/pb_svc_12.png')",
-                    panels: [
-                        { cap: "INFO:", img: "../assets/pb_svc_7.png", text: t.wh1 },
-                        { cap: "HOW-TO:", img: "../assets/pb_svc_8.png", text: t.wh2 },
-                        { cap: "SOLUTION:", img: "../assets/pb_svc_9.png", text: t.wh3 }
-                    ]
-                },
-                dishwasher: {
-                    target: "KNOWLEDGE BASE: DISHWASHER DRAIN",
-                    bg: "url('../assets/pb_svc_13.png')",
-                    panels: [
-                        { cap: "INFO:", img: "../assets/valves_comic.png", text: t.dw1 },
-                        { cap: "HOW-TO:", img: "../assets/pb_svc_1.png", text: t.dw2 },
-                        { cap: "SOLUTION:", img: "../assets/pb_svc_15.png", text: t.dw3 }
-                    ]
-                },
-                showerhead: {
-                    target: "KNOWLEDGE BASE: SHOWERHEAD",
-                    bg: "url('../assets/pb_svc_14.png')",
-                    panels: [
-                        { cap: "INFO:", img: "../assets/inspect_comic.png", text: t.shw1 },
-                        { cap: "HOW-TO:", img: "../assets/training_comic.png", text: t.shw2 },
-                        { cap: "SOLUTION:", img: "../assets/termo_comic.png", text: t.shw3 }
-                    ]
-                }
-,
-
                 tankless_flush: { name: "Tankless Flush / Descale", cpc: "CPC 507.0", cslb: "C-36 Class", materials: ["Submersible Pump", "Flow-Aide Descaler", "Washing Machine Hoses"], supplier: "The Home Depot Pro", labor: "1.5 hours", options: ["Option A: DIY Flush - $45", "Option B: Pro Flush & Service - $295"] },
                 caulk: { name: "Bathtub Re-Caulking", cpc: "General Maintenance", cslb: "N/A", materials: ["100% Silicone Caulk", "Caulk Removal Tool", "Denatured Alcohol"], supplier: "Local Hardware", labor: "1.0 hours", options: ["Option A: DIY Caulk - $15", "Option B: Professional Seal - $150"] },
                 aerator: { name: "Faucet Aerator Clean", cpc: "CPC 417.0", cslb: "N/A", materials: ["White Vinegar", "Aerator Key / Pliers", "Thread Seal Tape"], supplier: "Household", labor: "0.5 hours", options: ["Option A: Soak & Clean - $0", "Option B: Replace Aerator - $10"] },
@@ -749,7 +693,7 @@
 
         function toggleFlashlight(btn) {
             toggleHaptic(btn);
-            const targetEl = window.currentIssueKey === 'custom'  document.getElementById('camera-feed') : document.getElementById('ar-view');
+            const targetEl = window.currentIssueKey === 'custom' ? document.getElementById('camera-feed') : document.getElementById('ar-view');
             const currentFilter = targetEl.style.filter || "";
             if(currentFilter.includes('brightness(2)')) {
                 targetEl.style.filter = currentFilter.replace('brightness(2)', '').trim();
@@ -762,7 +706,7 @@
             toggleHaptic(btn);
             const video = document.getElementById('camera-feed');
             const arView = document.getElementById('ar-view');
-            const targetEl = window.currentIssueKey === 'custom'  video : arView;
+            const targetEl = window.currentIssueKey === 'custom' ? video : arView;
             const currentFilter = targetEl.style.filter || "";
             
             if(currentFilter.includes('invert(1)')) {

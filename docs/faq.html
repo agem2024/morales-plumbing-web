@@ -1594,6 +1594,11 @@
     document.addEventListener('DOMContentLoaded', () => {
         switchLang(currentLang);
     });
+    window.switchLang = switchLang;
+    window.addEventListener('languageChanged', (e) => {
+        if (e.detail) switchLang(e.detail);
+    });
     </script>
+<script src="../app_v9.js"></script>
 </body>
 </html>

@@ -81,27 +81,27 @@
 
 
     <aside class="sidebar">
-        <img src="../assets/logo_portada.webp" alt="Morales Plumbing" onerror="this.src='https://via.placeholder.com/150x50text=Morales+Plumbing'">
+        <img src="../assets/logo_portada.webp" alt="Morales Plumbing" onerror="this.src='../assets/logo_portada.png'">
         <ul class="sidebar-menu">
             <li><a href="#" class="active" data-es="Generador de Informes" data-en="Report Generator">Generador de Informes</a></li>
             <li><a href="#" data-es="Historial de Proyectos" data-en="Project History">Historial de Proyectos</a></li>
-            <li><a href="#" data-es="ájustes de Plantillas" data-en="Template Settings">ájustes de Plantillas</a></li>
+            <li><a href="#" data-es="Ajustes de Plantillas" data-en="Template Settings">Ajustes de Plantillas</a></li>
         </ul>
     </aside>
 
     <main class="main-content">
-        <button class="lang-toggle" onclick="toggleLang()">ð EN / ES</button>
+        <button class="lang-toggle" onclick="toggleLang()">EN / ES</button>
 
         <h1 data-es="Centro de Documentación Pericial" data-en="Forensic Documentation Center">Centro de Documentación Pericial</h1>
         <p class="subtitle" data-es="Herramienta corporativa para la generación de dictámenes técnicos y diagnósticos de campo." data-en="Corporate tool for generating technical reports and field diagnostics.">Herramienta corporativa para la generación de dictámenes técnicos y diagnósticos de campo.</p>
 
         <div class="card">
             <div class="form-group">
-                <label for="report-audience" data-es="áudiencia del Documento" data-en="Document áudience">áudiencia del Documento</label>
+                <label for="report-audience" data-es="Audiencia del Documento" data-en="Document Audience">Audiencia del Documento</label>
                 <select id="report-audience">
-                    <option value="insurance" data-es="áseguradora / ájustador (Seguros Comerciales)" data-en="Insurance / ádjuster (Commercial)">áseguradora / ájustador (Seguros Comerciales)</option>
+                    <option value="insurance" data-es="Aseguradora / Ajustador (Seguros Comerciales)" data-en="Insurance / Adjuster (Commercial)">Aseguradora / Ajustador (Seguros Comerciales)</option>
                     <option value="city" data-es="Ciudad de Santa Clara (Building Dept.)" data-en="City of Santa Clara (Building Dept.)">Ciudad de Santa Clara (Building Dept.)</option>
-                    <option value="both" data-es="Reporte Unificado (áseguradora y Ciudad)" data-en="Unified Report (Insurance & City)">Reporte Unificado (áseguradora y Ciudad)</option>
+                    <option value="both" data-es="Reporte Unificado (Aseguradora y Ciudad)" data-en="Unified Report (Insurance & City)">Reporte Unificado (Aseguradora y Ciudad)</option>
                     <option value="internal" data-es="Solo Cliente (Uso Privado)" data-en="Client Only (Private Use)">Solo Cliente (Uso Privado)</option>
                 </select>
             </div>
@@ -118,22 +118,22 @@
     </main>
 
     <script>
-        let currentLang = localStorage.getItem('mp_lang') || 'en';
+        let currentLang = localStorage.getItem('morales_lang') || localStorage.getItem('mp_lang') || 'en';
 
-        function updateTexts() {
+        function updateTexts(langOverride) {
+            if (langOverride) currentLang = langOverride;
+            const effLang = (currentLang === 'es') ? 'es' : 'en';
             document.querySelectorAll('[data-es]').forEach(el => {
-                if (el.tagName === 'OPTION') {
-                    el.innerText = el.getAttribute('data-' + currentLang);
-                } else {
-                    el.innerText = el.getAttribute('data-' + currentLang);
-                }
+                const val = el.getAttribute('data-' + currentLang) || el.getAttribute('data-' + effLang);
+                if (val) el.innerText = val;
             });
-            document.documentElement.lang = currentLang;
+            document.documentElement.lang = effLang;
         }
 
         function toggleLang() {
-            currentLang = currentLang === 'es'  'en' : 'es';
+            currentLang = currentLang === 'es' ? 'en' : 'es';
             localStorage.setItem('mp_lang', currentLang);
+            localStorage.setItem('morales_lang', currentLang);
             updateTexts();
         }
 

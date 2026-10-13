@@ -186,7 +186,7 @@
                 allData = await response.json();
                 
                 // Set default language from global settings or default to ES
-                const currentLang = localStorage.getItem('selectedLanguage') || 'es';
+                const currentLang = localStorage.getItem('morales_lang') || localStorage.getItem('selectedLanguage') || 'en';
                 
                 // Activate the correct button
                 document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -202,9 +202,10 @@
         
         function filterLanguage(lang) {
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (event && event.target) event.target.classList.add('active');
             renderMedia(lang);
         }
+        window.filterLanguage = filterLanguage;
         
         function renderMedia(lang) {
             const gallery = document.getElementById('gallery');
@@ -255,6 +256,7 @@
         </div>
     </footer>
 
+<script src="../app_v9.js"></script>
 </body>
 </html>
 

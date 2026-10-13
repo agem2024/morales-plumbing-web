@@ -10538,6 +10538,20 @@ function setLanguage(lang) {
     if (typeof updateMembershipCardsUI === 'function') {
         updateMembershipCardsUI();
     }
+
+    // MULTILANGUAGE SUBPAGES SYNC BRIDGE
+    try {
+        if (typeof window.renderOrionPricing === 'function') window.renderOrionPricing(lang);
+        if (typeof window.renderDiyHub === 'function') window.renderDiyHub(lang);
+        if (typeof window.filterLanguage === 'function') window.filterLanguage(lang);
+        if (typeof window.updateTexts === 'function') window.updateTexts(lang);
+        if (typeof window.setCEOLang === 'function') window.setCEOLang(lang);
+        if (typeof window.setCVLang === 'function') window.setCVLang(lang);
+        if (typeof window.switchLang === 'function') window.switchLang(lang);
+        window.dispatchEvent(new CustomEvent('languageChanged', { detail: lang }));
+    } catch(e) {
+        console.warn('Subpage language bridge error:', e);
+    }
 }
 /**
  * NAVIGATION SYSTEM
@@ -16698,4 +16712,527 @@ window.closeTermsModal = window.closeTermsModal;
             });
         });
     }
+
+    // MORALES PLUMBING SUPPLEMENTAL MULTILINGUAL DICTIONARY
+    const mpFullDict = {
+  "dt_page_title": {
+    "en": "Thermal Detection & Forensic Plumbing | Morales Plumbing",
+    "es": "Detección Térmica & Plomería Forense | Morales Plumbing",
+    "zh": "红外热成像与司法级管道检测 | Morales Plumbing",
+    "tl": "Pagtuklas ng Thermal & Forensic Plumbing | Morales Plumbing",
+    "vi": "Phát hiện Nhiệt & Giám định Hệ thống Ống nước | Morales Plumbing",
+    "hi": "थर्मल डिटेक्शन और फोरेंसिक प्लंबिंग | Morales Plumbing"
+  },
+  "dt_back_btn": {
+    "en": "← Return to Main Portal / Multimedia",
+    "es": "← Volver al Portal Principal / Multimedia",
+    "zh": "← 返回主门户 / 多媒体",
+    "tl": "← Bumalik sa Pangunahing Portal / Multimedia",
+    "vi": "← Quay lại Cổng chính / Đa phương tiện",
+    "hi": "← मुख्य पोर्टल / मल्टीमीडिया पर लौटें"
+  },
+  "dt_badge": {
+    "en": "ORION TECH · CSLB C-36",
+    "es": "ORION TECH · CSLB C-36",
+    "zh": "ORION 科技 · CSLB C-36",
+    "tl": "ORION TECH · CSLB C-36",
+    "vi": "CÔNG NGHỆ ORION · CSLB C-36",
+    "hi": "ORION तकनीक · CSLB C-36"
+  },
+  "dt_hero_sub": {
+    "en": "Non-Invasive Forensic Diagnostic",
+    "es": "Diagnóstico Forense No Invasivo",
+    "zh": "非侵入性司法级诊断",
+    "tl": "Hindi Masasalat na Forensic Diagnostic",
+    "vi": "Chẩn đoán Giám định Không Xâm lấn",
+    "hi": "गैर-आक्रामक फोरेंसिक निदान"
+  },
+  "dt_hero_title": {
+    "en": "The Science of Thermal Detection",
+    "es": "La Ciencia de la Detección Térmica",
+    "zh": "红外热成像检测科学",
+    "tl": "Ang Agham ng Pagtuklas ng Thermal",
+    "vi": "Khoa học về Phát hiện Nhiệt",
+    "hi": "थर्मल डिटेक्शन का विज्ञान"
+  },
+  "dt_hero_desc": {
+    "en": "Surgical pinpointing of hidden leaks beneath concrete slabs and structural walls using FLIR MSX infrared thermography and digital acoustic analysis.",
+    "es": "Localización quirúrgica de fugas ocultas bajo losas de concreto y muros estructurales mediante termografía infrarroja FLIR MSX y análisis acústico digital.",
+    "zh": "利用 FLIR MSX 红外热成像和数字声学分析，精准定位混凝土板和结构墙下的隐蔽泄漏点。",
+    "tl": "Eksaktong pagtukoy ng mga nakatagong tagas sa ilalim ng mga kongkretong slab at pader gamit ang FLIR MSX infrared thermography at digital acoustic analysis.",
+    "vi": "Xác định chuẩn xác các điểm rò rỉ ngầm dưới sàn bê tông và tường kết cấu bằng công nghệ nhiệt hồng ngoại FLIR MSX và phân tích âm học kỹ thuật số.",
+    "hi": "कंक्रीट स्लैब और संरचनात्मक दीवारों के नीचे छिपे रिसाव का FLIR MSX इन्फ्रारेड थर्मोग्राफी और डिजिटल ध्वनिक विश्लेषण का उपयोग करके सटीक पता लगाना।"
+  },
+  "dt_btn_schedule": {
+    "en": "Schedule Thermal Inspection",
+    "es": "Agendar Inspección Térmica",
+    "zh": "预约热成像检测",
+    "tl": "Mag-iskedyul ng Thermal Inspection",
+    "vi": "Đặt lịch Kiểm tra Nhiệt",
+    "hi": "थर्मल निरीक्षण निर्धारित करें"
+  },
+  "dt_btn_call": {
+    "en": "Call (669) 213-4422",
+    "es": "Llamar (669) 213-4422",
+    "zh": "致电 (669) 213-4422",
+    "tl": "Tumawag sa (669) 213-4422",
+    "vi": "Gọi (669) 213-4422",
+    "hi": "कॉल करें (669) 213-4422"
+  },
+  "dt_intro_p1": {
+    "en": "In modern plumbing, breaking concrete slabs blindly is obsolete. At Morales Plumbing, we combine calibrated thermal sensors with hydrostatic pressure differential testing to isolate failure coordinates with surgical accuracy.",
+    "es": "En la plomería moderna, romper losas a ciegas es obsoleto. En Morales Plumbing, combinamos sensores térmicos calibrados con pruebas de diferencial de presión hidrostática para aislar las coordenadas de falla con exactitud milimétrica.",
+    "zh": "在现代管道工程中，盲目破拆混凝土板已经过时。在 Morales Plumbing，我们将精密校准的热传感器与静水压差测试相结合，以毫米级的精度锁定破损坐标。",
+    "tl": "Sa modernong pagtutubero, lipas na ang bulag na pagwasak ng kongkreto. Sa Morales Plumbing, pinagsasama namin ang mga calibrated thermal sensor sa hydrostatic pressure differential testing upang maihiwalay ang mga coordinate ng sira sa millimeter na katumpakan.",
+    "vi": "Trong ngành kỹ thuật ống nước hiện đại, việc đập phá sàn bê tông một cách mù quáng đã lỗi thời. Tại Morales Plumbing, chúng tôi kết hợp cảm biến nhiệt hiệu chuẩn với thử nghiệm chênh lệch áp suất thủy tĩnh để cô lập vị trí hỏng hóc với độ chính xác từng milimet.",
+    "hi": "आधुनिक प्लंबिंग में, कंक्रीट स्लैब को अंधाधुंध तोड़ना अप्रचलित है। Morales Plumbing में, हम मिलीमीटर सटीकता के साथ विफलता निर्देशांक को अलग करने के लिए कैलिब्रेटेड थर्मल सेंसर को हाइड्रोस्टैटिक दबाव अंतर परीक्षण के साथ जोड़ते हैं।"
+  },
+  "dt_s1_title": {
+    "en": "1. Non-Destructive Thermal Imaging",
+    "es": "1. Termografía Infrarroja No Destructiva",
+    "zh": "1. 非破坏性红外热成像",
+    "tl": "1. Hindi Mapangwasak na Infrared Thermography",
+    "vi": "1. Chụp ảnh Nhiệt Hồng ngoại Không Phá hủy",
+    "hi": "1. गैर-विनाशकारी इन्फ्रारेड थर्मोग्राफी"
+  },
+  "dt_s1_p1": {
+    "en": "Infrared cameras detect microscopic thermal gradient variations generated by escaping water behind drywall, tile, and hardwood floors without drilling.",
+    "es": "Las cámaras infrarrojas detectan variaciones microscópicas de gradiente térmico generadas por el agua escapada detrás de paneles de yeso, baldosas y pisos de madera sin perforaciones.",
+    "zh": "红外热像仪无需钻孔即可检测到石膏板、瓷砖和硬木地板后泄漏水产生的微小温差梯度。",
+    "tl": "Nakikita ng mga infrared camera ang mga mikroskopikong pagkakaiba-iba ng temperatura na dulot ng tumatagas na tubig sa likod ng drywall, tile, at hardwood floor nang hindi kailangang magbutas.",
+    "vi": "Camera hồng ngoại phát hiện các biến thiên gradient nhiệt siêu nhỏ do nước rò rỉ sau tường thạch cao, gạch men và sàn gỗ mà không cần khoan đục.",
+    "hi": "इन्फ्रारेड कैमरे बिना ड्रिलिंग के ड्राईवॉल, टाइल और दृढ़ लकड़ी के फर्श के पीछे रिसने वाले पानी द्वारा उत्पन्न सूक्ष्म थर्मल ग्रेडिएंट विविधताओं का पता लगाते हैं।"
+  },
+  "dt_s1_p2": {
+    "en": "Temperature delta mapping isolates hot water lines immediately and highlights cold water evaporation pockets within minutes.",
+    "es": "El mapeo de delta térmico aísla líneas de agua caliente de inmediato y resalta bolsas de evaporación de agua fría en minutos.",
+    "zh": "温差测绘可在几分钟内立即隔离热水管线并突出显示冷水蒸发吸收区。",
+    "tl": "Ang pagmamapa ng delta ng temperatura ay naghihiwalay kaagad sa mga linya ng mainit na tubig at nagha-highlight ng mga bulsa ng pagsingaw ng malamig na tubig sa loob ng ilang minuto.",
+    "vi": "Bản đồ chênh lệch nhiệt độ cô lập các đường nước nóng ngay lập tức và làm nổi bật các túi bốc hơi nước lạnh trong vài phút.",
+    "hi": "तापमान डेल्टा मैपिंग तुरंत गर्म पानी की लाइनों को अलग करती है और मिनटों में ठंडे पानी के वाष्पीकरण क्षेत्रों को उजागर करती है।"
+  },
+  "dt_s2_title": {
+    "en": "2. Acoustic Sensor Verification",
+    "es": "2. Verificación Acústica de Frecuencia",
+    "zh": "2. 声学频率传感验证",
+    "tl": "2. Pag-verify ng Acoustic Frequency Sensor",
+    "vi": "2. Xác minh Cảm biến Tần số Âm học",
+    "hi": "2. ध्वनिक आवृत्ति सेंसर सत्यापन"
+  },
+  "dt_s2_p1": {
+    "en": "High-gain ultrasonic listening discs amplify the acoustic hiss of pressurized water escaping tiny fissures inside copper or PEX lines.",
+    "es": "Discos de escucha ultrasónica de alta ganancia amplifican el siseo acústico del agua presurizada que escapa por microfisuras en líneas de cobre o PEX.",
+    "zh": "高增益超声波听音探头能够放大铜管或 PEX 管线内微小裂隙中承压水逸出的微弱嘶嘶声。",
+    "tl": "Ang mga high-gain ultrasonic listening disc ay nagpapalakas ng tunog ng pressurized na tubig na tumatakas sa maliliit na bitak sa loob ng mga linyang tanso o PEX.",
+    "vi": "Đĩa nghe siêu âm độ lợi cao khuếch đại tiếng rít âm học của nước có áp suất thoát ra từ các vết nứt siêu nhỏ bên trong ống đồng hoặc PEX.",
+    "hi": "हाई-गेन अल्ट्रासोनिक लिसनिंग डिस्क तांबे या PEX लाइनों के अंदर छोटे दरारों से निकलने वाले दबावयुक्त पानी की फुसफुसाहट को बढ़ाते हैं।"
+  },
+  "dt_s2_p2": {
+    "en": "Dual correlation between thermal maps and acoustic peaks eliminates false positives and ensures a pinpoint excavation footprint.",
+    "es": "La correlación dual entre mapas térmicos y picos acústicos elimina falsos positivos y asegura una excavación focalizada de mínima invasión.",
+    "zh": "热图与声波峰值的双重交叉比对彻底消除了误报，确保仅需最小侵入的靶向挖掘。",
+    "tl": "Ang dobleng ugnayan sa pagitan ng mga thermal map at mga acoustic peak ay nag-aalis ng mga maling positibo at sinisiguro ang isang napakaliit na paghuhukay.",
+    "vi": "Tương quan kép giữa bản đồ nhiệt và đỉnh âm học loại bỏ hoàn toàn các kết quả dương tính giả và đảm bảo diện tích đào bới cục bộ tối thiểu.",
+    "hi": "थर्मल मानचित्रों और ध्वनिक चोटियों के बीच दोहरा सहसंबंध गलत सकारात्मकताओं को समाप्त करता है और न्यूनतम सटीक खुदाई क्षेत्र सुनिश्चित करता है।"
+  },
+  "dt_th_1": {
+    "en": "Parameter",
+    "es": "Parámetro",
+    "zh": "检测参数",
+    "tl": "Parametro",
+    "vi": "Thông số",
+    "hi": "पैरामीटर"
+  },
+  "dt_th_2": {
+    "en": "Traditional Method",
+    "es": "Método Tradicional",
+    "zh": "传统推测方式",
+    "tl": "Tradisyonal na Paraan",
+    "vi": "Phương pháp Truyền thống",
+    "hi": "पारंपरिक तरीका"
+  },
+  "dt_th_3": {
+    "en": "Morales ORION Technology",
+    "es": "Tecnología Morales ORION",
+    "zh": "Morales ORION 科技",
+    "tl": "Morales ORION Teknolohiya",
+    "vi": "Công nghệ Morales ORION",
+    "hi": "Morales ORION तकनीक"
+  },
+  "dt_tr1_1": {
+    "en": "Structural Damage",
+    "es": "Daño Estructural",
+    "zh": "结构破坏程度",
+    "tl": "Pinsala sa Estruktura",
+    "vi": "Thiệt hại Kết cấu",
+    "hi": "संरचनात्मक क्षति"
+  },
+  "dt_tr1_2": {
+    "en": "Indiscriminate demolition of floors and walls",
+    "es": "Demolición indiscriminada de pisos y paredes",
+    "zh": "盲目破坏性敲碎地板与墙体",
+    "tl": "Paghukay at pagwasak ng mga sahig at dingding",
+    "vi": "Đập phá bừa bãi sàn và tường",
+    "hi": "फर्श और दीवारों की अंधाधुंध तोड़फोड़"
+  },
+  "dt_tr1_3": {
+    "en": "Non-destructive surgical localization (Zero Demolition)",
+    "es": "Localización quirúrgica no destructiva (Cero Demolición)",
+    "zh": "非破坏性靶向精准定位（零盲目破坏）",
+    "tl": "Hindi mapangwasak na surgical na lokalisasyon (Walang Demolisyon)",
+    "vi": "Định vị phẫu thuật không phá hủy (Không Đập phá Vô cớ)",
+    "hi": "गैर-विनाशकारी सर्जिकल स्थानीयकरण (शून्य विध्वंस)"
+  },
+  "dt_tr2_1": {
+    "en": "Diagnostic Accuracy",
+    "es": "Precisión Diagnóstica",
+    "zh": "诊断精准度",
+    "tl": "Katumpakan ng Diagnostic",
+    "vi": "Độ chính xác Chẩn đoán",
+    "hi": "नैदानिक सटीकता"
+  },
+  "dt_tr2_2": {
+    "en": "Empirical guesswork (40-60% error rate)",
+    "es": "Suposiciones empíricas (40-60% margen de error)",
+    "zh": "经验式盲猜（40-60% 误差率）",
+    "tl": "Haka-haka lamang (40-60% error rate)",
+    "vi": "Phỏng đoán cảm tính (tỷ lệ lỗi 40-60%)",
+    "hi": "अनुभवजन्य अनुमान (40-60% त्रुटि दर)"
+  },
+  "dt_tr2_3": {
+    "en": "99.2% verified by FLIR MSX and acoustic peaks",
+    "es": "99.2% comprobado por FLIR MSX y picos acústicos",
+    "zh": "99.2% 经 FLIR MSX 及声学波峰双重验证",
+    "tl": "99.2% napatunayan ng FLIR MSX at acoustic peaks",
+    "vi": "99.2% được xác minh bởi FLIR MSX và đỉnh âm học",
+    "hi": "FLIR MSX और ध्वनिक चोटियों द्वारा 99.2% सत्यापित"
+  },
+  "dt_tr3_1": {
+    "en": "Average Time",
+    "es": "Tiempo Promedio",
+    "zh": "平均耗时",
+    "tl": "Karaniwang Oras",
+    "vi": "Thời gian Trung bình",
+    "hi": "औसत समय"
+  },
+  "dt_tr3_2": {
+    "en": "4 to 8 hours searching and opening holes",
+    "es": "4 a 8 horas buscando y abriendo zanjas",
+    "zh": "4 至 8 小时盲目敲墙探寻",
+    "tl": "4 hanggang 8 oras sa paghahanap at pagbubutas",
+    "vi": "4 đến 8 giờ tìm kiếm và đào phá",
+    "hi": "खोजने और छेद करने में 4 से 8 घंटे"
+  },
+  "dt_tr3_3": {
+    "en": "45 to 90 minutes calibrated sweep",
+    "es": "45 a 90 minutos de barrido calibrado",
+    "zh": "45 至 90 分钟全域校准扫描",
+    "tl": "45 hanggang 90 minuto ng naka-calibrate na sweep",
+    "vi": "Quét hiệu chuẩn hoàn tất trong 45 đến 90 phút",
+    "hi": "45 से 90 मिनट का कैलिब्रेटेड स्वीप"
+  },
+  "dt_tr4_1": {
+    "en": "Total Client Cost",
+    "es": "Costo Total al Cliente",
+    "zh": "客户总支出",
+    "tl": "Kabuuang Gastos ng Kliyente",
+    "vi": "Tổng Chi phí Khách hàng",
+    "hi": "ग्राहक की कुल लागत"
+  },
+  "dt_tr4_2": {
+    "en": "High (plumbing + expensive structural reconstruction)",
+    "es": "Alto (plomería + costosa reconstrucción de obra)",
+    "zh": "极高（管道维修 + 高额泥瓦地面重建费）",
+    "tl": "Mataas (pagtutubero + mamahaling muling pagtatayo)",
+    "vi": "Rất cao (sửa ống nước + phục hồi kết cấu đắt đỏ)",
+    "hi": "उच्च (प्लंबिंग + महंगी संरचनात्मक पुनर्निर्माण)"
+  },
+  "dt_tr4_3": {
+    "en": "Minimized (pinpoint targeted repair only)",
+    "es": "Minimizado (reparación puntual sin daños colaterales)",
+    "zh": "降至最低（靶向精准修复，杜绝连带破坏）",
+    "tl": "Pinaliit (tumpak na pagkukumpuni lamang)",
+    "vi": "Tối ưu thấp nhất (chỉ sửa chữa cục bộ chính xác)",
+    "hi": "न्यूनतम (केवल सटीक लक्षित मरम्मत)"
+  },
+  "dt_comic_title": {
+    "en": "Visual Protocol: Step-by-Step Leak Diagnostic",
+    "es": "Protocolo Visual: Diagnóstico Paso a Paso",
+    "zh": "可视化规程：泄漏诊断分步流程",
+    "tl": "Visual Protocol: Hakbang-hakbang na Diagnostic ng Tagas",
+    "vi": "Quy trình Trực quan: Từng bước Chẩn đoán Rò rỉ",
+    "hi": "दृश्य प्रोटोकॉल: चरण-दर-चरण रिसाव निदान"
+  },
+  "dt_s3_title": {
+    "en": "3. The 4-Stage Forensic Protocol",
+    "es": "3. Protocolo Forense en 4 Fases",
+    "zh": "3. 四阶段司法级检测规程",
+    "tl": "3. Ang 4-Stage Forensic Protocol",
+    "vi": "3. Quy trình Giám định 4 Giai đoạn",
+    "hi": "3. 4-चरणीय फोरेंसिक प्रोटोकॉल"
+  },
+  "dt_step1_card": {
+    "en": "<strong>Fase 1: Aislamiento Hidrostático</strong><br>Corte del suministro maestro e instalación de manómetros de precisión para verificar la caída de presión en PSI.",
+    "es": "<strong>Fase 1: Aislamiento Hidrostático</strong><br>Corte del suministro maestro e instalación de manómetros de precisión para verificar la caída de presión en PSI.",
+    "zh": "<strong>阶段 1：静水压隔离</strong><br>关闭总水阀并安装高精度压力表，以验证每平方英寸磅数 (PSI) 的压力降。",
+    "tl": "<strong>Bahagi 1: Hydrostatic Isolation</strong><br>Pagpatay ng pangunahing suplay at pagkabit ng precision gauge upang patunayan ang pagbaba ng PSI.",
+    "vi": "<strong>Giai đoạn 1: Cô lập Thủy tĩnh</strong><br>Ngắt nguồn cấp chính và lắp đồng hồ đo áp lực chính xác để xác nhận sụt áp PSI.",
+    "hi": "<strong>चरण 1: हाइड्रोस्टैटिक पृथक्करण</strong><br>मुख्य आपूर्ति बंद करना और पीएसआई में दबाव गिरावट को सत्यापित करने के लिए सटीक गेज लगाना।"
+  },
+  "dt_step2_card": {
+    "en": "<strong>Fase 2: Barrido Termográfico FLIR</strong><br>Mapeo térmico infrarrojo completo en pisos radiantes, losas de concreto y cavidades internas.",
+    "es": "<strong>Fase 2: Barrido Termográfico FLIR</strong><br>Mapeo térmico infrarrojo completo en pisos radiantes, losas de concreto y cavidades internas.",
+    "zh": "<strong>阶段 2：FLIR 热成像扫描</strong><br>对辐射地板、混凝土板及建筑内部空腔进行全方位红外热成像测绘。",
+    "tl": "<strong>Bahagi 2: FLIR Thermographic Sweep</strong><br>Buong infrared thermal mapping sa mga sahig, kongkretong slab, at panloob na mga espasyo.",
+    "vi": "<strong>Giai đoạn 2: Quét Nhiệt FLIR</strong><br>Bản đồ hóa nhiệt hồng ngoại toàn diện trên sàn sưởi, tấm bê tông và các khoang bên trong.",
+    "hi": "<strong>चरण 2: FLIR थर्मोग्राफिक स्वीप</strong><br>फर्श, कंक्रीट स्लैब और आंतरिक गुहाओं पर पूर्ण इन्फ्रारेड थर्मल मैपिंग।"
+  },
+  "dt_step3_card": {
+    "en": "<strong>Fase 3: Localización Acústica</strong><br>Identificación del punto de resonancia máxima mediante sensores de contacto ultrasónicos de alta resolución.",
+    "es": "<strong>Fase 3: Localización Acústica</strong><br>Identificación del punto de resonancia máxima mediante sensores de contacto ultrasónicos de alta resolución.",
+    "zh": "<strong>阶段 3：高敏声学定位</strong><br>使用高分辨率超声波接触传感器锁定声学最大共振与微裂漏水点。",
+    "tl": "<strong>Bahagi 3: Acoustic Pinpointing</strong><br>Pagtukoy sa pinakamataas na punto ng resonance gamit ang high-resolution ultrasonic sensors.",
+    "vi": "<strong>Giai đoạn 3: Định vị Âm học</strong><br>Xác định điểm cộng hưởng tối đa thông qua các cảm biến tiếp xúc siêu âm độ phân giải cao.",
+    "hi": "<strong>चरण 3: ध्वनिक पिनपॉइंटिंग</strong><br>उच्च-रिज़ॉल्यूशन अल्ट्रासोनिक सेंसर के माध्यम से अधिकतम प्रतिध्वनि बिंदु की पहचान।"
+  },
+  "dt_step4_card": {
+    "en": "<strong>Fase 4: Reparación Quirúrgica</strong><br>Apertura mínima y reemplazo con cobre Tipo L o PEX-A Uponor con tecnología ProPress prensada.",
+    "es": "<strong>Fase 4: Reparación Quirúrgica</strong><br>Apertura mínima y reemplazo con cobre Tipo L o PEX-A Uponor con tecnología ProPress prensada.",
+    "zh": "<strong>阶段 4：靶向精准修复</strong><br>仅开启极小作业面，采用 L 型铜管或 PEX-A Uponor 配备无火 ProPress 压接技术彻底修复。",
+    "tl": "<strong>Bahagi 4: Surgical Repair</strong><br>Napakaliit na butas lamang at pagpapalit gamit ang Type L copper o PEX-A Uponor na may ProPress technology.",
+    "vi": "<strong>Giai đoạn 4: Phục hồi Ngoại khoa</strong><br>Mở lỗ tối thiểu và thay thế bằng ống đồng Type L hoặc PEX-A Uponor kết hợp ép ProPress.",
+    "hi": "<strong>चरण 4: सर्जिकल मरम्मत</strong><br>न्यूनतम खोलना और ProPress तकनीक के साथ टाइप एल कॉपर या PEX-A Uponor का उपयोग करके प्रतिस्थापन।"
+  },
+  "dt_s4_title": {
+    "en": "4. Tangible Client Benefits",
+    "es": "4. Beneficios Tangibles para el Propietario",
+    "zh": "4. 业主的实际切身收益",
+    "tl": "4. Mga Benepisyo para sa May-ari ng Bahay",
+    "vi": "4. Lợi ích Thiết thực cho Gia chủ",
+    "hi": "4. घर के मालिक के लिए वास्तविक लाभ"
+  },
+  "dt_ben1_card": {
+    "en": "<strong>Ahorro Masivo en Reconstrucción</strong><br>Evita romper pisos de madera importada, losas de mármol o alfombras sin saber con certeza dónde está la fuga.",
+    "es": "<strong>Ahorro Masivo en Reconstrucción</strong><br>Evita romper pisos de madera importada, losas de mármol o alfombras sin saber con certeza dónde está la fuga.",
+    "zh": "<strong>节省巨额装修复原成本</strong><br>避免在未准确定位前盲目凿开昂贵的名贵木地板、大理石或地毯。",
+    "tl": "<strong>Malaking Tipid sa Rekonstruksyon</strong><br>Iwasan ang pagwasak ng mamahaling sahig o marmol nang hindi sigurado kung nasaan ang tagas.",
+    "vi": "<strong>Tiết kiệm Chi phí Khôi phục</strong><br>Tránh đập phá sàn gỗ cao cấp, đá cẩm thạch hoặc thảm khi chưa biết chính xác vị trí rò rỉ.",
+    "hi": "<strong>पुनर्निर्माण में भारी बचत</strong><br>रिसाव कहां है यह निश्चित रूप से जाने बिना महंगी लकड़ी के फर्श या संगमरमर को तोड़ने से बचें।"
+  },
+  "dt_ben2_card": {
+    "en": "<strong>Prevención de Moho Tóxico</strong><br>La detección temprana frena la proliferación de esporas de moho negro peligrosas para la salud respiratoria familiar.",
+    "es": "<strong>Prevención de Moho Tóxico</strong><br>La detección temprana frena la proliferación de esporas de moho negro peligrosas para la salud respiratoria familiar.",
+    "zh": "<strong>杜绝有害霉菌滋生</strong><br>尽早查出隐蔽湿气，杜绝威胁全家呼吸系统健康的黑霉孢子蔓延。",
+    "tl": "<strong>Pag-iwas sa Nakalalasong Molds</strong><br>Pinipigilan ng maagang pagtuklas ang pagdami ng mapanganib na black mold sa loob ng tahanan.",
+    "vi": "<strong>Ngăn ngừa Nấm mốc Độc hại</strong><br>Phát hiện sớm ngăn chặn sự phát triển của bào tử nấm mốc đen nguy hiểm cho sức khỏe.",
+    "hi": "<strong>विषाक्त फफूंद की रोकथाम</strong><br>शीघ्र पता लगाने से स्वास्थ्य के लिए हानिकारक काले फफूंद के बीजाणुओं के प्रसार को रोका जा सकता है।"
+  },
+  "dt_ben3_card": {
+    "en": "<strong>Documentación para Seguros</strong><br>Entregamos reportes termográficos con fotografías digitales de alta resolución para tramitar reclamaciones de cobertura.",
+    "es": "<strong>Documentación para Seguros</strong><br>Entregamos reportes termográficos con fotografías digitales de alta resolución para tramitar reclamaciones de cobertura.",
+    "zh": "<strong>保险理赔专业报告</strong><br>提供带高清晰度热像图的官方检测报告，为房屋保险理赔提供无可挑剔的铁证。",
+    "tl": "<strong>Dokumentasyon para sa Seguro</strong><br>Nagbibigay kami ng opisyal na ulat na may mga thermal photo para sa mga claim sa seguro.",
+    "vi": "<strong>Hồ sơ Bồi thường Bảo hiểm</strong><br>Cung cấp báo cáo giám định nhiệt kèm hình ảnh độ phân giải cao để thanh toán bảo hiểm.",
+    "hi": "<strong>बीमा के लिए दस्तावेज़ीकरण</strong><br>हम बीमा दावों के लिए उच्च-रिज़ॉल्यूशन वाली तस्वीरों के साथ थर्मोग्राफिक रिपोर्ट प्रदान करते हैं।"
+  },
+  "dt_ben4_card": {
+    "en": "<strong>Cumplimiento de Código CSLB C-36</strong><br>Todas las intervenciones cumplen las especificaciones de código CPC y son ejecutadas por técnicos certificados.",
+    "es": "<strong>Cumplimiento de Código CSLB C-36</strong><br>Todas las intervenciones cumplen las especificaciones de código CPC y son ejecutadas por técnicos certificados.",
+    "zh": "<strong>严守 CSLB C-36 执照规范</strong><br>所有施工完全符合加州统一管道规范 (CPC)，由正规持证技术专家执行。",
+    "tl": "<strong>Pagsunod sa Kodigo ng CSLB C-36</strong><br>Lahat ng gawain ay sumusunod sa CPC code at isinasagawa ng mga lisensyadong eksperto.",
+    "vi": "<strong>Tuân thủ Tiêu chuẩn CSLB C-36</strong><br>Mọi can thiệp đều đáp ứng quy chuẩn CPC và được thực hiện bởi thợ lành nghề có chứng chỉ.",
+    "hi": "<strong>CSLB C-36 कोड अनुपालन</strong><br>सभी कार्य CPC कोड विनिर्देशों को पूरा करते हैं और प्रमाणित तकनीशियनों द्वारा निष्पादित किए जाते हैं।"
+  },
+  "dt_s5_title": {
+    "en": "5. Commitment to Silicon Valley",
+    "es": "5. El Compromiso Morales Plumbing en Silicon Valley",
+    "zh": "5. Morales Plumbing 在硅谷的技术承诺",
+    "tl": "5. Ang Pangako ng Morales Plumbing sa Silicon Valley",
+    "vi": "5. Cam kết của Morales Plumbing tại Thung lũng Silicon",
+    "hi": "5. सिलिकॉन वैली में Morales Plumbing की प्रतिबद्धता"
+  },
+  "dt_s5_p1": {
+    "en": "With more than 21 years of service in San Jose, Santa Clara, Sunnyvale, and surrounding counties, our philosophy is simple: combine master craftsmanship with cutting-edge engineering.",
+    "es": "Con más de 21 años de servicio en San Jose, Santa Clara, Sunnyvale y condados circunvecinos, nuestra filosofía es simple: combinar la maestría artesanal con la ingeniería más avanzada.",
+    "zh": "在圣何塞、圣克拉拉、桑尼维尔及湾区深耕超过 21 年，我们的理念始终如一：将精湛的大师级工匠精神与顶尖的数字科技深度融合。",
+    "tl": "Na may higit sa 21 taon ng serbisyo sa San Jose, Santa Clara, Sunnyvale, at karatig lugar, simple ang aming pilosopiya: pagsamahin ang husay at modernong inhenyerya.",
+    "vi": "Với hơn 21 năm phục vụ tại San Jose, Santa Clara, Sunnyvale và các vùng lân cận, phương châm của chúng tôi rất rõ ràng: kết hợp tay nghề bậc thầy với kỹ thuật tiên tiến nhất.",
+    "hi": "सैन जोस, सांता क्लारा, सनीवेल में 21 से अधिक वर्षों की सेवा के साथ, हमारा दर्शन सरल है: उत्कृष्ट कारीगरी को अत्याधुनिक इंजीनियरिंग के साथ जोड़ना।"
+  },
+  "dt_s5_p2": {
+    "en": "Every diagnosis is backed by real physical metrics. We do not speculate; we deliver certified solutions that protect the value and safety of your home.",
+    "es": "Cada diagnóstico está respaldado por métricas físicas reales. No especulamos; entregamos soluciones certificadas que resguardan el valor y la seguridad de su hogar.",
+    "zh": "每一次诊断都有精准的物理指标支持。我们绝不凭空推测，只交付经认证的高品质方案，时刻守护您房产的价值与安全。",
+    "tl": "Bawat diagnosis ay suportado ng totoong pisikal na sukatan. Hindi kami nanghuhula; nagbibigay kami ng sertipikadong solusyon.",
+    "vi": "Mọi chẩn đoán đều dựa trên số liệu vật lý thực tế. Chúng tôi không suy đoán; chúng tôi mang lại giải pháp đã được chứng nhận bảo vệ ngôi nhà của bạn.",
+    "hi": "प्रत्येक निदान वास्तविक भौतिक मैट्रिक्स द्वारा समर्थित है। हम अनुमान नहीं लगाते; हम प्रमाणित समाधान प्रदान करते हैं।"
+  },
+  "dt_promise_label": {
+    "en": "CSLB C-36 LICENSE PROMISE",
+    "es": "PROMESA DE LICENCIA CSLB C-36",
+    "zh": "CSLB C-36 执照金牌承诺",
+    "tl": "PANGAKO NG LISENSIYA NG CSLB C-36",
+    "vi": "CAM KẾT GIẤY PHÉP CSLB C-36",
+    "hi": "CSLB C-36 लाइसेंस का वादा"
+  },
+  "dt_promise_quote": {
+    "en": "\"Accuracy is not a luxury, it is our quality standard. If we don't locate the leak, you don't pay for the thermal scan.\" — Morales Plumbing",
+    "es": "\"La precisión no es un lujo, es nuestro estándar de calidad. Si no localizamos la fuga, no paga por el escaneo térmico.\" — Morales Plumbing",
+    "zh": "“精准绝非奢侈，而是我们的品质底线。若未锁定泄漏源，我们免收热成像扫描费。” — Morales Plumbing",
+    "tl": "\"Ang katumpakan ay hindi isang luho, ito ang aming pamantayan sa kalidad. Kung hindi namin mahanap ang tagas, hindi ka magbabayad para sa thermal scan.\" — Morales Plumbing",
+    "vi": "\"Độ chính xác không phải là xa xỉ, đó là tiêu chuẩn chất lượng của chúng tôi. Nếu không định vị được rò rỉ, bạn không phải trả tiền quét nhiệt.\" — Morales Plumbing",
+    "hi": "\"सटीकता कोई विलासिता नहीं है, यह हमारा गुणवत्ता मानक है। यदि हमें रिसाव नहीं मिलता है, तो आप थर्मल स्कैन के लिए भुगतान नहीं करते हैं।\" — Morales Plumbing"
+  },
+  "footer_rights": {
+    "en": "© 2026 Morales Plumbing. All rights reserved.",
+    "es": "© 2026 Morales Plumbing. Todos los derechos reservados.",
+    "zh": "© 2026 Morales Plumbing. 版权所有 保留一切权利。",
+    "tl": "© 2026 Morales Plumbing. Lahat ng karapatan ay nakalaan.",
+    "vi": "© 2026 Morales Plumbing. Bảo lưu mọi quyền.",
+    "hi": "© 2026 Morales Plumbing. सर्वाधिकार सुरक्षित।"
+  },
+  "eng_septico_title": {
+    "en": "Advanced Septic Systems",
+    "es": "Sistemas Sépticos Avanzados",
+    "zh": "先进化粪池与生态排污系统",
+    "tl": "Mga Masulong na Sistema ng Septic",
+    "vi": "Hệ thống Bể tự hoại Tiên tiến",
+    "hi": "उन्नत सेप्टिक सिस्टम"
+  },
+  "eng_septico_code": {
+    "en": "ENG-CENT-005",
+    "es": "ENG-CENT-005",
+    "zh": "ENG-CENT-005",
+    "tl": "ENG-CENT-005",
+    "vi": "ENG-CENT-005",
+    "hi": "ENG-CENT-005"
+  },
+  "eng_septico_p1": {
+    "en": "Our Advanced Septic Systems division designs, deploys, and maintains off-grid effluent management systems using modern biotechnology and percolation-engineered leach fields. Vital for estates, vineyards, and remote properties.",
+    "es": "Nuestra división de Sistemas Sépticos Avanzados diseña, despliega y mantiene sistemas de manejo de efluentes fuera de la red (off-grid), utilizando biotecnología moderna y campos de lixiviación diseñados mediante análisis de permeabilidad de suelos. Este servicio es vital para fincas, viñedos y propiedades remotas.",
+    "zh": "我们的先进化粪池工程部门运用现代生物科技与经渗透率工程计算的渗滤场，专门设计、安装和维护离网型排污系统。对于庄园、葡萄园及偏远地产至关重要。",
+    "tl": "Ang aming dibisyon ng Advanced Septic Systems ay nagdidisenyo, naglalagay, at nagpapanatili ng mga off-grid effluent system gamit ang modernong biotechnology at mga leach field na idinisenyo sa pamamagitan ng pagsusuri sa lupa.",
+    "vi": "Bộ phận Hệ thống Bể tự hoại Tiên tiến của chúng tôi thiết kế, triển khai và bảo trì các hệ thống xử lý nước thải độc lập (off-grid), ứng dụng công nghệ sinh học và cánh đồng lọc ngầm.",
+    "hi": "हमारा उन्नत सेप्टिक सिस्टम डिवीजन आधुनिक जैव प्रौद्योगिकी और मिट्टी पारगम्यता विश्लेषण का उपयोग करके ऑफ-ग्रिड प्रवाह प्रबंधन प्रणालियों को डिजाइन, स्थापित और बनाए रखता है।"
+  },
+  "eng_septico_p2": {
+    "en": "Instead of conventional septic pits prone to bio-clogging failure, we implement Aerobic Treatment Units (ATUs) that purify effluent to near-irrigation standards, protecting subterranean aquifers (EPA & CSLB compliant).",
+    "es": "En lugar de instalar fosas sépticas convencionales que fallan catastróficamente por saturación, implementamos Sistemas de Tratamiento Aeróbico (ATU) que procesan el agua a un nivel de pureza casi apto para riego superficial, protegiendo los mantos acuíferos subterráneos (EPA / CSLB compliant).",
+    "zh": "摒弃极易因生化堵塞而导致灾难性瘫痪的传统化粪池，我们采用好氧处理单元 (ATU)，将出水处理至接近可用于地面灌溉的高纯度标准，全力保护地下蓄水层（完全符合 EPA 及 CSLB 规范）。",
+    "tl": "Sa halip na mga karaniwang poso negro na madaling masira dahil sa pagbabara, naglalagay kami ng mga Aerobic Treatment Unit (ATU) na nagpoproseso ng tubig para maging ligtas sa patubig at kapaligiran.",
+    "vi": "Thay vì các hố tự hoại truyền thống dễ bị tắc nghẽn sinh học nghiêm trọng, chúng tôi triển khai Hệ thống Xử lý Hiếu khí (ATU) xử lý nước đạt độ tinh khiết gần như có thể tưới tiêu, bảo vệ các tầng ngậm nước.",
+    "hi": "पारंपरिक सेप्टिक गड्ढों के बजाय, हम एरोबिक ट्रीटमेंट यूनिट्स (ATU) लागू करते हैं जो पानी को सिंचाई स्तर की शुद्धता तक संसाधित करते हैं, जिससे भूजल की रक्षा होती है।"
+  },
+  "eng_septico_tech1_title": {
+    "en": "Percolation Studies & Topographic Layout",
+    "es": "Estudios de Percolación y Diseño Topográfico",
+    "zh": "渗滤浸润测定与地形布局设计",
+    "tl": "Mga Pag-aaral sa Percolasyon at Topograpikong Disenyo",
+    "vi": "Nghiên cứu Độ thấm & Thiết kế Địa hình",
+    "hi": "रिसाव अध्ययन और स्थलाकृतिक लेआउट"
+  },
+  "eng_septico_tech1_desc": {
+    "en": "Geological soil assessment to determine precise absorption rates and dimension the leach field without bio-saturation risks (biomat failure prevention).",
+    "es": "Evaluación geológica del terreno para determinar la tasa exacta de absorción y dimensionar el campo de lixiviación sin riesgo de bio-saturación (biomat failure).",
+    "zh": "严格的地质土壤渗透评估，精准测算吸收率并合理规划渗滤场面积，彻底杜绝生物黏膜堵塞瘫痪的风险。",
+    "tl": "Heolohikal na pagsusuri ng lupa upang matukoy ang eksaktong rate ng pagsipsip at i-dimension ang leach field nang walang panganib ng biomat failure.",
+    "vi": "Đánh giá địa chất của đất để xác định tỷ lệ hấp thụ chính xác và quy mô cánh đồng lọc mà không có nguy cơ tắc nghẽn màng sinh học.",
+    "hi": "सटीक अवशोषण दर निर्धारित करने और बायोमैट विफलता जोखिम के बिना लीच क्षेत्र को आकार देने के लिए भूवैज्ञानिक मिट्टी का मूल्यांकन।"
+  },
+  "eng_septico_tech2_title": {
+    "en": "Bio-Reactor Integration",
+    "es": "Integración de Bio-Reactores",
+    "zh": "生物反应器集成配置",
+    "tl": "Pagsasama ng Bio-Reactor",
+    "vi": "Tích hợp Lò phản ứng Sinh học",
+    "hi": "बायो-रिएक्टर एकीकरण"
+  },
+  "eng_septico_tech2_desc": {
+    "en": "Equipped with aeration mechanisms that exponentially accelerate solid decomposition through ultra-efficient aerobic bacteria.",
+    "es": "Equipamiento con sistemas de aireación que aceleran exponencialmente la descomposición de sólidos mediante bacterias aeróbicas ultra-eficientes.",
+    "zh": "配备强劲曝气充氧系统，利用超高效好氧菌群以指数级速度快速分解分解有机固体沉淀。",
+    "tl": "Nilagyan ng mga aeration system na nagpapabilis ng pagkabulok ng mga solido sa pamamagitan ng ultra-efficient na aerobic bacteria.",
+    "vi": "Được trang bị hệ thống sục khí giúp đẩy nhanh đáng kể quá trình phân hủy chất rắn thông qua vi khuẩn hiếu khí hiệu quả cao.",
+    "hi": "अल्ट्रा-कुशल एरोबिक बैक्टीरिया के माध्यम से ठोस अपघटन को तेजी से गति देने वाले वातन प्रणालियों से लैस।"
+  },
+  "eng_septico_tech3_title": {
+    "en": "County Health Department Code Compliance",
+    "es": "Cumplimiento Normativo (County Health Dept)",
+    "zh": "县卫生局法规全面合规",
+    "tl": "Pagsunod sa Regulasyon ng County Health Dept",
+    "vi": "Tuân thủ Quy định của Sở Y tế Quận",
+    "hi": "काउंटी स्वास्थ्य विभाग कोड अनुपालन"
+  },
+  "eng_septico_tech3_desc": {
+    "en": "End-to-end permit management, ensuring the engineering exceeds sanitation codes and prevents costly environmental fines.",
+    "es": "Gestión end-to-end de permisos, garantizando que el diseño supere los requerimientos de sanidad y mitigando multas medioambientales a largo plazo.",
+    "zh": "全流程端到端施工许可审批管理，确保工程方案远超卫生防疫法规标准，彻底免除环保重罚风险。",
+    "tl": "End-to-end na pamamahala ng permit, na tinitiyak na ang disenyo ay lumalampas sa mga kinakailangan sa kalinisan at umiiwas sa mga multa.",
+    "vi": "Quản lý giấy phép toàn diện, đảm bảo thiết kế vượt qua các yêu cầu vệ sinh môi trường và giảm thiểu rủi ro bị phạt.",
+    "hi": "शुरुआत से अंत तक परमिट प्रबंधन, यह सुनिश्चित करते हुए कि डिज़ाइन स्वच्छता कोड से अधिक है और महंगे जुर्माने से बचाता है।"
+  },
+  "eng_tech_details": {
+    "en": "Technical Specifications",
+    "es": "Detalles Técnicos",
+    "zh": "技术规格与工程要点",
+    "tl": "Mga Teknikal na Detalye",
+    "vi": "Chi tiết Kỹ thuật",
+    "hi": "तकनीकी विवरण"
+  },
+  "eng_back": {
+    "en": "← Return to Core Services",
+    "es": "← Volver a Servicios Centrales",
+    "zh": "← 返回核心工程服务",
+    "tl": "← Bumalik sa Pangunahing Serbisyo",
+    "vi": "← Quay lại Dịch vụ Cốt lõi",
+    "hi": "← मुख्य सेवाओं पर लौटें"
+  },
+  "pqr_form_status": {
+    "en": "Form Ready",
+    "es": "Formulario Listo",
+    "zh": "表单就绪",
+    "tl": "Handa na ang Form",
+    "vi": "Mẫu đã sẵn sàng",
+    "hi": "फॉर्म तैयार है"
+  },
+  "htm_yt_subscribe": {
+    "en": "Subscribe on YouTube",
+    "es": "Suscribirse en YouTube",
+    "zh": "订阅 YouTube 频道",
+    "tl": "Mag-subscribe sa YouTube",
+    "vi": "Đăng ký trên YouTube",
+    "hi": "यूट्यूब पर सब्सक्राइब करें"
+  },
+  "a11y_safe_mode": {
+    "en": "Safe Mode Active",
+    "es": "Modo Seguro Activo",
+    "zh": "安全模式已开启",
+    "tl": "Ligtas na Mode Aktibo",
+    "vi": "Chế độ An toàn Đang hoạt động",
+    "hi": "सुरक्षित मोड सक्रिय"
+  },
+  "promo_tt_comic_title": {
+    "en": "Tank to Tankless Conversion Process",
+    "es": "Proceso de Conversión a Tankless",
+    "zh": "传统水箱改换即热式工程流程",
+    "tl": "Proseso ng Pagpapalit sa Tankless",
+    "vi": "Quy trình Chuyển đổi sang Bình không bình",
+    "hi": "टैंकलेस रूपांतरण प्रक्रिया"
+  }
+};
+    ['en', 'es', 'zh', 'tl', 'vi', 'hi'].forEach(lang => {
+        if (!translations[lang]) translations[lang] = {};
+        Object.keys(mpFullDict).forEach(k => {
+            if (mpFullDict[k] && mpFullDict[k][lang]) {
+                translations[lang][k] = mpFullDict[k][lang];
+            }
+        });
+    });
+
+    if (typeof window !== 'undefined') {
+        window.translations = translations;
+        window.setLanguage = setLanguage;
+        window.updateTexts = setLanguage;
+    }
+
 })();

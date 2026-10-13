@@ -99,10 +99,10 @@
 
 
 
-    <button class="floating-action" onclick="window.print()">ð¨ï¸ Print / Imprimir</button>
-    <button class="floating-action-2" onclick="toggleLang()">ð EN / ES</button>
+    <button class="floating-action" onclick="window.print()" data-es="Imprimir / PDF" data-en="Print / PDF">Print / Imprimir</button>
+    <button class="floating-action-2" onclick="toggleLang()">EN / ES</button>
 
-    <!-- PáGE 1 -->
+    <!-- PAGE 1 -->
     <div class="document-page">
         <div class="header">
             <img src="../assets/logo_portada.webp" alt="Morales Plumbing" onerror="this.src='https://via.placeholder.com/150x50text=Morales+Plumbing'">
@@ -112,38 +112,38 @@
             </div>
         </div>
 
-        <h2 class="section-title" data-es="1. Información ádministrativa" data-en="1. ádministrative Information">1. Información ádministrativa</h2>
+        <h2 class="section-title" data-es="1. Información Administrativa" data-en="1. Administrative Information">1. Información Administrativa</h2>
         <div class="grid-2">
             <div>
                 <div class="form-row"><label data-es="Nombre del Cliente:" data-en="Client Name:">Nombre del Cliente:</label><input type="text"></div>
-                <div class="form-row"><label data-es="Dirección del Siniestro:" data-en="Incident áddress:">Dirección del Siniestro:</label><input type="text"></div>
+                <div class="form-row"><label data-es="Dirección del Siniestro:" data-en="Incident Address:">Dirección del Siniestro:</label><input type="text"></div>
                 <div class="form-row"><label data-es="Teléfono:" data-en="Phone:">Teléfono:</label><input type="tel"></div>
                 <div class="form-row"><label data-es="Email:" data-en="Email:">Email:</label><input type="email"></div>
-                <div class="form-row"><label data-es="áPN (Parcel No.):" data-en="áPN (Parcel No.):">áPN (Parcel No.):</label><input type="text"></div>
+                <div class="form-row"><label data-es="APN (Parcel No.):" data-en="APN (Parcel No.):">APN (Parcel No.):</label><input type="text"></div>
             </div>
             <div>
                 <div class="form-row"><label data-es="Proyecto / Reporte No.:" data-en="Project / Report No.:">Proyecto / Reporte No.:</label><input type="text"></div>
                 <div class="form-row"><label data-es="Reclamación (Claim No.):" data-en="Claim No.:">Reclamación (Claim No.):</label><input type="text"></div>
-                <div class="form-row"><label data-es="Contacto ájustador:" data-en="ádjuster Contact:">Contacto ájustador:</label><input type="text"></div>
+                <div class="form-row"><label data-es="Contacto Ajustador:" data-en="Adjuster Contact:">Contacto Ajustador:</label><input type="text"></div>
                 <div class="form-row"><label data-es="Fecha del Siniestro:" data-en="Date of Loss:">Fecha del Siniestro:</label><input type="date"></div>
                 <div class="form-row"><label data-es="Fecha de Inspección:" data-en="Date of Inspection:">Fecha de Inspección:</label><input type="date"></div>
             </div>
         </div>
 
-        <h2 class="section-title" data-es="2. álcance y 3. Metodología" data-en="2. Scope and 3. Methodology">2. álcance y 3. Metodología</h2>
+        <h2 class="section-title" data-es="2. Alcance y 3. Metodología" data-en="2. Scope and 3. Methodology">2. Alcance y 3. Metodología</h2>
         <div class="grid-2">
             <div>
                 <strong data-es="Sistemas Inspeccionados:" data-en="Inspected Systems:">Sistemas Inspeccionados:</strong><br>
                 <div class="checkbox-grid" style="grid-template-columns: 1fr;">
-                    <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Suministro agua y Drenaje Sanitario" data-en="Water Supply and Sanitary Drain">Suministro agua y Drenaje Sanitario</span></label>
+                    <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Suministro Agua y Drenaje Sanitario" data-en="Water Supply and Sanitary Drain">Suministro Agua y Drenaje Sanitario</span></label>
                     <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Sistema de Gas y Water Heaters" data-en="Gas System and Water Heaters">Sistema de Gas y Water Heaters</span></label>
                     <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Dispositivos Backflow" data-en="Backflow Devices">Dispositivos Backflow</span></label>
                 </div>
             </div>
             <div>
-                <strong data-es="Pruebas Ejecutadías:" data-en="Executed Tests:">Pruebas Ejecutadías:</strong><br>
+                <strong data-es="Pruebas Ejecutadas:" data-en="Executed Tests:">Pruebas Ejecutadas:</strong><br>
                 <div class="checkbox-grid" style="grid-template-columns: 1fr;">
-                    <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Inspección Visual In-Situ / NFPá 921" data-en="Visual Inspection On-Site / NFPá 921">Inspección Visual In-Situ / NFPá 921</span></label>
+                    <label class="checkbox-item"><input type="checkbox" checked> <span data-es="Inspección Visual In-Situ / NFPA 921" data-en="Visual Inspection On-Site / NFPA 921">Inspección Visual In-Situ / NFPA 921</span></label>
                     <label class="checkbox-item"><input type="checkbox"> <span data-es="Video Inspección CCTV / Termografía" data-en="CCTV Video Inspection / Thermography">Video Inspección CCTV / Termografía</span></label>
                     <label class="checkbox-item"><input type="checkbox"> <span data-es="Prueba Hidrostática / Neumática" data-en="Hydrostatic / Pneumatic Test">Prueba Hidrostática / Neumática</span></label>
                 </div>
@@ -153,13 +153,13 @@
         <h2 class="section-title" data-es="4. Descripción del Siniestro y Patologías" data-en="4. Incident Description and Pathologies">4. Descripción del Siniestro y Patologías</h2>
         <div class="grid-2" style="margin-bottom:0.5rem;">
             <div class="form-row"><label data-es="Naturaleza:" data-en="Nature of Damage:">Naturaleza:</label><input type="text"></div>
-            <div class="form-row"><label data-es="Origen/Área:" data-en="Origin área:">Origen/Área:</label><input type="text"></div>
+            <div class="form-row"><label data-es="Origen/Área:" data-en="Origin Area:">Origen/Área:</label><input type="text"></div>
         </div>
         <strong data-es="Daños Observados en Sistemas de Plomería:" data-en="Damage Observed in Plumbing Systems:">Daños Observados en Sistemas de Plomería:</strong>
         <div class="checkbox-grid" style="grid-template-columns: 1fr 1fr 1fr;">
             <label class="checkbox-item"><input type="checkbox"> <span data-es="Estrés térmico (PEX/CPVC)" data-en="Thermal Stress (PEX/CPVC)">Estrés térmico (PEX/CPVC)</span></label>
             <label class="checkbox-item"><input type="checkbox"> <span data-es="Falla en juntas de cobre" data-en="Copper Joint Failure">Falla en juntas de cobre</span></label>
-            <label class="checkbox-item"><input type="checkbox"> <span data-es="Carbonización (PVC/áBS)" data-en="Charring (PVC/áBS)">Carbonización (PVC/áBS)</span></label>
+            <label class="checkbox-item"><input type="checkbox"> <span data-es="Carbonización (PVC/ABS)" data-en="Charring (PVC/ABS)">Carbonización (PVC/ABS)</span></label>
             <label class="checkbox-item"><input type="checkbox"> <span data-es="Olor a gas detectado" data-en="Gas Odor Detected">Olor a gas detectado</span></label>
             <label class="checkbox-item"><input type="checkbox"> <span data-es="Infiltración de hollín" data-en="Soot Infiltration">Infiltración de hollín</span></label>
             <label class="checkbox-item"><input type="checkbox"> <span data-es="Daño mecánico por escombros" data-en="Mechanical Damage by Debris">Daño mecánico por escombros</span></label>
@@ -182,9 +182,9 @@
             </tbody>
         </table>
 
-        <!-- BLOQUE áSEGURáDORá (COSTOS) -->
+        <!-- BLOQUE ASEGURADORA (COSTOS) -->
         <div id="block-insurance" class="insurance-block">
-            <h2 class="section-title" data-es="áNÁLISIS DE COSTOS Y DáÑOS (EXCLUSIVO áSEGURáDORá)" data-en="COST & DáMáGE áNáLYSIS (INSURáNCE EXCLUSIVE)">áNÁLISIS DE COSTOS Y DáÑOS (EXCLUSIVO áSEGURáDORá)</h2>
+            <h2 class="section-title" data-es="ANÁLISIS DE COSTOS Y DAÑOS (EXCLUSIVO ASEGURADORA)" data-en="COST & DAMAGE ANALYSIS (INSURANCE EXCLUSIVE)">ANÁLISIS DE COSTOS Y DAÑOS (EXCLUSIVO ASEGURADORA)</h2>
             <div class="grid-2">
                 <div>
                     <div class="form-row"><label data-es="Costo Reparación Directa: $" data-en="Direct Repair Cost: $">Costo Reparación Directa: $</label><input type="text"></div>
@@ -195,17 +195,17 @@
                 <div>
                     <div class="form-row"><label data-es="Mano de Obra Estimada: $" data-en="Estimated Labor: $">Mano de Obra Estimada: $</label><input type="text"></div>
                     <div class="form-row"><label data-es="Materiales Estimados: $" data-en="Estimated Materials: $">Materiales Estimados: $</label><input type="text"></div>
-                    <div class="form-row"><label data-es="Depreciación áplicaída: %" data-en="ápplied Depreciation: %">Depreciación áplicaída: %</label><input type="text"></div>
-                    <div class="form-row" style="font-weight:bold;"><label data-es="TOTáL ESTIMáDO: $" data-en="ESTIMáTED TOTáL: $">TOTáL ESTIMáDO: $</label><input type="text"></div>
+                    <div class="form-row"><label data-es="Depreciación Aplicada: %" data-en="Applied Depreciation: %">Depreciación Aplicada: %</label><input type="text"></div>
+                    <div class="form-row" style="font-weight:bold;"><label data-es="TOTAL ESTIMADO: $" data-en="ESTIMATED TOTAL: $">TOTAL ESTIMADO: $</label><input type="text"></div>
                 </div>
             </div>
-            <strong data-es="Justificación para ájustador:" data-en="Justification for ádjuster:">Justificación para ájustador:</strong>
+            <strong data-es="Justificación para Ajustador:" data-en="Justification for Adjuster:">Justificación para Ajustador:</strong>
             <textarea class="textarea-box"></textarea>
         </div>
 
-        <!-- BLOQUE CIUDáD (PERMISOS/CODIGO) -->
+        <!-- BLOQUE CIUDAD (PERMISOS/CODIGO) -->
         <div id="block-city" class="city-block">
-            <h2 class="section-title" data-es="CUMPLIMIENTO DE CÓDIGO (EXCLUSIVO CIUDáD SáNTá CLáRá)" data-en="CODE COMPLIANCE (SáNTá CLáRá CITY EXCLUSIVE)">CUMPLIMIENTO DE CÓDIGO (EXCLUSIVO CIUDáD SáNTá CLáRá)</h2>
+            <h2 class="section-title" data-es="CUMPLIMIENTO DE CÓDIGO (EXCLUSIVO CIUDAD SANTA CLARA)" data-en="CODE COMPLIANCE (SANTA CLARA CITY EXCLUSIVE)">CUMPLIMIENTO DE CÓDIGO (EXCLUSIVO CIUDAD SANTA CLARA)</h2>
             <div class="grid-2">
                 <div>
                     <strong data-es="Normativa y Permisos:" data-en="Regulations and Permits:">Normativa y Permisos:</strong>
@@ -217,11 +217,11 @@
                     </div>
                 </div>
                 <div>
-                    <strong data-es="Evaluación de Riesgo (Life Safety):" data-en="Life Safety Risk ássessment:">Evaluación de Riesgo a la Salud y Vida (Life Safety):</strong>
+                    <strong data-es="Evaluación de Riesgo a la Salud y Vida (Life Safety):" data-en="Life Safety Risk Assessment:">Evaluación de Riesgo a la Salud y Vida (Life Safety):</strong>
                     <div class="checkbox-grid" style="grid-template-columns: 1fr;">
                         <label class="checkbox-item"><input type="radio" name="hab_city"> <span data-es="Seguro (Safe)" data-en="Safe">Seguro (Safe)</span></label>
                         <label class="checkbox-item"><input type="radio" name="hab_city"> <span data-es="Uso Restringido (Restricted)" data-en="Restricted Use">Uso Restringido (Restricted)</span></label>
-                        <label class="checkbox-item"><input type="radio" name="hab_city"> <span data-es="Condenado (Condemned)" data-en="Condemned">Condenado por Riesgo de Gas/Salud</span></label>
+                        <label class="checkbox-item"><input type="radio" name="hab_city"> <span data-es="Condenado por Riesgo de Gas/Salud" data-en="Condemned">Condenado por Riesgo de Gas/Salud</span></label>
                     </div>
                 </div>
             </div>
@@ -230,7 +230,7 @@
 
     </div>
 
-    <!-- PáGE 2 (Firmas y Cierre) -->
+    <!-- PAGE 2 (Firmas y Cierre) -->
     <div class="document-page page-break">
 
         <h2 class="section-title" data-es="7. Recomendaciones y Plan de Remediación" data-en="7. Recommendations and Remediation Plan">7. Recomendaciones y Plan de Remediación</h2>
@@ -258,27 +258,35 @@
             </div>
             <div class="sig-box">
                 <p style="margin:0 0 30px 0; color:#fff;">.</p>
-                <p data-es="Representante / ájustador / Cliente" data-en="Representative / ádjuster / Client">Representante / ájustador / Cliente</p>
-                <p style="font-size:8pt;" data-es="áceptación de Resultados" data-en="ácceptance of Results">áceptación de Resultados</p>
+                <p data-es="Representante / Ajustador / Cliente" data-en="Representative / Adjuster / Client">Representante / Ajustador / Cliente</p>
+                <p style="font-size:8pt;" data-es="Aceptación de Resultados" data-en="Acceptance of Results">Aceptación de Resultados</p>
             </div>
         </div>
 
     </div>
 
     <script>
-        let currentLang = localStorage.getItem('mp_lang') || 'en';
+        let currentLang = localStorage.getItem('morales_lang') || localStorage.getItem('mp_lang') || 'en';
 
-        function updateTexts() {
+        function updateTexts(langOverride) {
+            if (langOverride) currentLang = langOverride;
+            const attrLang = (currentLang === 'es') ? 'es' : 'en';
             document.querySelectorAll('[data-es]').forEach(el => {
-                el.innerText = el.getAttribute('data-' + currentLang);
+                const val = el.getAttribute('data-' + attrLang);
+                if (val) el.innerText = val;
             });
             document.documentElement.lang = currentLang;
         }
 
         function toggleLang() {
-            currentLang = currentLang === 'es'  'en' : 'es';
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            localStorage.setItem('morales_lang', currentLang);
             localStorage.setItem('mp_lang', currentLang);
-            updateTexts();
+            if (typeof setLanguage === 'function') {
+                setLanguage(currentLang);
+            } else {
+                updateTexts();
+            }
         }
 
         // Show/Hide logic for blocks
